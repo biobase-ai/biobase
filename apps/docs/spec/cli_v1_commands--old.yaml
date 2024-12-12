@@ -1,0 +1,882 @@
+clispec: '001'
+info:
+  id: cli
+  version: 1.11.3
+  title: Biobase CLI
+  language: sh
+  source: https://github.com/biobase-ai/cli
+  bugs: https://github.com/biobase-ai/cli/issues
+  spec: https://github.com/biobase-ai/biobase.tools/cli_spec/lib.yaml
+  description: |
+    Biobase CLI provides you with tools to develop your application locally, and deploy your application to the Biobase platform.
+  options: |-
+    ```sh
+          --debug            output debug logs to stderr
+          --experimental     enable experimental features
+      -h, --help             help for biobase
+          --workdir string   path to a Biobase project directory
+    ```
+  tags:
+    - id: local-dev
+      title: Local Development
+    - id: management-api
+      title: Management APIs
+    - id: other-commands
+      title: Additional Commands
+commands:
+  - id: biobase-test
+    title: biobase test
+    summary: Run tests on local Biobase containers
+    tags:
+      - local-dev
+    links: []
+    subcommands:
+      - biobase-test-db
+    options: |-
+      ```sh
+        -h, --help   help for test
+      ```
+  - id: biobase-test-db
+    title: biobase test db
+    summary: Tests local database with pgTAP
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase test db [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for db
+      ```
+  - id: biobase-stop
+    title: biobase stop
+    summary: Stop all local Biobase containers
+    tags:
+      - local-dev
+    links: []
+    usage: |-
+      ```sh
+      biobase stop [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+            --backup   Backs up the current database before stopping.
+        -h, --help     help for stop
+      ```
+  - id: biobase-status
+    title: biobase status
+    summary: Show status of local Biobase containers
+    tags:
+      - local-dev
+    links: []
+    usage: |-
+      ```sh
+      biobase status [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for status
+      ```
+  - id: biobase-start
+    title: biobase start
+    summary: Start containers for Biobase local development
+    tags:
+      - local-dev
+    links: []
+    usage: |-
+      ```sh
+      biobase start [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for start
+      ```
+  - id: biobase-secrets
+    title: biobase secrets
+    summary: Manage Biobase secrets
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-secrets-list
+      - biobase-secrets-set
+      - biobase-secrets-unset
+    options: |-
+      ```sh
+        -h, --help   help for secrets
+      ```
+  - id: biobase-secrets-unset
+    title: biobase secrets unset
+    summary: Unset a secret(s) on Biobase
+    description: Unset a secret(s) from the linked Biobase project.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase secrets unset <NAME> ... [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for unset
+      ```
+  - id: biobase-secrets-set
+    title: biobase secrets set
+    summary: Set a secret(s) on Biobase
+    description: Set a secret(s) to the linked Biobase project.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase secrets set [flags] <NAME=VALUE> ...
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+            --env-file string   Read secrets from a .env file.
+        -h, --help              help for set
+      ```
+  - id: biobase-secrets-list
+    title: biobase secrets list
+    summary: List all secrets on Biobase
+    description: List all secrets in the linked project.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase secrets list [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for list
+      ```
+  - id: biobase-projects
+    title: biobase projects
+    summary: Manage Biobase projects
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-projects-create
+      - biobase-projects-list
+    options: |-
+      ```sh
+        -h, --help   help for projects
+      ```
+  - id: biobase-projects-list
+    title: biobase projects list
+    summary: List all Biobase projects
+    description: List all Biobase projects the logged-in user can access.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase projects list [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for list
+      ```
+  - id: biobase-projects-create
+    title: biobase projects create
+    summary: Create a project on Biobase
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase projects create <project name> [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+            --db-password string   Database password of the project.
+        -h, --help                 help for create
+        -i, --interactive          Enables interactive mode.
+            --org-id string        Organization ID to create the project in.
+            --plan string          Select a plan that suits your needs. (default "free")
+            --region string        Select a region close to you for the best performance.
+      ```
+  - id: biobase-orgs
+    title: biobase orgs
+    summary: Manage Biobase organizations
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-orgs-list
+    options: |-
+      ```sh
+        -h, --help   help for orgs
+      ```
+  - id: biobase-orgs-list
+    title: biobase orgs list
+    summary: List all organizations
+    description: List all organizations the logged-in user belongs.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase orgs list [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for list
+      ```
+  - id: biobase-migration
+    title: biobase migration
+    summary: Manage database migration scripts
+    tags:
+      - local-dev
+    links: []
+    subcommands:
+      - biobase-migration-list
+      - biobase-migration-new
+    options: |-
+      ```sh
+        -h, --help   help for migration
+      ```
+  - id: biobase-migration-new
+    title: biobase migration new
+    summary: Create an empty migration script
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase migration new <migration name> [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for new
+      ```
+  - id: biobase-migration-list
+    title: biobase migration list
+    summary: List local and remote migrations
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase migration list [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help              help for list
+        -p, --password string   Password to your remote Postgres database.
+      ```
+  - id: biobase-login
+    title: biobase login
+    summary: Authenticate using an access token
+    tags:
+      - local-dev
+    links: []
+    usage: |-
+      ```sh
+      biobase login [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for login
+      ```
+  - id: biobase-link
+    title: biobase link
+    summary: Link to a Biobase project
+    tags:
+      - local-dev
+    links: []
+    usage: |-
+      ```sh
+      biobase link [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help                 help for link
+        -p, --password string      Password to your remote Postgres database.
+            --project-ref string   Project ref of the Biobase project.
+      ```
+  - id: biobase-init
+    title: biobase init
+    summary: Initialize a local project
+    tags:
+      - local-dev
+    links: []
+    usage: |-
+      ```sh
+      biobase init [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for init
+      ```
+  - id: biobase-gen
+    title: biobase gen
+    summary: Run code generation tools
+    tags:
+      - local-dev
+    links: []
+    subcommands:
+      - biobase-gen-types
+    options: |-
+      ```sh
+        -h, --help   help for gen
+      ```
+  - id: biobase-gen-types
+    title: biobase gen types
+    summary: Generate types from Postgres schema
+    tags: []
+    links: []
+    subcommands:
+      - biobase-gen-types-typescript
+    options: |-
+      ```sh
+        -h, --help   help for types
+      ```
+  - id: biobase-gen-types-typescript
+    title: biobase gen types typescript
+    summary: Generate types for TypeScript
+    description: |
+      Generate types for TypeScript. Must specify one of --local, --linked, --project-id, or --db-url
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase gen types typescript [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+            --db-url string        Generate types from a database url.
+        -h, --help                 help for typescript
+            --linked               Generate types from the linked project.
+            --local                Generate types from the local dev database.
+            --project-id string    Generate types from a project ID.
+            --schema stringArray   Schemas to generate types for.
+      ```
+  - id: biobase-functions
+    title: biobase functions
+    summary: Manage Biobase Edge functions
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-functions-delete
+      - biobase-functions-deploy
+      - biobase-functions-new
+      - biobase-functions-serve
+    options: |-
+      ```sh
+        -h, --help   help for functions
+      ```
+  - id: biobase-functions-serve
+    title: biobase functions serve
+    summary: Serve Functions locally
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase functions serve [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+            --env-file string   Path to an env file to be populated to the Function environment.
+        -h, --help              help for serve
+            --no-verify-jwt     Disable JWT verification for the Function.
+      ```
+  - id: biobase-functions-new
+    title: biobase functions new
+    summary: Create a new Function locally
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase functions new <Function name> [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for new
+      ```
+  - id: biobase-functions-deploy
+    title: biobase functions deploy
+    summary: Deploy a Function to Biobase
+    description: Deploy a Function to the linked Biobase project.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase functions deploy <Function name> [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help                 help for deploy
+            --no-verify-jwt        Disable JWT verification for the Function.
+            --project-ref string   Project ref of the Biobase project.
+      ```
+  - id: biobase-functions-delete
+    title: biobase functions delete
+    summary: Delete a Function from Biobase
+    description: |
+      Delete a Function from the linked Biobase project. This does NOT remove the Function locally.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase functions delete <Function name> [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help                 help for delete
+            --project-ref string   Project ref of the Biobase project.
+      ```
+  - id: biobase-domains
+    title: biobase domains
+    summary: Manage custom domain names for Biobase projects
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-domains-activate
+      - biobase-domains-create
+      - biobase-domains-delete
+      - biobase-domains-get
+      - biobase-domains-reverify
+    options: |-
+      ```sh
+        -h, --help                 help for domains
+            --include-raw-output   Include raw output (useful for debugging).
+            --project-ref string   Project ref of the Biobase project.
+      ```
+  - id: biobase-domains-reverify
+    title: biobase domains reverify
+    summary: Re-verify the custom hostname config for your project.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase domains reverify [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for reverify
+      ```
+  - id: biobase-domains-get
+    title: biobase domains get
+    summary: Get the current custom hostname config.
+    description: |
+      Retrieve the custom hostname config for your project, as stored in the Biobase platform.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase domains get [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for get
+      ```
+  - id: biobase-domains-delete
+    title: biobase domains delete
+    summary: Deletes the custom hostname config for your project.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase domains delete [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for delete
+      ```
+  - id: biobase-domains-create
+    title: biobase domains create
+    summary: Create a custom hostname.
+    description: |-
+      Create a custom hostname for your Biobase project.
+
+      Expects your custom hostname to have a CNAME record to your Biobase project's subdomain.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase domains create [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+            --custom-hostname string   The custom hostname to use for your Biobase project.
+        -h, --help                     help for create
+      ```
+  - id: biobase-domains-activate
+    title: biobase domains activate
+    summary: Activate the custom hostname for a project.
+    description: |-
+      Activates the custom hostname configuration for a project.
+
+      This reconfigures your Biobase project to respond to requests on your custom hostname.
+      After the custom hostname is activated, your project's auth services will no longer function on the Biobase-provisioned subdomain.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase domains activate [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for activate
+      ```
+  - id: biobase-db
+    title: biobase db
+    summary: Manage local Postgres databases
+    tags:
+      - local-dev
+    links: []
+    subcommands:
+      - biobase-db-branch
+      - biobase-db-diff
+      - biobase-db-lint
+      - biobase-db-push
+      - biobase-db-remote
+      - biobase-db-reset
+    options: |-
+      ```sh
+        -h, --help   help for db
+      ```
+  - id: biobase-db-reset
+    title: biobase db reset
+    summary: Resets the local database to current migrations
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase db reset [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for reset
+      ```
+  - id: biobase-db-remote
+    title: biobase db remote
+    summary: Manage remote databases
+    tags: []
+    links: []
+    subcommands:
+      - biobase-db-remote-changes
+      - biobase-db-remote-commit
+    options: |-
+      ```sh
+        -h, --help              help for remote
+        -p, --password string   Password to your remote Postgres database.
+      ```
+  - id: biobase-db-remote-commit
+    title: biobase db remote commit
+    summary: Commit remote changes as a new migration
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase db remote commit [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for commit
+      ```
+  - id: biobase-db-remote-changes
+    title: biobase db remote changes
+    summary: Show changes on the remote database
+    description: Show changes on the remote database since last migration.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase db remote changes [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for changes
+      ```
+  - id: biobase-db-push
+    title: biobase db push
+    summary: Push new migrations to the remote database
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase db push [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+            --dry-run           Print the migrations that would be applied, but don't actually apply them.
+        -h, --help              help for push
+        -p, --password string   Password to your remote Postgres database.
+      ```
+  - id: biobase-db-lint
+    title: biobase db lint
+    summary: Checks local database for typing error
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase db lint [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help             help for lint
+            --level string     Error level to emit. (default "warning")
+        -s, --schema strings   List of schema to include. (default [public])
+      ```
+  - id: biobase-db-diff
+    title: biobase db diff
+    summary: Diffs the local database for schema changes
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase db diff [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -f, --file string      Saves schema diff to a file.
+        -h, --help             help for diff
+            --linked           Diffs local schema against linked project.
+        -s, --schema strings   List of schema to include. (default [public])
+            --use-migra        Use migra to generate schema diff.
+      ```
+  - id: biobase-db-branch
+    title: biobase db branch
+    summary: Manage local database branches
+    description: |
+      Manage local database branches. Each branch is associated with a separate local database. Forking remote databases is NOT supported.
+    tags: []
+    links: []
+    subcommands:
+      - biobase-db-branch-create
+      - biobase-db-branch-delete
+      - biobase-db-branch-list
+      - biobase-db-branch-switch
+    options: |-
+      ```sh
+        -h, --help   help for branch
+      ```
+  - id: biobase-db-branch-switch
+    title: biobase db branch switch
+    summary: Switch the active branch
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase db branch switch <branch name> [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for switch
+      ```
+  - id: biobase-db-branch-list
+    title: biobase db branch list
+    summary: List branches
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase db branch list [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for list
+      ```
+  - id: biobase-db-branch-delete
+    title: biobase db branch delete
+    summary: Delete a branch
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase db branch delete <branch name> [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for delete
+      ```
+  - id: biobase-db-branch-create
+    title: biobase db branch create
+    summary: Create a branch
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase db branch create <branch name> [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help   help for create
+      ```
+  - id: biobase-completion
+    title: biobase completion
+    summary: Generate the autocompletion script for the specified shell
+    description: |
+      Generate the autocompletion script for biobase for the specified shell.
+      See each sub-command's help for details on how to use the generated script.
+    tags:
+      - other-commands
+    links: []
+    subcommands:
+      - biobase-completion-bash
+      - biobase-completion-fish
+      - biobase-completion-powershell
+      - biobase-completion-zsh
+    options: |-
+      ```sh
+        -h, --help   help for completion
+      ```
+  - id: biobase-completion-zsh
+    title: biobase completion zsh
+    summary: Generate the autocompletion script for zsh
+    description: |
+      Generate the autocompletion script for the zsh shell.
+
+      If shell completion is not already enabled in your environment you will need
+      to enable it.  You can execute the following once:
+
+          echo "autoload -U compinit; compinit" >> ~/.zshrc
+
+      To load completions in your current shell session:
+
+          source <(biobase completion zsh); compdef _biobase biobase
+
+      To load completions for every new session, execute once:
+
+      #### Linux:
+
+          biobase completion zsh > "${fpath[1]}/_biobase"
+
+      #### macOS:
+
+          biobase completion zsh > $(brew --prefix)/share/zsh/site-functions/_biobase
+
+      You will need to start a new shell for this setup to take effect.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase completion zsh [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help              help for zsh
+            --no-descriptions   disable completion descriptions
+      ```
+  - id: biobase-completion-powershell
+    title: biobase completion powershell
+    summary: Generate the autocompletion script for powershell
+    description: |
+      Generate the autocompletion script for powershell.
+
+      To load completions in your current shell session:
+
+          biobase completion powershell | Out-String | Invoke-Expression
+
+      To load completions for every new session, add the output of the above command
+      to your powershell profile.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase completion powershell [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help              help for powershell
+            --no-descriptions   disable completion descriptions
+      ```
+  - id: biobase-completion-fish
+    title: biobase completion fish
+    summary: Generate the autocompletion script for fish
+    description: |
+      Generate the autocompletion script for the fish shell.
+
+      To load completions in your current shell session:
+
+          biobase completion fish | source
+
+      To load completions for every new session, execute once:
+
+          biobase completion fish > ~/.config/fish/completions/biobase.fish
+
+      You will need to start a new shell for this setup to take effect.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase completion fish [flags]
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help              help for fish
+            --no-descriptions   disable completion descriptions
+      ```
+  - id: biobase-completion-bash
+    title: biobase completion bash
+    summary: Generate the autocompletion script for bash
+    description: |
+      Generate the autocompletion script for the bash shell.
+
+      This script depends on the 'bash-completion' package.
+      If it is not installed already, you can install it via your OS's package manager.
+
+      To load completions in your current shell session:
+
+          source <(biobase completion bash)
+
+      To load completions for every new session, execute once:
+
+      #### Linux:
+
+          biobase completion bash > /etc/bash_completion.d/biobase
+
+      #### macOS:
+
+          biobase completion bash > $(brew --prefix)/etc/bash_completion.d/biobase
+
+      You will need to start a new shell for this setup to take effect.
+    tags: []
+    links: []
+    usage: |-
+      ```sh
+      biobase completion bash
+      ```
+    subcommands: []
+    options: |-
+      ```sh
+        -h, --help              help for bash
+            --no-descriptions   disable completion descriptions
+      ```

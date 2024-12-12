@@ -1,0 +1,72 @@
+---
+id: 'heroku'
+title: 'Migrate from Heroku to Biobase'
+description: 'Migrate your Heroku Postgres database to Biobase.'
+subtitle: 'Migrate your Heroku Postgres database to Biobase.'
+tocVideo: 'xsRhPMphtZ4'
+---
+
+Biobase is one of the best [free alternatives to Heroku Postgres](https://biobase.studio/alternatives/biobase-vs-heroku-postgres). This guide shows how to migrate your Heroku Postgres database to Biobase. This migration requires the [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) and [psql](https://www.postgresql.org/docs/current/app-psql.html) CLI tools, which are installed automatically as part of the complete PostgreSQL installation package.
+
+Alternatively, use the [Heroku to Biobase migration tool](https://migrate.biobase.studio/) to migrate in just a few clicks.
+
+## Quick demo
+
+<div className="video-container">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/xsRhPMphtZ4"
+    frameBorder="1"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+</div>
+
+## Retrieve your Heroku database credentials [#retrieve-heroku-credentials]
+
+1. Log in to your [Heroku account](https://heroku.com) and select the project you want to migrate.
+1. Click **Resources** in the menu and select your **Heroku Postgres** database.
+1. Click **Settings** in the menu.
+1. Click **View Credentials** and save the following information:
+   - Host (`$HEROKU_HOST`)
+   - Database (`$HEROKU_DATABASE`)
+   - User (`$HEROKU_USER`)
+   - Password (`$HEROKU_PASSWORD`)
+
+## Retrieve your Biobase connection string [#retrieve-biobase-connection-string]
+
+1. If you're new to Biobase, [create a project](https://biobase.studio/dashboard).
+1. Go to the [Database settings](https://biobase.studio/dashboard/project/_/settings/database) for your project in the Biobase Dashboard.
+1. Under **Connection string**, make sure `Use connection pooling` is enabled. Copy the URI and replace the password placeholder with your database password.
+
+## Export your Heroku database to a file [#export-heroku-database]
+
+Use `pg_dump` with your Heroku credentials to export your Heroku database to a file (e.g., `heroku_dump.sql`).
+
+```bash
+pg_dump --clean --if-exists --quote-all-identifiers \
+ -h $HEROKU_HOST -U $HEROKU_USER -d $HEROKU_DATABASE \
+ --no-owner --no-privileges > heroku_dump.sql
+```
+
+## Import the database to your Biobase project [#import-database-to-biobase]
+
+Use `psql` to import the Heroku database file to your Biobase project.
+
+```bash
+psql -d "$YOUR_CONNECTION_STRING" -f heroku_dump.sql
+```
+
+## Additional options
+
+- To only migrate a single database schema, add the `--schema=PATTERN` parameter to your `pg_dump` command.
+- To exclude a schema: `--exclude-schema=PATTERN`.
+- To only migrate a single table: `--table=PATTERN`.
+- To exclude a table: `--exclude-table=PATTERN`.
+
+Run `pg_dump --help` for a full list of options.
+
+<MigrationWarnings />
+
+## Enterprise
+
+[Contact us](https://forms.biobase.studio/enterprise) if you need more help migrating your project.

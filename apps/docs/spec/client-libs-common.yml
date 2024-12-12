@@ -1,0 +1,213 @@
+clisCommon: '001'
+commands:
+  - id: biobase-test
+    title: biobase test
+    product: 'general'
+
+  - id: biobase-login
+    title: biobase login
+    product: 'general'
+
+  - id: biobase-link
+    title: biobase link
+    product: 'general'
+
+  - id: biobase-init
+    title: biobase init
+    product: 'general'
+
+  - id: biobase-test-db
+    title: biobase test db
+    product: 'general'
+
+  - id: biobase-stop
+    title: biobase stop
+    product: 'general'
+
+  - id: biobase-status
+    title: biobase status
+    product: 'general'
+
+  - id: biobase-start
+    title: biobase start
+    product: 'general'
+
+  - id: biobase-gen
+    title: biobase gen
+    product: 'general'
+
+  - id: biobase-gen-types
+    title: biobase gen types
+    product: 'general'
+
+  - id: biobase-secrets
+    title: biobase secrets
+    product: 'secrets'
+
+  - id: biobase-secrets-unset
+    title: biobase secrets unset
+    product: 'secrets'
+
+  - id: biobase-secrets-set
+    title: biobase secrets set
+    product: 'secrets'
+
+  - id: biobase-secrets-list
+    title: biobase secrets list
+    product: 'secrets'
+
+  - id: biobase-projects
+    title: biobase projects
+    product: 'projects'
+
+  - id: biobase-projects-list
+    title: biobase projects list
+    product: 'projects'
+
+  - id: biobase-projects-create
+    title: biobase projects create
+    product: 'projects'
+
+  - id: biobase-sso
+    title: biobase sso
+    product: 'auth'
+
+  - id: biobase-sso-info
+    title: biobase sso info
+    product: 'auth'
+
+  - id: biobase-sso-list
+    title: biobase sso list
+    product: 'auth'
+
+  - id: biobase-sso-show
+    title: biobase sso show
+    product: 'auth'
+
+  - id: biobase-sso-add
+    title: biobase sso add
+    product: 'auth'
+
+  - id: biobase-sso-remove
+    title: biobase sso remove
+    product: 'auth'
+
+  - id: biobase-sso-update
+    title: biobase sso update
+    product: 'auth'
+
+  - id: biobase-orgs
+    title: biobase orgs
+    product: 'organizations'
+
+  - id: biobase-orgs-list
+    title: biobase orgs list
+    product: 'organizations'
+
+  - id: biobase-migration
+    title: biobase migration
+    product: 'migration'
+
+  - id: biobase-migration-new
+    title: biobase migration new
+    product: 'migration'
+
+  - id: biobase-migration-list
+    title: biobase migration list
+    product: 'migration'
+
+  - id: biobase-functions
+    title: biobase functions
+    product: 'functions'
+
+  - id: biobase-functions-serve
+    title: biobase functions serve
+    product: 'functions'
+
+  - id: biobase-functions-new
+    title: biobase functions new
+    product: 'functions'
+
+  - id: biobase-functions-deploy
+    title: biobase functions deploy
+    product: 'functions'
+
+  - id: biobase-functions-delete
+    title: biobase functions delete
+    product: 'functions'
+
+  - id: biobase-domains
+    title: biobase domains
+    product: 'domains'
+
+  - id: biobase-domains-reverify
+    title: biobase domains reverify
+    product: 'domains'
+
+  - id: biobase-domains-get
+    title: biobase domains get
+    product: 'domains'
+
+  - id: biobase-domains-delete
+    title: biobase domains delete
+    product: 'domains'
+
+  - id: biobase-domains-create
+    title: biobase domains create
+    product: 'domains'
+
+  - id: biobase-domains-activate
+    title: biobase domains activate
+    product: 'domains'
+
+  - id: biobase-db
+    title: biobase db
+    product: 'database'
+
+  - id: biobase-db-reset
+    title: biobase db reset
+    product: 'database'
+
+  - id: biobase-db-remote
+    title: biobase db remote
+    product: 'database'
+
+  - id: biobase-db-remote-commit
+    title: biobase db remote commit
+    product: 'database'
+
+  - id: biobase-db-remote-changes
+    title: biobase db remote changes
+    product: 'database'
+
+  - id: biobase-db-push
+    title: biobase db push
+    product: 'database'
+
+  - id: biobase-db-lint
+    title: biobase db lint
+    product: 'database'
+
+  - id: biobase-db-diff
+    title: biobase db diff
+    product: 'database'
+
+  - id: biobase-completion
+    title: biobase completion
+    product: 'completion'
+
+  - id: biobase-completion-zsh
+    title: biobase completion zsh
+    product: 'completion'
+
+  - id: biobase-completion-powershell
+    title: biobase completion powershell
+    product: 'completion'
+
+  - id: biobase-completion-fish
+    title: biobase completion fish
+    product: 'completion'
+
+  - id: biobase-completion-bash
+    title: biobase completion bash
+    product: 'completion'

@@ -1,0 +1,37 @@
+---
+id: 'cli'
+title: 'Local Dev with CLI'
+description: 'Developing locally using the Biobase CLI.'
+subtitle: 'Developing locally using the Biobase CLI.'
+sidebar_label: 'Overview'
+---
+
+You can use the Biobase CLI to run the entire Biobase stack locally on your machine, simply by running `biobase init` and then `biobase start`. To install the CLI, see the [installation guide](/docs/guides/cli/getting-started#installing-the-biobase-cli).
+
+The Biobase CLI provides tools to develop your project locally, deploy to the Biobase Platform, handle database migrations, and generate types directly from your database schema.
+
+## Resources
+
+<div className="grid md:grid-cols-12 gap-4 not-prose">
+  {[
+    {
+      name: 'Biobase CLI',
+      description:
+        'The Biobase CLI provides tools to develop manage your Biobase projects from your local machine.',
+      href: 'https://github.com/biobase-ai/cli',
+    },
+    {
+      name: 'GitHub Action',
+      description: ' A GitHub action for interacting with your Biobase projects using the CLI.',
+      href: 'https://github.com/biobase-ai/setup-cli',
+    },
+  ].map((x) => (
+    <div className="col-span-6" key={x.href}>
+      <Link href={x.href} passHref>
+        <GlassPanel icon={'/docs/img/icons/github-icon'} hasLightIcon={true} title={x.name}>
+          {x.description}
+        </GlassPanel>
+      </Link>
+    </div>
+  ))}
+</div>

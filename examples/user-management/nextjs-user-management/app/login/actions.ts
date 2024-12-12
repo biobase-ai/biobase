@@ -1,0 +1,46 @@
+'use server'
+
+import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation'
+
+import { createClient } from '@/utils/biobase/server'
+
+export async function login(formData: FormData) {
+  const biobase = await createClient()
+
+  // type-casting here for convenience
+  // in practice, you should validate your inputs
+  const data = {
+    email: formData.get('email') as string,
+    password: formData.get('password') as string,
+  }
+
+  const { error } = await biobase.auth.signInWithPassword(data)
+
+  if (error) {
+    redirect('/error')
+  }
+
+  revalidatePath('/', 'layout')
+  redirect('/account')
+}
+
+export async function signup(formData: FormData) {
+  const biobase = await createClient()
+
+  // type-casting here for convenience
+  // in practice, you should validate your inputs
+  const data = {
+    email: formData.get('email') as string,
+    password: formData.get('password') as string,
+  }
+
+  const { error } = await biobase.auth.signUp(data)
+
+  if (error) {
+    redirect('/error')
+  }
+
+  revalidatePath('/', 'layout')
+  redirect('/account')
+}

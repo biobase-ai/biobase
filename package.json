@@ -1,0 +1,87 @@
+{
+  "name": "biobase",
+  "description": "The Biobase Studio Platform and CLI.",
+  "version": "0.0.1",
+  "author": "Biobase.AI, Inc.",
+  "license": "Apache-2.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "tests",
+    "playwright-tests",
+    "packages/*"
+  ],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "pnpm run build",
+    "clean": "pnpm -r exec rm -rf node_modules dist .next",
+    "dev": "pnpm --parallel --filter \"./apps/**\" dev",
+    "build": "pnpm --parallel --filter \"./apps/**\" build",
+    "test": "pnpm --parallel test",
+    "lint": "pnpm --parallel lint",
+    "format": "pnpm prettier --write .",
+    "typecheck": "pnpm --parallel typecheck",
+    "docker:dev": "cd docker && docker compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml up --renew-anon-volumes",
+    "docker:up": "cd docker && docker compose up",
+    "docker:down": "cd docker && docker compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml down --remove-orphans",
+    "docker:remove": "cd docker && docker compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml rm -vfs",
+    "test:docs": "turbo run test --filter=docs",
+    "test:ui": "turbo run test --filter=ui",
+    "test:ui-patterns": "turbo run test --filter=ui-patterns",
+    "test:studio": "turbo run test --filter=studio",
+    "test:studio:watch": "turbo run test --filter=studio -- watch",
+    "test:playwright": "npm --prefix playwright-tests run test",
+    "perf:kong": "ab -t 5 -c 20 -T application/json http://localhost:8000/",
+    "perf:meta": "ab -t 5 -c 20 -T application/json http://localhost:5555/tables",
+    "generate:types": "biobase gen types typescript --local > ./biobase/functions/common/database-types.ts",
+    "api:codegen": "cd packages/api-types && npm run codegen"
+  },
+  "devDependencies": {
+    "@radix-ui/react-aspect-ratio": "^1.1.0",
+    "@radix-ui/react-avatar": "^1.1.1",
+    "@radix-ui/react-checkbox": "^1.1.2",
+    "@radix-ui/react-hover-card": "^1.1.2",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-menubar": "^1.1.2",
+    "@radix-ui/react-navigation-menu": "^1.2.1",
+    "@radix-ui/react-progress": "^1.1.0",
+    "@radix-ui/react-radio-group": "^1.2.1",
+    "@radix-ui/react-scroll-area": "^1.2.1",
+    "@radix-ui/react-slider": "^1.2.1",
+    "@radix-ui/react-switch": "^1.1.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "input-otp": "^1.4.1",
+    "postcss": "^8.4.49",
+    "prettier": "^4.0.0-alpha.8",
+    "prettier-plugin-sql-cst": "^0.11.0",
+    "react-day-picker": "^9.4.3",
+    "react-resizable-panels": "^2.1.7",
+    "rimraf": "^6.0.0",
+    "sass": "^1.82.0",
+    "supabase": "^1.151.1",
+    "tailwindcss": "^3.4.16",
+    "turbo": "2.0.4",
+    "vaul": "^1.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biobase-ai/biobase.git"
+  },
+  "engines": {
+    "npm": "^10.0.0",
+    "node": ">= 20"
+  },
+  "keywords": [
+    "postgres",
+    "firebase",
+    "storage",
+    "functions",
+    "database",
+    "auth"
+  ],
+  "packageManager": "pnpm@8.15.1",
+  "dependencies": {
+    "tsx": "^4.19.2"
+  }
+}

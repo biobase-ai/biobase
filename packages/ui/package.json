@@ -1,0 +1,28 @@
+{
+  "name": "ui",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.24",
+    "@types/react-dom": "^18.2.8",
+    "eslint": "^8.50.0",
+    "eslint-config-biobase": "*",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  }
+}

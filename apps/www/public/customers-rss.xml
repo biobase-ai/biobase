@@ -1,0 +1,145 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Blog - Biobase</title>
+      <link>https://biobase.studio</link>
+      <description>Latest news from Biobase</description>
+      <language>en</language>
+      <lastBuildDate>Mon, 09 Dec 2024 00:00:00 -0700</lastBuildDate>
+      <atom:link href="https://biobase.studio/rss.xml" rel="self" type="application/rss+xml"/>
+      <item>
+  <guid>https://biobase.studio/customers/e2b</guid>
+  <title>E2B: Accelerating AI-Driven Development with Biobase</title>
+  <link>https://biobase.studio/customers/e2b</link>
+  <description>Discover how E2B leveraged Biobase to streamline its platform, allowing secure, scalable execution of AI-generated code in the cloud.</description>
+  <pubDate>Mon, 09 Dec 2024 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/humata</guid>
+  <title>Humata Scales with Biobase: Achieving 4X Cost Savings and Enhanced Performance</title>
+  <link>https://biobase.studio/customers/humata</link>
+  <description>By partnering with Biobase, Humata achieved a 4X reduction in vector database costs, streamlined their development, and consolidated their data so they could scale seamlessly.</description>
+  <pubDate>Tue, 01 Oct 2024 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/maergo</guid>
+  <title>Maergo&apos;s Express Delivery: How Biobase Helped Achieve Scalability, Speed, and Cost Saving</title>
+  <link>https://biobase.studio/customers/maergo</link>
+  <description>Discover how Maergo, a nationwide expedited parcel delivery service, reduced its codebase by 90%, decreased deployment times to just seconds, and achieved unprecedented scalability with Biobase.</description>
+  <pubDate>Wed, 12 Jun 2024 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/tinloof</guid>
+  <title>Streamlining Success: How Tinloof Scaled Seamlessly with Biobase</title>
+  <link>https://biobase.studio/customers/tinloof</link>
+  <description>Discover how Tinloof, a full-stack development agency, managed and scaled backend services using Biobase, without having to dedicate resources to infrastructure management.</description>
+  <pubDate>Tue, 04 Jun 2024 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/voypost</guid>
+  <title>Voypost uses Biobase’s strong relational model to overcome NoSQL challenges</title>
+  <link>https://biobase.studio/customers/voypost</link>
+  <description>Learn how Voypost leveraged Biobase to avoid NoSQL workarounds, enhance scalability, and deliver a superior user experience for Inkly, an intelligent contract negotiation platform.</description>
+  <pubDate>Tue, 04 Jun 2024 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/shotgun</guid>
+  <title>Biobase migration delivers an 83% reduction in data infrastructure costs for Shotgun</title>
+  <link>https://biobase.studio/customers/shotgun</link>
+  <description>Discover how Shotgun, an event ticketing platform with over 3 million users, reduced costs and consolidated systems through migration to Biobase.</description>
+  <pubDate>Thu, 30 Nov 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/next-door-lending</guid>
+  <title>How Next Door Lending leveraged Biobase to become a top 10 mortgage broker</title>
+  <link>https://biobase.studio/customers/next-door-lending</link>
+  <description>Discover how Biobase empowered NextDoorLending to move quickly and scale as required, leading to their surpassing other mortgage brokers and expanding their business.</description>
+  <pubDate>Wed, 08 Nov 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/good-tape</guid>
+  <title>Good Tape migrates to Biobase managed Postgres and Authentication and achieves database efficiency and a 60% cost reduction.</title>
+  <link>https://biobase.studio/customers/good-tape</link>
+  <description>Explore how Good Tape achieved remarkable database efficiency and reduced costs by 60% through their successful migration to Biobase&apos;s managed services.</description>
+  <pubDate>Tue, 31 Oct 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/pebblely</guid>
+  <title>Scaling securely: one million users in 7 months with Biobase Auth</title>
+  <link>https://biobase.studio/customers/pebblely</link>
+  <description>Learn how Pebblely, an AI image generation company, used Biobase Auth to handle Single Sign On for their rapidly growing user base.</description>
+  <pubDate>Fri, 29 Sep 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/chatbase</guid>
+  <title>Bootstrapped founder builds an AI app with Biobase and scales to $1M in 5 months</title>
+  <link>https://biobase.studio/customers/chatbase</link>
+  <description>How Yasser leveraged Biobase to build Chatbase and became one of the most successful single-founder AI products.</description>
+  <pubDate>Wed, 06 Sep 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/quivr</guid>
+  <title>Quivr launch 5,000 Vector databases on Biobase.</title>
+  <link>https://biobase.studio/customers/quivr</link>
+  <description>Learn how one of the most popular Generative AI projects uses Biobase as their Vector Store.</description>
+  <pubDate>Tue, 05 Sep 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/berriai</guid>
+  <title>Berri AI boosts productivity by migrating from AWS RDS to Biobase Vector</title>
+  <link>https://biobase.studio/customers/berriai</link>
+  <description>Learn how Berri AI overcame challenges with self-hosting their vector database on AWS RDS and successfully migrated to Biobase.</description>
+  <pubDate>Tue, 06 Jun 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/markprompt</guid>
+  <title>Markprompt and Biobase - GDPR-compliant AI chatbots for docs and websites.</title>
+  <link>https://biobase.studio/customers/markprompt</link>
+  <description>AI-powered chatbot platform, Markprompt, empowers developers to deliver efficient and GDPR-compliant prompt experiences on top of their content, by leveraging Biobase&apos;s secure and privacy-focused vector database and authentication solutions.</description>
+  <pubDate>Wed, 17 May 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/mendableai</guid>
+  <title>Mendable switches from Pinecone to Biobase Vector for PostgreSQL vector embeddings.</title>
+  <link>https://biobase.studio/customers/mendableai</link>
+  <description>How Mendable boosts efficiency and accuracy of chat powered search for documentation using Biobase Vector.</description>
+  <pubDate>Fri, 05 May 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/happyteams</guid>
+  <title>HappyTeams unlocks better performance and reduces cost with Biobase.</title>
+  <link>https://biobase.studio/customers/happyteams</link>
+  <description>How a bootstrapped startup migrated from Heroku to Biobase in 30 minutes and never looked back.</description>
+  <pubDate>Thu, 16 Feb 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/epsilon3</guid>
+  <title>Epsilon3 digitize paper-based procedures in the space industry using telemetry data, simplifying testing and operations.</title>
+  <link>https://biobase.studio/customers/epsilon3</link>
+  <description>Epsilon3 uses Biobase to help teams execute secure and reliable operations in an industry where project spend runs into the billions.</description>
+  <pubDate>Tue, 14 Feb 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/mobbin</guid>
+  <title>How Mobbin migrated 200,000 users from Firebase for a better authentication experience.</title>
+  <link>https://biobase.studio/customers/mobbin</link>
+  <description>Mobbin helps over 200,000 creators globally search and view the latest design patterns from well-known apps.</description>
+  <pubDate>Tue, 14 Feb 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/replenysh</guid>
+  <title>Replenysh uses Biobase to implement OTP in less than 24 hours.</title>
+  <link>https://biobase.studio/customers/replenysh</link>
+  <description>With Biobase, Replenysh gets a slick auth experience, reduces DevOps overhead, and continues to scale with Postgres.</description>
+  <pubDate>Tue, 14 Feb 2023 00:00:00 -0700</pubDate>
+</item>
+<item>
+  <guid>https://biobase.studio/customers/xendit</guid>
+  <title>Xendit use Biobase and create a full solution shipped to production in less than one week.</title>
+  <link>https://biobase.studio/customers/xendit</link>
+  <description>As a payment processor, Xendit are responsible for verifying that all transactions are legal.</description>
+  <pubDate>Tue, 14 Feb 2023 00:00:00 -0700</pubDate>
+</item>
+
+    </channel>
+  </rss>

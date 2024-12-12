@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "name": "www",
+      "path": "./"
+    },
+    {
+      "name": "biobase-functions",
+      "path": "biobase/functions"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "node_modules/": true,
+      "biobase/functions/": true
+    }
+  }
+}

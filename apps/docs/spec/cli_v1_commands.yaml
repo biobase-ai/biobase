@@ -1,0 +1,3758 @@
+clispec: '001'
+info:
+  id: cli
+  version: 2.0.0
+  title: Biobase CLI
+  language: sh
+  source: https://github.com/biobase-ai/cli
+  bugs: https://github.com/biobase-ai/cli/issues
+  spec: https://github.com/biobase-ai/spec/cli_v1_commands.yaml
+  description: |
+    Biobase CLI provides you with tools to develop your application locally, and deploy your application to the Biobase platform.
+  tags:
+    - id: quick-start
+      title: Quick Start
+    - id: local-dev
+      title: Local Development
+    - id: management-api
+      title: Management APIs
+    - id: other-commands
+      title: Additional Commands
+flags:
+  - id: create-ticket
+    name: --create-ticket
+    description: create a support ticket for any CLI error
+    default_value: 'false'
+  - id: debug
+    name: --debug
+    description: output debug logs to stderr
+    default_value: 'false'
+  - id: dns-resolver
+    name: --dns-resolver <[ native | https ]>
+    description: lookup domain names using the specified resolver
+    default_value: native
+    accepted_values:
+      - id: native
+        name: native
+        type: '[ native | https ]'
+      - id: https
+        name: https
+        type: '[ native | https ]'
+  - id: experimental
+    name: --experimental
+    description: enable experimental features
+    default_value: 'false'
+  - id: help
+    name: -h, --help
+    description: help for biobase
+    default_value: 'false'
+  - id: network-id
+    name: --network-id <string>
+    description: use the specified docker network instead of a generated one
+    default_value: ''
+  - id: output
+    name: --output <[ pretty | json | toml | yaml ]>
+    description: output format of status variables
+    default_value: pretty
+    accepted_values:
+      - id: pretty
+        name: pretty
+        type: '[ pretty | json | toml | yaml ]'
+      - id: json
+        name: json
+        type: '[ pretty | json | toml | yaml ]'
+      - id: toml
+        name: toml
+        type: '[ pretty | json | toml | yaml ]'
+      - id: yaml
+        name: yaml
+        type: '[ pretty | json | toml | yaml ]'
+  - id: workdir
+    name: --workdir <string>
+    description: path to a Biobase project directory
+    default_value: ''
+commands:
+  - id: biobase-vanity-subdomains
+    title: biobase vanity-subdomains
+    summary: Manage vanity subdomains for Biobase projects
+    description: |-
+      Manage vanity subdomains for Biobase projects.
+
+      Usage of vanity subdomains and custom domains is mutually exclusive.
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-vanity-subdomains-activate
+      - biobase-vanity-subdomains-check-availability
+      - biobase-vanity-subdomains-delete
+      - biobase-vanity-subdomains-get
+    flags: []
+  - id: biobase-vanity-subdomains-get
+    title: biobase vanity-subdomains get
+    summary: Get the current vanity subdomain
+    tags: []
+    links: []
+    usage: biobase vanity-subdomains get
+    subcommands: []
+    flags:
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-vanity-subdomains-delete
+    title: biobase vanity-subdomains delete
+    summary: Deletes a project's vanity subdomain
+    description: |
+      Deletes the vanity subdomain for a project, and reverts to using the project ref for routing.
+    tags: []
+    links: []
+    usage: biobase vanity-subdomains delete
+    subcommands: []
+    flags:
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-vanity-subdomains-check-availability
+    title: biobase vanity-subdomains check-availability
+    summary: Checks if a desired subdomain is available for use
+    tags: []
+    links: []
+    usage: biobase vanity-subdomains check-availability [flags]
+    subcommands: []
+    flags:
+      - id: desired-subdomain
+        name: --desired-subdomain <string>
+        description: |
+          The desired vanity subdomain to use for your Biobase project.
+        default_value: ''
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-vanity-subdomains-activate
+    title: biobase vanity-subdomains activate
+    summary: Activate a vanity subdomain
+    description: |
+      Activate a vanity subdomain for your Biobase project.
+
+      This reconfigures your Biobase project to respond to requests on your vanity subdomain.
+      After the vanity subdomain is activated, your project's auth services will no longer function on the {project-ref}.{biobase-domain} hostname.
+    tags: []
+    links: []
+    usage: biobase vanity-subdomains activate [flags]
+    subcommands: []
+    flags:
+      - id: desired-subdomain
+        name: --desired-subdomain <string>
+        description: |
+          The desired vanity subdomain to use for your Biobase project.
+        default_value: ''
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-unlink
+    title: biobase unlink
+    summary: Unlink a Biobase project
+    tags:
+      - local-dev
+    links: []
+    usage: biobase unlink
+    subcommands: []
+    flags: []
+  - id: biobase-test
+    title: biobase test
+    summary: Run tests on local Biobase containers
+    tags:
+      - local-dev
+    links: []
+    subcommands:
+      - biobase-test-db
+      - biobase-test-new
+    flags: []
+  - id: biobase-test-new
+    title: biobase test new
+    summary: Create a new test file
+    tags: []
+    links: []
+    usage: biobase test new <name> [flags]
+    subcommands: []
+    flags:
+      - id: template
+        name: -t, --template <[ pgtap ]>
+        description: Template framework to generate.
+        default_value: pgtap
+        accepted_values:
+          - id: pgtap
+            name: pgtap
+            type: '[ pgtap ]'
+  - id: biobase-test-db
+    title: biobase test db
+    summary: Tests local database with pgTAP
+    description: |2
+
+      Executes pgTAP tests against the local database.
+
+      Requires the local development stack to be started by running `biobase start`.
+
+      Runs `pg_prove` in a container with unit test files volume mounted from `biobase/tests` directory. The test file can be suffixed by either `.sql` or `.pg` extension.
+
+      Since each test is wrapped in its own transaction, it will be individually rolled back regardless of success or failure.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase test db
+        response: |
+          /tmp/biobase/tests/nested/order_test.pg .. ok
+          /tmp/biobase/tests/pet_test.sql .......... ok
+          All tests successful.
+          Files=2, Tests=2,  6 wallclock secs ( 0.03 usr  0.01 sys +  0.05 cusr  0.02 csys =  0.11 CPU)
+          Result: PASS
+    tags: []
+    links: []
+    usage: biobase test db [path] ... [flags]
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Tests the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Runs pgTAP tests on the linked project.
+        default_value: 'false'
+      - id: local
+        name: --local
+        description: Runs pgTAP tests on the local database.
+        default_value: 'true'
+  - id: biobase-storage
+    title: biobase storage
+    summary: Manage Biobase Storage objects
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-storage-cp
+      - biobase-storage-ls
+      - biobase-storage-mv
+      - biobase-storage-rm
+    flags: []
+  - id: biobase-storage-rm
+    title: biobase storage rm
+    summary: Remove objects by file path
+    tags: []
+    links: []
+    usage: biobase storage rm <file> ... [flags]
+    subcommands: []
+    flags:
+      - id: recursive
+        name: -r, --recursive
+        description: Recursively remove a directory.
+        default_value: 'false'
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: linked
+        name: --linked
+        description: Connects to Storage API of the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Connects to Storage API of the local database.
+        default_value: 'false'
+  - id: biobase-storage-mv
+    title: biobase storage mv
+    summary: Move objects from src to dst path
+    tags: []
+    links: []
+    usage: biobase storage mv <src> <dst> [flags]
+    subcommands: []
+    flags:
+      - id: recursive
+        name: -r, --recursive
+        description: Recursively move a directory.
+        default_value: 'false'
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: linked
+        name: --linked
+        description: Connects to Storage API of the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Connects to Storage API of the local database.
+        default_value: 'false'
+  - id: biobase-storage-ls
+    title: biobase storage ls
+    summary: List objects by path prefix
+    tags: []
+    links: []
+    usage: biobase storage ls [path] [flags]
+    subcommands: []
+    flags:
+      - id: recursive
+        name: -r, --recursive
+        description: Recursively list a directory.
+        default_value: 'false'
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: linked
+        name: --linked
+        description: Connects to Storage API of the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Connects to Storage API of the local database.
+        default_value: 'false'
+  - id: biobase-storage-cp
+    title: biobase storage cp
+    summary: Copy objects from src to dst path
+    tags: []
+    links: []
+    usage: biobase storage cp <src> <dst> [flags]
+    subcommands: []
+    flags:
+      - id: cache-control
+        name: --cache-control <string>
+        description: Custom Cache-Control header for HTTP upload.
+        default_value: max-age=3600
+      - id: content-type
+        name: --content-type <string>
+        description: Custom Content-Type header for HTTP upload.
+        default_value: auto-detect
+      - id: jobs
+        name: -j, --jobs <uint>
+        description: Maximum number of parallel jobs.
+        default_value: '1'
+      - id: recursive
+        name: -r, --recursive
+        description: Recursively copy a directory.
+        default_value: 'false'
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: linked
+        name: --linked
+        description: Connects to Storage API of the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Connects to Storage API of the local database.
+        default_value: 'false'
+  - id: biobase-stop
+    title: biobase stop
+    summary: Stop all local Biobase containers
+    description: |2-
+
+      Stops the Biobase local development stack.
+
+      Requires `biobase/config.toml` to be created in your current working directory by running `biobase init`.
+
+      All Docker resources are maintained across restarts.  Use `--no-backup` flag to reset your local development data between restarts.
+
+      Use the `--all` flag to stop all local Biobase projects instances on the machine. Use with caution with `--no-backup` as it will delete all biobase local projects data.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase stop
+        response: |
+          Stopped biobase local development setup.
+          Local data are backed up to docker volume.
+      - id: clean-up
+        name: Clean up local data after stopping
+        code: biobase stop --no-backup
+        response: |
+          Stopped biobase local development setup.
+    tags:
+      - local-dev
+    links: []
+    usage: biobase stop [flags]
+    subcommands: []
+    flags:
+      - id: all
+        name: --all
+        description: |
+          Stop all local Biobase instances from all projects across the machine.
+        default_value: 'false'
+      - id: no-backup
+        name: --no-backup
+        description: Deletes all data volumes after stopping.
+        default_value: 'false'
+      - id: project-id
+        name: --project-id <string>
+        description: Local project ID to stop.
+        default_value: ''
+  - id: biobase-status
+    title: biobase status
+    summary: Show status of local Biobase containers
+    description: |2
+
+      Shows status of the Biobase local development stack.
+
+      Requires the local development stack to be started by running `biobase start` or `biobase db start`.
+
+      You can export the connection parameters for [initializing supabase-js](https://biobase.studio/docs/reference/javascript/initializing) locally by specifying the `-o env` flag. Supported parameters include `JWT_SECRET`, `ANON_KEY`, and `SERVICE_ROLE_KEY`.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase status
+        response: |
+          biobase local development setup is running.
+
+                   API URL: http://127.0.0.1:54321
+               GraphQL URL: http://127.0.0.1:54321/graphql/v1
+                    DB URL: postgresql://postgres:postgres@127.0.0.1:54322/postgres
+                Studio URL: http://127.0.0.1:54323
+              Inbucket URL: http://127.0.0.1:54324
+                JWT secret: super-secret-jwt-token-with-at-least-32-characters-long
+                  anon key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0
+          service_role key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU
+      - id: output-env
+        name: Format status as environment variables
+        code: biobase status -o env
+        response: |
+          ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0"
+          API_URL="http://127.0.0.1:54321"
+          DB_URL="postgresql://postgres:postgres@127.0.0.1:54322/postgres"
+          GRAPHQL_URL="http://127.0.0.1:54321/graphql/v1"
+          INBUCKET_URL="http://127.0.0.1:54324"
+          JWT_SECRET="super-secret-jwt-token-with-at-least-32-characters-long"
+          SERVICE_ROLE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU"
+          STUDIO_URL="http://127.0.0.1:54323"
+      - id: output-custom-name
+        name: Customize the names of exported variables
+        code: biobase status -o env --override-name auth.anon_key=BIOBASE_ANON_KEY --override-name auth.service_role_key=BIOBASE_SERVICE_KEY
+        response: |
+          Stopped services: [biobase_inbucket_cli biobase_rest_cli biobase_studio_cli]
+          BIOBASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0"
+          DB_URL="postgresql://postgres:postgres@127.0.0.1:54322/postgres"
+          GRAPHQL_URL="http://127.0.0.1:54321/graphql/v1"
+          JWT_SECRET="super-secret-jwt-token-with-at-least-32-characters-long"
+          BIOBASE_SERVICE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU"
+    tags:
+      - local-dev
+    links: []
+    usage: biobase status [flags]
+    subcommands: []
+    flags:
+      - id: output
+        name: -o, --output <[ env | pretty | json | toml | yaml ]>
+        description: Output format of status variables.
+        default_value: pretty
+        accepted_values:
+          - id: env
+            name: env
+            type: '[ env | pretty | json | toml | yaml ]'
+          - id: pretty
+            name: pretty
+            type: '[ env | pretty | json | toml | yaml ]'
+          - id: json
+            name: json
+            type: '[ env | pretty | json | toml | yaml ]'
+          - id: toml
+            name: toml
+            type: '[ env | pretty | json | toml | yaml ]'
+          - id: yaml
+            name: yaml
+            type: '[ env | pretty | json | toml | yaml ]'
+      - id: override-name
+        name: --override-name <strings>
+        description: Override specific variable names.
+        default_value: '[]'
+  - id: biobase-start
+    title: biobase start
+    summary: Start containers for Biobase local development
+    description: |2
+
+      Starts the Biobase local development stack.
+
+      Requires `biobase/config.toml` to be created in your current working directory by running `biobase init`.
+
+      All service containers are started by default. You can exclude those not needed by passing in `-x` flag. To exclude multiple containers, either pass in a comma separated string, such as `-x gotrue,imgproxy`, or specify `-x` flag multiple times.
+
+      > It is recommended to have at least 7GB of RAM to start all services.
+
+      Health checks are automatically added to verify the started containers. Use `--ignore-health-check` flag to ignore these errors.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase start
+        response: |
+          Creating custom roles biobase/roles.sql...
+          Applying migration 20220810154536_employee.sql...
+          Seeding data biobase/seed.sql...
+          Started biobase local development setup.
+      - id: without-studio
+        name: Start containers without studio and imgproxy
+        code: biobase start -x studio,imgproxy
+        response: |
+          Excluding container: biobase/studio:20221214-4eecc99
+          Excluding container: darthsim/imgproxy:v3.8.0
+          Started biobase local development setup.
+      - id: ignore-health-check
+        name: Ignore service health checks
+        code: biobase start --ignore-health-check
+        response: |
+          service not healthy: [biobase_storage_cli]
+          Started biobase local development setup.
+    tags:
+      - local-dev
+    links: []
+    usage: biobase start [flags]
+    subcommands: []
+    flags:
+      - id: exclude
+        name: -x, --exclude <strings>
+        description: |
+          Names of containers to not start. [gotrue,realtime,storage-api,imgproxy,kong,inbucket,postgrest,postgres-meta,studio,edge-runtime,logflare,vector,supavisor]
+        default_value: '[]'
+      - id: ignore-health-check
+        name: --ignore-health-check
+        description: Ignore unhealthy services and exit 0
+        default_value: 'false'
+  - id: biobase-sso
+    title: biobase sso
+    summary: Manage Single Sign-On (SSO) authentication for projects
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-sso-add
+      - biobase-sso-info
+      - biobase-sso-list
+      - biobase-sso-remove
+      - biobase-sso-show
+      - biobase-sso-update
+    flags: []
+  - id: biobase-sso-update
+    title: biobase sso update
+    summary: Update information about an SSO identity provider
+    description: |
+      Update the configuration settings of a already added SSO identity provider.
+    examples:
+      - id: basic-usage
+        name: Replace domains
+        code: |-
+          biobase sso update 6df4d73f-bf21-405f-a084-b11adf19fea5 \
+            --project-ref abcdefghijklmnopqrst \
+            --domains new-company.com,new-company.net
+        response: Information about the updated provider.
+      - id: add-domains
+        name: Add an additional domain
+        code: |-
+          biobase sso update 6df4d73f-bf21-405f-a084-b11adf19fea5 \
+            --project-ref abcdefghijklmnopqrst \
+            --add-domains company.net
+        response: Information about the updated provider.
+      - id: remove-domains
+        name: Remove a domain
+        code: |-
+          biobase sso update 6df4d73f-bf21-405f-a084-b11adf19fea5 \
+            --project-ref abcdefghijklmnopqrst \
+            --remove-domains company.org
+        response: Information about the updated provider.
+    tags: []
+    links: []
+    usage: biobase sso update <provider-id> [flags]
+    subcommands: []
+    flags:
+      - id: add-domains
+        name: --add-domains <strings>
+        description: |
+          Add this comma separated list of email domains to the identity provider.
+        default_value: '[]'
+      - id: attribute-mapping-file
+        name: --attribute-mapping-file <string>
+        description: |
+          File containing a JSON mapping between SAML attributes to custom JWT claims.
+        default_value: ''
+      - id: domains
+        name: --domains <strings>
+        description: |
+          Replace domains with this comma separated list of email domains.
+        default_value: '[]'
+      - id: metadata-file
+        name: --metadata-file <string>
+        description: |
+          File containing a SAML 2.0 Metadata XML document describing the identity provider.
+        default_value: ''
+      - id: metadata-url
+        name: --metadata-url <string>
+        description: |
+          URL pointing to a SAML 2.0 Metadata XML document describing the identity provider.
+        default_value: ''
+      - id: remove-domains
+        name: --remove-domains <strings>
+        description: |
+          Remove this comma separated list of email domains from the identity provider.
+        default_value: '[]'
+      - id: skip-url-validation
+        name: --skip-url-validation
+        description: |
+          Whether local validation of the SAML 2.0 Metadata URL should not be performed.
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-sso-show
+    title: biobase sso show
+    summary: Show information about an SSO identity provider
+    description: |
+      Provides the information about an established connection to an identity provider. You can use --metadata to obtain the raw SAML 2.0 Metadata XML document stored in your project's configuration.
+    examples:
+      - id: basic-usage
+        name: Show information
+        code: |-
+          biobase sso show 6df4d73f-bf21-405f-a084-b11adf19fea5 \
+            --project-ref abcdefghijklmnopqrst
+        response: Information about the identity provider in pretty output.
+      - id: metadata-output
+        name: Get raw SAML 2.0 Metadata XML
+        code: |-
+          biobase sso show 6df4d73f-bf21-405f-a084-b11adf19fea5 \
+            --project-ref abcdefghijklmnopqrst \
+            --metadata
+        response: |-
+          Raw SAML 2.0 XML assigned to this identity provider. This is the
+          version used in the authentication project, and if using a SAML 2.0
+          Metadata URL it may change depending on the caching information
+          contained within the metadata.
+    tags: []
+    links: []
+    usage: biobase sso show <provider-id> [flags]
+    subcommands: []
+    flags:
+      - id: metadata
+        name: --metadata
+        description: Show SAML 2.0 XML Metadata only
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-sso-remove
+    title: biobase sso remove
+    summary: Remove an existing SSO identity provider
+    description: |
+      Remove a connection to an already added SSO identity provider. Removing the provider will prevent existing users from logging in. Please treat this command with care.
+    examples:
+      - id: basic-usage
+        name: Remove a provider
+        code: |-
+          biobase sso remove 6df4d73f-bf21-405f-a084-b11adf19fea5 \
+            --project-ref abcdefghijklmnopqrst
+        response: |-
+          Information about the removed identity provider. It's a good idea to
+          save this in case you need it later on.
+    tags: []
+    links: []
+    usage: biobase sso remove <provider-id>
+    subcommands: []
+    flags:
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-sso-list
+    title: biobase sso list
+    summary: List all SSO identity providers for a project
+    description: |
+      List all connections to a SSO identity provider to your Biobase project.
+    tags: []
+    links: []
+    usage: biobase sso list
+    subcommands: []
+    flags:
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-sso-info
+    title: biobase sso info
+    summary: |
+      Returns the SAML SSO settings required for the identity provider
+    description: |
+      Returns all of the important SSO information necessary for your project to be registered with a SAML 2.0 compatible identity provider.
+    examples:
+      - id: basic-usage
+        name: Show project information
+        code: biobase sso info --project-ref abcdefghijklmnopqrst
+        response: Information about your project's SAML 2.0 configuration.
+    tags: []
+    links: []
+    usage: biobase sso info
+    subcommands: []
+    flags:
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-sso-add
+    title: biobase sso add
+    summary: Add a new SSO identity provider
+    description: |
+      Add and configure a new connection to a SSO identity provider to your Biobase project.
+    examples:
+      - id: basic-usage
+        name: Add with Metadata URL
+        code: |-
+          biobase sso add \
+            --project-ref abcdefgijklmnopqrst \
+            --type saml \
+            --metadata-url 'https://...' \
+            --domains company.com
+        response: |-
+          Information about the added identity provider. You can use
+          company.com as the domain name on the frontend side to initiate a SSO
+          request to the identity provider.
+      - id: with-xml
+        name: Add with Metadata File
+        code: |-
+          biobase sso add \
+            --project-ref abcdefgijklmnopqrst \
+            --type saml \
+            --metadata-file /path/to/metadata/file.xml \
+            --domains company.com
+        response: |-
+          Information about the added identity provider. You can use
+          company.com as the domain name on the frontend side to initiate a SSO
+          request to the identity provider.
+    tags: []
+    links: []
+    usage: biobase sso add [flags]
+    subcommands: []
+    flags:
+      - id: attribute-mapping-file
+        name: --attribute-mapping-file <string>
+        description: |
+          File containing a JSON mapping between SAML attributes to custom JWT claims.
+        default_value: ''
+      - id: domains
+        name: --domains <strings>
+        description: |
+          Comma separated list of email domains to associate with the added identity provider.
+        default_value: '[]'
+      - id: metadata-file
+        name: --metadata-file <string>
+        description: |
+          File containing a SAML 2.0 Metadata XML document describing the identity provider.
+        default_value: ''
+      - id: metadata-url
+        name: --metadata-url <string>
+        description: |
+          URL pointing to a SAML 2.0 Metadata XML document describing the identity provider.
+        default_value: ''
+      - id: skip-url-validation
+        name: --skip-url-validation
+        description: |
+          Whether local validation of the SAML 2.0 Metadata URL should not be performed.
+        default_value: 'false'
+      - id: type
+        name: -t, --type <[ saml ]>
+        description: Type of identity provider (according to supported protocol).
+        required: true
+        default_value: ''
+        accepted_values:
+          - id: saml
+            name: saml
+            type: '[ saml ]'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-ssl-enforcement
+    title: biobase ssl-enforcement
+    summary: Manage SSL enforcement configuration
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-ssl-enforcement-get
+      - biobase-ssl-enforcement-update
+    flags: []
+  - id: biobase-ssl-enforcement-update
+    title: biobase ssl-enforcement update
+    summary: Update SSL enforcement configuration
+    tags: []
+    links: []
+    usage: biobase ssl-enforcement update [flags]
+    subcommands: []
+    flags:
+      - id: disable-db-ssl-enforcement
+        name: --disable-db-ssl-enforcement
+        description: |
+          Whether the DB should disable SSL enforcement for all external connections.
+        default_value: 'false'
+      - id: enable-db-ssl-enforcement
+        name: --enable-db-ssl-enforcement
+        description: |
+          Whether the DB should enable SSL enforcement for all external connections.
+        default_value: 'false'
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-ssl-enforcement-get
+    title: biobase ssl-enforcement get
+    summary: Get the current SSL enforcement configuration
+    tags: []
+    links: []
+    usage: biobase ssl-enforcement get
+    subcommands: []
+    flags:
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-snippets
+    title: biobase snippets
+    summary: Manage Biobase SQL snippets
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-snippets-download
+      - biobase-snippets-list
+    flags: []
+  - id: biobase-snippets-list
+    title: biobase snippets list
+    summary: List all SQL snippets
+    description: List all SQL snippets of the linked project.
+    tags: []
+    links: []
+    usage: biobase snippets list
+    subcommands: []
+    flags: []
+  - id: biobase-snippets-download
+    title: biobase snippets download
+    summary: Download contents of a SQL snippet
+    description: Download contents of the specified SQL snippet.
+    tags: []
+    links: []
+    usage: biobase snippets download <snippet-id>
+    subcommands: []
+    flags: []
+  - id: biobase-services
+    title: biobase services
+    summary: Show versions of all Biobase services
+    tags:
+      - management-api
+    links: []
+    usage: biobase services
+    subcommands: []
+    flags: []
+  - id: biobase-seed
+    title: biobase seed
+    summary: Seed a Biobase project from biobase/config.toml
+    tags:
+      - local-dev
+    links: []
+    subcommands:
+      - biobase-seed-buckets
+    flags: []
+  - id: biobase-seed-buckets
+    title: biobase seed buckets
+    summary: Seed buckets declared in [storage.buckets]
+    tags: []
+    links: []
+    usage: biobase seed buckets
+    subcommands: []
+    flags:
+      - id: linked
+        name: --linked
+        description: Seeds the linked project.
+        default_value: 'false'
+      - id: local
+        name: --local
+        description: Seeds the local database.
+        default_value: 'true'
+  - id: biobase-secrets
+    title: biobase secrets
+    summary: Manage Biobase secrets
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-secrets-list
+      - biobase-secrets-set
+      - biobase-secrets-unset
+    flags: []
+  - id: biobase-secrets-unset
+    title: biobase secrets unset
+    summary: Unset a secret(s) on Biobase
+    description: Unset a secret(s) from the linked Biobase project.
+    tags: []
+    links: []
+    usage: biobase secrets unset [NAME] ...
+    subcommands: []
+    flags:
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-secrets-set
+    title: biobase secrets set
+    summary: Set a secret(s) on Biobase
+    description: Set a secret(s) to the linked Biobase project.
+    tags: []
+    links: []
+    usage: biobase secrets set <NAME=VALUE> ... [flags]
+    subcommands: []
+    flags:
+      - id: env-file
+        name: --env-file <string>
+        description: Read secrets from a .env file.
+        default_value: ''
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-secrets-list
+    title: biobase secrets list
+    summary: List all secrets on Biobase
+    description: List all secrets in the linked project.
+    tags: []
+    links: []
+    usage: biobase secrets list
+    subcommands: []
+    flags:
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-projects
+    title: biobase projects
+    summary: Manage Biobase projects
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-projects-api-keys
+      - biobase-projects-create
+      - biobase-projects-delete
+      - biobase-projects-list
+    flags: []
+  - id: biobase-projects-list
+    title: biobase projects list
+    summary: List all Biobase projects
+    description: List all Biobase projects the logged-in user can access.
+    tags: []
+    links: []
+    usage: biobase projects list
+    subcommands: []
+    flags: []
+  - id: biobase-projects-delete
+    title: biobase projects delete
+    summary: Delete a Biobase project
+    tags: []
+    links: []
+    usage: biobase projects delete <ref>
+    subcommands: []
+    flags: []
+  - id: biobase-projects-create
+    title: biobase projects create
+    summary: Create a project on Biobase
+    tags: []
+    links: []
+    usage: biobase projects create [project name] [flags]
+    subcommands: []
+    flags:
+      - id: db-password
+        name: --db-password <string>
+        description: Database password of the project.
+        default_value: ''
+      - id: org-id
+        name: --org-id <string>
+        description: Organization ID to create the project in.
+        default_value: ''
+      - id: region
+        name: --region <string>
+        description: Select a region close to you for the best performance.
+        default_value: ''
+        accepted_values:
+          - id: ap-northeast-1
+            name: ap-northeast-1
+            type: string
+          - id: ap-northeast-2
+            name: ap-northeast-2
+            type: string
+          - id: ap-south-1
+            name: ap-south-1
+            type: string
+          - id: ap-southeast-1
+            name: ap-southeast-1
+            type: string
+          - id: ap-southeast-2
+            name: ap-southeast-2
+            type: string
+          - id: ca-central-1
+            name: ca-central-1
+            type: string
+          - id: eu-central-1
+            name: eu-central-1
+            type: string
+          - id: eu-west-1
+            name: eu-west-1
+            type: string
+          - id: eu-west-2
+            name: eu-west-2
+            type: string
+          - id: eu-west-3
+            name: eu-west-3
+            type: string
+          - id: sa-east-1
+            name: sa-east-1
+            type: string
+          - id: us-east-1
+            name: us-east-1
+            type: string
+          - id: us-west-1
+            name: us-west-1
+            type: string
+          - id: us-west-2
+            name: us-west-2
+            type: string
+      - id: size
+        name: --size <string>
+        description: Select a desired instance size for your project.
+        default_value: ''
+        accepted_values:
+          - id: micro
+            name: micro
+            type: string
+          - id: small
+            name: small
+            type: string
+          - id: medium
+            name: medium
+            type: string
+          - id: large
+            name: large
+            type: string
+          - id: xlarge
+            name: xlarge
+            type: string
+          - id: 2xlarge
+            name: 2xlarge
+            type: string
+          - id: 4xlarge
+            name: 4xlarge
+            type: string
+          - id: 8xlarge
+            name: 8xlarge
+            type: string
+          - id: 12xlarge
+            name: 12xlarge
+            type: string
+          - id: 16xlarge
+            name: 16xlarge
+            type: string
+  - id: biobase-projects-api-keys
+    title: biobase projects api-keys
+    summary: List all API keys for a Biobase project
+    tags: []
+    links: []
+    usage: biobase projects api-keys [flags]
+    subcommands: []
+    flags:
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-postgres-config
+    title: biobase postgres-config
+    summary: Manage Postgres database config
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-postgres-config-get
+      - biobase-postgres-config-update
+    flags: []
+  - id: biobase-postgres-config-update
+    title: biobase postgres-config update
+    summary: Update Postgres database config
+    description: |-
+      Overriding the default Postgres config could result in unstable database behavior.
+      Custom configuration also overrides the optimizations generated based on the compute add-ons in use.
+    tags: []
+    links: []
+    usage: biobase postgres-config update [flags]
+    subcommands: []
+    flags:
+      - id: config
+        name: --config <strings>
+        description: Config overrides specified as a 'key=value' pair
+        default_value: '[]'
+      - id: no-restart
+        name: --no-restart
+        description: Do not restart the database after updating config.
+        default_value: 'false'
+      - id: replace-existing-overrides
+        name: --replace-existing-overrides
+        description: |
+          If true, replaces all existing overrides with the ones provided. If false (default), merges existing overrides with the ones provided.
+        default_value: 'false'
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-postgres-config-get
+    title: biobase postgres-config get
+    summary: Get the current Postgres database config overrides
+    tags: []
+    links: []
+    usage: biobase postgres-config get
+    subcommands: []
+    flags:
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-orgs
+    title: biobase orgs
+    summary: Manage Biobase organizations
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-orgs-create
+      - biobase-orgs-list
+    flags: []
+  - id: biobase-orgs-list
+    title: biobase orgs list
+    summary: List all organizations
+    description: List all organizations the logged-in user belongs.
+    tags: []
+    links: []
+    usage: biobase orgs list
+    subcommands: []
+    flags: []
+  - id: biobase-orgs-create
+    title: biobase orgs create
+    summary: Create an organization
+    description: Create an organization for the logged-in user.
+    tags: []
+    links: []
+    usage: biobase orgs create
+    subcommands: []
+    flags: []
+  - id: biobase-network-restrictions
+    title: biobase network-restrictions
+    summary: Manage network restrictions
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-network-restrictions-get
+      - biobase-network-restrictions-update
+    flags: []
+  - id: biobase-network-restrictions-update
+    title: biobase network-restrictions update
+    summary: Update network restrictions
+    tags: []
+    links: []
+    usage: biobase network-restrictions update [flags]
+    subcommands: []
+    flags:
+      - id: bypass-cidr-checks
+        name: --bypass-cidr-checks
+        description: Bypass some of the CIDR validation checks.
+        default_value: 'false'
+      - id: db-allow-cidr
+        name: --db-allow-cidr <strings>
+        description: CIDR to allow DB connections from.
+        default_value: '[]'
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-network-restrictions-get
+    title: biobase network-restrictions get
+    summary: Get the current network restrictions
+    tags: []
+    links: []
+    usage: biobase network-restrictions get
+    subcommands: []
+    flags:
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-network-bans
+    title: biobase network-bans
+    summary: Manage network bans
+    description: |-
+      Network bans are IPs that get temporarily blocked if their traffic pattern looks abusive (e.g. multiple failed auth attempts).
+
+      The subcommands help you view the current bans, and unblock IPs if desired.
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-network-bans-get
+      - biobase-network-bans-remove
+    flags: []
+  - id: biobase-network-bans-remove
+    title: biobase network-bans remove
+    summary: Remove a network ban
+    tags: []
+    links: []
+    usage: biobase network-bans remove [flags]
+    subcommands: []
+    flags:
+      - id: db-unban-ip
+        name: --db-unban-ip <strings>
+        description: IP to allow DB connections from.
+        default_value: '[]'
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-network-bans-get
+    title: biobase network-bans get
+    summary: Get the current network bans
+    tags: []
+    links: []
+    usage: biobase network-bans get
+    subcommands: []
+    flags:
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-migration
+    title: biobase migration
+    summary: Manage database migration scripts
+    tags:
+      - local-dev
+    links: []
+    subcommands:
+      - biobase-migration-fetch
+      - biobase-migration-list
+      - biobase-migration-new
+      - biobase-migration-repair
+      - biobase-migration-squash
+      - biobase-migration-up
+    flags: []
+  - id: biobase-migration-up
+    title: biobase migration up
+    summary: Apply pending migrations to local database
+    tags: []
+    links: []
+    usage: biobase migration up [flags]
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Applies migrations to the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: include-all
+        name: --include-all
+        description: Include all migrations not found on remote history table.
+        default_value: 'false'
+      - id: linked
+        name: --linked
+        description: Applies pending migrations to the linked project.
+        default_value: 'false'
+      - id: local
+        name: --local
+        description: Applies pending migrations to the local database.
+        default_value: 'true'
+  - id: biobase-migration-squash
+    title: biobase migration squash
+    summary: Squash migrations to a single file
+    description: |2
+
+      Squashes local schema migrations to a single migration file.
+
+      The squashed migration is equivalent to a schema only dump of the local database after applying existing migration files. This is especially useful when you want to remove repeated modifications of the same schema from your migration history.
+
+      However, one limitation is that data manipulation statements, such as insert, update, or delete, are omitted from the squashed migration. You will have to add them back manually in a new migration file. This includes cron jobs, storage buckets, and any encrypted secrets in vault.
+
+      By default, the latest `<timestamp>_<name>.sql` file will be updated to contain the squashed migration. You can override the target version using the `--version <timestamp>` flag.
+
+      If your `biobase/migrations` directory is empty, running `biobase squash` will do nothing.
+    tags: []
+    links: []
+    usage: biobase migration squash [flags]
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Squashes migrations of the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Squashes the migration history of the linked project.
+        default_value: 'false'
+      - id: local
+        name: --local
+        description: Squashes the migration history of the local database.
+        default_value: 'true'
+      - id: password
+        name: -p, --password <string>
+        description: Password to your remote Postgres database.
+        default_value: ''
+      - id: version
+        name: --version <string>
+        description: Squash up to the specified version.
+        default_value: ''
+  - id: biobase-migration-repair
+    title: biobase migration repair
+    summary: Repair the migration history table
+    description: |2
+
+      Repairs the remote migration history table.
+
+      Requires your local project to be linked to a remote database by running `biobase link`.
+
+      If your local and remote migration history goes out of sync, you can repair the remote history by marking specific migrations as `--status applied` or `--status reverted`. Marking as `reverted` will delete an existing record from the migration history table while marking as `applied` will insert a new record.
+
+      For example, your migration history may look like the table below, with missing entries in either local or remote.
+
+      ```bash
+      $ biobase migration list
+              LOCAL      │     REMOTE     │     TIME (UTC)
+        ─────────────────┼────────────────┼──────────────────────
+                         │ 20230103054303 │ 2023-01-03 05:43:03
+         20230103054315  │                │ 2023-01-03 05:43:15
+      ```
+
+      To reset your migration history to a clean state, first delete your local migration file.
+
+      ```bash
+      $ rm biobase/migrations/20230103054315_remote_commit.sql
+
+      $ biobase migration list
+              LOCAL      │     REMOTE     │     TIME (UTC)
+        ─────────────────┼────────────────┼──────────────────────
+                         │ 20230103054303 │ 2023-01-03 05:43:03
+      ```
+
+      Then mark the remote migration `20230103054303` as reverted.
+
+      ```bash
+      $ biobase migration repair 20230103054303 --status reverted
+      Connecting to remote database...
+      Repaired migration history: [20220810154537] => reverted
+      Finished biobase migration repair.
+
+      $ biobase migration list
+              LOCAL      │     REMOTE     │     TIME (UTC)
+        ─────────────────┼────────────────┼──────────────────────
+      ```
+
+      Now you can run `db pull` again to dump the remote schema as a local migration file.
+
+      ```bash
+      $ biobase db pull
+      Connecting to remote database...
+      Schema written to biobase/migrations/20240414044403_remote_schema.sql
+      Update remote migration history table? [Y/n]
+      Repaired migration history: [20240414044403] => applied
+      Finished biobase db pull.
+
+      $ biobase migration list
+              LOCAL      │     REMOTE     │     TIME (UTC)
+        ─────────────────┼────────────────┼──────────────────────
+          20240414044403 │ 20240414044403 │ 2024-04-14 04:44:03
+      ```
+    examples:
+      - id: basic-usage
+        name: Mark a migration as reverted
+        code: biobase migration repair 20230103054303 --status reverted
+        response: |
+          Repaired migration history: 20230103054303 => reverted
+      - id: mark-applied
+        name: Mark a migration as applied
+        code: biobase migration repair 20230222032233 --status applied
+        response: |
+          Repaired migration history: 20230222032233 => applied
+    tags: []
+    links: []
+    usage: biobase migration repair [version] ... [flags]
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Repairs migrations of the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Repairs the migration history of the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Repairs the migration history of the local database.
+        default_value: 'false'
+      - id: password
+        name: -p, --password <string>
+        description: Password to your remote Postgres database.
+        default_value: ''
+      - id: status
+        name: --status <[ applied | reverted ]>
+        description: Version status to update.
+        required: true
+        default_value: ''
+        accepted_values:
+          - id: applied
+            name: applied
+            type: '[ applied | reverted ]'
+          - id: reverted
+            name: reverted
+            type: '[ applied | reverted ]'
+  - id: biobase-migration-new
+    title: biobase migration new
+    summary: Create an empty migration script
+    description: |2
+
+      Creates a new migration file locally.
+
+      A `biobase/migrations` directory will be created if it does not already exists in your current `workdir`. All schema migration files must be created in this directory following the pattern `<timestamp>_<name>.sql`.
+
+      Outputs from other commands like `db diff` may be piped to `migration new <name>` via stdin.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase migration new schema_test
+        response: |
+          Created new migration at biobase/migrations/20230306095710_schema_test.sql.
+      - id: pipe-stdin
+        name: With statements piped from stdin
+        code: echo "create schema if not exists test;" | biobase migration new schema_test
+        response: |
+          Created new migration at biobase/migrations/20230306095710_schema_test.sql.
+    tags: []
+    links: []
+    usage: biobase migration new <migration name>
+    subcommands: []
+    flags: []
+  - id: biobase-migration-list
+    title: biobase migration list
+    summary: List local and remote migrations
+    description: |2
+
+      Lists migration history in both local and remote databases.
+
+      Requires your local project to be linked to a remote database by running `biobase link`. For self-hosted databases, you can pass in the connection parameters using `--db-url` flag.
+
+      > Note that URL strings must be escaped according to [RFC 3986](https://www.rfc-editor.org/rfc/rfc3986).
+
+      Local migrations are stored in `biobase/migrations` directory while remote migrations are tracked in `biobase_migrations.schema_migrations` table. Only the timestamps are compared to identify any differences.
+
+      In case of discrepancies between the local and remote migration history, you can resolve them using the `migration repair` command.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase migration list
+        response: |2
+                LOCAL      │     REMOTE     │     TIME (UTC)
+          ─────────────────┼────────────────┼──────────────────────
+                           │ 20230103054303 │ 2023-01-03 05:43:03
+                           │ 20230103093141 │ 2023-01-03 09:31:41
+            20230222032233 │                │ 2023-02-22 03:22:33
+      - id: with-db-url
+        name: Connect to self-hosted database
+        code: biobase migration list --db-url 'postgres://postgres[:percent_encoded_password]@127.0.0.1[:port]/postgres'
+        response: |2
+                LOCAL      │     REMOTE     │     TIME (UTC)
+          ─────────────────┼────────────────┼──────────────────────
+            20230103054303 │ 20230103054303 │ 2023-01-03 05:43:03
+            20230103093141 │ 20230103093141 │ 2023-01-03 09:31:41
+    tags: []
+    links: []
+    usage: biobase migration list [flags]
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Lists migrations of the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Lists migrations applied to the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Lists migrations applied to the local database.
+        default_value: 'false'
+      - id: password
+        name: -p, --password <string>
+        description: Password to your remote Postgres database.
+        default_value: ''
+  - id: biobase-migration-fetch
+    title: biobase migration fetch
+    summary: Fetch migration files from history table
+    tags: []
+    links: []
+    usage: biobase migration fetch [flags]
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Fetches migrations from the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Fetches migration history from the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Fetches migration history from the local database.
+        default_value: 'false'
+  - id: biobase-logout
+    title: biobase logout
+    summary: Log out and delete access tokens locally
+    tags:
+      - local-dev
+    links: []
+    usage: biobase logout
+    subcommands: []
+    flags: []
+  - id: biobase-login
+    title: biobase login
+    summary: Authenticate using an access token
+    description: |2
+
+      Connect the Biobase CLI to your Biobase account by logging in with your [personal access token](https://biobase.studio/dashboard/account/tokens).
+
+      Your access token is stored securely in [native credentials storage](https://github.com/zalando/go-keyring#dependencies). If native credentials storage is unavailable, it will be written to a plain text file at `~/.biobase/access-token`.
+
+      > If this behavior is not desired, such as in a CI environment, you may skip login by specifying the `BIOBASE_ACCESS_TOKEN` environment variable in other commands.
+
+      The Biobase CLI uses the stored token to access Management APIs for projects, functions, secrets, etc.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase login
+        response: |
+          You can generate an access token from https://biobase.studio/dashboard/account/tokens
+          Enter your access token: sbp_****************************************
+          Finished biobase login.
+    tags:
+      - local-dev
+    links: []
+    usage: biobase login [flags]
+    subcommands: []
+    flags:
+      - id: name
+        name: --name <string>
+        description: Name that will be used to store token in your settings
+        default_value: built-in token name generator
+      - id: no-browser
+        name: --no-browser
+        description: Do not open browser automatically
+        default_value: 'false'
+      - id: token
+        name: --token <string>
+        description: Use provided token instead of automatic login flow
+        default_value: ''
+  - id: biobase-link
+    title: biobase link
+    summary: Link to a Biobase project
+    description: |2
+
+      Link your local development project to a hosted Biobase project.
+
+      PostgREST configurations are fetched from the Biobase platform and validated against your local configuration file.
+
+      Optionally, database settings can be validated if you provide a password. Your database password is saved in native credentials storage if available.
+
+      > If you do not want to be prompted for the database password, such as in a CI environment, you may specify it explicitly via the `BIOBASE_DB_PASSWORD` environment variable.
+
+      Some commands like `db dump`, `db push`, and `db pull` require your project to be linked first.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase link --project-ref ********************
+        response: |
+          Enter your database password (or leave blank to skip): ********
+          Finished biobase link.
+      - id: without-password
+        name: Link without database password
+        code: biobase link --project-ref ******************** <<< ""
+        response: |
+          Enter your database password (or leave blank to skip):
+          Finished biobase link.
+      - id: using-alternate-dns
+        name: Link using DNS-over-HTTPS resolver
+        code: biobase link --project-ref ******************** --dns-resolver https
+        response: |
+          Enter your database password (or leave blank to skip):
+          Finished biobase link.
+    tags:
+      - local-dev
+    links: []
+    usage: biobase link [flags]
+    subcommands: []
+    flags:
+      - id: password
+        name: -p, --password <string>
+        description: Password to your remote Postgres database.
+        default_value: ''
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-inspect
+    title: biobase inspect
+    summary: Tools to inspect your Biobase project
+    tags:
+      - local-dev
+    links: []
+    subcommands:
+      - biobase-inspect-db
+      - biobase-inspect-report
+    flags: []
+  - id: biobase-inspect-report
+    title: biobase inspect report
+    summary: Generate a CSV output for all inspect commands
+    tags: []
+    links: []
+    usage: biobase inspect report [flags]
+    subcommands: []
+    flags:
+      - id: output-dir
+        name: --output-dir <string>
+        description: Path to save CSV files in
+        default_value: ''
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db
+    title: biobase inspect db
+    summary: Tools to inspect your Biobase database
+    tags: []
+    links: []
+    subcommands:
+      - biobase-inspect-db-bloat
+      - biobase-inspect-db-blocking
+      - biobase-inspect-db-cache-hit
+      - biobase-inspect-db-calls
+      - biobase-inspect-db-index-sizes
+      - biobase-inspect-db-index-usage
+      - biobase-inspect-db-locks
+      - biobase-inspect-db-long-running-queries
+      - biobase-inspect-db-outliers
+      - biobase-inspect-db-replication-slots
+      - biobase-inspect-db-role-configs
+      - biobase-inspect-db-role-connections
+      - biobase-inspect-db-seq-scans
+      - biobase-inspect-db-table-index-sizes
+      - biobase-inspect-db-table-record-counts
+      - biobase-inspect-db-table-sizes
+      - biobase-inspect-db-total-index-size
+      - biobase-inspect-db-total-table-sizes
+      - biobase-inspect-db-unused-indexes
+      - biobase-inspect-db-vacuum-stats
+    flags: []
+  - id: biobase-inspect-db-vacuum-stats
+    title: biobase inspect db vacuum-stats
+    summary: Show statistics related to vacuum operations per table
+    description: |2
+
+      This shows you stats about the vacuum activities for each table. Due to Postgres' [MVCC](https://www.postgresql.org/docs/current/mvcc.html) when data is updated or deleted new rows are created and old rows are made invisible and marked as "dead tuples". Usually the [autovaccum](https://biobase.studio/docs/guides/platform/database-size#vacuum-operations) process will aysnchronously clean the dead tuples.
+
+      The command lists when the last vacuum and last auto vacuum took place, the row count on the table as well as the count of dead rows and whether autovacuum is expected to run or not. If the number of dead rows is much higher than the row count, or if an autovacuum is expected but has not been performed for some time, this can indicate that autovacuum is not able to keep up and that your vacuum settings need to be tweaked or that you require more compute or disk IOPS to allow autovaccum to complete.
+
+
+      ```
+              SCHEMA        │              TABLE               │ LAST VACUUM │ LAST AUTO VACUUM │      ROW COUNT       │ DEAD ROW COUNT │ EXPECT AUTOVACUUM?
+      ──────────────────────┼──────────────────────────────────┼─────────────┼──────────────────┼──────────────────────┼────────────────┼─────────────────────
+       auth                 │ users                            │             │ 2023-06-26 12:34 │               18,030 │              0 │ no
+       public               │ profiles                         │             │ 2023-06-26 23:45 │               13,420 │             28 │ no
+       public               │ logs                             │             │ 2023-06-26 01:23 │            1,313,033 │      3,318,228 │ yes
+       storage              │ objects                          │             │                  │             No stats │              0 │ no
+       storage              │ buckets                          │             │                  │             No stats │              0 │ no
+       biobase_migrations  │ schema_migrations                │             │                  │             No stats │              0 │ no
+
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db vacuum-stats
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-unused-indexes
+    title: biobase inspect db unused-indexes
+    summary: Show indexes with low usage
+    description: |2
+
+      This command displays indexes that have < 50 scans recorded against them, and are greater than 5 pages in size, ordered by size relative to the number of index scans. This command is generally useful for discovering indexes that are unused. Indexes can impact write performance, as well as read performance should they occupy space in memory, its a good idea to remove indexes that are not needed or being used.
+
+      ```
+              TABLE        │                   INDEX                    │ INDEX SIZE │ INDEX SCANS
+      ─────────────────────┼────────────────────────────────────────────┼────────────┼──────────────
+       public.users        │ user_id_created_at_idx                     │ 97 MB      │           0
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db unused-indexes
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-total-table-sizes
+    title: biobase inspect db total-table-sizes
+    summary: Show total table sizes, including table index sizes
+    description: |2-
+
+      This command displays the total size of each table in the database. It is the sum of the values that `pg_table_size()` and `pg_indexes_size()` gives for each table. System tables inside `pg_catalog` and `information_schema` are not included.
+
+      ```
+                      NAME               │    SIZE
+      ───────────────────────────────────┼─────────────
+        job_run_details                  │ 395 MB
+        slack_msgs                       │ 648 kB
+        emails                           │ 640 kB
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db total-table-sizes
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-total-index-size
+    title: biobase inspect db total-index-size
+    summary: Show total size of all indexes
+    description: |2-
+
+      This command displays the total size of all indexes on the database. It is calculated by taking the number of pages (reported in `relpages`) and multiplying it by the page size (8192 bytes).
+
+      ```
+          SIZE
+        ─────────
+          12 MB
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db total-index-size
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-table-sizes
+    title: biobase inspect db table-sizes
+    summary: |
+      Show table sizes of individual tables without their index sizes
+    description: |2-
+
+      This command displays the size of each table in the database. It is calculated by using the system administration function `pg_table_size()`, which includes the size of the main data fork, free space map, visibility map and TOAST data. It does not include the size of the table's indexes.
+
+
+      ```
+                        NAME               │    SIZE
+        ───────────────────────────────────┼─────────────
+          job_run_details                  │ 385 MB
+          emails                           │ 584 kB
+          job                              │ 40 kB
+          sessions                         │ 0 bytes
+          prod_resource_notifications_meta │ 0 bytes
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db table-sizes
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-table-record-counts
+    title: biobase inspect db table-record-counts
+    summary: Show estimated number of rows per table
+    description: |2-
+
+      This command displays an estimated count of rows per table, descending by estimated count. The estimated count is derived from `n_live_tup`, which is updated by vacuum operations. Due to the way `n_live_tup` is populated, sparse vs. dense pages can result in estimations that are significantly out from the real count of rows.
+
+
+      ```
+             NAME    │ ESTIMATED COUNT
+        ─────────────┼──────────────────
+          logs       │          322943
+          emails     │            1103
+          job        │               1
+          migrations │               0
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db table-record-counts
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-table-index-sizes
+    title: biobase inspect db table-index-sizes
+    summary: Show index sizes of individual tables
+    description: |2
+
+      This command displays the total size of indexes for each table. It is calculated by using the system administration function `pg_indexes_size()`.
+
+      ```
+                       TABLE               │ INDEX SIZE
+        ───────────────────────────────────┼─────────────
+          job_run_details                  │ 10104 kB
+          users                            │ 128 kB
+          job                              │ 32 kB
+          instances                        │ 8192 bytes
+          http_request_queue               │ 0 bytes
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db table-index-sizes
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-seq-scans
+    title: biobase inspect db seq-scans
+    summary: Show number of sequential scans recorded against all tables
+    description: |2+
+
+      This command displays the number of sequential scans recorded against all tables, descending by count of sequential scans. Tables that have very high numbers of sequential scans may be underindexed, and it may be worth investigating queries that read from these tables.
+
+
+      ```
+                        NAME               │ COUNT
+        ───────────────────────────────────┼─────────
+          emails                           │ 182435
+          users                            │  25063
+          job_run_details                  │     60
+          schema_migrations                │      0
+          migrations                       │      0
+      ```
+
+    tags: []
+    links: []
+    usage: biobase inspect db seq-scans
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-role-connections
+    title: biobase inspect db role-connections
+    summary: Show number of active connections for all database roles
+    description: |2
+
+      This command shows the number of active connections for each database roles to see which specific role might be consuming more connections than expected.
+
+      This is a Biobase specific command. You can see this breakdown on the dashboard as well:
+      https://app.biobase.studio/project/_/database/roles
+
+      The maximum number of active connections depends [on your instance size](https://biobase.studio/docs/guides/platform/compute-add-ons). You can [manually overwrite](https://biobase.studio/docs/guides/platform/performance#allowing-higher-number-of-connections) the allowed number of connection but it is not advised.
+
+      ```
+
+
+                  ROLE NAME         │ ACTIVE CONNCTION
+        ────────────────────────────┼───────────────────
+          authenticator             │                5
+          postgres                  │                5
+          biobase_admin            │                1
+          pgbouncer                 │                1
+          anon                      │                0
+          authenticated             │                0
+          service_role              │                0
+          dashboard_user            │                0
+          biobase_auth_admin       │                0
+          biobase_storage_admin    │                0
+          biobase_functions_admin  │                0
+          pgsodium_keyholder        │                0
+          pg_read_all_data          │                0
+          pg_write_all_data         │                0
+          pg_monitor                │                0
+
+      Active connections 12/90
+
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db role-connections
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-role-configs
+    title: biobase inspect db role-configs
+    summary: |
+      Show configuration settings for database roles when they have been modified
+    tags: []
+    links: []
+    usage: biobase inspect db role-configs
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-replication-slots
+    title: biobase inspect db replication-slots
+    summary: Show information about replication slots on the database
+    description: |2-
+
+      This command shows information about [logical replication slots](https://www.postgresql.org/docs/current/logical-replication.html) that are setup on the database. It shows if the slot is active, the state of the WAL sender process ('startup', 'catchup', 'streaming', 'backup', 'stopping') the replication client address and the replication lag in GB.
+
+      This command is useful to check that the amount of replication lag is as low as possible, replication lag can occur due to network latency issues, slow disk I/O, long running transactions or lack of ability for the subscriber to consume WAL fast enough.
+
+
+      ```
+                             NAME                    │ ACTIVE │ STATE   │ REPLICATION CLIENT ADDRESS │ REPLICATION LAG GB
+        ─────────────────────────────────────────────┼────────┼─────────┼────────────────────────────┼─────────────────────
+          biobase_realtime_replication_slot         │ t      │ N/A     │ N/A                        │                  0
+          datastream                                 │ t      │ catchup │ 24.201.24.106              │                 45
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db replication-slots
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-outliers
+    title: biobase inspect db outliers
+    summary: |
+      Show queries from pg_stat_statements ordered by total execution time
+    description: |2
+
+      This command displays statements, obtained from `pg_stat_statements`, ordered by the amount of time to execute in aggregate. This includes the statement itself, the total execution time for that statement, the proportion of total execution time for all statements that statement has taken up, the number of times that statement has been called, and the amount of time that statement spent on synchronous I/O (reading/writing from the file system).
+
+      Typically, an efficient query will have an appropriate ratio of calls to total execution time, with as little time spent on I/O as possible. Queries that have a high total execution time but low call count should be investigated to improve their performance. Queries that have a high proportion of execution time being spent on synchronous I/O should also be investigated.
+
+      ```
+
+                       QUERY                   │ EXECUTION TIME   │ PROPORTION OF EXEC TIME │ NUMBER CALLS │ SYNC IO TIME
+      ─────────────────────────────────────────┼──────────────────┼─────────────────────────┼──────────────┼───────────────
+       SELECT * FROM archivable_usage_events.. │ 154:39:26.431466 │ 72.2%                   │ 34,211,877   │ 00:00:00
+       COPY public.archivable_usage_events (.. │ 50:38:33.198418  │ 23.6%                   │ 13           │ 13:34:21.00108
+       COPY public.usage_events (id, reporte.. │ 02:32:16.335233  │ 1.2%                    │ 13           │ 00:34:19.784318
+       INSERT INTO usage_events (id, retaine.. │ 01:42:59.436532  │ 0.8%                    │ 12,328,187   │ 00:00:00
+       SELECT * FROM usage_events WHERE (alp.. │ 01:18:10.754354  │ 0.6%                    │ 102,114,301  │ 00:00:00
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db outliers
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-long-running-queries
+    title: biobase inspect db long-running-queries
+    summary: |
+      Show currently running queries running for longer than 5 minutes
+    description: |2
+
+      This command displays currently running queries, that have been running for longer than 5 minutes, descending by duration. Very long running queries can be a source of multiple issues, such as preventing DDL statements completing or vacuum being unable to update `relfrozenxid`.
+
+      ```
+        PID  │     DURATION    │                                         QUERY
+      ───────┼─────────────────┼───────────────────────────────────────────────────────────────────────────────────────
+       19578 | 02:29:11.200129 | EXPLAIN SELECT  "students".* FROM "students"  WHERE "students"."id" = 1450645 LIMIT 1
+       19465 | 02:26:05.542653 | EXPLAIN SELECT  "students".* FROM "students"  WHERE "students"."id" = 1889881 LIMIT 1
+       19632 | 02:24:46.962818 | EXPLAIN SELECT  "students".* FROM "students"  WHERE "students"."id" = 1581884 LIMIT 1
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db long-running-queries
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-locks
+    title: biobase inspect db locks
+    summary: |
+      Show queries which have taken out an exclusive lock on a relation
+    description: |2
+
+      This command displays queries that have taken out an exclusive lock on a relation. Exclusive locks typically prevent other operations on that relation from taking place, and can be a cause of "hung" queries that are waiting for a lock to be granted.
+
+      If you see a query that is hanging for a very long time or causing blocking issues you may consider killing the query by connecting to the database and running `SELECT pg_cancel_backend(PID);` to cancel the query. If the query still does not stop you can force a hard stop by running `SELECT pg_terminate_backend(PID);`
+
+      ```
+           PID   │ RELNAME │ TRANSACTION ID │ GRANTED │                  QUERY                  │   AGE
+        ─────────┼─────────┼────────────────┼─────────┼─────────────────────────────────────────┼───────────
+          328112 │ null    │              0 │ t       │ SELECT * FROM logs;                     │ 00:04:20
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db locks
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-index-usage
+    title: biobase inspect db index-usage
+    summary: Show information about the efficiency of indexes
+    description: "\n\nThis command provides information on the efficiency of indexes, represented as what percentage of total scans were index scans. A low percentage can indicate under indexing, or wrong data being indexed.\n\n```\n       TABLE NAME     │ PERCENTAGE OF TIMES INDEX USED │ ROWS IN TABLE\n  ────────────────────┼────────────────────────────────┼────────────────\n    user_events       │                             99 │       4225318 \n    user_feed         │                             99 │       3581573\n    unindexed_table   │                              0 │        322911\n    job               │                            100 │         33242\n    schema_migrations │                             97 │             0\n    migrations        │ Insufficient data              │             0\n```"
+    tags: []
+    links: []
+    usage: biobase inspect db index-usage
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-index-sizes
+    title: biobase inspect db index-sizes
+    summary: Show index sizes of individual indexes
+    description: |2-
+
+      This command displays the size of each each index in the database. It is calculated by taking the number of pages (reported in `relpages`) and multiplying it by the page size (8192 bytes).
+
+      ```
+                    NAME              │    SIZE
+        ──────────────────────────────┼─────────────
+          user_events_index           │ 2082 MB
+          job_run_details_pkey        │ 3856 kB
+          schema_migrations_pkey      │ 16 kB
+          refresh_tokens_token_unique │ 8192 bytes
+          users_instance_id_idx       │ 0 bytes
+          buckets_pkey                │ 0 bytes
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db index-sizes
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-calls
+    title: biobase inspect db calls
+    summary: |
+      Show queries from pg_stat_statements ordered by total times called
+    description: |2
+
+      This command is much like the `biobase inspect db outliers` command, but ordered by the number of times a statement has been called.
+
+      You can use this information to see which queries are called most often, which can potentially be good candidates for optimisation.
+
+      ```
+
+                              QUERY                      │ TOTAL EXECUTION TIME │ PROPORTION OF TOTAL EXEC TIME │ NUMBER CALLS │  SYNC IO TIME
+        ─────────────────────────────────────────────────┼──────────────────────┼───────────────────────────────┼──────────────┼──────────────────
+          SELECT * FROM users WHERE id = $1              │ 14:50:11.828939      │ 89.8%                         │  183,389,757 │ 00:00:00.002018
+          SELECT * FROM user_events                      │ 01:20:23.466633      │ 1.4%                          │       78,325 │ 00:00:00
+          INSERT INTO users (email, name) VALUES ($1, $2)│ 00:40:11.616882      │ 0.8%                          │       54,003 │ 00:00:00.000322
+
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db calls
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-cache-hit
+    title: biobase inspect db cache-hit
+    summary: Show cache hit rates for tables and indices
+    description: |2-
+
+      This command provides information on the efficiency of the buffer cache and how often your queries have to go hit the disk rather than reading from memory. Information on both index reads (`index hit rate`) as well as table reads (`table hit rate`) are shown. In general, databases with low cache hit rates perform worse as it is slower to go to disk than retrieve data from memory. If your table hit rate is low, this can indicate that you do not have enough RAM and you may benefit from upgrading to a larger compute addon with more memory. If your index hit rate is low, this may indicate that there is scope to add more appropriate indexes.
+
+      The hit rates are calculated as a ratio of number of table or index blocks fetched from the postgres buffer cache against the sum of cached blocks and uncached blocks read from disk.
+
+      On smaller compute plans (free, small, medium), a ratio of below 99% can indicate a problem. On larger plans the hit rates may be lower but performance will remain constant as the data may use the OS cache rather than Postgres buffer cache.
+
+      ```
+               NAME      │  RATIO
+        ─────────────────┼───────────
+          index hit rate │ 0.996621
+          table hit rate │ 0.999341
+       ```
+    tags: []
+    links: []
+    usage: biobase inspect db cache-hit
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-blocking
+    title: biobase inspect db blocking
+    summary: |
+      Show queries that are holding locks and the queries that are waiting for them to be released
+    description: |2
+
+      This command shows you statements that are currently holding locks and blocking, as well as the statement that is being blocked. This can be used in conjunction with `inspect db locks` to determine which statements need to be terminated in order to resolve lock contention.
+
+      ```
+          BLOCKED PID │ BLOCKING STATEMENT           │ BLOCKING DURATION │ BLOCKING PID │ BLOCKED STATEMENT                                                                      │ BLOCKED DURATION
+        ──────────────┼──────────────────────────────┼───────────────────┼──────────────┼────────────────────────────────────────────────────────────────────────────────────────┼───────────────────
+          253         │ select count(*) from mytable │ 00:00:03.838314   │        13495 │ UPDATE "mytable" SET "updated_at" = '2023─08─03 14:07:04.746688' WHERE "id" = 83719341 │ 00:00:03.821826
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db blocking
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-inspect-db-bloat
+    title: biobase inspect db bloat
+    summary: |
+      Estimates space allocated to a relation that is full of dead tuples
+    description: |2
+
+      This command displays an estimation of table "bloat" - Due to Postgres' [MVCC](https://www.postgresql.org/docs/current/mvcc.html) when data is updated or deleted new rows are created and old rows are made invisible and marked as "dead tuples". Usually the [autovaccum](https://biobase.studio/docs/guides/platform/database-size#vacuum-operations) process will asynchronously clean the dead tuples. Sometimes the autovaccum is unable to work fast enough to reduce or prevent tables from becoming bloated. High bloat can slow down queries, cause excessive IOPS and waste space in your database.
+
+      Tables with a high bloat ratio should be investigated to see if there are vacuuming is not quick enough or there are other issues.
+
+      ```
+          TYPE  │ SCHEMA NAME │        OBJECT NAME         │ BLOAT │ WASTE
+        ────────┼─────────────┼────────────────────────────┼───────┼─────────────
+          table │ public      │ very_bloated_table         │  41.0 │ 700 MB
+          table │ public      │ my_table                   │   4.0 │ 76 MB
+          table │ public      │ happy_table                │   1.0 │ 1472 kB
+          index │ public      │ happy_table::my_nice_index │   0.7 │ 880 kB
+      ```
+    tags: []
+    links: []
+    usage: biobase inspect db bloat
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Inspect the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Inspect the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Inspect the local database.
+        default_value: 'false'
+  - id: biobase-init
+    title: biobase init
+    summary: Initialize a local project
+    description: |2
+
+      Initialize configurations for Biobase local development.
+
+      A `biobase/config.toml` file is created in your current working directory. This configuration is specific to each local project.
+
+      > You may override the directory path by specifying the `BIOBASE_WORKDIR` environment variable or `--workdir` flag.
+
+      In addition to `config.toml`, the `biobase` directory may also contain other Biobase objects, such as `migrations`, `functions`, `tests`, etc.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase init
+        response: Finished biobase init.
+      - id: from-workdir
+        name: Initialize from an existing directory
+        code: biobase init --workdir .
+        response: Finished biobase init.
+    tags:
+      - local-dev
+    links: []
+    usage: biobase init [flags]
+    subcommands: []
+    flags:
+      - id: force
+        name: --force
+        description: Overwrite existing biobase/config.toml.
+        default_value: 'false'
+      - id: use-orioledb
+        name: --use-orioledb
+        description: Use OrioleDB storage engine for Postgres.
+        default_value: 'false'
+      - id: with-intellij-settings
+        name: --with-intellij-settings
+        description: Generate IntelliJ IDEA settings for Deno.
+        default_value: 'false'
+      - id: with-vscode-settings
+        name: --with-vscode-settings
+        description: Generate VS Code settings for Deno.
+        default_value: 'false'
+  - id: biobase-gen
+    title: biobase gen
+    summary: Run code generation tools
+    tags:
+      - local-dev
+    links: []
+    subcommands:
+      - biobase-gen-keys
+      - biobase-gen-types
+    flags: []
+  - id: biobase-gen-types
+    title: biobase gen types
+    summary: Generate types from Postgres schema
+    tags: []
+    links: []
+    usage: biobase gen types [flags]
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: Generate types from a database url.
+        default_value: ''
+      - id: lang
+        name: --lang <[ typescript | go | swift ]>
+        description: Output language of the generated types.
+        default_value: typescript
+        accepted_values:
+          - id: typescript
+            name: typescript
+            type: '[ typescript | go | swift ]'
+          - id: go
+            name: go
+            type: '[ typescript | go | swift ]'
+          - id: swift
+            name: swift
+            type: '[ typescript | go | swift ]'
+      - id: linked
+        name: --linked
+        description: Generate types from the linked project.
+        default_value: 'false'
+      - id: local
+        name: --local
+        description: Generate types from the local dev database.
+        default_value: 'false'
+      - id: postgrest-v9-compat
+        name: --postgrest-v9-compat
+        description: |
+          Generate types compatible with PostgREST v9 and below. Only use together with --db-url.
+        default_value: 'false'
+      - id: project-id
+        name: --project-id <string>
+        description: Generate types from a project ID.
+        default_value: ''
+      - id: schema
+        name: -s, --schema <strings>
+        description: Comma separated list of schema to include.
+        default_value: '[]'
+      - id: swift-access-control
+        name: --swift-access-control <[ internal | public ]>
+        description: Access control for Swift generated types.
+        default_value: internal
+        accepted_values:
+          - id: internal
+            name: internal
+            type: '[ internal | public ]'
+          - id: public
+            name: public
+            type: '[ internal | public ]'
+  - id: biobase-gen-keys
+    title: biobase gen keys
+    summary: Generate keys for preview branch
+    tags: []
+    links: []
+    usage: biobase gen keys [flags]
+    subcommands: []
+    flags:
+      - id: output
+        name: -o, --output <[ env | json | toml | yaml ]>
+        description: Output format of key variables.
+        default_value: env
+        accepted_values:
+          - id: env
+            name: env
+            type: '[ env | json | toml | yaml ]'
+          - id: json
+            name: json
+            type: '[ env | json | toml | yaml ]'
+          - id: toml
+            name: toml
+            type: '[ env | json | toml | yaml ]'
+          - id: yaml
+            name: yaml
+            type: '[ env | json | toml | yaml ]'
+      - id: override-name
+        name: --override-name <strings>
+        description: Override specific variable names.
+        default_value: '[]'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+  - id: biobase-functions
+    title: biobase functions
+    summary: Manage Biobase Edge functions
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-functions-delete
+      - biobase-functions-deploy
+      - biobase-functions-download
+      - biobase-functions-list
+      - biobase-functions-new
+      - biobase-functions-serve
+    flags: []
+  - id: biobase-functions-serve
+    title: biobase functions serve
+    summary: Serve all Functions locally
+    description: |2
+
+      Serve all Functions locally.
+
+      `biobase functions serve` command includes additional flags to assist developers in debugging Edge Functions via the v8 inspector protocol, allowing for debugging via Chrome DevTools, VS Code, and IntelliJ IDEA for example. Refer to the [docs guide](/docs/guides/functions/debugging-tools) for setup instructions.
+
+      1. `--inspect`
+         * Alias of `--inspect-mode brk`.
+
+      2. `--inspect-mode [ run | brk | wait ]`
+         * Activates the inspector capability.
+         * `run` mode simply allows a connection without additional behavior. It is not ideal for short scripts, but it can be useful for long-running scripts where you might occasionally want to set breakpoints.
+         * `brk` mode same as `run` mode, but additionally sets a breakpoint at the first line to pause script execution before any code runs.
+         * `wait` mode similar to `brk` mode, but instead of setting a breakpoint at the first line, it pauses script execution until an inspector session is connected.
+
+      3. `--inspect-main`
+         * Can only be used when one of the above two flags is enabled.
+         * By default, creating an inspector session for the main worker is not allowed, but this flag allows it.
+         * Other behaviors follow the `inspect-mode` flag mentioned above.
+
+      Additionally, the following properties can be customized via `biobase/config.toml` under `edge_runtime` section.
+
+      1. `inspector_port`
+         * The port used to listen to the Inspector session, defaults to 8083.
+      2. `policy`
+         * A value that indicates how the edge-runtime should forward incoming HTTP requests to the worker.
+         * `per_worker` allows multiple HTTP requests to be forwarded to a worker that has already been created.
+         * `oneshot` will force the worker to process a single HTTP request and then exit. (Debugging purpose, This is especially useful if you want to reflect changes you've made immediately.)
+    tags: []
+    links: []
+    usage: biobase functions serve [flags]
+    subcommands: []
+    flags:
+      - id: env-file
+        name: --env-file <string>
+        description: |
+          Path to an env file to be populated to the Function environment.
+        default_value: ''
+      - id: import-map
+        name: --import-map <string>
+        description: Path to import map file.
+        default_value: ''
+      - id: inspect
+        name: --inspect
+        description: Alias of --inspect-mode brk.
+        default_value: 'false'
+      - id: inspect-main
+        name: --inspect-main
+        description: Allow inspecting the main worker.
+        default_value: 'false'
+      - id: inspect-mode
+        name: --inspect-mode <[ run | brk | wait ]>
+        description: Activate inspector capability for debugging.
+        default_value: ''
+        accepted_values:
+          - id: run
+            name: run
+            type: '[ run | brk | wait ]'
+          - id: brk
+            name: brk
+            type: '[ run | brk | wait ]'
+          - id: wait
+            name: wait
+            type: '[ run | brk | wait ]'
+      - id: no-verify-jwt
+        name: --no-verify-jwt
+        description: Disable JWT verification for the Function.
+        default_value: 'false'
+  - id: biobase-functions-new
+    title: biobase functions new
+    summary: Create a new Function locally
+    tags: []
+    links: []
+    usage: biobase functions new <Function name>
+    subcommands: []
+    flags: []
+  - id: biobase-functions-list
+    title: biobase functions list
+    summary: List all Functions in Biobase
+    description: List all Functions in the linked Biobase project.
+    tags: []
+    links: []
+    usage: biobase functions list [flags]
+    subcommands: []
+    flags:
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-functions-download
+    title: biobase functions download
+    summary: Download a Function from Biobase
+    description: |
+      Download the source code for a Function from the linked Biobase project.
+    tags: []
+    links: []
+    usage: biobase functions download <Function name> [flags]
+    subcommands: []
+    flags:
+      - id: legacy-bundle
+        name: --legacy-bundle
+        description: Use legacy bundling mechanism.
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-functions-deploy
+    title: biobase functions deploy
+    summary: Deploy a Function to Biobase
+    description: Deploy a Function to the linked Biobase project.
+    tags: []
+    links: []
+    usage: biobase functions deploy [Function name] [flags]
+    subcommands: []
+    flags:
+      - id: import-map
+        name: --import-map <string>
+        description: Path to import map file.
+        default_value: ''
+      - id: no-verify-jwt
+        name: --no-verify-jwt
+        description: Disable JWT verification for the Function.
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-functions-delete
+    title: biobase functions delete
+    summary: Delete a Function from Biobase
+    description: |
+      Delete a Function from the linked Biobase project. This does NOT remove the Function locally.
+    tags: []
+    links: []
+    usage: biobase functions delete <Function name> [flags]
+    subcommands: []
+    flags:
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-encryption
+    title: biobase encryption
+    summary: Manage encryption keys of Biobase projects
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-encryption-get-root-key
+      - biobase-encryption-update-root-key
+    flags: []
+  - id: biobase-encryption-update-root-key
+    title: biobase encryption update-root-key
+    summary: Update root encryption key of a Biobase project
+    tags: []
+    links: []
+    usage: biobase encryption update-root-key
+    subcommands: []
+    flags:
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-encryption-get-root-key
+    title: biobase encryption get-root-key
+    summary: Get the root encryption key of a Biobase project
+    tags: []
+    links: []
+    usage: biobase encryption get-root-key
+    subcommands: []
+    flags:
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-domains
+    title: biobase domains
+    summary: Manage custom domain names for Biobase projects
+    description: |
+      Manage custom domain names for Biobase projects.
+
+      Use of custom domains and vanity subdomains is mutually exclusive.
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-domains-activate
+      - biobase-domains-create
+      - biobase-domains-delete
+      - biobase-domains-get
+      - biobase-domains-reverify
+    flags: []
+  - id: biobase-domains-reverify
+    title: biobase domains reverify
+    summary: Re-verify the custom hostname config for your project
+    tags: []
+    links: []
+    usage: biobase domains reverify
+    subcommands: []
+    flags:
+      - id: include-raw-output
+        name: --include-raw-output
+        description: Include raw output (useful for debugging).
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-domains-get
+    title: biobase domains get
+    summary: Get the current custom hostname config
+    description: |
+      Retrieve the custom hostname config for your project, as stored in the Biobase platform.
+    tags: []
+    links: []
+    usage: biobase domains get
+    subcommands: []
+    flags:
+      - id: include-raw-output
+        name: --include-raw-output
+        description: Include raw output (useful for debugging).
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-domains-delete
+    title: biobase domains delete
+    summary: Deletes the custom hostname config for your project
+    tags: []
+    links: []
+    usage: biobase domains delete
+    subcommands: []
+    flags:
+      - id: include-raw-output
+        name: --include-raw-output
+        description: Include raw output (useful for debugging).
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-domains-create
+    title: biobase domains create
+    summary: Create a custom hostname
+    description: |-
+      Create a custom hostname for your Biobase project.
+
+      Expects your custom hostname to have a CNAME record to your Biobase project's subdomain.
+    tags: []
+    links: []
+    usage: biobase domains create [flags]
+    subcommands: []
+    flags:
+      - id: custom-hostname
+        name: --custom-hostname <string>
+        description: The custom hostname to use for your Biobase project.
+        default_value: ''
+      - id: include-raw-output
+        name: --include-raw-output
+        description: Include raw output (useful for debugging).
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-domains-activate
+    title: biobase domains activate
+    summary: Activate the custom hostname for a project
+    description: |2
+
+      Activates the custom hostname configuration for a project.
+
+      This reconfigures your Biobase project to respond to requests on your custom hostname.
+
+      After the custom hostname is activated, your project's third-party auth providers will no longer function on the Biobase-provisioned subdomain. Please refer to [Prepare to activate your domain](/docs/guides/platform/custom-domains#prepare-to-activate-your-domain) section in our documentation to learn more about the steps you need to follow.
+    tags: []
+    links: []
+    usage: biobase domains activate
+    subcommands: []
+    flags:
+      - id: include-raw-output
+        name: --include-raw-output
+        description: Include raw output (useful for debugging).
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-db
+    title: biobase db
+    summary: Manage Postgres databases
+    tags:
+      - local-dev
+    links: []
+    subcommands:
+      - biobase-db-diff
+      - biobase-db-dump
+      - biobase-db-lint
+      - biobase-db-pull
+      - biobase-db-push
+      - biobase-db-reset
+      - biobase-db-start
+    flags: []
+  - id: biobase-db-start
+    title: biobase db start
+    summary: Starts local Postgres database
+    tags: []
+    links: []
+    usage: biobase db start
+    subcommands: []
+    flags: []
+  - id: biobase-db-reset
+    title: biobase db reset
+    summary: Resets the local database to current migrations
+    description: |2
+
+      Resets the local database to a clean state.
+
+      Requires the local development stack to be started by running `biobase start`.
+
+      Recreates the local Postgres container and applies all local migrations found in `biobase/migrations` directory. If test data is defined in `biobase/seed.sql`, it will be seeded after the migrations are run. Any other data or schema changes made during local development will be discarded.
+
+      When running db reset with `--linked` or `--db-url` flag, a SQL script is executed to identify and drop all user created entities in the remote database. Since Postgres roles are cluster level entities, any custom roles created through the dashboard or `biobase/roles.sql` will not be deleted by remote reset.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase db reset
+        response: |
+          Resetting database...
+          Initializing schema...
+          Applying migration 20220810154537_create_employees_table.sql...
+          Seeding data biobase/seed.sql...
+          Finished biobase db reset on branch main.
+    tags: []
+    links: []
+    usage: biobase db reset [flags]
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Resets the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Resets the linked project with local migrations.
+        default_value: 'false'
+      - id: local
+        name: --local
+        description: Resets the local database with local migrations.
+        default_value: 'true'
+      - id: no-seed
+        name: --no-seed
+        description: Skip running the seed script after reset.
+        default_value: 'false'
+      - id: version
+        name: --version <string>
+        description: Reset up to the specified version.
+        default_value: ''
+  - id: biobase-db-push
+    title: biobase db push
+    summary: Push new migrations to the remote database
+    description: |2
+
+      Pushes all local migrations to a remote database.
+
+      Requires your local project to be linked to a remote database by running `biobase link`. For self-hosted databases, you can pass in the connection parameters using `--db-url` flag.
+
+      The first time this command is run, a migration history table will be created under `biobase_migrations.schema_migrations`. After successfully applying a migration, a new row will be inserted into the migration history table with timestamp as its unique id. Subsequent pushes will skip migrations that have already been applied.
+
+      If you need to mutate the migration history table, such as deleting existing entries or inserting new entries without actually running the migration, use the `migration repair` command.
+
+      Use the `--dry-run` flag to view the list of changes before applying.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase db push
+        response: |
+          Linked project is up to date.
+      - id: self-hosted
+        name: Self hosted
+        code: biobase db push --db-url "postgres://user:pass@127.0.0.1:5432/postgres"
+        response: |
+          Pushing migration 20230410135622_create_employees_table.sql...
+          Finished biobase db push.
+      - id: dry-run
+        name: Dry run
+        code: biobase db push --dry-run
+        response: |
+          DRY RUN: migrations will *not* be pushed to the database.
+          Would push migration 20230410135622_create_employees_table.sql...
+          Would push migration 20230425064254_my_table.sql...
+          Finished biobase db push.
+    tags: []
+    links: []
+    usage: biobase db push [flags]
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Pushes to the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: dry-run
+        name: --dry-run
+        description: |
+          Print the migrations that would be applied, but don't actually apply them.
+        default_value: 'false'
+      - id: include-all
+        name: --include-all
+        description: Include all migrations not found on remote history table.
+        default_value: 'false'
+      - id: include-roles
+        name: --include-roles
+        description: Include custom roles from biobase/roles.sql.
+        default_value: 'false'
+      - id: include-seed
+        name: --include-seed
+        description: Include seed data from your config.
+        default_value: 'false'
+      - id: linked
+        name: --linked
+        description: Pushes to the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Pushes to the local database.
+        default_value: 'false'
+      - id: password
+        name: -p, --password <string>
+        description: Password to your remote Postgres database.
+        default_value: ''
+  - id: biobase-db-pull
+    title: biobase db pull
+    summary: Pull schema from the remote database
+    description: |2
+
+      Pulls schema changes from a remote database. A new migration file will be created under `biobase/migrations` directory.
+
+      Requires your local project to be linked to a remote database by running `biobase link`. For self-hosted databases, you can pass in the connection parameters using `--db-url` flag.
+
+      Optionally, a new row can be inserted into the migration history table to reflect the current state of the remote database.
+
+      If no entries exist in the migration history table, `pg_dump` will be used to capture all contents of the remote schemas you have created. Otherwise, this command will only diff schema changes against the remote database, similar to running `db diff --linked`.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase db pull
+        response: |
+          Connecting to remote database...
+          Schema written to biobase/migrations/20240414044403_remote_schema.sql
+          Update remote migration history table? [Y/n]
+          Repaired migration history: [20240414044403] => applied
+          Finished biobase db pull.
+          The auth and storage schemas are excluded. Run biobase db pull --schema auth,storage again to diff them.
+      - id: local-studio
+        name: Local studio
+        code: biobase db pull --local
+        response: |
+          Connecting to local database...
+          Setting up initial schema....
+          Creating custom roles biobase/roles.sql...
+          Applying migration 20240414044403_remote_schema.sql...
+          No schema changes found
+          The auth and storage schemas are excluded. Run biobase db pull --schema auth,storage again to diff them.
+          exit status 1
+      - id: custom-schemas
+        name: Custom schemas
+        code: biobase db pull --schema auth,storage
+        response: |
+          Connecting to remote database...
+          Setting up initial schema....
+          Creating custom roles biobase/roles.sql...
+          Applying migration 20240414044403_remote_schema.sql...
+          No schema changes found
+          Try rerunning the command with --debug to troubleshoot the error.
+          exit status 1
+    tags: []
+    links: []
+    usage: biobase db pull [migration name] [flags]
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Pulls from the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Pulls from the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Pulls from the local database.
+        default_value: 'false'
+      - id: password
+        name: -p, --password <string>
+        description: Password to your remote Postgres database.
+        default_value: ''
+      - id: schema
+        name: -s, --schema <strings>
+        description: Comma separated list of schema to include.
+        default_value: '[]'
+  - id: biobase-db-lint
+    title: biobase db lint
+    summary: Checks local database for typing error
+    description: |2-
+
+      Lints local database for schema errors.
+
+      Requires the local development stack to be running when linting against the local database. To lint against a remote or self-hosted database, specify the `--linked` or `--db-url` flag respectively.
+
+      Runs `plpgsql_check` extension in the local Postgres container to check for errors in all schemas. The default lint level is `warning` and can be raised to error via the `--level` flag.
+
+      To lint against specific schemas only, pass in the `--schema` flag.
+
+      The `--fail-on` flag can be used to control when the command should exit with a non-zero status code. The possible values are:
+
+      - `none` (default): Always exit with a zero status code, regardless of lint results.
+      - `warning`: Exit with a non-zero status code if any warnings or errors are found.
+      - `error`: Exit with a non-zero status code only if errors are found.
+
+      This flag is particularly useful in CI/CD pipelines where you want to fail the build based on certain lint conditions.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase db lint
+        response: |
+          Linting schema: public
+
+          No schema errors found
+      - id: schema-warnings
+        name: Warnings for a specific schema
+        code: biobase db lint --level warning --schema storage
+        response: |
+          Linting schema: storage
+          [
+            {
+              "function": "storage.search",
+              "issues": [
+                {
+                  "level": "warning",
+                  "message": "unused variable \"_bucketid\"",
+                  "sqlState": "00000"
+                }
+              ]
+            }
+          ]
+    tags: []
+    links: []
+    usage: biobase db lint [flags]
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Lints the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: fail-on
+        name: --fail-on <[ none | warning | error ]>
+        description: Error level to exit with non-zero status.
+        default_value: none
+        accepted_values:
+          - id: none
+            name: none
+            type: '[ none | warning | error ]'
+          - id: warning
+            name: warning
+            type: '[ none | warning | error ]'
+          - id: error
+            name: error
+            type: '[ none | warning | error ]'
+      - id: level
+        name: --level <[ warning | error ]>
+        description: Error level to emit.
+        default_value: warning
+        accepted_values:
+          - id: warning
+            name: warning
+            type: '[ warning | error ]'
+          - id: error
+            name: error
+            type: '[ warning | error ]'
+      - id: linked
+        name: --linked
+        description: Lints the linked project for schema errors.
+        default_value: 'false'
+      - id: local
+        name: --local
+        description: Lints the local database for schema errors.
+        default_value: 'true'
+      - id: schema
+        name: -s, --schema <strings>
+        description: Comma separated list of schema to include.
+        default_value: '[]'
+  - id: biobase-db-dump
+    title: biobase db dump
+    summary: Dumps data or schemas from the remote database
+    description: |2
+
+      Dumps contents from a remote database.
+
+      Requires your local project to be linked to a remote database by running `biobase link`. For self-hosted databases, you can pass in the connection parameters using `--db-url` flag.
+
+      Runs `pg_dump` in a container with additional flags to exclude Biobase managed schemas. The ignored schemas include auth, storage, and those created by extensions.
+
+      The default dump does not contain any data or custom roles. To dump those contents explicitly, specify either the `--data-only` and `--role-only` flag.
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase db dump -f biobase/schema.sql
+        response: |
+          Dumping schemas from remote database...
+          Dumped schema to biobase/schema.sql.
+      - id: role-only
+        name: Role only
+        code: biobase db dump -f biobase/roles.sql --role-only
+        response: |
+          Dumping roles from remote database...
+          Dumped schema to biobase/roles.sql.
+      - id: data-only
+        name: Data only
+        code: biobase db dump -f biobase/seed.sql --data-only
+        response: |
+          Dumping data from remote database...
+          Dumped schema to biobase/seed.sql.
+    tags: []
+    links: []
+    usage: biobase db dump [flags]
+    subcommands: []
+    flags:
+      - id: data-only
+        name: --data-only
+        description: Dumps only data records.
+        default_value: 'false'
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Dumps from the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: dry-run
+        name: --dry-run
+        description: Prints the pg_dump script that would be executed.
+        default_value: 'false'
+      - id: exclude
+        name: -x, --exclude <strings>
+        description: List of schema.tables to exclude from data-only dump.
+        default_value: '[]'
+      - id: file
+        name: -f, --file <string>
+        description: File path to save the dumped contents.
+        default_value: ''
+      - id: keep-comments
+        name: --keep-comments
+        description: Keeps commented lines from pg_dump output.
+        default_value: 'false'
+      - id: linked
+        name: --linked
+        description: Dumps from the linked project.
+        default_value: 'true'
+      - id: local
+        name: --local
+        description: Dumps from the local database.
+        default_value: 'false'
+      - id: password
+        name: -p, --password <string>
+        description: Password to your remote Postgres database.
+        default_value: ''
+      - id: role-only
+        name: --role-only
+        description: Dumps only cluster roles.
+        default_value: 'false'
+      - id: schema
+        name: -s, --schema <strings>
+        description: Comma separated list of schema to include.
+        default_value: '[]'
+      - id: use-copy
+        name: --use-copy
+        description: Uses copy statements in place of inserts.
+        default_value: 'false'
+  - id: biobase-db-diff
+    title: biobase db diff
+    summary: Diffs the local database for schema changes
+    description: |2
+
+      Diffs schema changes made to the local or remote database.
+
+      Requires the local development stack to be running when diffing against the local database. To diff against a remote or self-hosted database, specify the `--linked` or `--db-url` flag respectively.
+
+      Runs [djrobstep/migra](https://github.com/djrobstep/migra) in a container to compare schema differences between the target database and a shadow database. The shadow database is created by applying migrations in local `biobase/migrations` directory in a separate container. Output is written to stdout by default. For convenience, you can also save the schema diff as a new migration file by passing in `-f` flag.
+
+      By default, all schemas in the target database are diffed. Use the `--schema public,extensions` flag to restrict diffing to a subset of schemas.
+
+      While the diff command is able to capture most schema changes, there are cases where it is known to fail. Currently, this could happen if you schema contains:
+
+      - Changes to publication
+      - Changes to storage buckets
+      - Views with `security_invoker` attributes
+    examples:
+      - id: basic-usage
+        name: Basic usage
+        code: biobase db diff -f my_table
+        response: |
+          Connecting to local database...
+          Creating shadow database...
+          Applying migration 20230425064254_remote_commit.sql...
+          Diffing schemas: auth,extensions,public,storage
+          Finished biobase db diff on branch main.
+
+          No schema changes found
+      - id: linked-project
+        name: Against linked project
+        code: biobase db diff -f my_table --linked
+        response: |
+          Connecting to local database...
+          Creating shadow database...
+          Diffing schemas: auth,extensions,public,storage
+          Finished biobase db diff on branch main.
+
+          WARNING: The diff tool is not foolproof, so you may need to manually rearrange and modify the generated migration.
+          Run biobase db reset to verify that the new migration does not generate errors.
+      - id: specific-schema
+        name: For a specific schema
+        code: biobase db diff -f my_table --schema auth
+        response: |
+          Connecting to local database...
+          Creating shadow database...
+          Diffing schemas: auth
+          Finished biobase db diff on branch main.
+
+          No schema changes found
+    tags: []
+    links: []
+    usage: biobase db diff [flags]
+    subcommands: []
+    flags:
+      - id: db-url
+        name: --db-url <string>
+        description: |
+          Diffs against the database specified by the connection string (must be percent-encoded).
+        default_value: ''
+      - id: file
+        name: -f, --file <string>
+        description: Saves schema diff to a new migration file.
+        default_value: ''
+      - id: linked
+        name: --linked
+        description: Diffs local migration files against the linked project.
+        default_value: 'false'
+      - id: local
+        name: --local
+        description: Diffs local migration files against the local database.
+        default_value: 'true'
+      - id: schema
+        name: -s, --schema <strings>
+        description: Comma separated list of schema to include.
+        default_value: '[]'
+      - id: use-migra
+        name: --use-migra
+        description: Use migra to generate schema diff.
+        default_value: 'true'
+      - id: use-pg-schema
+        name: --use-pg-schema
+        description: Use pg-schema-diff to generate schema diff.
+        default_value: 'false'
+      - id: use-pgadmin
+        name: --use-pgadmin
+        description: Use pgAdmin to generate schema diff.
+        default_value: 'false'
+  - id: biobase-config
+    title: biobase config
+    summary: Manage Biobase project configurations
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-config-push
+    flags: []
+  - id: biobase-config-push
+    title: biobase config push
+    summary: Pushes local config.toml to the linked project
+    tags: []
+    links: []
+    usage: biobase config push
+    subcommands: []
+    flags:
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-completion
+    title: biobase completion
+    summary: Generate the autocompletion script for the specified shell
+    description: |
+      Generate the autocompletion script for biobase for the specified shell.
+      See each sub-command's help for details on how to use the generated script.
+    tags:
+      - other-commands
+    links: []
+    subcommands:
+      - biobase-completion-bash
+      - biobase-completion-fish
+      - biobase-completion-powershell
+      - biobase-completion-zsh
+    flags: []
+  - id: biobase-completion-zsh
+    title: biobase completion zsh
+    summary: Generate the autocompletion script for zsh
+    description: |
+      Generate the autocompletion script for the zsh shell.
+
+      If shell completion is not already enabled in your environment you will need
+      to enable it.  You can execute the following once:
+
+          echo "autoload -U compinit; compinit" >> ~/.zshrc
+
+      To load completions in your current shell session:
+
+          source <(biobase completion zsh)
+
+      To load completions for every new session, execute once:
+
+      #### Linux:
+
+          biobase completion zsh > "${fpath[1]}/_biobase"
+
+      #### macOS:
+
+          biobase completion zsh > $(brew --prefix)/share/zsh/site-functions/_biobase
+
+      You will need to start a new shell for this setup to take effect.
+    tags: []
+    links: []
+    usage: biobase completion zsh [flags]
+    subcommands: []
+    flags:
+      - id: no-descriptions
+        name: --no-descriptions
+        description: disable completion descriptions
+        default_value: 'false'
+  - id: biobase-completion-powershell
+    title: biobase completion powershell
+    summary: Generate the autocompletion script for powershell
+    description: |
+      Generate the autocompletion script for powershell.
+
+      To load completions in your current shell session:
+
+          biobase completion powershell | Out-String | Invoke-Expression
+
+      To load completions for every new session, add the output of the above command
+      to your powershell profile.
+    tags: []
+    links: []
+    usage: biobase completion powershell [flags]
+    subcommands: []
+    flags:
+      - id: no-descriptions
+        name: --no-descriptions
+        description: disable completion descriptions
+        default_value: 'false'
+  - id: biobase-completion-fish
+    title: biobase completion fish
+    summary: Generate the autocompletion script for fish
+    description: |
+      Generate the autocompletion script for the fish shell.
+
+      To load completions in your current shell session:
+
+          biobase completion fish | source
+
+      To load completions for every new session, execute once:
+
+          biobase completion fish > ~/.config/fish/completions/biobase.fish
+
+      You will need to start a new shell for this setup to take effect.
+    tags: []
+    links: []
+    usage: biobase completion fish [flags]
+    subcommands: []
+    flags:
+      - id: no-descriptions
+        name: --no-descriptions
+        description: disable completion descriptions
+        default_value: 'false'
+  - id: biobase-completion-bash
+    title: biobase completion bash
+    summary: Generate the autocompletion script for bash
+    description: |
+      Generate the autocompletion script for the bash shell.
+
+      This script depends on the 'bash-completion' package.
+      If it is not installed already, you can install it via your OS's package manager.
+
+      To load completions in your current shell session:
+
+          source <(biobase completion bash)
+
+      To load completions for every new session, execute once:
+
+      #### Linux:
+
+          biobase completion bash > /etc/bash_completion.d/biobase
+
+      #### macOS:
+
+          biobase completion bash > $(brew --prefix)/etc/bash_completion.d/biobase
+
+      You will need to start a new shell for this setup to take effect.
+    tags: []
+    links: []
+    usage: biobase completion bash
+    subcommands: []
+    flags:
+      - id: no-descriptions
+        name: --no-descriptions
+        description: disable completion descriptions
+        default_value: 'false'
+  - id: biobase-branches
+    title: biobase branches
+    summary: Manage Biobase preview branches
+    tags:
+      - management-api
+    links: []
+    subcommands:
+      - biobase-branches-create
+      - biobase-branches-delete
+      - biobase-branches-disable
+      - biobase-branches-get
+      - biobase-branches-list
+      - biobase-branches-update
+    flags: []
+  - id: biobase-branches-update
+    title: biobase branches update
+    summary: Update a preview branch
+    description: Update a preview branch by its ID.
+    tags: []
+    links: []
+    usage: biobase branches update [branch-id] [flags]
+    subcommands: []
+    flags:
+      - id: git-branch
+        name: --git-branch <string>
+        description: Change the associated git branch.
+        default_value: ''
+      - id: name
+        name: --name <string>
+        description: Rename the preview branch.
+        default_value: ''
+      - id: persistent
+        name: --persistent
+        description: Switch between ephemeral and persistent branch.
+        default_value: 'false'
+      - id: status
+        name: --status <string>
+        description: Override the current branch status.
+        default_value: ''
+        accepted_values:
+          - id: RUNNING_MIGRATIONS
+            name: RUNNING_MIGRATIONS
+            type: string
+          - id: MIGRATIONS_PASSED
+            name: MIGRATIONS_PASSED
+            type: string
+          - id: MIGRATIONS_FAILED
+            name: MIGRATIONS_FAILED
+            type: string
+          - id: FUNCTIONS_DEPLOYED
+            name: FUNCTIONS_DEPLOYED
+            type: string
+          - id: FUNCTIONS_FAILED
+            name: FUNCTIONS_FAILED
+            type: string
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-branches-list
+    title: biobase branches list
+    summary: List all preview branches
+    description: List all preview branches of the linked project.
+    tags: []
+    links: []
+    usage: biobase branches list
+    subcommands: []
+    flags:
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-branches-get
+    title: biobase branches get
+    summary: Retrieve details of a preview branch
+    description: Retrieve details of the specified preview branch.
+    tags: []
+    links: []
+    usage: biobase branches get [branch-id]
+    subcommands: []
+    flags:
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-branches-disable
+    title: biobase branches disable
+    summary: Disable preview branching
+    description: Disable preview branching for the linked project.
+    tags: []
+    links: []
+    usage: biobase branches disable
+    subcommands: []
+    flags:
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-branches-delete
+    title: biobase branches delete
+    summary: Delete a preview branch
+    description: Delete a preview branch by its ID.
+    tags: []
+    links: []
+    usage: biobase branches delete [branch-id]
+    subcommands: []
+    flags:
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-branches-create
+    title: biobase branches create
+    summary: Create a preview branch
+    description: Create a preview branch for the linked project.
+    tags: []
+    links: []
+    usage: biobase branches create [name] [flags]
+    subcommands: []
+    flags:
+      - id: persistent
+        name: --persistent
+        description: Whether to create a persistent branch.
+        default_value: 'false'
+      - id: region
+        name: --region <string>
+        description: Select a region to deploy the branch database.
+        default_value: ''
+        accepted_values:
+          - id: ap-northeast-1
+            name: ap-northeast-1
+            type: string
+          - id: ap-northeast-2
+            name: ap-northeast-2
+            type: string
+          - id: ap-south-1
+            name: ap-south-1
+            type: string
+          - id: ap-southeast-1
+            name: ap-southeast-1
+            type: string
+          - id: ap-southeast-2
+            name: ap-southeast-2
+            type: string
+          - id: ca-central-1
+            name: ca-central-1
+            type: string
+          - id: eu-central-1
+            name: eu-central-1
+            type: string
+          - id: eu-west-1
+            name: eu-west-1
+            type: string
+          - id: eu-west-2
+            name: eu-west-2
+            type: string
+          - id: eu-west-3
+            name: eu-west-3
+            type: string
+          - id: sa-east-1
+            name: sa-east-1
+            type: string
+          - id: us-east-1
+            name: us-east-1
+            type: string
+          - id: us-west-1
+            name: us-west-1
+            type: string
+          - id: us-west-2
+            name: us-west-2
+            type: string
+      - id: size
+        name: --size <string>
+        description: Select a desired instance size for the branch database.
+        default_value: ''
+        accepted_values:
+          - id: micro
+            name: micro
+            type: string
+          - id: small
+            name: small
+            type: string
+          - id: medium
+            name: medium
+            type: string
+          - id: large
+            name: large
+            type: string
+          - id: xlarge
+            name: xlarge
+            type: string
+          - id: 2xlarge
+            name: 2xlarge
+            type: string
+          - id: 4xlarge
+            name: 4xlarge
+            type: string
+          - id: 8xlarge
+            name: 8xlarge
+            type: string
+          - id: 12xlarge
+            name: 12xlarge
+            type: string
+          - id: 16xlarge
+            name: 16xlarge
+            type: string
+      - id: experimental
+        name: --experimental
+        description: enable experimental features
+        required: true
+        default_value: 'false'
+      - id: project-ref
+        name: --project-ref <string>
+        description: Project ref of the Biobase project.
+        default_value: ''
+  - id: biobase-bootstrap
+    title: biobase bootstrap
+    summary: Bootstrap a Biobase project from a starter template
+    tags:
+      - quick-start
+    links: []
+    usage: biobase bootstrap [template] [flags]
+    subcommands: []
+    flags:
+      - id: password
+        name: -p, --password <string>
+        description: Password to your remote Postgres database.
+        default_value: ''
