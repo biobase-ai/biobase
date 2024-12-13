@@ -1,4 +1,4 @@
-import { BiobaseClient } from '@supabase/biobase-js'
+import { SupabaseClient } from '@supabase/supabase-js'
 import { ApplicationError, UserError, clippy } from 'ai-commands/edge'
 import { NextRequest, NextResponse } from 'next/server'
 import OpenAI from 'openai'
@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
   }
 
   const openai = new OpenAI({ apiKey: openAiKey })
-  const biobaseClient = new BiobaseClient(biobaseUrl, biobaseServiceKey)
+  const biobaseClient = new SupabaseClient(biobaseUrl, biobaseServiceKey)
 
   try {
     const { messages } = (await req.json()) as {

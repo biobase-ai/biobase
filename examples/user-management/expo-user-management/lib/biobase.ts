@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const biobaseUrl = 'https://project.biobase.co'

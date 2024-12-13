@@ -4,7 +4,7 @@ import {
   QueryClient,
 } from '@tanstack/react-query'
 import { prefetchQuery } from '@biobase-cache-helpers/postgrest-react-query'
-import useBiobaseServer from '@/utils/biobase-server'
+import useSupabaseServer from '@/utils/biobase-server'
 import { cookies } from 'next/headers'
 import Country from '../country'
 import { getCountryById } from '@/queries/get-country-by-id'
@@ -16,7 +16,7 @@ export default async function CountryPage({
 }) {
   const queryClient = new QueryClient()
   const cookieStore = cookies()
-  const biobase = useBiobaseServer(cookieStore)
+  const biobase = useSupabaseServer(cookieStore)
 
   await prefetchQuery(queryClient, getCountryById(biobase, params.id))
 

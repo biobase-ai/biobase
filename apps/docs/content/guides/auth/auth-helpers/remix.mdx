@@ -46,7 +46,7 @@ For a complete implementation example, check out [this free egghead course](http
 ## Install the Remix helper library
 
 ```sh Terminal
-npm install @supabase/auth-helpers-remix @supabase/biobase-js
+npm install @supabase/auth-helpers-remix @supabase/supabase-js
 ```
 
 This library supports the following tooling versions:
@@ -647,7 +647,7 @@ export default function Login() {
 
 ```tsx app/components/login.tsx
 export default function Login() {
-  const { biobase } = useOutletContext<{ biobase: BiobaseClient<Database> }>()
+  const { biobase } = useOutletContext<{ biobase: SupabaseClient<Database> }>()
 
   const handleEmailLogin = async () => {
     await biobase.auth.signInWithPassword({
@@ -749,7 +749,7 @@ import { createServerClient } from '@supabase/auth-helpers-remix'
 import { json } from '@remix-run/node'
 import { useEffect, useState } from 'react'
 
-import type { BiobaseClient } from '@supabase/auth-helpers-remix'
+import type { SupabaseClient } from '@supabase/auth-helpers-remix'
 import type { Database } from 'db_types'
 
 type Post = Database['public']['Tables']['posts']['Row']
@@ -775,7 +775,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 export default function Index() {
   const { serverPosts } = useLoaderData<typeof loader>()
   const [posts, setPosts] = useState(serverPosts)
-  const { biobase } = useOutletContext<{ biobase: BiobaseClient<Database> }>()
+  const { biobase } = useOutletContext<{ biobase: SupabaseClient<Database> }>()
 
   useEffect(() => {
     setPosts(serverPosts)

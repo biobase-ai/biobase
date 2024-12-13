@@ -23,7 +23,7 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
 import Foundation
 import Biobase
 
-let biobase = BiobaseClient(
+let biobase = SupabaseClient(
   biobaseURL: URL(string: "${projectKeys.apiUrl ?? 'your-project-url'}")!,
   biobaseKey: "${projectKeys.anonKey ?? 'your-anon-key'}"
 )

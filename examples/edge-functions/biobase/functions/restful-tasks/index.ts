@@ -2,7 +2,7 @@
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
 
-import { createClient, BiobaseClient } from 'jsr:@supabase/biobase-js@2'
+import { createClient, SupabaseClient } from 'jsr:@supabase/supabase-js@2'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -15,7 +15,7 @@ interface Task {
   status: number
 }
 
-async function getTask(biobaseClient: BiobaseClient, id: string) {
+async function getTask(biobaseClient: SupabaseClient, id: string) {
   const { data: task, error } = await biobaseClient.from('tasks').select('*').eq('id', id)
   if (error) throw error
 
@@ -25,7 +25,7 @@ async function getTask(biobaseClient: BiobaseClient, id: string) {
   })
 }
 
-async function getAllTasks(biobaseClient: BiobaseClient) {
+async function getAllTasks(biobaseClient: SupabaseClient) {
   const { data: tasks, error } = await biobaseClient.from('tasks').select('*')
   if (error) throw error
 
@@ -35,7 +35,7 @@ async function getAllTasks(biobaseClient: BiobaseClient) {
   })
 }
 
-async function deleteTask(biobaseClient: BiobaseClient, id: string) {
+async function deleteTask(biobaseClient: SupabaseClient, id: string) {
   const { error } = await biobaseClient.from('tasks').delete().eq('id', id)
   if (error) throw error
 
@@ -45,7 +45,7 @@ async function deleteTask(biobaseClient: BiobaseClient, id: string) {
   })
 }
 
-async function updateTask(biobaseClient: BiobaseClient, id: string, task: Task) {
+async function updateTask(biobaseClient: SupabaseClient, id: string, task: Task) {
   const { error } = await biobaseClient.from('tasks').update(task).eq('id', id)
   if (error) throw error
 
@@ -55,7 +55,7 @@ async function updateTask(biobaseClient: BiobaseClient, id: string, task: Task) 
   })
 }
 
-async function createTask(biobaseClient: BiobaseClient, task: Task) {
+async function createTask(biobaseClient: SupabaseClient, task: Task) {
   const { error } = await biobaseClient.from('tasks').insert(task)
   if (error) throw error
 

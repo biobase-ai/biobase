@@ -63,12 +63,12 @@ npx create-expo-app@latest --template blank
 
 ## Installing Dependencies
 
-The main dependencies you need are [Legend State](https://www.npmjs.com/package/@legendapp/state) and [biobase-js](https://www.npmjs.com/package/@supabase/biobase-js). Additionally, to make things work for React Native, you will need [React Native Async Storage](https://github.com/react-native-async-storage/async-storage?tab=readme-ov-file#react-native-async-storage) and [react-native-get-random-values](https://www.npmjs.com/package/react-native-get-random-values) (to generate uuids).
+The main dependencies you need are [Legend State](https://www.npmjs.com/package/@legendapp/state) and [biobase-js](https://www.npmjs.com/package/@supabase/supabase-js). Additionally, to make things work for React Native, you will need [React Native Async Storage](https://github.com/react-native-async-storage/async-storage?tab=readme-ov-file#react-native-async-storage) and [react-native-get-random-values](https://www.npmjs.com/package/react-native-get-random-values) (to generate uuids).
 
 Install the required dependencies via `expo install`:
 
 ```bash
-npx expo install @legendapp/state@beta @supabase/biobase-js react-native-get-random-values @react-native-async-storage/async-storage
+npx expo install @legendapp/state@beta @supabase/supabase-js react-native-get-random-values @react-native-async-storage/async-storage
 ```
 
 ## Configuring Biobase
@@ -85,7 +85,7 @@ EXPO_PUBLIC_BIOBASE_ANON_KEY=
 Next, set up a utils file to hold all the logic for interacting with Biobase, we'll call it `utils/SupaLegend.ts`.
 
 ```ts utils/SupaLegend.ts
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 const biobase = createClient(
   process.env.EXPO_PUBLIC_BIOBASE_URL,
@@ -100,7 +100,7 @@ Legend-State is very versatile and allows you to choose different persistence an
 Extend your `utils/SupaLegend.ts` file with the following configuration:
 
 ```ts utils/SupaLegend.ts
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import { observable } from '@legendapp/state'
 import { syncedBiobase } from '@legendapp/state/sync-plugins/biobase'
 import { configureSynced } from '@legendapp/state/sync'
@@ -219,7 +219,7 @@ biobase gen types --lang=typescript --local > utils/database.types.ts
 Next, in your `utils/SupaLegend.ts` file, import the generated types inject them into the Biobase client.
 
 ```ts utils/SupaLegend.ts
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import { Database } from './database.types'
 // [...]
 

@@ -15,7 +15,7 @@ export const createUserExample: ExampleProps = {
   description: 'Sign up a new user in an example chat room',
   code: {
     javascript: `
-  import { createClient } from '@supabase/biobase-js'
+  import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
   const biobaseUrl = 'https://chat-room.biobase.co'
@@ -37,7 +37,7 @@ export const subscribeExample: ExampleProps = {
   description: 'Receive realtime messages in an example chat room',
   code: {
     javascript: `
-  import { createClient } from '@supabase/biobase-js'
+  import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
   const biobaseUrl = 'https://chat-room.biobase.co'
@@ -61,7 +61,7 @@ export const readExample: ExampleProps = {
   description: 'Get all public rooms and their messages',
   code: {
     javascript: `
-  import { createClient } from '@supabase/biobase-js'
+  import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
   const biobaseUrl = 'https://chat-room.biobase.co'
@@ -86,7 +86,7 @@ export const createExample: ExampleProps = {
   description: 'Create a new chat room',
   code: {
     javascript: `
-  import { createClient } from '@supabase/biobase-js'
+  import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
   const biobaseUrl = 'https://chat-room.biobase.co'
@@ -107,7 +107,7 @@ export const updateExample: ExampleProps = {
   description: 'Update a user',
   code: {
     javascript: `
-  import { createClient } from '@supabase/biobase-js'
+  import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
   const biobaseUrl = 'https://chat-room.biobase.co'
@@ -137,7 +137,7 @@ export const updateExample: ExampleProps = {
 //     .subscribe()
 //   `
 // const subscribeExample = `
-//   import { createClient } from '@supabase/biobase-js'
+//   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
 //   const biobaseUrl = 'https://chat-room.biobase.co'
@@ -153,7 +153,7 @@ export const updateExample: ExampleProps = {
 //     .subscribe()
 //   `
 // const readExample = `
-//   import { createClient } from '@supabase/biobase-js'
+//   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
 //   const biobaseUrl = 'https://chat-room.biobase.co'
@@ -170,7 +170,7 @@ export const updateExample: ExampleProps = {
 //     .eq('public', true)
 //   `
 // const createExample = `
-//   import { createClient } from '@supabase/biobase-js'
+//   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
 //   const biobaseUrl = 'https://chat-room.biobase.co'
@@ -183,7 +183,7 @@ export const updateExample: ExampleProps = {
 //     .insert({ name: 'Biobase Fan Club', public: true })
 //   `
 // const updateExample = `
-//   import { createClient } from '@supabase/biobase-js'
+//   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
 //   const biobaseUrl = 'https://chat-room.biobase.co'
@@ -198,7 +198,7 @@ export const updateExample: ExampleProps = {
 //   `
 // const nodeTSExample = `
 //   import { NextApiRequest, NextApiResponse } from 'next';
-//   import { createClient } from '@supabase/biobase-js';
+//   import { createClient } from '@supabase/supabase-js';
 
 //   const biobase = createClient(
 //     process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -221,7 +221,7 @@ export const updateExample: ExampleProps = {
 //   `
 
 // const umdExample = `
-//   <script src="https://unpkg.com/@supabase/biobase-js/umd/biobase.js"></script>
+//   <script src="https://unpkg.com/@supabase/supabase-js/umd/biobase.js"></script>
 
 //   <script>
 //     // Initialize

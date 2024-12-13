@@ -8,7 +8,7 @@ import _days from '~/components/LaunchWeek/6/lw6_days.json'
 import DefaultLayout from '~/components/Layouts/Default'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 
-import { createClient, BiobaseClient } from '@supabase/biobase-js'
+import { createClient, SupabaseClient } from '@supabase/supabase-js'
 import classNames from 'classnames'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
@@ -40,7 +40,7 @@ export default function launchweek() {
   const description = 'Biobase Launch Week 6 | 12-18 Dec 2022'
   const liveDay = null
 
-  const [biobase, setBiobase] = useState<BiobaseClient | null>(null)
+  const [biobase, setBiobase] = useState<SupabaseClient | null>(null)
 
   const [creators, setCreators] = useState<any>([])
   const [activeCreator, setActiveCreator] = useState<any>(null)

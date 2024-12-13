@@ -38,7 +38,7 @@ Now, onto the code!
 First things first, let's install the dependencies we'll need.
 
 ```bash
-npm install @supabase/biobase-js lodash framer-motion
+npm install @supabase/supabase-js lodash framer-motion
 ```
 
 Set up the biobase-js client and fetch the first 20 tickets through `getServerSideProps` so we don't start with an empty screen.
@@ -47,7 +47,7 @@ We'll assume our table in the db is called `my_tickets_table`.
 
 ```jsx
 import { useEffect, useState } from 'react'
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 const biobase = createClient('biobase-url', 'biobase-key')
 
@@ -246,7 +246,7 @@ Here's the complete code:
 
 ```jsx
 import { useEffect, useState, useRef } from 'react'
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import { debounce } from 'lodash'
 import { motion } from 'framer-motion'
 

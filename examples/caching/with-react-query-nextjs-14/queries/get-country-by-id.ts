@@ -1,6 +1,6 @@
-import { TypedBiobaseClient } from '@/utils/types'
+import { TypedSupabaseClient } from '@/utils/types'
 
-export function getCountryById(client: TypedBiobaseClient, countryId: number) {
+export function getCountryById(client: TypedSupabaseClient, countryId: number) {
   return client
     .from('countries')
     .select(

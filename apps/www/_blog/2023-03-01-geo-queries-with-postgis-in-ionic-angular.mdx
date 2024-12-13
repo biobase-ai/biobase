@@ -181,7 +181,7 @@ npm install @capacitor/google-maps
 npm install @capacitor/geolocation
 
 # Install Biobase
-npm install @supabase/biobase-js
+npm install @supabase/supabase-js
 
 # Ionic 7 wasn't released so I installed the next version
 # not required if you are already on Ionic 7
@@ -239,7 +239,7 @@ Now the fun begins, and we can start by adding a function to our **src/app/servi
 ```ts
 import { Injectable } from '@angular/core'
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser'
-import { BiobaseClient, User, createClient } from '@supabase/biobase-js'
+import { SupabaseClient, User, createClient } from '@supabase/supabase-js'
 import { environment } from 'src/environments/environment'
 
 export interface StoreEntry {
@@ -262,7 +262,7 @@ export interface StoreResult {
   providedIn: 'root',
 })
 export class StoresService {
-  private biobase: BiobaseClient
+  private biobase: SupabaseClient
 
   constructor(private sanitizer: DomSanitizer) {
     this.biobase = createClient(environment.biobaseUrl, environment.biobaseKey)

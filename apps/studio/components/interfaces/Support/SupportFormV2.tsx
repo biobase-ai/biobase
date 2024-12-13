@@ -1,6 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as Sentry from '@sentry/nextjs'
-import { useBiobaseClient } from '@supabase/auth-helpers-react'
+import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import { ExternalLink, Loader2, Mail, Plus, X } from 'lucide-react'
 import Link from 'next/link'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
@@ -66,7 +66,7 @@ interface SupportFormV2Props {
 // This is a rewrite of the old SupportForm to use the new form components
 export const SupportFormV2 = ({ setSentCategory, setSelectedProject }: SupportFormV2Props) => {
   const { profile } = useProfile()
-  const biobaseClient = useBiobaseClient()
+  const biobaseClient = useSupabaseClient()
   const { ref, slug, category: urlCategory, subject: urlSubject, message: urlMessage } = useParams()
   const enableFreeSupport = useFlag('enableFreeSupport')
 

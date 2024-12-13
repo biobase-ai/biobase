@@ -7,7 +7,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
-import { createClient, Session, BiobaseClient } from '@supabase/biobase-js'
+import { createClient, Session, SupabaseClient } from '@supabase/supabase-js'
 import { SITE_ORIGIN, SITE_URL } from '~/lib/constants'
 
 import DefaultLayout from '~/components/Layouts/Default'
@@ -47,7 +47,7 @@ export default function TicketHome({ users, meetups }: Props) {
 
   const ticketNumber = query.ticketNumber?.toString()
   const bgImageId = query.bgImageId?.toString()
-  const [biobase, setBiobase] = useState<BiobaseClient | null>(null)
+  const [biobase, setBiobase] = useState<SupabaseClient | null>(null)
   const [session, setSession] = useState<Session | null>(null)
 
   const [initialDarkMode] = useState('dark')

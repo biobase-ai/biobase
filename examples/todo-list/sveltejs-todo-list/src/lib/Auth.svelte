@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Provider } from "@supabase/biobase-js";
+  import type { Provider } from "@supabase/supabase-js";
   import { biobase } from "./db";
 
   interface HelperText {

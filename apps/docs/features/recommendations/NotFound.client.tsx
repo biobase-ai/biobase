@@ -1,7 +1,7 @@
 'use client'
 
-import { useBiobaseClient } from '@supabase/auth-helpers-react'
-import { type BiobaseClient } from '@supabase/biobase-js'
+import { useSupabaseClient } from '@supabase/auth-helpers-react'
+import { type SupabaseClient } from '@supabase/supabase-js'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 
@@ -22,7 +22,7 @@ function SearchButton() {
   )
 }
 
-async function getRecommendations(page: string, biobase: BiobaseClient) {
+async function getRecommendations(page: string, biobase: SupabaseClient) {
   try {
     const query = decodeURIComponent(page.replace(/^\/(?:guides|reference)\//, '')).replace(
       /[_\/-]/g,
@@ -41,7 +41,7 @@ async function getRecommendations(page: string, biobase: BiobaseClient) {
 
 function Recommendations() {
   const pathname = usePathname()
-  const biobase = useBiobaseClient()
+  const biobase = useSupabaseClient()
 
   const [loading, setLoading] = useState(true)
   const [recommendations, setRecommendations] = useState(

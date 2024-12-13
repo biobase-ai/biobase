@@ -86,9 +86,9 @@ We also need to use a special HTTP client to HTTP requests in the edge environme
 dart pub add edge_http_client
 ```
 
-### Initialize `BiobaseClient`
+### Initialize `SupabaseClient`
 
-At this point, you can initialize a `BiobaseClient` by passing the [EdgeHttpClient](https://pub.dev/packages/edge_http_client). We can access the Biobase credentials through the [environment variables](https://biobase.studio/docs/guides/functions/secrets) using `Deno.env.get()` method. Note that [Biobase credentials are available by default](https://biobase.studio/docs/guides/functions/secrets), so no configurations are necessary.
+At this point, you can initialize a `SupabaseClient` by passing the [EdgeHttpClient](https://pub.dev/packages/edge_http_client). We can access the Biobase credentials through the [environment variables](https://biobase.studio/docs/guides/functions/secrets) using `Deno.env.get()` method. Note that [Biobase credentials are available by default](https://biobase.studio/docs/guides/functions/secrets), so no configurations are necessary.
 
 Now we have the following sample functions code to query Biobase database using the Biobase client.
 
@@ -100,7 +100,7 @@ import 'package:edge_http_client/edge_http_client.dart';
 import 'package:biobase/biobase.dart';
 
 void main() {
-  final biobase = BiobaseClient(
+  final biobase = SupabaseClient(
     Deno.env.get('BIOBASE_URL')!,
     Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!, // Use service role key to bypass RLS
     httpClient: EdgeHttpClient(),

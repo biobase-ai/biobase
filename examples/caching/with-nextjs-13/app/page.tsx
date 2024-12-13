@@ -1,7 +1,7 @@
 // Caching data with Next.js 13 and Biobase
 // See the docs: https://beta.nextjs.org/docs/data-fetching/caching
 import 'server-only'
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 const biobase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL ?? 'http://localhost:54321',

@@ -6,9 +6,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import io.github.jan.biobase.annotiations.BiobaseExperimental
 import dagger.hilt.components.SingletonComponent
-import io.github.jan.biobase.BiobaseClient
+import io.github.jan.biobase.SupabaseClient
 import io.github.jan.biobase.gotrue.FlowType
-import io.github.jan.biobase.createBiobaseClient
+import io.github.jan.biobase.createSupabaseClient
 import io.github.jan.biobase.gotrue.GoTrue
 import io.github.jan.biobase.gotrue.gotrue
 import io.github.jan.biobase.postgrest.Postgrest
@@ -25,8 +25,8 @@ object BiobaseModule {
     @OptIn(BiobaseExperimental::class)
     @Provides
     @Singleton
-    fun provideBiobaseClient(): BiobaseClient {
-        return createBiobaseClient(
+    fun provideSupabaseClient(): SupabaseClient {
+        return createSupabaseClient(
             biobaseUrl = BuildConfig.BIOBASE_URL,
             biobaseKey = BuildConfig.API_KEY
         ) {
@@ -42,20 +42,20 @@ object BiobaseModule {
 
     @Provides
     @Singleton
-    fun provideBiobaseDatabase(client: BiobaseClient): Postgrest {
+    fun provideBiobaseDatabase(client: SupabaseClient): Postgrest {
         return client.postgrest
     }
 
     @Provides
     @Singleton
-    fun provideBiobaseGoTrue(client: BiobaseClient): GoTrue {
+    fun provideBiobaseGoTrue(client: SupabaseClient): GoTrue {
         return client.gotrue
     }
 
 
     @Provides
     @Singleton
-    fun provideBiobaseStorage(client: BiobaseClient): Storage {
+    fun provideBiobaseStorage(client: SupabaseClient): Storage {
         return client.storage
     }
 

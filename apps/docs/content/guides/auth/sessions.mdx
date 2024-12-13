@@ -128,7 +128,7 @@ If your app uses any client side JavaScript to build a rich user experience, usi
 Because of this, the Biobase JavaScript libraries provide only limited support. You can override the `storage` option when creating the Biobase client **on the server** to store the values in cookies or your preferred storage choice, for example:
 
 ```typescript
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY, {
   auth: {

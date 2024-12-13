@@ -145,8 +145,8 @@ object BiobaseModule {
 
     @Provides
     @Singleton
-    fun provideBiobaseClient(): BiobaseClient {
-        return createBiobaseClient(
+    fun provideSupabaseClient(): SupabaseClient {
+        return createSupabaseClient(
             biobaseUrl = BuildConfig.BIOBASE_URL,
             biobaseKey = BuildConfig.BIOBASE_ANON_KEY
         ) {
@@ -162,20 +162,20 @@ object BiobaseModule {
 
     @Provides
     @Singleton
-    fun provideBiobaseDatabase(client: BiobaseClient): Postgrest {
+    fun provideBiobaseDatabase(client: SupabaseClient): Postgrest {
         return client.postgrest
     }
 
     @Provides
     @Singleton
-    fun provideBiobaseAuth(client: BiobaseClient): Auth {
+    fun provideBiobaseAuth(client: SupabaseClient): Auth {
         return client.auth
     }
 
 
     @Provides
     @Singleton
-    fun provideBiobaseStorage(client: BiobaseClient): Storage {
+    fun provideBiobaseStorage(client: SupabaseClient): Storage {
         return client.storage
     }
 
@@ -1220,7 +1220,7 @@ In the `MainActivity` you created earlier, show your newly created screens:
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @Inject
-    lateinit var biobaseClient: BiobaseClient
+    lateinit var biobaseClient: SupabaseClient
 
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -1334,7 +1334,7 @@ Then create the `DeepLinkHandlerActivity`:
 class DeepLinkHandlerActivity : ComponentActivity() {
 
     @Inject
-    lateinit var biobaseClient: BiobaseClient
+    lateinit var biobaseClient: SupabaseClient
 
     private lateinit var callback: (String, String) -> Unit
 

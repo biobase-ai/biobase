@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import { Database } from './schema'
 
 const biobaseUrl = import.meta.env.VITE_BIOBASE_URL

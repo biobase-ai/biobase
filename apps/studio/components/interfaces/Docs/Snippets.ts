@@ -15,7 +15,7 @@ const snippets = {
     bash: null,
     js: {
       language: 'bash',
-      code: `npm install --save @supabase/biobase-js`,
+      code: `npm install --save @supabase/supabase-js`,
     },
   }),
   init: (endpoint: string) => ({
@@ -27,7 +27,7 @@ const snippets = {
     js: {
       language: 'js',
       code: `
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 const biobaseUrl = '${endpoint}'
 const biobaseKey = process.env.BIOBASE_KEY
 const biobase = createClient(biobaseUrl, biobaseKey)`,

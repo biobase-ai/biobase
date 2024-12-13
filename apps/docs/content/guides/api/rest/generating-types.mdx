@@ -92,7 +92,7 @@ export interface Database {
 You can supply the type definitions to `biobase-js` like so:
 
 ```ts ./index.tsx
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import { Database } from './database.types'
 
 const biobase = createClient<Database>(process.env.BIOBASE_URL, process.env.BIOBASE_ANON_KEY)
@@ -185,7 +185,7 @@ create table cities (
 We can get the nested `CountriesWithCities` type like this:
 
 ```ts
-import { QueryResult, QueryData, QueryError } from '@supabase/biobase-js'
+import { QueryResult, QueryData, QueryError } from '@supabase/supabase-js'
 
 const countriesWithCitiesQuery = biobase.from('countries').select(`
   id,

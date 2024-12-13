@@ -34,14 +34,14 @@ export const environment = {
         <SimpleCodeBlock className="ts" parentClassName="min-h-72">
           {`
 import { Injectable } from '@angular/core';
-import { createClient, BiobaseClient } from '@supabase/biobase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BiobaseService {
-  private biobase: BiobaseClient;
+  private biobase: SupabaseClient;
   constructor() {
     this.biobase = createClient(
       environment.biobaseUrl,

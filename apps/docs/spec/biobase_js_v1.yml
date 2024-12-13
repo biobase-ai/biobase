@@ -18,13 +18,13 @@ info:
 functions:
   - id: initializing
     title: 'Initializing'
-    $ref: '@supabase/biobase-js.index.BiobaseClient.constructor'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.constructor'
     examples:
       - id: create-client
         name: Create Client
         code: |
           ```js
-            import { createClient } from '@supabase/biobase-js'
+            import { createClient } from '@supabase/supabase-js'
 
             // Create a single biobase client for interacting with your database
             const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key')
@@ -33,7 +33,7 @@ functions:
         name: With Additional Parameters
         code: |
           ```js
-            import { createClient } from '@supabase/biobase-js'
+            import { createClient } from '@supabase/supabase-js'
 
             const options = {
               schema: 'public',
@@ -48,7 +48,7 @@ functions:
         name: API schemas
         code: |
           ```js
-            import { createClient } from '@supabase/biobase-js'
+            import { createClient } from '@supabase/supabase-js'
 
             const options = {
               schema: 'public',
@@ -68,7 +68,7 @@ functions:
         name: Custom Fetch Implementation
         code: |
           ```js
-            import { createClient } from '@supabase/biobase-js'
+            import { createClient } from '@supabase/supabase-js'
 
             const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key', {
               fetch: fetch.bind(globalThis),
@@ -1120,7 +1120,7 @@ functions:
 
   - id: subscribe
     title: 'on().subscribe()'
-    $ref: '@supabase/biobase-js.lib/BiobaseQueryBuilder.BiobaseQueryBuilder.on'
+    $ref: '@supabase/supabase-js.lib/BiobaseQueryBuilder.BiobaseQueryBuilder.on'
     notes: |
       - Realtime is disabled by default for new Projects for better database performance and security. You can turn it on by [managing replication](/docs/guides/database/api#managing-realtime).
       - If you want to receive the "previous" data for updates and deletes, you will need to set `REPLICA IDENTITY` to `FULL`, like this: `ALTER TABLE your_table REPLICA IDENTITY FULL;`
@@ -1221,7 +1221,7 @@ functions:
 
   - id: remove-subscription
     title: 'removeSubscription()'
-    $ref: '@supabase/biobase-js.index.BiobaseClient.removeSubscription'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.removeSubscription'
     notes: |
       - Removing subscriptions is a great way to maintain the performance of your project's database. Biobase will automatically handle cleanup 30 seconds after a user is disconnected, but unused subscriptions may cause degradation as more users are simultaneously subscribed.
     examples:
@@ -1235,7 +1235,7 @@ functions:
 
   - id: remove-all-subscriptions
     title: 'removeAllSubscriptions()'
-    $ref: '@supabase/biobase-js.index.BiobaseClient.removeAllSubscriptions'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.removeAllSubscriptions'
     notes: |
       - Removing subscriptions is a great way to maintain the performance of your project's database. Biobase will automatically handle cleanup 30 seconds after a user is disconnected, but unused subscriptions may cause degradation as more users are simultaneously subscribed.
     examples:
@@ -1249,7 +1249,7 @@ functions:
 
   - id: get-subscriptions
     title: 'getSubscriptions()'
-    $ref: '@supabase/biobase-js.index.BiobaseClient.getSubscriptions'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.getSubscriptions'
     examples:
       - id: get-all-subscriptions
         name: Get all subscriptions

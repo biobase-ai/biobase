@@ -4,7 +4,7 @@ import { Severity } from 'allure-js-commons'
 import { exec, ExecException } from 'child_process'
 import os from 'os'
 
-import { Session, BiobaseClient, User, UserAttributes } from '@supabase/biobase-js'
+import { Session, SupabaseClient, User, UserAttributes } from '@supabase/supabase-js'
 
 import { FEATURE } from '../templates/enums'
 import { description, feature, log, severity, step } from '../../.jest/jest-custom-reporter'

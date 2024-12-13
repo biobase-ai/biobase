@@ -87,7 +87,7 @@ To facilitate this, we can create an API route in Next.js to generate these sign
 ```ts src/app/api/biobase/storage/route.ts
 import { auth } from '@/auth'
 import { env } from '@/env'
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 export const dynamic = 'force-dynamic' // defaults to auto
 export async function GET(request: Request) {
@@ -124,7 +124,7 @@ The `createSignedUploadUrl` method returns a `token` which we can then use on th
 'use client'
 
 import { env } from '@/env'
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { useDropzone } from 'react-dropzone'

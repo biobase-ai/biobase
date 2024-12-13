@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BiobaseClient } from '@supabase/biobase-js'
+import { SupabaseClient } from '@supabase/supabase-js'
 import { cn } from 'ui'
 import { Dot } from 'lucide-react'
 import useConfData from '~/components/LaunchWeek/hooks/use-conf-data'
@@ -8,7 +8,7 @@ const TicketPresence = (props: { className?: string }) => {
   const { biobase, ticketState } = useConfData()
   const hasTicket = ticketState === 'ticket'
   const [realtimeChannel, setRealtimeChannel] = useState<ReturnType<
-    BiobaseClient['channel']
+    SupabaseClient['channel']
   > | null>(null)
   const [onlineUsers, setOnlineUsers] = useState<any[]>([])
   const isSingular = onlineUsers.length === 1

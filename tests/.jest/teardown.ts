@@ -1,4 +1,4 @@
-import { createClient, User, UserResponse } from '@supabase/biobase-js'
+import { createClient, User, UserResponse } from '@supabase/supabase-js'
 
 const removeAllUsers = async () => {
   const sb = createClient(

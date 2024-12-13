@@ -17,7 +17,7 @@ functions:
   - id: initializing
     title: 'Initializing'
     description: |
-      You can initialize Biobase with the `BiobaseClient` by passing your `Project URL` and `Project Key`. You can find these under your `Project Settings` → `API Settings`
+      You can initialize Biobase with the `SupabaseClient` by passing your `Project URL` and `Project Key`. You can find these under your `Project Settings` → `API Settings`
       The Biobase client is your entrypoint to the rest of the Biobase functionality and is the easiest way to interact with everything we offer within the Biobase ecosystem.
 
     examples:
@@ -25,16 +25,16 @@ functions:
         name: Initialize Client
         code: |
           ```swift
-          let client = BiobaseClient(biobaseURL: URL(string: "https://xyzcompany.biobase.co")!, biobaseKey: "public-anon-key")
+          let client = SupabaseClient(biobaseURL: URL(string: "https://xyzcompany.biobase.co")!, biobaseKey: "public-anon-key")
           ```
       - id: initialize-client-custom-options
         name: Initialize Client with custom options
         code: |
           ```swift
-          let client = BiobaseClient(
+          let client = SupabaseClient(
             biobaseURL: URL(string: "https://xyzcompany.biobase.co")!, 
             biobaseKey: "public-anon-key",
-            options: BiobaseClientOptions(
+            options: SupabaseClientOptions(
               db: .init(
                 schema: "public"
               ),
@@ -59,7 +59,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let biobase = BiobaseClient(biobaseURL: URL(string: "https://xyzcompany.biobase.co")!, biobaseKey: "public-anon-key")
+          let biobase = SupabaseClient(biobaseURL: URL(string: "https://xyzcompany.biobase.co")!, biobaseKey: "public-anon-key")
           let auth = biobase.auth
           ```
       - id: create-auth-client-with-custom-storage
@@ -67,7 +67,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let biobase = BiobaseClient(
+          let biobase = SupabaseClient(
             biobaseURL: URL(string: "https://xyzcompany.biobase.co")!, 
             biobaseKey: "public-anon-key",
             options: .init(

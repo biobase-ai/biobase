@@ -9,5 +9,5 @@
 useHead({
 	title: 'User Management'
 })
-const user = useBiobaseUser()
+const user = useSupabaseUser()
 </script>

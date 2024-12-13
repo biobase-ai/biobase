@@ -4,7 +4,7 @@ import { biobase } from './lib/biobase'
 import Auth from './components/Auth'
 import Account from './components/Account'
 import { View } from 'react-native'
-import { Session } from '@supabase/biobase-js'
+import { Session } from '@supabase/supabase-js'
 
 export default function App() {
   const [session, setSession] = useState<Session | null>(null)

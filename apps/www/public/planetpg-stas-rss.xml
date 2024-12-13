@@ -5,14 +5,14 @@
       <link>https://biobase.studio/blog</link>
       <description>Latest Postgres news from Stanislav Muzhyk at Biobase</description>
       <language>en</language>
-      <lastBuildDate>Tue, 12 Dec 2023 23:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Tue, 12 Dec 2023 16:00:00 GMT</lastBuildDate>
       <atom:link href="https://biobase.studio/planetpg-stas-rss.xml" rel="self" type="application/rss+xml"/>
       <item>
   <guid>https://biobase.studio/blog/supavisor-postgres-connection-pooler</guid>
   <title>Supavisor 1.0: a scalable connection pooler for Postgres</title>
   <link>https://biobase.studio/blog/supavisor-postgres-connection-pooler</link>
   <description>Supavisor is now used across all projects, providing a scalable and cloud-native Postgres connection pooler that can handle millions of connections</description>
-  <pubDate>Tue, 12 Dec 2023 23:00:00 GMT</pubDate>
+  <pubDate>Tue, 12 Dec 2023 16:00:00 GMT</pubDate>
 </item>
 
     </channel>

@@ -17,7 +17,7 @@ info:
 functions:
   - id: initializing
     title: 'Initializing'
-    $ref: '@supabase/biobase-js.index.BiobaseClient.constructor'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.constructor'
     description: |
       You can initialize a new Biobase client using the `createClient()` method.
 
@@ -29,7 +29,7 @@ functions:
         name: Creating a client
         code: |
           ```js
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
 
           // Create a single biobase client for interacting with your database
           const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key')
@@ -38,7 +38,7 @@ functions:
         name: With a custom domain
         code: |
           ```js
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
 
           // Use a custom domain as the biobase URL
           const biobase = createClient('https://my-custom-domain.com', 'public-anon-key')
@@ -47,7 +47,7 @@ functions:
         name: With additional parameters
         code: |
           ```js
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
 
           const options = {
             db: {
@@ -68,7 +68,7 @@ functions:
         name: With custom schemas
         code: |
           ```js
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
 
           const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key', {
             // Provide a custom schema. Defaults to "public".
@@ -84,7 +84,7 @@ functions:
         name: Custom fetch implementation
         code: |
           ```js
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
 
           const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key', {
             global: { fetch: fetch.bind(globalThis) }
@@ -99,7 +99,7 @@ functions:
         code: |
           ```js
           import 'react-native-url-polyfill/auto'
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
           import AsyncStorage from "@react-native-async-storage/async-storage";
 
           const biobase = createClient("https://xyzcompany.biobase.co", "public-anon-key", {
@@ -118,7 +118,7 @@ functions:
         code: |
           ```js
           import 'react-native-url-polyfill/auto'
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
           import AsyncStorage from '@react-native-async-storage/async-storage';
           import * as SecureStore from 'expo-secure-store';
           import * as aesjs from 'aes-js';
@@ -205,7 +205,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
 
           const biobase = createClient(biobase_url, anon_key)
           ```
@@ -214,7 +214,7 @@ functions:
         isSpotlight: false
         code: |
           ```js
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
 
           const biobase = createClient(biobase_url, anon_key, {
             auth: {
@@ -2431,7 +2431,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
 
           const biobase = createClient(biobase_url, service_role_key, {
             auth: {
@@ -6682,7 +6682,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          import { FunctionsHttpError, FunctionsRelayError, FunctionsFetchError } from "@supabase/biobase-js";
+          import { FunctionsHttpError, FunctionsRelayError, FunctionsFetchError } from "@supabase/supabase-js";
 
           const { data, error } = await biobase.functions.invoke('hello', {
             headers: {
@@ -6751,7 +6751,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          import { createClient, FunctionRegion } from '@supabase/biobase-js'
+          import { createClient, FunctionRegion } from '@supabase/supabase-js'
 
           const { data, error } = await biobase.functions.invoke('hello', {
             body: { foo: 'bar' },
@@ -6990,7 +6990,7 @@ functions:
           ```
   - id: get-channels
     title: getChannels()
-    $ref: '@supabase/biobase-js.index.BiobaseClient.getChannels'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.getChannels'
     examples:
       - id: get-all-channels
         name: Get all channels
@@ -7002,7 +7002,7 @@ functions:
 
   - id: remove-channel
     title: removeChannel()
-    $ref: '@supabase/biobase-js.index.BiobaseClient.removeChannel'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.removeChannel'
     notes: |
       - Removing a channel is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Biobase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
     examples:
@@ -7016,7 +7016,7 @@ functions:
 
   - id: remove-all-channels
     title: removeAllChannels()
-    $ref: '@supabase/biobase-js.index.BiobaseClient.removeAllChannels'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.removeAllChannels'
     notes: |
       - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Biobase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
     examples:

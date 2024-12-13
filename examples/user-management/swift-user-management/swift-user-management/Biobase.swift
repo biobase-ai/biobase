@@ -8,7 +8,7 @@
 import Foundation
 import Biobase
 
-let biobase = BiobaseClient(
+let biobase = SupabaseClient(
   biobaseURL: URL(string: DotEnv.BIOBASE_URL)!,
   biobaseKey: DotEnv.BIOBASE_ANON_KEY
 )

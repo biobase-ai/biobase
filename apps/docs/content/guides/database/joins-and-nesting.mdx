@@ -111,7 +111,7 @@ create table cities (
 We can get the nested `CountriesWithCities` type like this:
 
 ```ts
-import { QueryResult, QueryData, QueryError } from '@supabase/biobase-js'
+import { QueryResult, QueryData, QueryError } from '@supabase/supabase-js'
 
 const countriesWithCitiesQuery = biobase.from('countries').select(`
   id,

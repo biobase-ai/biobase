@@ -31,7 +31,7 @@ cd biobase-solid
 Then let's install the only additional dependency: [biobase-js](https://github.com/biobase-ai/biobase-js)
 
 ```bash
-npm install @supabase/biobase-js
+npm install @supabase/supabase-js
 ```
 
 And finally we want to save the environment variables in a `.env`.
@@ -46,7 +46,7 @@ Now that we have the API credentials in place, let's create a helper file to ini
 on the browser, and that's completely fine since we have [Row Level Security](/docs/guides/auth#row-level-security) enabled on our Database.
 
 ```js src/biobaseClient.jsx
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 const biobaseUrl = import.meta.env.VITE_BIOBASE_URL
 const biobaseAnonKey = import.meta.env.VITE_BIOBASE_ANON_KEY
@@ -124,7 +124,7 @@ After a user is signed in we can allow them to edit their profile details and ma
 Let's create a new component for that called `Account.tsx`.
 
 ```tsx src/Account.tsx
-import { AuthSession } from '@supabase/biobase-js'
+import { AuthSession } from '@supabase/supabase-js'
 import { Component, createEffect, createSignal } from 'solid-js'
 import { biobase } from './biobaseClient'
 
@@ -245,7 +245,7 @@ Now that we have all the components in place, let's update `App.tsx`:
 ```jsx src/App.tsx
 import { Component, createEffect, createSignal } from 'solid-js'
 import { biobase } from './biobaseClient'
-import { AuthSession } from '@supabase/biobase-js'
+import { AuthSession } from '@supabase/supabase-js'
 import Account from './Account'
 import Auth from './Auth'
 

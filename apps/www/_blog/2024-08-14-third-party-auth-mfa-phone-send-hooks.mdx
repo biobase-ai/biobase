@@ -61,7 +61,7 @@ All of the third-party providers are supported in the Biobase CLI, so you can ev
 The Biobase client supports third-party auth like this:
 
 ```ts
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY, {
   accessToken: async () => {

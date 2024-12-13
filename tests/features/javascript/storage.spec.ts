@@ -2,7 +2,7 @@ import { params, suite, test } from '@testdeck/jest'
 import { faker } from '@faker-js/faker'
 import { Severity } from 'allure-js-commons'
 
-import { createClient, Session, BiobaseClient, User, UserAttributes } from '@supabase/biobase-js'
+import { createClient, Session, SupabaseClient, User, UserAttributes } from '@supabase/supabase-js'
 import { Bucket } from '@supabase/storage-js'
 
 import { FEATURE } from '../templates/enums'

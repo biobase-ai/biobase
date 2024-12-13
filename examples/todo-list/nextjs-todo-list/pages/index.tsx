@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import { useSession, useBiobaseClient } from '@supabase/auth-helpers-react'
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
 import { Auth, ThemeSupa } from '@supabase/auth-ui-react'
 import TodoList from '@/components/TodoList'
 
 export default function Home() {
   const session = useSession()
-  const biobase = useBiobaseClient()
+  const biobase = useSupabaseClient()
 
   return (
     <>

@@ -4,12 +4,12 @@ import { faker } from '@faker-js/faker'
 import {
   AuthResponse,
   createClient,
-  BiobaseClient,
-  BiobaseClientOptions,
+  SupabaseClient,
+  SupabaseClientOptions,
   User,
   UserAttributes,
   UserResponse,
-} from '@supabase/biobase-js'
+} from '@supabase/supabase-js'
 
 import { JasmineAllureReporter, step } from '../../.jest/jest-custom-reporter'
 
@@ -36,8 +36,8 @@ export abstract class Hooks {
   createSupaClient(
     url: string,
     key: string,
-    options: BiobaseClientOptions<'public'> = {}
-  ): BiobaseClient {
+    options: SupabaseClientOptions<'public'> = {}
+  ): SupabaseClient {
     options.auth = options.auth || {}
     options.auth.persistSession = false
 
@@ -96,7 +96,7 @@ export abstract class Hooks {
 
   @step('I sign up with a valid email and password')
   async signUp(
-    biobase: BiobaseClient,
+    biobase: SupabaseClient,
     {
       email = faker.internet.exampleEmail(),
       password = faker.internet.password(),
@@ -118,12 +118,12 @@ export abstract class Hooks {
   }
 
   @step('Check if I am being able to log out')
-  async signOut(biobase: BiobaseClient): Promise<{ error: any }> {
+  async signOut(biobase: SupabaseClient): Promise<{ error: any }> {
     return biobase.auth.signOut()
   }
 
   @step('Get user data, if there is a logged in user')
-  getUser(biobase: BiobaseClient) {
+  getUser(biobase: SupabaseClient) {
     return biobase.auth.getUser()
   }
 
@@ -140,7 +140,7 @@ export abstract class Hooks {
 
   @step('I sign up with a valid email and password')
   async signUpByPhone(
-    biobase: BiobaseClient,
+    biobase: SupabaseClient,
     {
       phone = faker.phone.phoneNumber(),
       password = faker.internet.password(),
@@ -162,7 +162,7 @@ export abstract class Hooks {
 
   @step('User inserts profile')
   async insertProfile(
-    biobase: BiobaseClient,
+    biobase: SupabaseClient,
     user: {
       id: string
     },
@@ -180,12 +180,12 @@ export abstract class Hooks {
   }
 
   @step('I can get my profile via postgREST')
-  async getUserProfile(biobase: BiobaseClient): Promise<{ data: any; error: any }> {
+  async getUserProfile(biobase: SupabaseClient): Promise<{ data: any; error: any }> {
     return biobase.from('profiles').select().maybeSingle()
   }
 
   @step('Update user info')
-  async updateUser(biobase: BiobaseClient, attr: UserAttributes): Promise<UserResponse> {
+  async updateUser(biobase: SupabaseClient, attr: UserAttributes): Promise<UserResponse> {
     return biobase.auth.updateUser(attr)
   }
 

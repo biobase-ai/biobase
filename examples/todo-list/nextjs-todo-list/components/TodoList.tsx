@@ -1,11 +1,11 @@
 import { Database } from '@/lib/schema'
-import { Session, useBiobaseClient } from '@supabase/auth-helpers-react'
+import { Session, useSupabaseClient } from '@supabase/auth-helpers-react'
 import { useEffect, useState } from 'react'
 
 type Todos = Database['public']['Tables']['todos']['Row']
 
 export default function TodoList({ session }: { session: Session }) {
-  const biobase = useBiobaseClient<Database>()
+  const biobase = useSupabaseClient<Database>()
   const [todos, setTodos] = useState<Todos[]>([])
   const [newTaskText, setNewTaskText] = useState('')
   const [errorText, setErrorText] = useState('')
@@ -90,7 +90,7 @@ export default function TodoList({ session }: { session: Session }) {
 }
 
 const Todo = ({ todo, onDelete }: { todo: Todos; onDelete: () => void }) => {
-  const biobase = useBiobaseClient<Database>()
+  const biobase = useSupabaseClient<Database>()
   const [isCompleted, setIsCompleted] = useState(todo.is_complete)
 
   const toggle = async () => {

@@ -1,4 +1,4 @@
-import type { Factor } from '@supabase/biobase-js'
+import type { Factor } from '@supabase/supabase-js'
 import { useQueryClient } from '@tanstack/react-query'
 import { Lock } from 'lucide-react'
 import Link from 'next/link'

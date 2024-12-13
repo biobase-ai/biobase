@@ -53,7 +53,7 @@ Push notifications are an important part of any mobile app. They allow you to se
     1. `biobase secrets set --env-file .env.local`
 
     ```ts biobase/functions/push/index.ts
-    import { createClient } from 'jsr:@supabase/biobase-js@2'
+    import { createClient } from 'jsr:@supabase/supabase-js@2'
 
     console.log('Hello from Functions!')
 
@@ -166,7 +166,7 @@ Push notifications are an important part of any mobile app. They allow you to se
     Add the following code to `biobase/functions/push/index.ts`:
 
     ```ts biobase/functions/push/index.ts
-    import { createClient } from 'npm:@supabase/biobase-js@2'
+    import { createClient } from 'npm:@supabase/supabase-js@2'
     import { JWT } from 'npm:google-auth-library@9'
     import serviceAccount from '../service-account.json' with { type: 'json' }
 

@@ -35,7 +35,7 @@ This submodule provides convenience helpers for implementing user authentication
 This library supports Node.js `^16.15.0`.
 
 ```sh Terminal
-npm install @supabase/auth-helpers-sveltekit @supabase/biobase-js
+npm install @supabase/auth-helpers-sveltekit @supabase/supabase-js
 ```
 
 ### Declare environment variables
@@ -218,13 +218,13 @@ In order to get the most out of TypeScript and it's intellisense, you should imp
 ```ts src/app.d.ts
 // src/app.d.ts
 
-import { BiobaseClient, Session, User } from '@supabase/biobase-js'
+import { SupabaseClient, Session, User } from '@supabase/supabase-js'
 import { Database } from './DatabaseDefinitions'
 
 declare global {
   namespace App {
     interface Locals {
-      biobase: BiobaseClient<Database>
+      biobase: SupabaseClient<Database>
       safeGetSession(): Promise<{ session: Session | null; user: User | null }>
     }
     interface PageData {
@@ -846,7 +846,7 @@ export const load = async ({ parent }) => {
 
 ```ts
 import { fail, redirect } from '@sveltejs/kit'
-import { AuthApiError } from '@supabase/biobase-js'
+import { AuthApiError } from '@supabase/supabase-js'
 
 export const actions = {
   signin: async ({ request, locals: { biobase } }) => {
@@ -1119,13 +1119,13 @@ declare namespace App {
 
 ```ts src/app.d.ts
 // src/app.d.ts
-import { BiobaseClient, Session, User } from '@supabase/biobase-js'
+import { SupabaseClient, Session, User } from '@supabase/supabase-js'
 import { Database } from './DatabaseDefinitions'
 
 declare global {
   namespace App {
     interface Locals {
-      biobase: BiobaseClient<Database>
+      biobase: SupabaseClient<Database>
       safeGetSession(): Promise<{ session: Session | null; user: User | null }>
     }
     interface PageData {
@@ -1289,7 +1289,7 @@ export const GET: RequestHandler = async ({ locals: { biobase, getSession } }) =
 <TabPanel id="older-0.7" label="0.7.x">
 
 ```js src/lib/db.ts
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import { setupBiobaseHelpers } from '@supabase/auth-helpers-sveltekit'
 import { dev } from '$app/environment'
 import { env } from '$env/dynamic/public'
@@ -1520,12 +1520,12 @@ import { withAuth } from '@supabase/auth-helpers-sveltekit'
 import { redirect } from '@sveltejs/kit'
 import type { PageLoad } from './$types'
 
-export const load: PageLoad = withAuth(async ({ session, getBiobaseClient }) => {
+export const load: PageLoad = withAuth(async ({ session, getSupabaseClient }) => {
   if (!session.user) {
     redirect(303, '/')
   }
 
-  const { data: tableData } = await getBiobaseClient().from('test').select('*')
+  const { data: tableData } = await getSupabaseClient().from('test').select('*')
   return { tableData, user: session.user }
 })
 ```
@@ -1589,12 +1589,12 @@ interface TestTable {
   created_at: string
 }
 
-export const GET: RequestHandler = withAuth(async ({ session, getBiobaseClient }) => {
+export const GET: RequestHandler = withAuth(async ({ session, getSupabaseClient }) => {
   if (!session.user) {
     redirect(303, '/')
   }
 
-  const { data } = await getBiobaseClient().from<TestTable>('test').select('*')
+  const { data } = await getSupabaseClient().from<TestTable>('test').select('*')
 
   return json({ data })
 })
@@ -1642,9 +1642,9 @@ The environment variable prefix is now `PUBLIC_` instead of `VITE_` (e.g., `VITE
 <TabPanel id="older" label="0.6.11 and below">
 
 ```js src/lib/db.ts
-import { createBiobaseClient } from '@supabase/auth-helpers-sveltekit';
+import { createSupabaseClient } from '@supabase/auth-helpers-sveltekit';
 
-const { biobaseClient } = createBiobaseClient(
+const { biobaseClient } = createSupabaseClient(
   import.meta.env.VITE_BIOBASE_URL as string,
   import.meta.env.VITE_BIOBASE_ANON_KEY as string
 );
@@ -1656,7 +1656,7 @@ export { biobaseClient };
 <TabPanel id="0.7.0" label="0.7.0">
 
 ```js src/lib/db.ts
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import { setupBiobaseHelpers } from '@supabase/auth-helpers-sveltekit'
 import { dev } from '$app/environment'
 import { env } from '$env/dynamic/public'
@@ -1801,12 +1801,12 @@ export const handle = sequence(auth(), yourHandler)
 // for information about these interfaces
 declare namespace App {
   interface UserSession {
-    user: import('@supabase/biobase-js').User
+    user: import('@supabase/supabase-js').User
     accessToken?: string
   }
 
   interface Locals extends UserSession {
-    error: import('@supabase/biobase-js').ApiError
+    error: import('@supabase/supabase-js').ApiError
   }
 
   interface Session extends UserSession {}
@@ -1949,12 +1949,12 @@ import { withAuth } from '@supabase/auth-helpers-sveltekit'
 import { redirect } from '@sveltejs/kit'
 import type { PageLoad } from './$types'
 
-export const load: PageLoad = withAuth(async ({ session, getBiobaseClient }) => {
+export const load: PageLoad = withAuth(async ({ session, getSupabaseClient }) => {
   if (!session.user) {
     redirect(303, '/')
   }
 
-  const { data: tableData } = await getBiobaseClient().from('test').select('*')
+  const { data: tableData } = await getSupabaseClient().from('test').select('*')
   return { tableData, user: session.user }
 })
 ```
@@ -2011,12 +2011,12 @@ interface TestTable {
   created_at: string;
 }
 
-export const GET: RequestHandler = withAuth(async ({ session, getBiobaseClient }) => {
+export const GET: RequestHandler = withAuth(async ({ session, getSupabaseClient }) => {
   if (!session.user) {
     redirect(303, '/');
   }
 
-  const { data } = await getBiobaseClient()
+  const { data } = await getSupabaseClient()
     .from<TestTable>('test')
     .select('*');
 

@@ -47,11 +47,11 @@ import AWSPluginsCore
 
 struct UnexpectedAuthSessionError: Error {}
 
-let biobase = BiobaseClient(
+let biobase = SupabaseClient(
   biobaseURL: URL(string: "https://<biobase-project>.biobase.co")!,
   biobaseKey: "BIOBASE_ANON_KEY",
-  options: BiobaseClientOptions(
-    auth: BiobaseClientOptions.AuthOptions(
+  options: SupabaseClientOptions(
+    auth: SupabaseClientOptions.AuthOptions(
       accessToken: {
         let session = try await Amplify.Auth.fetchAuthSession()
 
@@ -100,7 +100,7 @@ import com.amplifyframework.auth.AuthSession
 import com.amplifyframework.auth.cognito.AWSCognitoAuthSession
 import com.amplifyframework.core.Amplify
 
-val biobase = createBiobaseClient(
+val biobase = createSupabaseClient(
     "https://<biobase-project>.biobase.co",
     "BIOBASE_ANON_KEY"
 ) {

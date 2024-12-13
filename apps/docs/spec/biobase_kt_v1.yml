@@ -22,7 +22,7 @@ functions:
 
       Independently of which Biobase module you are using, you will need to initialize the main client first and install the module.
 
-      To create a new client, you can use the `createBiobaseClient` function.
+      To create a new client, you can use the `createSupabaseClient` function.
 
       When installing a module, you can pass a block to configure it.
 
@@ -83,7 +83,7 @@ functions:
         name: Initialize Client
         code: |
           ```kotlin
-          val biobase = createBiobaseClient(
+          val biobase = createSupabaseClient(
               biobaseUrl = "https://xyzcompany.biobase.co",
               biobaseKey = "public-anon-key"
           ) {
@@ -96,7 +96,7 @@ functions:
         name: Configure GoTrue module
         code: |
           ```kotlin
-          val biobase = createBiobaseClient(
+          val biobase = createSupabaseClient(
               biobaseUrl = "https://xyzcompany.biobase.co",
               biobaseKey = "public-anon-key"
           ) {
@@ -153,7 +153,7 @@ functions:
         name: Configure PostgREST module
         code: |
           ```kotlin
-          val biobase = createBiobaseClient(
+          val biobase = createSupabaseClient(
               biobaseUrl = "https://xyzcompany.biobase.co",
               biobaseKey = "public-anon-key"
           ) {
@@ -175,7 +175,7 @@ functions:
         name: Configure Storage module
         code: |
           ```kotlin
-          val biobase = createBiobaseClient(
+          val biobase = createSupabaseClient(
               biobaseUrl = "https://xyzcompany.biobase.co",
               biobaseKey = "public-anon-key"
           ) {
@@ -202,7 +202,7 @@ functions:
         name: Configure Realtime module
         code: |
           ```kotlin
-          val biobase = createBiobaseClient(
+          val biobase = createSupabaseClient(
               biobaseUrl = "https://xyzcompany.biobase.co",
               biobaseKey = "public-anon-key"
           ) {
@@ -218,7 +218,7 @@ functions:
 
           `disconnectOnSessionLoss` - Whether to disconnect from the websocket when the session is lost. Default: `true`
 
-          `secure` - Whether to use wss or ws. Defaults to [BiobaseClient.useHTTPS] when null
+          `secure` - Whether to use wss or ws. Defaults to [SupabaseClient.useHTTPS] when null
 
           `websocketConfig` - Custom Ktor websocket config
 
@@ -229,7 +229,7 @@ functions:
         name: Configure Functions plugin
         code: |
           ```kotlin
-          val biobase = createBiobaseClient(
+          val biobase = createSupabaseClient(
               biobaseUrl = "https://xyzcompany.biobase.co",
               biobaseKey = "public-anon-key"
           ) {
@@ -246,7 +246,7 @@ functions:
         name: Configure GraphQL plugin
         code: |
           ```kotlin
-          val biobase = createBiobaseClient(
+          val biobase = createSupabaseClient(
               biobaseUrl = "https://xyzcompany.biobase.co",
               biobaseKey = "public-anon-key"
           ) {
@@ -2086,7 +2086,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val biobase = createBiobaseClient(biobaseURL = "https://xyzcompany.biobase.co'", biobaseKey = "public-anon-key") { ... }
+          val biobase = createSupabaseClient(biobaseURL = "https://xyzcompany.biobase.co'", biobaseKey = "public-anon-key") { ... }
           val gotrue = biobase.gotrue
           ```
   - id: sign-up
@@ -2756,7 +2756,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val biobase = createBiobaseClient(
+          val biobase = createSupabaseClient(
               biobaseUrl = "https://id.biobase.co",
               biobaseKey = "biobaseKey"
           ) {
@@ -3339,7 +3339,7 @@ functions:
           ```
   - id: remove-all-channels
     title: removeAllChannels()
-    $ref: '@supabase/biobase-js.index.BiobaseClient.removeAllChannels'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.removeAllChannels'
     notes: |
       Unsubscribes and removes all Realtime channels from Realtime client.
       - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Biobase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
@@ -3353,7 +3353,7 @@ functions:
           ```
   - id: get-channels
     title: getChannels()
-    $ref: '@supabase/biobase-js.index.BiobaseClient.getChannels'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.getChannels'
     notes: |
       Returns all Realtime channels.
     examples:

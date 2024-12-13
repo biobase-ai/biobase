@@ -8,13 +8,13 @@ Biobase.js v2 release notes.
 <RefSubLayout.EducationRow>
   <RefSubLayout.Details>
 
-    Install the latest version of @supabase/biobase-js
+    Install the latest version of @supabase/supabase-js
 
   </RefSubLayout.Details>
   <RefSubLayout.Examples>
     
     ```bash Terminal
-      npm install @supabase/biobase-js
+      npm install @supabase/supabase-js
     ```
 
   </RefSubLayout.Examples>
@@ -296,7 +296,7 @@ Deprecated and removed `setAuth()` . To set a custom `access_token` jwt instead,
 - `realtime-js`
   - `RealtimeSubscription` class no longer exists and replaced by `RealtimeChannel`.
   - `RealtimeClient`'s `disconnect` method now returns type of `void` . It used to return type of `Promise<{ error: Error | null; data: boolean }`.
-  - Removed `removeAllSubscriptions` and `removeSubscription` methods from `BiobaseClient` class.
+  - Removed `removeAllSubscriptions` and `removeSubscription` methods from `SupabaseClient` class.
   - Removed `BiobaseRealtimeClient` class.
   - Removed `BiobaseQueryBuilder` class.
   - Removed `BiobaseEventTypes` type.

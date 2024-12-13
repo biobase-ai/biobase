@@ -49,7 +49,7 @@ We will use the following tools
 After you have created your [Next.js project](https://nextjs.org/docs/pages/api-reference/create-next-app), e.g. with `npx create-next-app@latest`, you can install the required dependencies using the following command:
 
 ```bash
-npm install @supabase/biobase-js @tanstack/react-query @supabase/ssr @biobase-cache-helpers/postgrest-react-query
+npm install @supabase/supabase-js @tanstack/react-query @supabase/ssr @biobase-cache-helpers/postgrest-react-query
 ```
 
 ### Creating a React Query client
@@ -142,15 +142,15 @@ To help you utilize the full power of biobase-js, including [Biobase Auth](/auth
 
 Further reading: [detailed documentation for Biobase SSR in Next.js](/docs/guides/auth/server-side/creating-a-client?framework=nextjs)
 
-#### Create a TypedBiobaseClient type
+#### Create a TypedSupabaseClient type
 
-To make sure we have the proper typing available in all our components, we can create a `TypedBiobaseClient` type that we can hand to React Query:
+To make sure we have the proper typing available in all our components, we can create a `TypedSupabaseClient` type that we can hand to React Query:
 
 ```ts utils/types.ts
-import { BiobaseClient } from '@supabase/biobase-js'
+import { SupabaseClient } from '@supabase/supabase-js'
 import type { Database } from '@/utils/database.types'
 
-export type TypedBiobaseClient = BiobaseClient<Database>
+export type TypedSupabaseClient = SupabaseClient<Database>
 ```
 
 #### Creating a Browser Biobase Client
@@ -158,10 +158,10 @@ export type TypedBiobaseClient = BiobaseClient<Database>
 ```ts utils/biobase-browser.ts
 import { createBrowserClient } from '@supabase/ssr'
 import type { Database } from '@/utils/database.types'
-import type { TypedBiobaseClient } from '@/utils/types'
+import type { TypedSupabaseClient } from '@/utils/types'
 import { useMemo } from 'react'
 
-let client: TypedBiobaseClient | undefined
+let client: TypedSupabaseClient | undefined
 
 function getBiobaseBrowserClient() {
   if (client) {
@@ -176,11 +176,11 @@ function getBiobaseBrowserClient() {
   return client
 }
 
-function useBiobaseBrowser() {
+function useSupabaseBrowser() {
   return useMemo(getBiobaseBrowserClient, [])
 }
 
-export default useBiobaseBrowser
+export default useSupabaseBrowser
 ```
 
 #### Creating a Server Biobase Client
@@ -190,7 +190,7 @@ import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { Database } from './database.types'
 
-export default function useBiobaseServer(cookieStore: ReturnType<typeof cookies>) {
+export default function useSupabaseServer(cookieStore: ReturnType<typeof cookies>) {
   return createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -218,9 +218,9 @@ Initially built during the [Launch Week 5 Hackathon](/blog/launch-week-5-hackath
 The most convenient way to use your queries across both server and client component is to define them in a central place, e.g. a `queries` folder:
 
 ```ts queries/get-country-by-id.ts
-import { TypedBiobaseClient } from '@/utils/types'
+import { TypedSupabaseClient } from '@/utils/types'
 
-export function getCountryById(client: TypedBiobaseClient, countryId: number) {
+export function getCountryById(client: TypedSupabaseClient, countryId: number) {
   return client
     .from('countries')
     .select(
@@ -244,7 +244,7 @@ In server components, we can now use this query with the `prefetchQuery` method:
 ```ts app/ssrcountries/[id]/page.tsx
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
 import { prefetchQuery } from '@biobase-cache-helpers/postgrest-react-query'
-import useBiobaseServer from '@/utils/biobase-server'
+import useSupabaseServer from '@/utils/biobase-server'
 import { cookies } from 'next/headers'
 import Country from '../country'
 import { getCountryById } from '@/queries/get-country-by-id'
@@ -252,7 +252,7 @@ import { getCountryById } from '@/queries/get-country-by-id'
 export default async function CountryPage({ params }: { params: { id: number } }) {
   const queryClient = new QueryClient()
   const cookieStore = cookies()
-  const biobase = useBiobaseServer(cookieStore)
+  const biobase = useSupabaseServer(cookieStore)
 
   await prefetchQuery(queryClient, getCountryById(biobase, params.id))
 
@@ -271,12 +271,12 @@ Our query will be executed and fetch the data on the server. This means when usi
 ```tsx app/ssrcountries/country.tsx
 'use client'
 
-import useBiobaseBrowser from '@/utils/biobase-browser'
+import useSupabaseBrowser from '@/utils/biobase-browser'
 import { getCountryById } from '@/queries/get-country-by-id'
 import { useQuery } from '@biobase-cache-helpers/postgrest-react-query'
 
 export default function Country({ id }: { id: number }) {
-  const biobase = useBiobaseBrowser()
+  const biobase = useSupabaseBrowser()
   // This useQuery could just as well happen in some deeper
   // child to <Posts>, data will be available immediately either way
   const { data: country } = useQuery(getCountryById(biobase, id))
@@ -298,12 +298,12 @@ Of course you can still combine this with fetching data client side. React Query
 ```tsx app/countries/[id]/page.tsx
 'use client'
 
-import useBiobaseBrowser from '@/utils/biobase-browser'
+import useSupabaseBrowser from '@/utils/biobase-browser'
 import { getCountryById } from '@/queries/get-country-by-id'
 import { useQuery } from '@biobase-cache-helpers/postgrest-react-query'
 
 export default function CountryPage({ params }: { params: { id: number } }) {
-  const biobase = useBiobaseBrowser()
+  const biobase = useSupabaseBrowser()
   const { data: country, isLoading, isError } = useQuery(getCountryById(biobase, params.id))
 
   if (isLoading) {

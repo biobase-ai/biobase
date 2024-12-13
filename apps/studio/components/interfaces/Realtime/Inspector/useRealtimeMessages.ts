@@ -2,7 +2,7 @@ import { RealtimeChannel, RealtimeClient } from '@supabase/realtime-js'
 import {
   DEFAULT_GLOBAL_OPTIONS,
   DEFAULT_REALTIME_OPTIONS,
-} from '@supabase/biobase-js/dist/main/lib/constants'
+} from '@supabase/supabase-js/dist/main/lib/constants'
 import { merge, sortBy, take } from 'lodash'
 import { Dispatch, SetStateAction, useCallback, useEffect, useReducer, useState } from 'react'
 import { toast } from 'sonner'

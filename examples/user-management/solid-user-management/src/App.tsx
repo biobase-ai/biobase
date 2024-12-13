@@ -1,6 +1,6 @@
 import { Component, createEffect, createSignal } from 'solid-js'
 import { biobase } from './biobaseClient'
-import { AuthSession } from '@supabase/biobase-js'
+import { AuthSession } from '@supabase/supabase-js'
 import Account from './Account'
 import Auth from './Auth'
 

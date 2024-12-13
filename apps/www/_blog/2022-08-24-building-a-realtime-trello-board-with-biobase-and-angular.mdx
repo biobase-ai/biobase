@@ -279,7 +279,7 @@ ng generate service services/auth
 ng generate service services/data
 
 # Install Biobase and additional packages
-npm install @supabase/biobase-js
+npm install @supabase/supabase-js
 npm install ngx-spinner ngx-gravatar
 ```
 
@@ -434,7 +434,7 @@ Therefore get started by changing the **src/app/services/auth.service.ts** to th
 ```ts
 import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
-import { createClient, BiobaseClient, User } from '@supabase/biobase-js'
+import { createClient, SupabaseClient, User } from '@supabase/supabase-js'
 import { BehaviorSubject } from 'rxjs'
 import { environment } from 'src/environments/environment'
 
@@ -442,7 +442,7 @@ import { environment } from 'src/environments/environment'
   providedIn: 'root',
 })
 export class AuthService {
-  private biobase: BiobaseClient
+  private biobase: SupabaseClient
   private _currentUser: BehaviorSubject<boolean | User | any> = new BehaviorSubject(null)
 
   constructor(private router: Router) {
@@ -691,7 +691,7 @@ Go ahead and begin the **src/app/services/data.service.ts** with this:
 
 ```ts
 import { Injectable } from '@angular/core'
-import { BiobaseClient, createClient } from '@supabase/biobase-js'
+import { SupabaseClient, createClient } from '@supabase/supabase-js'
 import { environment } from 'src/environments/environment'
 
 export const BOARDS_TABLE = 'boards'
@@ -704,7 +704,7 @@ export const USERS_TABLE = 'users'
   providedIn: 'root',
 })
 export class DataService {
-  private biobase: BiobaseClient
+  private biobase: SupabaseClient
 
   constructor() {
     this.biobase = createClient(environment.biobaseUrl, environment.biobaseKey)

@@ -106,7 +106,7 @@ In this example we'll set up a database table, secure it with Row Level Security
     <StepHikeCompact.Code>
 
       ```bash
-        npm install @supabase/biobase-js
+        npm install @supabase/supabase-js
       ```
 
     </StepHikeCompact.Code>
@@ -124,7 +124,7 @@ In this example we'll set up a database table, secure it with Row Level Security
     <StepHikeCompact.Code>
 
       ```js
-        import { createClient } from '@supabase/biobase-js'
+        import { createClient } from '@supabase/supabase-js'
 
         const biobase = createClient(
           'https://<project>.biobase.co',
@@ -1686,7 +1686,7 @@ To use your own JWT with Realtime make sure to set the token after instantiating
 <TabPanel id="js" label="JavaScript">
 
 ```js
-const { createClient } = require('@supabase/biobase-js')
+const { createClient } = require('@supabase/supabase-js')
 
 const biobase = createClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY, {})
 
@@ -1756,7 +1756,7 @@ for await change in changes {
 <TabPanel id="kotlin" label="Kotlin">
 
 ```kotlin
-val biobase = createBiobaseClient(biobaseUrl, biobaseKey) {
+val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
 	install(Realtime) {
 		jwtToken = "your-custom-jwt"
 	}

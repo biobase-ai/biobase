@@ -85,7 +85,7 @@ Get started by setting up a new Expo app with the tabs template and install some
 npx create-expo-app@latest cloudApp --template tabs@49
 
 # Install dependencies
-npm i @supabase/biobase-js
+npm i @supabase/supabase-js
 npm i react-native-url-polyfill base64-arraybuffer react-native-loading-spinner-overlay @react-native-async-storage/async-storage
 
 # Install Expo packages
@@ -118,7 +118,7 @@ We can now simply read those values from the environment variables and initializ
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import 'react-native-url-polyfill/auto'
 
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 const url = process.env.EXPO_PUBLIC_BIOBASE_URL
 const key = process.env.EXPO_PUBLIC_BIOBASE_ANON_KEY
@@ -257,7 +257,7 @@ For this, create a new file at `provider/AuthProvider.tsx` and add the following
 
 ```tsx
 import React, { useState, useEffect, createContext, PropsWithChildren } from 'react'
-import { Session, User } from '@supabase/biobase-js'
+import { Session, User } from '@supabase/supabase-js'
 import { biobase } from '../config/initBiobase'
 
 type AuthProps = {

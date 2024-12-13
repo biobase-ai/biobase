@@ -3,7 +3,7 @@ export default [
     lang: 'js',
     title: 'Create user',
     description: 'Sign up a new user in an example chat room',
-    code: `import { createClient } from '@supabase/biobase-js'
+    code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
 const biobaseUrl = 'https://chat-room.biobase.co'
@@ -21,7 +21,7 @@ const { user, error } = await biobase.auth.signUp({
     lang: 'js',
     title: 'Realtime subscriptions',
     description: 'Receive realtime messages in an example chat room',
-    code: `import { createClient } from '@supabase/biobase-js'
+    code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
 const biobaseUrl = 'https://chat-room.biobase.co'
@@ -41,7 +41,7 @@ const realtime = biobase
     lang: 'js',
     title: 'Create bucket',
     description: 'Creates a new Storage bucket',
-    code: `import { createClient } from '@supabase/biobase-js'
+    code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
 const biobaseUrl = 'https://chat-room.biobase.co'
@@ -62,7 +62,7 @@ const { data, error } = await biobase
     lang: 'js',
     title: 'Invoke Edge Function',
     description: 'Invoke a Biobase Edge Function',
-    code: `import { createClient } from '@supabase/biobase-js'
+    code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
 const biobaseUrl = 'https://chat-room.biobase.co'
@@ -79,7 +79,7 @@ const { data, error } = await biobase.functions.invoke('hello', {
     lang: 'js',
     title: 'CRUD a record',
     description: 'Create, Read, Update and Delete all public rooms and their messages',
-    code: `import { createClient } from '@supabase/biobase-js'
+    code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
 const biobaseUrl = 'https://chat-room.biobase.co'

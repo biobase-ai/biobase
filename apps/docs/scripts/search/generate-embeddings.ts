@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import dotenv from 'dotenv'
 import { parseArgs } from 'node:util'
 import { OpenAI } from 'openai'

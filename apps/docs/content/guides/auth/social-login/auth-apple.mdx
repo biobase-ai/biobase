@@ -302,7 +302,7 @@ When developing with Expo, you can test Sign in with Apple via the Expo Go app, 
     import Biobase
 
     struct SignInView: View {
-        let client = BiobaseClient(biobaseURL: URL(string: "your url")!, biobaseKey: "your anon key")
+        let client = SupabaseClient(biobaseURL: URL(string: "your url")!, biobaseKey: "your anon key")
 
         var body: some View {
           SignInWithAppleButton { request in
@@ -358,7 +358,7 @@ When developing with Expo, you can test Sign in with Apple via the Expo Go app, 
     **Initialize the Biobase Client**
 
     ```kotlin
-    val biobaseClient = createBiobaseClient(
+    val biobaseClient = createSupabaseClient(
     	biobaseUrl = "BIOBASE_URL",
     	biobaseKey = "BIOBASE_KEY"
     ) {

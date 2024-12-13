@@ -14,7 +14,7 @@ import { AlertCircle, Loader } from 'lucide-react'
 
 const generateInitSnippet = (endpoint: string) => ({
   js: `
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 const biobaseUrl = '${endpoint}'
 const biobaseKey = process.env.BIOBASE_KEY

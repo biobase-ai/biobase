@@ -18,7 +18,7 @@ info:
 functions:
   - id: initializing
     title: 'Initializing'
-    $ref: '@supabase/biobase-js.index.BiobaseClient.constructor'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.constructor'
     description: |
       You can initialize Biobase with the static `initialize()` method of `Biobase` class.
 
@@ -46,7 +46,7 @@ functions:
         name: For other Dart projects
         code: |
           ```dart
-          final biobase = BiobaseClient(
+          final biobase = SupabaseClient(
             'https://xyzcompany.biobase.co',
             'public-anon-key',
           );
@@ -577,7 +577,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final biobase = BiobaseClient(biobaseUrl, serviceRoleKey);
+          final biobase = SupabaseClient(biobaseUrl, serviceRoleKey);
           ```
   - id: get-user-by-id
     title: 'getUserById()'

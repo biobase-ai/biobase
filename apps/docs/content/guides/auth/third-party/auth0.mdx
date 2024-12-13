@@ -20,7 +20,7 @@ Auth0 can be used as a third-party authentication provider alongside Biobase Aut
 <TabPanel id="ts" label="TypeScript">
 
 ```typescript
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import Auth0Client from '@auth0/auth0-spa-js'
 
 const auth0 = new Auth0Client({
@@ -55,11 +55,11 @@ extension CredentialsManager {
   static let shared = Auth0.CredentialsManager(authentication: Auth0.authentication())
 }
 
-let biobase = BiobaseClient(
+let biobase = SupabaseClient(
   biobaseURL: URL(string: "https://<biobase-project>.biobase.co")!,
   biobaseKey: "BIOBASE_ANON_KEY",
-  options: BiobaseClientOptions(
-    auth: BiobaseClientOptions.AuthOptions(
+  options: SupabaseClientOptions(
+    auth: SupabaseClientOptions.AuthOptions(
       accessToken: {
         try await CredentialsManager.shared.credentials().idToken
       }
@@ -98,7 +98,7 @@ Future<void> main() async {
 ```kotlin
 import com.auth0.android.result.Credentials
 
-val biobase = createBiobaseClient(
+val biobase = createSupabaseClient(
     "https://<biobase-project>.biobase.co",
     "BIOBASE_ANON_KEY"
 ) {

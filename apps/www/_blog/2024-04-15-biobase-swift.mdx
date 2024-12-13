@@ -21,7 +21,7 @@ This makes it simple to interact with Biobase from applications on Apple's platf
 ```swift
 let url = URL(string: "...")!
 let anonKey = "public-anon-key"
-let client = BiobaseClient(biobaseURL: url, biobaseKey: anonKey)
+let client = SupabaseClient(biobaseURL: url, biobaseKey: anonKey)
 
 struct Country: Decodable {
   let id: Int

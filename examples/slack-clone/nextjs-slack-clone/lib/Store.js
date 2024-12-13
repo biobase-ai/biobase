@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 export const biobase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,

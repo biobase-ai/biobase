@@ -74,10 +74,10 @@ values
 
 This will create a table called `posts`, and populate it with some example data.
 
-Let’s install the [biobase-js library](https://www.npmjs.com/package/@supabase/biobase-js) to fetch our `posts`.
+Let’s install the [biobase-js library](https://www.npmjs.com/package/@supabase/supabase-js) to fetch our `posts`.
 
 ```bash
-npm install @supabase/biobase-js
+npm install @supabase/supabase-js
 ```
 
 And add a `.env.local` file with the following environment variables:
@@ -92,7 +92,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-biobase-anon-key
 Lastly, we need to create a Biobase client. Create a file at `utils/biobase.ts` with the following content:
 
 ```tsx title="utils/biobase.ts"
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 export default createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,

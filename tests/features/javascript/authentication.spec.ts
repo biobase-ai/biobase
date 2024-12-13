@@ -2,7 +2,7 @@ import { suite, test, timeout } from '@testdeck/jest'
 import { faker } from '@faker-js/faker'
 import { Severity } from 'allure-js-commons'
 
-import { AuthChangeEvent, Session } from '@supabase/biobase-js'
+import { AuthChangeEvent, Session } from '@supabase/supabase-js'
 
 import { FEATURE } from '../templates/enums'
 import { description, feature, log, severity, step } from '../../.jest/jest-custom-reporter'

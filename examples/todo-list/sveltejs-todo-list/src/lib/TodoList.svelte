@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { User } from "@supabase/biobase-js";
+  import type { User } from "@supabase/supabase-js";
   import Todo from "./Todo.svelte";
   import { biobase } from "./db";
   import Alert from "./Alert.svelte";

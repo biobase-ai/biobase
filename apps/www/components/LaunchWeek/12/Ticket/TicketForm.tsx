@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BiobaseClient } from '@supabase/biobase-js'
+import { SupabaseClient } from '@supabase/supabase-js'
 import { useRouter } from 'next/router'
 import { SITE_ORIGIN } from '~/lib/constants'
 import { Button } from 'ui'
@@ -12,7 +12,7 @@ type FormState = 'default' | 'loading' | 'error'
 export default function TicketForm() {
   const [formState, setFormState] = useState<FormState>('default')
   const [realtimeChannel, setRealtimeChannel] = useState<ReturnType<
-    BiobaseClient['channel']
+    SupabaseClient['channel']
   > | null>(null)
   const [errorMsg] = useState('')
   const { biobase, session, setUserData, setTicketState, userData } = useConfData()

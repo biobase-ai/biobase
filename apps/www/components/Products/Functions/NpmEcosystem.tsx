@@ -25,7 +25,7 @@ const npmList = [
   'mkdirp',
   'glob',
   'shelljs',
-  '@supabase/biobase-js',
+  '@supabase/supabase-js',
   'js-yaml',
   'typescript',
   'jest',

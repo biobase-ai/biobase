@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
-import { Session } from '@supabase/biobase-js'
+import { Session } from '@supabase/supabase-js'
 import { SITE_ORIGIN } from '~/lib/constants'
 import biobase from '~/lib/biobaseMisc'
 

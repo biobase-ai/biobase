@@ -88,7 +88,7 @@ hideToc: true
       ```kotlin
       import ...
 
-      val biobase = createBiobaseClient(
+      val biobase = createSupabaseClient(
           biobaseUrl = "https://xyzcompany.biobase.co",
           biobaseKey = "your_public_anon_key"
         ) {
@@ -106,7 +106,7 @@ hideToc: true
     <StepHikeCompact.Details title="Create a data model for countries">
       Create a serializable data class to represent the data from the database.
 
-      Add the following below the `createBiobaseClient` function in the `MainActivity.kt` file.
+      Add the following below the `createSupabaseClient` function in the `MainActivity.kt` file.
     </StepHikeCompact.Details>
 
     <StepHikeCompact.Code>

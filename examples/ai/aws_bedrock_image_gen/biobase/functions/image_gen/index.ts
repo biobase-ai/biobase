@@ -8,7 +8,7 @@ import {
   BedrockRuntimeClient,
   InvokeModelCommand,
 } from "npm:@aws-sdk/client-bedrock-runtime";
-import { createClient } from "npm:@supabase/biobase-js";
+import { createClient } from "npm:@supabase/supabase-js";
 import { decode } from "npm:base64-arraybuffer";
 
 console.log("Hello from Amazon Bedrock!");

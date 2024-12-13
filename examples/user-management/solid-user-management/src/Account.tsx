@@ -1,4 +1,4 @@
-import { AuthSession } from '@supabase/biobase-js'
+import { AuthSession } from '@supabase/supabase-js'
 import { Component, createEffect, createSignal } from 'solid-js'
 import Avatar from './Avatar'
 import { biobase } from './biobaseClient'

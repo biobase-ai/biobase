@@ -2,7 +2,7 @@ import { params, retries, suite, test } from '@testdeck/jest'
 import { faker } from '@faker-js/faker'
 import { Severity } from 'allure-js-commons'
 
-import { AdminUserAttributes, AuthError, BiobaseClient, UserResponse } from '@supabase/biobase-js'
+import { AdminUserAttributes, AuthError, SupabaseClient, UserResponse } from '@supabase/supabase-js'
 
 import { FEATURE } from '../templates/enums'
 import { description, feature, log, severity, step } from '../../.jest/jest-custom-reporter'
@@ -303,7 +303,7 @@ class AuthenticationAPI extends Hooks {
   }
 
   @step('Update user with retries')
-  async updateWithRetries(biobase: BiobaseClient, uid: string, attributes: AdminUserAttributes) {
+  async updateWithRetries(biobase: SupabaseClient, uid: string, attributes: AdminUserAttributes) {
     let result: UserResponse
     for (let i = 1; i < 5; i++) {
       result = await biobase.auth.admin.updateUserById(uid, attributes)

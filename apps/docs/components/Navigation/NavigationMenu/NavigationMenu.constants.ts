@@ -2221,7 +2221,7 @@ export const reference_javascript_v1 = {
   url: '/guides/reference/javascript',
   parent: '/reference',
   pkg: {
-    name: '@supabase/biobase-js',
+    name: '@supabase/supabase-js',
     repo: 'https://github.com/biobase-ai/biobase-js',
   },
 }
@@ -2232,7 +2232,7 @@ export const reference_javascript_v2 = {
   url: '/guides/reference/javascript',
   parent: '/reference',
   pkg: {
-    name: '@supabase/biobase-js',
+    name: '@supabase/supabase-js',
     repo: 'https://github.com/biobase-ai/biobase-js',
   },
 }

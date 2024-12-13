@@ -1,9 +1,9 @@
 import { createBrowserClient } from '@supabase/ssr'
 import type { Database } from '@/utils/database.types'
-import type { TypedBiobaseClient } from '@/utils/types'
+import type { TypedSupabaseClient } from '@/utils/types'
 import { useMemo } from 'react'
 
-let client: TypedBiobaseClient | undefined
+let client: TypedSupabaseClient | undefined
 
 function getBiobaseBrowserClient() {
   if (client) {
@@ -18,8 +18,8 @@ function getBiobaseBrowserClient() {
   return client
 }
 
-function useBiobaseBrowser() {
+function useSupabaseBrowser() {
   return useMemo(getBiobaseBrowserClient, [])
 }
 
-export default useBiobaseBrowser
+export default useSupabaseBrowser

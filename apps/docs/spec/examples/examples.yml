@@ -16,7 +16,7 @@ info:
 
 functions:
   - id: initializing
-    $ref: '@supabase/biobase-js.index.BiobaseClient.constructor'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.constructor'
     description: |
       You can initialize a new Biobase client using the `createClient()` method.
 
@@ -28,7 +28,7 @@ functions:
         name: createClient()
         js: |
           ```js
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
 
           // Create a single biobase client for interacting with your database
           const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key')
@@ -41,7 +41,7 @@ functions:
         name: With additional parameters
         js: |
           ```js
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
 
           const options = {
             db: {
@@ -66,7 +66,7 @@ functions:
         name: API schemas
         js: |
           ```js
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
 
           // Provide a custom schema. Defaults to "public".
           const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key', {
@@ -82,7 +82,7 @@ functions:
         name: Custom `fetch` implementation
         js: |
           ```js
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
 
           const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key', {
             global: { fetch: fetch.bind(globalThis) }
@@ -97,7 +97,7 @@ functions:
         js: |
           ```js
           import 'react-native-url-polyfill/auto'
-          import { createClient } from '@supabase/biobase-js'
+          import { createClient } from '@supabase/supabase-js'
           import AsyncStorage from "@react-native-async-storage/async-storage";
 
           const biobase = createClient("https://xyzcompany.biobase.co", "public-anon-key", {
@@ -5070,7 +5070,7 @@ functions:
         isSpotlight: true
         js: |
           ```js
-          import { FunctionsHttpError, FunctionsRelayError, FunctionsFetchError } from "@supabase/biobase-js";
+          import { FunctionsHttpError, FunctionsRelayError, FunctionsFetchError } from "@supabase/supabase-js";
 
           const { data, error } = await biobase.functions.invoke('hello', {
             headers: {
@@ -5209,7 +5209,7 @@ functions:
 
   - id: getChannels()
     title: 'getChannels()'
-    $ref: '@supabase/biobase-js.index.BiobaseClient.getChannels'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.getChannels'
     examples:
       - id: get-all-channels
         name: Get all channels
@@ -5221,7 +5221,7 @@ functions:
 
   - id: removeChannel()
     title: 'removeChannel()'
-    $ref: '@supabase/biobase-js.index.BiobaseClient.removeChannel'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.removeChannel'
     notes: |
       - Removing a channel is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Biobase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
     examples:
@@ -5235,7 +5235,7 @@ functions:
 
   - id: removeAllChannels()
     title: 'removeAllChannels()'
-    $ref: '@supabase/biobase-js.index.BiobaseClient.removeAllChannels'
+    $ref: '@supabase/supabase-js.index.SupabaseClient.removeAllChannels'
     notes: |
       - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Biobase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
     examples:

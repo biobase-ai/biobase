@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { TextLink, cn } from 'ui'
 import useConfData from '../hooks/use-conf-data'
-import { BiobaseClient } from '@supabase/biobase-js'
+import { SupabaseClient } from '@supabase/supabase-js'
 
 export interface Meetup {
   id?: any
@@ -26,7 +26,7 @@ const LWXMeetups = ({ meetups }: { meetups?: Meetup[] }) => {
   const now = new Date(Date.now())
   const [meets, setMeets] = useState<Meetup[]>(meetups ?? [])
   const [realtimeChannel, setRealtimeChannel] = useState<ReturnType<
-    BiobaseClient['channel']
+    SupabaseClient['channel']
   > | null>(null)
   const [activeMeetup, setActiveMeetup] = useState<Meetup>(meets[0])
   const [isMounted, setIsMounted] = useState(false)

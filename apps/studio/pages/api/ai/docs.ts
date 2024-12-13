@@ -1,4 +1,4 @@
-import { BiobaseClient } from '@supabase/biobase-js'
+import { SupabaseClient } from '@supabase/supabase-js'
 import { ApplicationError, UserError, clippy } from 'ai-commands/edge'
 import { NextRequest } from 'next/server'
 import OpenAI from 'openai'
@@ -104,7 +104,7 @@ async function handlePost(request: NextRequest) {
     throw new UserError('Missing messages in request data')
   }
 
-  const biobaseClient = new BiobaseClient(biobaseUrl, biobaseServiceKey)
+  const biobaseClient = new SupabaseClient(biobaseUrl, biobaseServiceKey)
 
   try {
     const response = await clippy(openai, biobaseClient, messages)

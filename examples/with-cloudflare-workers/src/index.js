@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/biobase-js";
+import { createClient } from "@supabase/supabase-js";
 
 export default {
   async fetch(request, { BIOBASE_URL, BIOBASE_ANON_KEY }) {

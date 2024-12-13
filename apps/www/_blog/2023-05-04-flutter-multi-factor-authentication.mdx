@@ -61,7 +61,7 @@ Install the [biobase_flutter](https://pub.dev/packages/biobase_flutter) package 
 dart pub add biobase_flutter
 ```
 
-Then update your `lib/main.dart` file to initialize Biobase in the main function. You should be able to find your Biobase URL and AnonKey from the `settings -> api` section of your dashboard. We will also extract the `BiobaseClient` for easy access to our Biobase instance.
+Then update your `lib/main.dart` file to initialize Biobase in the main function. You should be able to find your Biobase URL and AnonKey from the `settings -> api` section of your dashboard. We will also extract the `SupabaseClient` for easy access to our Biobase instance.
 
 ```dart
 import 'package:flutter/material.dart';
@@ -75,7 +75,7 @@ void main() async {
   runApp(const MyApp());
 }
 
-/// Extract BiobaseClient instance in a handy variable
+/// Extract SupabaseClient instance in a handy variable
 final biobase = Biobase.instance.client;
 ```
 
@@ -835,7 +835,7 @@ void main() async {
   runApp(const MyApp());
 }
 
-/// Extract BiobaseClient instance in a handy variable
+/// Extract SupabaseClient instance in a handy variable
 final biobase = Biobase.instance.client;
 
 final _router = GoRouter(

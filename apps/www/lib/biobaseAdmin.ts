@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import { Database } from './database.types'
 
 const biobaseAdmin = createClient<Database>(
@@ -6,6 +6,6 @@ const biobaseAdmin = createClient<Database>(
   process.env.LIVE_SUPABASE_COM_SERVICE_ROLE_KEY!
 )
 
-export type BiobaseClient = typeof biobaseAdmin
+export type SupabaseClient = typeof biobaseAdmin
 
 export default biobaseAdmin

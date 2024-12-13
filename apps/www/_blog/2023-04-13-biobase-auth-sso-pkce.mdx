@@ -137,7 +137,7 @@ The PKCE flow introduces a _code verifier_ (a randomly generated secret) and a _
 Over the next few weeks, you'll be able to use it with the Biobase libraries. We've already added PKCE to the [JavaScript](https://biobase.studio/docs/reference/javascript/installing) client library and our [auth-helpers](https://biobase.studio/docs/guides/auth/auth-helpers) library. If you're using `biobase-js` , you can switch to PKCE by initializing your client with the following option:
 
 ```tsx
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY, {
   auth: {
@@ -163,11 +163,11 @@ Then prepare an endpoint for the sign in process. The redirect URL is set to `/a
 ```tsx
 // api/auth/login
 import { NextApiRequest, NextApiResponse } from 'next'
-import { createServerBiobaseClient } from '@supabase/auth-helpers-nextjs'
+import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Create the Biobase Client
-  const biobase = createServerBiobaseClient(
+  const biobase = createServerSupabaseClient(
     { req, res },
     {
       biobaseUrl: process.env.BIOBASE_URL,
@@ -196,11 +196,11 @@ Now we can set up the callback API endpoint:
 ```tsx
 // api/auth/callback
 import { NextApiRequest, NextApiResponse } from 'next'
-import { createServerBiobaseClient } from '@supabase/auth-helpers-nextjs'
+import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Create authenticated Biobase Client
-  const biobase = createServerBiobaseClient(
+  const biobase = createServerSupabaseClient(
     { req, res },
     {
       biobaseUrl: BIOBASE_URL,

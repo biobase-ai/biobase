@@ -31,7 +31,7 @@ curl --request POST 'https://<project_ref>.biobase.co/functions/v1/hello-world' 
 
 ```js JavaScript
 // https://biobase.studio/docs/reference/javascript/installing
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 // Create a single biobase client for interacting with your database
 const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key')
@@ -71,7 +71,7 @@ These are the currently supported region values you can provide for `x-region` h
 You can also specify the region when invoking a Function using the Biobase client library:
 
 ```js
-const { createClient, FunctionRegion } = require('@supabase/biobase-js')
+const { createClient, FunctionRegion } = require('@supabase/supabase-js')
 const { data: ret, error } = await biobase.functions.invoke('my-function-name', {
   headers: { 'Content-Type': 'application/json' },
   method: 'GET',

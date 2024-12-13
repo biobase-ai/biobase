@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { Badge } from 'ui'
 import useConfData from '../hooks/use-conf-data'
-import { BiobaseClient } from '@supabase/biobase-js'
+import { SupabaseClient } from '@supabase/supabase-js'
 
 export interface Meetup {
   id?: any
@@ -17,7 +17,7 @@ const LW8Meetups = ({ meetups }: { meetups?: Meetup[] }) => {
   const { biobase } = useConfData()
   const [meets, setMeets] = useState<Meetup[]>(meetups ?? [])
   const [realtimeChannel, setRealtimeChannel] = useState<ReturnType<
-    BiobaseClient['channel']
+    SupabaseClient['channel']
   > | null>(null)
 
   useEffect(() => {

@@ -18,7 +18,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.manageproducts.presentation.feature.signin.SignInSuccessScreen
 import com.example.manageproducts.ui.theme.ManageProductsTheme
 import dagger.hilt.android.AndroidEntryPoint
-import io.github.jan.biobase.BiobaseClient
+import io.github.jan.biobase.SupabaseClient
 import io.github.jan.biobase.gotrue.handleDeeplinks
 import javax.inject.Inject
 
@@ -26,7 +26,7 @@ import javax.inject.Inject
 class DeepLinkHandlerActivity : ComponentActivity() {
 
     @Inject
-    lateinit var biobaseClient: BiobaseClient
+    lateinit var biobaseClient: SupabaseClient
 
     private lateinit var callback: (String, String) -> Unit
     override fun onCreate(savedInstanceState: Bundle?) {

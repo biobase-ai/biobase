@@ -16,7 +16,7 @@ void main() async {
   runApp(const MyApp());
 }
 
-/// Extract BiobaseClient instance in a handy variable
+/// Extract SupabaseClient instance in a handy variable
 final biobase = Biobase.instance.client;
 
 final _router = GoRouter(

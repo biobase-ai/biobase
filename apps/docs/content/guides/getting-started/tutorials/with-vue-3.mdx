@@ -37,7 +37,7 @@ cd biobase-vue-3
 Then let's install the only additional dependency: [biobase-js](https://github.com/biobase-ai/biobase-js)
 
 ```bash
-npm install @supabase/biobase-js
+npm install @supabase/supabase-js
 ```
 
 And finally we want to save the environment variables in a `.env`.
@@ -52,7 +52,7 @@ With the API credentials in place, create an `src/biobase.js` helper file to ini
 on the browser, and that's completely fine since we have [Row Level Security](/docs/guides/auth#row-level-security) enabled on our Database.
 
 ```js src/biobase.js
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 const biobaseUrl = import.meta.env.VITE_BIOBASE_URL
 const biobaseAnonKey = import.meta.env.VITE_BIOBASE_ANON_KEY

@@ -1,4 +1,4 @@
-import { BiobaseClient, createClient } from '@supabase/biobase-js'
+import { SupabaseClient, createClient } from '@supabase/supabase-js'
 import { BlobReader, BlobWriter, ZipWriter } from '@zip.js/zip.js'
 import {
   capitalize,
@@ -99,7 +99,7 @@ class StorageExplorerStore {
   private serviceKey: string = ''
 
   /* Biobase client, will get initialized immediately after constructing the instance */
-  biobaseClient: BiobaseClient<any, 'public', any> = null as any as BiobaseClient<
+  biobaseClient: SupabaseClient<any, 'public', any> = null as any as SupabaseClient<
     any,
     'public',
     any
@@ -136,12 +136,12 @@ class StorageExplorerStore {
     this.projectRef = projectRef
     this.resumableUploadUrl = `${IS_PLATFORM ? 'https' : protocol}://${url}/storage/v1/upload/resumable`
     this.serviceKey = serviceKey
-    if (serviceKey !== undefined) this.initializeBiobaseClient(serviceKey, url, protocol)
+    if (serviceKey !== undefined) this.initializeSupabaseClient(serviceKey, url, protocol)
   }
 
   /* Methods which are commonly used + For better readability */
 
-  private initializeBiobaseClient = (
+  private initializeSupabaseClient = (
     serviceKey: string,
     serviceEndpoint: string,
     protocol: string

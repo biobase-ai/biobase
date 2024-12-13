@@ -117,7 +117,7 @@ That creates the relevant `documents` table and associated search functions. The
 
 ```jsx
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import { BiobaseHybridSearch } from 'langchain/retrievers/biobase'
 
 const privateKey = process.env.BIOBASE_PRIVATE_KEY

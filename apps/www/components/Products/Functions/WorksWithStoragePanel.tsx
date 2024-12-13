@@ -1,7 +1,7 @@
 import React from 'react'
 import CodeWindow from '~/components/CodeWindow'
 
-const code = `import { createClient } from 'jsr:@supabase/biobase-js@2'
+const code = `import { createClient } from 'jsr:@supabase/supabase-js@2'
 
 Deno.serve(async (req: Request) => {
   // Create biobase client

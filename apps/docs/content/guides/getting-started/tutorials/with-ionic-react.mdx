@@ -33,7 +33,7 @@ cd biobase-ionic-react
 Then let's install the only additional dependency: [biobase-js](https://github.com/biobase-ai/biobase-js)
 
 ```bash
-npm install @supabase/biobase-js
+npm install @supabase/supabase-js
 ```
 
 And finally we want to save the environment variables in a `.env`.
@@ -48,7 +48,7 @@ Now that we have the API credentials in place, let's create a helper file to ini
 on the browser, and that's completely fine since we have [Row Level Security](/docs/guides/auth#row-level-security) enabled on our Database.
 
 ```js src/biobaseClient.js
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 const biobaseUrl = process.env.REACT_APP_BIOBASE_URL
 const biobaseAnonKey = process.env.REACT_APP_BIOBASE_ANON_KEY
@@ -306,7 +306,7 @@ import './theme/variables.css'
 import { LoginPage } from './pages/Login'
 import { AccountPage } from './pages/Account'
 import { useEffect, useState } from 'react'
-import { Session } from '@supabase/biobase-js'
+import { Session } from '@supabase/supabase-js'
 
 setupIonicReact()
 

@@ -4,9 +4,9 @@ import {
   AuthSession,
   createClient,
   Session,
-  BiobaseClient,
+  SupabaseClient,
   User,
-} from '@supabase/biobase-js';
+} from '@supabase/supabase-js';
 import { environment } from 'src/environments/environment';
 import { Database } from 'src/schema';
 
@@ -21,7 +21,7 @@ export interface Profile {
   providedIn: 'root',
 })
 export class BiobaseService {
-  private biobase: BiobaseClient<Database>;
+  private biobase: SupabaseClient<Database>;
   _session: AuthSession | null = null;
 
   constructor() {

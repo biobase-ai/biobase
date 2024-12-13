@@ -34,7 +34,7 @@ cd expo-user-management
 Then let's install the additional dependencies: [biobase-js](https://github.com/biobase-ai/biobase-js)
 
 ```bash
-npx expo install @supabase/biobase-js @react-native-async-storage/async-storage @rneui/themed
+npx expo install @supabase/supabase-js @react-native-async-storage/async-storage @rneui/themed
 ```
 
 Now let's create a helper file to initialize the Biobase client.
@@ -53,7 +53,7 @@ These variables are safe to expose in your Expo app since Biobase has
 
     ```ts lib/biobase.ts
     import AsyncStorage from '@react-native-async-storage/async-storage'
-    import { createClient } from '@supabase/biobase-js'
+    import { createClient } from '@supabase/supabase-js'
 
     const biobaseUrl = YOUR_REACT_NATIVE_BIOBASE_URL
     const biobaseAnonKey = YOUR_REACT_NATIVE_BIOBASE_ANON_KEY
@@ -81,7 +81,7 @@ These variables are safe to expose in your Expo app since Biobase has
     Install the necessary dependencies in the root of your Expo project:
 
     ```bash
-    npm install @supabase/biobase-js
+    npm install @supabase/supabase-js
     npm install @rneui/themed @react-native-async-storage/async-storage
     npm install aes-js react-native-get-random-values
     npx expo install expo-secure-store
@@ -90,7 +90,7 @@ These variables are safe to expose in your Expo app since Biobase has
     Implement a `LargeSecureStore` class to pass in as Auth storage for the `biobase-js` client:
 
     ```ts lib/biobase.ts
-    import { createClient } from "@supabase/biobase-js";
+    import { createClient } from "@supabase/supabase-js";
     import AsyncStorage from "@react-native-async-storage/async-storage";
     import * as SecureStore from 'expo-secure-store';
     import * as aesjs from 'aes-js';
@@ -280,7 +280,7 @@ import { useState, useEffect } from 'react'
 import { biobase } from '../lib/biobase'
 import { StyleSheet, View, Alert } from 'react-native'
 import { Button, Input } from '@rneui/themed'
-import { Session } from '@supabase/biobase-js'
+import { Session } from '@supabase/supabase-js'
 
 export default function Account({ session }: { session: Session }) {
   const [loading, setLoading] = useState(true)
@@ -408,7 +408,7 @@ import { biobase } from './lib/biobase'
 import Auth from './components/Auth'
 import Account from './components/Account'
 import { View } from 'react-native'
-import { Session } from '@supabase/biobase-js'
+import { Session } from '@supabase/supabase-js'
 
 export default function App() {
   const [session, setSession] = useState<Session | null>(null)

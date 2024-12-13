@@ -30,7 +30,7 @@ BIOBASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
       <ConnectTabContent value="src/lib/biobaseClient.js">
         <SimpleCodeBlock className="js" parentClassName="min-h-72">
           {`
-import { createClient } from "@supabase/biobase-js";
+import { createClient } from "@supabase/supabase-js";
 
 const biobaseUrl = process.env.BIOBASE_URL;
 const biobaseKey = process.env.BIOBASE_ANON_KEY;

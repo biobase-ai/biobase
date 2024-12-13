@@ -176,7 +176,7 @@ Go ahead now and run the following on your command line:
 
 ```bash
 ionic start supaAuth blank --type=angular
-npm install @supabase/biobase-js
+npm install @supabase/supabase-js
 
 # Add some pages
 ionic g page pages/login
@@ -280,7 +280,7 @@ Now move on by changing the **src/app/services/auth.service.ts** to this:
 import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
 import { isPlatform } from '@ionic/angular'
-import { createClient, BiobaseClient, User } from '@supabase/biobase-js'
+import { createClient, SupabaseClient, User } from '@supabase/supabase-js'
 import { BehaviorSubject, Observable } from 'rxjs'
 import { environment } from '../../environments/environment'
 
@@ -288,7 +288,7 @@ import { environment } from '../../environments/environment'
   providedIn: 'root',
 })
 export class AuthService {
-  private biobase: BiobaseClient
+  private biobase: SupabaseClient
   private currentUser: BehaviorSubject<User | boolean> = new BehaviorSubject(null)
 
   constructor(private router: Router) {
@@ -827,7 +827,7 @@ Go ahead now and start the **src/app/services/data.service.ts** like this:
 ```ts
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Injectable } from '@angular/core'
-import { BiobaseClient, createClient } from '@supabase/biobase-js'
+import { SupabaseClient, createClient } from '@supabase/supabase-js'
 import { Subject } from 'rxjs'
 import { environment } from 'src/environments/environment'
 
@@ -846,7 +846,7 @@ export interface Message {
   providedIn: 'root',
 })
 export class DataService {
-  private biobase: BiobaseClient
+  private biobase: SupabaseClient
 
   constructor() {
     this.biobase = createClient(environment.biobaseUrl, environment.biobaseKey)
@@ -1028,7 +1028,7 @@ For all of that bring up the **src/app/services/data.service.ts** and change it 
 ```ts
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Injectable } from '@angular/core'
-import { BiobaseClient, createClient, RealtimeChannel } from '@supabase/biobase-js'
+import { SupabaseClient, createClient, RealtimeChannel } from '@supabase/supabase-js'
 import { Subject } from 'rxjs'
 import { environment } from 'src/environments/environment'
 
@@ -1047,7 +1047,7 @@ export interface Message {
   providedIn: 'root',
 })
 export class DataService {
-  private biobase: BiobaseClient
+  private biobase: SupabaseClient
   // ADD
   private realtimeChannel: RealtimeChannel
 

@@ -31,7 +31,7 @@ EXPO_PUBLIC_BIOBASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
           {`
 import 'react-native-url-polyfill/auto'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 export const biobase = createClient(
   process.env.EXPO_PUBLIC_BIOBASE_URL || "",

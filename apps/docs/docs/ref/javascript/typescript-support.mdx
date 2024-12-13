@@ -83,7 +83,7 @@ With TypeScript, `biobase-js` detects things like `not null` constraints and [ge
   </RefSubLayout.Details>
   <RefSubLayout.Examples>
     ```ts ./index.tsx
-    import { createClient } from '@supabase/biobase-js'
+    import { createClient } from '@supabase/supabase-js'
     import { Database } from './database.types'
 
     const biobase = createClient<Database>(
@@ -204,7 +204,7 @@ const { data } = await biobase.from('countries').select().returns<MyType>()
   <RefSubLayout.Examples>
 
     ```ts
-    import { QueryResult, QueryData, QueryError } from '@supabase/biobase-js'
+    import { QueryResult, QueryData, QueryError } from '@supabase/supabase-js'
 
     const countriesWithCitiesQuery = biobase
       .from("countries")

@@ -32,7 +32,7 @@ cd biobase-angular
 Then let's install the only additional dependency: [biobase-js](https://github.com/biobase-ai/biobase-js)
 
 ```bash
-npm install @supabase/biobase-js
+npm install @supabase/supabase-js
 ```
 
 And finally we want to save the environment variables in the `src/environments/environment.ts` file.
@@ -56,9 +56,9 @@ import {
   AuthSession,
   createClient,
   Session,
-  BiobaseClient,
+  SupabaseClient,
   User,
-} from '@supabase/biobase-js'
+} from '@supabase/supabase-js'
 import { environment } from '../environments/environment'
 
 export interface Profile {
@@ -72,7 +72,7 @@ export interface Profile {
   providedIn: 'root',
 })
 export class BiobaseService {
-  private biobase: BiobaseClient
+  private biobase: SupabaseClient
   _session: AuthSession | null = null
 
   constructor() {
@@ -207,7 +207,7 @@ Create an **AccountComponent** with the `ng g c account` Angular CLI command.
 ```ts src/app/account/account.component.ts
 import { Component, Input, OnInit } from '@angular/core'
 import { FormBuilder } from '@angular/forms'
-import { AuthSession } from '@supabase/biobase-js'
+import { AuthSession } from '@supabase/supabase-js'
 import { Profile, BiobaseService } from '../biobase.service'
 
 @Component({

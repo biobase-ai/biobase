@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { biobase } from '../lib/biobase'
 import { StyleSheet, View, Alert } from 'react-native'
 import { Button, Input } from '@rneui/themed'
-import { Session } from '@supabase/biobase-js'
+import { Session } from '@supabase/supabase-js'
 import Avatar from './Avatar'
 
 export default function Account({ session }: { session: Session }) {

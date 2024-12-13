@@ -1,6 +1,6 @@
 'use client'
 
-import { useBiobaseClient } from '@supabase/auth-helpers-react'
+import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import { Book, ChevronRight, Github, Hash, Loader2, MessageSquare, Search } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 
@@ -67,7 +67,7 @@ const IconContainer = (
 )
 
 const DocsSearchPage = () => {
-  const biobaseClient = useBiobaseClient()
+  const biobaseClient = useSupabaseClient()
   const {
     searchState: state,
     handleDocsSearch: handleSearch,

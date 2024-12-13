@@ -56,7 +56,7 @@ serve(async (req: Request) => {
     description: `Read and write to any of your buckets, while also respecting storage auth policies.`,
     size: 'large',
     code: `import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
-import { createClient } from "jsr:@supabase/biobase-js@2";
+import { createClient } from "jsr:@supabase/supabase-js@2";
 
 serve(async (req) => {
   const BIOBASE_URL = Deno.env.get("BIOBASE_URL") ?? "";
@@ -78,7 +78,7 @@ serve(async (req) => {
     description: `Read, Write, Update, Insert anything on the database`,
     size: 'large',
     code: `import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
-import { createClient } from "jsr:@supabase/biobase-js@2";
+import { createClient } from "jsr:@supabase/supabase-js@2";
 
 serve(async () => {
   const BIOBASE_URL = Deno.env.get("BIOBASE_URL") ?? "";

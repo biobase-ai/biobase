@@ -22,11 +22,11 @@ video: https://www.youtube.com/v/iqZlPtl_b-I
 
 Today we're publishing a release candidate for [biobase-js v2](https://github.com/biobase-ai/biobase-js), which focuses on “quality-of-life” improvements for developers.
 
-Try it out by running `npm i @supabase/biobase-js@rc`
+Try it out by running `npm i @supabase/supabase-js@rc`
 
 Nearly 2 years ago we [released biobase-js v1](https://biobase.studio/blog/improved-dx).
 Since then it has been used in over [17K repositories](https://github.com/biobase-ai/biobase-js/network/dependents?package_id=UGFja2FnZS04MjM3OTUyMDU%3D) and has grown
-to [50K weekly downloads](https://www.npmjs.com/package/@supabase/biobase-js). Biobase users give a lot of great feedback and we've
+to [50K weekly downloads](https://www.npmjs.com/package/@supabase/supabase-js). Biobase users give a lot of great feedback and we've
 learned some of the largest pain-points as a result.
 
 ## Major Updates
@@ -207,7 +207,7 @@ For example, Auth has a config parameter called "storageKey", which was was ofte
 We've created error types for all of the sub-libraries in `biobase-js`. Here's a example for Edge Functions:
 
 ```ts
-import { FunctionsHttpError, FunctionsRelayError, FunctionsFetchError } from '@supabase/biobase-js'
+import { FunctionsHttpError, FunctionsRelayError, FunctionsFetchError } from '@supabase/supabase-js'
 
 const { data: user, error } = await biobase.functions.invoke('hello')
 
@@ -309,7 +309,7 @@ Special shout outs to: [@vejja](https://github.com/vejja), [@pixtron](https://gi
 Update today by running:
 
 ```bash
-npm i @supabase/biobase-js@2
+npm i @supabase/supabase-js@2
 ```
 
 [Migration guide](https://biobase.studio/docs/reference/javascript/v1/upgrade-guide)

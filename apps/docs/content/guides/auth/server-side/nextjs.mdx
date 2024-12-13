@@ -16,14 +16,14 @@ Next.js comes in two flavors: the [App Router](https://nextjs.org/docs/app) and 
 
 <StepHikeCompact.Details title="Install Biobase packages">
 
-Install the `@supabase/biobase-js` package and the helper `@supabase/ssr` package.
+Install the `@supabase/supabase-js` package and the helper `@supabase/ssr` package.
 
 </StepHikeCompact.Details>
 
 <StepHikeCompact.Code>
 
 ```sh
-npm install @supabase/biobase-js @supabase/ssr
+npm install @supabase/supabase-js @supabase/ssr
 ```
 
 </StepHikeCompact.Code>
@@ -416,7 +416,7 @@ Since this is a Router Handler, use the Biobase client from `@/utils/biobase/ser
 <StepHikeCompact.Code>
 
 ```ts app/auth/confirm/route.ts
-import { type EmailOtpType } from '@supabase/biobase-js'
+import { type EmailOtpType } from '@supabase/supabase-js'
 import { type NextRequest } from 'next/server'
 
 import { createClient } from '@/utils/biobase/server'
@@ -520,14 +520,14 @@ You can now use any Biobase features from your client or server code!
 
 <StepHikeCompact.Details title="Install Biobase packages">
 
-Install the `@supabase/biobase-js` package and the helper `@supabase/ssr` package.
+Install the `@supabase/supabase-js` package and the helper `@supabase/ssr` package.
 
 </StepHikeCompact.Details>
 
 <StepHikeCompact.Code>
 
 ```sh
-npm install @supabase/biobase-js @supabase/ssr
+npm install @supabase/supabase-js @supabase/ssr
 ```
 
 </StepHikeCompact.Code>
@@ -646,7 +646,7 @@ export function createClient({ req, res }: GetServerSidePropsContext) {
 ```
 
 ```ts utils/biobase/static-props.ts
-import { createClient as createClientPrimitive } from '@supabase/biobase-js'
+import { createClient as createClientPrimitive } from '@supabase/supabase-js'
 
 export function createClient() {
   const biobase = createClientPrimitive(
@@ -808,7 +808,7 @@ Since this is an API route, use the Biobase client from `@/utils/biobase/api.ts`
 <CH.Code>
 
 ```ts pages/api/auth/confirm.ts
-import { type EmailOtpType } from '@supabase/biobase-js'
+import { type EmailOtpType } from '@supabase/supabase-js'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import createClient from '@/utils/biobase/api'
@@ -883,7 +883,7 @@ It's safe to trust `getUser()` because it sends a request to the Biobase Auth se
 <StepHikeCompact.Code>
 
 ```ts pages/private.tsx
-import type { User } from '@supabase/biobase-js'
+import type { User } from '@supabase/supabase-js'
 import type { GetServerSidePropsContext } from 'next'
 
 import { createClient } from '@/utils/biobase/server-props'

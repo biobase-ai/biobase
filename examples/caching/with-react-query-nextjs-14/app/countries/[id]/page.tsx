@@ -1,11 +1,11 @@
 'use client'
 
-import useBiobaseBrowser from '@/utils/biobase-browser'
+import useSupabaseBrowser from '@/utils/biobase-browser'
 import { getCountryById } from '@/queries/get-country-by-id'
 import { useQuery } from '@biobase-cache-helpers/postgrest-react-query'
 
 export default function CountryPage({ params }: { params: { id: number } }) {
-  const biobase = useBiobaseBrowser()
+  const biobase = useSupabaseBrowser()
   const {
     data: country,
     isLoading,

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ImageResponse } from '@vercel/og'
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import { themes } from '~/components/LaunchWeek/12/Ticket/ticketThemes'
 
 export const runtime = 'edge' // 'nodejs' is the default

@@ -29,7 +29,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
       <ConnectTabContent value="utils/biobase.ts">
         <SimpleCodeBlock className="ts" parentClassName="min-h-72">
           {`
-import { createClient } from "@supabase/biobase-js";
+import { createClient } from "@supabase/supabase-js";
 
 const biobaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const biobaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;

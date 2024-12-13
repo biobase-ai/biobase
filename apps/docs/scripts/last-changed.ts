@@ -13,7 +13,7 @@
 
 import 'dotenv/config'
 
-import { createClient, type BiobaseClient } from '@supabase/biobase-js'
+import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 import matter from 'gray-matter'
 import { createHash } from 'node:crypto'
 import { readdirSync } from 'node:fs'
@@ -35,7 +35,7 @@ interface Stats {
 }
 
 interface Ctx {
-  biobase: BiobaseClient
+  biobase: SupabaseClient
   git: SimpleGit
   stats: Stats
 }
@@ -56,7 +56,7 @@ async function main() {
   checkEnv()
 
   const { reset } = parseOptions()
-  const biobase = createBiobaseClient()
+  const biobase = createSupabaseClient()
   const git = simpleGit()
 
   const stats: Stats = {
@@ -105,7 +105,7 @@ function parseOptions(): Options {
   return { reset: reset ?? false }
 }
 
-function createBiobaseClient() {
+function createSupabaseClient() {
   return createClient(
     process.env[REQUIRED_ENV_VARS.BIOBASE_URL],
     process.env[REQUIRED_ENV_VARS.SERVICE_ROLE_KEY]

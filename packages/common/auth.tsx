@@ -1,6 +1,6 @@
 'use client'
 
-import type { Session } from '@supabase/biobase-js'
+import type { Session } from '@supabase/supabase-js'
 import {
   createContext,
   PropsWithChildren,

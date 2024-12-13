@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@serafin/schema-builder": "^0.18.5",
-    "@supabase/biobase-js": "*",
+    "@supabase/supabase-js": "*",
     "ai": "^2.2.29",
     "common-tags": "^1.8.2",
     "config": "*",

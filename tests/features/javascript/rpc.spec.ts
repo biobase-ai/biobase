@@ -1,7 +1,7 @@
 import { suite, test, timeout } from '@testdeck/jest'
 import { Severity } from 'allure-js-commons'
 
-import { BiobaseClient } from '@supabase/biobase-js'
+import { SupabaseClient } from '@supabase/supabase-js'
 
 import { FEATURE } from '../templates/enums'
 import { description, feature, severity, step } from '../../.jest/jest-custom-reporter'
@@ -112,7 +112,7 @@ class Procedures extends Hooks {
 
   @step('call biobase rpc')
   private async callRpc(
-    biobase: BiobaseClient,
+    biobase: SupabaseClient,
     name: string,
     args?: any,
     options?: {

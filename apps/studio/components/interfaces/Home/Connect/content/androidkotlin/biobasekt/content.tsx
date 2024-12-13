@@ -28,7 +28,7 @@ data class TodoItem(val id: Int, val name: String)
       <ConnectTabContent value="MainActivity.kt">
         <SimpleCodeBlock className="kotlin" parentClassName="min-h-72">
           {`
-val biobase = createBiobaseClient(
+val biobase = createSupabaseClient(
     biobaseUrl = "${projectKeys.apiUrl ?? 'your-project-url'}",
     biobaseKey = "${projectKeys.anonKey ?? 'your-anon-key'}"
   ) {

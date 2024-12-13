@@ -1,4 +1,4 @@
-import { Session, BiobaseClient } from '@supabase/biobase-js'
+import { Session, SupabaseClient } from '@supabase/supabase-js'
 import { createContext, useContext } from 'react'
 
 export type TicketState = 'registration' | 'ticket' | 'loading' | 'game'
@@ -31,7 +31,7 @@ export type UserData = {
 }
 
 type ConfDataContextType = {
-  biobase: BiobaseClient | null
+  biobase: SupabaseClient | null
   session: Session | null
   userData: UserData
   setUserData: React.Dispatch<React.SetStateAction<UserData>>

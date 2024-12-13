@@ -1,6 +1,6 @@
 {
   "id": 0,
-  "name": "@supabase/biobase-js",
+  "name": "@supabase/supabase-js",
   "kind": 1,
   "flags": {},
   "originalName": "",
@@ -59,7 +59,7 @@
         },
         {
           "id": 211,
-          "name": "BiobaseClientOptions",
+          "name": "SupabaseClientOptions",
           "kind": 16777216,
           "kindString": "Reference",
           "flags": {},
@@ -74,7 +74,7 @@
         },
         {
           "id": 119,
-          "name": "BiobaseClient",
+          "name": "SupabaseClient",
           "kind": 128,
           "kindString": "Class",
           "flags": {},
@@ -91,7 +91,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 69,
                   "character": 2
                 }
@@ -99,7 +99,7 @@
               "signatures": [
                 {
                   "id": 121,
-                  "name": "new BiobaseClient",
+                  "name": "new SupabaseClient",
                   "kind": 16384,
                   "kindString": "Constructor signature",
                   "flags": {},
@@ -263,7 +263,7 @@
                             "name": "SchemaName"
                           }
                         ],
-                        "name": "BiobaseClientOptions"
+                        "name": "SupabaseClientOptions"
                       }
                     }
                   ],
@@ -303,7 +303,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 43,
                   "character": 2
                 }
@@ -323,7 +323,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 47,
                   "character": 12
                 }
@@ -344,7 +344,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 53,
                   "character": 12
                 }
@@ -365,7 +365,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 52,
                   "character": 12
                 }
@@ -455,7 +455,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 49,
                   "character": 12
                 }
@@ -475,7 +475,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 55,
                   "character": 12
                 }
@@ -505,7 +505,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 44,
                   "character": 2
                 }
@@ -527,7 +527,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 46,
                   "character": 12
                 }
@@ -547,7 +547,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 50,
                   "character": 12
                 }
@@ -618,7 +618,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 51,
                   "character": 12
                 }
@@ -638,7 +638,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 48,
                   "character": 12
                 }
@@ -682,7 +682,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 118,
                   "character": 6
                 }
@@ -714,7 +714,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 128,
                   "character": 6
                 }
@@ -748,7 +748,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 246,
                   "character": 16
                 }
@@ -794,7 +794,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 297,
                   "character": 10
                 }
@@ -871,7 +871,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 283,
                   "character": 10
                 }
@@ -917,7 +917,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 252,
                   "character": 10
                 }
@@ -1068,7 +1068,7 @@
               },
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 290,
                   "character": 10
                 }
@@ -1101,7 +1101,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 218,
                   "character": 2
                 }
@@ -1166,7 +1166,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 133,
                   "character": 2
                 }
@@ -1388,7 +1388,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 225,
                   "character": 2
                 }
@@ -1423,7 +1423,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 242,
                   "character": 2
                 }
@@ -1477,7 +1477,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 235,
                   "character": 2
                 }
@@ -1546,7 +1546,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 191,
                   "character": 2
                 }
@@ -1656,7 +1656,7 @@
                               },
                               "sources": [
                                 {
-                                  "fileName": "src/BiobaseClient.ts",
+                                  "fileName": "src/SupabaseClient.ts",
                                   "line": 197,
                                   "character": 6
                                 }
@@ -1692,7 +1692,7 @@
                               },
                               "sources": [
                                 {
-                                  "fileName": "src/BiobaseClient.ts",
+                                  "fileName": "src/SupabaseClient.ts",
                                   "line": 196,
                                   "character": 6
                                 }
@@ -1715,7 +1715,7 @@
                               },
                               "sources": [
                                 {
-                                  "fileName": "src/BiobaseClient.ts",
+                                  "fileName": "src/SupabaseClient.ts",
                                   "line": 195,
                                   "character": 6
                                 }
@@ -1860,7 +1860,7 @@
               "flags": {},
               "sources": [
                 {
-                  "fileName": "src/BiobaseClient.ts",
+                  "fileName": "src/SupabaseClient.ts",
                   "line": 157,
                   "character": 2
                 }
@@ -1988,7 +1988,7 @@
           ],
           "sources": [
             {
-              "fileName": "src/BiobaseClient.ts",
+              "fileName": "src/SupabaseClient.ts",
               "line": 31,
               "character": 21
             }
@@ -2294,7 +2294,7 @@
                         "name": "SchemaName"
                       }
                     ],
-                    "name": "BiobaseClientOptions"
+                    "name": "SupabaseClientOptions"
                   }
                 }
               ],
@@ -3194,7 +3194,7 @@
                         "name": "SchemaName"
                       }
                     ],
-                    "name": "BiobaseClientOptions"
+                    "name": "SupabaseClientOptions"
                   }
                 },
                 {
@@ -3212,7 +3212,7 @@
                         "name": "any"
                       }
                     ],
-                    "name": "BiobaseClientOptions"
+                    "name": "SupabaseClientOptions"
                   }
                 }
               ],
@@ -3226,7 +3226,7 @@
                     "name": "SchemaName"
                   }
                 ],
-                "name": "BiobaseClientOptions"
+                "name": "SupabaseClientOptions"
               }
             }
           ]
@@ -4040,7 +4040,7 @@
         },
         {
           "id": 70,
-          "name": "BiobaseClientOptions",
+          "name": "SupabaseClientOptions",
           "kind": 4194304,
           "kindString": "Type alias",
           "flags": {},

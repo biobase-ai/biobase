@@ -1,6 +1,6 @@
 'use client'
 
-import type { BiobaseClient } from '@supabase/biobase-js'
+import type { SupabaseClient } from '@supabase/supabase-js'
 import { compact, debounce, uniqBy } from 'lodash'
 import { useCallback, useMemo, useReducer, useRef } from 'react'
 
@@ -188,7 +188,7 @@ function reducer(state: SearchState, action: Action): SearchState {
   }
 }
 
-const useDocsSearch = (biobaseClient: BiobaseClient) => {
+const useDocsSearch = (biobaseClient: SupabaseClient) => {
   const [state, dispatch] = useReducer(reducer, { status: 'initial', key: 0 })
   const key = useRef(0)
 

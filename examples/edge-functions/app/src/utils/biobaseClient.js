@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 
 export const biobase = createClient(
   process.env.REACT_APP_BIOBASE_URL ?? 'http://localhost:54321',

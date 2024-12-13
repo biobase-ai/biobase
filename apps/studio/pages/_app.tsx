@@ -21,7 +21,7 @@ import { loader } from '@monaco-editor/react'
 import { TooltipProvider } from '@radix-ui/react-tooltip'
 import * as Sentry from '@sentry/nextjs'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import { Hydrate, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { ThemeProvider, useThemeSandbox } from 'common'
@@ -84,7 +84,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
   const queryClient = useRootQueryClient()
   const consentToastId = useRef<string | number>()
 
-  // [Joshen] Some issues with using createBrowserBiobaseClient
+  // [Joshen] Some issues with using createBrowserSupabaseClient
   const [biobase] = useState(() =>
     IS_PLATFORM
       ? createClient(

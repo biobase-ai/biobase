@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/biobase-js'
+import { createClient } from '@supabase/supabase-js'
 import { revalidateTag } from 'next/cache'
 import { headers } from 'next/headers'
 import { type NextRequest } from 'next/server'

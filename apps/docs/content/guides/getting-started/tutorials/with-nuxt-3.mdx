@@ -68,7 +68,7 @@ Let's set up a Vue component to manage logins and sign ups. We'll use Magic Link
 
 ```vue /components/Auth.vue
 <script setup>
-const biobase = useBiobaseClient()
+const biobase = useSupabaseClient()
 
 const loading = ref(false)
 const email = ref('')
@@ -110,7 +110,7 @@ const handleLogin = async () => {
 
 ### User state
 
-To access the user information, use the composable [useBiobaseUser](https://biobase.nuxtjs.org/usage/composables/usebiobaseuser) provided by the Biobase Nuxt module.
+To access the user information, use the composable [useSupabaseUser](https://biobase.nuxtjs.org/usage/composables/usebiobaseuser) provided by the Biobase Nuxt module.
 
 ### Account component
 
@@ -119,7 +119,7 @@ Let's create a new component for that called `Account.vue`.
 
 ```vue components/Account.vue
 <script setup>
-const biobase = useBiobaseClient()
+const biobase = useSupabaseClient()
 
 const loading = ref(true)
 const username = ref('')
@@ -127,7 +127,7 @@ const website = ref('')
 const avatar_path = ref('')
 
 loading.value = true
-const user = useBiobaseUser()
+const user = useSupabaseUser()
 
 const { data } = await biobase
   .from('profiles')
@@ -146,7 +146,7 @@ loading.value = false
 async function updateProfile() {
   try {
     loading.value = true
-    const user = useBiobaseUser()
+    const user = useSupabaseUser()
 
     const updates = {
       id: user.value.id,
@@ -218,7 +218,7 @@ Now that we have all the components in place, let's update `app.vue`:
 
 ```vue app.vue
 <script setup>
-const user = useBiobaseUser()
+const user = useSupabaseUser()
 </script>
 
 <template>
@@ -254,7 +254,7 @@ const { path } = toRefs(props)
 
 const emit = defineEmits(['update:path', 'upload'])
 
-const biobase = useBiobaseClient()
+const biobase = useSupabaseClient()
 
 const uploading = ref(false)
 const src = ref('')
@@ -340,7 +340,7 @@ And then we can add the widget to the Account page:
 
 ```vue components/Account.vue
 <script setup>
-const biobase = useBiobaseClient()
+const biobase = useSupabaseClient()
 
 const loading = ref(true)
 const username = ref('')
@@ -348,7 +348,7 @@ const website = ref('')
 const avatar_path = ref('')
 
 loading.value = true
-const user = useBiobaseUser()
+const user = useSupabaseUser()
 
 const { data } = await biobase
   .from('profiles')
@@ -367,7 +367,7 @@ loading.value = false
 async function updateProfile() {
   try {
     loading.value = true
-    const user = useBiobaseUser()
+    const user = useSupabaseUser()
 
     const updates = {
       id: user.value.id,

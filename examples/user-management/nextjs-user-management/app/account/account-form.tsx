@@ -1,7 +1,7 @@
 'use client'
 import { useCallback, useEffect, useState } from 'react'
 import { createClient } from '@/utils/biobase/client'
-import { type User } from '@supabase/biobase-js'
+import { type User } from '@supabase/supabase-js'
 import Avatar from './avatar'
 
 export default function AccountForm({ user }: { user: User | null }) {

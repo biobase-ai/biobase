@@ -1,7 +1,7 @@
 'use client'
 import CreateRoomModal from '@/components/create-room-modal'
 import { User, createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { RealtimeChannel } from '@supabase/biobase-js'
+import { RealtimeChannel } from '@supabase/supabase-js'
 import { useState, useEffect, use } from 'react'
 
 export default function Chat() {

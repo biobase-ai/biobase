@@ -5,14 +5,14 @@
       <link>https://biobase.studio/blog</link>
       <description>Latest Postgres news from Bo Lu at Biobase</description>
       <language>en</language>
-      <lastBuildDate>Wed, 13 Dec 2023 23:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Wed, 13 Dec 2023 16:00:00 GMT</lastBuildDate>
       <atom:link href="https://biobase.studio/planetpg-bo_lu-rss.xml" rel="self" type="application/rss+xml"/>
       <item>
   <guid>https://biobase.studio/blog/biobase-wrappers-v02</guid>
   <title>Biobase Wrappers v0.2: Query Pushdown &amp; Remote Subqueries</title>
   <link>https://biobase.studio/blog/biobase-wrappers-v02</link>
   <description>Biobase Wrappers v0.2 brings more Wrappers, query pushdown, remote subquery, and more</description>
-  <pubDate>Wed, 13 Dec 2023 23:00:00 GMT</pubDate>
+  <pubDate>Wed, 13 Dec 2023 16:00:00 GMT</pubDate>
 </item>
 
     </channel>
