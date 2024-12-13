@@ -1,34 +1,12 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "buildCommand": false,
-  "installCommand": false,
+  "buildCommand": "npm install --no-audit --legacy-peer-deps && npm run build",
+  "nodeVersion": "20.11.1",
+  "installCommand": "npm install --no-audit --legacy-peer-deps",
   "functions": {
     "api/**/*": {
-      "runtime": "nodejs20.x",
-      "nodeVersion": "20.11.1"
+      "runtime": "nodejs20.x"
     }
-  },
-  "workspaces": [
-    {
-      "name": "biobase-www",
-      "path": "apps/www",
-      "buildConfig": "./build.json"
-    },
-    {
-      "name": "biobase-docs",
-      "path": "apps/docs",
-      "buildConfig": "./build.json"
-    },
-    {
-      "name": "biobase-studio",
-      "path": "apps/studio",
-      "buildConfig": "./build.json"
-    },
-    {
-      "name": "biobase-design-system",
-      "path": "apps/design-system",
-      "buildConfig": "./build.json"
-    }
-  ]
+  }
 }
