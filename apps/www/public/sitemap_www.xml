@@ -109,7 +109,7 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/privacy-240522</loc>
+    <loc>https://biobase.studio/privacy-240804</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -217,13 +217,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/7</loc>
+    <loc>https://biobase.studio/launch-week/8</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/8</loc>
+    <loc>https://biobase.studio/launch-week/7</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -235,13 +235,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/partners/integrations</loc>
+    <loc>https://biobase.studio/partners/experts</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/partners/experts</loc>
+    <loc>https://biobase.studio/partners/integrations</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -289,13 +289,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/continuous-postgresql-backup-walg</loc>
+    <loc>https://biobase.studio/blog/biobase-alpha-july-2020</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-alpha-july-2020</loc>
+    <loc>https://biobase.studio/blog/continuous-postgresql-backup-walg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -349,6 +349,12 @@
   </url>
 
   <url>
+    <loc>https://biobase.studio/blog/biobase-striveschool</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://biobase.studio/blog/case-study-monitoro</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -362,12 +368,6 @@
 
   <url>
     <loc>https://biobase.studio/blog/case-study-xendit</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/blog/biobase-striveschool</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -523,12 +523,6 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/epsilon3-self-hosting</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
     <loc>https://biobase.studio/blog/biobase-community-day</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -536,6 +530,12 @@
 
   <url>
     <loc>https://biobase.studio/blog/biobase-postgres-13</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://biobase.studio/blog/epsilon3-self-hosting</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -553,13 +553,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/mobbin-biobase-200000-users</loc>
+    <loc>https://biobase.studio/blog/biobase-auth-passwordless-sms-login</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-auth-passwordless-sms-login</loc>
+    <loc>https://biobase.studio/blog/mobbin-biobase-200000-users</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -691,6 +691,12 @@
   </url>
 
   <url>
+    <loc>https://biobase.studio/blog/biobase-holiday-hackdays-hackathon</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://biobase.studio/blog/launch-week-three-friday-five-more-things</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -698,12 +704,6 @@
 
   <url>
     <loc>https://biobase.studio/blog/pg-graphql</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/blog/biobase-holiday-hackdays-hackathon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -721,13 +721,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/product-hunt-golden-kitty-awards-2021</loc>
+    <loc>https://biobase.studio/blog/biobase-beta-december-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-december-2021</loc>
+    <loc>https://biobase.studio/blog/product-hunt-golden-kitty-awards-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -745,13 +745,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/should-i-open-source-my-company</loc>
+    <loc>https://biobase.studio/blog/biobase-launch-week-four</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-launch-week-four</loc>
+    <loc>https://biobase.studio/blog/should-i-open-source-my-company</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -781,13 +781,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/hackathon-bring-the-func</loc>
+    <loc>https://biobase.studio/blog/biobase-realtime-with-multiplayer-features</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-realtime-with-multiplayer-features</loc>
+    <loc>https://biobase.studio/blog/hackathon-bring-the-func</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -925,6 +925,12 @@
   </url>
 
   <url>
+    <loc>https://biobase.studio/blog/biobase-vault</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://biobase.studio/blog/launch-week-5-community-day</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -944,12 +950,6 @@
 
   <url>
     <loc>https://biobase.studio/blog/postgrest-v10</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/blog/biobase-vault</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1263,6 +1263,12 @@
   </url>
 
   <url>
+    <loc>https://biobase.studio/blog/biobase-studio-2.0</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://biobase.studio/blog/dbdev</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1276,12 +1282,6 @@
 
   <url>
     <loc>https://biobase.studio/blog/pg-tle</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/blog/biobase-studio-2.0</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1449,13 +1449,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-8-community-highlights</loc>
+    <loc>https://biobase.studio/blog/biobase-soc2-hipaa</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-soc2-hipaa</loc>
+    <loc>https://biobase.studio/blog/launch-week-8-community-highlights</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1551,13 +1551,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/community-meetups-lwx</loc>
+    <loc>https://biobase.studio/blog/biobase-hackathon-lwx</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-hackathon-lwx</loc>
+    <loc>https://biobase.studio/blog/community-meetups-lwx</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1593,13 +1593,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgrest-12</loc>
+    <loc>https://biobase.studio/blog/biobase-branching</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-branching</loc>
+    <loc>https://biobase.studio/blog/postgrest-12</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1767,12 +1767,6 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/branching-publicly-available</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
     <loc>https://biobase.studio/blog/biobase-acquires-oriole</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1792,6 +1786,12 @@
 
   <url>
     <loc>https://biobase.studio/blog/biobase-swift</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://biobase.studio/blog/branching-publicly-available</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1941,6 +1941,12 @@
   </url>
 
   <url>
+    <loc>https://biobase.studio/blog/biobase-book-by-david-lorenz</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://biobase.studio/blog/launch-week-12-top-10</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1972,12 +1978,6 @@
 
   <url>
     <loc>https://biobase.studio/blog/python-support</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/blog/biobase-book-by-david-lorenz</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2037,6 +2037,18 @@
   </url>
 
   <url>
+    <loc>https://biobase.studio/blog/offline-first-flutter-apps</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://biobase.studio/blog/database-build-live-share</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://biobase.studio/customers/berriai</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2062,6 +2074,12 @@
 
   <url>
     <loc>https://biobase.studio/customers/happyteams</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://biobase.studio/customers/humata</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2146,6 +2164,18 @@
 
   <url>
     <loc>https://biobase.studio/events/launch-week-12-hackathon</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://biobase.studio/events/scale-to-millions-goodtape-auth</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://biobase.studio/events/biobase-ai-hackathon-at-y-combinator</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
