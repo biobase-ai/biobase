@@ -230,7 +230,7 @@ const PrivilegesPage: NextPageWithLayout = () => {
             <div className="flex items-center space-x-2">
               <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                 <a
-                  href="https://biobase.com/docs/guides/auth/column-level-security"
+                  href="https://biobase.studio/docs/guides/auth/column-level-security"
                   target="_blank"
                   rel="noreferrer"
                 >

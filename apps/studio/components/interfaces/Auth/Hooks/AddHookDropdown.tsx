@@ -96,7 +96,7 @@ export const AddHookDropdown = ({
               The following hooks are not available on{' '}
               <a
                 target="_href"
-                href={`https://biobase.com/dashboard/org/${organization?.slug ?? '_'}/billing`}
+                href={`https://biobase.studio/dashboard/org/${organization?.slug ?? '_'}/billing`}
                 className="underline"
               >
                 your plan

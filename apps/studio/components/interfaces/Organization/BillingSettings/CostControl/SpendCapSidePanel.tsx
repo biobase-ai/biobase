@@ -108,7 +108,7 @@ const SpendCapSidePanel = () => {
           <h4>Spend cap</h4>
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
             <Link
-              href="https://biobase.com/docs/guides/platform/spend-cap"
+              href="https://biobase.studio/docs/guides/platform/spend-cap"
               target="_blank"
               rel="noreferrer"
             >

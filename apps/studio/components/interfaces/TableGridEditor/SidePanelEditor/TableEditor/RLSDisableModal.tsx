@@ -47,7 +47,7 @@ export default function RLSDisableModalContent() {
           <p className="mt-2">
             <Button asChild type="default" icon={<BookOpen strokeWidth={1.5} />}>
               <Link
-                href="https://biobase.com/docs/guides/auth/row-level-security"
+                href="https://biobase.studio/docs/guides/auth/row-level-security"
                 target="_blank"
                 rel="noreferrer"
               >

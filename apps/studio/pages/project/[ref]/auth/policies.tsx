@@ -138,7 +138,7 @@ const AuthPoliciesPage: NextPageWithLayout = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://biobase.com/docs/learn/auth-deep-dive/auth-row-level-security"
+                href="https://biobase.studio/docs/learn/auth-deep-dive/auth-row-level-security"
               >
                 Documentation
               </a>

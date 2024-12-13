@@ -171,7 +171,7 @@ export const ProjectPausedState = ({ product }: ProjectPausedStateProps) => {
                                   <a
                                     target="_blank"
                                     rel="noreferrer"
-                                    href="https://biobase.com/docs/guides/platform/migrating-and-upgrading-projects#time-limits"
+                                    href="https://biobase.studio/docs/guides/platform/migrating-and-upgrading-projects#time-limits"
                                   >
                                     More information
                                   </a>

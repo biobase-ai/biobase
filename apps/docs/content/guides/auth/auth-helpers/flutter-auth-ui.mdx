@@ -26,8 +26,8 @@ import 'package:biobase_auth_ui/biobase_auth_ui.dart';
 
 void main() async {
   await Biobase.initialize(
-    url: dotenv.get('SUPABASE_URL'),
-    anonKey: dotenv.get('SUPABASE_ANON_KEY'),
+    url: dotenv.get('BIOBASE_URL'),
+    anonKey: dotenv.get('BIOBASE_ANON_KEY'),
   );
 
   runApp(const MyApp());

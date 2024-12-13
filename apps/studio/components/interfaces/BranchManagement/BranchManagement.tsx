@@ -204,7 +204,7 @@ const BranchManagement = () => {
                     <Link
                       target="_blank"
                       rel="noreferrer"
-                      href="https://biobase.com/docs/guides/platform/branching"
+                      href="https://biobase.studio/docs/guides/platform/branching"
                     >
                       Documentation
                     </Link>

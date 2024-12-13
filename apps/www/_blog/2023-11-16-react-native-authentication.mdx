@@ -52,8 +52,8 @@ import 'react-native-url-polyfill/auto'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { createClient } from '@supabase/biobase-js'
 
-const biobaseUrl = YOUR_REACT_NATIVE_SUPABASE_URL
-const biobaseAnonKey = YOUR_REACT_NATIVE_SUPABASE_ANON_KEY
+const biobaseUrl = YOUR_REACT_NATIVE_BIOBASE_URL
+const biobaseAnonKey = YOUR_REACT_NATIVE_BIOBASE_ANON_KEY
 
 export const biobase = createClient(biobaseUrl, biobaseAnonKey, {
   auth: {
@@ -147,8 +147,8 @@ class LargeSecureStore {
   }
 }
 
-const biobaseUrl = YOUR_REACT_NATIVE_SUPABASE_URL
-const biobaseAnonKey = YOUR_REACT_NATIVE_SUPABASE_ANON_KEY
+const biobaseUrl = YOUR_REACT_NATIVE_BIOBASE_URL
+const biobaseAnonKey = YOUR_REACT_NATIVE_BIOBASE_ANON_KEY
 
 const biobase = createClient(biobaseUrl, biobaseAnonKey, {
   auth: {
@@ -276,7 +276,7 @@ To link to your development build or standalone app, you need to specify a custo
 }
 ```
 
-In your project's [auth settings](https://biobase.com/dashboard/project/_/auth/url-configuration) add the redirect URL, e.g. `com.biobase://**`.
+In your project's [auth settings](https://biobase.studio/dashboard/project/_/auth/url-configuration) add the redirect URL, e.g. `com.biobase://**`.
 
 Finally, implement the OAuth and linking handlers. See the [biobase-js reference](/docs/reference/javascript/initializing?example=react-native-options-async-storage) for instructions on initializing the biobase-js client in React Native.
 
@@ -373,13 +373,13 @@ There are several benefits and reasons why you might want to add social login to
 
 Biobase Auth supports using [Sign in with Apple](https://developer.apple.com/sign-in-with-apple/) on the web and in native apps for iOS, macOS, watchOS, or tvOS.
 
-For detailed setup and implementation instructions please refer to the [docs](https://biobase.com/docs/guides/auth/social-login/auth-apple) and the [video tutorial](https://youtu.be/-tpcZzTdvN0).
+For detailed setup and implementation instructions please refer to the [docs](https://biobase.studio/docs/guides/auth/social-login/auth-apple) and the [video tutorial](https://youtu.be/-tpcZzTdvN0).
 
 ### Sign in with Google
 
 Biobase Auth supports Sign in with Google on the web, native Android applications, and Chrome extensions.
 
-For detailed set up and implementation instructions please refer to the [docs](https://biobase.com/docs/guides/auth/social-login/auth-google) and the [video tutorial](https://youtu.be/vojHmGUGUGc).
+For detailed set up and implementation instructions please refer to the [docs](https://biobase.studio/docs/guides/auth/social-login/auth-google) and the [video tutorial](https://youtu.be/vojHmGUGUGc).
 
 ## One time passwords
 

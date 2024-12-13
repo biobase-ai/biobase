@@ -101,7 +101,7 @@ export const BILLING_BREAKDOWN_METRICS: Metric[] = [
     tip: 'Each project gets provisioned with 8 GB of GP3 disk for free. When you get close to the disk size limit, we autoscale your disk by 1.5x. Each GB of provisioned disk size beyond 8 GB incurs a GB-Hr every hour. Each extra GB is billed at $0.125/month, prorated down to the hour.',
     docLink: {
       title: 'Read more',
-      url: 'https://biobase.com/docs/guides/platform/org-based-billing#disk-size',
+      url: 'https://biobase.studio/docs/guides/platform/org-based-billing#disk-size',
     },
   },
   {

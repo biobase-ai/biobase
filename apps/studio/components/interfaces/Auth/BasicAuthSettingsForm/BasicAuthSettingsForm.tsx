@@ -203,7 +203,7 @@ const BasicAuthSettingsForm = () => {
                       <Markdown
                         extLinks
                         className="[&>p>a]:text-foreground-light [&>p>a]:transition-all [&>p>a]:hover:text-foreground [&>p>a]:hover:decoration-brand"
-                        content="Enable [manual linking APIs](https://biobase.com/docs/guides/auth/auth-identity-linking#manual-linking-beta) for your project."
+                        content="Enable [manual linking APIs](https://biobase.studio/docs/guides/auth/auth-identity-linking#manual-linking-beta) for your project."
                       />
                     }
                     disabled={!canUpdateConfig}
@@ -217,7 +217,7 @@ const BasicAuthSettingsForm = () => {
                       <Markdown
                         extLinks
                         className="[&>p>a]:text-foreground-light [&>p>a]:transition-all [&>p>a]:hover:text-foreground [&>p>a]:hover:decoration-brand"
-                        content="Enable [anonymous sign-ins](https://biobase.com/docs/guides/auth/auth-anonymous) for your project."
+                        content="Enable [anonymous sign-ins](https://biobase.studio/docs/guides/auth/auth-anonymous) for your project."
                       />
                     }
                     disabled={!canUpdateConfig}

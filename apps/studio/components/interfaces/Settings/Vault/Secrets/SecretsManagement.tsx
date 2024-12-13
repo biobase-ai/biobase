@@ -113,7 +113,7 @@ const SecretsManagement = () => {
           <div className="flex items-center space-x-2">
             <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
               <Link
-                href="https://biobase.com/docs/guides/database/vault"
+                href="https://biobase.studio/docs/guides/database/vault"
                 target="_blank"
                 rel="noreferrer"
               >

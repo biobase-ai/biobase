@@ -51,10 +51,10 @@ function RealtimePage() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.com/realtime`,
+          url: `https://biobase.studio/realtime`,
           images: [
             {
-              url: `https://biobase.com${basePath}/images/realtime/og.jpg`,
+              url: `https://biobase.studio${basePath}/images/realtime/og.jpg`,
             },
           ],
         }}

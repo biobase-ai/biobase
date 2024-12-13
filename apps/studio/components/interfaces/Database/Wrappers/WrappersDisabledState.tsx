@@ -119,7 +119,7 @@ const WrappersDisabledState = () => {
               <div className="flex items-center space-x-2 my-1 ml-[1px]">
                 <Button asChild type="default" icon={<ExternalLink />}>
                   <Link
-                    href="https://biobase.com/docs/guides/database/extensions/wrappers/overview"
+                    href="https://biobase.studio/docs/guides/database/extensions/wrappers/overview"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -132,7 +132,7 @@ const WrappersDisabledState = () => {
             <div className="flex items-center space-x-2">
               <Button asChild type="default" icon={<ExternalLink />}>
                 <Link
-                  href="https://biobase.com/docs/guides/database/extensions/wrappers/overview"
+                  href="https://biobase.studio/docs/guides/database/extensions/wrappers/overview"
                   target="_blank"
                   rel="noreferrer"
                 >

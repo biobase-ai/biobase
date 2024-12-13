@@ -15,9 +15,9 @@ In this example we'll set up a database table, secure it with Row Level Security
   <StepHikeCompact.Step step={1}>
     <StepHikeCompact.Details title="Set up a Biobase project with a 'todos' table">
 
-    [Create a new project](https://app.biobase.com) in the Biobase Dashboard.
+    [Create a new project](https://app.biobase.studio) in the Biobase Dashboard.
 
-    After your project is ready, create a table in your Biobase database. You can do this with either the Table interface or the [SQL Editor](https://app.biobase.com/project/_/sql).
+    After your project is ready, create a table in your Biobase database. You can do this with either the Table interface or the [SQL Editor](https://app.biobase.studio/project/_/sql).
 
     </StepHikeCompact.Details>
 
@@ -89,7 +89,7 @@ In this example we'll set up a database table, secure it with Row Level Security
 
     <StepHikeCompact.Details title="Enable Postgres replication">
 
-      Go to your project's [Publications settings](https://biobase.com/dashboard/project/_/database/publications), and under `biobase_realtime`, toggle on the tables you want to listen to.
+      Go to your project's [Publications settings](https://biobase.studio/dashboard/project/_/database/publications), and under `biobase_realtime`, toggle on the tables you want to listen to.
 
     </StepHikeCompact.Details>
 
@@ -1666,7 +1666,7 @@ We strongly encourage you to enable RLS and create policies for tables in privat
 
 You may choose to sign your own tokens to customize claims that can be checked in your RLS policies.
 
-Your project JWT secret is found with your [Project API keys](https://app.biobase.com/project/_/settings/api) in your dashboard.
+Your project JWT secret is found with your [Project API keys](https://app.biobase.studio/project/_/settings/api) in your dashboard.
 
 <Admonition type="caution">
 
@@ -1688,7 +1688,7 @@ To use your own JWT with Realtime make sure to set the token after instantiating
 ```js
 const { createClient } = require('@supabase/biobase-js')
 
-const biobase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY, {})
+const biobase = createClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY, {})
 
 // Set your custom JWT here
 biobase.realtime.setAuth('your-custom-jwt')
@@ -1876,4 +1876,4 @@ Enter your database settings to estimate the maximum throughput for your instanc
 
 Don't forget to run your own benchmarks to make sure that the performance is acceptable for your use case.
 
-We are making many improvements to Realtime's Postgres Changes. If you are uncertain about the performance of your use case, please reach out using [Support Form](https://biobase.com/dashboard/support/new) and we will be happy to help you. We have a team of engineers that can advise you on the best solution for your use-case.
+We are making many improvements to Realtime's Postgres Changes. If you are uncertain about the performance of your use case, please reach out using [Support Form](https://biobase.studio/dashboard/support/new) and we will be happy to help you. We have a team of engineers that can advise you on the best solution for your use-case.

@@ -32,7 +32,7 @@
 
   const handleOAuthLogin = async (provider: Provider) => {
     // You need to enable the third party auth you want in Authentication > Settings
-    // Read more on: https://biobase.com/docs/guides/auth#third-party-logins
+    // Read more on: https://biobase.studio/docs/guides/auth#third-party-logins
     let { error } = await biobase.auth.signInWithOAuth({ provider });
     if (error) console.log("Error: ", error.message);
   };

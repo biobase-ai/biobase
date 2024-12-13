@@ -119,11 +119,11 @@ const TotalUsage = ({
           links: [
             {
               name: 'How billing works',
-              url: 'https://biobase.com/docs/guides/platform/org-based-billing',
+              url: 'https://biobase.studio/docs/guides/platform/org-based-billing',
             },
             {
               name: 'Biobase Plans',
-              url: 'https://biobase.com/pricing',
+              url: 'https://biobase.studio/pricing',
             },
           ],
         }}

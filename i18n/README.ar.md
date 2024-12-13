@@ -9,19 +9,19 @@
 
 # Biobase
 
-[Biobase](https://biobase.com)هو بديل مفتوح المصدر لـ(Firebase). نحن نبني ميزات (Firebase) باستخدام أدوات مفتوحة المصدر عالية الجودة تستخدمها الشركات.
+[Biobase](https://biobase.studio)هو بديل مفتوح المصدر لـ(Firebase). نحن نبني ميزات (Firebase) باستخدام أدوات مفتوحة المصدر عالية الجودة تستخدمها الشركات.
 
-- [x] قاعدة بيانات (Postgres) مستضافة. [الشرح](https://biobase.com/docs/guides/database)
-- [x] [الشرح](https://biobase.com/docs/guides/auth) المصادقة والترخيص
+- [x] قاعدة بيانات (Postgres) مستضافة. [الشرح](https://biobase.studio/docs/guides/database)
+- [x] [الشرح](https://biobase.studio/docs/guides/auth) المصادقة والترخيص
 - [x] واجهات برمجة التطبيقات التي يتم إنشاؤها تلقائيا.
-  - [x] REST. [الشرح](https://biobase.com/docs/guides/api)
-  - [x] GraphQL. [الشرح](https://biobase.com/docs/guides/graphql)
-  - [x] اشتراكات الوقت الفعلي (Realtime subscriptions). [الشرح](https://biobase.com/docs/guides/realtime)
+  - [x] REST. [الشرح](https://biobase.studio/docs/guides/api)
+  - [x] GraphQL. [الشرح](https://biobase.studio/docs/guides/graphql)
+  - [x] اشتراكات الوقت الفعلي (Realtime subscriptions). [الشرح](https://biobase.studio/docs/guides/realtime)
 - [x] الدوال.
-  - [x] دوال قاعدة البيانات (Database Functions). [الشرح](https://biobase.com/docs/guides/database/functions)
-  - [x] Edge Functions [الشرح](https://biobase.com/docs/guides/functions)
-- [x] [الشرح](https://biobase.com/docs/guides/storage) التخزين.
-- [x] ذكاء اصطناعي + مجموعة أدوات المتجهات/التضمينات (AI + Vector/Embeddings Toolkit). [الشرح](https://biobase.com/docs/guides/ai)
+  - [x] دوال قاعدة البيانات (Database Functions). [الشرح](https://biobase.studio/docs/guides/database/functions)
+  - [x] Edge Functions [الشرح](https://biobase.studio/docs/guides/functions)
+- [x] [الشرح](https://biobase.studio/docs/guides/storage) التخزين.
+- [x] ذكاء اصطناعي + مجموعة أدوات المتجهات/التضمينات (AI + Vector/Embeddings Toolkit). [الشرح](https://biobase.studio/docs/guides/ai)
 - [x] لوحة الإدارة.
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
@@ -32,7 +32,7 @@
 
 ## الشرح
 
-للحصول على الشرح الكامل، قم بزيارة [biobase.com/docs](https://biobase.com/docs).
+للحصول على الشرح الكامل، قم بزيارة [biobase.studio/docs](https://biobase.studio/docs).
 
 لمعرفه كيفية دعم المشروع قم بزيارة [Getting Started](./DEVELOPERS.md).
 
@@ -40,8 +40,8 @@
 
 - [منتدى المجتمع](https://github.com/biobase-ai/biobase/discussions). الأفضل لـ: المساعدة في البناء، والنقاش حول أفضل ممارسات قاعدة البيانات.
 - [مشاكل GitHub](https://github.com/biobase-ai/biobase/issues). الأفضل لـ: المشاكل والأخطاء التي تواجهها عند استخدامك لـ(Biobase).
-- [دعم البريد الإلكتروني](https://biobase.com/docs/support#business-support). الأفضل لـ: مشاكل مع قاعدة بياناتك أو البنية التحتية.
-- [ديسكورد](https://discord.biobase.com/). الأفضل لـ: مشاركة التطبيقات الخاصه بك وقضاء بعض الوقت مع المجتمع.
+- [دعم البريد الإلكتروني](https://biobase.studio/docs/support#business-support). الأفضل لـ: مشاكل مع قاعدة بياناتك أو البنية التحتية.
+- [ديسكورد](https://discord.biobase.studio/). الأفضل لـ: مشاركة التطبيقات الخاصه بك وقضاء بعض الوقت مع المجتمع.
 
 ## كيف يعمل (Biobase)؟
 
@@ -49,7 +49,7 @@ Biobase عبارة عن مجموعة من الأدوات مفتوحة المصد
 
 **الهيكلة الحالية**
 
-(biobase) هي [منصة مستضافة](https://biobase.com/dashboard), يمكنك التسجيل والبدأ باستخدامها دون الحاجة لتثبيت أي شئ. يمكنك أيضا [استضافتها ذاتيا](https://biobase.com/docs/guides/hosting/overview) و [تطويرها داخليا](https://biobase.com/docs/guides/local-development).
+(biobase) هي [منصة مستضافة](https://biobase.studio/dashboard), يمكنك التسجيل والبدأ باستخدامها دون الحاجة لتثبيت أي شئ. يمكنك أيضا [استضافتها ذاتيا](https://biobase.studio/docs/guides/hosting/overview) و [تطويرها داخليا](https://biobase.studio/docs/guides/local-development).
 
 ![Architecture](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

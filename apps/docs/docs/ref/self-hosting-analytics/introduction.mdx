@@ -32,7 +32,7 @@ When using the BigQuery backend, a BigQuery dataset is created in the provided G
 
 When using the Postgres backend, tables are created for each source within the provided schema (for biobase-cli, this would be `_analytics`). Log events received by Logflare are inserted directly into the respective tables. All BigQuery-dialect SQL queries from Studio will be handled by a translation layer within the Analytics server. This translation layer translates the query to PostgreSQL dialect, and then executes it against the Postgres database.
 
-The Postgres backend is not yet optimized for a high volume of inserts, or for heavy query usage. Today the translation layer only handles a limited subset of the BigQuery dialect. As such, the [Log Explorer](https://biobase.com/docs/guides/platform/logs#logs-explorer) may produce errors for more advanced queries when using the Postgres Backend.
+The Postgres backend is not yet optimized for a high volume of inserts, or for heavy query usage. Today the translation layer only handles a limited subset of the BigQuery dialect. As such, the [Log Explorer](https://biobase.studio/docs/guides/platform/logs#logs-explorer) may produce errors for more advanced queries when using the Postgres Backend.
 
 ## Getting Started
 
@@ -44,7 +44,7 @@ Two compose services are required: Logflare, and Vector. Logflare is the HTTP An
 Regardless of the backend chosen, the following environment variables **must** be set for the `biobase/logflare` docker image:
 
 - `LOGFLARE_SINGLE_TENANT=true`: The feature flag for enabling single tenant mode for Logflare. Must be set to `true`
-- `LOGFLARE_SUPABASE_MODE=true`: The feature flag for seeding Biobase-related data. Must be set to `true`
+- `LOGFLARE_BIOBASE_MODE=true`: The feature flag for seeding Biobase-related data. Must be set to `true`
 
 For all other configuration environment variables, please refer to the [Logflare self-hosting documentation](https://docs.logflare.app/self-hosting/#configuration).
 
@@ -196,7 +196,7 @@ The current Postgres Ingestion backend isn't optimized for production usage. We 
 
     - [Source code](https://github.com/logflare/logflare)
     - [OpenAPI docs](https://logflare.app/api/openapi)
-    - [Biobase Acquires Logflare](https://biobase.com/blog/biobase-acquires-logflare)
+    - [Biobase Acquires Logflare](https://biobase.studio/blog/biobase-acquires-logflare)
     - [Logflare self-hosting docs](https://docs.logflare.app/self-hosting)
 
   </RefSubLayout.Examples>

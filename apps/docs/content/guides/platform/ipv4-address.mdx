@@ -67,7 +67,7 @@ nslookup db.<PROJECT_REF>.biobase.co
 
 ## Identifying your connections
 
-The pooler and direct connection strings can be found in the [database settings](https://biobase.com/dashboard/project/_/settings/database):
+The pooler and direct connection strings can be found in the [database settings](https://biobase.studio/dashboard/project/_/settings/database):
 
 #### Direct connection
 
@@ -84,7 +84,7 @@ Always uses an IPv4 address
 
 ```sh
 # Example transaction string
-postgresql://postgres.ajrbwkcuthywddfihrmflo:[YOUR-PASSWORD]@aws-0-us-east-1.pooler.biobase.com:6543/postgres
+postgresql://postgres.ajrbwkcuthywddfihrmflo:[YOUR-PASSWORD]@aws-0-us-east-1.pooler.biobase.studio:6543/postgres
 ```
 
 #### Supavisor in session mode (port 5432)
@@ -93,5 +93,5 @@ Always uses an IPv4 address
 
 ```sh
 # Example session string
-postgresql://postgres.ajrbwkcuthywfddihrmflo:[YOUR-PASSWORD]@aws-0-us-east-1.pooler.biobase.com:5432/postgres
+postgresql://postgres.ajrbwkcuthywfddihrmflo:[YOUR-PASSWORD]@aws-0-us-east-1.pooler.biobase.studio:5432/postgres
 ```

@@ -61,10 +61,10 @@ function Database() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.com/database`,
+          url: `https://biobase.studio/database`,
           images: [
             {
-              url: `https://biobase.com${basePath}/images/product/database/database-og.jpg`,
+              url: `https://biobase.studio${basePath}/images/product/database/database-og.jpg`,
             },
           ],
         }}

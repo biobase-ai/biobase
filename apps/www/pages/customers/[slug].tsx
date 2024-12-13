@@ -202,7 +202,7 @@ function CaseStudyPage(props: any) {
                           <div>
                             <Button asChild type="default" iconRight={<ChevronRight />}>
                               <Link
-                                href="https://biobase.com/contact/enterprise"
+                                href="https://biobase.studio/contact/enterprise"
                                 className="no-underline"
                               >
                                 Contact sales

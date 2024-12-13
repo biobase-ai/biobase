@@ -22,7 +22,7 @@ Deno.serve((req) => {
 
   const reqUrl = new URL(req.url);
   const url = `${
-    Deno.env.get("SUPABASE_URL")
+    Deno.env.get("BIOBASE_URL")
   }/storage/v1/object/authenticated${reqUrl.pathname}`;
 
   const { method, headers } = req;
@@ -30,7 +30,7 @@ Deno.serve((req) => {
   const modHeaders = new Headers(headers);
   modHeaders.append(
     "authorization",
-    `Bearer ${Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!}`,
+    `Bearer ${Deno.env.get("BIOBASE_SERVICE_ROLE_KEY")!}`,
   );
   return fetch(url, { method, headers: modHeaders });
 });

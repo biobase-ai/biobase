@@ -51,7 +51,7 @@ const PromoToast = () => {
 
       <div className="relative z-10 flex items-center space-x-2">
         <Button asChild type="secondary">
-          <Link target="_blank" rel="noreferrer" href={`https://biobase.com${announcement.link}`}>
+          <Link target="_blank" rel="noreferrer" href={`https://biobase.studio${announcement.link}`}>
             Learn more
           </Link>
         </Button>

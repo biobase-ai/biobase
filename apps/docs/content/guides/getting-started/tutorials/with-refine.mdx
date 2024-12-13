@@ -63,15 +63,15 @@ Let's move ahead to understand the generated code now.
 
 ### Refine `biobaseClient`
 
-The `create refine-app` generated a Biobase client for us in the `src/utility/biobaseClient.ts` file. It has two constants: `SUPABASE_URL` and `SUPABASE_KEY`. We want to replace them as `biobaseUrl` and `biobaseAnonKey` respectively and assign them our own Biobase server's values.
+The `create refine-app` generated a Biobase client for us in the `src/utility/biobaseClient.ts` file. It has two constants: `BIOBASE_URL` and `BIOBASE_KEY`. We want to replace them as `biobaseUrl` and `biobaseAnonKey` respectively and assign them our own Biobase server's values.
 
 We'll update it with environment variables managed by Vite:
 
 ```ts src/utility/biobaseClient.ts
 import { createClient } from '@refinedev/biobase'
 
-const biobaseUrl = import.meta.env.VITE_SUPABASE_URL
-const biobaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+const biobaseUrl = import.meta.env.VITE_BIOBASE_URL
+const biobaseAnonKey = import.meta.env.VITE_BIOBASE_ANON_KEY
 
 export const biobaseClient = createClient(biobaseUrl, biobaseAnonKey, {
   db: {
@@ -86,8 +86,8 @@ export const biobaseClient = createClient(biobaseUrl, biobaseAnonKey, {
 And then, we want to save the environment variables in a `.env.local` file. All you need are the API URL and the `anon` key that you copied [earlier](#get-the-api-keys).
 
 ```bash .env.local
-VITE_SUPABASE_URL=YOUR_SUPABASE_URL
-VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+VITE_BIOBASE_URL=YOUR_BIOBASE_URL
+VITE_BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
 ```
 
 The `biobaseClient` will be used in fetch calls to Biobase endpoints from our app. As we'll see below, the client is instrumental in implementing authentication using Refine's auth provider methods and CRUD actions with appropriate data provider methods.

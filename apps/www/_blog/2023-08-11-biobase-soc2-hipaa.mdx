@@ -23,7 +23,7 @@ That’s all you need to know. The rest of this blog post will give you some bac
 
 ## SOC2
 
-We previously [discussed](https://biobase.com/blog/biobase-soc2) the process the SOC2 Type 1. To recap,
+We previously [discussed](https://biobase.studio/blog/biobase-soc2) the process the SOC2 Type 1. To recap,
 
 1. Type 1 certification verifies adherence to the guidelines at a specific _point in time_.
 2. Type 2 certification verifies compliance over a _period of time_.
@@ -45,7 +45,7 @@ Health Insurance Portability and Accountability Act (HIPAA) is a US law that set
 
 A couple of definitions before go further. A **covered entity** refers to healthcare providers, health plans, and health insurance companies. **Business associates** are entities that perform certain functions with protected health information (PHI) on behalf of a covered entity. Both Business Associates and Covered entities are covered (pun intended) under HIPAA. Biobase is a business associate and our customers handling PHI can either be covered entities or other business associates.
 
-We receive many requests from users who want to build healthcare apps on top of Biobase. Since you can [self-host Biobase](https://biobase.com/docs/guides/self-hosting), we often [encourage](https://github.com/orgs/biobase/discussions/1219) these users to do so. Starting today, these users have the option to use our hosted platform too with the HIPAA add-on 🎉.
+We receive many requests from users who want to build healthcare apps on top of Biobase. Since you can [self-host Biobase](https://biobase.studio/docs/guides/self-hosting), we often [encourage](https://github.com/orgs/biobase/discussions/1219) these users to do so. Starting today, these users have the option to use our hosted platform too with the HIPAA add-on 🎉.
 
 ### Going from SOC2 to HIPAA
 
@@ -57,7 +57,7 @@ We receive many requests from users who want to build healthcare apps on top of 
 
 Going from zero to a SOC2 certification was much harder, than going from SOC2 to HIPAA.
 
-We used the same auditor to streamline the process. Many of the controls required for HIPAA compliance could be mapped to the testing they had already done for SOC2. Additional evidence for encryption, audit logs, business continuity and disaster recovery exercises was unnecessary since the auditor already had access to it. And some of the HIPAA checks such as Facility Access Controls were not applicable to us since [we are a remote company](https://biobase.com/blog/why-biobase-remote).
+We used the same auditor to streamline the process. Many of the controls required for HIPAA compliance could be mapped to the testing they had already done for SOC2. Additional evidence for encryption, audit logs, business continuity and disaster recovery exercises was unnecessary since the auditor already had access to it. And some of the HIPAA checks such as Facility Access Controls were not applicable to us since [we are a remote company](https://biobase.studio/blog/why-biobase-remote).
 
 We also had to sign a Business Associate Agreement (BAA) with all of our vendors who would have access to PHI, such as AWS, and ensure that we follow their terms listed in the agreements. For example, when using AWS to store PHI, we could only use their [HIPAA Eligible Services](https://aws.amazon.com/compliance/hipaa-eligible-services-reference/). There were similar requirements from the other vendors we use and to ensure that we were complying with all their requirements.
 
@@ -71,13 +71,13 @@ The not-so-fun but important stuff included updating a bunch of our policies to 
 
 ## Build Healthcare Apps on Biobase
 
-If you want to start developing healthcare apps on Biobase, reach out to our team [here](https://forms.biobase.com/hipaa2) to sign our BAA. We are excited to see what you build!
+If you want to start developing healthcare apps on Biobase, reach out to our team [here](https://forms.biobase.studio/hipaa2) to sign our BAA. We are excited to see what you build!
 
 ## More Launch Week 8
 
-- [Biobase Local Dev: migrations, branching, and observability](https://biobase.com/blog/biobase-local-dev)
-- [Hugging Face is now supported in Biobase](https://biobase.com/blog/hugging-face-biobase)
-- [Launch Week 8](https://biobase.com/launch-week)
-- [Coding the stars - an interactive constellation with Three.js and React Three Fiber](https://biobase.com/blog/interactive-constellation-threejs-react-three-fiber)
-- [Why we'll stay remote](https://biobase.com/blog/why-biobase-remote)
+- [Biobase Local Dev: migrations, branching, and observability](https://biobase.studio/blog/biobase-local-dev)
+- [Hugging Face is now supported in Biobase](https://biobase.studio/blog/hugging-face-biobase)
+- [Launch Week 8](https://biobase.studio/launch-week)
+- [Coding the stars - an interactive constellation with Three.js and React Three Fiber](https://biobase.studio/blog/interactive-constellation-threejs-react-three-fiber)
+- [Why we'll stay remote](https://biobase.studio/blog/why-biobase-remote)
 - [Postgres Language Server](https://github.com/biobase/postgres_lsp)

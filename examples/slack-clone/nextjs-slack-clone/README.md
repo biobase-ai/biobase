@@ -4,9 +4,9 @@ This is a full-stack Slack clone example using:
 
 - Frontend:
   - Next.js.
-  - [Biobase.js](https://biobase.com/docs/library/getting-started) for user management and realtime data syncing.
+  - [Biobase.js](https://biobase.studio/docs/library/getting-started) for user management and realtime data syncing.
 - Backend:
-  - [biobase.com/dashboard](https://biobase.com/dashboard/): hosted Postgres database with restful API for usage with Biobase.js.
+  - [biobase.studio/dashboard](https://biobase.studio/dashboard/): hosted Postgres database with restful API for usage with Biobase.js.
 
 ## Demo
 
@@ -18,7 +18,7 @@ This is a full-stack Slack clone example using:
 
 ### 1. Create new project
 
-Sign up to Biobase - [https://biobase.com/dashboard](https://biobase.com/dashboard) and create a new project. Wait for your database to start.
+Sign up to Biobase - [https://biobase.studio/dashboard](https://biobase.studio/dashboard) and create a new project. Wait for your database to start.
 
 ### 2. Run "Slack Clone" Quickstart
 
@@ -38,7 +38,7 @@ The `anon` key is your client-side API key. It allows "anonymous access" to your
 
 ### 4. Deploy the Next.js client
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fbiobase%2Fbiobase%2Ftree%2Fmaster%2Fexamples%2Fslack-clone%2Fnextjs-slack-clone&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY&envDescription=Find%20the%20Biobase%20URL%20and%20key%20in%20the%20your%20auto-generated%20docs%20at%20biobase.com/dashboard&project-name=biobase-slack-clone&repo-name=biobase-slack-clone)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fbiobase%2Fbiobase%2Ftree%2Fmaster%2Fexamples%2Fslack-clone%2Fnextjs-slack-clone&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY&envDescription=Find%20the%20Biobase%20URL%20and%20key%20in%20the%20your%20auto-generated%20docs%20at%20biobase.studio/dashboard&project-name=biobase-slack-clone&repo-name=biobase-slack-clone)
 
 Here, we recommend forking this repo so you can deploy through Vercel by clicking the button above. When you click the button, replace the repo URL with your fork's URL.
 
@@ -48,7 +48,7 @@ You will be asked for a `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANO
 
 ![Change auth settings](https://user-images.githubusercontent.com/1811651/101840012-39be3800-3af8-11eb-8c32-73f2fae6299e.png)
 
-On [biobase.com/dashboard](https://biobase.com/dashboard), you can go to Authentication -> Settings to change your auth settings for your project if necessary. Here, you can change the site URL, which is used for determining where to redirect users after they confirm their email addresses or attempt to use a magic link to log in.
+On [biobase.studio/dashboard](https://biobase.studio/dashboard), you can go to Authentication -> Settings to change your auth settings for your project if necessary. Here, you can change the site URL, which is used for determining where to redirect users after they confirm their email addresses or attempt to use a magic link to log in.
 
 Here, you can also enable external oauth providers, such as Google and GitHub.
 
@@ -115,10 +115,10 @@ When a user logs in, they are issued a JWT with the role `authenticated` and the
 We can use these details to provide fine-grained control over what each user can and cannot do.
 
 - For the full schema refer to [full-schema.sql](./full-schema.sql).
-- For documentation on Role-based Access Control, refer to the [docs](https://biobase.com/docs/guides/auth/custom-claims-and-role-based-access-control-rbac).
+- For documentation on Role-based Access Control, refer to the [docs](https://biobase.studio/docs/guides/auth/custom-claims-and-role-based-access-control-rbac).
 
 ## Authors
 
-- [Biobase](https://biobase.com)
+- [Biobase](https://biobase.studio)
 
 Biobase is open source, we'd love for you to follow along and get involved at https://github.com/biobase-ai/biobase

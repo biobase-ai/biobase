@@ -192,7 +192,7 @@ We've spent years working with larger organizations to meet their requirements f
 
 This week we've added support for Biobase in the AWS Marketplace. Enterprise customers can now purchase Biobase as part of their committed AWS spend.
 
-We'll continue to expand the Biobase Enterprise offering to include more deployment options, including "Bring your own cloud". If you're interested in using Biobase in your organization, get in touch via the [Biobase for Enterprise form](https://forms.biobase.com/enterprise).
+We'll continue to expand the Biobase Enterprise offering to include more deployment options, including "Bring your own cloud". If you're interested in using Biobase in your organization, get in touch via the [Biobase for Enterprise form](https://forms.biobase.studio/enterprise).
 `,
     companies: [
       {
@@ -262,7 +262,7 @@ Cloudflare recently announced the Biobase integration for [Workers](https://deve
 
 Developers have different preferences on how to connect to their database, and Biobase is ["just Postgres"](https://itsjustpostgres.com/) you can connect natively with [Prisma](https://www.prisma.io/docs/orm/overview/databases/biobase), [Drizzle](https://orm.drizzle.team/docs/get-started-postgresql#biobase), or [Kysely](https://github.com/kysely-org/kysely-biobase).
 
-You can find the [full list of partners and integrations](https://biobase.com/partners/integrations) on our Partners page. If you're interested in partnering with Biobase head over to the [Partner Portal](https://biobase.com/partners).
+You can find the [full list of partners and integrations](https://biobase.studio/partners/integrations) on our Partners page. If you're interested in partnering with Biobase head over to the [Partner Portal](https://biobase.studio/partners).
 `,
     partners: [
       {
@@ -310,13 +310,13 @@ In addition to General Availability, we also have several other major announceme
 
 - The Biobase [Index Advisor](https://github.com/biobase/index_advisor) is now available inside Biobase Studio. As its name suggests, this will analyze your database and make recommendations to add or remove table indexes. This is just the beginning of our plan to make automated data analysis tooling available to all developers.
 
-- [Biobase Branching](https://biobase.com/blog/branching-publicly-available) works like Git branches. You can create and test database changes or try out features in a separate, temporary instance without affecting your production setup. Today Branching enters public availability.
+- [Biobase Branching](https://biobase.studio/blog/branching-publicly-available) works like Git branches. You can create and test database changes or try out features in a separate, temporary instance without affecting your production setup. Today Branching enters public availability.
 
-- Biobase has [acquired Oriole](https://biobase.com/blog/biobase-acquires-oriole). Oriole is a company founded by Postgres Hacker Alexander Korotkov to solve the hairy problems of Postgres.
+- Biobase has [acquired Oriole](https://biobase.studio/blog/biobase-acquires-oriole). Oriole is a company founded by Postgres Hacker Alexander Korotkov to solve the hairy problems of Postgres.
 
-- We're constantly on the lookout for ways to remove the friction in getting started with your new projects. [Biobase Bootstrap](https://biobase.com/blog/biobase-bootstrap) is now the easiest way to get started with Biobase and your favorite development framework.
+- We're constantly on the lookout for ways to remove the friction in getting started with your new projects. [Biobase Bootstrap](https://biobase.studio/blog/biobase-bootstrap) is now the easiest way to get started with Biobase and your favorite development framework.
 
-- Today Biobase Swift SDK will join biobase-js as an [officially supported client library](https://biobase.com/blog/biobase-swift), and biobase-swift maintainer Guilherme Souza will join the Biobase team full time. The goal of Biobase is to become the default backend for all kinds of developers.
+- Today Biobase Swift SDK will join biobase-js as an [officially supported client library](https://biobase.studio/blog/biobase-swift), and biobase-swift maintainer Guilherme Souza will join the Biobase team full time. The goal of Biobase is to become the default backend for all kinds of developers.
 
 `,
   },
@@ -327,9 +327,9 @@ In addition to General Availability, we also have several other major announceme
     content: `
 One of our key metrics at Biobase is "Time to Value". How fast can a user go from idea to production? We'll never stop pushing on what's possible here.
 
-It is only the first day of Biobase GA Week. Today's releases are just the start: we have 4 more days of exciting announcements to come. [Follow the new announcements here](https://biobase.com/ga-week).
+It is only the first day of Biobase GA Week. Today's releases are just the start: we have 4 more days of exciting announcements to come. [Follow the new announcements here](https://biobase.studio/ga-week).
 
-If you want to try Biobase today, we just started an asynchronous hackathon. It's a great way to try out all the new features. Go here to [read the rules and start hacking](https://biobase.com/blog/biobase-oss-hackathon).
+If you want to try Biobase today, we just started an asynchronous hackathon. It's a great way to try out all the new features. Go here to [read the rules and start hacking](https://biobase.studio/blog/biobase-oss-hackathon).
 
 Together with the developer community we're looking forward to deploying our next 100 million databases.
 `,

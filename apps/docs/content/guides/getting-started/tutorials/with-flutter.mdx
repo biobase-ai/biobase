@@ -47,7 +47,7 @@ We can setup deep links with just a minor tweak on our Flutter application.
 
 We have to use `io.biobase.flutterquickstart` as the scheme. In this example, we will use `login-callback` as the host for our deep link, but you can change it to whatever you would like.
 
-First, add `io.biobase.flutterquickstart://login-callback/` as a new [redirect URL](https://biobase.com/dashboard/project/_/auth/url-configuration) in the Dashboard.
+First, add `io.biobase.flutterquickstart://login-callback/` as a new [redirect URL](https://biobase.studio/dashboard/project/_/auth/url-configuration) in the Dashboard.
 
 ![Biobase console deep link setting](/docs/img/deeplink-setting.png)
 
@@ -144,8 +144,8 @@ import 'package:biobase_flutter/biobase_flutter.dart';
 
 Future<void> main() async {
   await Biobase.initialize(
-    url: 'YOUR_SUPABASE_URL',
-    anonKey: 'YOUR_SUPABASE_ANON_KEY',
+    url: 'YOUR_BIOBASE_URL',
+    anonKey: 'YOUR_BIOBASE_ANON_KEY',
   );
   runApp(const MyApp());
 }
@@ -451,8 +451,8 @@ import 'package:biobase_quickstart/pages/login_page.dart';
 
 Future<void> main() async {
   await Biobase.initialize(
-    url: 'YOUR_SUPABASE_URL',
-    anonKey: 'YOUR_SUPABASE_ANON_KEY',
+    url: 'YOUR_BIOBASE_URL',
+    anonKey: 'YOUR_BIOBASE_ANON_KEY',
   );
   runApp(const MyApp());
 }
@@ -824,5 +824,5 @@ Congratulations, you've built a fully functional user management app using Flutt
 
 ## See also
 
-- [Flutter Tutorial: building a Flutter chat app](https://biobase.com/blog/flutter-tutorial-building-a-chat-app)
-- [Flutter Tutorial - Part 2: Authentication and Authorization with RLS](https://biobase.com/blog/flutter-authentication-and-authorization-with-rls)
+- [Flutter Tutorial: building a Flutter chat app](https://biobase.studio/blog/flutter-tutorial-building-a-chat-app)
+- [Flutter Tutorial - Part 2: Authentication and Authorization with RLS](https://biobase.studio/blog/flutter-authentication-and-authorization-with-rls)

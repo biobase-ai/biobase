@@ -43,7 +43,7 @@ _Optionally_ if you are using custom configuration with `createClient` then foll
 <TabPanel id="1.0x" label="Before">
 
 ```ts src/biobaseClient.ts
-const biobase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY, {
   schema: 'custom',
   persistSession: false,
 })
@@ -53,7 +53,7 @@ const biobase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
 <TabPanel id="2.0x" label="After">
 
 ```ts src/biobaseClient.ts
-const biobase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY, {
   db: {
     schema: 'custom',
   },
@@ -436,8 +436,8 @@ const { user, error } = biobase.auth.setAuth(access_token)
 <TabPanel id="2.0x" label="After">
 ```ts
 const biobase = createClient(
-  SUPABASE_URL,
-  SUPABASE_ANON_KEY,
+  BIOBASE_URL,
+  BIOBASE_ANON_KEY,
   {
     global: {
       headers: {
@@ -458,8 +458,8 @@ const biobase = createClient(
 
 The cookie-related methods like `setAuthCookie` and `getUserByCookie` have been removed.
 
-For Next.js you can use the [Auth Helpers](https://biobase.com/docs/guides/auth/auth-helpers/nextjs) to help you manage cookies.
-If you can't use the Auth Helpers, you can use [server-side rendering](https://biobase.com/docs/guides/auth/server-side-rendering).
+For Next.js you can use the [Auth Helpers](https://biobase.studio/docs/guides/auth/auth-helpers/nextjs) to help you manage cookies.
+If you can't use the Auth Helpers, you can use [server-side rendering](https://biobase.studio/docs/guides/auth/server-side-rendering).
 
 Some the [PR](https://github.com/biobase/gotrue-js/pull/340) for additional background information.
 

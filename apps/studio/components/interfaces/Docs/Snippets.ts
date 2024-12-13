@@ -29,7 +29,7 @@ const snippets = {
       code: `
 import { createClient } from '@supabase/biobase-js'
 const biobaseUrl = '${endpoint}'
-const biobaseKey = process.env.SUPABASE_KEY
+const biobaseKey = process.env.BIOBASE_KEY
 const biobase = createClient(biobaseUrl, biobaseKey)`,
     },
     python: {
@@ -38,7 +38,7 @@ const biobase = createClient(biobaseUrl, biobaseKey)`,
 import os
 from biobase import create_client, Client
 url: str = '${endpoint}'
-key: str = os.environ.get("SUPABASE_KEY")
+key: str = os.environ.get("BIOBASE_KEY")
 biobase: Client = create_client(url, key)
 `,
     },
@@ -46,7 +46,7 @@ biobase: Client = create_client(url, key)
       language: 'dart',
       code: `
 const biobaseUrl = '${endpoint}';
-const biobaseKey = String.fromEnvironment('SUPABASE_KEY');
+const biobaseKey = String.fromEnvironment('BIOBASE_KEY');
 Future<void> main() async {
   await Biobase.initialize(url: biobaseUrl, anonKey: biobaseKey);
   runApp(MyApp());
@@ -85,8 +85,8 @@ curl '${endpoint}/rest/v1/' \\
     js: {
       language: 'js',
       code: `
-const SUPABASE_URL = "${endpoint}"
-const biobase = createClient(SUPABASE_URL, process.env.${keyName || 'SUPABASE_KEY'});
+const BIOBASE_URL = "${endpoint}"
+const biobase = createClient(BIOBASE_URL, process.env.${keyName || 'BIOBASE_KEY'});
 `,
     },
   }),

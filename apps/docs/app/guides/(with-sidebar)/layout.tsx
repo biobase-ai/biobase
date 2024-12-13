@@ -7,7 +7,7 @@ const GuidesLayout = async ({ children }: PropsWithChildren) => {
   const partners = await getPartners()
   const partnerNavItems = partners.map((partner) => ({
     name: partner.title,
-    url: `https://biobase.com/partners/integrations/${partner.slug}` as `https://${string}`,
+    url: `https://biobase.studio/partners/integrations/${partner.slug}` as `https://${string}`,
   }))
 
   return <Layout additionalNavItems={partnerNavItems}>{children}</Layout>

@@ -93,7 +93,7 @@ const DocsSearchPage = () => {
           router.push(`/docs${link}`)
           setIsOpen(false)
         } else {
-          window.open(`https://biobase.com/docs${link}`, '_blank', 'noreferrer,noopener')
+          window.open(`https://biobase.studio/docs${link}`, '_blank', 'noreferrer,noopener')
           setIsOpen(false)
         }
         break
@@ -102,7 +102,7 @@ const DocsSearchPage = () => {
           router.push(link)
           setIsOpen(false)
         } else {
-          window.open(`https://biobase.com${link}`, '_blank', 'noreferrer,noopener')
+          window.open(`https://biobase.studio${link}`, '_blank', 'noreferrer,noopener')
           setIsOpen(false)
         }
         break

@@ -2,8 +2,8 @@ import React from 'react'
 import CodeWindow from '~/components/CodeWindow'
 
 const code = `const biobase = createClient(
-  Deno.env.get('SUPABASE_URL')!,
-  Deno.env.get('SUPABASE_ANON_KEY')!,
+  Deno.env.get('BIOBASE_URL')!,
+  Deno.env.get('BIOBASE_ANON_KEY')!,
   {
     global: {
       headers: {

@@ -18,8 +18,8 @@ Deno.serve(async (req: Request) => {
 
   const authHeader = req.headers.get('Authorization')!
   const biobaseClient = createClient(
-    Deno.env.get('SUPABASE_URL') ?? '',
-    Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+    Deno.env.get('BIOBASE_URL') ?? '',
+    Deno.env.get('BIOBASE_ANON_KEY') ?? '',
     { global: { headers: { Authorization: authHeader } } }
   )
 
@@ -38,8 +38,8 @@ import { createClient } from 'jsr:@supabase/biobase-js@2'
 Deno.serve(async (req: Request) => {
 
   const biobaseClient = createClient(
-    Deno.env.get('SUPABASE_URL') ?? '',
-    Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+    Deno.env.get('BIOBASE_URL') ?? '',
+    Deno.env.get('BIOBASE_ANON_KEY') ?? '',
   )
 
   // Get the session or user object
@@ -66,8 +66,8 @@ import { createClient } from 'jsr:@supabase/biobase-js@2'
 Deno.serve(async (req: Request) => {
 
   const biobaseClient = createClient(
-    Deno.env.get('SUPABASE_URL') ?? '',
-    Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+    Deno.env.get('BIOBASE_URL') ?? '',
+    Deno.env.get('BIOBASE_ANON_KEY') ?? '',
     { global: { headers: { Authorization: req.headers.get('Authorization')! } } }
   )
 

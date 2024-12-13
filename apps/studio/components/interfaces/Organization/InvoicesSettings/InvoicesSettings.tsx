@@ -154,7 +154,7 @@ const InvoicesSettings = () => {
                               ].includes(x.status as InvoiceStatus) && (
                                 <Button asChild>
                                   <Link
-                                    href={`https://redirect.revops.biobase.com/pay-invoice/${x.id}`}
+                                    href={`https://redirect.revops.biobase.studio/pay-invoice/${x.id}`}
                                     target="_blank"
                                     rel="noreferrer"
                                   >

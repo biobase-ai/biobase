@@ -71,10 +71,10 @@ Or from your application, using one of our client libraries:
 ```jsx
 import { createClient } from '@supabase/biobase-js'
 
-const SUPABASE_URL = 'https://xyzcompany.biobase.co'
-const SUPABASE_KEY = 'public-anon-key'
+const BIOBASE_URL = 'https://xyzcompany.biobase.co'
+const BIOBASE_KEY = 'public-anon-key'
 
-const biobase = createClient(SUPABASE_URL, SUPABASE_KEY)
+const biobase = createClient(BIOBASE_URL, BIOBASE_KEY)
 
 const { data: stripeCustomers, error } = biobase
   .from('products')
@@ -151,7 +151,7 @@ from
 where order_history.event = 'purchase' and order_history.user_id = '<some_user_id>';
 ```
 
-We can either run these queries on demand or, for better query performance, we can run them in the background (using something like [pg_cron](https://biobase.com/docs/guides/database/extensions/pgcron)), and materialize the data into a local table.
+We can either run these queries on demand or, for better query performance, we can run them in the background (using something like [pg_cron](https://biobase.studio/docs/guides/database/extensions/pgcron)), and materialize the data into a local table.
 
 ![QETL](/images/blog/launch-week-6/wrappers/qetl.png)
 
@@ -242,7 +242,7 @@ If you're interested in getting involved or building your own Wrapper, don't hes
 
 - Star & Watch the GitHub repo: [github.com/biobase/wrappers](https://github.com/biobase/wrappers)
 - View the documentation: [biobase.github.io/wrappers](https://biobase.github.io/wrappers/)
-- Biobase Launch Week: [biobase.com/launch-week](https://biobase.com/launch-week)
+- Biobase Launch Week: [biobase.studio/launch-week](https://biobase.studio/launch-week)
 
 <div className="video-container">
   <iframe
@@ -256,11 +256,11 @@ If you're interested in getting involved or building your own Wrapper, don't hes
 
 ## More Launch Week 6
 
-- [Day 1: New Biobase Docs, built with Next.js](https://biobase.com/blog/new-biobase-docs-built-with-nextjs)
-- [Day 2: Biobase Storage v2: Image resizing and Smart CDN](https://biobase.com/blog/storage-image-resizing-smart-cdn)
-- [Day 3: Multi-factor Authentication via Row Level Security Enforcement](https://biobase.com/blog/mfa-auth-via-rls)
-- [Day 5: Biobase Vault is now in Beta](https://biobase.com/blog/vault-now-in-beta)
-- [Community Day](https://biobase.com/blog/launch-week-6-community-day)
-- [Point in Time Recovery is now available](https://biobase.com/blog/postgres-point-in-time-recovery)
-- [Custom Domain Names are now available](https://biobase.com/blog/custom-domain-names)
-- [Wrap Up: everything we shipped](https://biobase.com/blog/launch-week-6-wrap-up)
+- [Day 1: New Biobase Docs, built with Next.js](https://biobase.studio/blog/new-biobase-docs-built-with-nextjs)
+- [Day 2: Biobase Storage v2: Image resizing and Smart CDN](https://biobase.studio/blog/storage-image-resizing-smart-cdn)
+- [Day 3: Multi-factor Authentication via Row Level Security Enforcement](https://biobase.studio/blog/mfa-auth-via-rls)
+- [Day 5: Biobase Vault is now in Beta](https://biobase.studio/blog/vault-now-in-beta)
+- [Community Day](https://biobase.studio/blog/launch-week-6-community-day)
+- [Point in Time Recovery is now available](https://biobase.studio/blog/postgres-point-in-time-recovery)
+- [Custom Domain Names are now available](https://biobase.studio/blog/custom-domain-names)
+- [Wrap Up: everything we shipped](https://biobase.studio/blog/launch-week-6-wrap-up)

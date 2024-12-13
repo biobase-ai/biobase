@@ -174,7 +174,7 @@ export const UpdateRolesPanel = ({ visible, member, onClose }: UpdateRolesPanelP
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https://biobase.com/docs/guides/platform/access-control"
+                  href="https://biobase.studio/docs/guides/platform/access-control"
                 >
                   Documentation
                 </a>

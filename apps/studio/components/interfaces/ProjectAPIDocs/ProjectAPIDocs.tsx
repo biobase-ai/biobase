@@ -46,8 +46,8 @@ const ProjectAPIDocs = () => {
   const { data: customDomainData } = useCustomDomainsQuery({ projectRef: ref })
 
   const apikey = showKeys
-    ? data?.autoApiService.defaultApiKey ?? 'SUPABASE_CLIENT_ANON_KEY'
-    : 'SUPABASE_CLIENT_ANON_KEY'
+    ? data?.autoApiService.defaultApiKey ?? 'BIOBASE_CLIENT_ANON_KEY'
+    : 'BIOBASE_CLIENT_ANON_KEY'
   const endpoint =
     customDomainData?.customDomain?.status === 'active'
       ? `https://${customDomainData.customDomain?.hostname}`

@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) on avatud lähtekoodiga Firebase'i alternatiiv. Me ehitame Firebase'i funktsioonid, kasutades ettevõtlusklassi avatud lähtekoodiga tööriistu.
+[Biobase](https://biobase.studio) on avatud lähtekoodiga Firebase'i alternatiiv. Me ehitame Firebase'i funktsioonid, kasutades ettevõtlusklassi avatud lähtekoodiga tööriistu.
 
-- [x] Hostitud Postgres andmebaas. [Dokumendid](https://biobase.com/docs/guides/database)
-- [x] Autentimine ja autoriseerimine. [Dokumendid](https://biobase.com/docs/guides/auth)
+- [x] Hostitud Postgres andmebaas. [Dokumendid](https://biobase.studio/docs/guides/database)
+- [x] Autentimine ja autoriseerimine. [Dokumendid](https://biobase.studio/docs/guides/auth)
 - [x] Automaatselt genereeritud APId.
-  - [x] REST. [Dokumendid](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Dokumendid](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Reaalajas toimivad tellimused. [Dokumendid](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Dokumendid](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Dokumendid](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Reaalajas toimivad tellimused. [Dokumendid](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funktsioonid.
-  - [x] Andmebaasi funktsioonid. [Dokumendid](https://biobase.com/docs/guides/database/functions)
-  - [x] Edge Functions [Docs](https://biobase.com/docs/guides/functions)
-- [x] Faili salvestamine. [Dokumendid](https://biobase.com/docs/guides/storage)
+  - [x] Andmebaasi funktsioonid. [Dokumendid](https://biobase.studio/docs/guides/database/functions)
+  - [x] Edge Functions [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Faili salvestamine. [Dokumendid](https://biobase.studio/docs/guides/storage)
 - [x] Armatuurlaud
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokumentatsioon
 
-Täieliku dokumentatsiooni saamiseks külastage [biobase.com/docs](https://biobase.com/docs)
+Täieliku dokumentatsiooni saamiseks külastage [biobase.studio/docs](https://biobase.studio/docs)
 
 Et näha, kuidas panustada, külastage [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@ Et näha, kuidas panustada, külastage [Getting Started](../DEVELOPERS.md)
 
 - [Ühenduse foorum](https://github.com/biobase-ai/biobase/discussions). Parim: abi ehitamisel, arutelu andmebaasi parimate tavade üle.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Parim lahendus: vead ja vead, millega Biobase'i kasutades kokku puutute.
-- [E-posti tugi](https://biobase.com/docs/support#business-support). Parim lahendus: probleemid andmebaasi või infrastruktuuriga.
-- [Discord](https://discord.biobase.com). Parim: oma rakenduste jagamiseks ja kogukonnaga suhtlemiseks.
+- [E-posti tugi](https://biobase.studio/docs/support#business-support). Parim lahendus: probleemid andmebaasi või infrastruktuuriga.
+- [Discord](https://discord.biobase.studio). Parim: oma rakenduste jagamiseks ja kogukonnaga suhtlemiseks.
 
 ## Staatus
 
 - [x] Alpha: Me testime Biobase'i suletud kliendikogumiga
-- [x] Avalik Alpha: Igaüks saab registreeruda aadressil [biobase.com/dashboard](https://biobase.com/dashboard). Kuid olge meiega ettevaatlikud, seal on mõned veidrused
+- [x] Avalik Alpha: Igaüks saab registreeruda aadressil [biobase.studio/dashboard](https://biobase.studio/dashboard). Kuid olge meiega ettevaatlikud, seal on mõned veidrused
 - [x] Avalik beeta: Piisavalt stabiilne enamiku mitte-ettevõtluskasutuse jaoks
-- [ ] Avalik: Üldine kättesaadavus [[status](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Avalik: Üldine kättesaadavus [[status](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 Oleme praegu Public Beta versioonis. Jälgige selle repo "releases", et saada teateid suuremate uuenduste kohta.
 
@@ -55,8 +55,8 @@ Biobase on avatud lähtekoodiga tööriistade kombinatsioon. Me ehitame Firebase
 
 **Arhitektuur**
 
-Biobase on [hostitud platvorm](https://biobase.com/dashboard). Võite registreeruda ja alustada Biobase'i kasutamist ilma midagi installimata.
-Võite ka [ise hostida](https://biobase.com/docs/guides/hosting/overview) ja [arendada lokaalselt](https://biobase.com/docs/guides/local-development).
+Biobase on [hostitud platvorm](https://biobase.studio/dashboard). Võite registreeruda ja alustada Biobase'i kasutamist ilma midagi installimata.
+Võite ka [ise hostida](https://biobase.studio/docs/guides/hosting/overview) ja [arendada lokaalselt](https://biobase.studio/docs/guides/local-development).
 
 ![Arhitektuur](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

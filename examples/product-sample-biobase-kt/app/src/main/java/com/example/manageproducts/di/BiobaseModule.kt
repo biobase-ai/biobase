@@ -27,14 +27,14 @@ object BiobaseModule {
     @Singleton
     fun provideBiobaseClient(): BiobaseClient {
         return createBiobaseClient(
-            biobaseUrl = BuildConfig.SUPABASE_URL,
+            biobaseUrl = BuildConfig.BIOBASE_URL,
             biobaseKey = BuildConfig.API_KEY
         ) {
             install(Postgrest)
             install(GoTrue) {
                 flowType = FlowType.PKCE
                 scheme = "app"
-                host = "biobase.com"
+                host = "biobase.studio"
             }
             install(Storage)
         }

@@ -152,7 +152,7 @@ export default function launchweek() {
         openGraph={{
           title: title,
           description: description,
-          url: `https://biobase.com/launch-week`,
+          url: `https://biobase.studio/launch-week`,
           images: [
             {
               url: `${SITE_ORIGIN}/images/launchweek/launch-week-6.jpg`,
@@ -886,7 +886,7 @@ export default function launchweek() {
               Biobase and you can win $1500 in GitHub sponsorships and a coveted Biobase Darkmode
               Keyboard! For more info check the{' '}
               <a
-                href="https://biobase.com/blog/launch-week-6-hackathon"
+                href="https://biobase.studio/blog/launch-week-6-hackathon"
                 target="_blank"
                 rel="nooper noreferrer"
                 className="text-brand"
@@ -921,7 +921,7 @@ export default function launchweek() {
                   </p>
                   <div></div>
                   <a
-                    href="https://discord.biobase.com/"
+                    href="https://discord.biobase.studio/"
                     rel="noopener noreferrer"
                     className="text-brand flex items-center"
                     target="_blank"
@@ -936,10 +936,10 @@ export default function launchweek() {
                   Submit your project through{' '}
                   <a
                     className="text-brand"
-                    href="https://www.madewithbiobase.com/launch-week-6"
+                    href="https://www.madewithbiobase.studio/launch-week-6"
                     target="_blank"
                   >
-                    madewithbiobase.com
+                    madewithbiobase.studio
                   </a>
                   . All submissions must be open source and publically available. Submissions close
                   Monday 19th Dec 00:01 AM PT.

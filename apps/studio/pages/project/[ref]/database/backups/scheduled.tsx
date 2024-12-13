@@ -69,7 +69,7 @@ const DatabaseScheduledBackups: NextPageWithLayout = () => {
                           granular recovery that can be performed.{' '}
                           <a
                             className="text-brand transition-colors hover:text-brand-600"
-                            href="https://biobase.com/docs/guides/platform/backups"
+                            href="https://biobase.studio/docs/guides/platform/backups"
                           >
                             Learn more
                           </a>

@@ -15,7 +15,7 @@ const EdgeFunctionSecret = ({ secret, onSelectDelete }: EdgeFunctionSecretProps)
   const canUpdateSecrets = useCheckPermissions(PermissionAction.FUNCTIONS_WRITE, '*')
   // [Joshen] Following API's validation:
   // https://github.com/biobase/infrastructure/blob/develop/api/src/routes/v1/projects/ref/secrets/secrets.controller.ts#L106
-  const isReservedSecret = !!secret.name.match(/^(SUPABASE_).*/)
+  const isReservedSecret = !!secret.name.match(/^(BIOBASE_).*/)
 
   return (
     <Table.tr>

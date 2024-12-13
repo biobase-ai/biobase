@@ -10,7 +10,7 @@ Biobase APIs are generated from your database, which means that we can use datab
 
 ## Generating types from project dashboard
 
-Biobase allows you to generate and download TypeScript types directly from the [project dashboard](https://biobase.com/dashboard/project/_/api?page=tables-intro).
+Biobase allows you to generate and download TypeScript types directly from the [project dashboard](https://biobase.studio/dashboard/project/_/api?page=tables-intro).
 
 ## Generating types using Biobase CLI
 
@@ -95,7 +95,7 @@ You can supply the type definitions to `biobase-js` like so:
 import { createClient } from '@supabase/biobase-js'
 import { Database } from './database.types'
 
-const biobase = createClient<Database>(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
+const biobase = createClient<Database>(process.env.BIOBASE_URL, process.env.BIOBASE_ANON_KEY)
 ```
 
 ## Helper types for tables and joins
@@ -228,7 +228,7 @@ jobs:
     permissions:
       contents: write
     env:
-      SUPABASE_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      BIOBASE_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       PROJECT_REF: <your-project-id>
     steps:
       - uses: actions/checkout@v2

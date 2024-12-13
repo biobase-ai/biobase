@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) er et alternativ til Firebase med åpen kildekode. Vi bygger funksjonene i Firebase ved hjelp av åpen kildekode-verktøy for bedrifter.
+[Biobase](https://biobase.studio) er et alternativ til Firebase med åpen kildekode. Vi bygger funksjonene i Firebase ved hjelp av åpen kildekode-verktøy for bedrifter.
 
-- [x] Hostet Postgres-database. [Dokumenter](https://biobase.com/docs/guides/database)
-- [x] Autentisering og autorisasjon. [Dokumenter](https://biobase.com/docs/guides/auth)
+- [x] Hostet Postgres-database. [Dokumenter](https://biobase.studio/docs/guides/database)
+- [x] Autentisering og autorisasjon. [Dokumenter](https://biobase.studio/docs/guides/auth)
 - [x] Autogenererte API-er.
-  - [x] REST. [Dokumenter](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Dokumenter](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Sanntidsabonnementer. [Dokumenter](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Dokumenter](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Dokumenter](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Sanntidsabonnementer. [Dokumenter](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funksjoner.
-  - [x] Databasefunksjoner. [Dokumenter](https://biobase.com/docs/guides/database/functions)
-  - [x] Edge-funksjoner [Dokumenter](https://biobase.com/docs/guides/functions)
-- [x] Lagring av filer. [Dokumenter](https://biobase.com/docs/guides/storage)
+  - [x] Databasefunksjoner. [Dokumenter](https://biobase.studio/docs/guides/database/functions)
+  - [x] Edge-funksjoner [Dokumenter](https://biobase.studio/docs/guides/functions)
+- [x] Lagring av filer. [Dokumenter](https://biobase.studio/docs/guides/storage)
 - [x] Dashbord
 
 biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png) [x] [x] [x] [x][Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokumentasjon
 
-For fullstendig dokumentasjon, besøk [biobase.com/docs](https://biobase.com/docs)
+For fullstendig dokumentasjon, besøk [biobase.studio/docs](https://biobase.studio/docs)
 
 For å se hvordan du kan bidra, gå til [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@ For å se hvordan du kan bidra, gå til [Getting Started](../DEVELOPERS.md)
 
 - [Community Forum](https://github.com/biobase-ai/biobase/discussions). Best for: hjelp med å bygge, diskusjon om beste praksis for databaser.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Best for: feil og feil du støter på ved bruk av Biobase.
-- [E-poststøtte](https://biobase.com/docs/support#business-support). Best for: problemer med databasen eller infrastrukturen din.
-- [Discord](https://discord.biobase.com). Best for: å dele applikasjonene dine og henge med fellesskapet.
+- [E-poststøtte](https://biobase.studio/docs/support#business-support). Best for: problemer med databasen eller infrastrukturen din.
+- [Discord](https://discord.biobase.studio). Best for: å dele applikasjonene dine og henge med fellesskapet.
 
 ## Status
 
 - [x] Alpha: Vi tester Biobase med en lukket gruppe kunder
-- [x] Offentlig Alpha: Alle kan registrere seg på [biobase.com/dashboard](https://biobase.com/dashboard). Men vær snill med oss, det er noen små problemer
+- [x] Offentlig Alpha: Alle kan registrere seg på [biobase.studio/dashboard](https://biobase.studio/dashboard). Men vær snill med oss, det er noen små problemer
 - [x] Offentlig beta: Stabilt nok for de fleste brukstilfeller som ikke er for bedrifter
-- [ ] Offentlig: Generell tilgjengelighet [[status](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Offentlig: Generell tilgjengelighet [[status](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 Vi er for tiden i offentlig betaversjon. Følg med på "utgivelser" av denne repoen for å bli varslet om større oppdateringer.
 
@@ -55,8 +55,8 @@ Biobase er en kombinasjon av verktøy med åpen kildekode. Vi bygger funksjonene
 
 \*\*Arkitektur
 
-Biobase er en [vertsplattform](https://biobase.com/dashboard). Du kan registrere deg og begynne å bruke Biobase uten å installere noe.
-Du kan også [selv være vert](https://biobase.com/docs/guides/hosting/overview) og [utvikle lokalt](https://biobase.com/docs/guides/local-development).
+Biobase er en [vertsplattform](https://biobase.studio/dashboard). Du kan registrere deg og begynne å bruke Biobase uten å installere noe.
+Du kan også [selv være vert](https://biobase.studio/docs/guides/hosting/overview) og [utvikle lokalt](https://biobase.studio/docs/guides/local-development).
 
 ![arkitektur](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

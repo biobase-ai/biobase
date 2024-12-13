@@ -41,10 +41,10 @@ function AuthPage() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.com/auth`,
+          url: `https://biobase.studio/auth`,
           images: [
             {
-              url: `https://biobase.com${basePath}/images/product/auth/auth-og.jpg`,
+              url: `https://biobase.studio${basePath}/images/product/auth/auth-og.jpg`,
             },
           ],
         }}

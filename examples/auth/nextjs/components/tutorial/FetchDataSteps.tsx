@@ -54,7 +54,7 @@ export default function FetchDataSteps() {
         <p>
           Head over to the{' '}
           <a
-            href="https://biobase.com/dashboard/project/_/editor"
+            href="https://biobase.studio/dashboard/project/_/editor"
             className="font-bold hover:underline text-foreground/80"
             target="_blank"
             rel="noreferrer"
@@ -64,7 +64,7 @@ export default function FetchDataSteps() {
           for your Biobase project to create a table and insert some example data. If you're stuck
           for creativity, you can copy and paste the following into the{' '}
           <a
-            href="https://biobase.com/dashboard/project/_/sql/new"
+            href="https://biobase.studio/dashboard/project/_/sql/new"
             className="font-bold hover:underline text-foreground/80"
             target="_blank"
             rel="noreferrer"

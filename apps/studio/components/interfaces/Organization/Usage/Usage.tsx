@@ -195,7 +195,7 @@ const Usage = () => {
                 <div>
                   <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                     <Link
-                      href="https://biobase.com/docs/guides/platform/org-based-billing"
+                      href="https://biobase.studio/docs/guides/platform/org-based-billing"
                       target="_blank"
                       rel="noreferrer"
                     >

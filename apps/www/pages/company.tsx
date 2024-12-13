@@ -35,10 +35,10 @@ const Index = ({}: Props) => {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.com/${router.pathname}`,
+          url: `https://biobase.studio/${router.pathname}`,
           images: [
             {
-              url: `https://biobase.com/images/og/biobase-og.png`,
+              url: `https://biobase.studio/images/og/biobase-og.png`,
             },
           ],
         }}
@@ -103,7 +103,7 @@ const Team = () => {
             </p>
           </div>
           <div className=" col-span-4 pt-8 md:mt-0 md:text-right">
-            <a href="https://biobase.com/careers">
+            <a href="https://biobase.studio/careers">
               <Button size="medium" className="text-white">
                 Join the team
               </Button>

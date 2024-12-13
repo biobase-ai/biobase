@@ -5,7 +5,7 @@ const ShareArticleActions = ({
   title,
   slug,
   iconSize = 20,
-  basePath = 'https://biobase.com/blog/',
+  basePath = 'https://biobase.studio/blog/',
 }: {
   title: string
   slug: string

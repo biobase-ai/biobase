@@ -314,7 +314,7 @@ const DatabaseUsage = () => {
 
                     <Button asChild type="default" icon={<ExternalLink />}>
                       <Link
-                        href="https://biobase.com/docs/guides/platform/database-size#database-space-management"
+                        href="https://biobase.studio/docs/guides/platform/database-size#database-space-management"
                         target="_blank"
                         rel="noreferrer"
                       >

@@ -69,7 +69,7 @@ const LogsExplorerHeader = ({ subtitle }: LogsExplorerHeaderProps) => {
                 respective source. Do note that to access nested keys, you would need to perform the
                 necessary{' '}
                 <Link
-                  href="https://biobase.com/docs/guides/platform/logs#unnesting-arrays"
+                  href="https://biobase.studio/docs/guides/platform/logs#unnesting-arrays"
                   target="_blank"
                   rel="noreferrer"
                   className="text-brand"

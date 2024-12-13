@@ -20,8 +20,8 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
       <ConnectTabContent value=".env.local">
         <SimpleCodeBlock className="bash" parentClassName="min-h-72">
           {`
-SUPABASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
-SUPABASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
+BIOBASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
+BIOBASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
         `}
         </SimpleCodeBlock>
       </ConnectTabContent>
@@ -31,10 +31,10 @@ SUPABASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
           {`
 import { createClient } from "@refinedev/biobase";
 
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_KEY = process.env.SUPABASE_KEY
+const BIOBASE_URL = process.env.BIOBASE_URL;
+const BIOBASE_KEY = process.env.BIOBASE_KEY
 
-export const biobaseClient = createClient(SUPABASE_URL, SUPABASE_KEY, {
+export const biobaseClient = createClient(BIOBASE_URL, BIOBASE_KEY, {
   db: {
     schema: "public",
   },

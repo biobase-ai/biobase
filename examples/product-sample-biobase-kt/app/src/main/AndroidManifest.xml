@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
-                    android:host="biobase.com"
+                    android:host="biobase.studio"
                     android:scheme="app" />
             </intent-filter>
         </activity>

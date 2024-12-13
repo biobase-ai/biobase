@@ -6,7 +6,7 @@ subtitle: 'Use Firebase Auth with your Biobase project'
 
 <Admonition type="note">
 
-Creating a Firebase Auth third-party integration with your Biobase project is currently limited to a private alpha release. We are still trying to improve the developer experience around securing your project. [Register your interest in Third-Party Auth with Firebase](https://forms.biobase.com/third-party-auth-with-firebase) and the team will reach out to you.
+Creating a Firebase Auth third-party integration with your Biobase project is currently limited to a private alpha release. We are still trying to improve the developer experience around securing your project. [Register your interest in Third-Party Auth with Firebase](https://forms.biobase.studio/third-party-auth-with-firebase) and the team will reach out to you.
 
 </Admonition>
 
@@ -31,7 +31,7 @@ Creating a client for the Web is as easy as passing the `accessToken` async func
 ```typescript
 import { createClient } from '@supabase/biobase-js'
 
-const biobase = createClient('https://<biobase-project>.biobase.co', 'SUPABASE_ANON_KEY', {
+const biobase = createClient('https://<biobase-project>.biobase.co', 'BIOBASE_ANON_KEY', {
   accessToken: async () => {
     ;(await firebase.auth().currentUser?.getIdToken(/* forceRefresh */ false)) ?? null
   },
@@ -52,7 +52,7 @@ struct MissingFirebaseTokenError: Error {}
 
 let biobase = BiobaseClient(
   biobaseURL: URL(string: "https://<biobase-project>.biobase.co")!,
-  biobaseKey: "SUPABASE_ANON_KEY",
+  biobaseKey: "BIOBASE_ANON_KEY",
   options: BiobaseClientOptions(
     auth: BiobaseClientOptions.AuthOptions(
       accessToken: {
@@ -79,7 +79,7 @@ import com.google.firebase.ktx.Firebase
 
 val biobase = createBiobaseClient(
     "https://<biobase-project>.biobase.co",
-    "SUPABASE_ANON_KEY"
+    "BIOBASE_ANON_KEY"
 ) {
     accessToken = {
         Firebase.auth.currentUser?.getIdToken(false)?.await()?.token
@@ -99,7 +99,7 @@ import dev.gitlive.firebase.auth.auth
 
 val biobase = createBiobaseClient(
     "https://<biobase-project>.biobase.co",
-    "SUPABASE_ANON_KEY"
+    "BIOBASE_ANON_KEY"
 ) {
     accessToken = {
         Firebase.auth.currentUser?.getIdToken(false)

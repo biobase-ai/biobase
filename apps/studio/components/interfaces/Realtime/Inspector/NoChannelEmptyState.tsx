@@ -19,7 +19,7 @@ const NoChannelEmptyState = () => {
           <p className="text-foreground-lighter text-xs">Browse our documentation</p>
         </div>
         <Button type="default" iconRight={<ExternalLink />}>
-          <a href="https://biobase.com/docs/guides/realtime" target="_blank" rel="noreferrer">
+          <a href="https://biobase.studio/docs/guides/realtime" target="_blank" rel="noreferrer">
             Documentation
           </a>
         </Button>

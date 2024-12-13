@@ -169,7 +169,7 @@ const EventPage = ({ event }: InferGetStaticPropsType<typeof getStaticProps>) =>
         hadEndDate ? `DD` : `DD MMM YYYY`
       )}${hadEndDate ? dayjs(event.end_date).tz(event.timezone).format(` - DD MMM`) : ''} | ${capitalize(event.type)}`,
     description: event.meta_description ?? event.description,
-    url: `https://biobase.com/events/${event.slug}`,
+    url: `https://biobase.studio/events/${event.slug}`,
     image: ogImageUrl,
   }
 
@@ -194,7 +194,7 @@ const EventPage = ({ event }: InferGetStaticPropsType<typeof getStaticProps>) =>
     ? location.origin
     : process.env.VERCEL_URL
       ? process.env.VERCEL_URL
-      : 'https://biobase.com'
+      : 'https://biobase.studio'
 
   return (
     <>

@@ -64,7 +64,7 @@ export const PrivacySettings = ({
                 <>
                   These cookies are necessary for Biobase to function.{' '}
                   <Link
-                    href="https://biobase.com/privacy#8-cookies-and-similar-technologies-used-on-our-european-services"
+                    href="https://biobase.studio/privacy#8-cookies-and-similar-technologies-used-on-our-european-services"
                     className="underline"
                   >
                     Learn more
@@ -83,7 +83,7 @@ export const PrivacySettings = ({
                 <>
                   By opting in to sending telemetry data, Biobase can improve the overall user
                   experience.{' '}
-                  <Link href="https://biobase.com/privacy" className="underline">
+                  <Link href="https://biobase.studio/privacy" className="underline">
                     Learn more
                   </Link>
                 </>

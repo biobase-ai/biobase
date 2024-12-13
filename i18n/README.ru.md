@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) - это альтернатива Firebase с открытым исходным кодом. Мы создаем функции Firebase, используя инструменты корпоративного уровня с открытым исходным кодом.
+[Biobase](https://biobase.studio) - это альтернатива Firebase с открытым исходным кодом. Мы создаем функции Firebase, используя инструменты корпоративного уровня с открытым исходным кодом.
 
-- [x] Хостируемая база данных Postgres. [Docs](https://biobase.com/docs/guides/database)
-- [x] Аутентификация и авторизация. [Docs](https://biobase.com/docs/guides/auth)
+- [x] Хостируемая база данных Postgres. [Docs](https://biobase.studio/docs/guides/database)
+- [x] Аутентификация и авторизация. [Docs](https://biobase.studio/docs/guides/auth)
 - [x] Автоматически генерируемые API.
-  - [x] REST. [Docs](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Docs](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Подписки в реальном времени. [Docs](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Docs](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Docs](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Подписки в реальном времени. [Docs](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Функции.
-  - [x] Функции базы данных. [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] Edge Functions [Docs](https://biobase.com/docs/guides/functions)
-- [x] Файловое хранилище. [Docs](https://biobase.com/docs/guides/storage)
+  - [x] Функции базы данных. [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] Edge Functions [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Файловое хранилище. [Docs](https://biobase.studio/docs/guides/storage)
 - [x] Приборная панель
 
 [Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Документация
 
-Для получения полной документации посетите [biobase.com/docs](https://biobase.com/docs)
+Для получения полной документации посетите [biobase.studio/docs](https://biobase.studio/docs)
 
 Чтобы узнать, как внести вклад, посетите [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@
 
 - [Community Forum](https://github.com/biobase-ai/biobase/discussions). Лучше всего подходит для: помощи в создании, обсуждения лучших практик работы с базами данных.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Лучше всего подходит для: багов и ошибок, с которыми вы столкнулись при использовании Biobase.
-- [Email Support](https://biobase.com/docs/support#business-support). Лучше всего подходит для: проблем с вашей базой данных или инфраструктурой.
-- [Discord](https://discord.biobase.com). Лучше всего подходит для: обмена информацией о ваших приложениях и общения с сообществом.
+- [Email Support](https://biobase.studio/docs/support#business-support). Лучше всего подходит для: проблем с вашей базой данных или инфраструктурой.
+- [Discord](https://discord.biobase.studio). Лучше всего подходит для: обмена информацией о ваших приложениях и общения с сообществом.
 
 ## Статус
 
 - [x] Альфа: Мы тестируем Biobase с закрытым набором клиентов
-- [x] Публичная Альфа: Любой желающий может зарегистрироваться на [biobase.com/dashboard](https://biobase.com/dashboard). Но будьте с нами помягче, есть несколько недоработок
+- [x] Публичная Альфа: Любой желающий может зарегистрироваться на [biobase.studio/dashboard](https://biobase.studio/dashboard). Но будьте с нами помягче, есть несколько недоработок
 - [x] Публичная бета-версия: Достаточно стабильна для большинства случаев использования не на предприятиях
-- [ ] Public: Общая доступность [[статус](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Public: Общая доступность [[статус](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 В настоящее время мы находимся в публичной бета-версии. Следите за "релизами" этого репозитория, чтобы получать уведомления об основных обновлениях.
 
@@ -55,8 +55,8 @@ Biobase - это комбинация инструментов с открыты
 
 \*\*Архитектура
 
-Biobase - это [размещенная платформа](https://biobase.com/dashboard). Вы можете зарегистрироваться и начать использовать Biobase, ничего не устанавливая.
-Вы также можете [самостоятельно размещать](https://biobase.com/docs/guides/hosting/overview) и [разрабатывать локально](https://biobase.com/docs/guides/local-development).
+Biobase - это [размещенная платформа](https://biobase.studio/dashboard). Вы можете зарегистрироваться и начать использовать Biobase, ничего не устанавливая.
+Вы также можете [самостоятельно размещать](https://biobase.studio/docs/guides/hosting/overview) и [разрабатывать локально](https://biobase.studio/docs/guides/local-development).
 
 ![Архитектура](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

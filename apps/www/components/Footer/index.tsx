@@ -100,7 +100,7 @@ const Footer = (props: Props) => {
               </a>
 
               <a
-                href="https://discord.biobase.com/"
+                href="https://discord.biobase.studio/"
                 className="text-foreground-lighter hover:text-foreground transition"
               >
                 <span className="sr-only">Discord</span>

@@ -43,7 +43,7 @@ export default function GeneratingTypes({ selectedLang }: Props) {
         <span>Generating types</span>
         <Button asChild type="default" icon={<ExternalLink />}>
           <Link
-            href="https://biobase.com/docs/guides/database/api/generating-types"
+            href="https://biobase.studio/docs/guides/database/api/generating-types"
             target="_blank"
             rel="noreferrer"
           >
@@ -59,7 +59,7 @@ export default function GeneratingTypes({ selectedLang }: Props) {
           </p>
           <p>
             You can generate types from your database either through the{' '}
-            <Link href="https://biobase.com/docs/guides/database/api/generating-types">
+            <Link href="https://biobase.studio/docs/guides/database/api/generating-types">
               Biobase CLI
             </Link>
             , or by downloading the types file via the button on the right and importing it in your

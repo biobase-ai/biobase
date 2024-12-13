@@ -40,8 +40,8 @@ And finally we want to save the environment variables in a `.env`.
 All we need are the API URL and the `anon` key that you copied [earlier](#get-the-api-keys).
 
 ```bash .env
-VUE_APP_SUPABASE_URL=YOUR_SUPABASE_URL
-VUE_APP_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+VUE_APP_BIOBASE_URL=YOUR_BIOBASE_URL
+VUE_APP_BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
 ```
 
 Now that we have the API credentials in place, let's create a helper file to initialize the Biobase client. These variables will be exposed
@@ -50,8 +50,8 @@ on the browser, and that's completely fine since we have [Row Level Security](/d
 ```js src/biobase.ts"
 import { createClient } from '@supabase/biobase-js';
 
-const biobaseUrl = process.env.VUE_APP_SUPABASE_URL as string;
-const biobaseAnonKey = process.env.VUE_APP_SUPABASE_ANON_KEY as string;
+const biobaseUrl = process.env.VUE_APP_BIOBASE_URL as string;
+const biobaseAnonKey = process.env.VUE_APP_BIOBASE_ANON_KEY as string;
 
 export const biobase = createClient(biobaseUrl, biobaseAnonKey);
 ```

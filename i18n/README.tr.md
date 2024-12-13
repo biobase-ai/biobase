@@ -7,26 +7,26 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) açık kaynaklı bir Firebase alternatifidir. Kurumsal düzeyde açık kaynak araçları kullanarak Firebase'in özelliklerini geliştiriyoruz.
+[Biobase](https://biobase.studio) açık kaynaklı bir Firebase alternatifidir. Kurumsal düzeyde açık kaynak araçları kullanarak Firebase'in özelliklerini geliştiriyoruz.
 
-- [x] Barındırılan Postgres Veritabanı. [Dokümanlar](https://biobase.com/docs/guides/database)
-- [x] Kimlik Doğrulama ve Yetkilendirme. [Dokümanlar](https://biobase.com/docs/guides/auth)
+- [x] Barındırılan Postgres Veritabanı. [Dokümanlar](https://biobase.studio/docs/guides/database)
+- [x] Kimlik Doğrulama ve Yetkilendirme. [Dokümanlar](https://biobase.studio/docs/guides/auth)
 - [x] Otomatik oluşturulan API'ler.
-  - [x] REST. [Dokümanlar](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Docs](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Gerçek zamanlı abonelikler. [Dokümanlar](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Dokümanlar](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Docs](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Gerçek zamanlı abonelikler. [Dokümanlar](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Fonksiyonlar.
-  - [x] Veritabanı Fonksiyonları. [Dokümanlar](https://biobase.com/docs/guides/database/functions)
-  - [x] Kenar İşlevleri [Dokümanlar](https://biobase.com/docs/guides/functions)
-- [x] Dosya Depolama. [Docs](https://biobase.com/docs/guides/storage)
-- [x] AI + Vektör / Gömme Araçları. [Dokümanlar](https://biobase.com/docs/guides/ai)
+  - [x] Veritabanı Fonksiyonları. [Dokümanlar](https://biobase.studio/docs/guides/database/functions)
+  - [x] Kenar İşlevleri [Dokümanlar](https://biobase.studio/docs/guides/functions)
+- [x] Dosya Depolama. [Docs](https://biobase.studio/docs/guides/storage)
+- [x] AI + Vektör / Gömme Araçları. [Dokümanlar](https://biobase.studio/docs/guides/ai)
 - [x] Gösterge Tablosu
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokümantasyon
 
-Belgelerin tamamı için [biobase.com/docs](https://biobase.com/docs) adresini ziyaret edin
+Belgelerin tamamı için [biobase.studio/docs](https://biobase.studio/docs) adresini ziyaret edin
 
 Nasıl Katkıda bulunacağınızı görmek için [Başlarken](../DEVELOPERS.md) adresini ziyaret edin
 
@@ -34,8 +34,8 @@ Nasıl Katkıda bulunacağınızı görmek için [Başlarken](../DEVELOPERS.md) 
 
 - [Topluluk Forumu](https://github.com/biobase-ai/biobase/discussions). Şunlar için en iyisi: oluşturma konusunda yardım, veritabanı en iyi uygulamaları hakkında tartışma.
 - [GitHub Sorunları](https://github.com/biobase-ai/biobase/issues). Biobase'i kullanırken karşılaştığınız hatalar ve hatalar için en iyisi.
-- [E-posta Desteği](https://biobase.com/docs/support#business-support). Veritabanınız veya altyapınızla ilgili sorunlar için en iyisi.
-- [Discord](https://discord.biobase.com). Uygulamalarınızı paylaşmak ve toplulukla takılmak için en iyisi.
+- [E-posta Desteği](https://biobase.studio/docs/support#business-support). Veritabanınız veya altyapınızla ilgili sorunlar için en iyisi.
+- [Discord](https://discord.biobase.studio). Uygulamalarınızı paylaşmak ve toplulukla takılmak için en iyisi.
 
 ## Nasıl çalışır
 
@@ -43,8 +43,8 @@ Biobase açık kaynak araçlarının bir birleşimidir. Firebase'in özellikleri
 
 **Mimari**
 
-Biobase [barındırılan bir platformdur](https://biobase.com/dashboard). Biobase'e kaydolabilir ve hiçbir şey yüklemeden kullanmaya başlayabilirsiniz.
-Ayrıca [self-host](https://biobase.com/docs/guides/hosting/overview) ve [yerel olarak geliştirebilirsiniz](https://biobase.com/docs/guides/local-development).
+Biobase [barındırılan bir platformdur](https://biobase.studio/dashboard). Biobase'e kaydolabilir ve hiçbir şey yüklemeden kullanmaya başlayabilirsiniz.
+Ayrıca [self-host](https://biobase.studio/docs/guides/hosting/overview) ve [yerel olarak geliştirebilirsiniz](https://biobase.studio/docs/guides/local-development).
 
 ![Mimarlık](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 
@@ -204,15 +204,15 @@ Ayrıca [self-host](https://biobase.com/docs/guides/hosting/overview) ve [yerel 
 ![Made with Biobase](../apps/www/public/badge-made-with-biobase.svg)
 
 ```md
-[![Made with Biobase](https://biobase.com/badge-made-with-biobase.svg)](https://biobase.com)
+[![Made with Biobase](https://biobase.studio/badge-made-with-biobase.svg)](https://biobase.studio)
 ```
 
 ```html
-<a href="https://biobase.com">
+<a href="https://biobase.studio">
   <img
     width="168"
     height="30"
-    src="https://biobase.com/badge-made-with-biobase.svg"
+    src="https://biobase.studio/badge-made-with-biobase.svg"
     alt="Made with Biobase"
   />
 </a>
@@ -221,15 +221,15 @@ Ayrıca [self-host](https://biobase.com/docs/guides/hosting/overview) ve [yerel 
 ![Made with Biobase (dark)](../apps/www/public/badge-made-with-biobase-dark.svg)
 
 ```md
-[![Made with Biobase](https://biobase.com/badge-made-with-biobase-dark.svg)](https://biobase.com)
+[![Made with Biobase](https://biobase.studio/badge-made-with-biobase-dark.svg)](https://biobase.studio)
 ```
 
 ```html
-<a href="https://biobase.com">
+<a href="https://biobase.studio">
   <img
     width="168"
     height="30"
-    src="https://biobase.com/badge-made-with-biobase-dark.svg"
+    src="https://biobase.studio/badge-made-with-biobase-dark.svg"
     alt="Made with Biobase"
   />
 </a>

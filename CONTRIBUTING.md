@@ -8,7 +8,7 @@ Thank you for contributing to Biobase! We’re a big, exciting open source proje
 
 ## Getting Started
 
-To ensure a positive and inclusive environment, please read our [code of conduct](https://github.com/biobase/.github/blob/main/CODE_OF_CONDUCT.md) before contributing. For help setting up the code in this repo, please follow our [DEVELOPERS.md](https://github.com/biobase-ai/biobase/blob/master/DEVELOPERS.md) file. For the [docs](https://biobase.com/docs) site, follow this [CONTRIBUTING.md](https://github.com/biobase-ai/biobase/blob/master/apps/docs/CONTRIBUTING.md) guide.
+To ensure a positive and inclusive environment, please read our [code of conduct](https://github.com/biobase/.github/blob/main/CODE_OF_CONDUCT.md) before contributing. For help setting up the code in this repo, please follow our [DEVELOPERS.md](https://github.com/biobase-ai/biobase/blob/master/DEVELOPERS.md) file. For the [docs](https://biobase.studio/docs) site, follow this [CONTRIBUTING.md](https://github.com/biobase-ai/biobase/blob/master/apps/docs/CONTRIBUTING.md) guide.
 
 ## Issues
 

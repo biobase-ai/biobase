@@ -510,12 +510,12 @@ module.exports = [
   {
     permanent: false,
     source: '/docs/careers',
-    destination: 'https://about.biobase.com/careers',
+    destination: 'https://about.biobase.studio/careers',
   },
   {
     permanent: false,
     source: '/docs/careers/:match*',
-    destination: 'https://about.biobase.com/careers//:match*',
+    destination: 'https://about.biobase.studio/careers//:match*',
   },
 
   { permanent: false, source: '/docs/resources', destination: '/docs/guides' },
@@ -633,7 +633,7 @@ module.exports = [
   {
     permanent: true,
     source: '/join',
-    destination: 'https://biobase.com/',
+    destination: 'https://biobase.studio/',
   },
   {
     permanent: true,
@@ -648,7 +648,7 @@ module.exports = [
   {
     permanent: true,
     source: '/_app',
-    destination: 'https://biobase.com/dashboard',
+    destination: 'https://biobase.studio/dashboard',
   },
   {
     permanent: true,
@@ -1508,17 +1508,17 @@ module.exports = [
   {
     permanent: true,
     source: '/sign-in',
-    destination: 'https://biobase.com/dashboard/sign-in',
+    destination: 'https://biobase.studio/dashboard/sign-in',
   },
   {
     permanent: true,
     source: '/sign-up',
-    destination: 'https://biobase.com/dashboard/sign-up',
+    destination: 'https://biobase.studio/dashboard/sign-up',
   },
   {
     permanent: true,
     source: '/forgot-password',
-    destination: 'https://biobase.com/dashboard/forgot-password',
+    destination: 'https://biobase.studio/dashboard/forgot-password',
   },
   {
     permanent: true,
@@ -1538,7 +1538,7 @@ module.exports = [
   {
     permanent: true,
     source: '/projects',
-    destination: 'https://biobase.com/dashboard/projects',
+    destination: 'https://biobase.studio/dashboard/projects',
   },
   // Reorganizing pooler docs:-----------------------------
 
@@ -1979,12 +1979,12 @@ module.exports = [
   {
     permanent: true,
     source: '/contact/enterprise',
-    destination: 'https://forms.biobase.com/enterprise',
+    destination: 'https://forms.biobase.studio/enterprise',
   },
   {
     permanent: true,
     source: '/legal/soc2',
-    destination: 'https://forms.biobase.com/soc2',
+    destination: 'https://forms.biobase.studio/soc2',
   },
   {
     permanent: true,
@@ -2812,6 +2812,6 @@ module.exports = [
   {
     permanent: true,
     source: '/changelogpod',
-    destination: 'https://forms.biobase.com/changelog-podcast-sponsorship',
+    destination: 'https://forms.biobase.studio/changelog-podcast-sponsorship',
   },
 ]

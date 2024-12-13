@@ -25,7 +25,7 @@ This upgrade method is currently in Beta.
 pg_upgrade performs an in-place upgrade on your database. For projects larger than 1GB, pg_upgrade is generally faster than a pause+restore cycle, and the speed advantage grows with the size of the database.
 
 1. Plan for an appropriate downtime window, and ensure you have reviewed the [caveats](#caveats) section of this document before executing the upgrade.
-1. Use the "Upgrade project" button on the [Infrastructure](https://biobase.com/dashboard/project/_/settings/infrastructure) section of your dashboard.
+1. Use the "Upgrade project" button on the [Infrastructure](https://biobase.studio/dashboard/project/_/settings/infrastructure) section of your dashboard.
 
 Additionally, if a pg_upgrade upgrade should fail, your original DB would be brought back up online and be able to service requests.
 
@@ -41,7 +41,7 @@ We recommend using the pg_upgrade method, as it is faster, and more reliable. Ad
 
 When you pause and restore a project, the restored database includes the latest features. This method _does_ include downtime, so be aware that your project will be inaccessible for a short period of time.
 
-1. On the [General Settings](https://biobase.com/dashboard/project/_/settings/general) page in the Dashboard, click **Pause project**. You will be redirected to the home screen as your project is pausing. This process can take several minutes.
+1. On the [General Settings](https://biobase.studio/dashboard/project/_/settings/general) page in the Dashboard, click **Pause project**. You will be redirected to the home screen as your project is pausing. This process can take several minutes.
 1. After your project is paused, click **Restore project**. The restoration can take several minutes depending on how much data your database has. You will receive an email once the restoration is complete.
 
 Note that a pause + restore upgrade involves tearing down your project's resources before bringing them back up again. If the restore process should fail, manual intervention from Biobase support will be required to bring your project back online.
@@ -56,7 +56,7 @@ If you are using logical replication, the replication slots will not be preserve
 
 #### Breaking changes
 
-Newer versions of services can break functionality or change the performance characteristics you rely on. If your project is eligible for an upgrade, you will be able to find your current service versions from within [the Biobase dashboard](https://biobase.com/dashboard/project/_/settings/infrastructure).
+Newer versions of services can break functionality or change the performance characteristics you rely on. If your project is eligible for an upgrade, you will be able to find your current service versions from within [the Biobase dashboard](https://biobase.studio/dashboard/project/_/settings/infrastructure).
 
 Breaking changes are generally only present in major version upgrades of Postgres and PostgREST. You can find their respective release notes at:
 
@@ -71,7 +71,7 @@ Starting from 2024-06-24, when a project is paused, users then have a 90-day win
 
 The 90-day window allows Biobase to introduce platform changes that may not be backwards compatible with older backups. Unlike active projects, static backups can't be updated to accommodate such changes.
 
-During the 90-day restore window a paused project can be restored to the platform with a single button click from [Studio's dashboard page](https://biobase.com/dashboard/projects).
+During the 90-day restore window a paused project can be restored to the platform with a single button click from [Studio's dashboard page](https://biobase.studio/dashboard/projects).
 
 <Image
   zoomable

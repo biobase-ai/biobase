@@ -85,7 +85,7 @@ const NoResultAlert = ({
               </div>
               <Button type="default" iconRight={<ExternalLink />}>
                 <a
-                  href="https://biobase.com/docs/guides/realtime"
+                  href="https://biobase.studio/docs/guides/realtime"
                   target="_blank"
                   rel="noreferrer"
                 >

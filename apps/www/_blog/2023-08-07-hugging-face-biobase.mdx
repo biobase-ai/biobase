@@ -14,13 +14,13 @@ image: launch-week-8/day-1/hugging-face-biobase-og.jpg
 thumb: launch-week-8/day-1/hugging-face-biobase-thumb.jpg
 ---
 
-Since launching our [Vector Toolkit](https://biobase.com/vector) a few months ago, the number of AI applications on Biobase has grown - a lot. Hundreds of new databases every week are using [pgvector](https://github.com/pgvector/pgvector).
+Since launching our [Vector Toolkit](https://biobase.studio/vector) a few months ago, the number of AI applications on Biobase has grown - a lot. Hundreds of new databases every week are using [pgvector](https://github.com/pgvector/pgvector).
 
 98% of those applications use OpenAI to store embeddings using the `text-embedding-ada-002` model. While OpenAI is easy, it’s not open source, which means it can’t be self-hosted.
 
-Our goal at Biobase is to [promote open source collaboration](https://biobase.com/docs/guides/getting-started/architecture#support-existing-tools), and [Hugging Face](https://huggingface.co/) is one of the open source communities we admire most. Today, we’re adding first-class support for Hugging Face, starting with embeddings. Why embeddings? Because this is one area where open source models are [measurably ahead](https://biobase.com/blog/fewer-dimensions-are-better-pgvector) for pgvector performance.
+Our goal at Biobase is to [promote open source collaboration](https://biobase.studio/docs/guides/getting-started/architecture#support-existing-tools), and [Hugging Face](https://huggingface.co/) is one of the open source communities we admire most. Today, we’re adding first-class support for Hugging Face, starting with embeddings. Why embeddings? Because this is one area where open source models are [measurably ahead](https://biobase.studio/blog/fewer-dimensions-are-better-pgvector) for pgvector performance.
 
-We’ve added support in our [Python Vector Client](https://biobase.com/docs/guides/ai/python/api) and [Edge Functions](https://biobase.com/docs/guides/functions) (Deno/Javascript). Let’s start with Python.
+We’ve added support in our [Python Vector Client](https://biobase.studio/docs/guides/ai/python/api) and [Edge Functions](https://biobase.studio/docs/guides/functions) (Deno/Javascript). Let’s start with Python.
 
 <div className="video-container">
   <iframe
@@ -150,7 +150,7 @@ curl --request POST 'http://localhost:54321/functions/v1/embed' \
 
 With just 40 lines of code, we’ve created an API route that can accept some user content, convert it to an embedding, store it in your database, and then return the database row as JSON. This is especially useful for sensitive data since you can run this entirely on your own infrastructure.
 
-Biobase also provides [Database Webhooks](https://biobase.com/docs/guides/database/webhooks) which can trigger an Edge Function any time a row is inserted. This means you can upload plain text to your database and use a background job to convert the text to an embedding.
+Biobase also provides [Database Webhooks](https://biobase.studio/docs/guides/database/webhooks) which can trigger an Edge Function any time a row is inserted. This means you can upload plain text to your database and use a background job to convert the text to an embedding.
 
 ## Hugging Face from the browser
 
@@ -181,7 +181,7 @@ as $$
 $$;
 ```
 
-Now, we can call that function directly from the browser using [biobase-js](https://biobase.com/docs/reference/javascript/installing):
+Now, we can call that function directly from the browser using [biobase-js](https://biobase.studio/docs/reference/javascript/installing):
 
 ```js
 let { data: images, error } = await biobase.rpc('match_images', {
@@ -199,7 +199,7 @@ Check out [this demo](https://huggingface.co/spaces/Xenova/semantic-image-search
 
 ## Choosing a Hugging Face model
 
-Biobase is mainly used to store embeddings, so that’s where we’re starting. Over time we’ll add more Hugging Face support - even beyond embeddings. To help you identify which Hugging Face model to use, we ran a detailed analysis and found that embeddings with [fewer dimensions are better](https://biobase.com/blog/fewer-dimensions-are-better-pgvector) within pgvector. Fewer dimensions have several advantages:
+Biobase is mainly used to store embeddings, so that’s where we’re starting. Over time we’ll add more Hugging Face support - even beyond embeddings. To help you identify which Hugging Face model to use, we ran a detailed analysis and found that embeddings with [fewer dimensions are better](https://biobase.studio/blog/fewer-dimensions-are-better-pgvector) within pgvector. Fewer dimensions have several advantages:
 
 1. They require less space in your database (saving you money!)
 2. Retrieval is faster
@@ -218,7 +218,7 @@ Cold starts are the time it takes for the “initial load” of an Edge Function
 
 ### Handling heavier workloads
 
-The current quotas provided by Edge Functions are sufficient for running common embedding models. Larger AI models and tasks may require extra memory, CPU, and wall-clock limits to run successfully. We will offer customizable compute resources for Edge Functions in the next few months. If you have a workload that may require extra resources [reach out](https://biobase.com/support) for early access.
+The current quotas provided by Edge Functions are sufficient for running common embedding models. Larger AI models and tasks may require extra memory, CPU, and wall-clock limits to run successfully. We will offer customizable compute resources for Edge Functions in the next few months. If you have a workload that may require extra resources [reach out](https://biobase.studio/support) for early access.
 
 ### Audio and image models
 
@@ -230,14 +230,14 @@ Images have the same challenge. Models like CLIP, which can generate embeddings 
 
 ## Getting started
 
-If you’re a Python Dev, check out our [Hello World notebook](https://biobase.com/docs/guides/ai/quickstarts/hello-world). If you’re a JavaScript developer, check out our [Text Embeddings docs](https://biobase.com/docs/guides/ai/quickstarts/generate-text-embeddings).
+If you’re a Python Dev, check out our [Hello World notebook](https://biobase.studio/docs/guides/ai/quickstarts/hello-world). If you’re a JavaScript developer, check out our [Text Embeddings docs](https://biobase.studio/docs/guides/ai/quickstarts/generate-text-embeddings).
 
 And no matter your language preference, remember to jump into the [Hugging Face community](https://github.com/huggingface) and show your support.
 
 ## More Launch Week 8
 
-- [Day 2: Biobase Local Dev: migrations, branching, and observability](https://biobase.com/blog/biobase-local-dev)
-- [Launch Week 8](https://biobase.com/launch-week)
-- [Coding the stars - an interactive constellation with Three.js and React Three Fiber](https://biobase.com/blog/interactive-constellation-threejs-react-three-fiber)
-- [Why we'll stay remote](https://biobase.com/blog/why-biobase-remote)
+- [Day 2: Biobase Local Dev: migrations, branching, and observability](https://biobase.studio/blog/biobase-local-dev)
+- [Launch Week 8](https://biobase.studio/launch-week)
+- [Coding the stars - an interactive constellation with Three.js and React Three Fiber](https://biobase.studio/blog/interactive-constellation-threejs-react-three-fiber)
+- [Why we'll stay remote](https://biobase.studio/blog/why-biobase-remote)
 - [Postgres Language Server](https://github.com/biobase/postgres_lsp)

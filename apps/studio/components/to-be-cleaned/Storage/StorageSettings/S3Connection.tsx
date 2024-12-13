@@ -50,7 +50,7 @@ export const S3Connection = () => {
         <FormHeader
           title="S3 Connection"
           description="Connect to your bucket via the S3 protocol."
-          docsUrl="https://biobase.com/docs/guides/storage/s3/authentication"
+          docsUrl="https://biobase.studio/docs/guides/storage/s3/authentication"
         />
         {projectIsLoading ? (
           <GenericSkeletonLoader />

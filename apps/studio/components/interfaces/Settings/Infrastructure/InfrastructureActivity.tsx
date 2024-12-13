@@ -398,7 +398,7 @@ const InfrastructureActivity = () => {
                       throughput limits without needing to burst."
                       >
                         <Button asChild type="default" icon={<ExternalLink />}>
-                          <Link href="https://biobase.com/docs/guides/platform/compute-add-ons#disk-throughput-and-iops">
+                          <Link href="https://biobase.studio/docs/guides/platform/compute-add-ons#disk-throughput-and-iops">
                             Documentation
                           </Link>
                         </Button>

@@ -184,7 +184,7 @@ export const DatabaseConnectionString = ({ appearance }: DatabaseConnectionStrin
                 <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                   <a
                     target="_blank"
-                    href="https://biobase.com/docs/guides/database/connecting-to-postgres"
+                    href="https://biobase.studio/docs/guides/database/connecting-to-postgres"
                   >
                     Documentation
                   </a>

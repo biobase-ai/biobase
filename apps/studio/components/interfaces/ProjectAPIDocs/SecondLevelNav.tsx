@@ -43,22 +43,22 @@ const SecondLevelNav = () => {
     entities: {
       title: 'Tables & Views',
       options: tables,
-      docsUrl: 'https://biobase.com/docs/reference/javascript/select',
+      docsUrl: 'https://biobase.studio/docs/reference/javascript/select',
     },
     'stored-procedures': {
       title: 'Stored Procedures',
       options: functions,
-      docsUrl: 'https://biobase.com/docs/reference/javascript/rpc',
+      docsUrl: 'https://biobase.studio/docs/reference/javascript/rpc',
     },
     storage: {
       title: 'Storage',
       options: buckets ?? [],
-      docsUrl: 'https://biobase.com/docs/reference/javascript/storage-createbucket',
+      docsUrl: 'https://biobase.studio/docs/reference/javascript/storage-createbucket',
     },
     'edge-functions': {
       title: 'Edge Functions',
       options: edgeFunctions ?? [],
-      docsUrl: 'https://biobase.com/docs/reference/javascript/functions-invoke',
+      docsUrl: 'https://biobase.studio/docs/reference/javascript/functions-invoke',
     },
   }
 

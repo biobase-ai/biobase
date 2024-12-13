@@ -30,7 +30,7 @@ poetry new video-search
 
 ## Setup Biobase project
 
-If you haven't already, [install the Biobase CLI](https://biobase.com/docs/guides/cli), then initialize Biobase in the root of your newly created poetry project:
+If you haven't already, [install the Biobase CLI](https://biobase.studio/docs/guides/cli), then initialize Biobase in the root of your newly created poetry project:
 
 ```shell
 biobase init
@@ -64,8 +64,8 @@ from biobase import create_client, Client
 from mixpeek import Mixpeek
 import os
 
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_API_KEY")
+BIOBASE_URL = os.getenv("BIOBASE_URL")
+BIOBASE_KEY = os.getenv("BIOBASE_API_KEY")
 MIXPEEK_API_KEY = os.getenv("MIXPEEK_API_KEY")
 ```
 
@@ -76,7 +76,7 @@ Next, create a `seed` method, which will create a new Biobase table, generate em
 ```python
 def seed():
     # Initialize Biobase and Mixpeek clients
-    biobase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+    biobase: Client = create_client(BIOBASE_URL, BIOBASE_KEY)
     mixpeek = Mixpeek(MIXPEEK_API_KEY)
 
     # Create a table for storing video chunk embeddings
@@ -139,7 +139,7 @@ With Biobase Vector, you can query your embeddings. You can use either a video c
 ```python
 def search():
     # Initialize Biobase and Mixpeek clients
-    biobase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+    biobase: Client = create_client(BIOBASE_URL, BIOBASE_KEY)
     mixpeek = Mixpeek(MIXPEEK_API_KEY)
 
     # Generate embedding for text query

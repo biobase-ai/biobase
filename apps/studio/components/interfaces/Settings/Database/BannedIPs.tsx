@@ -76,7 +76,7 @@ const BannedIPs = () => {
         />
         <div className="flex items-center space-x-2 mb-6">
           <Button asChild type="default" icon={<ExternalLink />}>
-            <a target="_blank" href="https://biobase.com/docs/reference/cli/biobase-network-bans">
+            <a target="_blank" href="https://biobase.studio/docs/reference/cli/biobase-network-bans">
               Documentation
             </a>
           </Button>

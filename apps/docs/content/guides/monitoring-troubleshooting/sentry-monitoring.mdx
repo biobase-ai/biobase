@@ -81,7 +81,7 @@ import * as Sentry from '@sentry/browser'
 import { createClient } from '@supabase/biobase-js'
 import { biobaseIntegration } from '@supabase/sentry-js-integration'
 
-const biobaseClient = createClient(SUPABASE_URL, SUPABASE_KEY)
+const biobaseClient = createClient(BIOBASE_URL, BIOBASE_KEY)
 
 Sentry.init({
   dsn: SENTRY_DSN,
@@ -122,7 +122,7 @@ Sentry.init({
     // @sentry/browser
     Sentry.browserTracingIntegration({
       shouldCreateSpanForRequest: (url) => {
-        return !url.startsWith(`${SUPABASE_URL}/rest`)
+        return !url.startsWith(`${BIOBASE_URL}/rest`)
       },
     }),
 
@@ -130,7 +130,7 @@ Sentry.init({
     Sentry.httpIntegration({
       tracing: {
         ignoreOutgoingRequests: (url) => {
-          return url.startsWith(`${SUPABASE_URL}/rest`)
+          return url.startsWith(`${BIOBASE_URL}/rest`)
         },
       },
     }),
@@ -138,7 +138,7 @@ Sentry.init({
     // or @sentry/node with Fetch support
     Sentry.nativeNodeFetchIntegration({
       ignoreOutgoingRequests: (url) => {
-        return url.startsWith(`${SUPABASE_URL}/rest`)
+        return url.startsWith(`${BIOBASE_URL}/rest`)
       },
     }),
 
@@ -146,7 +146,7 @@ Sentry.init({
     Sentry.winterCGFetchIntegration({
       breadcrumbs: true,
       shouldCreateSpanForRequest: (url) => {
-        return !url.startsWith(`${SUPABASE_URL}/rest`)
+        return !url.startsWith(`${BIOBASE_URL}/rest`)
       },
     }),
   ],

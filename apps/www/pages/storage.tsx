@@ -36,10 +36,10 @@ function StoragePage() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.com/storage`,
+          url: `https://biobase.studio/storage`,
           images: [
             {
-              url: `https://biobase.com${basePath}/images/product/storage/storage-og.jpg`,
+              url: `https://biobase.studio${basePath}/images/product/storage/storage-og.jpg`,
             },
           ],
         }}

@@ -20,8 +20,8 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
       <ConnectTabContent value=".env">
         <SimpleCodeBlock className="bash" parentClassName="min-h-72">
           {`
-VITE_SUPABASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
-VITE_SUPABASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
+VITE_BIOBASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
+VITE_BIOBASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
         `}
         </SimpleCodeBlock>
       </ConnectTabContent>
@@ -31,8 +31,8 @@ VITE_SUPABASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
           {`
 import { createClient } from '@supabase/biobase-js';
 
-const biobaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const biobaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const biobaseUrl = import.meta.env.VITE_BIOBASE_URL;
+const biobaseKey = import.meta.env.VITE_BIOBASE_ANON_KEY;
 const biobase = createClient(biobaseUrl, biobaseKey);
 
 export default biobase

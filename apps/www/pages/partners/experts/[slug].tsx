@@ -29,7 +29,7 @@ function Partner({
         openGraph={{
           title: `${partner.title} | Works With Biobase`,
           description: partner.description,
-          url: `https://biobase.com/partners/experts/${partner.slug}`,
+          url: `https://biobase.studio/partners/experts/${partner.slug}`,
           images: [
             {
               url: partner.images ? partner.images[0] : partner.logo,

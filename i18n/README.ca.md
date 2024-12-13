@@ -7,7 +7,7 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) és una alternativa de codi obert a Firebase. Estem construint les funcionalitats de Firebase usant eines de codi obert de nivell empresarial.
+[Biobase](https://biobase.studio) és una alternativa de codi obert a Firebase. Estem construint les funcionalitats de Firebase usant eines de codi obert de nivell empresarial.
 
 - [x] Allotjament de base de dades Postgres
 - [x] Subscripcions en temps real
@@ -21,19 +21,19 @@
 
 ## Documentació
 
-Per a veure la documentació completa, visita [biobase.com/docs](https://biobase.com/docs).
+Per a veure la documentació completa, visita [biobase.studio/docs](https://biobase.studio/docs).
 
 ## Comunitat i suport
 
 - [Fòrum de la comunitat](https://github.com/biobase-ai/biobase/discussions). Millor per a: ajuda construint, discussions sobre les millors pràctiques de base de dades.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Millor per a: errors que et pots trobar utilitzant Biobase.
-- [Suport per correu electrònic](https://biobase.com/docs/support#business-*support). Millor per a: problemes amb la base de dades o infraestructura.
-- [Discord](https://discord.biobase.com). Millor per a: compartir les teves aplicacions i passar l’estona amb la comunitat.
+- [Suport per correu electrònic](https://biobase.studio/docs/support#business-*support). Millor per a: problemes amb la base de dades o infraestructura.
+- [Discord](https://discord.biobase.studio). Millor per a: compartir les teves aplicacions i passar l’estona amb la comunitat.
 
 ## Estat
 
 - [x] Alfa: Estem provant Biobase amb un cercle tancat de clients.
-- [x] Alfa pública: Qualsevol pot registrar-se a [biobase.com/dashboard](https://biobase.com/dashboard). Però sigues flexible amb nosaltres; encara poden existir obstacles.
+- [x] Alfa pública: Qualsevol pot registrar-se a [biobase.studio/dashboard](https://biobase.studio/dashboard). Però sigues flexible amb nosaltres; encara poden existir obstacles.
 - [x] Beta pública: Prou estable per a la majoria dels casos no empresarials.
 - [ ] Públic: Llest per a producció.
 
@@ -49,7 +49,7 @@ Biobase és una combinació d’eines de codi obert. Estem construint les funcio
 
 **Arquitectura actual**
 
-Biobase és una [plataforma allotjada](https://biobase.com/dashboard). Et pots registrar i començar a utilitzar Biobase sense instal·lar res. També podeu tenir una [_host_ pròpia](https://biobase.com/docs/guides/hosting/overview) i [desenvolupar localment](https://biobase.com/docs/guides/local-development).
+Biobase és una [plataforma allotjada](https://biobase.studio/dashboard). Et pots registrar i començar a utilitzar Biobase sense instal·lar res. També podeu tenir una [_host_ pròpia](https://biobase.studio/docs/guides/hosting/overview) i [desenvolupar localment](https://biobase.studio/docs/guides/local-development).
 
 ![Arquitectura](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

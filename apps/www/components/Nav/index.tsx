@@ -140,10 +140,10 @@ const Nav = (props: Props) => {
                     ) : (
                       <>
                         <Button type="default" className="hidden lg:block" asChild>
-                          <Link href="https://biobase.com/dashboard">Sign in</Link>
+                          <Link href="https://biobase.studio/dashboard">Sign in</Link>
                         </Button>
                         <Button className="hidden lg:block" asChild>
-                          <Link href="https://biobase.com/dashboard">Start your project</Link>
+                          <Link href="https://biobase.studio/dashboard">Start your project</Link>
                         </Button>
                       </>
                     )}

@@ -27,20 +27,20 @@ const ENV_VAR_KEYS = {
     key: 'POSTGRES_DATABASE',
     type: 'encrypted',
   },
-  SUPABASE_ANON_KEY: {
-    key: 'SUPABASE_ANON_KEY',
+  BIOBASE_ANON_KEY: {
+    key: 'BIOBASE_ANON_KEY',
     type: 'encrypted',
   },
-  SUPABASE_URL: {
-    key: 'SUPABASE_URL',
+  BIOBASE_URL: {
+    key: 'BIOBASE_URL',
     type: 'encrypted',
   },
-  SUPABASE_SERVICE_ROLE_KEY: {
-    key: 'SUPABASE_SERVICE_ROLE_KEY',
+  BIOBASE_SERVICE_ROLE_KEY: {
+    key: 'BIOBASE_SERVICE_ROLE_KEY',
     type: 'encrypted',
   },
-  SUPABASE_JWT_SECRET: {
-    key: 'SUPABASE_JWT_SECRET',
+  BIOBASE_JWT_SECRET: {
+    key: 'BIOBASE_JWT_SECRET',
     type: 'encrypted',
   },
   NEXT_PUBLIC_SUPABASE_ANON_KEY: {

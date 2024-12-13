@@ -33,7 +33,7 @@ For this guide, we'll create a table called `employees` and see how we can make 
   <StepHikeCompact.Step step={1}>
     <StepHikeCompact.Details title="Create your first migration file">
 
-      To get started, generate a [new migration](https://biobase.com/docs/reference/cli/biobase-migration-new) to store the SQL needed to create our `employees` table
+      To get started, generate a [new migration](https://biobase.studio/docs/reference/cli/biobase-migration-new) to store the SQL needed to create our `employees` table
 
     </StepHikeCompact.Details>
 
@@ -218,7 +218,7 @@ The last step is deploying these changes to a live Biobase project.
 
 ## Deploy your project
 
-You've been developing your project locally, making changes to your tables via migrations. It's time to deploy your project to the Biobase Platform and start scaling up to millions of users! Head over to [Biobase](https://biobase.com/dashboard) and create a new project to deploy to.
+You've been developing your project locally, making changes to your tables via migrations. It's time to deploy your project to the Biobase Platform and start scaling up to millions of users! Head over to [Biobase](https://biobase.studio/dashboard) and create a new project to deploy to.
 
 ### Log in to the Biobase CLI
 
@@ -240,7 +240,7 @@ Associate your project with your remote project using [`biobase link`](/docs/ref
 
 ```bash
 biobase link --project-ref <project-id>
-# You can get <project-id> from your project's dashboard URL: https://biobase.com/dashboard/project/<project-id>
+# You can get <project-id> from your project's dashboard URL: https://biobase.studio/dashboard/project/<project-id>
 
 biobase db pull
 # Capture any changes that you have made to your remote database before you went through the steps above
@@ -274,7 +274,7 @@ Deploy any local database migrations using [`db push`](/docs/reference/cli/usage
 biobase db push
 ```
 
-Visiting your live project on [Biobase](https://biobase.com/dashboard), you'll see a new `employees` table, complete with the `department` column you added in the second migration above.
+Visiting your live project on [Biobase](https://biobase.studio/dashboard), you'll see a new `employees` table, complete with the `department` column you added in the second migration above.
 
 ### Deploy Edge Functions
 
@@ -291,16 +291,16 @@ To use Auth locally, update your project's `biobase/config.toml` file that gets 
 ```bash biobase/config.toml
 [auth.external.github]
 enabled = true
-client_id = "env(SUPABASE_AUTH_GITHUB_CLIENT_ID)"
-secret = "env(SUPABASE_AUTH_GITHUB_SECRET)"
+client_id = "env(BIOBASE_AUTH_GITHUB_CLIENT_ID)"
+secret = "env(BIOBASE_AUTH_GITHUB_SECRET)"
 redirect_uri = "http://localhost:54321/auth/v1/callback"
 ```
 
 As a best practice, any secret values should be loaded from environment variables. You can add them to `.env` file in your project's root directory for the CLI to automatically substitute them.
 
 ```bash .env
-SUPABASE_AUTH_GITHUB_CLIENT_ID="redacted"
-SUPABASE_AUTH_GITHUB_SECRET="redacted"
+BIOBASE_AUTH_GITHUB_CLIENT_ID="redacted"
+BIOBASE_AUTH_GITHUB_SECRET="redacted"
 ```
 
 For these changes to take effect, you need to run `biobase stop` and `biobase start` again.

@@ -30,7 +30,7 @@ export const ConsentToast = ({ onAccept = noop, onOptOut = noop }: ConsentToastP
             className="inline sm:hidden underline text-light"
             target="_blank"
             rel="noreferrer"
-            href="https://biobase.com/privacy"
+            href="https://biobase.studio/privacy"
           >
             Learn more
           </Link>
@@ -54,7 +54,7 @@ export const ConsentToast = ({ onAccept = noop, onOptOut = noop }: ConsentToastP
           Opt out
         </Button>
         <Button asChild type="text" className="hidden sm:block text-light hover:text-foreground">
-          <Link target="_blank" rel="noreferrer" href="https://biobase.com/privacy">
+          <Link target="_blank" rel="noreferrer" href="https://biobase.studio/privacy">
             Learn more
           </Link>
         </Button>

@@ -79,7 +79,7 @@ describe('#Button', () => {
     expect(() =>
       render(
         <Button asChild>
-          <Link href="https://biobase.com">Button</Link>
+          <Link href="https://biobase.studio">Button</Link>
         </Button>
       )
     ).not.toThrow()

@@ -20,8 +20,8 @@ const Introduction = ({ showKeys, language, apikey, endpoint }: ContentProps) =>
   }, [copied])
 
   const serviceKey = showKeys
-    ? data?.autoApiService.serviceApiKey ?? 'SUPABASE_CLIENT_SERVICE_KEY'
-    : 'SUPABASE_CLIENT_SERVICE_KEY'
+    ? data?.autoApiService.serviceApiKey ?? 'BIOBASE_CLIENT_SERVICE_KEY'
+    : 'BIOBASE_CLIENT_SERVICE_KEY'
 
   return (
     <>
@@ -53,7 +53,7 @@ const Introduction = ({ showKeys, language, apikey, endpoint }: ContentProps) =>
                   onClick={() => {
                     setCopied('anon')
                     copyToClipboard(
-                      data?.autoApiService.defaultApiKey ?? 'SUPABASE_CLIENT_ANON_KEY'
+                      data?.autoApiService.defaultApiKey ?? 'BIOBASE_CLIENT_ANON_KEY'
                     )
                   }}
                 >
@@ -84,7 +84,7 @@ const Introduction = ({ showKeys, language, apikey, endpoint }: ContentProps) =>
                   onClick={() => {
                     setCopied('service')
                     copyToClipboard(
-                      data?.autoApiService.serviceApiKey ?? 'SUPABASE_CLIENT_SERVICE_KEY'
+                      data?.autoApiService.serviceApiKey ?? 'BIOBASE_CLIENT_SERVICE_KEY'
                     )
                   }}
                 >

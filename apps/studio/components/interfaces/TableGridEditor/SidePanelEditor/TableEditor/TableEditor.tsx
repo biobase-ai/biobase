@@ -320,7 +320,7 @@ const TableEditor = ({
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://biobase.com/docs/guides/auth/row-level-security"
+                href="https://biobase.studio/docs/guides/auth/row-level-security"
               >
                 RLS Documentation
               </a>
@@ -341,7 +341,7 @@ const TableEditor = ({
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://biobase.com/docs/guides/auth/row-level-security"
+                href="https://biobase.studio/docs/guides/auth/row-level-security"
               >
                 RLS Documentation
               </a>

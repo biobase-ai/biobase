@@ -93,7 +93,7 @@ const LogDrainsSettings: NextPageWithLayout = () => {
               <Link
                 target="_blank"
                 rel="noreferrer"
-                href="https://biobase.com/docs/guides/platform/log-drains"
+                href="https://biobase.studio/docs/guides/platform/log-drains"
               >
                 Documentation
               </Link>

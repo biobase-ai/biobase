@@ -20,7 +20,7 @@ function Commands() {
     {
       id: 'biobase-website',
       name: 'Go to Biobase website',
-      route: 'https://biobase.com',
+      route: 'https://biobase.studio',
     },
   ])
 

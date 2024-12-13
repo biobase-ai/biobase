@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) - це альтернатива Firebase з відкритим вихідним кодом. Ми створюємо можливості Firebase, використовуючи інструменти з відкритим вихідним кодом корпоративного рівня.
+[Biobase](https://biobase.studio) - це альтернатива Firebase з відкритим вихідним кодом. Ми створюємо можливості Firebase, використовуючи інструменти з відкритим вихідним кодом корпоративного рівня.
 
-- [x] Розміщена база даних Postgres. [Документи](https://biobase.com/docs/guides/database)
-- [x] Аутентифікація та авторизація. [Документи](https://biobase.com/docs/guides/auth)
+- [x] Розміщена база даних Postgres. [Документи](https://biobase.studio/docs/guides/database)
+- [x] Аутентифікація та авторизація. [Документи](https://biobase.studio/docs/guides/auth)
 - [x] Автоматично згенеровані API.
-  - [x] REST. [Документи](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Документи](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Підписки в режимі реального часу. [Документи](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Документи](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Документи](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Підписки в режимі реального часу. [Документи](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Функції.
-  - [x] Функції бази даних. [Документи](https://biobase.com/docs/guides/database/functions)
-  - [x] Граничні функції [Документи](https://biobase.com/docs/guides/functions)
-- [x] Зберігання файлів. [Документи](https://biobase.com/docs/guides/storage)
+  - [x] Функції бази даних. [Документи](https://biobase.studio/docs/guides/database/functions)
+  - [x] Граничні функції [Документи](https://biobase.studio/docs/guides/functions)
+- [x] Зберігання файлів. [Документи](https://biobase.studio/docs/guides/storage)
 - [x] Інформаційна панель
 
 [Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Документація
 
-Для отримання повної документації відвідайте [biobase.com/docs](https://biobase.com/docs)
+Для отримання повної документації відвідайте [biobase.studio/docs](https://biobase.studio/docs)
 
 Щоб дізнатися, як зробити внесок, відвідайте [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@
 
 - [Форум спільноти](https://github.com/biobase-ai/biobase/discussions). Найкраще для: допомоги у створенні, обговорення найкращих практик роботи з базами даних.
 - [Проблеми GitHub](https://github.com/biobase-ai/biobase/issues). Найкраще для: помилок і помилок, з якими ви зіткнулися при використанні Biobase.
-- [Підтримка електронною поштою](https://biobase.com/docs/support#business-support). Найкраще для: проблем з вашою базою даних або інфраструктурою.
-- [Discord](https://discord.biobase.com). Найкраще для: обміну вашими додатками та спілкування зі спільнотою.
+- [Підтримка електронною поштою](https://biobase.studio/docs/support#business-support). Найкраще для: проблем з вашою базою даних або інфраструктурою.
+- [Discord](https://discord.biobase.studio). Найкраще для: обміну вашими додатками та спілкування зі спільнотою.
 
 ## Статус
 
 - [x] Альфа: Ми тестуємо Biobase із закритим набором клієнтів
-- [x] Публічна альфа-версія: Будь-хто може зареєструватися на [biobase.com/dashboard](https://biobase.com/dashboard). Але будьте обережні з нами, є кілька нюансів
+- [x] Публічна альфа-версія: Будь-хто може зареєструватися на [biobase.studio/dashboard](https://biobase.studio/dashboard). Але будьте обережні з нами, є кілька нюансів
 - [x] Публічна бета-версія: Достатньо стабільна для більшості непідприємницьких випадків використання
-- [ ] Загальнодоступна: Загальна доступність [[статус](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Загальнодоступна: Загальна доступність [[статус](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 Наразі ми перебуваємо на стадії публічної бета-версії. Слідкуйте за "релізами" цього репозиторію, щоб отримувати сповіщення про основні оновлення.
 
@@ -55,8 +55,8 @@ Biobase - це комбінація інструментів з відкрити
 
 **Архітектура**
 
-Biobase - це [хостингова платформа](https://biobase.com/dashboard). Ви можете зареєструватися і почати використовувати Biobase без встановлення.
-Ви також можете [самостійно хостити](https://biobase.com/docs/guides/hosting/overview) і [розробляти локально](https://biobase.com/docs/guides/local-development).
+Biobase - це [хостингова платформа](https://biobase.studio/dashboard). Ви можете зареєструватися і почати використовувати Biobase без встановлення.
+Ви також можете [самостійно хостити](https://biobase.studio/docs/guides/hosting/overview) і [розробляти локально](https://biobase.studio/docs/guides/local-development).
 
 ![Архітектура](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

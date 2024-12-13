@@ -68,7 +68,7 @@ const ProjectLints: NextPageWithLayout = () => {
       <FormHeader
         className="py-4 px-6 !mb-0"
         title="Performance Advisor"
-        docsUrl="https://biobase.com/docs/guides/database/database-linter"
+        docsUrl="https://biobase.studio/docs/guides/database/database-linter"
       />
       <LintPageTabs
         activeLints={activeLints}

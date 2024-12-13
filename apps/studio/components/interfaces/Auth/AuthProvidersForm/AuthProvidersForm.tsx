@@ -48,7 +48,7 @@ const AuthProvidersForm = () => {
                   to more than an hour. It is recommended to set this value to less than an hour.
                 </p>
                 <Button asChild type="default" className="w-min" icon={<ExternalLink />}>
-                  <Link href="https://biobase.com/docs/guides/platform/going-into-prod#security">
+                  <Link href="https://biobase.studio/docs/guides/platform/going-into-prod#security">
                     View security recommendations
                   </Link>
                 </Button>

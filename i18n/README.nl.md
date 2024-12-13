@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) is een open source Firebase alternatief. We bouwen de functies van Firebase met behulp van enterprise-grade open source tools.
+[Biobase](https://biobase.studio) is een open source Firebase alternatief. We bouwen de functies van Firebase met behulp van enterprise-grade open source tools.
 
-- [x]Gehoste Postgres Database. [Docs](https://biobase.com/docs/guides/database)
-- [x] Authenticatie en Autorisatie. [Docs](https://biobase.com/docs/guides/auth)
+- [x]Gehoste Postgres Database. [Docs](https://biobase.studio/docs/guides/database)
+- [x] Authenticatie en Autorisatie. [Docs](https://biobase.studio/docs/guides/auth)
 - [x] Automatisch gegenereerde API's.
-  - [x] REST. [Docs](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Docs](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Realtime abonnementen. [Docs](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Docs](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Docs](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Realtime abonnementen. [Docs](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Functies.
-  - [x] Database functies. [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] Randfuncties. [Docs](https://biobase.com/docs/guides/functions)
-- [x] Bestandsopslag. [Docs](https://biobase.com/docs/guides/storage)
+  - [x] Database functies. [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] Randfuncties. [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Bestandsopslag. [Docs](https://biobase.studio/docs/guides/storage)
 - [x] Dashboard
 
 [Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Documentatie
 
-Voor volledige documentatie, bezoek [biobase.com/docs](https://biobase.com/docs)
+Voor volledige documentatie, bezoek [biobase.studio/docs](https://biobase.studio/docs)
 
 Om te zien hoe u kunt bijdragen, bezoek [Aan de slag](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@ Om te zien hoe u kunt bijdragen, bezoek [Aan de slag](../DEVELOPERS.md)
 
 - [Community Forum](https://github.com/biobase-ai/biobase/discussions). Het beste voor: hulp bij het bouwen, discussie over database best practices.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Het beste voor: bugs en fouten die u tegenkomt bij het gebruik van Biobase.
-- [Ondersteuning per e-mail](https://biobase.com/docs/support#business-support). Meest geschikt voor: problemen met uw database of infrastructuur.
-- [Discord](https://discord.biobase.com). Het beste voor: het delen van uw applicaties en omgang met de gemeenschap.
+- [Ondersteuning per e-mail](https://biobase.studio/docs/support#business-support). Meest geschikt voor: problemen met uw database of infrastructuur.
+- [Discord](https://discord.biobase.studio). Het beste voor: het delen van uw applicaties en omgang met de gemeenschap.
 
 ## Status
 
 - [Alpha: We testen Biobase met een gesloten groep klanten
-- [x] Publieke Alpha: Iedereen kan zich aanmelden op [biobase.com/dashboard](https://biobase.com/dashboard). Maar doe het rustig aan, er zijn een paar kinken
+- [x] Publieke Alpha: Iedereen kan zich aanmelden op [biobase.studio/dashboard](https://biobase.studio/dashboard). Maar doe het rustig aan, er zijn een paar kinken
 - [Publieke Beta: Stabiel genoeg voor de meeste niet-bedrijfsmatige toepassingen
-- [Publiek: General Availability [[status](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [Publiek: General Availability [[status](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 We zijn momenteel in Openbare Beta. Bekijk "releases" van deze repo om op de hoogte te blijven van belangrijke updates.
 
@@ -55,8 +55,8 @@ Biobase is een combinatie van open source tools. We bouwen de functies van Fireb
 
 **Architectuur**
 
-Biobase is een [gehost platform](https://biobase.com/dashboard). U kunt zich aanmelden en Biobase gebruiken zonder iets te installeren.
-U kunt ook [zelf hosten](https://biobase.com/docs/guides/hosting/overview) en [lokaal ontwikkelen](https://biobase.com/docs/guides/local-development).
+Biobase is een [gehost platform](https://biobase.studio/dashboard). U kunt zich aanmelden en Biobase gebruiken zonder iets te installeren.
+U kunt ook [zelf hosten](https://biobase.studio/docs/guides/hosting/overview) en [lokaal ontwikkelen](https://biobase.studio/docs/guides/local-development).
 
 ![architectuur](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

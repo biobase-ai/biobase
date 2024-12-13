@@ -20,7 +20,7 @@ export default PageConfig
 
 const DocView = () => {
   const functionPath = 'rpc/'
-  const DEFAULT_KEY = { name: 'hide', key: 'SUPABASE_KEY' }
+  const DEFAULT_KEY = { name: 'hide', key: 'BIOBASE_KEY' }
 
   const { ref: projectRef, page, resource, rpc } = useParams()
   const [selectedLang, setSelectedLang] = useState<any>('js')

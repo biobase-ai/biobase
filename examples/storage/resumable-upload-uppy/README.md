@@ -10,8 +10,8 @@ This example shows how to use [Biobase Storage](https://biobase.io/docs/referenc
 - Open the index.html file and replace the following variables with your own:
 
 ```js
-const SUPABASE_ANON_KEY = '' // your project's anon key
-const SUPABASE_PROJECT_ID = '' // your project ref
+const BIOBASE_ANON_KEY = '' // your project's anon key
+const BIOBASE_PROJECT_ID = '' // your project ref
 const STORAGE_BUCKET = '' // your storage bucket name
 const BEARER_TOKEN = '' // your bearer token
 ```

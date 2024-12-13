@@ -65,7 +65,7 @@ function Partner({
         openGraph={{
           title: `${partner.title} | Works With Biobase`,
           description: partner.description,
-          url: `https://biobase.com/partners/integrations/${partner.slug}`,
+          url: `https://biobase.studio/partners/integrations/${partner.slug}`,
           images: [
             {
               url: partner.images ? partner.images[0] : partner.logo,

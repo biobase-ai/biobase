@@ -38,7 +38,7 @@ describe('_handleRevalidateRequest', () => {
     process.env.DOCS_REVALIDATION_KEYS = 'basic_key'
     process.env.DOCS_REVALIDATION_OVERRIDE_KEYS = 'override_key,other_override_key'
     process.env.NEXT_PUBLIC_SUPABASE_URL = 'http://localhost:3000'
-    process.env.SUPABASE_SECRET_KEY = 'secret_key'
+    process.env.BIOBASE_SECRET_KEY = 'secret_key'
 
     // Mock current date
     mockDate = new Date('2023-01-01T12:00:00Z')

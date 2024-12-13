@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from 'ui'
 
-const DEFAULT_KEY = { name: 'hide', key: 'SUPABASE_KEY' }
+const DEFAULT_KEY = { name: 'hide', key: 'BIOBASE_KEY' }
 
 interface LangSelectorProps {
   selectedLang: string

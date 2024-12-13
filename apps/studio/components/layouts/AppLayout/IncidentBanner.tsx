@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 const IncidentBanner = () => {
   return (
-    <Link href="https://status.biobase.com" target="_blank" rel="noreferrer">
+    <Link href="https://status.biobase.studio" target="_blank" rel="noreferrer">
       <div className="flex cursor-pointer items-center justify-center space-x-2 bg-green-900 py-3 transition hover:bg-green-1000 text-foreground">
         <p className="text-sm font-medium">
-          We are currently investigating a technical issue, follow status.biobase.com for updates
+          We are currently investigating a technical issue, follow status.biobase.studio for updates
         </p>
         <ExternalLink size={16} strokeWidth={2} />
       </div>

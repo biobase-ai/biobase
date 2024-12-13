@@ -216,7 +216,7 @@ const ProjectLinksEmptyState = () => (
       You haven't created a Biobase project yet. Get started by creating a new Biobase project,
       then close this window and retry adding integration.
     </p>
-    <Link href="https://biobase.com/dashboard" className="text-brand">
+    <Link href="https://biobase.studio/dashboard" className="text-brand">
       Start a new Biobase project<span aria-hidden="true"> &rarr;</span>
     </Link>
   </div>
@@ -304,7 +304,7 @@ const defaultVercelEnvs = [
     type: 'encrypted',
   },
   {
-    key: 'SUPABASE_SERVICE_ROLE_KEY',
+    key: 'BIOBASE_SERVICE_ROLE_KEY',
     alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
     type: 'encrypted',
   },
@@ -339,7 +339,7 @@ const ProjectLinks = observer(() => {
           })
           continue
         }
-        const found = existedEnvs.find((x: any) => x.key.includes('SUPABASE'))
+        const found = existedEnvs.find((x: any) => x.key.includes('BIOBASE'))
         if (!!found) {
           console.error('Existed Biobase env: ', found)
           runInAction(() => {

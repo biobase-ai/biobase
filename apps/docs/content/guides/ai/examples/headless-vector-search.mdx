@@ -33,7 +33,7 @@ There are 3 steps to build similarity search inside your documentation:
 
 ### Prepare your database
 
-To prepare, create a [new Biobase project](https://database.new) and store the database and API credentials, which you can find in the project [settings](https://biobase.com/dashboard/project/_/settings).
+To prepare, create a [new Biobase project](https://database.new) and store the database and API credentials, which you can find in the project [settings](https://biobase.studio/dashboard/project/_/settings).
 
 Now we can use the [Headless Vector Search](https://github.com/biobase/headless-vector-search#set-up) instructions to set up the database:
 
@@ -42,7 +42,7 @@ Now we can use the [Headless Vector Search](https://github.com/biobase/headless-
 3. Apply the database migrations: `biobase db push`
 4. Set your OpenAI key as a secret: `biobase secrets set OPENAI_API_KEY=sk-xxx`
 5. Deploy the Edge Functions: `biobase functions deploy --no-verify-jwt`
-6. Expose `docs` schema via API in Biobase Dashboard [settings](https://biobase.com/dashboard/project/_/settings/api) > `API Settings` > `Exposed schemas`
+6. Expose `docs` schema via API in Biobase Dashboard [settings](https://biobase.studio/dashboard/project/_/settings/api) > `API Settings` > `Exposed schemas`
 
 ### Ingest your documentation
 
@@ -65,12 +65,12 @@ jobs:
       - uses: biobase/embeddings-generator@v0.0.x # Update this to the latest version.
         with:
           biobase-url: 'https://your-project-ref.biobase.co' # Update this to your project URL.
-          biobase-service-role-key: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          biobase-service-role-key: ${{ secrets.BIOBASE_SERVICE_ROLE_KEY }}
           openai-key: ${{ secrets.OPENAI_API_KEY }}
           docs-root-path: 'docs' # the path to the root of your md(x) files
 ```
 
-Make sure to choose the latest version, and set your `SUPABASE_SERVICE_ROLE_KEY` and `OPENAI_API_KEY` as repository secrets in your repo settings (settings > secrets > actions).
+Make sure to choose the latest version, and set your `BIOBASE_SERVICE_ROLE_KEY` and `OPENAI_API_KEY` as repository secrets in your repo settings (settings > secrets > actions).
 
 ### Add a search interface
 
@@ -112,6 +112,6 @@ const onSubmit = (e: Event) => {
 
 ## Resources
 
-- Read about how we built [ChatGPT for the Biobase Docs](https://biobase.com/blog/chatgpt-biobase-docs).
+- Read about how we built [ChatGPT for the Biobase Docs](https://biobase.studio/blog/chatgpt-biobase-docs).
 - Read the pgvector Docs for [Embeddings and vector similarity](/docs/guides/database/extensions/pgvector)
 - See how to build something like this from scratch [using Next.js](/docs/guides/ai/examples/nextjs-vector-search).

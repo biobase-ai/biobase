@@ -60,7 +60,7 @@ export async function _handleRevalidateRequest(request: NextRequest) {
 
   const biobaseAdmin = createClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SECRET_KEY!
+    process.env.BIOBASE_SECRET_KEY!
   )
 
   if (authorizationLevel === AuthorizationLevel.Basic) {

@@ -18,7 +18,7 @@ const GitHubButton = () => {
       const { Octokit } = await import('@octokit/core')
       const octokit = new Octokit()
       const res = await octokit.request('GET /repos/{org}/{repo}', {
-        org: 'biobase',
+        org: 'biobase-ai',
         repo: 'biobase',
         type: 'public',
       })

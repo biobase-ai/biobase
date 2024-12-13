@@ -35,7 +35,7 @@ const ExtensionCard = ({ extension }: ExtensionCardProps) => {
   const docsUrl = extensionMeta?.link.startsWith('/guides')
     ? siteUrl === 'http://localhost:8082'
       ? `http://localhost:3001/docs${extensions.find((item) => item.name === extension.name)?.link}`
-      : `https://biobase.com/docs${extensions.find((item) => item.name === extension.name)?.link}`
+      : `https://biobase.studio/docs${extensions.find((item) => item.name === extension.name)?.link}`
     : extensions.find((item: any) => item.name === extension.name)?.link ?? undefined
 
   const { mutate: disableExtension, isLoading: isDisabling } = useDatabaseExtensionDisableMutation({

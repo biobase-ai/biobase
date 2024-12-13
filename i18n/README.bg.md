@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) е алтернатива на Firebase с отворен код. Ние изграждаме функциите на Firebase, като използваме инструменти с отворен код от корпоративен клас.
+[Biobase](https://biobase.studio) е алтернатива на Firebase с отворен код. Ние изграждаме функциите на Firebase, като използваме инструменти с отворен код от корпоративен клас.
 
-- [x] Хоствана база данни Postgres. [Документи](https://biobase.com/docs/guides/database)
-- [x] Удостоверяване и оторизация. [Документи](https://biobase.com/docs/guides/auth)
+- [x] Хоствана база данни Postgres. [Документи](https://biobase.studio/docs/guides/database)
+- [x] Удостоверяване и оторизация. [Документи](https://biobase.studio/docs/guides/auth)
 - [x] Автоматично генерирани API.
-  - [x] REST. [Документи](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Документи](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Абонаменти в реално време. [Документи](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Документи](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Документи](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Абонаменти в реално време. [Документи](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Функции.
-  - [x] Функции за бази данни. [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] Крайни функции [Docs](https://biobase.com/docs/guides/functions)
-- [x] Съхранение на файлове. [Документи](https://biobase.com/docs/guides/storage)
+  - [x] Функции за бази данни. [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] Крайни функции [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Съхранение на файлове. [Документи](https://biobase.studio/docs/guides/storage)
 - [x] Информационно табло
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Документация
 
-За пълна документация посетете [biobase.com/docs](https://biobase.com/docs)
+За пълна документация посетете [biobase.studio/docs](https://biobase.studio/docs)
 
 За да видите как да допринасяте, посетете [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@
 
 - [Форум на общността](https://github.com/biobase-ai/biobase/discussions). Най-добре за: помощ при изграждане, обсъждане на най-добрите практики за бази данни.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Най-добре за: грешки и пропуски, които срещате при използването на Biobase.
-- [Email Support](https://biobase.com/docs/support#business-support). Най-добре за: проблеми с вашата база данни или инфраструктура.
-- [Discord](https://discord.biobase.com). Най-добър за: споделяне на вашите приложения и общуване с общността.
+- [Email Support](https://biobase.studio/docs/support#business-support). Най-добре за: проблеми с вашата база данни или инфраструктура.
+- [Discord](https://discord.biobase.studio). Най-добър за: споделяне на вашите приложения и общуване с общността.
 
 ## Статус
 
 - [x] Алфа: Тестваме Biobase със затворен набор от клиенти
-- [x] Публична алфа: Всеки може да се регистрира на адрес [biobase.com/dashboard](https://biobase.com/dashboard). Но не се притеснявайте от нас, има няколко проблема
+- [x] Публична алфа: Всеки може да се регистрира на адрес [biobase.studio/dashboard](https://biobase.studio/dashboard). Но не се притеснявайте от нас, има няколко проблема
 - [x] Публична бета версия: Достатъчно стабилна за повечето случаи на използване извън предприятията
-- [ ] Публична: Обща наличност [[статус](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Публична: Обща наличност [[статус](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 В момента сме в публична бета версия. Следете "releases" на това репо, за да бъдете уведомявани за основни актуализации.
 
@@ -55,8 +55,8 @@ Biobase е комбинация от инструменти с отворен к
 
 **Архитектура**
 
-Biobase е [хоствана платформа](https://biobase.com/dashboard). Можете да се регистрирате и да започнете да използвате Biobase, без да инсталирате нищо.
-Можете също така да [самостоятелно хоствате](https://biobase.com/docs/guides/hosting/overview) и [да разработвате локално](https://biobase.com/docs/guides/local-development).
+Biobase е [хоствана платформа](https://biobase.studio/dashboard). Можете да се регистрирате и да започнете да използвате Biobase, без да инсталирате нищо.
+Можете също така да [самостоятелно хоствате](https://biobase.studio/docs/guides/hosting/overview) и [да разработвате локално](https://biobase.studio/docs/guides/local-development).
 
 ![Архитектура](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

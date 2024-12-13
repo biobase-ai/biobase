@@ -139,7 +139,7 @@ biobase functions deploy hello-world
 Once the function is deployed, you can try to call the two endpoints using cURL (or Postman).
 
 ```bash
-# https://biobase.com/docs/guides/functions/deploy#invoking-remote-functions
+# https://biobase.studio/docs/guides/functions/deploy#invoking-remote-functions
 curl --request GET 'https://<project_ref>.biobase.co/functions/v1/hello-world' \
   --header 'Authorization: Bearer ANON_KEY' \
 ```
@@ -149,7 +149,7 @@ This should print the response as `Hello World!`, meaning it was handled by the 
 Similarly, we can make a request to the `POST` route.
 
 ```bash cURL
-# https://biobase.com/docs/guides/functions/deploy#invoking-remote-functions
+# https://biobase.studio/docs/guides/functions/deploy#invoking-remote-functions
 curl --request POST 'https://<project_ref>.biobase.co/functions/v1/hello-world' \
   --header 'Authorization: Bearer ANON_KEY' \
   --header 'Content-Type: application/json' \

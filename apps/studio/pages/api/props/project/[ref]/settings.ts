@@ -39,13 +39,13 @@ const handleGetAll = async (req: NextApiRequest, res: NextApiResponse) => {
         name: 'Default API',
         service_api_keys: [
           {
-            api_key: process.env.SUPABASE_SERVICE_KEY,
+            api_key: process.env.BIOBASE_SERVICE_KEY,
             api_key_encrypted: '-',
             name: 'service_role key',
             tags: 'service_role',
           },
           {
-            api_key: process.env.SUPABASE_ANON_KEY,
+            api_key: process.env.BIOBASE_ANON_KEY,
             api_key_encrypted: '-',
             name: 'anon key',
             tags: 'anon',

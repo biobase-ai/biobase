@@ -71,7 +71,7 @@
   "ssh_url": "git@github.com:biobase/benchmarks.git",
   "clone_url": "https://github.com/biobase/benchmarks.git",
   "svn_url": "https://github.com/biobase/benchmarks",
-  "homepage": "https://biobase.com",
+  "homepage": "https://biobase.studio",
   "size": 9251,
   "stargazers_count": 13,
   "watchers_count": 13,

@@ -79,17 +79,17 @@
         "products": [
           {
             "title": "Security portal",
-            "url": "https://security.biobase.com/",
+            "url": "https://security.biobase.studio/",
             "description": "Monitor security at Biobase."
           },
           {
             "title": "SOC 2 Document",
-            "url": "https://security.biobase.com/",
+            "url": "https://security.biobase.studio/",
             "description": "Request the SOC 2 Type I document through the Security Portal."
           },
           {
             "title": "DPA Document",
-            "url": "https://security.biobase.com/",
+            "url": "https://security.biobase.studio/",
             "description": "Request Data Processing Agreement document through the Security Portal."
           }
         ]

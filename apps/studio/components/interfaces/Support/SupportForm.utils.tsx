@@ -95,9 +95,9 @@ export function generateLink(pageType: PageType, link: string): string {
   switch (pageType) {
     case PageType.Markdown:
     case PageType.Reference:
-      return `https://biobase.com/docs${link}`
+      return `https://biobase.studio/docs${link}`
     case PageType.Integration:
-      return `https://biobase.com${link}`
+      return `https://biobase.studio${link}`
     case PageType.GithubDiscussion:
       return link
     default:

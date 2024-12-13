@@ -40,8 +40,8 @@ const Hero = () => {
                 <div className="flex items-center gap-2">
                   <Button asChild size="medium">
                     <Link
-                      href="https://biobase.com/dashboard"
-                      as="https://biobase.com/dashboard"
+                      href="https://biobase.studio/dashboard"
+                      as="https://biobase.studio/dashboard"
                       onClick={() => sendTelemetryEvent(gaEvents['www_hp_hero_startProject'])}
                     >
                       Start your project

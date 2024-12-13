@@ -65,7 +65,7 @@ const Subscription = () => {
             <div className="space-y-2">
               <p className="text-sm text-foreground-light m-0">More information</p>
               <div>
-                <Link href="https://biobase.com/pricing" target="_blank" rel="noreferrer">
+                <Link href="https://biobase.studio/pricing" target="_blank" rel="noreferrer">
                   <div className="flex items-center space-x-2 opacity-50 hover:opacity-100 transition">
                     <p className="text-sm m-0">Pricing</p>
                     <ExternalLink size={16} strokeWidth={1.5} />

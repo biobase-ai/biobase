@@ -123,7 +123,7 @@ export const HardenAPIModal = ({ visible, onClose }: HardenAPIModalProps) => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://biobase.com/docs/guides/database/hardening-data-api"
+              href="https://biobase.studio/docs/guides/database/hardening-data-api"
             >
               Documentation
             </a>

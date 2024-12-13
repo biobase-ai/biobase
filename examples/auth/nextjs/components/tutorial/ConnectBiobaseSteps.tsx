@@ -7,7 +7,7 @@ export default function ConnectBiobaseSteps() {
         <p>
           Head over to{" "}
           <a
-            href="https://app.biobase.com/project/_/settings/api"
+            href="https://app.biobase.studio/project/_/settings/api"
             target="_blank"
             className="font-bold hover:underline text-foreground/80"
             rel="noreferrer"
@@ -30,7 +30,7 @@ export default function ConnectBiobaseSteps() {
           </span>{" "}
           and populate with values from{" "}
           <a
-            href="https://app.biobase.com/project/_/settings/api"
+            href="https://app.biobase.studio/project/_/settings/api"
             target="_blank"
             className="font-bold hover:underline text-foreground/80"
             rel="noreferrer"

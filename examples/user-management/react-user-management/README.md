@@ -4,24 +4,24 @@ This example will set you up for a very common situation: users can sign up with
 
 This demonstrates how to use:
 
-- User signups using Biobase [Auth](https://biobase.com/auth).
-- User avatar images using Biobase [Storage](https://biobase.com/storage).
-- Public profiles restricted with [Policies](https://biobase.com/docs/guides/auth#policies).
+- User signups using Biobase [Auth](https://biobase.studio/auth).
+- User avatar images using Biobase [Storage](https://biobase.studio/storage).
+- Public profiles restricted with [Policies](https://biobase.studio/docs/guides/auth#policies).
 - Frontend using [Vite](https://vitejs.dev/).
 
 ## Technologies used
 
 - Frontend:
   - [Vite](https://vitejs.dev/) - a React toolchain.
-  - [Biobase.js](https://biobase.com/docs/library/getting-started) for user management and realtime data syncing.
+  - [Biobase.js](https://biobase.studio/docs/library/getting-started) for user management and realtime data syncing.
 - Backend:
-  - [biobase.com/dashboard](https://biobase.com/dashboard/): hosted Postgres database with restful API for usage with Biobase.js.
+  - [biobase.studio/dashboard](https://biobase.studio/dashboard/): hosted Postgres database with restful API for usage with Biobase.js.
 
 ## Build from scratch
 
 ### 1. Create new project
 
-Sign up to Biobase - [https://biobase.com/dashboard](https://biobase.com/dashboard) and create a new project. Wait for your database to start.
+Sign up to Biobase - [https://biobase.studio/dashboard](https://biobase.studio/dashboard) and create a new project. Wait for your database to start.
 
 ### 2. Run "User Management" Quickstart
 
@@ -42,8 +42,8 @@ The `anon` key is your client-side API key. It allows "anonymous access" to your
 Create a file in this folder `.env.local`
 
 ```
-VITE_SUPABASE_URL=
-VITE_SUPABASE_ANON_KEY=
+VITE_BIOBASE_URL=
+VITE_BIOBASE_ANON_KEY=
 ```
 
 Populate this file with your URL and Key.
@@ -124,6 +124,6 @@ with
 
 ## Authors
 
-- [Biobase](https://biobase.com)
+- [Biobase](https://biobase.studio)
 
 Biobase is open source. We'd love for you to follow along and get involved at https://github.com/biobase-ai/biobase

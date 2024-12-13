@@ -110,7 +110,7 @@ async function generate() {
 
             return `
               <url>
-                  <loc>${`https://biobase.com${route}`}</loc>
+                  <loc>${`https://biobase.studio${route}`}</loc>
                   <changefreq>weekly</changefreq>
                   <priority>0.5</priority>
               </url>
@@ -133,10 +133,10 @@ async function generate() {
   const sitemapRouter = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://biobase.com/sitemap_www.xml</loc>
+    <loc>https://biobase.studio/sitemap_www.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://biobase.com/docs/sitemap.xml</loc>
+    <loc>https://biobase.studio/docs/sitemap.xml</loc>
   </sitemap>
 </sitemapindex>
 `

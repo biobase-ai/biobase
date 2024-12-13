@@ -20,7 +20,7 @@ import MetaFaviconsPagesRouter, {
 import { WwwCommandMenu } from '~/components/CommandMenu'
 import { API_URL, APP_NAME, DEFAULT_META_DESCRIPTION, IS_PREVIEW } from '~/lib/constants'
 import { post } from '~/lib/fetchWrapper'
-import biobase from '~/lib/biobase'
+import supabase from '~/lib/biobase'
 import useDarkLaunchWeeks from '../hooks/useDarkLaunchWeeks'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -102,11 +102,11 @@ export default function App({ Component, pageProps }: AppProps) {
         description={DEFAULT_META_DESCRIPTION}
         openGraph={{
           type: 'website',
-          url: 'https://biobase.com/',
+          url: 'https://biobase.studio/',
           site_name: 'Biobase',
           images: [
             {
-              url: `https://biobase.com${basePath}/images/og/biobase-og.png`,
+              url: `https://biobase.studio${basePath}/images/og/biobase-og.png`,
               width: 800,
               height: 600,
               alt: 'Biobase Og Image',
@@ -119,7 +119,7 @@ export default function App({ Component, pageProps }: AppProps) {
           cardType: 'summary_large_image',
         }}
       />
-      <SessionContextProvider biobaseClient={biobase}>
+      <SessionContextProvider supabaseClient={supabase}>
         <AuthProvider>
           <ThemeProvider
             themes={themes.map((theme) => theme.value)}

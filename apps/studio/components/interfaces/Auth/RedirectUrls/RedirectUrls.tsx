@@ -79,7 +79,7 @@ export const RedirectUrls = () => {
         <div className="flex items-center gap-2 mb-6 ml-12">
           <Button asChild type="default" icon={<ExternalLink />}>
             <Link
-              href="https://biobase.com/docs/guides/auth/concepts/redirect-urls"
+              href="https://biobase.studio/docs/guides/auth/concepts/redirect-urls"
               target="_blank"
               rel="noreferrer"
             >

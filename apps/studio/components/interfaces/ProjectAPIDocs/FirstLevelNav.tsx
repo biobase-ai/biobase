@@ -171,7 +171,7 @@ const FirstLevelNav = () => {
         </Button>
         <Button block asChild type="text" size="small" icon={<BookOpen />}>
           <Link
-            href="https://biobase.com/docs/guides/graphql"
+            href="https://biobase.studio/docs/guides/graphql"
             target="_blank"
             rel="noreferrer"
             className="!justify-start"
@@ -184,7 +184,7 @@ const FirstLevelNav = () => {
       <div className="px-2 py-4">
         <Button block asChild type="text" size="small" icon={<Book />}>
           <Link
-            href="https://biobase.com/docs"
+            href="https://biobase.studio/docs"
             target="_blank"
             rel="noreferrer"
             className="!justify-start"
@@ -194,7 +194,7 @@ const FirstLevelNav = () => {
         </Button>
         <Button block asChild type="text" size="small" icon={<BookOpen />}>
           <Link
-            href="https://biobase.com/docs/guides/api"
+            href="https://biobase.studio/docs/guides/api"
             target="_blank"
             rel="noreferrer"
             className="!justify-start"

@@ -28,13 +28,13 @@
 
 ## Getting started
 
-Thank you for your interest in [Biobase](https://biobase.com) and your willingness to contribute!
+Thank you for your interest in [Biobase](https://biobase.studio) and your willingness to contribute!
 
 To ensure a positive and inclusive environment, please read our [code of conduct](https://github.com/biobase/.github/blob/main/CODE_OF_CONDUCT.md). We encourage you to explore the existing [issues](https://github.com/biobase-ai/biobase/issues) to see how you can make a meaningful impact. This document will help you setup your development environment.
 
 ### Install dependencies
 
-You will need to install and configure the following dependencies on your machine to build [Biobase](https://biobase.com):
+You will need to install and configure the following dependencies on your machine to build [Biobase](https://biobase.studio):
 
 - [Git](http://git-scm.com/)
 - [Node.js v20.x (LTS)](http://nodejs.org)
@@ -49,7 +49,7 @@ All of our apps are in this [Turborepo](https://turborepo.org/docs), which make 
 
 ### Fork the repo
 
-To contribute code to [Biobase](https://biobase.com), you must fork the [Biobase repo](https://github.com/biobase-ai/biobase).
+To contribute code to [Biobase](https://biobase.studio), you must fork the [Biobase repo](https://github.com/biobase-ai/biobase).
 
 ### Clone the repo
 
@@ -87,9 +87,9 @@ Then visit, and edit, any of the following sites:
 
 | Site                                                     | Directory      | Scope name | Description                                   | Local development server   |
 | -------------------------------------------------------- | -------------- | ---------- | --------------------------------------------- | -------------------------- |
-| [biobase.com](https://biobase.com)                     | `/apps/www`    | www        | The main website                              | http://localhost:3000      |
-| [biobase.com/dashboard](https://biobase.com/dashboard) | `/apps/studio` | studio     | Studio dashboard (requires Docker, see below) | http://localhost:8082      |
-| [biobase.com/docs](https://biobase.com/docs)           | `/apps/docs`   | docs       | Guides and Reference (Next.js based)          | http://localhost:3001/docs |
+| [biobase.studio](https://biobase.studio)                     | `/apps/www`    | www        | The main website                              | http://localhost:3000      |
+| [biobase.studio/dashboard](https://biobase.studio/dashboard) | `/apps/studio` | studio     | Studio dashboard (requires Docker, see below) | http://localhost:8082      |
+| [biobase.studio/docs](https://biobase.studio/docs)           | `/apps/docs`   | docs       | Guides and Reference (Next.js based)          | http://localhost:3001/docs |
 
 #### Running sites individually
 
@@ -208,7 +208,7 @@ Some things to consider:
 
 ## Community channels
 
-If you get stuck somewhere or have any questions, join our [Discord Community Server](https://discord.biobase.com/) or the [Github Discussions](https://github.com/biobase-ai/biobase/discussions). We are here to help!
+If you get stuck somewhere or have any questions, join our [Discord Community Server](https://discord.biobase.studio/) or the [Github Discussions](https://github.com/biobase-ai/biobase/discussions). We are here to help!
 
 ## Contributors
 

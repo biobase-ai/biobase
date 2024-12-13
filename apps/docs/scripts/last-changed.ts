@@ -46,8 +46,8 @@ type SectionWithChecksum = Omit<Section, 'heading'> &
   }
 
 const REQUIRED_ENV_VARS = {
-  SUPABASE_URL: 'NEXT_PUBLIC_SUPABASE_URL',
-  SERVICE_ROLE_KEY: 'SUPABASE_SERVICE_ROLE_KEY',
+  BIOBASE_URL: 'NEXT_PUBLIC_SUPABASE_URL',
+  SERVICE_ROLE_KEY: 'BIOBASE_SERVICE_ROLE_KEY',
 } as const
 
 async function main() {
@@ -107,7 +107,7 @@ function parseOptions(): Options {
 
 function createBiobaseClient() {
   return createClient(
-    process.env[REQUIRED_ENV_VARS.SUPABASE_URL],
+    process.env[REQUIRED_ENV_VARS.BIOBASE_URL],
     process.env[REQUIRED_ENV_VARS.SERVICE_ROLE_KEY]
   )
 }

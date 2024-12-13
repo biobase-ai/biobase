@@ -9,29 +9,29 @@ const path = require('path')
 const API_URL = process.env.NEXT_PUBLIC_API_URL
   ? new URL(process.env.NEXT_PUBLIC_API_URL).origin
   : ''
-const SUPABASE_URL = process.env.SUPABASE_URL ? new URL(process.env.SUPABASE_URL).origin : ''
+const BIOBASE_URL = process.env.BIOBASE_URL ? new URL(process.env.BIOBASE_URL).origin : ''
 const GOTRUE_URL = process.env.NEXT_PUBLIC_GOTRUE_URL
   ? new URL(process.env.NEXT_PUBLIC_GOTRUE_URL).origin
   : ''
-const SUPABASE_PROJECTS_URL = 'https://*.biobase.co'
-const SUPABASE_PROJECTS_URL_WS = 'wss://*.biobase.co'
+const BIOBASE_PROJECTS_URL = 'https://*.biobase.co'
+const BIOBASE_PROJECTS_URL_WS = 'wss://*.biobase.co'
 
 // construct the URL for the Websocket Local URLs
-let SUPABASE_LOCAL_PROJECTS_URL_WS = ''
-if (SUPABASE_URL) {
-  const url = new URL(SUPABASE_URL)
+let BIOBASE_LOCAL_PROJECTS_URL_WS = ''
+if (BIOBASE_URL) {
+  const url = new URL(BIOBASE_URL)
   const wsUrl = `${url.hostname}:${url.port}`
-  SUPABASE_LOCAL_PROJECTS_URL_WS = `ws://${wsUrl} wss://${wsUrl}`
+  BIOBASE_LOCAL_PROJECTS_URL_WS = `ws://${wsUrl} wss://${wsUrl}`
 }
 
 // Needed to test docs search in local dev
-const SUPABASE_DOCS_PROJECT_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
+const BIOBASE_DOCS_PROJECT_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
   ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).origin
   : ''
 
-const SUPABASE_STAGING_PROJECTS_URL = 'https://*.biobase.red'
-const SUPABASE_STAGING_PROJECTS_URL_WS = 'wss://*.biobase.red'
-const SUPABASE_COM_URL = 'https://biobase.com'
+const BIOBASE_STAGING_PROJECTS_URL = 'https://*.biobase.red'
+const BIOBASE_STAGING_PROJECTS_URL_WS = 'wss://*.biobase.red'
+const BIOBASE_COM_URL = 'https://biobase.studio'
 const CLOUDFLARE_CDN_URL = 'https://cdnjs.cloudflare.com'
 const HCAPTCHA_SUBDOMAINS_URL = 'https://*.hcaptcha.com'
 const HCAPTCHA_ASSET_URL = 'https://newassets.hcaptcha.com'
@@ -53,10 +53,10 @@ const VERCEL_LIVE_URL = 'https://vercel.live'
 const PUSHER_URL = 'https://*.pusher.com'
 const PUSHER_URL_WS = 'wss://*.pusher.com'
 
-const DEFAULT_SRC_URLS = `${API_URL} ${SUPABASE_URL} ${GOTRUE_URL} ${SUPABASE_LOCAL_PROJECTS_URL_WS} ${SUPABASE_PROJECTS_URL} ${SUPABASE_PROJECTS_URL_WS} ${HCAPTCHA_SUBDOMAINS_URL} ${CONFIGCAT_URL} ${STRIPE_SUBDOMAINS_URL} ${STRIPE_NETWORK_URL} ${CLOUDFLARE_URL} ${ONE_ONE_ONE_ONE_URL} ${VERCEL_INSIGHTS_URL} ${GITHUB_API_URL} ${GITHUB_USER_CONTENT_URL}`
+const DEFAULT_SRC_URLS = `${API_URL} ${BIOBASE_URL} ${GOTRUE_URL} ${BIOBASE_LOCAL_PROJECTS_URL_WS} ${BIOBASE_PROJECTS_URL} ${BIOBASE_PROJECTS_URL_WS} ${HCAPTCHA_SUBDOMAINS_URL} ${CONFIGCAT_URL} ${STRIPE_SUBDOMAINS_URL} ${STRIPE_NETWORK_URL} ${CLOUDFLARE_URL} ${ONE_ONE_ONE_ONE_URL} ${VERCEL_INSIGHTS_URL} ${GITHUB_API_URL} ${GITHUB_USER_CONTENT_URL}`
 const SCRIPT_SRC_URLS = `${CLOUDFLARE_CDN_URL} ${HCAPTCHA_JS_URL} ${STRIPE_JS_URL}`
 const FRAME_SRC_URLS = `${HCAPTCHA_ASSET_URL} ${STRIPE_JS_URL}`
-const IMG_SRC_URLS = `${SUPABASE_URL} ${SUPABASE_COM_URL} ${SUPABASE_PROJECTS_URL} ${GITHUB_USER_AVATAR_URL} ${GOOGLE_USER_AVATAR_URL}`
+const IMG_SRC_URLS = `${BIOBASE_URL} ${BIOBASE_COM_URL} ${BIOBASE_PROJECTS_URL} ${GITHUB_USER_AVATAR_URL} ${GOOGLE_USER_AVATAR_URL}`
 const STYLE_SRC_URLS = `${CLOUDFLARE_CDN_URL}`
 const FONT_SRC_URLS = `${CLOUDFLARE_CDN_URL}`
 
@@ -65,10 +65,10 @@ const csp = [
   process.env.NEXT_PUBLIC_ENVIRONMENT === 'local' ||
   process.env.NEXT_PUBLIC_ENVIRONMENT === 'staging'
     ? [
-        `default-src 'self' ${DEFAULT_SRC_URLS} ${SUPABASE_STAGING_PROJECTS_URL} ${SUPABASE_STAGING_PROJECTS_URL_WS} ${VERCEL_LIVE_URL} ${PUSHER_URL} ${PUSHER_URL_WS} ${SUPABASE_DOCS_PROJECT_URL};`,
+        `default-src 'self' ${DEFAULT_SRC_URLS} ${BIOBASE_STAGING_PROJECTS_URL} ${BIOBASE_STAGING_PROJECTS_URL_WS} ${VERCEL_LIVE_URL} ${PUSHER_URL} ${PUSHER_URL_WS} ${BIOBASE_DOCS_PROJECT_URL};`,
         `script-src 'self' 'unsafe-eval' 'unsafe-inline' ${SCRIPT_SRC_URLS} ${VERCEL_LIVE_URL};`,
         `frame-src 'self' ${FRAME_SRC_URLS} ${VERCEL_LIVE_URL};`,
-        `img-src 'self' blob: data: ${IMG_SRC_URLS} ${SUPABASE_STAGING_PROJECTS_URL} ${VERCEL_URL};`,
+        `img-src 'self' blob: data: ${IMG_SRC_URLS} ${BIOBASE_STAGING_PROJECTS_URL} ${VERCEL_URL};`,
         `style-src 'self' 'unsafe-inline' ${STYLE_SRC_URLS} ${VERCEL_LIVE_URL};`,
         `font-src 'self' ${FONT_SRC_URLS} ${VERCEL_LIVE_URL};`,
         `worker-src 'self' blob: data:;`,
@@ -106,7 +106,7 @@ const nextConfig = {
     return [
       {
         source: `/.well-known/vercel/flags`,
-        // TODO: Replace this with biobase.com/.well-known/vercel/flags once this PR is merged.
+        // TODO: Replace this with biobase.studio/.well-known/vercel/flags once this PR is merged.
         destination: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : process.env.NEXT_PUBLIC_SITE_URL}${process.env.NEXT_PUBLIC_BASE_PATH}/.well-known/vercel/flags`,
         basePath: false,
       },

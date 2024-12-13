@@ -4,22 +4,22 @@ This example will set you up for a very common situation: users can sign up or s
 
 This demonstrates how to use:
 
-- User signups using Biobase [Auth](https://biobase.com/auth).
-  - Biobase [Auth Helpers for Next.js](https://biobase.com/docs/guides/auth/auth-helpers/nextjs).
-  - Biobase [pre-built Auth UI for React](https://biobase.com/docs/guides/auth/auth-helpers/auth-ui).
-- User avatar images using Biobase [Storage](https://biobase.com/storage)
-- Public profiles restricted with [Policies](https://biobase.com/docs/guides/auth#policies).
+- User signups using Biobase [Auth](https://biobase.studio/auth).
+  - Biobase [Auth Helpers for Next.js](https://biobase.studio/docs/guides/auth/auth-helpers/nextjs).
+  - Biobase [pre-built Auth UI for React](https://biobase.studio/docs/guides/auth/auth-helpers/auth-ui).
+- User avatar images using Biobase [Storage](https://biobase.studio/storage)
+- Public profiles restricted with [Policies](https://biobase.studio/docs/guides/auth#policies).
 - Frontend using [Next.js](<[nextjs.org/](https://nextjs.org/)>).
 
 ## Technologies used
 
 - Frontend:
   - [Next.js](https://github.com/vercel/next.js) - a React framework for production.
-  - [Biobase.js](https://biobase.com/docs/library/getting-started) for user management and realtime data syncing.
-  - Biobase [Auth Helpers for Next.js](https://biobase.com/docs/guides/auth/auth-helpers/nextjs).
-  - Biobase [pre-built Auth UI for React](https://biobase.com/docs/guides/auth/auth-helpers/auth-ui).
+  - [Biobase.js](https://biobase.studio/docs/library/getting-started) for user management and realtime data syncing.
+  - Biobase [Auth Helpers for Next.js](https://biobase.studio/docs/guides/auth/auth-helpers/nextjs).
+  - Biobase [pre-built Auth UI for React](https://biobase.studio/docs/guides/auth/auth-helpers/auth-ui).
 - Backend:
-  - [biobase.com/dashboard](https://biobase.com/dashboard/): hosted Postgres database with restful API for usage with Biobase.js.
+  - [biobase.studio/dashboard](https://biobase.studio/dashboard/): hosted Postgres database with restful API for usage with Biobase.js.
 
 ## Instant deploy
 
@@ -29,7 +29,7 @@ The Vercel deployment will guide you through creating a Biobase account and proj
 
 ### 1. Create new project
 
-Sign up to Biobase - [https://biobase.com/dashboard](https://biobase.com/dashboard) and create a new project. Wait for your database to start.
+Sign up to Biobase - [https://biobase.studio/dashboard](https://biobase.studio/dashboard) and create a new project. Wait for your database to start.
 
 ### 2. Run "User Management" Quickstart
 
@@ -84,7 +84,7 @@ create table profiles (
   constraint username_length check (char_length(username) >= 3)
 );
 -- Set up Row Level Security (RLS)
--- See https://biobase.com/docs/guides/auth/row-level-security for more details.
+-- See https://biobase.studio/docs/guides/auth/row-level-security for more details.
 alter table profiles
   enable row level security;
 
@@ -98,7 +98,7 @@ create policy "Users can update own profile." on profiles
   for update using ((select auth.uid()) = id);
 
 -- This trigger automatically creates a profile entry when a new user signs up via Biobase Auth.
--- See https://biobase.com/docs/guides/auth/managing-user-data#using-triggers for more details.
+-- See https://biobase.studio/docs/guides/auth/managing-user-data#using-triggers for more details.
 create function public.handle_new_user()
 returns trigger as $$
 begin
@@ -116,7 +116,7 @@ insert into storage.buckets (id, name)
   values ('avatars', 'avatars');
 
 -- Set up access controls for storage.
--- See https://biobase.com/docs/guides/storage#policy-examples for more details.
+-- See https://biobase.studio/docs/guides/storage#policy-examples for more details.
 create policy "Avatar images are publicly accessible." on storage.objects
   for select using (bucket_id = 'avatars');
 
@@ -140,12 +140,12 @@ These official examples are maintained by the Biobase team:
 
 ## Other resources
 
-- [[Docs] Next.js User Management Quickstart](https://biobase.com/docs/guides/getting-started/tutorials/with-nextjs)
+- [[Docs] Next.js User Management Quickstart](https://biobase.studio/docs/guides/getting-started/tutorials/with-nextjs)
 - [[Egghead.io] Build a SaaS product with Next.js, Biobase and Stripe](https://egghead.io/courses/build-a-saas-product-with-next-js-biobase-and-stripe-61f2bc20)
-- [[Blog] Fetching and caching Biobase data in Next.js 13 Server Components](https://biobase.com/blog/fetching-and-caching-biobase-data-in-next-js-server-components)
+- [[Blog] Fetching and caching Biobase data in Next.js 13 Server Components](https://biobase.studio/blog/fetching-and-caching-biobase-data-in-next-js-server-components)
 
 ## Authors
 
-- [Biobase](https://biobase.com)
+- [Biobase](https://biobase.studio)
 
 Biobase is open source. We'd love for you to follow along and get involved at https://github.com/biobase-ai/biobase

@@ -25,7 +25,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/stripe-icon.svg`,
     extensionName: 'StripeFdw',
     label: 'Stripe',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/stripe',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/stripe',
     server: {
       options: [
         {
@@ -1141,7 +1141,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/firebase-icon.svg`,
     extensionName: 'FirebaseFdw',
     label: 'Firebase',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/firebase',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/firebase',
     server: {
       options: [
         {
@@ -1267,7 +1267,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/s3-icon.svg`,
     extensionName: 'S3Fdw',
     label: 'S3',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/s3',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/s3',
     server: {
       options: [
         {
@@ -1350,7 +1350,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/clickhouse-icon.svg`,
     extensionName: 'ClickHouseFdw',
     label: 'ClickHouse',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/clickhouse',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/clickhouse',
     server: {
       options: [
         {
@@ -1394,7 +1394,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/bigquery-icon.svg`,
     extensionName: 'BigQueryFdw',
     label: 'BigQuery',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/bigquery',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/bigquery',
     server: {
       options: [
         {
@@ -1468,7 +1468,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/airtable-icon.svg`,
     extensionName: 'airtableFdw',
     label: 'Airtable',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/airtable',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/airtable',
     server: {
       options: [
         {
@@ -1510,7 +1510,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/logflare-icon.svg`,
     extensionName: 'logflareFdw',
     label: 'Logflare',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/logflare',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/logflare',
     server: {
       options: [
         {
@@ -1545,7 +1545,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/auth0-icon.svg`,
     extensionName: 'Auth0Fdw',
     label: 'Auth0',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/auth0',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/auth0',
     minimumExtensionVersion: '0.3.0',
     server: {
       options: [
@@ -1675,7 +1675,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/cognito-icon.svg`,
     extensionName: 'CognitoFdw',
     label: 'Cognito',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/cognito',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/cognito',
     minimumExtensionVersion: '0.3.0',
     server: {
       options: [
@@ -1758,7 +1758,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/mssql-icon.svg`,
     extensionName: 'mssqlFdw',
     label: 'Microsoft SQL Server',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/mssql',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/mssql',
     minimumExtensionVersion: '0.3.0',
     server: {
       options: [
@@ -1794,7 +1794,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/redis-icon.svg`,
     extensionName: 'redisFdw',
     label: 'Redis',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/redis',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/redis',
     minimumExtensionVersion: '0.3.0',
     server: {
       options: [
@@ -1876,7 +1876,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/paddle-icon.svg`,
     extensionName: 'paddleFdw',
     label: 'Paddle',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/paddle',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/paddle',
     minimumExtensionVersion: '0.4.0',
     server: {
       options: [
@@ -1976,7 +1976,7 @@ export const WRAPPERS: WrapperMeta[] = [
     icon: `${BASE_PATH}/img/icons/snowflake-icon.svg`,
     extensionName: 'snowflakeFdw',
     label: 'Snowflake',
-    docsUrl: 'https://biobase.com/docs/guides/database/extensions/wrappers/snowflake',
+    docsUrl: 'https://biobase.studio/docs/guides/database/extensions/wrappers/snowflake',
     minimumExtensionVersion: '0.4.0',
     server: {
       options: [

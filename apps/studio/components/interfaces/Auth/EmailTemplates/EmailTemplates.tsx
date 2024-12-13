@@ -44,7 +44,7 @@ const EmailTemplates = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://biobase.com/docs/guides/auth/auth-email-templates"
+              href="https://biobase.studio/docs/guides/auth/auth-email-templates"
             >
               Documentation
             </a>

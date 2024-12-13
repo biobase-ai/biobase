@@ -397,7 +397,7 @@ If you have email confirmation turned on (the default), a new user will receive 
 
 Change the email template to support a server-side authentication flow.
 
-Go to the [Auth templates](https://biobase.com/dashboard/project/_/auth/templates) page in your dashboard. In the `Confirm signup` template, change `{{ .ConfirmationURL }}` to `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=signup`.
+Go to the [Auth templates](https://biobase.studio/dashboard/project/_/auth/templates) page in your dashboard. In the `Confirm signup` template, change `{{ .ConfirmationURL }}` to `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=signup`.
 
 </StepHikeCompact.Details>
 
@@ -787,7 +787,7 @@ If you have email confirmation turned on (the default), a new user will receive 
 
 Change the email template to support a server-side authentication flow.
 
-Go to the [Auth templates](https://biobase.com/dashboard/project/_/auth/templates) page in your dashboard. In the `Confirm signup` template, change `{{ .ConfirmationURL }}` to `{{ .SiteURL }}/api/auth/confirm?token_hash={{ .TokenHash }}&type=signup`.
+Go to the [Auth templates](https://biobase.studio/dashboard/project/_/auth/templates) page in your dashboard. In the `Confirm signup` template, change `{{ .ConfirmationURL }}` to `{{ .SiteURL }}/api/auth/confirm?token_hash={{ .TokenHash }}&type=signup`.
 
 </StepHikeCompact.Details>
 
@@ -924,7 +924,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
 You can also fetch static data at build time using Biobase. Note that there's no session or user at build time, so the data will be the same for everyone who sees the page.
 
-Add some countries data to your database by running the [Countries Quickstart](https://biobase.com/dashboard/project/_/sql/quickstarts) in the dashboard.
+Add some countries data to your database by running the [Countries Quickstart](https://biobase.studio/dashboard/project/_/sql/quickstarts) in the dashboard.
 
 Then fetch the countries data using `getStaticProps` with the client from `@/utils/biobase/static-props.ts`.
 

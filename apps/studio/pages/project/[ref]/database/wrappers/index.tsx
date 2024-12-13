@@ -58,7 +58,7 @@ const DatabaseWrappers: NextPageWithLayout = () => {
               target="_blank"
               rel="noreferrer"
               className="no-underline"
-              href="https://biobase.com/docs/guides/database/extensions/wrappers/overview"
+              href="https://biobase.studio/docs/guides/database/extensions/wrappers/overview"
             >
               Documentation
             </a>

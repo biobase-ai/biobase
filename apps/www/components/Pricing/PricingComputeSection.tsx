@@ -42,7 +42,7 @@ const PricingComputeSection = () => {
           </div>
           <div className="flex items-center gap-4 mt-4">
             <Button asChild size="tiny" type="default">
-              <Link href="https://biobase.com/docs/guides/platform/compute-add-ons">
+              <Link href="https://biobase.studio/docs/guides/platform/compute-add-ons">
                 Learn about Compute add-ons
               </Link>
             </Button>
@@ -82,7 +82,7 @@ const PricingComputeSection = () => {
                 <p className="text-[13px] text-foreground-lighter">
                   Read more on{' '}
                   <Link
-                    href="https://biobase.com/docs/guides/platform/org-based-billing#billing-for-compute-compute-hours"
+                    href="https://biobase.studio/docs/guides/platform/org-based-billing#billing-for-compute-compute-hours"
                     target="_blank"
                     className="transition text-brand hover:text-brand-600"
                   >
@@ -90,7 +90,7 @@ const PricingComputeSection = () => {
                   </Link>{' '}
                   or{' '}
                   <Link
-                    href="https://biobase.com/docs/guides/platform/compute-add-ons"
+                    href="https://biobase.studio/docs/guides/platform/compute-add-ons"
                     target="_blank"
                     className="transition text-brand hover:text-brand-600"
                   >

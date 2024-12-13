@@ -141,7 +141,7 @@ const navCommands = [
   {
     id: 'nav-integrations',
     name: 'Go to Integrations',
-    route: 'https://biobase.com/partners/integrations',
+    route: 'https://biobase.studio/partners/integrations',
     icon: () => <ArrowRight />,
   },
 ] satisfies ICommand[]

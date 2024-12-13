@@ -12,7 +12,7 @@ You can use the Biobase client libraries to track Presence state between users.
 
 ### Initialize the client
 
-Go to your Biobase project's [API Settings](https://biobase.com/dashboard/project/_/settings/api) and grab the `URL` and `anon` public API key.
+Go to your Biobase project's [API Settings](https://biobase.studio/dashboard/project/_/settings/api) and grab the `URL` and `anon` public API key.
 
 <Tabs
   scrollable
@@ -26,10 +26,10 @@ Go to your Biobase project's [API Settings](https://biobase.com/dashboard/projec
 ```js
 import { createClient } from '@supabase/biobase-js'
 
-const SUPABASE_URL = 'https://<project>.biobase.co'
-const SUPABASE_KEY = '<your-anon-key>'
+const BIOBASE_URL = 'https://<project>.biobase.co'
+const BIOBASE_KEY = '<your-anon-key>'
 
-const biobase = createClient(SUPABASE_URL, SUPABASE_KEY)
+const biobase = createClient(BIOBASE_URL, BIOBASE_KEY)
 ```
 
 </TabPanel>
@@ -76,10 +76,10 @@ val biobase = createBiobaseClient(biobaseUrl, biobaseKey) {
 ```python
 from biobase import create_client
 
-SUPABASE_URL = 'https://<project>.biobase.co'
-SUPABASE_KEY = '<your-anon-key>'
+BIOBASE_URL = 'https://<project>.biobase.co'
+BIOBASE_KEY = '<your-anon-key>'
 
-biobase = create_client(SUPABASE_URL, SUPABASE_KEY)
+biobase = create_client(BIOBASE_URL, BIOBASE_KEY)
 ```
 
 </TabPanel>

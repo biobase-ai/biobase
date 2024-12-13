@@ -58,7 +58,7 @@ const HooksList = ({ createHook = noop, editHook = noop, deleteHook = noop }: Ho
         <div className="flex items-center space-x-2">
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
             <Link
-              href="https://biobase.com/docs/guides/database/webhooks"
+              href="https://biobase.studio/docs/guides/database/webhooks"
               target="_blank"
               rel="noreferrer"
             >

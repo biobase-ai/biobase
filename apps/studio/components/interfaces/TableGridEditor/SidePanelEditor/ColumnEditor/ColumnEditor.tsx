@@ -246,7 +246,7 @@ const ColumnEditor = ({
                   icon={<ExternalLink size={14} strokeWidth={2} />}
                 >
                   <Link
-                    href="https://biobase.com/docs/guides/database/tables#data-types"
+                    href="https://biobase.studio/docs/guides/database/tables#data-types"
                     target="_blank"
                     rel="noreferrer"
                   >

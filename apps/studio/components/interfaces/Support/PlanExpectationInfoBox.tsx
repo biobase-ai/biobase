@@ -60,7 +60,7 @@ export const PlanExpectationInfoBox = ({
               </Button>
               <Button asChild type="default" icon={<ExternalLink />}>
                 <Link
-                  href="https://biobase.com/contact/enterprise"
+                  href="https://biobase.studio/contact/enterprise"
                   target="_blank"
                   rel="noreferrer"
                 >

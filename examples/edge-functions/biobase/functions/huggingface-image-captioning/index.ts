@@ -20,9 +20,9 @@ Deno.serve(async (req) => {
   const soRecord = payload.record
   const biobaseAdminClient = createClient<Database>(
     // Biobase API URL - env var exported by default when deployed.
-    Deno.env.get('SUPABASE_URL') ?? '',
+    Deno.env.get('BIOBASE_URL') ?? '',
     // Biobase API SERVICE ROLE KEY - env var exported by default when deployed.
-    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+    Deno.env.get('BIOBASE_SERVICE_ROLE_KEY') ?? ''
   )
 
   // Construct image url from storage

@@ -36,8 +36,8 @@ Create or edit the `local.properties` file at the root (same level as `build.gra
 > **Note**: Do not commit this file to your source control, for example, by adding it to your `.gitignore` file!
 
 ```kotlin
-SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
-SUPABASE_URL=YOUR_SUPABASE_URL
+BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
+BIOBASE_URL=YOUR_BIOBASE_URL
 ```
 
 #### Read and set value to `BuildConfig`
@@ -56,9 +56,9 @@ defaultConfig {
    // Set value part
    Properties properties = new Properties()
    properties.load(project.rootProject.file("local.properties").newDataInputStream())
-   buildConfigField("String", "SUPABASE_ANON_KEY", "\"${properties.getProperty("SUPABASE_ANON_KEY")}\"")
+   buildConfigField("String", "BIOBASE_ANON_KEY", "\"${properties.getProperty("BIOBASE_ANON_KEY")}\"")
    buildConfigField("String", "SECRET", "\"${properties.getProperty("SECRET")}\"")
-   buildConfigField("String", "SUPABASE_URL", "\"${properties.getProperty("SUPABASE_URL")}\"")
+   buildConfigField("String", "BIOBASE_URL", "\"${properties.getProperty("BIOBASE_URL")}\"")
 }
 ```
 
@@ -67,8 +67,8 @@ defaultConfig {
 Read the value from `BuildConfig`:
 
 ```kotlin
-val url = BuildConfig.SUPABASE_URL
-val apiKey = BuildConfig.SUPABASE_ANON_KEY
+val url = BuildConfig.BIOBASE_URL
+val apiKey = BuildConfig.BIOBASE_ANON_KEY
 ```
 
 ### Set up Biobase dependencies
@@ -147,14 +147,14 @@ object BiobaseModule {
     @Singleton
     fun provideBiobaseClient(): BiobaseClient {
         return createBiobaseClient(
-            biobaseUrl = BuildConfig.SUPABASE_URL,
-            biobaseKey = BuildConfig.SUPABASE_ANON_KEY
+            biobaseUrl = BuildConfig.BIOBASE_URL,
+            biobaseKey = BuildConfig.BIOBASE_ANON_KEY
         ) {
             install(Postgrest)
             install(Auth) {
                 flowType = FlowType.PKCE
                 scheme = "app"
-                host = "biobase.com"
+                host = "biobase.studio"
             }
             install(Storage)
         }
@@ -323,7 +323,7 @@ class ProductRepositoryImpl @Inject constructor(
     // Because I named the bucket as "Product Image" so when it turns to an url, it is "%20"
     // For better approach, you should create your bucket name without space symbol
     private fun buildImageUrl(imageFileName: String) =
-        "${BuildConfig.SUPABASE_URL}/storage/v1/object/public/${imageFileName}".replace(" ", "%20")
+        "${BuildConfig.BIOBASE_URL}/storage/v1/object/public/${imageFileName}".replace(" ", "%20")
 }
 ```
 
@@ -1309,7 +1309,7 @@ To handle OAuth and OTP signins, create a new activity to handle the deeplink yo
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
-                    android:host="biobase.com"
+                    android:host="biobase.studio"
                     android:scheme="app" />
             </intent-filter>
         </activity>

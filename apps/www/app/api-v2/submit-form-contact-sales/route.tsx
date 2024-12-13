@@ -77,7 +77,7 @@ export async function POST(req: Request) {
             { objectTypeId: '0-1', name: 'message', value: message },
           ],
           context: {
-            pageUri: 'https://biobase.com/contact/sales',
+            pageUri: 'https://biobase.studio/contact/sales',
             pageName: 'Enterprise Demo Request Form',
           },
           legalConsentOptions: {

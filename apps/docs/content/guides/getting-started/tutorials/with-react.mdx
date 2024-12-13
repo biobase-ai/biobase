@@ -39,8 +39,8 @@ And finally we want to save the environment variables in a `.env.local` file.
 All we need are the API URL and the `anon` key that you copied [earlier](#get-the-api-keys).
 
 ```bash .env
-VITE_SUPABASE_URL=YOUR_SUPABASE_URL
-VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+VITE_BIOBASE_URL=YOUR_BIOBASE_URL
+VITE_BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
 ```
 
 Now that we have the API credentials in place, let's create a helper file to initialize the Biobase client. These variables will be exposed
@@ -51,8 +51,8 @@ Create and edit `src/biobaseClient.js`:
 ```js src/biobaseClient.js
 import { createClient } from '@supabase/biobase-js'
 
-const biobaseUrl = import.meta.env.VITE_SUPABASE_URL
-const biobaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+const biobaseUrl = import.meta.env.VITE_BIOBASE_URL
+const biobaseAnonKey = import.meta.env.VITE_BIOBASE_ANON_KEY
 
 export const biobase = createClient(biobaseUrl, biobaseAnonKey)
 ```

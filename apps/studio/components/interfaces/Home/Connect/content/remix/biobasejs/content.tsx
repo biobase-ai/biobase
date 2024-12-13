@@ -20,8 +20,8 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
       <ConnectTabContent value=".env">
         <SimpleCodeBlock className="bash" parentClassName="min-h-72">
           {`
-SUPABASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
-SUPABASE_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
+BIOBASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
+BIOBASE_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
         `}
         </SimpleCodeBlock>
       </ConnectTabContent>
@@ -36,8 +36,8 @@ export function createClient(request: Request) {
   const headers = new Headers();
 
   return createServerClient(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_ANON_KEY!,
+    process.env.BIOBASE_URL!,
+    process.env.BIOBASE_ANON_KEY!,
     {
       cookies: {
         get(key) {

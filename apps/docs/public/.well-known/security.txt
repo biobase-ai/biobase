@@ -1,5 +1,5 @@
 Contact: https://hackerone.com/biobase
-Canonical: https://biobase.com/.well-known/security.txt
+Canonical: https://biobase.studio/.well-known/security.txt
 
 
 At Biobase, we consider the security of our systems a top priority. But no matter how much effort we put into system security, there can still be vulnerabilities present.

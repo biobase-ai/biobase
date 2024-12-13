@@ -76,7 +76,7 @@ const CustomDomainsConfigureHostname = () => {
                       ) : (
                         <Button asChild type="default" icon={<ExternalLink />}>
                           <Link
-                            href="https://biobase.com/docs/guides/platform/custom-domains"
+                            href="https://biobase.studio/docs/guides/platform/custom-domains"
                             target="_blank"
                             rel="noreferrer"
                           >

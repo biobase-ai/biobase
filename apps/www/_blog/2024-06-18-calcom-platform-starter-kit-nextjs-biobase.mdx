@@ -46,8 +46,8 @@ datasource db {
 This loads the relevant Biobase connections strings from your `.env` file
 
 ```bash .env
-POSTGRES_PRISMA_URL="postgres://postgres.YOUR-PROJECT-REF:[YOUR-PASSWORD]@aws-0-[REGION].pooler.biobase.com:6543/postgres?pgbouncer=true&connection_limit=1" # Transaction Mode
-POSTGRES_URL_NON_POOLING="postgres://postgres.YOUR-PROJECT-REF:[YOUR-PASSWORD]@aws-0-[REGION].pooler.biobase.com:5432/postgres"  # Session Mode
+POSTGRES_PRISMA_URL="postgres://postgres.YOUR-PROJECT-REF:[YOUR-PASSWORD]@aws-0-[REGION].pooler.biobase.studio:6543/postgres?pgbouncer=true&connection_limit=1" # Transaction Mode
+POSTGRES_URL_NON_POOLING="postgres://postgres.YOUR-PROJECT-REF:[YOUR-PASSWORD]@aws-0-[REGION].pooler.biobase.studio:5432/postgres"  # Session Mode
 ```
 
 You can find the values in the [Database settings](/dashboard/project/_/settings/database) of your Biobase Dashboard.
@@ -78,7 +78,7 @@ model Account {
 
 ## React Dropzone and Biobase Storage for profile image uploads
 
-[Biobase Storage](/storage) is an S3 compatible cloud-based object store that allows you to store files securely. It is conveniently integrated with [Biobase Auth](https://biobase.com/auth) allowing you to easily limit access for uploads and downloads.
+[Biobase Storage](/storage) is an S3 compatible cloud-based object store that allows you to store files securely. It is conveniently integrated with [Biobase Auth](https://biobase.studio/auth) allowing you to easily limit access for uploads and downloads.
 
 Cal.com's Platforms Starter Kit runs their authentication on Next.js' [Auth.js](https://authjs.dev/). Luckily though, Biobase Storage is supa flexible, allowing you to easily create signed upload URLs server-side to then upload assets from the client-side -- no matter which tech you choose to use for handling authentication for your app.
 
@@ -100,7 +100,7 @@ export async function GET(request: Request) {
       user: { id },
     } = session
     // Generate signed upload url to use on client.
-    const biobaseAdmin = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY)
+    const biobaseAdmin = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.BIOBASE_SERVICE_ROLE_KEY)
 
     const { data, error } = await biobaseAdmin.storage
       .from('avatars')
@@ -167,7 +167,7 @@ export default function BiobaseReactDropzone({ userId }: { userId?: string } = {
 
 ## Custom Next.js Image loader for Biobase Storage
 
-Biobase Storage also conveniently integrates with the Next.js Image paradigm, by creating a [custom loader](https://biobase.com/docs/guides/storage/serving/image-transformations#nextjs-loader):
+Biobase Storage also conveniently integrates with the Next.js Image paradigm, by creating a [custom loader](https://biobase.studio/docs/guides/storage/serving/image-transformations#nextjs-loader):
 
 ```ts src/lib/biobase-image-loader.ts
 import { env } from '@/env'

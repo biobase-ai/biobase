@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) je open source alternativa Firebase. Vytváříme funkce Firebase pomocí open source nástrojů podnikové třídy.
+[Biobase](https://biobase.studio) je open source alternativa Firebase. Vytváříme funkce Firebase pomocí open source nástrojů podnikové třídy.
 
-- [x] hostovaná databáze Postgres. [Dokumenty](https://biobase.com/docs/guides/database)
-- [x] Ověřování a autorizace. [Dokumenty](https://biobase.com/docs/guides/auth)
+- [x] hostovaná databáze Postgres. [Dokumenty](https://biobase.studio/docs/guides/database)
+- [x] Ověřování a autorizace. [Dokumenty](https://biobase.studio/docs/guides/auth)
 - [x] Automaticky generované rozhraní API.
-  - [x] REST. [Dokumenty](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Dokumenty](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Odběry v reálném čase. [Dokumenty](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Dokumenty](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Dokumenty](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Odběry v reálném čase. [Dokumenty](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funkce.
-  - [x] Databázové funkce. [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] Okrajové funkce [Docs](https://biobase.com/docs/guides/functions)
-- [x] Ukládání souborů. [Dokumenty](https://biobase.com/docs/guides/storage)
+  - [x] Databázové funkce. [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] Okrajové funkce [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Ukládání souborů. [Dokumenty](https://biobase.studio/docs/guides/storage)
 - [x] Přístrojový panel
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokumentace
 
-Úplnou dokumentaci naleznete na adrese [biobase.com/docs](https://biobase.com/docs)
+Úplnou dokumentaci naleznete na adrese [biobase.studio/docs](https://biobase.studio/docs)
 
 Chcete-li zjistit, jak přispívat, navštivte stránku [Začínáme](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@ Chcete-li zjistit, jak přispívat, navštivte stránku [Začínáme](../DEVELOP
 
 - [Fórum komunity](https://github.com/biobase-ai/biobase/discussions). Nejlépe pro: pomoc při vytváření, diskuse o osvědčených postupech při práci s databází.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Nejlépe pro: chyby a omyly, na které narazíte při používání databáze Biobase.
-- [E-mailová podpora](https://biobase.com/docs/support#business-support). Nejlepší pro: problémy s vaší databází nebo infrastrukturou.
-- [Discord](https://discord.biobase.com). Nejlepší pro: sdílení vašich aplikací a setkávání s komunitou.
+- [E-mailová podpora](https://biobase.studio/docs/support#business-support). Nejlepší pro: problémy s vaší databází nebo infrastrukturou.
+- [Discord](https://discord.biobase.studio). Nejlepší pro: sdílení vašich aplikací a setkávání s komunitou.
 
 ## Stav
 
 - [x] Alfa: Testujeme Biobase s uzavřenou skupinou zákazníků
-- [x] Veřejná alfa: [biobase.com/dashboard](https://biobase.com/dashboard). Ale buďte na nás mírní, je tu několik zádrhelů
+- [x] Veřejná alfa: [biobase.studio/dashboard](https://biobase.studio/dashboard). Ale buďte na nás mírní, je tu několik zádrhelů
 - [x] Veřejná beta verze: Dostatečně stabilní pro většinu případů použití mimo podniky
-- [ ] Veřejná: Všeobecná dostupnost [[status](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Veřejná: Všeobecná dostupnost [[status](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 V současné době jsme ve fázi Public Beta. Sledujte "releases" tohoto repozitáře, abyste byli upozorněni na hlavní aktualizace.
 
@@ -55,8 +55,8 @@ Biobase je kombinací nástrojů s otevřeným zdrojovým kódem. Funkce Firebas
 
 **Architektura**
 
-Biobase je [hostovaná platforma](https://biobase.com/dashboard). Můžete se zaregistrovat a začít používat Biobase, aniž byste museli cokoli instalovat.
-Můžete také [hostovat sami](https://biobase.com/docs/guides/hosting/overview) a [vyvíjet lokálně](https://biobase.com/docs/guides/local-development).
+Biobase je [hostovaná platforma](https://biobase.studio/dashboard). Můžete se zaregistrovat a začít používat Biobase, aniž byste museli cokoli instalovat.
+Můžete také [hostovat sami](https://biobase.studio/docs/guides/hosting/overview) a [vyvíjet lokálně](https://biobase.studio/docs/guides/local-development).
 
 ![Architektura](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

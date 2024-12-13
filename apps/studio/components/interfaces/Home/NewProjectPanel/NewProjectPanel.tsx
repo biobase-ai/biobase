@@ -54,7 +54,7 @@ const NewProjectPanel = () => {
                 </Button>
                 <Button asChild type="default" icon={<ExternalLink />}>
                   <Link
-                    href="https://biobase.com/docs/guides/database"
+                    href="https://biobase.studio/docs/guides/database"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -103,7 +103,7 @@ const NewProjectPanel = () => {
                         asChild
                       >
                         <Link
-                          href="https://biobase.com/docs/guides/auth"
+                          href="https://biobase.studio/docs/guides/auth"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -139,7 +139,7 @@ const NewProjectPanel = () => {
                         asChild
                       >
                         <Link
-                          href="https://biobase.com/docs/guides/storage"
+                          href="https://biobase.studio/docs/guides/storage"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -175,7 +175,7 @@ const NewProjectPanel = () => {
                         asChild
                       >
                         <Link
-                          href="https://biobase.com/docs/guides/functions"
+                          href="https://biobase.studio/docs/guides/functions"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -209,7 +209,7 @@ const NewProjectPanel = () => {
                         asChild
                       >
                         <Link
-                          href="https://biobase.com/docs/guides/realtime"
+                          href="https://biobase.studio/docs/guides/realtime"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -231,7 +231,7 @@ const NewProjectPanel = () => {
             <h3 className="text-xl text-foreground">Connecting to your new project</h3>
             <p className="text-base text-foreground-light lg:max-w-sm">
               Interact with your database through the{' '}
-              <Link href="https://biobase.com/docs/reference" className="text-brand">
+              <Link href="https://biobase.studio/docs/reference" className="text-brand">
                 Biobase client libraries
               </Link>{' '}
               with your API keys.
@@ -247,7 +247,7 @@ const NewProjectPanel = () => {
             </Button>
             <Button asChild className="translate-y-[1px]" type="default" icon={<ExternalLink />}>
               <Link
-                href="https://biobase.com/docs/guides/database/api"
+                href="https://biobase.studio/docs/guides/database/api"
                 target="_blank"
                 rel="noreferrer"
               >

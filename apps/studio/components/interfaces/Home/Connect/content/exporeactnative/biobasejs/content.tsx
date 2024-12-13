@@ -20,8 +20,8 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
       <ConnectTabContent value=".env.local">
         <SimpleCodeBlock className="bash" parentClassName="min-h-72">
           {`
-EXPO_PUBLIC_SUPABASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
-EXPO_PUBLIC_SUPABASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
+EXPO_PUBLIC_BIOBASE_URL=${projectKeys.apiUrl ?? 'your-project-url'}
+EXPO_PUBLIC_BIOBASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
         `}
         </SimpleCodeBlock>
       </ConnectTabContent>
@@ -34,8 +34,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { createClient } from '@supabase/biobase-js'
 
 export const biobase = createClient(
-  process.env.EXPO_PUBLIC_SUPABASE_URL || "",
-  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY || "",
+  process.env.EXPO_PUBLIC_BIOBASE_URL || "",
+  process.env.EXPO_PUBLIC_BIOBASE_ANON_KEY || "",
   {
     auth: {
       storage: AsyncStorage,

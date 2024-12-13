@@ -26,10 +26,10 @@ const Partners = () => {
         openGraph={{
           title: pageData.metaTitle,
           description: pageData.metaDescription,
-          url: `https://biobase.com/partners`,
+          url: `https://biobase.studio/partners`,
           images: [
             {
-              url: `https://biobase.com${router.basePath}/images/og/integrations.png`, // TODO
+              url: `https://biobase.studio${router.basePath}/images/og/integrations.png`, // TODO
             },
           ],
         }}
@@ -106,7 +106,7 @@ const Partners = () => {
                 Discover how technology and consulting partners are already working with Biobase.
               </p>
               <TextLink
-                url="https://biobase.com/docs/guides/platform/marketplace"
+                url="https://biobase.studio/docs/guides/platform/marketplace"
                 label="View docs"
               />
             </div>
@@ -215,7 +215,7 @@ const Partners = () => {
                   projects programmatically.
                 </p>
                 <TextLink
-                  url="https://biobase.com/docs/guides/platform/oauth-apps/publish-an-oauth-app"
+                  url="https://biobase.studio/docs/guides/platform/oauth-apps/publish-an-oauth-app"
                   label="Learn more"
                 />
               </div>
@@ -238,7 +238,7 @@ const Partners = () => {
             </h2>
             <div className="w-full mt-4 flex items-center justify-center text-center gap-4">
               <Button asChild size="medium">
-                <Link href="https://forms.biobase.com/partner" tabIndex={-1}>
+                <Link href="https://forms.biobase.studio/partner" tabIndex={-1}>
                   Become a Partner
                 </Link>
               </Button>

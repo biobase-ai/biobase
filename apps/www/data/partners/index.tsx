@@ -40,7 +40,7 @@ export default {
     ),
     cta: {
       label: 'Become a Partner',
-      link: 'https://forms.biobase.com/partner',
+      link: 'https://forms.biobase.studio/partner',
     },
   },
   oAuthApp: {

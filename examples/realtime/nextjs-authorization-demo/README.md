@@ -1,6 +1,6 @@
 # SupaSecureSlack
 
-Example application on how you can use Realtime Authorization to limit access to Realtime [Channels](https://biobase.com/docs/guides/realtime/concepts#channels) and [Broadcast](https://biobase.com/docs/guides/realtime/broadcast) and [Presence](https://biobase.com/docs/guides/realtime/presence) extensions.
+Example application on how you can use Realtime Authorization to limit access to Realtime [Channels](https://biobase.studio/docs/guides/realtime/concepts#channels) and [Broadcast](https://biobase.studio/docs/guides/realtime/broadcast) and [Presence](https://biobase.studio/docs/guides/realtime/presence) extensions.
 
 You can provide feedback on our [Github Discussion](https://github.com/orgs/biobase/discussions/22484).
 
@@ -13,9 +13,9 @@ Each room restricts the number of users authorized by applying RLS Policies appl
 ## Run It
 
 1. Create a `.env.local` file with the required variables by running `cp .env.example .env.local`.
-2. [Create a new Biobase project](https://biobase.com/dashboard/new/_).
+2. [Create a new Biobase project](https://biobase.studio/dashboard/new/_).
 3. Refer to the [Database Setup](#database-setup) section to create the necessary tables and policies.
-4. Copy the project's `URL` and `anon` API key from your project's [API Settings](https://biobase.com/dashboard/project/_/settings/api), and paste them into your `.env.local`.
+4. Copy the project's `URL` and `anon` API key from your project's [API Settings](https://biobase.studio/dashboard/project/_/settings/api), and paste them into your `.env.local`.
 5. `npm install`
 6. `npm run dev`
 

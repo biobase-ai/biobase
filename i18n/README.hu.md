@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) egy nyílt forráskódú Firebase alternatíva. A Firebase funkcióit vállalati szintű nyílt forráskódú eszközökkel építjük ki.
+[Biobase](https://biobase.studio) egy nyílt forráskódú Firebase alternatíva. A Firebase funkcióit vállalati szintű nyílt forráskódú eszközökkel építjük ki.
 
-- [x] Hosted Postgres adatbázis. [Docs](https://biobase.com/docs/guides/database)
-- [x] Hitelesítés és engedélyezés. [Docs](https://biobase.com/docs/guides/auth)
+- [x] Hosted Postgres adatbázis. [Docs](https://biobase.studio/docs/guides/database)
+- [x] Hitelesítés és engedélyezés. [Docs](https://biobase.studio/docs/guides/auth)
 - [x] Automatikusan generált API-k.
-  - [x] REST. [Docs](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Docs](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Valós idejű előfizetések. [Docs](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Docs](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Docs](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Valós idejű előfizetések. [Docs](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funkciók.
-  - [x] Database Functions. [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] Edge Functions [Docs](https://biobase.com/docs/guides/functions)
-- [x] Fájlok tárolása. [Docs](https://biobase.com/docs/guides/storage)
+  - [x] Database Functions. [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] Edge Functions [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Fájlok tárolása. [Docs](https://biobase.studio/docs/guides/storage)
 - [x] Dashboard
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokumentáció
 
-A teljes dokumentációért látogasson el [biobase.com/docs](https://biobase.com/docs)
+A teljes dokumentációért látogasson el [biobase.studio/docs](https://biobase.studio/docs)
 
 A Contribute-hoz való hozzájáruláshoz látogasson el a [Getting Started](../DEVELOPERS.md) oldalra
 
@@ -33,15 +33,15 @@ A Contribute-hoz való hozzájáruláshoz látogasson el a [Getting Started](../
 
 - [Közösségi fórum](https://github.com/biobase-ai/biobase/discussions). Legjobb: segítség az építéshez, az adatbázis legjobb gyakorlatainak megvitatása.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Legjobb: hibák és hibák, amelyekkel a Biobase használatával találkozol.
-- [Email Support](https://biobase.com/docs/support#business-support). Legjobb: az adatbázisoddal vagy az infrastruktúrával kapcsolatos problémákra.
-- [Discord](https://discord.biobase.com). A legjobb: az alkalmazások megosztására és a közösséggel való együttlétre.
+- [Email Support](https://biobase.studio/docs/support#business-support). Legjobb: az adatbázisoddal vagy az infrastruktúrával kapcsolatos problémákra.
+- [Discord](https://discord.biobase.studio). A legjobb: az alkalmazások megosztására és a közösséggel való együttlétre.
 
 ## Állapot
 
 - [x] Alpha: A Biobase-t egy zárt ügyfélkörrel teszteljük
-- [x] Nyilvános alfa: Bárki regisztrálhat az [biobase.com/dashboard](https://biobase.com/dashboard) oldalon. De legyetek óvatosak velünk, van még néhány hiba
+- [x] Nyilvános alfa: Bárki regisztrálhat az [biobase.studio/dashboard](https://biobase.studio/dashboard) oldalon. De legyetek óvatosak velünk, van még néhány hiba
 - [x] Nyilvános béta: Elég stabil a legtöbb nem vállalati felhasználási esethez
-- [ ] Nyilvános: Általános elérhetőség [[status](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Nyilvános: Általános elérhetőség [[status](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 Jelenleg nyilvános béta verzióban vagyunk. Figyelje a "releases" ezen repo-t, hogy értesítést kapjon a fontosabb frissítésekről.
 
@@ -55,8 +55,8 @@ A Biobase nyílt forráskódú eszközök kombinációja. A Firebase funkcióit 
 
 **Architektúra**
 
-A Biobase egy [hosztolt platform](https://biobase.com/dashboard). Regisztrálhat és elkezdheti használni a Biobase-t anélkül, hogy bármit telepítene.
-Önállóan is [hosztolhat](https://biobase.com/docs/guides/hosting/overview) és [fejleszthet helyben](https://biobase.com/docs/guides/local-development).
+A Biobase egy [hosztolt platform](https://biobase.studio/dashboard). Regisztrálhat és elkezdheti használni a Biobase-t anélkül, hogy bármit telepítene.
+Önállóan is [hosztolhat](https://biobase.studio/docs/guides/hosting/overview) és [fejleszthet helyben](https://biobase.studio/docs/guides/local-development).
 
 ![Architektúra](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

@@ -82,8 +82,8 @@ functions:
           import os
           from biobase import create_client, Client
 
-          url: str = os.environ.get("SUPABASE_URL")
-          key: str = os.environ.get("SUPABASE_KEY")
+          url: str = os.environ.get("BIOBASE_URL")
+          key: str = os.environ.get("BIOBASE_KEY")
           biobase: Client = create_client(url, key)
           ```
       - id: with-timeout-option
@@ -94,8 +94,8 @@ functions:
           from biobase import create_client, Client
           from biobase.client import ClientOptions
 
-          url: str = os.environ.get("SUPABASE_URL")
-          key: str = os.environ.get("SUPABASE_KEY")
+          url: str = os.environ.get("BIOBASE_URL")
+          key: str = os.environ.get("BIOBASE_KEY")
           biobase: Client = create_client(url, key,
             options=ClientOptions(
               postgrest_client_timeout=10,
@@ -154,11 +154,11 @@ functions:
                   The channel to use for sending messages.
                   Only for phone signups.
     notes: |
-      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://biobase.com/dashboard/project/_/auth/providers).
+      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://biobase.studio/dashboard/project/_/auth/providers).
       - **Confirm email** determines if users need to confirm their email address after signing up.
         - If **Confirm email** is enabled, a `user` is returned but `session` is null.
         - If **Confirm email** is disabled, both a `user` and a `session` are returned.
-      - By default, when the user confirms their email address, they are redirected to the [`SITE_URL`](https://biobase.com/docs/guides/auth/redirect-urls). You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://biobase.com/dashboard/project/_/auth/url-configuration).
+      - By default, when the user confirms their email address, they are redirected to the [`SITE_URL`](https://biobase.studio/docs/guides/auth/redirect-urls). You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://biobase.studio/dashboard/project/_/auth/url-configuration).
       - If sign_up() is called for an existing confirmed user:
         - When both **Confirm email** and **Confirm phone** (even when phone provider is disabled) are enabled in [your project](/dashboard/project/_/auth/providers), an obfuscated/fake user object is returned.
         - When either **Confirm email** or **Confirm phone** (even when phone provider is disabled) is disabled, the error message, `User already registered` is returned.
@@ -594,7 +594,7 @@ functions:
       - If you're using phone, you can configure whether you want the user to receive a OTP.
       - The magic link's destination URL is determined by the [`SITE_URL`](/docs/guides/auth/redirect-urls).
       - See [redirect URLs and wildcards](/docs/guides/auth/overview#redirect-urls-and-wildcards) to add additional redirect URLs to your project.
-      - Magic links and OTPs share the same implementation. To send users a one-time code instead of a magic link, [modify the magic link email template](https://biobase.com/dashboard/project/_/auth/templates) to include `{{ .Token }}` instead of `{{ .ConfirmationURL }}`.
+      - Magic links and OTPs share the same implementation. To send users a one-time code instead of a magic link, [modify the magic link email template](https://biobase.studio/dashboard/project/_/auth/templates) to include `{{ .Token }}` instead of `{{ .ConfirmationURL }}`.
     examples:
       - id: sign-in-with-email
         name: Sign in with email
@@ -6765,7 +6765,7 @@ functions:
   - id: from-get-public-url
     title: 'from_.get_public_url()'
     notes: |
-      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/python/storage-updatebucket) or by going to Storage on [biobase.com/dashboard](https://biobase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
+      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/python/storage-updatebucket) or by going to Storage on [biobase.studio/dashboard](https://biobase.studio/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
       - RLS policy permissions required:
         - `buckets` table permissions: none
         - `objects` table permissions: none

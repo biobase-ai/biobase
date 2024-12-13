@@ -5,19 +5,19 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) är ett alternativ till Firebase med öppen källkod. Vi bygger upp funktionerna från Firebase med hjälp av öppen källkod-verktyg i företagsklass.
+[Biobase](https://biobase.studio) är ett alternativ till Firebase med öppen källkod. Vi bygger upp funktionerna från Firebase med hjälp av öppen källkod-verktyg i företagsklass.
 
-- [x] Hosted Postgres-databas. [Docs](https://biobase.com/docs/guides/database)
-- [x] Autentisering och auktorisering. [Docs](https://biobase.com/docs/guides/auth)
+- [x] Hosted Postgres-databas. [Docs](https://biobase.studio/docs/guides/database)
+- [x] Autentisering och auktorisering. [Docs](https://biobase.studio/docs/guides/auth)
 - [x] Automatiskt genererade API:er.
-  - [x] REST. [Docs](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Docs](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Prenumerationer i realtid. [Dokument](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Docs](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Docs](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Prenumerationer i realtid. [Dokument](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funktioner.
-  - [x] Databasfunktioner. [Dokument](https://biobase.com/docs/guides/database/functions)
-  - [x] Edge-funktioner [Docs](https://biobase.com/docs/guides/functions)
-- [x] Lagring av filer. [Docs](https://biobase.com/docs/guides/storage)
-- [x] AI + Vektor/Inbäddningsverktyg. [Docs](https://biobase.com/docs/guides/ai)
+  - [x] Databasfunktioner. [Dokument](https://biobase.studio/docs/guides/database/functions)
+  - [x] Edge-funktioner [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Lagring av filer. [Docs](https://biobase.studio/docs/guides/storage)
+- [x] AI + Vektor/Inbäddningsverktyg. [Docs](https://biobase.studio/docs/guides/ai)
 - [x] Kontrollpanel
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
@@ -28,7 +28,7 @@ Bevaka "releases" i denna repo för att få information om större uppdateringar
 
 ## Dokumentation
 
-Fullständig dokumentation finns på [biobase.com/docs](https://biobase.com/docs)
+Fullständig dokumentation finns på [biobase.studio/docs](https://biobase.studio/docs)
 
 För att se hur man bidrar, besök [Getting Started](../DEVELOPERS.md)
 
@@ -36,8 +36,8 @@ För att se hur man bidrar, besök [Getting Started](../DEVELOPERS.md)
 
 - [Community Forum](https://github.com/biobase-ai/biobase/discussions). Bäst för: hjälp med att bygga, diskussion om bästa praxis för databaser.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Bäst för: buggar och fel som du stöter på när du använder Biobase.
-- [E-postsupport](https://biobase.com/docs/support#business-support). Bäst för: problem med din databas eller infrastruktur.
-- [Discord](https://discord.biobase.com). Bäst för: att dela med dig av dina applikationer och umgås med gemenskapen.
+- [E-postsupport](https://biobase.studio/docs/support#business-support). Bäst för: problem med din databas eller infrastruktur.
+- [Discord](https://discord.biobase.studio). Bäst för: att dela med dig av dina applikationer och umgås med gemenskapen.
 
 ## Hur det fungerar
 
@@ -45,8 +45,8 @@ Biobase är en kombination av verktyg med öppen källkod. Vi bygger funktionern
 
 **Arkitektur**
 
-Biobase är en [värdplattform](https://biobase.com/dashboard). Du kan registrera dig och börja använda Biobase utan att installera något.
-Du kan också [självhosta](https://biobase.com/docs/guides/hosting/overview) och [utveckla lokalt](https://biobase.com/docs/guides/local-development).
+Biobase är en [värdplattform](https://biobase.studio/dashboard). Du kan registrera dig och börja använda Biobase utan att installera något.
+Du kan också [självhosta](https://biobase.studio/docs/guides/hosting/overview) och [utveckla lokalt](https://biobase.studio/docs/guides/local-development).
 
 ![Arkitektur](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 
@@ -203,15 +203,15 @@ Vårt tillvägagångssätt för klientbibliotek är modulärt. Varje delbibliote
 ![Made with Biobase](../apps/www/public/badge-made-with-biobase.svg)
 
 ```md
-[![Made with Biobase](https://biobase.com/badge-made-with-biobase.svg)](https://biobase.com)
+[![Made with Biobase](https://biobase.studio/badge-made-with-biobase.svg)](https://biobase.studio)
 ```
 
 ```html
-<a href="https://biobase.com">
+<a href="https://biobase.studio">
   <img
     width="168"
     height="30"
-    src="https://biobase.com/badge-made-with-biobase.svg"
+    src="https://biobase.studio/badge-made-with-biobase.svg"
     alt="Made with Biobase"
   />
 </a>
@@ -220,15 +220,15 @@ Vårt tillvägagångssätt för klientbibliotek är modulärt. Varje delbibliote
 ![Made with Biobase (dark)](../apps/www/public/badge-made-with-biobase-dark.svg)
 
 ```md
-[![Made with Biobase](https://biobase.com/badge-made-with-biobase-dark.svg)](https://biobase.com)
+[![Made with Biobase](https://biobase.studio/badge-made-with-biobase-dark.svg)](https://biobase.studio)
 ```
 
 ```html
-<a href="https://biobase.com">
+<a href="https://biobase.studio">
   <img
     width="168"
     height="30"
-    src="https://biobase.com/badge-made-with-biobase-dark.svg"
+    src="https://biobase.studio/badge-made-with-biobase-dark.svg"
     alt="Made with Biobase"
   />
 </a>

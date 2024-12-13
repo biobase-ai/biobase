@@ -21,7 +21,7 @@ async function generateEmbeddings() {
 
   const requiredEnvVars = [
     'NEXT_PUBLIC_SUPABASE_URL',
-    'SUPABASE_SERVICE_ROLE_KEY',
+    'BIOBASE_SERVICE_ROLE_KEY',
     'OPENAI_API_KEY',
     'NEXT_PUBLIC_MISC_USE_URL',
     'NEXT_PUBLIC_MISC_USE_ANON_KEY',
@@ -41,7 +41,7 @@ async function generateEmbeddings() {
   const biobaseClient = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
     // eslint-disable-next-line turbo/no-undeclared-env-vars
-    process.env.SUPABASE_SERVICE_ROLE_KEY,
+    process.env.BIOBASE_SERVICE_ROLE_KEY,
     {
       auth: {
         persistSession: false,

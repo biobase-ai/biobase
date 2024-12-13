@@ -2,15 +2,15 @@
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>'Postgres | Biobase Blog</title>
-      <link>https://biobase.com/blog</link>
+      <link>https://biobase.studio/blog</link>
       <description>Latest Postgres news from Philipp Steinrötter at Biobase</description>
       <language>en</language>
       <lastBuildDate>Thu, 07 Dec 2023 23:00:00 GMT</lastBuildDate>
-      <atom:link href="https://biobase.com/planetpg-philipp-rss.xml" rel="self" type="application/rss+xml"/>
+      <atom:link href="https://biobase.studio/planetpg-philipp-rss.xml" rel="self" type="application/rss+xml"/>
       <item>
-  <guid>https://biobase.com/blog/postgres-language-server-implementing-parser</guid>
+  <guid>https://biobase.studio/blog/postgres-language-server-implementing-parser</guid>
   <title>Postgres Language Server: implementing the Parser</title>
-  <link>https://biobase.com/blog/postgres-language-server-implementing-parser</link>
+  <link>https://biobase.studio/blog/postgres-language-server-implementing-parser</link>
   <description>A detailed analysis of our iterations to implement a Parser for Postgres</description>
   <pubDate>Thu, 07 Dec 2023 23:00:00 GMT</pubDate>
 </item>

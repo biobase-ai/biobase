@@ -21166,7 +21166,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
         },
         "comment": {
           "shortText": "Return \`data\` as the EXPLAIN plan for the query.",
-          "text": "You need to enable the\\n[db_plan_enabled](https://biobase.com/docs/guides/database/debugging-performance#enabling-explain)\\nsetting before using this method.\\n"
+          "text": "You need to enable the\\n[db_plan_enabled](https://biobase.studio/docs/guides/database/debugging-performance#enabling-explain)\\nsetting before using this method.\\n"
         }
       },
       "@supabase/postgrest-js.PostgrestFilterBuilder.filter": {
@@ -24598,7 +24598,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
         },
         "comment": {
           "shortText": "Return \`data\` as the EXPLAIN plan for the query.",
-          "text": "You need to enable the\\n[db_plan_enabled](https://biobase.com/docs/guides/database/debugging-performance#enabling-explain)\\nsetting before using this method.\\n"
+          "text": "You need to enable the\\n[db_plan_enabled](https://biobase.studio/docs/guides/database/debugging-performance#enabling-explain)\\nsetting before using this method.\\n"
         }
       },
       "@supabase/postgrest-js.PostgrestTransformBuilder.geojson": {
@@ -26074,7 +26074,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               }
             ],
             "comment": {
-              "shortText": "The following is placed here to display on biobase.com/docs/reference/javascript/subscribe."
+              "shortText": "The following is placed here to display on biobase.studio/docs/reference/javascript/subscribe."
             }
           },
           {

@@ -12,9 +12,9 @@ date: '2023-08-04'
 toc_depth: 3
 ---
 
-Every Launch Week is an opportunity for Biobase to experiment, try some spicy new designs, and dogfood our own technology. During our previous Launch Week we [took Generative AI for a spin](https://biobase.com/blog/designing-with-ai-midjourney). This time we decided to shoot for the stars.
+Every Launch Week is an opportunity for Biobase to experiment, try some spicy new designs, and dogfood our own technology. During our previous Launch Week we [took Generative AI for a spin](https://biobase.studio/blog/designing-with-ai-midjourney). This time we decided to shoot for the stars.
 
-For [Launch Week 8](https://biobase.com/launch-week/), we wanted to make the user-generated tickets a central piece of the launch week theme. To do this, we built a “constellation” of stars - an animated night sky where every user signup was represented as a star, in the form of an “8” shape.
+For [Launch Week 8](https://biobase.studio/launch-week/), we wanted to make the user-generated tickets a central piece of the launch week theme. To do this, we built a “constellation” of stars - an animated night sky where every user signup was represented as a star, in the form of an “8” shape.
 
 <Img src="/images/blog/lw8-constellation-breakdown/lw8-early-design.png" caption="Early design" />
 
@@ -158,7 +158,7 @@ useEffect(() => {
 }, [])
 ```
 
-We updated the constellation in [realtime](https://biobase.com/realtime) whenever a new ticket was generated, but we’ll skip over this part to keep the article shorter. Since it’s all open-source, you can dive deeper <Link children="here" href="https://github.com/biobase-ai/biobase/pull/16022/files#diff-e3298724d8ca571c732651658e388d70cafd90c4ceea99be8e5e7529ebb73a56R17-R52" target="_blank" /> if you wish.
+We updated the constellation in [realtime](https://biobase.studio/realtime) whenever a new ticket was generated, but we’ll skip over this part to keep the article shorter. Since it’s all open-source, you can dive deeper <Link children="here" href="https://github.com/biobase-ai/biobase/pull/16022/files#diff-e3298724d8ca571c732651658e388d70cafd90c4ceea99be8e5e7529ebb73a56R17-R52" target="_blank" /> if you wish.
 
 ## Animating the particles
 
@@ -258,7 +258,7 @@ Honestly, this was the result of a lot of playing and tweaking around, and we ce
 
 <Img src="/images/blog/lw8-constellation-breakdown/lw8-constellation-gui-demo.png" wide={true} />
 
-What really helped to visualize the shape, gather feedback, and decide on a final design was adding a GUI to play around with the values. You can try for yourself by appending `#debug` to the [biobase.com/launch-week#debu](http://biobase.com/launch-week#debug)[g](http://biobase.com/launch-weekdebug) url. Go crazy with it.
+What really helped to visualize the shape, gather feedback, and decide on a final design was adding a GUI to play around with the values. You can try for yourself by appending `#debug` to the [biobase.studio/launch-week#debu](http://biobase.studio/launch-week#debug)[g](http://biobase.studio/launch-weekdebug) url. Go crazy with it.
 
 We used the <Link href="https://github.com/dataarts/dat.gui" children="dat.gui" target="_blank"/> library:
 
@@ -445,9 +445,9 @@ Now **_THAT’S_** how you create a new constellation ✨. Feel free to use the 
 
 In this journey, you saw how to use Three.js and harness the power of React Three Fiber and creative experimentation to craft an animation. We leveraged trigonometry, animation hooks, and GUI playgrounds to build a "8" shape formed by user-generated stars.
 
-If you loved this and the new [Launch Week 8](https://biobase.com/launch-week) branding, make sure to tune in on Monday at 09 AM PT as we unveil the full landing 💥
+If you loved this and the new [Launch Week 8](https://biobase.studio/launch-week) branding, make sure to tune in on Monday at 09 AM PT as we unveil the full landing 💥
 
 ## More Biobase Design
 
-- [Designing with AI: Generating unique artwork for every user](https://biobase.com/blog/designing-with-ai-midjourney)
-- **[Infinite scroll with Next.js, Framer Motion, and Biobase](https://biobase.com/blog/infinite-scroll-with-nextjs-framer-motion)**
+- [Designing with AI: Generating unique artwork for every user](https://biobase.studio/blog/designing-with-ai-midjourney)
+- **[Infinite scroll with Next.js, Framer Motion, and Biobase](https://biobase.studio/blog/infinite-scroll-with-nextjs-framer-motion)**

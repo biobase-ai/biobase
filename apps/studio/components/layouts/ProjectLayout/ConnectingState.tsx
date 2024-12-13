@@ -87,7 +87,7 @@ const ConnectingState = ({ project }: ConnectingStateProps) => {
                 <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                   <Link
                     href={
-                      'https://biobase.com/docs/guides/platform/troubleshooting#unable-to-connect-to-your-biobase-project'
+                      'https://biobase.studio/docs/guides/platform/troubleshooting#unable-to-connect-to-your-biobase-project'
                     }
                     className="translate-y-[1px]"
                   >

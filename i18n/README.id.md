@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) adalah alternatif Firebase open source. Kami membangun fitur-fitur Firebase menggunakan alat bantu open source tingkat perusahaan.
+[Biobase](https://biobase.studio) adalah alternatif Firebase open source. Kami membangun fitur-fitur Firebase menggunakan alat bantu open source tingkat perusahaan.
 
-- [x] Basis Data Postgres yang dihosting. [Dokumen](https://biobase.com/docs/guides/database)
-- [x] Otentikasi dan Otorisasi. [Dokumen](https://biobase.com/docs/guides/auth)
+- [x] Basis Data Postgres yang dihosting. [Dokumen](https://biobase.studio/docs/guides/database)
+- [x] Otentikasi dan Otorisasi. [Dokumen](https://biobase.studio/docs/guides/auth)
 - [x] API yang dibuat secara otomatis.
-  - [x] REST. [Dokumen](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Dokumen](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Langganan realtime. [Dokumen](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Dokumen](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Dokumen](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Langganan realtime. [Dokumen](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Fungsi-fungsi.
-  - [x] Fungsi-fungsi Basis Data. [Dokumen](https://biobase.com/docs/guides/database/functions)
-  - [x] Fungsi Tepi [Dokumen](https://biobase.com/docs/guides/functions)
-- [x] Penyimpanan File. [Dokumen](https://biobase.com/docs/guides/storage)
+  - [x] Fungsi-fungsi Basis Data. [Dokumen](https://biobase.studio/docs/guides/database/functions)
+  - [x] Fungsi Tepi [Dokumen](https://biobase.studio/docs/guides/functions)
+- [x] Penyimpanan File. [Dokumen](https://biobase.studio/docs/guides/storage)
 - [x] Dasbor
 
 ![Dasbor Biobase](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokumentasi
 
-Untuk dokumentasi lengkap, kunjungi [biobase.com/docs](https://biobase.com/docs)
+Untuk dokumentasi lengkap, kunjungi [biobase.studio/docs](https://biobase.studio/docs)
 
 Untuk melihat bagaimana cara berkontribusi, kunjungi [Memulai](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@ Untuk melihat bagaimana cara berkontribusi, kunjungi [Memulai](../DEVELOPERS.md)
 
 - [Forum Komunitas](https://github.com/biobase-ai/biobase/discussions). Paling baik untuk: bantuan dalam membangun, diskusi tentang praktik terbaik basis data.
 - [Masalah GitHub](https://github.com/biobase-ai/biobase/issues). Paling baik untuk: bug dan kesalahan yang Anda temui saat menggunakan Biobase.
-- [Dukungan Email](https://biobase.com/docs/support#business-support). Terbaik untuk: masalah dengan basis data atau infrastruktur Anda.
-- [Discord](https://discord.biobase.com). Terbaik untuk: berbagi aplikasi Anda dan bergaul dengan komunitas.
+- [Dukungan Email](https://biobase.studio/docs/support#business-support). Terbaik untuk: masalah dengan basis data atau infrastruktur Anda.
+- [Discord](https://discord.biobase.studio). Terbaik untuk: berbagi aplikasi Anda dan bergaul dengan komunitas.
 
 ## Status
 
 - [x] Alpha: Kami sedang menguji Biobase dengan sekumpulan pelanggan tertutup
-- [x] Alpha Publik: Siapa pun dapat mendaftar di [biobase.com/dashboard](https://biobase.com/dashboard). Tapi jangan khawatir, ada beberapa hal yang perlu diperhatikan
+- [x] Alpha Publik: Siapa pun dapat mendaftar di [biobase.studio/dashboard](https://biobase.studio/dashboard). Tapi jangan khawatir, ada beberapa hal yang perlu diperhatikan
 - [x] Public Beta: Cukup stabil untuk sebagian besar kasus penggunaan non-perusahaan
-- [Publik: Ketersediaan Umum [[status](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [Publik: Ketersediaan Umum [[status](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 Saat ini kami berada dalam versi Beta Publik. Tonton "rilis" repo ini untuk mendapatkan pemberitahuan tentang pembaruan utama.
 
@@ -55,8 +55,8 @@ Biobase adalah kombinasi dari alat sumber terbuka. Kami membangun fitur-fitur Fi
 
 **Arsitektur**
 
-Biobase adalah [platform yang di-host](https://biobase.com/dashboard). Anda bisa mendaftar dan mulai menggunakan Biobase tanpa menginstal apa pun.
-Anda juga bisa [menghosting sendiri](https://biobase.com/docs/guides/hosting/overview) dan [mengembangkan secara lokal](https://biobase.com/docs/guides/local-development).
+Biobase adalah [platform yang di-host](https://biobase.studio/dashboard). Anda bisa mendaftar dan mulai menggunakan Biobase tanpa menginstal apa pun.
+Anda juga bisa [menghosting sendiri](https://biobase.studio/docs/guides/hosting/overview) dan [mengembangkan secara lokal](https://biobase.studio/docs/guides/local-development).
 
 ![Arsitektur](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

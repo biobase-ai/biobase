@@ -16,10 +16,10 @@ Finally, we use the Thunder Client extension to simulate a POST request to the `
 router.post(
   "/revalidate",
   withContent,
-  async (request, { SUPABASE_URL, SUPABASE_ANON_KEY, ARTICLES }, context) => {
+  async (request, { BIOBASE_URL, BIOBASE_ANON_KEY, ARTICLES }, context) => {
     const updateCache = async () => {
       const { type, record, old_record } = request.content;
-      const biobase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY);
 
       if (type === "INSERT" || type === "UPDATE") {
         await writeTo(ARTICLES, `/articles/${record.id}`, record);

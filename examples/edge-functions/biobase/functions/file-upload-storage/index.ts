@@ -25,9 +25,9 @@ app.use(async (ctx) => {
 
   const biobaseClient = createClient(
     // Biobase API URL - env var exported by default.
-    Deno.env.get('SUPABASE_URL')!,
+    Deno.env.get('BIOBASE_URL')!,
     // Biobase API ANON KEY - env var exported by default.
-    Deno.env.get('SUPABASE_ANON_KEY')!
+    Deno.env.get('BIOBASE_ANON_KEY')!
   )
 
   //upload image to Storage

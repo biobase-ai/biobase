@@ -27,7 +27,7 @@ const Footer = ({ className }: { className?: string }) => (
       <hr className="border-default my-6"></hr>
       <div className="flex gap-4 items-center justify-between">
         <div className="flex flex-col lg:flex-row gap-3 ">
-          <Link href="https://biobase.com/" className="text-xs text-foreground-lighter">
+          <Link href="https://biobase.studio/" className="text-xs text-foreground-lighter">
             &copy; Biobase Inc
           </Link>
           <span className="text-xs text-foreground-lighter">—</span>
@@ -111,7 +111,7 @@ const Footer = ({ className }: { className?: string }) => (
             </a>
           </Button>
           <Button type="text" asChild>
-            <a href="https://discord.biobase.com/" target="_blank" rel="noreferrer noopener">
+            <a href="https://discord.biobase.studio/" target="_blank" rel="noreferrer noopener">
               <span className="sr-only">Discord</span>
               <svg
                 width="17"

@@ -132,7 +132,7 @@ const RateLimits = () => {
       <FormHeader
         title="Rate Limits"
         description="Safeguard against bursts of incoming traffic to prevent abuse and maximize stability"
-        docsUrl="https://biobase.com/docs/guides/platform/going-into-prod#rate-limiting-resource-allocation--abuse-prevention"
+        docsUrl="https://biobase.studio/docs/guides/platform/going-into-prod#rate-limiting-resource-allocation--abuse-prevention"
       />
 
       {isError && <AlertError subject="Failed to retrieve auth config rate limits" error={error} />}

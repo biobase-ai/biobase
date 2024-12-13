@@ -17,7 +17,7 @@ export default function RealtimePosts({ serverPosts }: { serverPosts: any }) {
 
   useEffect(() => {
     // ensure you have enabled replication on the `posts` table
-    // https://biobase.com/dashboard/project/_/database/replication
+    // https://biobase.studio/dashboard/project/_/database/replication
     const channel = biobase
       .channel('*')
       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'posts' }, (payload) =>

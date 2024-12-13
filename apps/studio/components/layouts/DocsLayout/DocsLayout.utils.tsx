@@ -90,7 +90,7 @@ export const generateDocsMenu = (
         {
           name: 'Guides',
           key: 'guides',
-          url: `https://biobase.com/docs`,
+          url: `https://biobase.studio/docs`,
           icon: <Book size={14} strokeWidth={2} />,
           items: [],
           isExternal: true,
@@ -98,7 +98,7 @@ export const generateDocsMenu = (
         {
           name: 'API Reference',
           key: 'api-reference',
-          url: `https://biobase.com/docs/guides/api`,
+          url: `https://biobase.studio/docs/guides/api`,
           icon: <BookOpen size={14} strokeWidth={2} />,
           items: [],
           isExternal: true,

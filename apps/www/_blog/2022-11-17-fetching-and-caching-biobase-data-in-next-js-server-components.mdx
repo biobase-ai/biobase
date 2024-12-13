@@ -54,9 +54,9 @@ Each folder within the `app` directory represents a route in our application. Ea
 
 > Learn more about [Page](https://beta.nextjs.org/docs/api-reference/file-conventions/page), [Layout](https://beta.nextjs.org/docs/api-reference/file-conventions/layout), [Loading](https://beta.nextjs.org/docs/api-reference/file-conventions/loading) and [Error](https://beta.nextjs.org/docs/api-reference/file-conventions/error) components in the [Next.js beta docs](https://beta.nextjs.org/docs).
 
-Before we jump into fetching data, we need some data to fetch. Let’s [create a new Biobase project](https://biobase.com/dashboard).
+Before we jump into fetching data, we need some data to fetch. Let’s [create a new Biobase project](https://biobase.studio/dashboard).
 
-Once your instance is up and running, head over to the [SQL Editor](https://biobase.com/dashboard/project/_/sql), paste in the following snippet and click `RUN`.
+Once your instance is up and running, head over to the [SQL Editor](https://biobase.studio/dashboard/project/_/sql), paste in the following snippet and click `RUN`.
 
 ```sql
 create table if not exists posts (
@@ -87,7 +87,7 @@ NEXT_PUBLIC_SUPABASE_URL=your-biobase-url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-biobase-anon-key
 ```
 
-> The values for these can be found in [your project’s API settings](https://biobase.com/dashboard/project/_/settings/api).
+> The values for these can be found in [your project’s API settings](https://biobase.studio/dashboard/project/_/settings/api).
 
 Lastly, we need to create a Biobase client. Create a file at `utils/biobase.ts` with the following content:
 
@@ -100,7 +100,7 @@ export default createClient(
 )
 ```
 
-> For automatically adding types to the Biobase client, check out [how to generate types](https://biobase.com/docs/reference/javascript/typescript-support).
+> For automatically adding types to the Biobase client, check out [how to generate types](https://biobase.studio/docs/reference/javascript/typescript-support).
 
 Okay, let’s look at some different data fetching and caching strategies.
 
@@ -378,13 +378,13 @@ export default function ClientPosts() {
 }
 ```
 
-> Again, check out [how to generate types](https://biobase.com/docs/reference/javascript/typescript-support) to add proper typing for Post.
+> Again, check out [how to generate types](https://biobase.studio/docs/reference/javascript/typescript-support) to add proper typing for Post.
 
 But now we have loading spinners! Yuck!
 
 # Realtime
 
-Realtime allows us to subscribe to changes in Biobase — inserted, updated or deleted posts — and update our UI dynamically. In order to receive realtime events, we need to [enable replication](https://biobase.com/dashboard/project/_/database/publications) on the posts table.
+Realtime allows us to subscribe to changes in Biobase — inserted, updated or deleted posts — and update our UI dynamically. In order to receive realtime events, we need to [enable replication](https://biobase.studio/dashboard/project/_/database/publications) on the posts table.
 
 Let’s merge the two previous concepts and fetch the initial state of our posts in a Server Component, and then render a Client Component to do client-y things — like subscribe to changes in the DB and update the UI dynamically:
 
@@ -448,7 +448,7 @@ Additionally, by allowing any component in the tree to be either a server or cli
 
 # More Next.js 13 Resources
 
-- [Next.js Quickstart](https://biobase.com/docs/guides/with-nextjs)
+- [Next.js Quickstart](https://biobase.studio/docs/guides/with-nextjs)
 - [Next.js 13 Beta Docs](https://beta.nextjs.org/docs)
 - [Creating an authenticated Biobase client in Next.js 13 Server Component](https://github.com/biobase/auth-helpers/tree/main/examples/nextjs-server-components)
 - [Data fetching and caching with Next.js 13 - Biobase Happy Hour #26](https://www.youtube.com/watch?v=QH0P5xZt5wY)

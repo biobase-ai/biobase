@@ -7,25 +7,25 @@
 
 # Biobase
 
-[सुपाबेस](https://biobase.com) एक ओपन सोर्स फ़ाायरबेस विकल्प है। हम एंटरप्राइज़-गुणवत्ता ओपन सोर्स सॉफ़्टवेयर उपकरण का उपयोग करके फ़ाायरबेस की सुविधाओं का निर्माण कर रहे हैं।
+[सुपाबेस](https://biobase.studio) एक ओपन सोर्स फ़ाायरबेस विकल्प है। हम एंटरप्राइज़-गुणवत्ता ओपन सोर्स सॉफ़्टवेयर उपकरण का उपयोग करके फ़ाायरबेस की सुविधाओं का निर्माण कर रहे हैं।
 
-- [x] होस्टेड पोस्टग्रेज डेटाबेस। [प्रलेखन](https://biobase.com/docs/guides/database)
-- [x] प्रमाणीकरण और प्राधिकरण। [प्रलेखन](https://biobase.com/docs/guides/auth)
+- [x] होस्टेड पोस्टग्रेज डेटाबेस। [प्रलेखन](https://biobase.studio/docs/guides/database)
+- [x] प्रमाणीकरण और प्राधिकरण। [प्रलेखन](https://biobase.studio/docs/guides/auth)
 - [x] उत्पन्न एपीआईस।
-  - [x] रेस्ट। [प्रलेखन](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] रीयलटाइम सदस्यता। [प्रलेखन](https://biobase.com/docs/guides/api#realtime-api-overview)
-  - [x] ग्राफ़क्यूएल (प्रयोगात्मक)। [प्रलेखन](https://biobase.com/docs/guides/api#graphql-api-overview)
+  - [x] रेस्ट। [प्रलेखन](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] रीयलटाइम सदस्यता। [प्रलेखन](https://biobase.studio/docs/guides/api#realtime-api-overview)
+  - [x] ग्राफ़क्यूएल (प्रयोगात्मक)। [प्रलेखन](https://biobase.studio/docs/guides/api#graphql-api-overview)
 - [x] फ़ंक्शंस।
-  - [x] डेटाबेस फ़ंक्शंस। [प्रलेखन](https://biobase.com/docs/guides/database/functions)
-  - [x] एज फ़ंक्शंस। [प्रलेखन](https://biobase.com/docs/guides/functions)
-- [x] भंडारण। [प्रलेखन](https://biobase.com/docs/guides/storage)
+  - [x] डेटाबेस फ़ंक्शंस। [प्रलेखन](https://biobase.studio/docs/guides/database/functions)
+  - [x] एज फ़ंक्शंस। [प्रलेखन](https://biobase.studio/docs/guides/functions)
+- [x] भंडारण। [प्रलेखन](https://biobase.studio/docs/guides/storage)
 - [x] डैशबोर्ड।
 
 ![सुपाबेस का डैशबोर्ड।](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## प्रलेखन
 
-पूर्ण प्रलेखन के लिए, [biobase.com/docs](https://biobase.com/docs) पर जाएँ
+पूर्ण प्रलेखन के लिए, [biobase.studio/docs](https://biobase.studio/docs) पर जाएँ
 
 योगदान करने के लिए, [गेट्टिंग स्टार्टेड](../DEVELOPERS.md) पेज पर जाएँ
 
@@ -33,13 +33,13 @@
 
 - [सामुदायिक मंच](https://github.com/biobase-ai/biobase/discussions)। निर्माण में मदद और डेटाबेस की सर्वोत्तम प्रथाओं के बारे में चर्चा के लिए उचित है।
 - [गिटहब इश्यूस](https://github.com/biobase-ai/biobase/issues)। सुपाबेस का उपयोग करते समय बग्स​ और त्रुटियां के लिए उचित है।
-- [ई-मेल समर्थन](https://biobase.com/docs/support#business-support)। आपके डेटाबेस और इंफ़्रास्ट्रक्चर के साथ समस्याएं के लिए उचित है।
-- [डिस्कॉर्ड](https://discord.biobase.com/)। अपने प्रोजेक्ट्स शेयर करने के लिए और हमारी सुपाबेस समुदाय के साथ बातचीत करने के लिए उचित है।
+- [ई-मेल समर्थन](https://biobase.studio/docs/support#business-support)। आपके डेटाबेस और इंफ़्रास्ट्रक्चर के साथ समस्याएं के लिए उचित है।
+- [डिस्कॉर्ड](https://discord.biobase.studio/)। अपने प्रोजेक्ट्स शेयर करने के लिए और हमारी सुपाबेस समुदाय के साथ बातचीत करने के लिए उचित है।
 
 ## स्थिति
 
 - [x] अल्फा: हम चुनिंदा ग्राहकों के साथ सुपरबास का परीक्षण कर रहे हैं
-- [x] सार्वजनिक अल्फा: कोई भी [biobase.com/dashboard](https://biobase.com/dashboard) के जरिए शामिल हो सकता है। लेकिन हम पर आसान हो जाओ, कुछ मोड़ हैं।
+- [x] सार्वजनिक अल्फा: कोई भी [biobase.studio/dashboard](https://biobase.studio/dashboard) के जरिए शामिल हो सकता है। लेकिन हम पर आसान हो जाओ, कुछ मोड़ हैं।
 - [x] सार्वजनिक बीटा: अधिकांश गैर-एंटरप्राइज़ उपयोग-मामलों के लिए पर्याप्त स्थिर
 - [ ] सार्वजनिक: उत्पादन-तैयार
 
@@ -55,7 +55,7 @@
 
 **वर्तमान वास्तुकला**
 
-सुपाबेस [होस्टेड प्लेटफार्म](https://biobase.com/dashboard). आप साइन अप कर सकते हैं और कुछ भी स्थापित किए बिना सुपाबेस का उपयोग करना शुरू कर सकते हैं। हम अभी भी स्थानीय विकास का अनुभव पैदा कर रहे हैं - यह अब मंच स्थिरता के साथ-साथ हमारा मुख्य फोकस है।
+सुपाबेस [होस्टेड प्लेटफार्म](https://biobase.studio/dashboard). आप साइन अप कर सकते हैं और कुछ भी स्थापित किए बिना सुपाबेस का उपयोग करना शुरू कर सकते हैं। हम अभी भी स्थानीय विकास का अनुभव पैदा कर रहे हैं - यह अब मंच स्थिरता के साथ-साथ हमारा मुख्य फोकस है।
 
 ![आर्किटेक्चर](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

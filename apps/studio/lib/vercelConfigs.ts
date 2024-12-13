@@ -3,11 +3,11 @@ import { SQL_TEMPLATES } from 'components/interfaces/SQLEditor/SQLEditor.queries
 const QuickStart = SQL_TEMPLATES.filter((template) => template.type === 'quickstart')
 
 export const INTEGRATION_ENVS_ALIAS = {
-  ENDPOINT: 'SUPABASE_ENDPOINT',
-  ANONKEY: 'SUPABASE_ANON_KEY',
-  SERVICEKEY: 'SUPABASE_SERVICE_KEY',
-  DBHOST: 'SUPABASE_DB_HOST',
-  DBPASSWORD: 'SUPABASE_DB_PASSWORD',
+  ENDPOINT: 'BIOBASE_ENDPOINT',
+  ANONKEY: 'BIOBASE_ANON_KEY',
+  SERVICEKEY: 'BIOBASE_SERVICE_KEY',
+  DBHOST: 'BIOBASE_DB_HOST',
+  DBPASSWORD: 'BIOBASE_DB_PASSWORD',
 }
 export const VERCEL_DEFAULT_EXTERNAL_ID = 'nextjs-initial-project'
 /*
@@ -31,12 +31,12 @@ export const VERCEL_INTEGRATION_CONFIGS = [
     },
     envs: [
       {
-        key: 'NEXT_PUBLIC_SUPABASE_ENDPOINT',
+        key: 'NEXT_PUBLIC_BIOBASE_ENDPOINT',
         alias: INTEGRATION_ENVS_ALIAS.ENDPOINT,
         type: 'encrypted',
       },
       {
-        key: 'NEXT_PUBLIC_SUPABASE_APIKEY',
+        key: 'NEXT_PUBLIC_BIOBASE_APIKEY',
         alias: INTEGRATION_ENVS_ALIAS.ANONKEY,
         type: 'encrypted',
       },
@@ -58,7 +58,7 @@ export const VERCEL_INTEGRATION_CONFIGS = [
         type: 'encrypted',
       },
       {
-        key: 'SUPABASE_SERVICE_ROLE_KEY',
+        key: 'BIOBASE_SERVICE_ROLE_KEY',
         alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
         type: 'encrypted',
       },
@@ -80,7 +80,7 @@ export const VERCEL_INTEGRATION_CONFIGS = [
         type: 'encrypted',
       },
       {
-        key: 'SUPABASE_SERVICE_ROLE_KEY',
+        key: 'BIOBASE_SERVICE_ROLE_KEY',
         alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
         type: 'encrypted',
       },
@@ -121,17 +121,17 @@ export const VERCEL_INTEGRATION_CONFIGS = [
         type: 'encrypted',
       },
       {
-        key: 'SUPABASE_SERVICE_ROLE_KEY',
+        key: 'BIOBASE_SERVICE_ROLE_KEY',
         alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
         type: 'encrypted',
       },
       {
-        key: 'SUPABASE_DB_HOST',
+        key: 'BIOBASE_DB_HOST',
         alias: INTEGRATION_ENVS_ALIAS.DBHOST,
         type: 'encrypted',
       },
       {
-        key: 'SUPABASE_DB_PASSWORD',
+        key: 'BIOBASE_DB_PASSWORD',
         alias: INTEGRATION_ENVS_ALIAS.DBPASSWORD,
         type: 'encrypted',
       },
@@ -153,7 +153,7 @@ export const VERCEL_INTEGRATION_CONFIGS = [
         type: 'encrypted',
       },
       {
-        key: 'SUPABASE_SERVICE_ROLE_KEY',
+        key: 'BIOBASE_SERVICE_ROLE_KEY',
         alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
         type: 'encrypted',
       },
@@ -536,7 +536,7 @@ create or replace view comments_thread_with_user_vote as
         type: 'encrypted',
       },
       {
-        key: 'SUPABASE_SERVICE_ROLE_KEY',
+        key: 'BIOBASE_SERVICE_ROLE_KEY',
         alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
         type: 'encrypted',
       },

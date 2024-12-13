@@ -27,7 +27,7 @@ const SpendCapModal = ({ visible, onHide }: SpendCapModalProps) => {
         <div className="flex justify-between items-center">
           <span>Spend Cap</span>
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
-            <a target="_blank" href="https://biobase.com/docs/guides/platform/spend-cap">
+            <a target="_blank" href="https://biobase.studio/docs/guides/platform/spend-cap">
               Documentation
             </a>
           </Button>

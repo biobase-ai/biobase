@@ -52,7 +52,7 @@ Additionally, we [maintain a repo](https://github.com/biobase-ai/biobase-grafana
 
 ## Deploying Biobase Grafana
 
-The pre-configured Biobase Grafana Dashboard is an advanced version of the [Dashboard's Database Reports](https://biobase.com/dashboard/project/_/reports/database). It visualizes over 200 database performance and health metrics and is updated every minute.
+The pre-configured Biobase Grafana Dashboard is an advanced version of the [Dashboard's Database Reports](https://biobase.studio/dashboard/project/_/reports/database). It visualizes over 200 database performance and health metrics and is updated every minute.
 
 ![Biobase Grafana](/docs/img/guides/platform/biobase-grafana-prometheus.png)
 
@@ -102,8 +102,8 @@ Biobase Grafana only tracks metrics while it's active. For monitoring historical
   <StepHikeCompact.Step step={3}>
 
     <StepHikeCompact.Details title="Add your credentials">
-        - To monitor a single project, add your service_role key from the [API Settings](https://biobase.com/dashboard/project/_/settings/api) and Reference ID from the [General Settings](https://biobase.com/dashboard/project/_/settings/general).
-        - To monitor multiple projects, create an [account access token](https://biobase.com/dashboard/account/tokens) and add it to your `.env` file.
+        - To monitor a single project, add your service_role key from the [API Settings](https://biobase.studio/dashboard/project/_/settings/api) and Reference ID from the [General Settings](https://biobase.studio/dashboard/project/_/settings/general).
+        - To monitor multiple projects, create an [account access token](https://biobase.studio/dashboard/account/tokens) and add it to your `.env` file.
 
     </StepHikeCompact.Details>
 
@@ -119,15 +119,15 @@ Biobase Grafana only tracks metrics while it's active. For monitoring historical
 
             - Add the values to your `.env` file:
             ```text .env
-            SUPABASE_PROJECT_REF="your_project_reference"
-            SUPABASE_SERVICE_ROLE_KEY="your_service_role"
+            BIOBASE_PROJECT_REF="your_project_reference"
+            BIOBASE_SERVICE_ROLE_KEY="your_service_role"
             ```
         </TabPanel>
         <TabPanel id="monitor-an-org" label="monitor multiple projects">
 
 
             ```text .env
-            SUPABASE_ACCESS_TOKEN="your_access_token"
+            BIOBASE_ACCESS_TOKEN="your_access_token"
             ```
         </TabPanel>
         </Tabs>
@@ -224,7 +224,7 @@ Biobase Grafana only tracks metrics while it's active. For monitoring historical
 
         <StepHikeCompact.Step step={5} >
     <StepHikeCompact.Details title="Add your credentials and deploy">
-        Add your service_role key from the [API Settings](https://biobase.com/dashboard/project/_/settings/api) and Reference ID from the [General Settings](https://biobase.com/dashboard/project/_/settings/general) to your Grafana credentials. Then install your dashboard.
+        Add your service_role key from the [API Settings](https://biobase.studio/dashboard/project/_/settings/api) and Reference ID from the [General Settings](https://biobase.studio/dashboard/project/_/settings/general) to your Grafana credentials. Then install your dashboard.
     </StepHikeCompact.Details>
     <StepHikeCompact.Code>
         ![Add credentials](/docs/img/guides/platform/add-credentials-grafana.png)

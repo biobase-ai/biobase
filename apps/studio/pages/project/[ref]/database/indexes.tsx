@@ -29,7 +29,7 @@ const IndexesPage: NextPageWithLayout = () => {
               target="_blank"
               rel="noreferrer"
               className="no-underline"
-              href="https://biobase.com/docs/guides/database/query-optimization"
+              href="https://biobase.studio/docs/guides/database/query-optimization"
             >
               Documentation
             </a>
@@ -39,7 +39,7 @@ const IndexesPage: NextPageWithLayout = () => {
               target="_blank"
               rel="noreferrer"
               className="no-underline"
-              href="https://biobase.com/docs/guides/database/extensions/index_advisor"
+              href="https://biobase.studio/docs/guides/database/extensions/index_advisor"
             >
               Optimization with index_advisor
             </a>

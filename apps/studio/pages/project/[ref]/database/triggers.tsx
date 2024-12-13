@@ -45,7 +45,7 @@ const TriggersPage: NextPageWithLayout = () => {
             <FormHeader
               title="Database Triggers"
               description="Execute a set of actions automatically on specified table events"
-              docsUrl="https://biobase.com/docs/guides/database/postgres/triggers"
+              docsUrl="https://biobase.studio/docs/guides/database/postgres/triggers"
             />
             <TriggersList
               createTrigger={createTrigger}

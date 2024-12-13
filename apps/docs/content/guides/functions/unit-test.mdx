@@ -41,8 +41,8 @@ import { createClient, BiobaseClient } from 'jsr:@supabase/biobase-js@2'
 import 'https://deno.land/x/dotenv@v3.2.2/load.ts'
 
 // Set up the configuration for the Biobase client
-const biobaseUrl = Deno.env.get('SUPABASE_URL') ?? ''
-const biobaseKey = Deno.env.get('SUPABASE_ANON_KEY') ?? ''
+const biobaseUrl = Deno.env.get('BIOBASE_URL') ?? ''
+const biobaseKey = Deno.env.get('BIOBASE_ANON_KEY') ?? ''
 const options = {
   auth: {
     autoRefreshToken: false,
@@ -134,10 +134,10 @@ To locally test and debug Edge Functions, you can utilize the Biobase CLI. Let's
    ```bash
    # creates the file
    touch .env
-   # adds the SUPABASE_URL secret
-   echo "SUPABASE_URL=http://localhost:54321" >> .env
-   # adds the SUPABASE_ANON_KEY secret
-   echo "SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0" >> .env
+   # adds the BIOBASE_URL secret
+   echo "BIOBASE_URL=http://localhost:54321" >> .env
+   # adds the BIOBASE_ANON_KEY secret
+   echo "BIOBASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0" >> .env
    # Alternatively, you can open it in your editor:
    open .env
    ```

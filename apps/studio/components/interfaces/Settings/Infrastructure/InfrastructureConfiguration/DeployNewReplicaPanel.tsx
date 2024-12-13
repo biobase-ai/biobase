@@ -259,7 +259,7 @@ const DeployNewReplicaPanel = ({
               <div className="mt-3">
                 <Button asChild type="default" icon={<ExternalLink />}>
                   <a
-                    href="https://biobase.com/docs/guides/platform/read-replicas#prerequisites"
+                    href="https://biobase.studio/docs/guides/platform/read-replicas#prerequisites"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -315,7 +315,7 @@ const DeployNewReplicaPanel = ({
                 </Button>
                 <Button asChild type="default" icon={<ExternalLink />}>
                   <a
-                    href="https://biobase.com/docs/guides/platform/read-replicas#prerequisites"
+                    href="https://biobase.studio/docs/guides/platform/read-replicas#prerequisites"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -361,7 +361,7 @@ const DeployNewReplicaPanel = ({
                 </Button>
                 <Button asChild type="default" icon={<ExternalLink />}>
                   <a
-                    href="https://biobase.com/docs/guides/platform/read-replicas#how-are-read-replicas-made"
+                    href="https://biobase.studio/docs/guides/platform/read-replicas#how-are-read-replicas-made"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -539,7 +539,7 @@ const DeployNewReplicaPanel = ({
             <p className="text-foreground-light text-sm">
               Read more about{' '}
               <Link
-                href="https://biobase.com/docs/guides/platform/org-based-billing#read-replicas"
+                href="https://biobase.studio/docs/guides/platform/org-based-billing#read-replicas"
                 target="_blank"
                 rel="noreferrer"
                 className="underline hover:text-foreground transition"

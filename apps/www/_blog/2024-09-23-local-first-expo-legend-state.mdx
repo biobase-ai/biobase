@@ -75,11 +75,11 @@ npx expo install @legendapp/state@beta @supabase/biobase-js react-native-get-ran
 
 If you don't have a Biobase project already, head over to [database.new](https://database.new) and create a new project.
 
-Next, create a `.env.local` file in the root of your project and add the following env vars. You can find these in your [Biobase dashboard](https://biobase.com/dashboard/project/_/settings/api).
+Next, create a `.env.local` file in the root of your project and add the following env vars. You can find these in your [Biobase dashboard](https://biobase.studio/dashboard/project/_/settings/api).
 
 ```bash
-EXPO_PUBLIC_SUPABASE_URL=
-EXPO_PUBLIC_SUPABASE_ANON_KEY=
+EXPO_PUBLIC_BIOBASE_URL=
+EXPO_PUBLIC_BIOBASE_ANON_KEY=
 ```
 
 Next, set up a utils file to hold all the logic for interacting with Biobase, we'll call it `utils/SupaLegend.ts`.
@@ -88,8 +88,8 @@ Next, set up a utils file to hold all the logic for interacting with Biobase, we
 import { createClient } from '@supabase/biobase-js'
 
 const biobase = createClient(
-  process.env.EXPO_PUBLIC_SUPABASE_URL,
-  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY
+  process.env.EXPO_PUBLIC_BIOBASE_URL,
+  process.env.EXPO_PUBLIC_BIOBASE_ANON_KEY
 )
 ```
 
@@ -108,8 +108,8 @@ import { observablePersistAsyncStorage } from '@legendapp/state/persist-plugins/
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const biobase = createClient(
-  process.env.EXPO_PUBLIC_SUPABASE_URL,
-  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY
+  process.env.EXPO_PUBLIC_BIOBASE_URL,
+  process.env.EXPO_PUBLIC_BIOBASE_ANON_KEY
 )
 
 // Create a configured sync function
@@ -224,8 +224,8 @@ import { Database } from './database.types'
 // [...]
 
 const biobase = createClient<Database>(
-  process.env.EXPO_PUBLIC_SUPABASE_URL,
-  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY
+  process.env.EXPO_PUBLIC_BIOBASE_URL,
+  process.env.EXPO_PUBLIC_BIOBASE_ANON_KEY
 )
 
 // [...]

@@ -186,14 +186,14 @@ const MobileMenu = ({ open, setOpen, isDarkMode, menu }: Props) => {
                     </Link>
                   ) : (
                     <>
-                      <Link href="https://biobase.com/dashboard" passHref legacyBehavior>
+                      <Link href="https://biobase.studio/dashboard" passHref legacyBehavior>
                         <Button block type="default" asChild>
                           <a type={undefined} className="h-10 py-4">
                             Sign in
                           </a>
                         </Button>
                       </Link>
-                      <Link href="https://biobase.com/dashboard" passHref legacyBehavior>
+                      <Link href="https://biobase.studio/dashboard" passHref legacyBehavior>
                         <Button block asChild>
                           <a type={undefined} className="h-10 py-4">
                             Start your project

@@ -130,7 +130,7 @@ const ProjectUpgradeAlert = () => {
                           <div>
                             <Button size="tiny" type="default" asChild>
                               <Link
-                                href="https://biobase.com/docs/guides/platform/migrating-and-upgrading-projects#caveats"
+                                href="https://biobase.studio/docs/guides/platform/migrating-and-upgrading-projects#caveats"
                                 target="_blank"
                                 rel="noreferrer"
                               >
@@ -172,7 +172,7 @@ const ProjectUpgradeAlert = () => {
                           <div>
                             <Button size="tiny" type="default" asChild>
                               <Link
-                                href="https://biobase.com/docs/guides/platform/migrating-and-upgrading-projects#caveats"
+                                href="https://biobase.studio/docs/guides/platform/migrating-and-upgrading-projects#caveats"
                                 target="_blank"
                                 rel="noreferrer"
                               >

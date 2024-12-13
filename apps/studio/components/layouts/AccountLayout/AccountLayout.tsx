@@ -119,13 +119,13 @@ const AccountLayout = ({ children, title, breadcrumbs }: PropsWithChildren<Accou
         {
           key: 'ext-guides',
           label: 'Guides',
-          href: 'https://biobase.com/docs',
+          href: 'https://biobase.studio/docs',
           isExternal: true,
         },
         {
           key: 'ext-guides',
           label: 'API Reference',
-          href: 'https://biobase.com/docs/guides/api',
+          href: 'https://biobase.studio/docs/guides/api',
           isExternal: true,
         },
       ],

@@ -107,7 +107,7 @@ const Policies = ({
           title="Row-Level Security (RLS) Policies"
           ctaButtonLabel="Create a table"
           infoButtonLabel="What is RLS?"
-          infoButtonUrl="https://biobase.com/docs/guides/auth/row-level-security"
+          infoButtonUrl="https://biobase.studio/docs/guides/auth/row-level-security"
           onClickCta={() => router.push(`/project/${ref}/editor`)}
         >
           <div className="space-y-4">

@@ -95,10 +95,10 @@ function IntegrationPartnersPage(props: Props) {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.com/partners/integrations`,
+          url: `https://biobase.studio/partners/integrations`,
           images: [
             {
-              url: `https://biobase.com${router.basePath}/images/og/integrations.png`, // TODO
+              url: `https://biobase.studio${router.basePath}/images/og/integrations.png`, // TODO
             },
           ],
         }}

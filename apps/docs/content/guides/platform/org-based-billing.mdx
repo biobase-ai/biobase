@@ -40,7 +40,7 @@ Each organization only has a single subscription with a single Plan (Free, Pro, 
 
 Quotas and features are applied to your entire organization, independent of how many projects you launch within that organization. For billing purposes, we sum the usage across all projects in a monthly invoice.
 
-Upgrading your organization to a paid plan means that you unlock the benefits of the paid plan for **all** projects within that organization - for example, no projects in your "Pro" organization will be paused. See [pricing page](https://biobase.com/pricing) for details on all plans.
+Upgrading your organization to a paid plan means that you unlock the benefits of the paid plan for **all** projects within that organization - for example, no projects in your "Pro" organization will be paused. See [pricing page](https://biobase.studio/pricing) for details on all plans.
 
 It is not possible to mix different plans inside a single organization. You cannot have one Pro Plan project and one Free Plan project inside a single organization. To have projects on different plans, you'll need to create different organizations. Also see [Project Transfers](/docs/guides/platform/project-transfer) in case you're looking to transfer a project to a different organization.
 
@@ -63,7 +63,7 @@ It is not possible to mix different plans inside a single organization. You cann
 
 ## Billing for Compute (Compute Hours)
 
-Biobase provides a dedicated server and database for every project. By default, your instance runs on the Micro Compute instance. You can upgrade your compute size in your [project settings](https://biobase.com/dashboard/project/_/settings/addons).
+Biobase provides a dedicated server and database for every project. By default, your instance runs on the Micro Compute instance. You can upgrade your compute size in your [project settings](https://biobase.studio/dashboard/project/_/settings/addons).
 
 Given we provide dedicated databases on paid plans that have 24/7 uptime and predictable performance, you pay the same amount for compute independent of your database usage. An active project on the Small compute size running for 30 days consumes 720 (30x24h) Small Compute Hours.
 
@@ -141,7 +141,7 @@ Each plan includes a quota for unified egress, which is applied to your entire o
 
 ### Egress dashboards
 
-You can see a breakdown of the different types of egress on your [organization usage page](https://biobase.com/dashboard/org/_/usage).
+You can see a breakdown of the different types of egress on your [organization usage page](https://biobase.studio/dashboard/org/_/usage).
 
 <div>
   <Image
@@ -168,7 +168,7 @@ For paid plan customers:
 
 When your data gets close to the 8 GB disk size limit, we automatically scale it by 50% on paid plans to ensure your project does not run into a read-only mode. Each hour your disk is beyond the included 8 GB, it incurs one GB-Hr of usage. With a 12 GB provisioned disk (4 GB above the limit), this would incur a total monthly cost of $0.5 ($0.125 per GB / $0.000171 per GB-Hr). Disk Size is prorated down to the hour, so your bill will show "Disk Size GB-Hrs".
 
-You can see your project’s disk size in your [project settings](https://biobase.com/dashboard/project/_/settings/database) (Project Settings > Database).
+You can see your project’s disk size in your [project settings](https://biobase.studio/dashboard/project/_/settings/database) (Project Settings > Database).
 
 While we automatically scale up your disk, we do not automatically scale down your disk. Read more about [disk management](/docs/guides/platform/database-size#disk-management) and how to [reduce your disk size](/docs/guides/platform/database-size#reducing-disk-size).
 

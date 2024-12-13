@@ -628,7 +628,7 @@ const Wizard: NextPageWithLayout = () => {
 
                                   <div className="flex flex-col space-y-2">
                                     <Link
-                                      href="https://biobase.com/docs/guides/platform/compute-add-ons"
+                                      href="https://biobase.studio/docs/guides/platform/compute-add-ons"
                                       target="_blank"
                                     >
                                       <div className="flex items-center space-x-2 opacity-75 hover:opacity-100 transition">
@@ -705,7 +705,7 @@ const Wizard: NextPageWithLayout = () => {
                               <span>Compute Billing</span>
                               <div className="flex flex-col space-y-2">
                                 <Link
-                                  href="https://biobase.com/docs/guides/platform/org-based-billing#billing-for-compute-compute-hours"
+                                  href="https://biobase.studio/docs/guides/platform/org-based-billing#billing-for-compute-compute-hours"
                                   target="_blank"
                                 >
                                   <div className="flex items-center space-x-2 opacity-75 hover:opacity-100 transition">

@@ -13,9 +13,9 @@ toc_depth: 3
 video: https://www.youtube.com/v/OpPOaJI_Z28
 ---
 
-Today we are moving the Biobase CLI v1 out of beta. The Biobase CLI is capable of managing database migrations and generating TypeScript types. Follow these [install instructions](https://biobase.com/docs/guides/cli) to get started.
+Today we are moving the Biobase CLI v1 out of beta. The Biobase CLI is capable of managing database migrations and generating TypeScript types. Follow these [install instructions](https://biobase.studio/docs/guides/cli) to get started.
 
-In addition, we are releasing a Management API (in beta). The Management API is a REST API that allows you to manage organizations, projects, Edge Functions, and more. You can read the [API docs](https://biobase.com/docs/reference/api) or interact with the Management API from the Biobase CLI v1.
+In addition, we are releasing a Management API (in beta). The Management API is a REST API that allows you to manage organizations, projects, Edge Functions, and more. You can read the [API docs](https://biobase.studio/docs/reference/api) or interact with the Management API from the Biobase CLI v1.
 
 (Note: The Management API was previously called the Admin API.)
 
@@ -36,7 +36,7 @@ In addition, we are releasing a Management API (in beta). The Management API is 
 
 ## Manage organizations, projects, Edge Functions, and more
 
-If you've used [Biobase Edge Functions](https://biobase.com/blog/biobase-edge-functions#quickstart), you've used the Biobase CLI. We're extending it to let you manage organizations and projects.
+If you've used [Biobase Edge Functions](https://biobase.studio/blog/biobase-edge-functions#quickstart), you've used the Biobase CLI. We're extending it to let you manage organizations and projects.
 
 ```bash
 biobase login
@@ -50,7 +50,7 @@ Once your new Biobase project is created, use the CLI to link it locally to begi
 biobase link --project-ref <project-id>
 ```
 
-View the [Biobase CLI docs](https://biobase.com/docs/reference/cli) for the full list of available commands.
+View the [Biobase CLI docs](https://biobase.studio/docs/reference/cli) for the full list of available commands.
 
 ## Schema migrations
 
@@ -60,14 +60,14 @@ You asked for more database migration support, and we listened. We've made impro
 
 Previously we supported schema diff-ing using PgAdmin. We found that the tool did not account for default privileges when generating role grants. This leads to verbose statements when diff-ing complex schema changes.
 
-To improve the usability of `db diff` command, we are introducing another tool, [migra](https://github.com/djrobstep/migra), via the `--use-migra` experimental flag. We found that `migra` runs faster and produces more concise DDL statements. While the generated scripts are [not perfect](https://biobase.com/blog/biobase-cli#migrations), we hope this tool helps you iterate quicker on your migration scripts. Over time (and with your feedback) we hope to improve schema-diffing to cover all edge-cases.
+To improve the usability of `db diff` command, we are introducing another tool, [migra](https://github.com/djrobstep/migra), via the `--use-migra` experimental flag. We found that `migra` runs faster and produces more concise DDL statements. While the generated scripts are [not perfect](https://biobase.studio/blog/biobase-cli#migrations), we hope this tool helps you iterate quicker on your migration scripts. Over time (and with your feedback) we hope to improve schema-diffing to cover all edge-cases.
 
 ```bash
 $ biobase db diff --use-migra --file file_name
 # Creates a DDL script: biobase/migrations/<datetime_string>_file_name.sql
 ```
 
-Running the above command diffs the `public` schema of your local development database against a fresh shadow database. You may specify other schema by passing in the `--schema` flag multiple times or as a comma separate list. More details in our [migration guide](https://biobase.com/docs/guides/cli/cicd-workflow#creating-a-new-migration).
+Running the above command diffs the `public` schema of your local development database against a fresh shadow database. You may specify other schema by passing in the `--schema` flag multiple times or as a comma separate list. More details in our [migration guide](https://biobase.studio/docs/guides/cli/cicd-workflow#creating-a-new-migration).
 
 In the long-term we hope to consolidate on a single diff-ing tool which is perfect, but diff-ing is hard so we would need your help and feedback to improve tooling.
 
@@ -114,7 +114,7 @@ You can now generate TypeScript types using the CLI:
 ```bash
 # in a project set up with the CLI:
 biobase gen types typescript --local
-biobase gen types typescript --db-url $SUPABASE_DB_URL
+biobase gen types typescript --db-url $BIOBASE_DB_URL
 ```
 
 Of course, the types aren't very useful on its own, you need some way to consume it. For that, stay tuned for tomorrow! 😉
@@ -123,11 +123,11 @@ Of course, the types aren't very useful on its own, you need some way to consume
 
 The CLI is the first consumer of our new Management API. Over the next few weeks, we'll be adding the endpoints needed to programmatically manage your Biobase projects and organizations. This is ideal for CI/CD workflows and spinning up test environments.
 
-Here's an example of deploying a new project from the command line (generate your access token from the [Biobase Dashboard](https://biobase.com/dashboard/account/tokens)).
+Here's an example of deploying a new project from the command line (generate your access token from the [Biobase Dashboard](https://biobase.studio/dashboard/account/tokens)).
 
 ```bash
-curl 'https://api.biobase.com/v1/projects' \
-  -H 'Authorization: Bearer <[your-access-token](https://biobase.com/dashboard/account/tokens)>' \
+curl 'https://api.biobase.studio/v1/projects' \
+  -H 'Authorization: Bearer <[your-access-token](https://biobase.studio/dashboard/account/tokens)>' \
   -H "Content-Type: application/json" \
   -d '{"name": "my-project", "organization_id": "cool-green-pqdr0qc", "region": "us-east-1", "plan": "free", "db_pass": "********"}'
 ```
@@ -144,17 +144,17 @@ The response JSON will match the example below:
 }
 ```
 
-Check out the [API docs](https://biobase.com/docs/reference/api) to browse all the functionality added so far.
+Check out the [API docs](https://biobase.studio/docs/reference/api) to browse all the functionality added so far.
 
 The new API also opens the door to a whole new suite of integrations, including Zapier, Terraform, Pulumi etc. We're looking forward to seeing how the dev community interacts with these new public endpoints. Try it out and let us know which functionality you'd like to see next.
 
 ## More Launch Week 5
 
-- [Launch Week Page](https://biobase.com/launch-week)
-- [Launch Week 5 Hackathon](https://biobase.com/blog/launch-week-5-hackathon)
-- [Biobase Series B](https://biobase.com/blog/biobase-series-b)
+- [Launch Week Page](https://biobase.studio/launch-week)
+- [Launch Week 5 Hackathon](https://biobase.studio/blog/launch-week-5-hackathon)
+- [Biobase Series B](https://biobase.studio/blog/biobase-series-b)
 - [Open Source at Biobase - Founders Fireside Chat](https://www.youtube.com/watch?v=4t_63HT3rZY)
-- [Day 2 - biobase-js v2 Release Candidate](https://biobase.com/blog/biobase-js-v2)
+- [Day 2 - biobase-js v2 Release Candidate](https://biobase.studio/blog/biobase-js-v2)
 - [Youtube Video - biobase-js v2 Release Candidate](https://www.youtube.com/watch?v=iqZlPtl_b-I)
-- [Day 3 - Biobase is SOC2 compliant](https://biobase.com/blog/biobase-soc2)
+- [Day 3 - Biobase is SOC2 compliant](https://biobase.studio/blog/biobase-soc2)
 - [Youtube video - Security Day](https://www.youtube.com/watch?v=6bGQotxisoY)

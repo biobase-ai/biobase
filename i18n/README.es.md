@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) es una alternativa de código abierto a Firebase. Estamos construyendo las características de Firebase utilizando herramientas de código abierto de nivel empresarial.
+[Biobase](https://biobase.studio) es una alternativa de código abierto a Firebase. Estamos construyendo las características de Firebase utilizando herramientas de código abierto de nivel empresarial.
 
-- [x] Base de datos Postgres alojada. [Documentación](https://biobase.com/docs/guides/database)
-- [x] Autenticación y autorización. [Documentos](https://biobase.com/docs/guides/auth)
+- [x] Base de datos Postgres alojada. [Documentación](https://biobase.studio/docs/guides/database)
+- [x] Autenticación y autorización. [Documentos](https://biobase.studio/docs/guides/auth)
 - [x] API autogeneradas.
-  - [x] REST. [Docs](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Documentos](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Suscripciones en tiempo real. [Documentos](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Docs](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Documentos](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Suscripciones en tiempo real. [Documentos](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funciones.
-  - [x] Funciones de base de datos. [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] Funciones de borde [Docs](https://biobase.com/docs/guides/functions)
-- [x] Almacenamiento de archivos. [Documentos](https://biobase.com/docs/guides/storage)
+  - [x] Funciones de base de datos. [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] Funciones de borde [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Almacenamiento de archivos. [Documentos](https://biobase.studio/docs/guides/storage)
 - [x] Panel de control
 
 [Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Documentación
 
-Para consultar la documentación completa, visite [biobase.com/docs](https://biobase.com/docs)
+Para consultar la documentación completa, visite [biobase.studio/docs](https://biobase.studio/docs)
 
 Para ver cómo contribuir, visite [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@ Para ver cómo contribuir, visite [Getting Started](../DEVELOPERS.md)
 
 - [Foro de la comunidad](https://github.com/biobase-ai/biobase/discussions). Lo mejor para: ayuda con la construcción, discusión sobre las mejores prácticas de bases de datos.
 - [Problemas en GitHub](https://github.com/biobase-ai/biobase/issues). Lo mejor para: bugs y errores que encuentres usando Biobase.
-- [Soporte por correo electrónico](https://biobase.com/docs/support#business-support). Lo mejor para: problemas con tu base de datos o infraestructura.
-- [Discord](https://discord.biobase.com). Lo mejor para: compartir tus aplicaciones y pasar el rato con la comunidad.
+- [Soporte por correo electrónico](https://biobase.studio/docs/support#business-support). Lo mejor para: problemas con tu base de datos o infraestructura.
+- [Discord](https://discord.biobase.studio). Lo mejor para: compartir tus aplicaciones y pasar el rato con la comunidad.
 
 ## Estado
 
 - [x] Alfa: Estamos probando Biobase con un grupo cerrado de clientes
-- [x] Alfa público: Cualquiera puede registrarse en [biobase.com/dashboard](https://biobase.com/dashboard). Pero no te pases, hay algunos problemas
+- [x] Alfa público: Cualquiera puede registrarse en [biobase.studio/dashboard](https://biobase.studio/dashboard). Pero no te pases, hay algunos problemas
 - [Beta pública: Suficientemente estable para la mayoría de los casos de uso no empresariales
-- [Público: Disponibilidad general [[status](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [Público: Disponibilidad general [[status](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 Actualmente estamos en Beta Pública. Esté atento a "releases" de este repositorio para recibir notificaciones de actualizaciones importantes.
 
@@ -55,8 +55,8 @@ Biobase es una combinación de herramientas de código abierto. Estamos construy
 
 **Arquitectura**
 
-Biobase es una [plataforma alojada](https://biobase.com/dashboard). Puedes registrarte y empezar a usar Biobase sin instalar nada.
-También puede [autoalojarse](https://biobase.com/docs/guides/hosting/overview) y [desarrollar localmente](https://biobase.com/docs/guides/local-development).
+Biobase es una [plataforma alojada](https://biobase.studio/dashboard). Puedes registrarte y empezar a usar Biobase sin instalar nada.
+También puede [autoalojarse](https://biobase.studio/docs/guides/hosting/overview) y [desarrollar localmente](https://biobase.studio/docs/guides/local-development).
 
 ![arquitectura](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

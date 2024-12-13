@@ -59,7 +59,7 @@ const PolicyEditorModalTitle = ({
         )}
         <Button asChild type="default" icon={<ExternalLink size={14} />} className="mt-[-4px]">
           <a
-            href="https://biobase.com/docs/learn/auth-deep-dive/auth-policies"
+            href="https://biobase.studio/docs/learn/auth-deep-dive/auth-policies"
             target="_blank"
             rel="noreferrer"
           >

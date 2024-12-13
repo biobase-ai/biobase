@@ -1,4 +1,4 @@
-export const SUPABASE_ROLES = [
+export const BIOBASE_ROLES = [
   'anon',
   'service_role',
   'authenticated',
@@ -19,7 +19,7 @@ export const SUPABASE_ROLES = [
 ] as const
 
 // [Joshen] This was originally in the Roles mobx store
-// Just keeping it for now in case we need to differ it from ^ SUPABASE_ROLES
+// Just keeping it for now in case we need to differ it from ^ BIOBASE_ROLES
 export const SYSTEM_ROLES = [
   'postgres',
   'pgbouncer',

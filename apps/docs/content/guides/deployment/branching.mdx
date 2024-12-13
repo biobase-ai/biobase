@@ -133,7 +133,7 @@ You can use the [Biobase CLI](/docs/guides/cli) to manage changes inside a local
     <StepHikeCompact.Step step={2}>
         <StepHikeCompact.Details title="Pull your database migration" fullWidth>
 
-            Pull your database changes using `biobase db pull`. You can find your database URL in your [database settings](https://biobase.com/dashboard/project/_/settings/database), under the URI tab of the Connection String settings panel. Make sure **Use connection pooling** is checked so you can use the IPv4-enabled connection pooler. (Without connection pooling, your database is only accessible over IPv6, which isn't yet supported by all network providers.)
+            Pull your database changes using `biobase db pull`. You can find your database URL in your [database settings](https://biobase.studio/dashboard/project/_/settings/database), under the URI tab of the Connection String settings panel. Make sure **Use connection pooling** is checked so you can use the IPv4-enabled connection pooler. (Without connection pooling, your database is only accessible over IPv6, which isn't yet supported by all network providers.)
 
             <CH.Code lineNumbers={false}>
 
@@ -141,7 +141,7 @@ You can use the [Biobase CLI](/docs/guides/cli) to manage changes inside a local
             biobase db pull --db-url <db_url>
 
             # Your Database URL looks something like:
-            # postgres://postgres.xxxx:password@xxxx.pooler.biobase.com:6543/postgres
+            # postgres://postgres.xxxx:password@xxxx.pooler.biobase.studio:6543/postgres
             ```
 
             </CH.Code>
@@ -339,7 +339,7 @@ You can create new migrations either [locally](#develop-locally) or [remotely](#
 >
 <TabPanel id="local-dev" label="Local Development">
 
-The Biobase CLI provides two options: [manual migrations](https://biobase.com/docs/guides/cli/local-development#database-migrations) and [generated migrations](https://biobase.com/docs/guides/cli/local-development#diffing-changes) using Biobase's local studio and the `biobase db-diff` command. Let's use the latter and push the change to our Preview Branch:
+The Biobase CLI provides two options: [manual migrations](https://biobase.studio/docs/guides/cli/local-development#database-migrations) and [generated migrations](https://biobase.studio/docs/guides/cli/local-development#diffing-changes) using Biobase's local studio and the `biobase db-diff` command. Let's use the latter and push the change to our Preview Branch:
 
 <StepHikeCompact>
 
@@ -434,7 +434,7 @@ Dashboard changes aren't automatically reflected in your Git repository. If you'
     <StepHikeCompact.Step step={1}>
         <StepHikeCompact.Details title="Select the branch you want to use." fullWidth>
 
-        Select the branch you wish to use in your Biobase [project](https://biobase.com/dashboard/project/_).
+        Select the branch you wish to use in your Biobase [project](https://biobase.studio/dashboard/project/_).
 
         <figure className="max-w-[520px]">
             <Image src="/docs/img/guides/platform/branching/develop-your-app-develop-remotely.jpg?v=1" />
@@ -446,7 +446,7 @@ Dashboard changes aren't automatically reflected in your Git repository. If you'
     <StepHikeCompact.Step step={2}>
         <StepHikeCompact.Details title="Make changes to your database schema." fullWidth>
 
-        Make changes to your schema with either with the [Table Editor](https://biobase.com/dashboard/project/_/editor) or the [SQL Editor]((https://biobase.com/dashboard/project/_/sql)).
+        Make changes to your schema with either with the [Table Editor](https://biobase.studio/dashboard/project/_/editor) or the [SQL Editor]((https://biobase.studio/dashboard/project/_/sql)).
 
         </StepHikeCompact.Details>
     </StepHikeCompact.Step>
@@ -454,7 +454,7 @@ Dashboard changes aren't automatically reflected in your Git repository. If you'
     <StepHikeCompact.Step step={3}>
         <StepHikeCompact.Details title="Check you have the password for the Preview Branch database." fullWidth>
 
-        If you don't know the password, you must Reset the database password so you know the password. Go to the [database setting page](https://biobase.com/dashboard/project/_/settings/database) and click `Reset database password`.
+        If you don't know the password, you must Reset the database password so you know the password. Go to the [database setting page](https://biobase.studio/dashboard/project/_/settings/database) and click `Reset database password`.
 
         Save the new password securely for future use.
 
@@ -471,7 +471,7 @@ Dashboard changes aren't automatically reflected in your Git repository. If you'
          <CH.Code lineNumbers={false}>
 
         ```bash
-        biobase db pull --db-url "postgres://postgres.xxxx:password@xxxx.pooler.biobase.com:6543/postgres"
+        biobase db pull --db-url "postgres://postgres.xxxx:password@xxxx.pooler.biobase.studio:6543/postgres"
         ```
 
         </CH.Code>

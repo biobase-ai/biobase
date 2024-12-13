@@ -21,7 +21,7 @@ export default function UserManagement({
 }: UserManagementProps) {
   const router = useRouter()
 
-  const keyToShow = showApiKey ? showApiKey : 'SUPABASE_KEY'
+  const keyToShow = showApiKey ? showApiKey : 'BIOBASE_KEY'
 
   return (
     <>
@@ -172,7 +172,7 @@ export default function UserManagement({
           <p>
             View all the available{' '}
             <a
-              href="https://biobase.com/docs/guides/auth#providers"
+              href="https://biobase.studio/docs/guides/auth#providers"
               target="_blank"
               rel="noreferrer"
             >

@@ -137,10 +137,10 @@ from realtime import AsyncRealtimeClient
 def callback1(payload):
     print("Callback 1: ", payload)
 
-SUPABASE_ID: str = os.environ.get("SUPABASE_ID")
-API_KEY: str = os.environ.get("SUPABASE_KEY")
+BIOBASE_ID: str = os.environ.get("BIOBASE_ID")
+API_KEY: str = os.environ.get("BIOBASE_KEY")
 
-URL: str = f"wss://{SUPABASE_ID}.biobase.co/realtime/v1/websocket"
+URL: str = f"wss://{BIOBASE_ID}.biobase.co/realtime/v1/websocket"
 
 client = AsyncRealtimeClient(URL, API_KEY)
 await client.connect()
@@ -167,8 +167,8 @@ import os
 from biobase import create_client
 from biobase.lib.client_options import ClientOptions
 
-url: str = os.environ.get("SUPABASE_URL")
-key: str = os.environ.get("SUPABASE_KEY")
+url: str = os.environ.get("BIOBASE_URL")
+key: str = os.environ.get("BIOBASE_KEY")
 
 options = ClientOptions(function_client_timeout = 15)
 client = create_client(url, key, options)
@@ -230,4 +230,4 @@ If you'd like to get involved in contributing to our Python client libraries see
 
 ## Getting started
 
-Full documentation is available for the Biobase Python Client libraries on the [Biobase Docs site](https://biobase.com/docs/reference/python/introduction).
+Full documentation is available for the Biobase Python Client libraries on the [Biobase Docs site](https://biobase.studio/docs/reference/python/introduction).

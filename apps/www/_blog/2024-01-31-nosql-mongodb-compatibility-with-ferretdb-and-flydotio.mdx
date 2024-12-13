@@ -41,7 +41,7 @@ If you prefer video guide, you can follow along below. And make sure to subscrib
 
 FerretDB provides a [Docker image](https://github.com/ferretdb/FerretDB/pkgs/container/ferretdb) allowing us to run it locally, for example via [Orbstack](https://orbstack.dev/), with a couple simple commands.
 
-FerretDB only requires the Postgres database URI to be provided as the `FERRETDB_POSTGRESQL_URL` environment variable. Every Biobase project comes with a full Postgres database. You can find the connection URI string in your [Biobase Dashboard](https://biobase.com/dashboard/project/_/settings/database).
+FerretDB only requires the Postgres database URI to be provided as the `FERRETDB_POSTGRESQL_URL` environment variable. Every Biobase project comes with a full Postgres database. You can find the connection URI string in your [Biobase Dashboard](https://biobase.studio/dashboard/project/_/settings/database).
 
 Make sure **Use connection pooling** is checked and **Session mode** is selected. Then copy the URI. Replace the password placeholder with your saved database password.
 
@@ -57,7 +57,7 @@ export DB_USER=postgres
 export DB_PASSWORD=<your db password>
 export SUPA_PROJECT_REF=<your Biobase project ref>
 export SUPA_REGION=<your project region>
-export DB_URL=postgres://$DB_USER.$SUPA_PROJECT_REF:$DB_PASSWORD@$SUPA_REGION.pooler.biobase.com:5432/postgres
+export DB_URL=postgres://$DB_USER.$SUPA_PROJECT_REF:$DB_PASSWORD@$SUPA_REGION.pooler.biobase.studio:5432/postgres
 
 # Run FerretDB in docker container
 docker run -p 27017:27017 -p 8080:8080 -e FERRETDB_POSTGRESQL_URL=$DB_URL ghcr.io/ferretdb/ferretdb
@@ -152,7 +152,7 @@ You can run many MongoDB operations on FerretDB. See the [list of supported comm
 
 ## Inspect the JSONB data in the Biobase Dashboard
 
-FerretDB stores each collection in a table on the `ferretdb` schema, each document represented by a JSONB entry. You can inspect this in the [Table Editor](https://biobase.com/dashboard/project/_/editor) in your Biobase Dashboard.
+FerretDB stores each collection in a table on the `ferretdb` schema, each document represented by a JSONB entry. You can inspect this in the [Table Editor](https://biobase.studio/dashboard/project/_/editor) in your Biobase Dashboard.
 
 ![Biobase Dashboard Table Editor Screenshot](/images/blog/getting-started/ferretdb/table-editor.png)
 

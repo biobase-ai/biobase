@@ -185,7 +185,7 @@ const StoragePoliciesEditPolicyModal = ({
         <h4 className="m-0 truncate">{getTitle()}</h4>
         <Button asChild type="default" icon={<ExternalLink />}>
           <a
-            href="https://biobase.com/docs/learn/auth-deep-dive/auth-policies"
+            href="https://biobase.studio/docs/learn/auth-deep-dive/auth-policies"
             target="_blank"
             rel="noreferrer"
           >

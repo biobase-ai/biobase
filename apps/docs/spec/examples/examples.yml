@@ -115,11 +115,11 @@ functions:
     title: 'signUp()'
     $ref: '@supabase/gotrue-js.GoTrueClient.signUp'
     notes: |
-      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://biobase.com/dashboard/project/_/auth/providers).
+      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://biobase.studio/dashboard/project/_/auth/providers).
       - **Confirm email** determines if users need to confirm their email address after signing up.
         - If **Confirm email** is enabled, a `user` is returned but `session` is null.
         - If **Confirm email** is disabled, both a `user` and a `session` are returned.
-      - By default, when the user confirms their email address, they are redirected to the [`SITE_URL`](https://biobase.com/docs/guides/auth/redirect-urls). You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://biobase.com/dashboard/project/_/auth/url-configuration).
+      - By default, when the user confirms their email address, they are redirected to the [`SITE_URL`](https://biobase.studio/docs/guides/auth/redirect-urls). You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://biobase.studio/dashboard/project/_/auth/url-configuration).
       - If signUp() is called for an existing confirmed user:
         - When both **Confirm email** and **Confirm phone** (even when phone provider is disabled) are enabled in [your project](/dashboard/project/_/auth/providers), an obfuscated/fake user object is returned.
         - When either **Confirm email** or **Confirm phone** (even when phone provider is disabled) is disabled, the error message, `User already registered` is returned.
@@ -193,7 +193,7 @@ functions:
       - This method is used for passwordless sign-ins where a OTP is sent to the user's email or phone number.
       - If you're using an email, you can configure whether you want the user to receive a magiclink or a OTP.
       - If you're using phone, you can configure whether you want the user to receive a OTP.
-      - The magic link's destination URL is determined by the [`SITE_URL`](https://biobase.com/docs/guides/auth/redirect-urls). You can modify the `SITE_URL` or add additional redirect URLs in [your project](https://biobase.com/dashboard/project/_/auth/url-configuration).
+      - The magic link's destination URL is determined by the [`SITE_URL`](https://biobase.studio/docs/guides/auth/redirect-urls). You can modify the `SITE_URL` or add additional redirect URLs in [your project](https://biobase.studio/dashboard/project/_/auth/url-configuration).
     examples:
       - id: sign-in-with-email.
         name: Sign in with email.
@@ -220,7 +220,7 @@ functions:
     $ref: '@supabase/gotrue-js.GoTrueClient.signInWithOAuth'
     notes: |
       - This method is used for signing in using a third-party provider.
-      - Biobase supports many different [third-party providers](https://biobase.com/docs/guides/auth#providers).
+      - Biobase supports many different [third-party providers](https://biobase.studio/docs/guides/auth#providers).
     examples:
       - id: sign-in-using-a-third-party-provider
         name: Sign in using a third-party provider
@@ -236,8 +236,8 @@ functions:
         name: Sign in using a third-party provider with redirect
         isSpotlight: false
         description: |
-          When the third-party provider successfully authenticates the user, the provider will redirect the user to the URL specified in the `redirectTo` parameter. This parameter defaults to the [`SITE_URL`](https://biobase.com/docs/guides/auth/redirect-urls). It does not redirect the user immediately after invoking this method.
-          You can modify the `SITE_URL` or add additional redirect URLs in [your project](https://biobase.com/dashboard/project/_/auth/url-configuration).
+          When the third-party provider successfully authenticates the user, the provider will redirect the user to the URL specified in the `redirectTo` parameter. This parameter defaults to the [`SITE_URL`](https://biobase.studio/docs/guides/auth/redirect-urls). It does not redirect the user immediately after invoking this method.
+          You can modify the `SITE_URL` or add additional redirect URLs in [your project](https://biobase.studio/dashboard/project/_/auth/url-configuration).
         js: |
           ```js
           const { data, error } = await biobase.auth.signInWithOAuth({
@@ -342,7 +342,7 @@ functions:
     notes: |
       - In order to use the `updateUser()` method, the user needs to be signed in first.
       - By Default, email updates sends a confirmation link to both the user's current and new email.
-      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://biobase.com/dashboard/project/_/auth/providers).
+      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://biobase.studio/dashboard/project/_/auth/providers).
     examples:
       - id: update-the-email-for-an-authenticated-user
         name: Update the email for an authenticated user
@@ -375,7 +375,7 @@ functions:
       - `setSession()` takes in a refresh token and uses it to get a new session.
       - The refresh token can only be used once to obtain a new session.
       - [Refresh token rotation](/docs/reference/auth/config#refresh_token_rotation_enabled) is enabled by default on all projects to guard against replay attacks.
-      - You can configure the [`REFRESH_TOKEN_REUSE_INTERVAL`](https://biobase.com/docs/reference/auth/config#refresh_token_reuse_interval) which provides a short window in which the same refresh token can be used multiple times in the event of concurrency or offline issues.
+      - You can configure the [`REFRESH_TOKEN_REUSE_INTERVAL`](https://biobase.studio/docs/reference/auth/config#refresh_token_reuse_interval) which provides a short window in which the same refresh token can be used multiple times in the event of concurrency or offline issues.
     examples:
       - id: refresh-the-session
         name: Refresh the session
@@ -754,7 +754,7 @@ functions:
     description: 'This is the description'
     $ref: '@supabase/postgrest-js.PostgrestQueryBuilder.select'
     notes: |
-      - By default, Biobase projects return a maximum of 1,000 rows. This setting can be changed in your project's [API settings](https://biobase.com/dashboard/project/_/settings/api). It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
+      - By default, Biobase projects return a maximum of 1,000 rows. This setting can be changed in your project's [API settings](https://biobase.studio/dashboard/project/_/settings/api). It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
       - `select()` can be combined with [Filters](/docs/reference/javascript/using-filters)
       - `select()` can be combined with [Modifiers](/docs/reference/javascript/using-modifiers)
       - `apikey` is a reserved keyword if you're using the [Biobase Platform](/docs/guides/platform) and [should be avoided as a column name](https://github.com/biobase-ai/biobase/issues/5465).
@@ -5520,7 +5520,7 @@ functions:
     title: 'from.getPublicUrl()'
     $ref: '@supabase/storage-js.packages/StorageFileApi.default.getPublicUrl'
     notes: |
-      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/javascript/storage-updatebucket) or by going to Storage on [biobase.com/dashboard](https://biobase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
+      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/javascript/storage-updatebucket) or by going to Storage on [biobase.studio/dashboard](https://biobase.studio/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
       - RLS policy permissions required:
         - `buckets` table permissions: none
         - `objects` table permissions: none

@@ -15,9 +15,9 @@ import CreateRolePanel from './CreateRolePanel'
 import DeleteRoleModal from './DeleteRoleModal'
 import RoleRow from './RoleRow'
 import RoleRowSkeleton from './RoleRowSkeleton'
-import { SUPABASE_ROLES } from './Roles.constants'
+import { BIOBASE_ROLES } from './Roles.constants'
 
-type SUPABASE_ROLE = (typeof SUPABASE_ROLES)[number]
+type BIOBASE_ROLE = (typeof BIOBASE_ROLES)[number]
 
 const RolesList = () => {
   const { project } = useProjectContext()
@@ -45,7 +45,7 @@ const RolesList = () => {
     filterType === 'active' ? roles.filter((role) => role.activeConnections > 0) : roles
   ).filter((role) => role.name.includes(filterString))
   const [biobaseRoles, otherRoles] = partition(filteredRoles, (role) =>
-    SUPABASE_ROLES.includes(role.name as SUPABASE_ROLE)
+    BIOBASE_ROLES.includes(role.name as BIOBASE_ROLE)
   )
 
   const totalActiveConnections = roles

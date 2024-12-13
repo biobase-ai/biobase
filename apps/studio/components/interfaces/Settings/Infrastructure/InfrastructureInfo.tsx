@@ -162,7 +162,7 @@ const InfrastructureInfo = () => {
                           <div>
                             <Button size="tiny" type="default" asChild>
                               <a
-                                href="https://biobase.com/docs/guides/platform/migrating-and-upgrading-projects#caveats"
+                                href="https://biobase.studio/docs/guides/platform/migrating-and-upgrading-projects#caveats"
                                 target="_blank"
                                 rel="noreferrer"
                               >

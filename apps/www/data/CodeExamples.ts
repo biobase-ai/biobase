@@ -202,7 +202,7 @@ export const updateExample: ExampleProps = {
 
 //   const biobase = createClient(
 //     process.env.NEXT_PUBLIC_SUPABASE_URL,
-//     process.env.SUPABASE_SECRET_KEY
+//     process.env.BIOBASE_SECRET_KEY
 //   );
 
 //   type User = {

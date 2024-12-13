@@ -38,10 +38,10 @@ function VectorPage() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.com/vector`,
+          url: `https://biobase.studio/vector`,
           images: [
             {
-              url: `https://biobase.com${basePath}/images/product/vector/og.png`,
+              url: `https://biobase.studio${basePath}/images/product/vector/og.png`,
             },
           ],
         }}

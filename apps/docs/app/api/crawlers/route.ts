@@ -82,9 +82,9 @@ function htmlShell(
     '<head>' +
     `<title>${title} | Biobase Docs</title>` +
     `<meta name="description" content="Biobase API reference for ${libraryName}${section.title ? ': ' + section.title : ''}">` +
-    `<meta name="og:image" content="https://biobase.com/docs/img/biobase-og-image.png">` +
-    `<meta name="twitter:image" content="https://biobase.com/docs/img/biobase-og-image.png">` +
-    `<link rel="canonical" href="https://biobase.com/docs/reference/${lib}` +
+    `<meta name="og:image" content="https://biobase.studio/docs/img/biobase-og-image.png">` +
+    `<meta name="twitter:image" content="https://biobase.studio/docs/img/biobase-og-image.png">` +
+    `<link rel="canonical" href="https://biobase.studio/docs/reference/${lib}` +
     (version ? '/' + version : '') +
     (slug ? '/' + slug : '') +
     `">` +

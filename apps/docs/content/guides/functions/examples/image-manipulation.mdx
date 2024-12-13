@@ -3,7 +3,7 @@ title: 'Image Manipulation'
 description: 'How to optimize and transform images using Edge Functions.'
 ---
 
-Biobase Storage has [out-of-the-box support](https://biobase.com/docs/guides/storage/serving/image-transformations?queryGroups=language&language=js) for the most common image transformations and optimizations you need.
+Biobase Storage has [out-of-the-box support](https://biobase.studio/docs/guides/storage/serving/image-transformations?queryGroups=language&language=js) for the most common image transformations and optimizations you need.
 If you need to do anything custom beyond what Biobase Storage provides, you can use Edge Functions to write custom image manipulation scripts.
 
 In this example, we will use [magick-wasm](https://github.com/dlemstra/magick-wasm) to perform image manipulations. `magick-wasm` is the WebAssembly port of the popular ImageMagick library and supports processing over 100 file formats.
@@ -16,7 +16,7 @@ Edge Functions currently doesn't support image processing libraries such as `Sha
 
 ### Prerequisites
 
-Make sure you have the latest version of the [Biobase CLI](https://biobase.com/docs/guides/cli#installation) installed.
+Make sure you have the latest version of the [Biobase CLI](https://biobase.studio/docs/guides/cli#installation) installed.
 
 ### Create the Edge Function
 
@@ -71,7 +71,7 @@ biobase functions deploy image-blur
 
 <Admonition type="warning">
 
-Hosted Edge Functions have [limits](https://biobase.com/docs/guides/functions/limits) on memory and CPU usage.
+Hosted Edge Functions have [limits](https://biobase.studio/docs/guides/functions/limits) on memory and CPU usage.
 
 If you try to perform complex image processing or handle large images (> 5MB) your function may return a resource limit exceeded error.
 

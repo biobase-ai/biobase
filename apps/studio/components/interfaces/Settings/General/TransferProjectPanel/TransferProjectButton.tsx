@@ -113,7 +113,7 @@ const TransferProjectButton = () => {
             To transfer projects, the owner must be a member of both the source and target
             organizations. For further information see our{' '}
             <Link
-              href="https://biobase.com/docs/guides/platform/project-transfer"
+              href="https://biobase.studio/docs/guides/platform/project-transfer"
               className="text-brand hover:underline"
               target="_blank"
               rel="noreferrer"

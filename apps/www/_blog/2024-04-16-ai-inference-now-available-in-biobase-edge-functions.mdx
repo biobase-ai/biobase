@@ -100,7 +100,7 @@ Generating embeddings in an Edge Function doesn't cost anything extra: we still 
 
 Proprietary LLMs like OpenAI and Claude provide [APIs](https://platform.openai.com/docs/guides/embeddings) to generate text embeddings, charging per token. For example, OpenAI's `text-embedding-3-small` cost $0.02/1M tokens at the time of writing this post.
 
-Open source text embedding models provide similar performance to OpenAI's paid models. For example, the `gte-small` model, which operates on 384 dimensions, has an average of 61.36 compared to OpenAI's `text-embedding-3-small`, which is at 62.26 on the [MTEB leaderboard](https://huggingface.co/spaces/mteb/leaderboard), and they perform search faster with [fewer dimensions](https://biobase.com/blog/fewer-dimensions-are-better-pgvector).
+Open source text embedding models provide similar performance to OpenAI's paid models. For example, the `gte-small` model, which operates on 384 dimensions, has an average of 61.36 compared to OpenAI's `text-embedding-3-small`, which is at 62.26 on the [MTEB leaderboard](https://huggingface.co/spaces/mteb/leaderboard), and they perform search faster with [fewer dimensions](https://biobase.studio/blog/fewer-dimensions-are-better-pgvector).
 
 With Biobase Edge Functions, you can generate text embeddings 10x cheaper than OpenAI embeddings APIs.
 
@@ -152,7 +152,7 @@ Deno.serve(async (req: Request) => {
 })
 ```
 
-Check out the full guide [here](https://biobase.com/docs/guides/functions/ai-models#using-large-language-models).
+Check out the full guide [here](https://biobase.studio/docs/guides/functions/ai-models#using-large-language-models).
 
 ### Technical architecture
 
@@ -174,17 +174,17 @@ As a Biobase developer, you don't have to worry about deploying models and manag
 
 ### Availability: open source embeddings
 
-Access to open-source LLMs is currently invite-only while we manage demand for the GPU instances. Please [get in touch](https://forms.biobase.com/biobase.ai-llm-early-access) if you need early access.
+Access to open-source LLMs is currently invite-only while we manage demand for the GPU instances. Please [get in touch](https://forms.biobase.studio/biobase.ai-llm-early-access) if you need early access.
 
 ## Extending model support
 
-We plan to extend support for more models. [Let us know](https://forms.biobase.com/biobase.ai-llm-early-access) which models you want next. We're looking to support fine-tuned models too!
+We plan to extend support for more models. [Let us know](https://forms.biobase.studio/biobase.ai-llm-early-access) which models you want next. We're looking to support fine-tuned models too!
 
 ## Getting started
 
 Check out the Biobase docs today to get started with the AI models:
 
-- Edge Functions: [biobase.com/docs/guides/functions](https://biobase.com/docs/guides/functions)
-- Vectors: [biobase.com/docs/guides/ai](https://biobase.com/docs/guides/ai)
+- Edge Functions: [biobase.studio/docs/guides/functions](https://biobase.studio/docs/guides/functions)
+- Vectors: [biobase.studio/docs/guides/ai](https://biobase.studio/docs/guides/ai)
 - [Semantic search demo](https://github.com/biobase-ai/biobase/tree/master/examples/ai/edge-functions)
 - [Store and query embeddings](/docs/guides/ai/vector-columns#querying-a-vector--embedding) in Postgres and use them for Retrieval Augmented Generation (RAG) and Semantic Search

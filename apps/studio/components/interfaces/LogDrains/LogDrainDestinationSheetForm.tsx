@@ -484,7 +484,7 @@ export function LogDrainDestinationSheetForm({
                       target="_blank"
                       rel="noopener noreferrer"
                       className="underline flex gap-1 items-center"
-                      href="https://biobase.com/docs/guides/platform/log-drains"
+                      href="https://biobase.studio/docs/guides/platform/log-drains"
                     >
                       Documentation <ExternalLink className="w-4 h-4" />
                     </Link>

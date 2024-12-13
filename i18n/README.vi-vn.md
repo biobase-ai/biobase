@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) là một giải pháp mã nguồn mở thay thế cho Firebase. Chúng tôi đang sử dụng các công cụ mã nguồn mở đạt chuẩn doanh nghiệp để xây dựng các chức năng mà Firebase cung cấp.
+[Biobase](https://biobase.studio) là một giải pháp mã nguồn mở thay thế cho Firebase. Chúng tôi đang sử dụng các công cụ mã nguồn mở đạt chuẩn doanh nghiệp để xây dựng các chức năng mà Firebase cung cấp.
 
-- [x] Cơ sở dữ liệu Postgres tự quản lý. [Tài liệu](https://biobase.com/docs/guides/database)
-- [x] Xác thực và uỷ quyền. [Tài liệu](https://biobase.com/docs/guides/auth)
+- [x] Cơ sở dữ liệu Postgres tự quản lý. [Tài liệu](https://biobase.studio/docs/guides/database)
+- [x] Xác thực và uỷ quyền. [Tài liệu](https://biobase.studio/docs/guides/auth)
 - [x] APIs tự động khởi tạo.
-  - [x] REST. [Tài liệu](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] Lắng nghe thay đổi thời gian thực. [Tài liệu](https://biobase.com/docs/guides/api#realtime-api-overview)
-  - [x] GraphQL (Thử nghiệm). [Tài liệu](https://biobase.com/docs/guides/api#graphql-api-overview)
+  - [x] REST. [Tài liệu](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] Lắng nghe thay đổi thời gian thực. [Tài liệu](https://biobase.studio/docs/guides/api#realtime-api-overview)
+  - [x] GraphQL (Thử nghiệm). [Tài liệu](https://biobase.studio/docs/guides/api#graphql-api-overview)
 - [x] Chức năng hàm.
-  - [x] Hàm dành cho cơ sở dữ liệu (Database functions). [Tài liệu](https://biobase.com/docs/guides/database/functions)
-  - [x] Hàm được phân phối trên toàn cầu (Edge Functions). [Tài liệu](https://biobase.com/docs/guides/functions)
-- [x] Kho lưu trữ. [Tài liệu](https://biobase.com/docs/guides/storage)
+  - [x] Hàm dành cho cơ sở dữ liệu (Database functions). [Tài liệu](https://biobase.studio/docs/guides/database/functions)
+  - [x] Hàm được phân phối trên toàn cầu (Edge Functions). [Tài liệu](https://biobase.studio/docs/guides/functions)
+- [x] Kho lưu trữ. [Tài liệu](https://biobase.studio/docs/guides/storage)
 - [x] Bảng điều khiển
 
 ![Bảng điều khiển của Biobase](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Tài liệu tham khảo
 
-Để có tài liệu đầy đủ, hãy truy cập [biobase.com/docs](https://biobase.com/docs)
+Để có tài liệu đầy đủ, hãy truy cập [biobase.studio/docs](https://biobase.studio/docs)
 
 Để biết cách Đóng góp, hãy truy cập [Bắt đầu](../DEVELOPERS.md)
 
@@ -33,13 +33,13 @@
 
 - [Diễn đàn cộng đồng](https://github.com/biobase-ai/biobase/discussions). Tốt nhất cho: hỗ trợ xây dựng và thảo luận về các phương pháp tối ưu nhất dành cho cơ sở dữ liệu.
 - [Các vấn đề trên GitHub](https://github.com/biobase-ai/biobase/issues). Tốt nhất cho: các lỗi và "bugs" mà bạn gặp phải khi sử dụng Biobase.
-- [Hỗ trợ qua email](https://biobase.com/docs/support#business-support). Tốt nhất cho: các vấn đề với cơ sở dữ liệu hoặc cơ sở hạ tầng của bạn.
-- [Discord](https://discord.biobase.com). Tốt nhất cho: chia sẻ ứng dụng của bạn và dành thời gian với cộng đồng.
+- [Hỗ trợ qua email](https://biobase.studio/docs/support#business-support). Tốt nhất cho: các vấn đề với cơ sở dữ liệu hoặc cơ sở hạ tầng của bạn.
+- [Discord](https://discord.biobase.studio). Tốt nhất cho: chia sẻ ứng dụng của bạn và dành thời gian với cộng đồng.
 
 ## Trạng thái
 
 - [x] Alpha: Chúng tôi đang thử nghiệm Biobase với một nhóm người dùng kín
-- [x] Public Alpha: Bất kỳ ai cũng có thể đăng ký tại [biobase.com/dashboard](https://biobase.com/dashboard). Nhưng hãy bình tĩnh với chúng tôi, sẽ có một vài lỗi nhỏ.
+- [x] Public Alpha: Bất kỳ ai cũng có thể đăng ký tại [biobase.studio/dashboard](https://biobase.studio/dashboard). Nhưng hãy bình tĩnh với chúng tôi, sẽ có một vài lỗi nhỏ.
 - [x] Public Beta: Đủ ổn định cho hầu hết các trường hợp sử dụng không dành cho môi trường doanh nghiệp (production)
 - [ ] Public: Sẵn sàng cho môi trường doanh nghiệp (production)
 
@@ -55,8 +55,8 @@ Biobase là sự kết hợp của các công cụ mã nguồn mở. Các tính 
 
 **Kiến trúc**
 
-Biobase là một [nền tảng lưu trữ cơ sở dữ liệu](https://biobase.com/dashboard). Bạn có thể đăng ký và bắt đầu sử dụng Biobase mà không cần cài đặt bất kỳ thứ gì.
-Bạn cũng có thể [tự quản lý](https://biobase.com/docs/guides/hosting/overview) và [phát triển cục bộ](https://biobase.com/docs/guides/local-development).
+Biobase là một [nền tảng lưu trữ cơ sở dữ liệu](https://biobase.studio/dashboard). Bạn có thể đăng ký và bắt đầu sử dụng Biobase mà không cần cài đặt bất kỳ thứ gì.
+Bạn cũng có thể [tự quản lý](https://biobase.studio/docs/guides/hosting/overview) và [phát triển cục bộ](https://biobase.studio/docs/guides/local-development).
 
 ![Kiến trúc](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

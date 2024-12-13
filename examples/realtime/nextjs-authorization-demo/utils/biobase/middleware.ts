@@ -61,7 +61,7 @@ export const updateSession = async (request: NextRequest) => {
     );
 
     // This will refresh session if expired - required for Server Components
-    // https://biobase.com/docs/guides/auth/server-side/nextjs
+    // https://biobase.studio/docs/guides/auth/server-side/nextjs
     await biobase.auth.getUser();
 
     return response;

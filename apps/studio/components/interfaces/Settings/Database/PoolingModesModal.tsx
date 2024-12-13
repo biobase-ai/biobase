@@ -43,7 +43,7 @@ export const PoolingModesModal = () => {
               <p className="max-w-2xl">Which pooling mode should I use?</p>
               <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                 <a
-                  href="https://biobase.com/docs/guides/database/connecting-to-postgres#how-connection-pooling-works"
+                  href="https://biobase.studio/docs/guides/database/connecting-to-postgres#how-connection-pooling-works"
                   target="_blank"
                   rel="noreferrer"
                 >

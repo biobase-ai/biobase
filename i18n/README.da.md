@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) er et Open Source Firebase-alternativ. Vi opbygger Firebase-funktionerne ved hjælp af open source-værktøjer i virksomhedskvalitet.
+[Biobase](https://biobase.studio) er et Open Source Firebase-alternativ. Vi opbygger Firebase-funktionerne ved hjælp af open source-værktøjer i virksomhedskvalitet.
 
-- [x] Hosted Postgres Database. [Docs](https://biobase.com/docs/guides/database)
-- [x] Autentifikation og autorisering. [Docs](https://biobase.com/docs/guides/auth)
+- [x] Hosted Postgres Database. [Docs](https://biobase.studio/docs/guides/database)
+- [x] Autentifikation og autorisering. [Docs](https://biobase.studio/docs/guides/auth)
 - [x] Automatisk genererede API'er.
-  - [x] REST. [Docs](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Docs](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Realtidsabonnementer. [Docs](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Docs](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Docs](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Realtidsabonnementer. [Docs](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funktioner.
-  - [x] Databasefunktioner. [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] Edge-funktioner [Docs](https://biobase.com/docs/guides/functions)
-- [x] Filopbevaring. [Docs](https://biobase.com/docs/guides/storage)
+  - [x] Databasefunktioner. [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] Edge-funktioner [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Filopbevaring. [Docs](https://biobase.studio/docs/guides/storage)
 - [x] Dashboard
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokumentation
 
-Du kan finde den fulde dokumentation på [biobase.com/docs](https://biobase.com/docs)
+Du kan finde den fulde dokumentation på [biobase.studio/docs](https://biobase.studio/docs)
 
 For at se, hvordan man bidrager, besøg [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@ For at se, hvordan man bidrager, besøg [Getting Started](../DEVELOPERS.md)
 
 - [Community Forum](https://github.com/biobase-ai/biobase/discussions). Bedst til: hjælp med at bygge, diskussion om bedste praksis for databaser.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Bedst til: fejl og fejl, du støder på ved brug af Biobase.
-- [Email Support](https://biobase.com/docs/support#business-support). Bedst til: problemer med din database eller infrastruktur.
-- [Discord](https://discord.biobase.com). Bedst til: deling af dine applikationer og hygge med fællesskabet.
+- [Email Support](https://biobase.studio/docs/support#business-support). Bedst til: problemer med din database eller infrastruktur.
+- [Discord](https://discord.biobase.studio). Bedst til: deling af dine applikationer og hygge med fællesskabet.
 
 ## Status
 
 - [x] Alpha: Vi tester Biobase med et lukket sæt af kunder
-- [x] Offentlig Alpha: Alle kan tilmelde sig på [biobase.com/dashboard](https://biobase.com/dashboard). Men vær forsigtig med os, der er et par knuder
+- [x] Offentlig Alpha: Alle kan tilmelde sig på [biobase.studio/dashboard](https://biobase.studio/dashboard). Men vær forsigtig med os, der er et par knuder
 - [x] Public Beta: Stabil nok til de fleste ikke-virksomhedsrelaterede brugssager
-- [ ] Public: Generel tilgængelighed [[status](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Public: Generel tilgængelighed [[status](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 Vi er i øjeblikket i Public Beta. Hold øje med "releases" i denne repo for at få besked om større opdateringer.
 
@@ -55,8 +55,8 @@ Biobase er en kombination af open source-værktøjer. Vi opbygger funktionerne i
 
 **Arkitektur**
 
-Biobase er en [hosted platform](https://biobase.com/dashboard). Du kan tilmelde dig og begynde at bruge Biobase uden at installere noget.
-Du kan også [selv hoste](https://biobase.com/docs/guides/hosting/overview) og [udvikle lokalt](https://biobase.com/docs/guides/local-development).
+Biobase er en [hosted platform](https://biobase.studio/dashboard). Du kan tilmelde dig og begynde at bruge Biobase uden at installere noget.
+Du kan også [selv hoste](https://biobase.studio/docs/guides/hosting/overview) og [udvikle lokalt](https://biobase.studio/docs/guides/local-development).
 
 ![Arkitektur](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

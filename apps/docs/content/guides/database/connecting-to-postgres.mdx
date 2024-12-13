@@ -28,7 +28,7 @@ Biobase offers [client libraries](/docs/reference) for popular programming langu
 
 Beyond the [Biobase client-libraries](/docs/guides/api/rest/client-libs), Biobase provides three connection strings for direct database access, compatible with all postgres libraries, such as [Prisma](/docs/guides/database/prisma) and [Drizzle](/docs/guides/database/drizzle), as well as tools like [PSQL](/docs/guides/database/psql) and [pgAdmin](/docs/guides/database/pgadmin).
 
-You can find these connection strings in your [Database Settings](https://biobase.com/dashboard/project/_/settings/database).
+You can find these connection strings in your [Database Settings](https://biobase.studio/dashboard/project/_/settings/database).
 
 ### Direct connections:
 
@@ -45,7 +45,7 @@ Direct connections use IPv6 by default. If your environment doesn't support IPv6
 postgresql://postgres:[YOUR-PASSWORD]@db.apbkobhfnmcqqzqeeqss.biobase.co:5432/postgres
 ```
 
-You can find the direct connection string in the [Database settings](https://biobase.com/dashboard/project/_/settings/database) inside the dashboard:
+You can find the direct connection string in the [Database settings](https://biobase.studio/dashboard/project/_/settings/database) inside the dashboard:
 
 1. Go to the `Settings` section.
 2. Click `Database`.
@@ -57,7 +57,7 @@ In Session mode, Supavisor acts as an IPv4 proxy. It allows developers in IPv4-o
 
 ```md
 // Example String
-postgres://postgres.apbkobhfnmcqqzqeeqss:[YOUR-PASSWORD]@aws-0-ca-central-1.pooler.biobase.com:5432/postgres
+postgres://postgres.apbkobhfnmcqqzqeeqss:[YOUR-PASSWORD]@aws-0-ca-central-1.pooler.biobase.studio:5432/postgres
 ```
 
 ### Transaction mode (port 6543):
@@ -72,7 +72,7 @@ Supavisor in transaction mode forms hot connections with the database and only a
 
 ```md
 // Example String
-postgres://postgres.apbkobhfnmcqqzqeeqss:[YOUR-PASSWORD]@aws-0-ca-central-1.pooler.biobase.com:6543/postgres
+postgres://postgres.apbkobhfnmcqqzqeeqss:[YOUR-PASSWORD]@aws-0-ca-central-1.pooler.biobase.studio:6543/postgres
 ```
 
 ## Connection pooling in-depth
@@ -120,7 +120,7 @@ You can obtain your connection info and Server root certificate from your applic
 
 <Admonition type="tip">
 
-If you'd like us to add a new quickstart guide, share your [feedback](https://biobase.com/dashboard/support/new), and we'll try to add it going forwards.
+If you'd like us to add a new quickstart guide, share your [feedback](https://biobase.studio/dashboard/support/new), and we'll try to add it going forwards.
 
 </Admonition>
 

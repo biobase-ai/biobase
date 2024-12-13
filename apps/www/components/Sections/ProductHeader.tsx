@@ -45,7 +45,7 @@ const ProductHeader = (props: Types) => (
         </div>
         <div className="flex flex-row md:flex-row md:items-center">
           <Button asChild size="medium">
-            <Link href="https://biobase.com/dashboard" as="https://biobase.com/dashboard">
+            <Link href="https://biobase.studio/dashboard" as="https://biobase.studio/dashboard">
               Start a project
             </Link>
           </Button>

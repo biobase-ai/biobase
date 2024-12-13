@@ -5,7 +5,7 @@ subtitle: "This guide steps through building a Biobase Integration using OAuth2 
 description: 'Build a Biobase Integration using OAuth2 and the Management API.'
 ---
 
-Using OAuth2.0 you can retrieve an access and refresh token that grant your application full access to the [Management API](https://biobase.com/docs/reference/api/introduction) on behalf of the user.
+Using OAuth2.0 you can retrieve an access and refresh token that grant your application full access to the [Management API](https://biobase.studio/docs/reference/api/introduction) on behalf of the user.
 
 ## Create an OAuth app
 
@@ -25,7 +25,7 @@ You can use your preferred OAuth2 client or follow the steps below. You can see 
 
 ### Redirecting to the authorize URL
 
-Within your app's UI, redirect the user to [`https://api.biobase.com/v1/oauth/authorize`](<https://api.biobase.com/api/v1#/oauth%20(beta)/authorize>). Make sure to include all required query parameters such as:
+Within your app's UI, redirect the user to [`https://api.biobase.studio/v1/oauth/authorize`](<https://api.biobase.studio/api/v1#/oauth%20(beta)/authorize>). Make sure to include all required query parameters such as:
 
 - `client_id`: Your client id from the app creation above.
 - `redirect_uri`: The URL where Biobase will redirect the user to after providing consent.
@@ -39,7 +39,7 @@ router.get('/connect-biobase/login', async (ctx) => {
   // Construct the URL for the authorization redirect and get a PKCE codeVerifier.
   const { uri, codeVerifier } = await oauth2Client.code.getAuthorizationUri()
   console.log(uri.toString())
-  // console.log: https://api.biobase.com/v1/oauth/authorize?response_type=code&client_id=7673bde9-be72-4d75-bd5e-b0dba2c49b38&redirect_uri=http%3A%2F%2Flocalhost%3A54321%2Ffunctions%2Fv1%2Fconnect-biobase%2Foauth2%2Fcallback&scope=all&code_challenge=jk06R69S1bH9dD4td8mS5kAEFmEbMP5P0YrmGNAUVE0&code_challenge_method=S256
+  // console.log: https://api.biobase.studio/v1/oauth/authorize?response_type=code&client_id=7673bde9-be72-4d75-bd5e-b0dba2c49b38&redirect_uri=http%3A%2F%2Flocalhost%3A54321%2Ffunctions%2Fv1%2Fconnect-biobase%2Foauth2%2Fcallback&scope=all&code_challenge=jk06R69S1bH9dD4td8mS5kAEFmEbMP5P0YrmGNAUVE0&code_challenge_method=S256
 
   // Store the codeVerifier in the user session (cookie).
   ctx.state.session.flash('codeVerifier', codeVerifier)
@@ -58,7 +58,7 @@ Once the user consents to providing API access to your OAuth App, Biobase will r
 - `code`: An authorization code you should exchange with Biobase to get the access and refresh token.
 - `state`: The value you provided in the previous step, to help you associate the request with the user. The `state` property returned here should be compared to the `state` you sent previously.
 
-Exchange the authorization code for an access and refresh token by calling [`POST https://api.biobase.com/v1/oauth/token`](<https://api.biobase.com/api/v1#/oauth%20(beta)/token>) with the following query parameters as content-type `application/x-www-form-urlencoded`:
+Exchange the authorization code for an access and refresh token by calling [`POST https://api.biobase.studio/v1/oauth/token`](<https://api.biobase.studio/api/v1#/oauth%20(beta)/token>) with the following query parameters as content-type `application/x-www-form-urlencoded`:
 
 - `grant_type`: The value `authorization_code`.
 - `code`: The `code` returned in the previous step.
@@ -109,7 +109,7 @@ Find the full example on [GitHub](https://github.com/biobase-ai/biobase/tree/mas
 
 ## Refreshing an access token
 
-You can use the [`POST /v1/oauth/token`](<https://api.biobase.com/api/v1#/oauth%20(beta)/token>) endpoint to refresh an access token using the refresh token returned at the end of the previous section.
+You can use the [`POST /v1/oauth/token`](<https://api.biobase.studio/api/v1#/oauth%20(beta)/token>) endpoint to refresh an access token using the refresh token returned at the end of the previous section.
 
 If the user has revoked access to your application, you will not be able to refresh a token. Furthermore, access tokens will stop working. Make sure you handle HTTP Unauthorized errors when calling any Biobase API.
 
@@ -135,7 +135,7 @@ There are a couple common patterns you can consider adding to your integration t
 
 Some integrations, e.g. like [Cloudflare Workers](/partners/integrations/cloudflare-workers) provide convenient access to the API URL and API keys to allow user to speed up development.
 
-Using the management API, you can retrieve a project's API credentials using the [`/projects/{ref}/api-keys` endpoint](https://api.biobase.com/api/v1#/projects/getProjectApiKeys).
+Using the management API, you can retrieve a project's API credentials using the [`/projects/{ref}/api-keys` endpoint](https://api.biobase.studio/api/v1#/projects/getProjectApiKeys).
 
 ### Pre-fill database connection details
 
@@ -149,13 +149,13 @@ Note that you cannot retrieve the database password via the management API, so f
 
 ### Create new organizations and projects
 
-If you don't need access to the user's existing project, we recommend creating a new project under a new organization. Use the [`/v1/organizations` endpoint](https://api.biobase.com/api/v1#/organizations/createOrganization) to create a new organization named after your integration, afterward use the [`/v1/projects` endpoint](https://api.biobase.com/api/v1#/projects/createProject) to create a new project.
+If you don't need access to the user's existing project, we recommend creating a new project under a new organization. Use the [`/v1/organizations` endpoint](https://api.biobase.studio/api/v1#/organizations/createOrganization) to create a new organization named after your integration, afterward use the [`/v1/projects` endpoint](https://api.biobase.studio/api/v1#/projects/createProject) to create a new project.
 
 When creating a new project, you can either ask the user to provide a database password, or you can generate a secure password for them. In any case, make sure to securely store the database password on your end which will allow you to construct the Postgres URI.
 
 ### Configure custom Auth SMTP
 
-You can configure the user's [custom SMTP settings](https://biobase.com/docs/guides/auth/auth-smtp) using the [`/config/auth` endpoint](https://api.biobase.com/api/v1#/projects%20config/updateV1AuthConfig).
+You can configure the user's [custom SMTP settings](https://biobase.studio/docs/guides/auth/auth-smtp) using the [`/config/auth` endpoint](https://api.biobase.studio/api/v1#/projects%20config/updateV1AuthConfig).
 
 ### Handling Dynamic Redirect URLs
 

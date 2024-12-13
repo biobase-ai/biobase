@@ -64,10 +64,10 @@ Choose one of these Vercel Deploy Templates which use our [Vercel Deploy Integra
 
 ### Manual configuration
 
-In your [`Database Settings`](https://biobase.com/dashboard/project/_/settings/database), make sure `Use connection pooler` is checked and `Transaction` mode is selected, then copy the URI and save it as the `POSTGRES_URL` environment variable. Remember to replace the password placeholder with your actual database password and add the following suffix `?workaround=biobase-pooler.vercel`.
+In your [`Database Settings`](https://biobase.studio/dashboard/project/_/settings/database), make sure `Use connection pooler` is checked and `Transaction` mode is selected, then copy the URI and save it as the `POSTGRES_URL` environment variable. Remember to replace the password placeholder with your actual database password and add the following suffix `?workaround=biobase-pooler.vercel`.
 
 ```txt .env.local
-POSTGRES_URL="postgres://postgres.cfcxynqnhdybqtbhjemm:[YOUR-PASSWORD]@aws-0-ap-southeast-1.pooler.biobase.com:6543/postgres?workaround=biobase-pooler.vercel"
+POSTGRES_URL="postgres://postgres.cfcxynqnhdybqtbhjemm:[YOUR-PASSWORD]@aws-0-ap-southeast-1.pooler.biobase.studio:6543/postgres?workaround=biobase-pooler.vercel"
 ```
 
 <Tabs scrollable defaultActiveId="drizzle" type="underlined" size="small">

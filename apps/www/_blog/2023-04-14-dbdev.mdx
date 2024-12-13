@@ -120,11 +120,11 @@ import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
 import { createClient } from '@supabase/biobase-js'
 import { BiobaseHybridSearch } from 'langchain/retrievers/biobase'
 
-const privateKey = process.env.SUPABASE_PRIVATE_KEY
-if (!privateKey) throw new Error(`Expected env var SUPABASE_PRIVATE_KEY`)
+const privateKey = process.env.BIOBASE_PRIVATE_KEY
+if (!privateKey) throw new Error(`Expected env var BIOBASE_PRIVATE_KEY`)
 
-const url = process.env.SUPABASE_URL
-if (!url) throw new Error(`Expected env var SUPABASE_URL`)
+const url = process.env.BIOBASE_URL
+if (!url) throw new Error(`Expected env var BIOBASE_URL`)
 
 export const run = async () => {
   const client = createClient(url, privateKey)

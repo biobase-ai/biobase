@@ -70,7 +70,7 @@ export const Restriction = () => {
                 </Link>
               </Button>
               <Button asChild type="default" icon={<ExternalLink />}>
-                <a href="https://biobase.com/docs/guides/platform/spend-cap">About spend cap</a>
+                <a href="https://biobase.studio/docs/guides/platform/spend-cap">About spend cap</a>
               </Button>
             </div>
           </AlertDescription_Shadcn_>
@@ -96,7 +96,7 @@ export const Restriction = () => {
                 <Link href={`/org/${org?.slug}/billing?panel=subscriptionPlan`}>Upgrade plan</Link>
               </Button>
               <Button asChild type="default" icon={<ExternalLink />}>
-                <a href="https://biobase.com/docs/guides/platform/billing-faq#fair-use-policy">
+                <a href="https://biobase.studio/docs/guides/platform/billing-faq#fair-use-policy">
                   About Fair Use Policy
                 </a>
               </Button>
@@ -123,7 +123,7 @@ export const Restriction = () => {
                 <Link href={`/org/${org?.slug}/billing?panel=subscriptionPlan`}>Upgrade plan</Link>
               </Button>
               <Button asChild type="default" icon={<ExternalLink />}>
-                <a href="https://biobase.com/docs/guides/platform/billing-faq#fair-use-policy">
+                <a href="https://biobase.studio/docs/guides/platform/billing-faq#fair-use-policy">
                   About Fair Use Policy
                 </a>
               </Button>
@@ -150,7 +150,7 @@ export const Restriction = () => {
                 <Link href={`/org/${org?.slug}/billing?panel=subscriptionPlan`}>Upgrade plan</Link>
               </Button>
               <Button asChild type="default" icon={<ExternalLink />}>
-                <a href="https://biobase.com/docs/guides/platform/billing-faq#fair-use-policy">
+                <a href="https://biobase.studio/docs/guides/platform/billing-faq#fair-use-policy">
                   About Fair Use Policy
                 </a>
               </Button>

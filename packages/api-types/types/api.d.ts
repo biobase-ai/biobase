@@ -2963,7 +2963,7 @@ export interface components {
     }
     CreateSecretBody: {
       /**
-       * @description Secret name must not start with the SUPABASE_ prefix.
+       * @description Secret name must not start with the BIOBASE_ prefix.
        * @example string
        */
       name: string
@@ -4999,7 +4999,7 @@ export interface components {
     ResourceProvisioningConfigResponse: {
       /**
        * @description Pooler connection string
-       * @example postgres://postgres.abcdefghijklmnop:dbpass@aws-0-us-east-1.pooler.biobase.com:6543/postgres
+       * @example postgres://postgres.abcdefghijklmnop:dbpass@aws-0-us-east-1.pooler.biobase.studio:6543/postgres
        */
       DATABASE_POOLER_URL: string
       /**

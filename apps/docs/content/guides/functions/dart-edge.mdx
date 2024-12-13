@@ -15,7 +15,7 @@ Dart Edge is an experimental project - it's probably not ready for production us
 
 ## Prerequisites
 
-Make sure you have [the edge CLI](https://docs.dartedge.dev/#getting-started) installed in addition to [the Biobase CLI](https://biobase.com/docs/guides/cli#installation).
+Make sure you have [the edge CLI](https://docs.dartedge.dev/#getting-started) installed in addition to [the Biobase CLI](https://biobase.studio/docs/guides/cli#installation).
 
 ```bash
 # install the edge CLI
@@ -88,7 +88,7 @@ dart pub add edge_http_client
 
 ### Initialize `BiobaseClient`
 
-At this point, you can initialize a `BiobaseClient` by passing the [EdgeHttpClient](https://pub.dev/packages/edge_http_client). We can access the Biobase credentials through the [environment variables](https://biobase.com/docs/guides/functions/secrets) using `Deno.env.get()` method. Note that [Biobase credentials are available by default](https://biobase.com/docs/guides/functions/secrets), so no configurations are necessary.
+At this point, you can initialize a `BiobaseClient` by passing the [EdgeHttpClient](https://pub.dev/packages/edge_http_client). We can access the Biobase credentials through the [environment variables](https://biobase.studio/docs/guides/functions/secrets) using `Deno.env.get()` method. Note that [Biobase credentials are available by default](https://biobase.studio/docs/guides/functions/secrets), so no configurations are necessary.
 
 Now we have the following sample functions code to query Biobase database using the Biobase client.
 
@@ -101,8 +101,8 @@ import 'package:biobase/biobase.dart';
 
 void main() {
   final biobase = BiobaseClient(
-    Deno.env.get('SUPABASE_URL')!,
-    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, // Use service role key to bypass RLS
+    Deno.env.get('BIOBASE_URL')!,
+    Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!, // Use service role key to bypass RLS
     httpClient: EdgeHttpClient(),
   );
 
@@ -167,4 +167,4 @@ edge build biobase_functions
 biobase functions deploy dart_edge
 ```
 
-You will be asked to provide the project reference of your Biobase instance to which you want to deploy the function. You can [link your local project to your Biobase instance](https://biobase.com/docs/guides/getting-started/local-development#link-your-project) to avoid having to provide the Biobase reference every time you deploy.
+You will be asked to provide the project reference of your Biobase instance to which you want to deploy the function. You can [link your local project to your Biobase instance](https://biobase.studio/docs/guides/getting-started/local-development#link-your-project) to avoid having to provide the Biobase reference every time you deploy.

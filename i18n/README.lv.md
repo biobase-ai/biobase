@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) ir atvērtā koda Firebase alternatīva. Mēs veidojam Firebase funkcijas, izmantojot uzņēmumu klases atvērtā pirmkoda rīkus.
+[Biobase](https://biobase.studio) ir atvērtā koda Firebase alternatīva. Mēs veidojam Firebase funkcijas, izmantojot uzņēmumu klases atvērtā pirmkoda rīkus.
 
-- [x] Hosted Postgres datubāze. [Dokumenti](https://biobase.com/docs/guides/database)
-- [x] Autentifikācija un autorizācija. [Dokumenti](https://biobase.com/docs/guides/auth)
+- [x] Hosted Postgres datubāze. [Dokumenti](https://biobase.studio/docs/guides/database)
+- [x] Autentifikācija un autorizācija. [Dokumenti](https://biobase.studio/docs/guides/auth)
 - [x] Automātiski ģenerēti API.
-  - [x] REST. [Dokumenti](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Dokumenti](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Reāllaika abonēšana. [Dokumenti](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Dokumenti](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Dokumenti](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Reāllaika abonēšana. [Dokumenti](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funkcijas.
-  - [x] Datubāzes funkcijas. [Dokumenti](https://biobase.com/docs/guides/database/functions)
-  - [x] Edge funkcijas [Dokumenti](https://biobase.com/docs/guides/functions)
-- [x] Failu glabāšana. [Dokumenti](https://biobase.com/docs/guides/storage)
+  - [x] Datubāzes funkcijas. [Dokumenti](https://biobase.studio/docs/guides/database/functions)
+  - [x] Edge funkcijas [Dokumenti](https://biobase.studio/docs/guides/functions)
+- [x] Failu glabāšana. [Dokumenti](https://biobase.studio/docs/guides/storage)
 - [x] Vadības panelis
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokumentācija
 
-Pilnu dokumentāciju skatīt [biobase.com/docs](https://biobase.com/docs)
+Pilnu dokumentāciju skatīt [biobase.studio/docs](https://biobase.studio/docs)
 
 Lai uzzinātu, kā veikt iemaksas, apmeklējiet [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@ Lai uzzinātu, kā veikt iemaksas, apmeklējiet [Getting Started](../DEVELOPERS.
 
 - [Kopienas forums](https://github.com/biobase-ai/biobase/discussions). Vislabāk piemērots: palīdzībai veidošanā, diskusijām par datubāzes paraugpraksi.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Vislabākais: kļūdas un kļūdas, ar kurām jūs sastopaties, izmantojot Biobase.
-- [E-pasta atbalsts](https://biobase.com/docs/support#business-support). Vislabāk piemērots: problēmām ar jūsu datu bāzi vai infrastruktūru.
-- [Discord](https://discord.biobase.com). Vislabākais: lai dalītos ar savām lietojumprogrammām un komunicētu ar kopienu.
+- [E-pasta atbalsts](https://biobase.studio/docs/support#business-support). Vislabāk piemērots: problēmām ar jūsu datu bāzi vai infrastruktūru.
+- [Discord](https://discord.biobase.studio). Vislabākais: lai dalītos ar savām lietojumprogrammām un komunicētu ar kopienu.
 
 ## Statuss
 
 - [x] Alfa: Mēs testējam Biobase ar slēgtu klientu kopu
-- [x] Publiskā alfa versija: [biobase.com/dashboard](https://biobase.com/dashboard). Bet nesteidzieties, ir dažas nepilnības
+- [x] Publiskā alfa versija: [biobase.studio/dashboard](https://biobase.studio/dashboard). Bet nesteidzieties, ir dažas nepilnības
 - [x] Publiskā beta versija: Pietiekami stabila lielākajai daļai ar uzņēmumu nesaistītu lietošanas gadījumu
-- [ ] Publisks: Vispārēja pieejamība [[statuss](https://biobase.com/docs/guides/getting-started/features#feature-status)]]
+- [ ] Publisks: Vispārēja pieejamība [[statuss](https://biobase.studio/docs/guides/getting-started/features#feature-status)]]
 
 Pašlaik mēs esam Publiskās beta versijas fāzē. Lai saņemtu paziņojumus par galvenajiem atjauninājumiem, skatiet šīs repozitorija "releases".
 
@@ -55,8 +55,8 @@ Biobase ir atvērtā koda rīku kombinācija. Mēs veidojam Firebase funkcijas, 
 
 **Arhitektūra**
 
-Biobase ir [izvietota platforma](https://biobase.com/dashboard). Jūs varat reģistrēties un sākt izmantot Biobase, neko neinstalējot.
-Jūs varat arī [pašmāju resursus](https://biobase.com/docs/guides/hosting/overview) un [izstrādāt lokāli](https://biobase.com/docs/guides/local-development).
+Biobase ir [izvietota platforma](https://biobase.studio/dashboard). Jūs varat reģistrēties un sākt izmantot Biobase, neko neinstalējot.
+Jūs varat arī [pašmāju resursus](https://biobase.studio/docs/guides/hosting/overview) un [izstrādāt lokāli](https://biobase.studio/docs/guides/local-development).
 
 ![Arhitektūra](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

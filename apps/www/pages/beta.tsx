@@ -500,11 +500,11 @@ const Reliability = () => {
             <p className="mb-10">
               We're launching{' '}
               <a
-                href="https://status.biobase.com"
+                href="https://status.biobase.studio"
                 target="_blank"
                 className="text-brand hover:text-brand"
               >
-                https://status.biobase.com
+                https://status.biobase.studio
               </a>{' '}
               to keep track of uptime across all of our services and critical infrastructure.
             </p>
@@ -643,7 +643,7 @@ const BetaPricing = () => (
 
       <div className="grid grid-cols-12 col-span-12 mb-10 text-foreground gap-x-2 lg:gap-x-8">
         <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
-          <p className="mb-10">For up to date pricing info see: https://biobase.com/pricing</p>
+          <p className="mb-10">For up to date pricing info see: https://biobase.studio/pricing</p>
           <p className="mb-10">
             We're working closely with many open source projects, infrastructure providers, and of
             course our Alpha Users, to provide a predictable and sustainable pricing model.
@@ -693,7 +693,7 @@ const BetaPricing = () => (
           </ul>
           <p>
             The Biobase Base plan is now called the Biobase Pro Plan as per the{' '}
-            <a href="https://biobase.com/pricing" className="text-brand hover:text-brand">
+            <a href="https://biobase.studio/pricing" className="text-brand hover:text-brand">
               pricing page
             </a>
             .
@@ -911,7 +911,7 @@ const WhatsNext = () => (
   </div>
 )
 
-const SUPABASE_AUTHOR_INDEX = 12
+const BIOBASE_AUTHOR_INDEX = 12
 
 const Beta = (props: Props) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
@@ -950,7 +950,7 @@ const Beta = (props: Props) => {
         openGraph={{
           title: site_title,
           description: DEFAULT_META_DESCRIPTION,
-          url: `https://biobase.com/beta`,
+          url: `https://biobase.studio/beta`,
           type: 'article',
           article: {
             //
@@ -960,12 +960,12 @@ const Beta = (props: Props) => {
             //
             // to do: author urls should be internal in future
             // currently we have external links to github profiles
-            authors: [authors[SUPABASE_AUTHOR_INDEX].author_url],
+            authors: [authors[BIOBASE_AUTHOR_INDEX].author_url],
             tags: ['beta'],
           },
           images: [
             {
-              url: 'https://biobase.com/og/biobase-og.png',
+              url: 'https://biobase.studio/og/biobase-og.png',
             },
           ],
         }}

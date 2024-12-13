@@ -78,7 +78,7 @@ response = biobase.auth.sign_in_with_otp({
 
 ```bash
 curl -X POST 'https://cvwawazfelidkloqmbma.biobase.co/auth/v1/otp' \
--H "apikey: SUPABASE_KEY" \
+-H "apikey: BIOBASE_KEY" \
 -H "Content-Type: application/json" \
 -d '{
   "phone": "+13334445555"
@@ -160,7 +160,7 @@ response = biobase.auth.verify_otp({
 
 ```bash
 curl -X POST 'https://<PROJECT_REF>.biobase.co/auth/v1/verify' \
--H "apikey: <SUPABASE_KEY>" \
+-H "apikey: <BIOBASE_KEY>" \
 -H "Content-Type: application/json" \
 -d '{
   "type": "sms",

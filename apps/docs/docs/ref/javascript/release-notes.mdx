@@ -78,7 +78,7 @@ Biobase.js v2 release notes.
         import type { Database } from './DatabaseDefinitions'
 
         // definitions are injected in `createClient()`
-        const biobase = createClient<Database>(SUPABASE_URL, ANON_KEY)
+        const biobase = createClient<Database>(BIOBASE_URL, ANON_KEY)
 
         const { data } = await biobase.from('messages').select().match({ id: 1 })
       ```

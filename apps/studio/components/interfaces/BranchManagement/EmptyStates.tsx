@@ -40,7 +40,7 @@ export const BranchingEmptyState = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://biobase.com/docs/guides/platform/branching"
+            href="https://biobase.studio/docs/guides/platform/branching"
           >
             View the docs
           </a>
@@ -85,7 +85,7 @@ export const PullRequestsEmptyState = ({
               <Link
                 target="_blank"
                 rel="noreferrer"
-                href="https://biobase.com/docs/guides/platform/branching"
+                href="https://biobase.studio/docs/guides/platform/branching"
               >
                 Docs
               </Link>
@@ -128,7 +128,7 @@ export const PreviewBranchesEmptyState = ({
             <Link
               target="_blank"
               rel="noreferrer"
-              href="https://biobase.com/docs/guides/platform/branching"
+              href="https://biobase.studio/docs/guides/platform/branching"
             >
               Docs
             </Link>

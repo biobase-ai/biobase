@@ -19537,7 +19537,7 @@
                 "summary": [
                   {
                     "kind": "text",
-                    "text": "Types for the schema from the [type\ngenerator](https://biobase.com/docs/reference/javascript/next/typescript-support)"
+                    "text": "Types for the schema from the [type\ngenerator](https://biobase.studio/docs/reference/javascript/next/typescript-support)"
                   }
                 ]
               },

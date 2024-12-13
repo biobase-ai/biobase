@@ -23,7 +23,7 @@ export default {
     image: '/images/index/gradient-bg.png',
     cta: {
       label: 'Start your project',
-      link: 'https://app.biobase.com',
+      link: 'https://app.biobase.studio',
     },
     secondaryCta: {
       label: 'Documentation',
@@ -43,7 +43,7 @@ export default {
         ),
         description_short: 'Instant ready-to-use Restful APIs.',
         label: '',
-        url: 'https://biobase.com/docs/guides/api',
+        url: 'https://biobase.studio/docs/guides/api',
       },
     },
   },

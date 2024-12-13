@@ -57,32 +57,32 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_biobase_anon_key
 <TabPanel id="sveltekit" label="SvelteKit">
 
 ```bash .env.local
-PUBLIC_SUPABASE_URL=your_biobase_project_url
-PUBLIC_SUPABASE_ANON_KEY=your_biobase_anon_key
+PUBLIC_BIOBASE_URL=your_biobase_project_url
+PUBLIC_BIOBASE_ANON_KEY=your_biobase_anon_key
 ```
 
 </TabPanel>
 <TabPanel id="astro" label="Astro">
 
 ```bash .env
-PUBLIC_SUPABASE_URL=your_biobase_project_url
-PUBLIC_SUPABASE_ANON_KEY=your_biobase_anon_key
+PUBLIC_BIOBASE_URL=your_biobase_project_url
+PUBLIC_BIOBASE_ANON_KEY=your_biobase_anon_key
 ```
 
 </TabPanel>
 <TabPanel id="remix" label="Remix">
 
 ```bash .env
-SUPABASE_URL=your_biobase_project_url
-SUPABASE_ANON_KEY=your_biobase_anon_key
+BIOBASE_URL=your_biobase_project_url
+BIOBASE_ANON_KEY=your_biobase_anon_key
 ```
 
 </TabPanel>
 <TabPanel id="express" label="Express">
 
 ```bash .env
-SUPABASE_URL=your_biobase_project_url
-SUPABASE_ANON_KEY=your_biobase_anon_key
+BIOBASE_URL=your_biobase_project_url
+BIOBASE_ANON_KEY=your_biobase_anon_key
 ```
 
 Install [dotenv](https://www.npmjs.com/package/dotenv):
@@ -309,12 +309,12 @@ export async function updateSession(request: NextRequest) {
 <TabPanel id="hooks" label="Hooks">
 
 ```ts hooks.server.ts
-import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public'
+import { PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY } from '$env/static/public'
 import { createServerClient } from '@supabase/ssr'
 import type { Handle } from '@sveltejs/kit'
 
 export const handle: Handle = async ({ event, resolve }) => {
-  event.locals.biobase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
+  event.locals.biobase = createServerClient(PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY, {
     cookies: {
       getAll() {
         return event.cookies.getAll()
@@ -373,7 +373,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 Page components can get access to the biobase client from the `data` object due to this load function.
 
 ```ts +layout.ts
-import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public'
+import { PUBLIC_BIOBASE_ANON_KEY, PUBLIC_BIOBASE_URL } from '$env/static/public'
 import type { LayoutLoad } from './$types'
 import { createBrowserClient, createServerClient, isBrowser } from '@supabase/ssr'
 
@@ -381,12 +381,12 @@ export const load: LayoutLoad = async ({ fetch, data, depends }) => {
   depends('biobase:auth')
 
   const biobase = isBrowser()
-    ? createBrowserClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
+    ? createBrowserClient(PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY, {
         global: {
           fetch,
         },
       })
-    : createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
+    : createServerClient(PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY, {
         global: {
           fetch,
         },
@@ -459,8 +459,8 @@ export default defineConfig({
 import { createServerClient, parseCookieHeader } from "@supabase/ssr";
 
 const biobase = createServerClient(
-  import.meta.env.PUBLIC_SUPABASE_URL,
-  import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
+  import.meta.env.PUBLIC_BIOBASE_URL,
+  import.meta.env.PUBLIC_BIOBASE_ANON_KEY,
   {
     cookies: {
       getAll() {
@@ -485,8 +485,8 @@ const biobase = createServerClient(
   import { createBrowserClient } from "@supabase/ssr";
 
   const biobase = createBrowserClient(
-    import.meta.env.PUBLIC_SUPABASE_URL,
-    import.meta.env.PUBLIC_SUPABASE_ANON_KEY
+    import.meta.env.PUBLIC_BIOBASE_URL,
+    import.meta.env.PUBLIC_BIOBASE_ANON_KEY
   );
 </script>
 ```
@@ -501,8 +501,8 @@ import type { APIContext } from "astro";
 
 export async function GET(context: APIContext) {
   const biobase = createServerClient(
-    import.meta.env.PUBLIC_SUPABASE_URL,
-    import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
+    import.meta.env.PUBLIC_BIOBASE_URL,
+    import.meta.env.PUBLIC_BIOBASE_ANON_KEY,
     {
       cookies: {
         getAll() {
@@ -542,7 +542,7 @@ import { createServerClient, parseCookieHeader, serializeCookieHeader } from '@s
 export async function loader({ request }: LoaderFunctionArgs) {
   const headers = new Headers()
 
-  const biobase = createServerClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!, {
+  const biobase = createServerClient(process.env.BIOBASE_URL!, process.env.BIOBASE_ANON_KEY!, {
     cookies: {
       getAll() {
         return parseCookieHeader(request.headers.get('Cookie') ?? '')
@@ -572,7 +572,7 @@ import { createServerClient, parseCookieHeader, serializeCookieHeader } from '@s
 export async function action({ request }: ActionFunctionArgs) {
   const headers = new Headers()
 
-  const biobase = createServerClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!, {
+  const biobase = createServerClient(process.env.BIOBASE_URL!, process.env.BIOBASE_ANON_KEY!, {
     cookies: {
       getAll() {
         return parseCookieHeader(request.headers.get('Cookie') ?? '')
@@ -603,8 +603,8 @@ import { createBrowserClient } from "@supabase/ssr";
 export async function loader({}: LoaderFunctionArgs) {
   return {
     env: {
-      SUPABASE_URL: process.env.SUPABASE_URL!,
-      SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY!,
+      BIOBASE_URL: process.env.BIOBASE_URL!,
+      BIOBASE_ANON_KEY: process.env.BIOBASE_ANON_KEY!,
     },
   };
 }
@@ -612,7 +612,7 @@ export async function loader({}: LoaderFunctionArgs) {
 export default function Index() {
   const { env } = useLoaderData<typeof loader>();
 
-  const biobase = createBrowserClient(env.SUPABASE_URL, env.SUPABASE_ANON_KEY);
+  const biobase = createBrowserClient(env.BIOBASE_URL, env.BIOBASE_ANON_KEY);
 
   return ...
 }
@@ -638,7 +638,7 @@ export default function Index() {
 const { createServerClient, parseCookieHeader, serializeCookieHeader } = require('@supabase/ssr')
 
 exports.createClient = (context) => {
-  return createServerClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY, {
+  return createServerClient(process.env.BIOBASE_URL, process.env.BIOBASE_ANON_KEY, {
     cookies: {
       getAll() {
         return parseCookieHeader(context.req.headers.cookie ?? '')

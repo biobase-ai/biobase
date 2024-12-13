@@ -127,7 +127,7 @@ const FunctionsLayout = ({ title, children }: PropsWithChildren<FunctionsLayoutP
                       className="translate-y-[1px]"
                       icon={<ExternalLink size={14} strokeWidth={1.5} />}
                     >
-                      <Link href="https://biobase.com/docs/guides/functions" target="_link">
+                      <Link href="https://biobase.studio/docs/guides/functions" target="_link">
                         Documentation
                       </Link>
                     </Button>

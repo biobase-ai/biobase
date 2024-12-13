@@ -71,7 +71,7 @@
   "ssh_url": "git@github.com:biobase/postgrest-rs.git",
   "clone_url": "https://github.com/biobase/postgrest-rs.git",
   "svn_url": "https://github.com/biobase/postgrest-rs",
-  "homepage": "https://biobase.com",
+  "homepage": "https://biobase.studio",
   "size": 49,
   "stargazers_count": 28,
   "watchers_count": 28,

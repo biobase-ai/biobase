@@ -36,7 +36,7 @@ import { Markdown } from 'components/interfaces/Markdown'
 // just too large for a browser to keep all the rows in memory before
 // exporting. Either that or export as multiple CSV sheets with max n rows each
 export const MAX_EXPORT_ROW_COUNT = 500000
-export const MAX_EXPORT_ROW_COUNT_MESSAGE = `Sorry! We're unable to support exporting row counts larger than ${MAX_EXPORT_ROW_COUNT.toLocaleString()} at the moment. Alternatively, you may consider using [pg_dump](https://biobase.com/docs/reference/cli/biobase-db-dump) via our CLI instead.`
+export const MAX_EXPORT_ROW_COUNT_MESSAGE = `Sorry! We're unable to support exporting row counts larger than ${MAX_EXPORT_ROW_COUNT.toLocaleString()} at the moment. Alternatively, you may consider using [pg_dump](https://biobase.studio/docs/reference/cli/biobase-db-dump) via our CLI instead.`
 
 export type HeaderProps = {
   table: SupaTable

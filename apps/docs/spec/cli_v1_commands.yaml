@@ -424,7 +424,7 @@ commands:
 
       Requires the local development stack to be started by running `biobase start` or `biobase db start`.
 
-      You can export the connection parameters for [initializing biobase-js](https://biobase.com/docs/reference/javascript/initializing) locally by specifying the `-o env` flag. Supported parameters include `JWT_SECRET`, `ANON_KEY`, and `SERVICE_ROLE_KEY`.
+      You can export the connection parameters for [initializing biobase-js](https://biobase.studio/docs/reference/javascript/initializing) locally by specifying the `-o env` flag. Supported parameters include `JWT_SECRET`, `ANON_KEY`, and `SERVICE_ROLE_KEY`.
     examples:
       - id: basic-usage
         name: Basic usage
@@ -454,14 +454,14 @@ commands:
           STUDIO_URL="http://127.0.0.1:54323"
       - id: output-custom-name
         name: Customize the names of exported variables
-        code: biobase status -o env --override-name auth.anon_key=SUPABASE_ANON_KEY --override-name auth.service_role_key=SUPABASE_SERVICE_KEY
+        code: biobase status -o env --override-name auth.anon_key=BIOBASE_ANON_KEY --override-name auth.service_role_key=BIOBASE_SERVICE_KEY
         response: |
           Stopped services: [biobase_inbucket_cli biobase_rest_cli biobase_studio_cli]
-          SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0"
+          BIOBASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0"
           DB_URL="postgresql://postgres:postgres@127.0.0.1:54322/postgres"
           GRAPHQL_URL="http://127.0.0.1:54321/graphql/v1"
           JWT_SECRET="super-secret-jwt-token-with-at-least-32-characters-long"
-          SUPABASE_SERVICE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU"
+          BIOBASE_SERVICE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU"
     tags:
       - local-dev
     links: []
@@ -1590,11 +1590,11 @@ commands:
     summary: Authenticate using an access token
     description: |2
 
-      Connect the Biobase CLI to your Biobase account by logging in with your [personal access token](https://biobase.com/dashboard/account/tokens).
+      Connect the Biobase CLI to your Biobase account by logging in with your [personal access token](https://biobase.studio/dashboard/account/tokens).
 
       Your access token is stored securely in [native credentials storage](https://github.com/zalando/go-keyring#dependencies). If native credentials storage is unavailable, it will be written to a plain text file at `~/.biobase/access-token`.
 
-      > If this behavior is not desired, such as in a CI environment, you may skip login by specifying the `SUPABASE_ACCESS_TOKEN` environment variable in other commands.
+      > If this behavior is not desired, such as in a CI environment, you may skip login by specifying the `BIOBASE_ACCESS_TOKEN` environment variable in other commands.
 
       The Biobase CLI uses the stored token to access Management APIs for projects, functions, secrets, etc.
     examples:
@@ -1602,7 +1602,7 @@ commands:
         name: Basic usage
         code: biobase login
         response: |
-          You can generate an access token from https://biobase.com/dashboard/account/tokens
+          You can generate an access token from https://biobase.studio/dashboard/account/tokens
           Enter your access token: sbp_****************************************
           Finished biobase login.
     tags:
@@ -1634,7 +1634,7 @@ commands:
 
       Optionally, database settings can be validated if you provide a password. Your database password is saved in native credentials storage if available.
 
-      > If you do not want to be prompted for the database password, such as in a CI environment, you may specify it explicitly via the `SUPABASE_DB_PASSWORD` environment variable.
+      > If you do not want to be prompted for the database password, such as in a CI environment, you may specify it explicitly via the `BIOBASE_DB_PASSWORD` environment variable.
 
       Some commands like `db dump`, `db push`, and `db pull` require your project to be linked first.
     examples:
@@ -1736,7 +1736,7 @@ commands:
     summary: Show statistics related to vacuum operations per table
     description: |2
 
-      This shows you stats about the vacuum activities for each table. Due to Postgres' [MVCC](https://www.postgresql.org/docs/current/mvcc.html) when data is updated or deleted new rows are created and old rows are made invisible and marked as "dead tuples". Usually the [autovaccum](https://biobase.com/docs/guides/platform/database-size#vacuum-operations) process will aysnchronously clean the dead tuples.
+      This shows you stats about the vacuum activities for each table. Due to Postgres' [MVCC](https://www.postgresql.org/docs/current/mvcc.html) when data is updated or deleted new rows are created and old rows are made invisible and marked as "dead tuples". Usually the [autovaccum](https://biobase.studio/docs/guides/platform/database-size#vacuum-operations) process will aysnchronously clean the dead tuples.
 
       The command lists when the last vacuum and last auto vacuum took place, the row count on the table as well as the count of dead rows and whether autovacuum is expected to run or not. If the number of dead rows is much higher than the row count, or if an autovacuum is expected but has not been performed for some time, this can indicate that autovacuum is not able to keep up and that your vacuum settings need to be tweaked or that you require more compute or disk IOPS to allow autovaccum to complete.
 
@@ -2010,9 +2010,9 @@ commands:
       This command shows the number of active connections for each database roles to see which specific role might be consuming more connections than expected.
 
       This is a Biobase specific command. You can see this breakdown on the dashboard as well:
-      https://app.biobase.com/project/_/database/roles
+      https://app.biobase.studio/project/_/database/roles
 
-      The maximum number of active connections depends [on your instance size](https://biobase.com/docs/guides/platform/compute-add-ons). You can [manually overwrite](https://biobase.com/docs/guides/platform/performance#allowing-higher-number-of-connections) the allowed number of connection but it is not advised.
+      The maximum number of active connections depends [on your instance size](https://biobase.studio/docs/guides/platform/compute-add-ons). You can [manually overwrite](https://biobase.studio/docs/guides/platform/performance#allowing-higher-number-of-connections) the allowed number of connection but it is not advised.
 
       ```
 
@@ -2360,7 +2360,7 @@ commands:
       Estimates space allocated to a relation that is full of dead tuples
     description: |2
 
-      This command displays an estimation of table "bloat" - Due to Postgres' [MVCC](https://www.postgresql.org/docs/current/mvcc.html) when data is updated or deleted new rows are created and old rows are made invisible and marked as "dead tuples". Usually the [autovaccum](https://biobase.com/docs/guides/platform/database-size#vacuum-operations) process will asynchronously clean the dead tuples. Sometimes the autovaccum is unable to work fast enough to reduce or prevent tables from becoming bloated. High bloat can slow down queries, cause excessive IOPS and waste space in your database.
+      This command displays an estimation of table "bloat" - Due to Postgres' [MVCC](https://www.postgresql.org/docs/current/mvcc.html) when data is updated or deleted new rows are created and old rows are made invisible and marked as "dead tuples". Usually the [autovaccum](https://biobase.studio/docs/guides/platform/database-size#vacuum-operations) process will asynchronously clean the dead tuples. Sometimes the autovaccum is unable to work fast enough to reduce or prevent tables from becoming bloated. High bloat can slow down queries, cause excessive IOPS and waste space in your database.
 
       Tables with a high bloat ratio should be investigated to see if there are vacuuming is not quick enough or there are other issues.
 
@@ -2399,7 +2399,7 @@ commands:
 
       A `biobase/config.toml` file is created in your current working directory. This configuration is specific to each local project.
 
-      > You may override the directory path by specifying the `SUPABASE_WORKDIR` environment variable or `--workdir` flag.
+      > You may override the directory path by specifying the `BIOBASE_WORKDIR` environment variable or `--workdir` flag.
 
       In addition to `config.toml`, the `biobase` directory may also contain other Biobase objects, such as `migrations`, `functions`, `tests`, etc.
     examples:

@@ -14,7 +14,7 @@ With TypeScript, `biobase-js` detects things like `not null` constraints and [ge
 <RefSubLayout.EducationRow>
   <RefSubLayout.Details>
 
-    You can use the Biobase CLI to [generate the types](/docs/reference/cli/biobase-gen-types). You can also generate the types [from the dashboard](https://biobase.com/dashboard/project/_/api?page=tables-intro).
+    You can use the Biobase CLI to [generate the types](/docs/reference/cli/biobase-gen-types). You can also generate the types [from the dashboard](https://biobase.studio/dashboard/project/_/api?page=tables-intro).
 
   </RefSubLayout.Details>
   <RefSubLayout.Examples>
@@ -87,8 +87,8 @@ With TypeScript, `biobase-js` detects things like `not null` constraints and [ge
     import { Database } from './database.types'
 
     const biobase = createClient<Database>(
-      process.env.SUPABASE_URL,
-      process.env.SUPABASE_ANON_KEY
+      process.env.BIOBASE_URL,
+      process.env.BIOBASE_ANON_KEY
     )
     ```
 

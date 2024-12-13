@@ -71,7 +71,7 @@
   "ssh_url": "git@github.com:biobase/biobase.git",
   "clone_url": "https://github.com/biobase-ai/biobase.git",
   "svn_url": "https://github.com/biobase-ai/biobase",
-  "homepage": "https://biobase.com",
+  "homepage": "https://biobase.studio",
   "size": 31094,
   "stargazers_count": 2551,
   "watchers_count": 2551,

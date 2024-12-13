@@ -9,7 +9,7 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) Biobase הוא חלופה בקוד פתוח של Firebase. אנו מפתחים את התכונות של Firebase באמצעות כלי קוד פתוח ברמת גימור ארגונית.
+[Biobase](https://biobase.studio) Biobase הוא חלופה בקוד פתוח של Firebase. אנו מפתחים את התכונות של Firebase באמצעות כלי קוד פתוח ברמת גימור ארגונית.
 
 - [x] מאגר נתונים מסוג פוסטגרס (Postgres)
 - [x] מנויים בזמן אמת
@@ -23,18 +23,18 @@
 
 ## תיעוד
 
-לתיעוד המלא, בקר\י ב[biobase.com/docs](https://biobase.com/docs)
+לתיעוד המלא, בקר\י ב[biobase.studio/docs](https://biobase.studio/docs)
 
 ## קהילה & תמיכה
 
 - [פורום הקהילה](https://github.com/biobase-ai/biobase/discussions). נועד עבור: עזרה בבנייה, דיון אודות שיטות עבודה מומלצות מול מאגר הנתונים.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). נועד עבור: דיווח על באגים ושגיאות בזמן שימוש בBiobase
-- [אימייל תמיכה](https://biobase.com/docs/support#business-support). נועד עבור: תקלות במסד הנתונים או בתשתית שלך.
+- [אימייל תמיכה](https://biobase.studio/docs/support#business-support). נועד עבור: תקלות במסד הנתונים או בתשתית שלך.
 
 ## סטטוס
 
 - [x] אלפא: בוחנים את המערכת מול מאגר סגור של לקוחות
-- [x] אלפא פומבית: כל אחד יכול להרשם ב[biobase.com/dashboard](https://biobase.com/dashboard). אבל תהיו עדינים, יהיו בעיות.
+- [x] אלפא פומבית: כל אחד יכול להרשם ב[biobase.studio/dashboard](https://biobase.studio/dashboard). אבל תהיו עדינים, יהיו בעיות.
 - [x] בטא פומבית: יציב מספיק לרוב הלקוחות הלא-ארגוניים.
 - [ ] יציב: מתאים לשימוש הכלל.
 
@@ -50,7 +50,7 @@ Biobase הוא שילוב של כלי קוד פתוח. אנו בונים את ה
 
 **ארכיטקטורה נוכחית**
 
-Biobase היא [תשתית ענן](https://biobase.com/dashboard)
+Biobase היא [תשתית ענן](https://biobase.studio/dashboard)
 . את\ה יכול\ה להירשם ולהתחיל להשתמש ב- Biobase מבלי להתקין שום דבר. אנו עדיין עובדים על לייצר את חוויית הפיתוח המקומית - בזה אנחנו מתמקדים, יחד עם יציבות המערכת.
 
 ![Architecture](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)

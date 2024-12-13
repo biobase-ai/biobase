@@ -8,7 +8,7 @@
 
 ### 1. Create new project
 
-Sign up to Biobase - [https://biobase.com/dashboard](https://biobase.com/dashboard) and create a new project. Wait for your database to start.
+Sign up to Biobase - [https://biobase.studio/dashboard](https://biobase.studio/dashboard) and create a new project. Wait for your database to start.
 
 ### 2. Run "User Management Starter" Quickstart
 
@@ -118,6 +118,6 @@ with
 
 ## Authors
 
-- [Biobase](https://biobase.com)
+- [Biobase](https://biobase.studio)
 
 Biobase is open source, we'd love for you to follow along and get involved at https://github.com/biobase-ai/biobase

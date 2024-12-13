@@ -7,7 +7,7 @@
 
 # Biobase
 
-To [Biobase](https://biobase.com) είναι μια εναλλακτική λύση ανοιχτού κώδικα αντί του Firebase. Δημιουργούμε τις δυνατότητες του Firebase χρησιμοποιώντας εργαλεία ανοιχτού κώδικα εταιρικού επιπέδου.
+To [Biobase](https://biobase.studio) είναι μια εναλλακτική λύση ανοιχτού κώδικα αντί του Firebase. Δημιουργούμε τις δυνατότητες του Firebase χρησιμοποιώντας εργαλεία ανοιχτού κώδικα εταιρικού επιπέδου.
 
 - [x] Hosted Postgres Database
 - [x] Realtime subscriptions
@@ -21,18 +21,18 @@ To [Biobase](https://biobase.com) είναι μια εναλλακτική λύ�
 
 ## Documentation
 
-Για το πλήρες Documentation, επισκεφθείτε το [biobase.com/docs](https://biobase.com/docs)
+Για το πλήρες Documentation, επισκεφθείτε το [biobase.studio/docs](https://biobase.studio/docs)
 
 ## Κοινότητα και υποστήριξη
 
 - [Community Forum](https://github.com/biobase-ai/biobase/discussions). Καλύτερο για: βοήθεια στo building, συζήτηση σχετικά με τις βέλτιστες πρακτικές βάσης δεδομένων.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Καλύτερο για: σφάλματα (bugs) και λάθη (errors) που συναντάτε κατά τη χρήση Biobase.
-- [Email Support](https://biobase.com/docs/support#business-support). Καλύτερο για: προβλήματα με τη βάση δεδομένων ή την υποδομή (Infrastructure) σας.
+- [Email Support](https://biobase.studio/docs/support#business-support). Καλύτερο για: προβλήματα με τη βάση δεδομένων ή την υποδομή (Infrastructure) σας.
 
 ## Κατάσταση
 
 - [x] Alpha: Δοκιμάζουμε το Biobase με ένα κλειστό σύνολο πελατών
-- [x] Public Alpha: Όλοι μπορούν να εγγραφούν στο [biobase.com/dashboard](https://biobase.com/dashboard). Αλλά μην μας κρίνετε "σκληρά", υπάρχουν ακόμα μερικά λαθάκια (bugs) εδώ και εκεί
+- [x] Public Alpha: Όλοι μπορούν να εγγραφούν στο [biobase.studio/dashboard](https://biobase.studio/dashboard). Αλλά μην μας κρίνετε "σκληρά", υπάρχουν ακόμα μερικά λαθάκια (bugs) εδώ και εκεί
 - [x] Public Beta: Αρκετά σταθερό για για τις περισσότερες περιπτώσεις χρήσης μη εταιρικού χαρακτήρα (non-enterprise)
 - [ ] Public: Έτοιμο για Production
 
@@ -48,7 +48,7 @@ To [Biobase](https://biobase.com) είναι μια εναλλακτική λύ�
 
 **Τρέχουσα αρχιτεκτονική**
 
-Το Biobase είναι ένα [hosted platform](https://biobase.com/dashboard) (φιλοξενούμενη πλατφόρμα). Μπορείτε να εγγραφείτε και να αρχίσετε να χρησιμοποιείτε το Biobase χωρίς να εγκαταστήσετε τίποτα. Εξακολουθούμε να αναπτύσουμε την εμπειρία της τοπικής ανάπτυξης (Local Development) - αυτή είναι τώρα η βασική μας εστίαση, μαζί με τη σταθερότητα της πλατφόρμας.
+Το Biobase είναι ένα [hosted platform](https://biobase.studio/dashboard) (φιλοξενούμενη πλατφόρμα). Μπορείτε να εγγραφείτε και να αρχίσετε να χρησιμοποιείτε το Biobase χωρίς να εγκαταστήσετε τίποτα. Εξακολουθούμε να αναπτύσουμε την εμπειρία της τοπικής ανάπτυξης (Local Development) - αυτή είναι τώρα η βασική μας εστίαση, μαζί με τη σταθερότητα της πλατφόρμας.
 
 ![Architecture](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

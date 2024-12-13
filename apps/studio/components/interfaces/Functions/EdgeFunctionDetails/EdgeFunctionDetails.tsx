@@ -194,7 +194,7 @@ const EdgeFunctionDetails = () => {
                         <div className="!mt-4">
                           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                             <Link
-                              href="https://biobase.com/docs/guides/functions/import-maps"
+                              href="https://biobase.studio/docs/guides/functions/import-maps"
                               target="_blank"
                               rel="noreferrer"
                             >

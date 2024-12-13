@@ -247,7 +247,7 @@ const TableGridEditor = ({
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https://biobase.com/docs/guides/database/tables#primary-keys"
+                  href="https://biobase.studio/docs/guides/database/tables#primary-keys"
                 >
                   Documentation
                 </a>

@@ -9,6 +9,6 @@ import Foundation
 import Biobase
 
 let biobase = BiobaseClient(
-  biobaseURL: URL(string: DotEnv.SUPABASE_URL)!,
-  biobaseKey: DotEnv.SUPABASE_ANON_KEY
+  biobaseURL: URL(string: DotEnv.BIOBASE_URL)!,
+  biobaseKey: DotEnv.BIOBASE_ANON_KEY
 )

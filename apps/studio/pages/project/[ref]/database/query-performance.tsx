@@ -49,7 +49,7 @@ const QueryPerformanceReport: NextPageWithLayout = () => {
       <FormHeader
         className="py-4 px-6 !mb-0"
         title="Query Performance"
-        docsUrl="https://biobase.com/docs/guides/platform/performance#examining-query-performance"
+        docsUrl="https://biobase.studio/docs/guides/platform/performance#examining-query-performance"
         actions={<DatabaseSelector />}
       />
       <QueryPerformance queryHitRate={queryHitRate} queryPerformanceQuery={queryPerformanceQuery} />

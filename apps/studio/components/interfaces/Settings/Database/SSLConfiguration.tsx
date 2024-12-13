@@ -86,7 +86,7 @@ const SSLConfiguration = () => {
         <FormHeader title="SSL Configuration" description="" />
         <div className="flex items-center space-x-2 mb-6">
           <Button asChild type="default" icon={<ExternalLink />}>
-            <Link href="https://biobase.com/docs/guides/platform/ssl-enforcement" target="_blank">
+            <Link href="https://biobase.studio/docs/guides/platform/ssl-enforcement" target="_blank">
               Documentation
             </Link>
           </Button>

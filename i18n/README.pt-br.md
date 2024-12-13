@@ -7,19 +7,19 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) é uma alternativa de código aberto ao Firebase. Estamos desenvolvendo os recursos do Firebase usando ferramentas de código aberto de nível empresarial.
+[Biobase](https://biobase.studio) é uma alternativa de código aberto ao Firebase. Estamos desenvolvendo os recursos do Firebase usando ferramentas de código aberto de nível empresarial.
 
-- [x] Banco de dados Postgres hospedado. [Docs](https://biobase.com/docs/guides/database)
-- [x] Autenticação e autorização. [Docs](https://biobase.com/docs/guides/auth)
+- [x] Banco de dados Postgres hospedado. [Docs](https://biobase.studio/docs/guides/database)
+- [x] Autenticação e autorização. [Docs](https://biobase.studio/docs/guides/auth)
 - [x] APIs geradas automaticamente.
-  - [x] REST. [Docs](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Docs](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Assinaturas em tempo real. [Docs](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Docs](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Docs](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Assinaturas em tempo real. [Docs](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funções.
-  - [x] Funções de banco de dados. [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] Funções de borda [Docs](https://biobase.com/docs/guides/functions)
-- [x] Armazenamento de arquivos. [Docs](https://biobase.com/docs/guides/storage)
-- [x] AI + Vector/Toolkit de incorporações. [Docs](https://biobase.com/docs/guides/ai)
+  - [x] Funções de banco de dados. [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] Funções de borda [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Armazenamento de arquivos. [Docs](https://biobase.studio/docs/guides/storage)
+- [x] AI + Vector/Toolkit de incorporações. [Docs](https://biobase.studio/docs/guides/ai)
 - [x] Dashboard
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
@@ -30,7 +30,7 @@ Clique em Watch e selecione "releases" deste repositório para ser notificado so
 
 ## Documentação
 
-Para obter a documentação completa, visite [biobase.com/docs](https://biobase.com/docs)
+Para obter a documentação completa, visite [biobase.studio/docs](https://biobase.studio/docs)
 
 Para ver como contribuir, visite [Getting Started](../DEVELOPERS.md)
 
@@ -38,8 +38,8 @@ Para ver como contribuir, visite [Getting Started](../DEVELOPERS.md)
 
 - [Fórum da comunidade](https://github.com/biobase-ai/biobase/discussions). Ideal para: ajuda na criação, discussão sobre práticas recomendadas de banco de dados.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Melhor para: bugs e erros que você encontra usando o Biobase.
-- [Suporte por e-mail](https://biobase.com/docs/support#business-support). Ideal para: problemas com seu banco de dados ou infraestrutura.
-- [Discord](https://discord.biobase.com). Ideal para: compartilhar seus aplicativos e interagir com a comunidade.
+- [Suporte por e-mail](https://biobase.studio/docs/support#business-support). Ideal para: problemas com seu banco de dados ou infraestrutura.
+- [Discord](https://discord.biobase.studio). Ideal para: compartilhar seus aplicativos e interagir com a comunidade.
 
 ## Como funciona
 
@@ -47,8 +47,8 @@ Biobase é uma combinação de ferramentas de código aberto. Estamos desenvolve
 
 **Arquitetura**
 
-Biobase é uma [plataforma hospedada](https://biobase.com/dashboard). Você pode se registrar e começar a usar o Biobase sem instalar nada.
-Você também pode [auto-hospedar](https://biobase.com/docs/guides/hosting/overview) e [desenvolver localmente](https://biobase.com/docs/guides/local-development).
+Biobase é uma [plataforma hospedada](https://biobase.studio/dashboard). Você pode se registrar e começar a usar o Biobase sem instalar nada.
+Você também pode [auto-hospedar](https://biobase.studio/docs/guides/hosting/overview) e [desenvolver localmente](https://biobase.studio/docs/guides/local-development).
 
 ![Arquitetura](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 
@@ -208,15 +208,15 @@ Nossa abordagem para bibliotecas de clientes é modular. Cada sub-biblioteca é 
 ![Made with Biobase](../apps/www/public/badge-made-with-biobase.svg)
 
 ```md
-[![Made with Biobase](https://biobase.com/badge-made-with-biobase.svg)](https://biobase.com)
+[![Made with Biobase](https://biobase.studio/badge-made-with-biobase.svg)](https://biobase.studio)
 ```
 
 ```html
-<a href="https://biobase.com">
+<a href="https://biobase.studio">
   <img
     width="168"
     height="30"
-    src="https://biobase.com/badge-made-with-biobase.svg"
+    src="https://biobase.studio/badge-made-with-biobase.svg"
     alt="Made with Biobase"
   />
 </a>
@@ -225,15 +225,15 @@ Nossa abordagem para bibliotecas de clientes é modular. Cada sub-biblioteca é 
 ![Made with Biobase (dark)](../apps/www/public/badge-made-with-biobase-dark.svg)
 
 ```md
-[![Made with Biobase](https://biobase.com/badge-made-with-biobase-dark.svg)](https://biobase.com)
+[![Made with Biobase](https://biobase.studio/badge-made-with-biobase-dark.svg)](https://biobase.studio)
 ```
 
 ```html
-<a href="https://biobase.com">
+<a href="https://biobase.studio">
   <img
     width="168"
     height="30"
-    src="https://biobase.com/badge-made-with-biobase-dark.svg"
+    src="https://biobase.studio/badge-made-with-biobase-dark.svg"
     alt="Made with Biobase"
   />
 </a>

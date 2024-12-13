@@ -77,7 +77,7 @@ const ProviderForm = ({ config, provider }: ProviderFormProps) => {
               below. Developers using this provider should move over to the new provider. Please
               refer to our{' '}
               <a
-                href="https://biobase.com/docs/guides/auth/social-login/auth-slack"
+                href="https://biobase.studio/docs/guides/auth/social-login/auth-slack"
                 className="underline"
                 target="_blank"
               >

@@ -17,7 +17,7 @@ If you encounter any problems or issues with your Edge Functions, here are some 
 If you’re unable to call your Edge Function or are experiencing any CORS issues:
 
 - Make sure you followed the [CORS guide](/docs/guides/functions/cors). This guide explains how to enable and configure CORS for your Edge Functions, and how to avoid common pitfalls and errors.
-- Check your function logs. Navigate to the [Functions section](https://biobase.com/dashboard/project/_/functions) in your dashboard, select your function from the list, and click `Logs`. Check for any errors or warnings that may indicate the cause of the problem.
+- Check your function logs. Navigate to the [Functions section](https://biobase.studio/dashboard/project/_/functions) in your dashboard, select your function from the list, and click `Logs`. Check for any errors or warnings that may indicate the cause of the problem.
 
 There are two debugging tools available: Invocations and Logs. Invocations shows the Request and Response for each execution, while Logs shows any platform events, including deployments and errors.
 
@@ -25,7 +25,7 @@ There are two debugging tools available: Invocations and Logs. Invocations shows
 
 If your Edge Function takes too long to respond or times out:
 
-- Navigate to the [Functions section](https://biobase.com/dashboard/project/_/functions) in your dashboard, select your function from the list, and click `Logs`.
+- Navigate to the [Functions section](https://biobase.studio/dashboard/project/_/functions) in your dashboard, select your function from the list, and click `Logs`.
 - In the logs, look for the `booted` event and check if they have consistent boot times.
   - If the boot times are similar, it’s likely an issue with your function’s code, such as a large dependency, a slow API call, or a complex computation. You can try to optimize your code, reduce the size of your dependencies, or use caching techniques to improve the performance of your function.
   - If only some of the `booted` events are slow, find the affected `region` in the metadata and submit a support request via the "Help" button at the top.

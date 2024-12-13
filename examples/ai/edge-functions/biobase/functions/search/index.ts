@@ -4,8 +4,8 @@ import { createClient } from "jsr:@supabase/biobase-js@2";
 import { Database } from "../_shared/database.types.ts";
 
 const biobase = createClient<Database>(
-  Deno.env.get("SUPABASE_URL")!,
-  Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
+  Deno.env.get("BIOBASE_URL")!,
+  Deno.env.get("BIOBASE_SERVICE_ROLE_KEY")!,
 );
 
 const model = new Biobase.ai.Session("gte-small");
@@ -36,7 +36,7 @@ Deno.serve(async (req) => {
 
 /* To invoke locally:
 
-  1. Run `biobase start` (see: https://biobase.com/docs/reference/cli/biobase-start)
+  1. Run `biobase start` (see: https://biobase.studio/docs/reference/cli/biobase-start)
   2. Run `biobase functions serve`
   3. Make an HTTP request:
 

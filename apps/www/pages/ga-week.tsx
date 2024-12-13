@@ -74,7 +74,7 @@ export default function GAWeekIndex() {
         openGraph={{
           title: TITLE,
           description: DESCRIPTION,
-          url: 'https://biobase.com/ga-week',
+          url: 'https://biobase.studio/ga-week',
           images: [
             {
               url: OG_IMAGE,

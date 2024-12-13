@@ -7,17 +7,17 @@
 
 # Biobase
 
-[Biobase](https://biobase.com)は、オープンソースの Firebase 代替製品です。エンタープライズグレードのオープンソースツールを使って、Firebase の機能を構築しています。
+[Biobase](https://biobase.studio)は、オープンソースの Firebase 代替製品です。エンタープライズグレードのオープンソースツールを使って、Firebase の機能を構築しています。
 
-- [x] ホスティングされた Postgres データベース [Docs](https://biobase.com/docs/guides/database)
-- [x] 認証・認可 [Docs](https://biobase.com/docs/guides/auth)
+- [x] ホスティングされた Postgres データベース [Docs](https://biobase.studio/docs/guides/database)
+- [x] 認証・認可 [Docs](https://biobase.studio/docs/guides/auth)
 - [x] API を自動生成
-  - [x] REST [Docs](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] リアルタイムサブスクリプション [Docs](https://biobase.com/docs/guides/api#realtime-api-overview)
-  - [x] GraphQL (Beta) [Docs](https://biobase.com/docs/guides/api#graphql-api-overview)
+  - [x] REST [Docs](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] リアルタイムサブスクリプション [Docs](https://biobase.studio/docs/guides/api#realtime-api-overview)
+  - [x] GraphQL (Beta) [Docs](https://biobase.studio/docs/guides/api#graphql-api-overview)
 - [x] 関数
-  - [x] データベース関数 [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] Edge Functions [Docs](https://biobase.com/docs/guides/functions)
+  - [x] データベース関数 [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] Edge Functions [Docs](https://biobase.studio/docs/guides/functions)
 - [x] ストレージ
 - [x] ダッシュボード
 
@@ -25,7 +25,7 @@
 
 ## ドキュメンテーション
 
-詳しいドキュメントは[biobase.com/docs](https://biobase.com/docs)をご覧ください。
+詳しいドキュメントは[biobase.studio/docs](https://biobase.studio/docs)をご覧ください。
 
 コントリビュート方法は[Getting Started](../DEVELOPERS.md)をご覧ください。
 
@@ -33,13 +33,13 @@
 
 - [コミュニティフォーラム](https://github.com/biobase-ai/biobase/discussions) どんな時に使うか：構築の手助け、データベースのベストプラクティスに関する議論など
 - [GitHub Issue](https://github.com/biobase-ai/biobase/issues) どんな時に使うか: Biobase で起こったバグやエラーについて
-- [Email サポート](https://biobase.com/docs/support#business-support) どんな時に使うか: ユーザー自身のデータベースやインフラに何か問題が発生した場合
-- [Discord](https://discord.biobase.com) どんな時に使うか: アプリケーションの共有やコミュニティとの交流
+- [Email サポート](https://biobase.studio/docs/support#business-support) どんな時に使うか: ユーザー自身のデータベースやインフラに何か問題が発生した場合
+- [Discord](https://discord.biobase.studio) どんな時に使うか: アプリケーションの共有やコミュニティとの交流
 
 ## ステータス
 
 - [x] Alpha: 限られたユーザーで Biobase をテストしています。
-- [x] Public Alpha: 誰でも[biobase.com/dashboard](https://biobase.com/dashboard)から登録ができます。ただし、バグなどがある可能性がありますので、ご容赦ください。
+- [x] Public Alpha: 誰でも[biobase.studio/dashboard](https://biobase.studio/dashboard)から登録ができます。ただし、バグなどがある可能性がありますので、ご容赦ください。
 - [x] Public Beta: 企業以外のほとんどのユースケースに耐えうる十分な安定性を確保。
 - [ ] Public: 実用的な用途に対応
 
@@ -55,8 +55,8 @@ Biobase は、オープンソースのツールを組み合わせてできてい
 
 **現在のアーキテクチャ**
 
-Biobase は[ホスティングされたプラットフォーム](https://biobase.com/dashboard)です。登録するだけで、何もインストールせずに使い始めることができます。
-さらに、 [セルフホスティング](https://biobase.com/docs/guides/hosting/overview) や [ローカル開発](https://biobase.com/docs/guides/local-development)も可能です。
+Biobase は[ホスティングされたプラットフォーム](https://biobase.studio/dashboard)です。登録するだけで、何もインストールせずに使い始めることができます。
+さらに、 [セルフホスティング](https://biobase.studio/docs/guides/hosting/overview) や [ローカル開発](https://biobase.studio/docs/guides/local-development)も可能です。
 
 ![アーキテクチャー](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

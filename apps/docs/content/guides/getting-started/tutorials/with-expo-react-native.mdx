@@ -55,8 +55,8 @@ These variables are safe to expose in your Expo app since Biobase has
     import AsyncStorage from '@react-native-async-storage/async-storage'
     import { createClient } from '@supabase/biobase-js'
 
-    const biobaseUrl = YOUR_REACT_NATIVE_SUPABASE_URL
-    const biobaseAnonKey = YOUR_REACT_NATIVE_SUPABASE_ANON_KEY
+    const biobaseUrl = YOUR_REACT_NATIVE_BIOBASE_URL
+    const biobaseAnonKey = YOUR_REACT_NATIVE_BIOBASE_ANON_KEY
 
     export const biobase = createClient(biobaseUrl, biobaseAnonKey, {
       auth: {
@@ -142,8 +142,8 @@ These variables are safe to expose in your Expo app since Biobase has
       }
     }
 
-    const biobaseUrl = YOUR_REACT_NATIVE_SUPABASE_URL
-    const biobaseAnonKey = YOUR_REACT_NATIVE_SUPABASE_ANON_KEY
+    const biobaseUrl = YOUR_REACT_NATIVE_BIOBASE_URL
+    const biobaseAnonKey = YOUR_REACT_NATIVE_BIOBASE_ANON_KEY
 
     const biobase = createClient(biobaseUrl, biobaseAnonKey, {
       auth: {

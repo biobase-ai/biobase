@@ -74,11 +74,11 @@ const Compute = ({ orgSlug, projectRef, startDate, endDate }: ComputeProps) => {
           links: [
             {
               name: 'Compute Add-ons',
-              url: 'https://biobase.com/docs/guides/platform/compute-add-ons',
+              url: 'https://biobase.studio/docs/guides/platform/compute-add-ons',
             },
             {
               name: 'Usage-billing for Compute',
-              url: 'https://biobase.com/docs/guides/platform/org-based-billing#billing-for-compute-compute-hours',
+              url: 'https://biobase.studio/docs/guides/platform/org-based-billing#billing-for-compute-compute-hours',
             },
           ],
         }}

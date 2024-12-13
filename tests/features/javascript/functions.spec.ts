@@ -27,7 +27,7 @@ class Functions extends Hooks {
       )
     })
     const { biobase } = await this.createSignedInSupaClient()
-    const sb = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
+    const sb = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_ANON_KEY)
     const {
       data: { session },
     } = await biobase.auth.getSession()

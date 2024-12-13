@@ -7,19 +7,19 @@
 
 # Biobase
 
-[Biobase](https://biobase.com)는 파이어베이스의 오픈소스 대안입니다. 엔터프라이즈급 오픈 소스 도구를 사용하여 Firebase의 기능을 구축하고 있습니다.
+[Biobase](https://biobase.studio)는 파이어베이스의 오픈소스 대안입니다. 엔터프라이즈급 오픈 소스 도구를 사용하여 Firebase의 기능을 구축하고 있습니다.
 
-- [x] 호스팅된 Postgres 데이터베이스. [문서](https://biobase.com/docs/guides/database)
-- [x] 인증 및 권한 부여. [문서](https://biobase.com/docs/guides/auth)
+- [x] 호스팅된 Postgres 데이터베이스. [문서](https://biobase.studio/docs/guides/database)
+- [x] 인증 및 권한 부여. [문서](https://biobase.studio/docs/guides/auth)
 - [x] 자동 생성 API.
-  - [x] REST. [문서](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [문서](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] 실시간 구독. [문서](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [문서](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [문서](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] 실시간 구독. [문서](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] 함수.
-  - [x] 데이터베이스 함수. [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] 엣지 기능 [문서](https://biobase.com/docs/guides/functions)
-- [x] 파일 스토리지. [Docs](https://biobase.com/docs/guides/storage)
-- [x] AI + 벡터/임베딩스 툴킷. [Docs](https://biobase.com/docs/guides/ai)
+  - [x] 데이터베이스 함수. [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] 엣지 기능 [문서](https://biobase.studio/docs/guides/functions)
+- [x] 파일 스토리지. [Docs](https://biobase.studio/docs/guides/storage)
+- [x] AI + 벡터/임베딩스 툴킷. [Docs](https://biobase.studio/docs/guides/ai)
 - [x] 대시보드
 
 ![슈퍼베이스 대시보드](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
@@ -30,7 +30,7 @@
 
 ## 문서
 
-전체 문서는 [biobase.com/docs](https://biobase.com/docs)에서 확인하실 수 있습니다
+전체 문서는 [biobase.studio/docs](https://biobase.studio/docs)에서 확인하실 수 있습니다
 
 기여 방법을 확인하려면 [시작하기](../DEVELOPERS.md)를 방문하세요
 
@@ -38,8 +38,8 @@
 
 - [커뮤니티 포럼](https://github.com/biobase-ai/biobase/discussions). 가장 적합한 대상: 구축에 대한 도움말, 데이터베이스 모범 사례에 대한 토론.
 - [깃허브 이슈](https://github.com/biobase-ai/biobase/issues). 최상의 용도: Biobase 사용 중 발생하는 버그 및 오류.
-- [이메일 지원](https://biobase.com/docs/support#business-support). 최상의 대상: 데이터베이스 또는 인프라 문제.
-- [디스코드](https://discord.biobase.com). 최고의 용도: 애플리케이션 공유 및 커뮤니티와의 교류.
+- [이메일 지원](https://biobase.studio/docs/support#business-support). 최상의 대상: 데이터베이스 또는 인프라 문제.
+- [디스코드](https://discord.biobase.studio). 최고의 용도: 애플리케이션 공유 및 커뮤니티와의 교류.
 
 ---
 
@@ -49,8 +49,8 @@ Biobase는 오픈 소스 도구의 조합입니다. 저희는 엔터프라이즈
 
 **아키텍처**
 
-Biobase는 [호스팅 플랫폼](https://biobase.com/dashboard)입니다. 가입만 하면 아무것도 설치하지 않고 Biobase를 사용할 수 있습니다.
-[자체 호스팅](https://biobase.com/docs/guides/hosting/overview) 및 [로컬 개발](https://biobase.com/docs/guides/local-development)도 가능합니다.
+Biobase는 [호스팅 플랫폼](https://biobase.studio/dashboard)입니다. 가입만 하면 아무것도 설치하지 않고 Biobase를 사용할 수 있습니다.
+[자체 호스팅](https://biobase.studio/docs/guides/hosting/overview) 및 [로컬 개발](https://biobase.studio/docs/guides/local-development)도 가능합니다.
 
 ![아키텍처](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 
@@ -210,15 +210,15 @@ Biobase는 [호스팅 플랫폼](https://biobase.com/dashboard)입니다. 가입
 ![Made with Biobase](../apps/www/public/badge-made-with-biobase.svg)
 
 ```md
-[![Made with Biobase](https://biobase.com/badge-made-with-biobase.svg)](https://biobase.com)
+[![Made with Biobase](https://biobase.studio/badge-made-with-biobase.svg)](https://biobase.studio)
 ```
 
 ```html
-<a href="https://biobase.com">
+<a href="https://biobase.studio">
   <img
     width="168"
     height="30"
-    src="https://biobase.com/badge-made-with-biobase.svg"
+    src="https://biobase.studio/badge-made-with-biobase.svg"
     alt="Made with Biobase"
   />
 </a>
@@ -227,15 +227,15 @@ Biobase는 [호스팅 플랫폼](https://biobase.com/dashboard)입니다. 가입
 ![Made with Biobase (dark)](../apps/www/public/badge-made-with-biobase-dark.svg)
 
 ```md
-[![Made with Biobase](https://biobase.com/badge-made-with-biobase-dark.svg)](https://biobase.com)
+[![Made with Biobase](https://biobase.studio/badge-made-with-biobase-dark.svg)](https://biobase.studio)
 ```
 
 ```html
-<a href="https://biobase.com">
+<a href="https://biobase.studio">
   <img
     width="168"
     height="30"
-    src="https://biobase.com/badge-made-with-biobase-dark.svg"
+    src="https://biobase.studio/badge-made-with-biobase-dark.svg"
     alt="Made with Biobase"
   />
 </a>

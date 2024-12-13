@@ -51,7 +51,7 @@ const DisplayApiSettings = ({ legacy }: { legacy?: boolean }) => {
                 You can use the keys below in the Biobase client libraries.
                 <br />
                 <a
-                  href="https://biobase.com/docs#client-libraries"
+                  href="https://biobase.studio/docs#client-libraries"
                   target="_blank"
                   rel="noreferrer"
                 >

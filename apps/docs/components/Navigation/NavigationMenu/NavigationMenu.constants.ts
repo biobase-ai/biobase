@@ -208,13 +208,13 @@ export const GLOBAL_MENU_ITEMS: GlobalMenuItems = [
             label: 'Changelog',
             icon: 'changelog',
             hasLightIcon: true,
-            href: 'https://biobase.com/changelog',
+            href: 'https://biobase.studio/changelog',
             level: 'changelog',
           },
           {
             label: 'Status',
             icon: 'status',
-            href: 'https://status.biobase.com/',
+            href: 'https://status.biobase.studio/',
           },
           {
             label: 'Contributing',

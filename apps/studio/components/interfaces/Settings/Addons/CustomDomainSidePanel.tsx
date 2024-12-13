@@ -122,7 +122,7 @@ const CustomDomainSidePanel = () => {
           <h4>Custom domains</h4>
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
             <Link
-              href="https://biobase.com/docs/guides/platform/custom-domains"
+              href="https://biobase.studio/docs/guides/platform/custom-domains"
               target="_blank"
               rel="noreferrer"
             >

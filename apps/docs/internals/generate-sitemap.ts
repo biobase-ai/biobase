@@ -42,7 +42,7 @@ async function generate() {
           .map(({ link, priority }) => {
             return `
               <url>
-                  <loc>${`https://biobase.com/docs/${link}`}</loc>
+                  <loc>${`https://biobase.studio/docs/${link}`}</loc>
                   <changefreq>weekly</changefreq>
                   ${priority ? `<priority>${priority}</priority>` : ''}
               </url>

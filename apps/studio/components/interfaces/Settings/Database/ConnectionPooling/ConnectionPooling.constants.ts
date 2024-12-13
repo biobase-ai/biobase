@@ -1,4 +1,4 @@
-// https://biobase.com/docs/guides/platform/performance#optimizing-the-number-of-connections
+// https://biobase.studio/docs/guides/platform/performance#optimizing-the-number-of-connections
 // https://github.com/biobase/infrastructure/blob/develop/worker/src/lib/constants.ts#L544-L596
 
 export const POOLING_OPTIMIZATIONS = {

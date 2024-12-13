@@ -36,11 +36,11 @@ npm install @supabase/biobase-js
 ```
 
 And finally we want to save the environment variables in a `.env`.
-All we need are the `SUPABASE_URL` and the `SUPABASE_KEY` key that you copied [earlier](#get-the-api-keys).
+All we need are the `BIOBASE_URL` and the `BIOBASE_KEY` key that you copied [earlier](#get-the-api-keys).
 
 ```bash .env
-PUBLIC_SUPABASE_URL="YOUR_SUPABASE_URL"
-PUBLIC_SUPABASE_ANON_KEY="YOUR_SUPABASE_KEY"
+PUBLIC_BIOBASE_URL="YOUR_BIOBASE_URL"
+PUBLIC_BIOBASE_ANON_KEY="YOUR_BIOBASE_KEY"
 ```
 
 Optionally, add `src/styles.css` with the [CSS from the example](https://raw.githubusercontent.com/biobase/biobase/master/examples/user-management/sveltekit-user-management/src/styles.css).
@@ -61,12 +61,12 @@ Add the code below to your `src/hooks.server.ts` to initialize the client on the
 
 ```ts src/hooks.server.ts
 // src/hooks.server.ts
-import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public'
+import { PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY } from '$env/static/public'
 import { createServerClient } from '@supabase/ssr'
 import type { Handle } from '@sveltejs/kit'
 
 export const handle: Handle = async ({ event, resolve }) => {
-  event.locals.biobase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
+  event.locals.biobase = createServerClient(PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY, {
     cookies: {
       getAll: () => event.cookies.getAll(),
       /**
@@ -168,19 +168,19 @@ Create a new `src/routes/+layout.ts` file to handle the session and the biobase 
 ```ts src/routes/+layout.ts
 // src/routes/+layout.ts
 import { createBrowserClient, createServerClient, isBrowser } from '@supabase/ssr'
-import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public'
+import { PUBLIC_BIOBASE_ANON_KEY, PUBLIC_BIOBASE_URL } from '$env/static/public'
 import type { LayoutLoad } from './$types'
 
 export const load: LayoutLoad = async ({ fetch, data, depends }) => {
   depends('biobase:auth')
 
   const biobase = isBrowser()
-    ? createBrowserClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
+    ? createBrowserClient(PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY, {
         global: {
           fetch,
         },
       })
-    : createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
+    : createServerClient(PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY, {
         global: {
           fetch,
         },

@@ -17,7 +17,7 @@ const metadata: Metadata = {
   title: 'Biobase Docs',
   description:
     'Biobase is an open source Firebase alternative providing all the backend features you need to build a product.',
-  metadataBase: new URL('https://biobase.com'),
+  metadataBase: new URL('https://biobase.studio'),
   icons: genFaviconData(BASE_PATH),
   robots: {
     index: IS_PRODUCTION,

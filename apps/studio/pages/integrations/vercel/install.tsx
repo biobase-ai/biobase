@@ -224,7 +224,7 @@ const VercelIntegration: NextPageWithLayout = () => {
                 <AlertDescription_Shadcn_ className="prose">
                   You will need to create a Biobase Organization before you can install the Vercel
                   Integration. You can create a new organization{' '}
-                  <Link href="https://biobase.com/dashboard/new" target="_blank">
+                  <Link href="https://biobase.studio/dashboard/new" target="_blank">
                     here
                   </Link>
                   .

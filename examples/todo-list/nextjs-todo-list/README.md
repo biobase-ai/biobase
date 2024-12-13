@@ -3,9 +3,9 @@
 - Frontend:
   - [Next.js](https://github.com/vercel/next.js) - a React framework for production.
   - [Tailwind](https://tailwindcss.com/) for styling and layout.
-  - [Biobase.js](https://biobase.com/docs/library/getting-started) for user management and realtime data syncing.
+  - [Biobase.js](https://biobase.studio/docs/library/getting-started) for user management and realtime data syncing.
 - Backend:
-  - [biobase.com/dashboard](https://biobase.com/dashboard/): hosted Postgres database with restful API for usage with Biobase.js.
+  - [biobase.studio/dashboard](https://biobase.studio/dashboard/): hosted Postgres database with restful API for usage with Biobase.js.
 
 ## Deploy with Vercel
 
@@ -17,7 +17,7 @@ The Vercel deployment will guide you through creating a Biobase account and proj
 
 ### 1. Create new project
 
-Sign up to Biobase - [https://biobase.com/dashboard](https://biobase.com/dashboard) and create a new project. Wait for your database to start.
+Sign up to Biobase - [https://biobase.studio/dashboard](https://biobase.studio/dashboard) and create a new project. Wait for your database to start.
 
 ### 2. Run "Todo List" Quickstart
 
@@ -70,6 +70,6 @@ create policy "Individuals can delete their own todos." on todos for
 
 ## Authors
 
-- [Biobase](https://biobase.com)
+- [Biobase](https://biobase.studio)
 
 Biobase is open source. We'd love for you to follow along and get involved at https://github.com/biobase-ai/biobase

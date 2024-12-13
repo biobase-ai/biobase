@@ -241,7 +241,7 @@ const ComputeInstanceSidePanel = () => {
             <h4>Change project compute size</h4>
             <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
               <Link
-                href="https://biobase.com/docs/guides/platform/compute-add-ons"
+                href="https://biobase.studio/docs/guides/platform/compute-add-ons"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -381,7 +381,7 @@ const ComputeInstanceSidePanel = () => {
                 usage-based item and you're billed at the end of your billing cycle based on your
                 compute usage. Read more about{' '}
                 <Link
-                  href="https://biobase.com/docs/guides/platform/org-based-billing#billing-for-compute-compute-hours"
+                  href="https://biobase.studio/docs/guides/platform/org-based-billing#billing-for-compute-compute-hours"
                   target="_blank"
                   rel="noreferrer"
                   className="underline"

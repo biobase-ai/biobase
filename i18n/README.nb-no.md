@@ -7,7 +7,7 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) er et open source-alternativ til Firebase. Vi bygger funksjonaliteten til Firebase ved hjelp av enterprise-klare open source-verktøy.
+[Biobase](https://biobase.studio) er et open source-alternativ til Firebase. Vi bygger funksjonaliteten til Firebase ved hjelp av enterprise-klare open source-verktøy.
 
 - [x] Hostet Postgres-database
 - [x] Sanntidsabonnementer
@@ -21,18 +21,18 @@
 
 ## Dokumentasjon
 
-Besøk [biobase.com/docs](https://biobase.com/docs) for full dokumentasjon.
+Besøk [biobase.studio/docs](https://biobase.studio/docs) for full dokumentasjon.
 
 ## Community & support
 
 - [Community-forum](https://github.com/biobase-ai/biobase/discussions). Egnet for: hjelp med utvikling, best practices-diskusjoner.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Egnet for: bugs og feil du opplever med Biobase.
-- [Support på e-post](https://biobase.com/docs/support#business-support). Egnet for: problemer med databasen din eller infrastruktur.
+- [Support på e-post](https://biobase.studio/docs/support#business-support). Egnet for: problemer med databasen din eller infrastruktur.
 
 ## Status
 
 - [x] Alpha: Vi tester Biobase med en lukket gruppe kunder
-- [x] Offentlig Alpha: Hvem som helst kan registrere seg på [biobase.com/dashboard](https://biobase.com/dashboard). Merk at enkelte feil og quirks kan forekomme.
+- [x] Offentlig Alpha: Hvem som helst kan registrere seg på [biobase.studio/dashboard](https://biobase.studio/dashboard). Merk at enkelte feil og quirks kan forekomme.
 - [x] Offentlig Beta: Stabilt nok for de fleste ikke-enterprise-bruksområder
 - [ ] Offentlig: Produksjonsklar
 
@@ -48,7 +48,7 @@ Biobase er en samling av open source-verktøy. Vi bygger funksjonaliteten til Fi
 
 **Nåværende arkitektur**
 
-Biobase er en [hostet plattform](https://biobase.com/dashboard). Du kan registrere deg og begynne å bruke Biobase uten å installere noe. Vi holder fortsatt på å bygge verktøy for lokalt bruk – dette er nå vårt kjernefokus, i tillegg til plattformstabilitet.
+Biobase er en [hostet plattform](https://biobase.studio/dashboard). Du kan registrere deg og begynne å bruke Biobase uten å installere noe. Vi holder fortsatt på å bygge verktøy for lokalt bruk – dette er nå vårt kjernefokus, i tillegg til plattformstabilitet.
 
 ![Arkitektur](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

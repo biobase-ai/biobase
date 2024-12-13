@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Biobase API (v1)",
-    "description": "Biobase API generated from the OpenAPI specification.<br>Visit [https://biobase.com/docs](https://biobase.com/docs) for a complete documentation.",
+    "description": "Biobase API generated from the OpenAPI specification.<br>Visit [https://biobase.studio/docs](https://biobase.studio/docs) for a complete documentation.",
     "version": "1.0.0",
     "contact": {}
   },
@@ -3265,8 +3265,8 @@
                     "name": {
                       "type": "string",
                       "maxLength": 256,
-                      "pattern": "/^(?!SUPABASE_).*/",
-                      "description": "Secret name must not start with the SUPABASE_ prefix.",
+                      "pattern": "/^(?!BIOBASE_).*/",
+                      "description": "Secret name must not start with the BIOBASE_ prefix.",
                       "example": "string"
                     },
                     "value": {
@@ -11018,8 +11018,8 @@
           "name": {
             "type": "string",
             "maxLength": 256,
-            "pattern": "/^(?!SUPABASE_).*/",
-            "description": "Secret name must not start with the SUPABASE_ prefix.",
+            "pattern": "/^(?!BIOBASE_).*/",
+            "description": "Secret name must not start with the BIOBASE_ prefix.",
             "example": "string"
           },
           "value": {

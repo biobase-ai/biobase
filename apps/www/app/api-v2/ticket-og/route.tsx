@@ -13,9 +13,9 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
+const BIOBASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
 
-const STORAGE_URL = `${SUPABASE_URL}/storage/v1/object/public/images/launch-week/lw12`
+const STORAGE_URL = `${BIOBASE_URL}/storage/v1/object/public/images/launch-week/lw12`
 
 // Load custom font
 const FONT_URL = `${STORAGE_URL}/assets/font/CircularStd-Book.otf`

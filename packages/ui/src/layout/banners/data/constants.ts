@@ -1,6 +1,6 @@
 export const LW_SITE_URL =
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
-    ? 'https://biobase.com/ga-week'
+    ? 'https://biobase.studio/ga-week'
     : process.env.NEXT_PUBLIC_VERCEL_URL
       ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/ga-week`
       : 'http://localhost:3000/ga-week'

@@ -31,7 +31,7 @@ const SupportPage = () => {
             <div className="flex items-center gap-x-3">
               <Button asChild type="default" icon={<Wrench />}>
                 <Link
-                  href="https://biobase.com/docs/guides/platform/troubleshooting"
+                  href="https://biobase.studio/docs/guides/platform/troubleshooting"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -53,7 +53,7 @@ const SupportPage = () => {
                       )
                     }
                   >
-                    <Link href="https://status.biobase.com/" target="_blank" rel="noreferrer">
+                    <Link href="https://status.biobase.studio/" target="_blank" rel="noreferrer">
                       {isLoading
                         ? 'Checking status'
                         : isHealthy

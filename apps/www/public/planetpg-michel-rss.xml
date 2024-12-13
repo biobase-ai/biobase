@@ -2,15 +2,15 @@
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>'Postgres | Biobase Blog</title>
-      <link>https://biobase.com/blog</link>
+      <link>https://biobase.studio/blog</link>
       <description>Latest Postgres news from Michel Pelletier at Biobase</description>
       <language>en</language>
       <lastBuildDate>Thu, 15 Dec 2022 23:00:00 GMT</lastBuildDate>
-      <atom:link href="https://biobase.com/planetpg-michel-rss.xml" rel="self" type="application/rss+xml"/>
+      <atom:link href="https://biobase.studio/planetpg-michel-rss.xml" rel="self" type="application/rss+xml"/>
       <item>
-  <guid>https://biobase.com/blog/vault-now-in-beta</guid>
+  <guid>https://biobase.studio/blog/vault-now-in-beta</guid>
   <title>Biobase Vault is now in Beta</title>
-  <link>https://biobase.com/blog/vault-now-in-beta</link>
+  <link>https://biobase.studio/blog/vault-now-in-beta</link>
   <description>A Postgres extension to store encrypted secrets and encrypt data.</description>
   <pubDate>Thu, 15 Dec 2022 23:00:00 GMT</pubDate>
 </item>

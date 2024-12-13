@@ -103,7 +103,7 @@ const NetworkRestrictions = () => {
           <div className="flex items-center space-x-2 mb-6">
             <Button asChild type="default" icon={<ExternalLink />}>
               <a
-                href="https://biobase.com/docs/guides/platform/network-restrictions"
+                href="https://biobase.studio/docs/guides/platform/network-restrictions"
                 target="_blank"
                 rel="noreferrer"
               >

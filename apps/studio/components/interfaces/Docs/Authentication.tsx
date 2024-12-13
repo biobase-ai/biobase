@@ -13,13 +13,13 @@ interface AuthenticationProps {
 const Authentication = ({ autoApiService, selectedLang, showApiKey }: AuthenticationProps) => {
   // [Joshen] ShowApiKey should really be a boolean, its confusing
   const defaultApiKey =
-    showApiKey !== 'SUPABASE_KEY'
-      ? autoApiService?.defaultApiKey ?? 'SUPABASE_CLIENT_API_KEY'
-      : 'SUPABASE_CLIENT_API_KEY'
+    showApiKey !== 'BIOBASE_KEY'
+      ? autoApiService?.defaultApiKey ?? 'BIOBASE_CLIENT_API_KEY'
+      : 'BIOBASE_CLIENT_API_KEY'
   const serviceApiKey =
-    showApiKey !== 'SUPABASE_KEY'
-      ? autoApiService?.serviceApiKey ?? 'SUPABASE_SERVICE_KEY'
-      : 'SUPABASE_SERVICE_KEY'
+    showApiKey !== 'BIOBASE_KEY'
+      ? autoApiService?.serviceApiKey ?? 'BIOBASE_SERVICE_KEY'
+      : 'BIOBASE_SERVICE_KEY'
 
   return (
     <>
@@ -47,7 +47,7 @@ const Authentication = ({ autoApiService, selectedLang, showApiKey }: Authentica
             After logging in the keys will switch to the user's own login token.
           </p>
           <p>
-            In this documentation, we will refer to the key using the name <code>SUPABASE_KEY</code>
+            In this documentation, we will refer to the key using the name <code>BIOBASE_KEY</code>
             .
           </p>
           <p>
@@ -60,7 +60,7 @@ const Authentication = ({ autoApiService, selectedLang, showApiKey }: Authentica
         <article className="code">
           <CodeSnippet
             selectedLang={selectedLang}
-            snippet={Snippets.authKey('CLIENT API KEY', 'SUPABASE_KEY', defaultApiKey)}
+            snippet={Snippets.authKey('CLIENT API KEY', 'BIOBASE_KEY', defaultApiKey)}
           />
           <CodeSnippet
             selectedLang={selectedLang}

@@ -6,8 +6,8 @@ const code = `import { createClient } from 'jsr:@supabase/biobase-js@2'
 Deno.serve(async (req: Request) => {
   // Create biobase client
   const biobase = createClient(
-    Deno.env.get('SUPABASE_URL')!,
-    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+    Deno.env.get('BIOBASE_URL')!,
+    Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!
   )
 
   // Upload image to storage

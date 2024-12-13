@@ -119,7 +119,7 @@ export const ChooseChannelPopover = ({ config, onChangeConfig }: ChooseChannelPo
                             target="_blank"
                             rel="noreferrer"
                             className="underline hover:text-foreground transition"
-                            href="https://biobase.com/docs/guides/realtime/concepts#channels"
+                            href="https://biobase.studio/docs/guides/realtime/concepts#channels"
                           >
                             our docs
                           </a>
@@ -158,7 +158,7 @@ export const ChooseChannelPopover = ({ config, onChangeConfig }: ChooseChannelPo
                     <a
                       target="_blank"
                       rel="noreferrer"
-                      href="https://biobase.com/docs/guides/realtime/authorization"
+                      href="https://biobase.studio/docs/guides/realtime/authorization"
                     >
                       Documentation
                     </a>

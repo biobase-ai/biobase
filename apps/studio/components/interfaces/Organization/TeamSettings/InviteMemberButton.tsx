@@ -429,7 +429,7 @@ export const InviteMemberButton = () => {
                     <div className="flex items-center space-x-2">
                       <Button asChild type="default">
                         <Link
-                          href="https://biobase.com/docs/guides/platform/sso"
+                          href="https://biobase.studio/docs/guides/platform/sso"
                           target="_blank"
                           rel="noreferrer"
                         >

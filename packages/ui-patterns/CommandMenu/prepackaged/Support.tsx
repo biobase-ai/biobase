@@ -21,7 +21,7 @@ const useSupportCommands = ({ enabled = true }: { enabled?: boolean } = {}) => {
           id: 'system-status',
           name: 'Go to System Status',
           value: 'Support: Go to System Status',
-          href: 'https://status.biobase.com',
+          href: 'https://status.biobase.studio',
           icon: () => <LifeBuoy />,
         },
         {
@@ -35,7 +35,7 @@ const useSupportCommands = ({ enabled = true }: { enabled?: boolean } = {}) => {
         ...command,
         route:
           BASE_PATH && command.href.startsWith('/')
-            ? `https://biobase.com/${command.href}`
+            ? `https://biobase.studio/${command.href}`
             : command.href,
       })) as ICommand[],
     [setOpen]

@@ -87,7 +87,7 @@ const SpreadsheetImport = ({
           <p>For bulk data loading, we recommend doing so directly through the database.</p>
           <Button asChild type="default" icon={<ExternalLink />} className="!mt-2">
             <Link
-              href="https://biobase.com/docs/guides/database/tables#bulk-data-loading"
+              href="https://biobase.studio/docs/guides/database/tables#bulk-data-loading"
               target="_blank"
               rel="noreferrer"
             >

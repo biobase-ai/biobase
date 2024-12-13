@@ -45,7 +45,7 @@ export const CronJobsDisabledState = () => {
             <div className="flex items-center space-x-2">
               <Button asChild type="default" icon={<ExternalLink />}>
                 <Link
-                  href="https://biobase.com/docs/guides/database/extensions/pg_cron"
+                  href="https://biobase.studio/docs/guides/database/extensions/pg_cron"
                   target="_blank"
                   rel="noreferrer"
                 >

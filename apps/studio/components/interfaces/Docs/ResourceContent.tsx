@@ -38,7 +38,7 @@ const ResourceContent = ({
       ? `https://${customDomainData.customDomain.hostname}`
       : apiEndpoint
 
-  const keyToShow = !!showApiKey ? showApiKey : 'SUPABASE_KEY'
+  const keyToShow = !!showApiKey ? showApiKey : 'BIOBASE_KEY'
   const resourcePaths = paths?.[`/${resourceId}`]
   const resourceDefinition = definitions?.[resourceId]
   const resourceMeta = resources[resourceId]
@@ -120,7 +120,7 @@ const ResourceContent = ({
               </p>
               <p>
                 <a
-                  href="https://biobase.com/docs/reference/javascript/select"
+                  href="https://biobase.studio/docs/reference/javascript/select"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -157,7 +157,7 @@ const ResourceContent = ({
               <p>Biobase provides a wide range of filters.</p>
               <p>
                 <a
-                  href="https://biobase.com/docs/reference/javascript/using-filters"
+                  href="https://biobase.studio/docs/reference/javascript/using-filters"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -188,7 +188,7 @@ const ResourceContent = ({
               </p>
               <p>
                 <a
-                  href="https://biobase.com/docs/reference/javascript/insert"
+                  href="https://biobase.studio/docs/reference/javascript/insert"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -228,7 +228,7 @@ const ResourceContent = ({
               </p>
               <p>
                 <a
-                  href="https://biobase.com/docs/reference/javascript/update"
+                  href="https://biobase.studio/docs/reference/javascript/update"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -256,7 +256,7 @@ const ResourceContent = ({
               </p>
               <p>
                 <a
-                  href="https://biobase.com/docs/reference/javascript/delete"
+                  href="https://biobase.studio/docs/reference/javascript/delete"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -285,7 +285,7 @@ const ResourceContent = ({
                 </p>
                 <p>
                   <a
-                    href="https://biobase.com/docs/reference/javascript/subscribe"
+                    href="https://biobase.studio/docs/reference/javascript/subscribe"
                     target="_blank"
                     rel="noreferrer"
                   >

@@ -29,13 +29,13 @@ export enum PRODUCT_SHORTNAMES {
 export const SAMPLE_TICKET_NUMBER = 1234
 export const SITE_URL =
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
-    ? 'https://biobase.com/launch-week'
+    ? 'https://biobase.studio/launch-week'
     : process.env.NEXT_PUBLIC_VERCEL_URL
       ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/launch-week`
       : 'http://localhost:3000/launch-week'
 export const LW_URL =
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
-    ? 'https://biobase.com/launch-week'
+    ? 'https://biobase.studio/launch-week'
     : process.env.NEXT_PUBLIC_VERCEL_URL
       ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/launch-week`
       : 'http://localhost:3000/launch-week'

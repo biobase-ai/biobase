@@ -20,7 +20,7 @@ const FunctionsEmptyState = () => {
           <div className="flex gap-2">
             <Button asChild type="default" icon={<ExternalLink />}>
               <Link
-                href="https://biobase.com/docs/guides/functions"
+                href="https://biobase.studio/docs/guides/functions"
                 target="_blank"
                 rel="noreferrer"
               >

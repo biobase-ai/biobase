@@ -7,25 +7,25 @@
 
 # சுபாபேஸ்
 
-[சுபாபேஸ்](https://biobase.com) என்பது ஒரு திறந்த மூல ஃபயர்பேஸ் மாற்றாகும். நிறுவன-தர திறந்த மூல கருவிகளைப் பயன்படுத்தி ஃபயர்பேஸ் இன் அம்சங்களை நாங்கள் உருவாக்குகிறோம்.
+[சுபாபேஸ்](https://biobase.studio) என்பது ஒரு திறந்த மூல ஃபயர்பேஸ் மாற்றாகும். நிறுவன-தர திறந்த மூல கருவிகளைப் பயன்படுத்தி ஃபயர்பேஸ் இன் அம்சங்களை நாங்கள் உருவாக்குகிறோம்.
 
-- [x] ஹோஸ்ட் செய்யப்பட்ட பூஸ்ட்ஜீஆர்இஎஸ் தரவுத்தளம். [ஆவணம்](https://biobase.com/docs/guides/database)
-- [x] அங்கீகாரம் மற்றும் அங்கீகாரம்.. [ஆவணம்](https://biobase.com/docs/guides/auth)
+- [x] ஹோஸ்ட் செய்யப்பட்ட பூஸ்ட்ஜீஆர்இஎஸ் தரவுத்தளம். [ஆவணம்](https://biobase.studio/docs/guides/database)
+- [x] அங்கீகாரம் மற்றும் அங்கீகாரம்.. [ஆவணம்](https://biobase.studio/docs/guides/auth)
 - [x] தானாக உருவாக்கப்பட்ட ஏபிஐ கள்.
-  - [x] ராஸ்ட். [ஆவணம்](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] நிகழ்நேர சந்தாக்கள். [ஆவணம்](https://biobase.com/docs/guides/api#realtime-api-overview)
-  - [x] கிராப்க்யூஎல் (பீட்டா). [ஆவணம்](https://biobase.com/docs/guides/api#graphql-api-overview)
+  - [x] ராஸ்ட். [ஆவணம்](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] நிகழ்நேர சந்தாக்கள். [ஆவணம்](https://biobase.studio/docs/guides/api#realtime-api-overview)
+  - [x] கிராப்க்யூஎல் (பீட்டா). [ஆவணம்](https://biobase.studio/docs/guides/api#graphql-api-overview)
 - [x] செயல்பாடுகள்.
-  - [x] தரவுத்தளம் செயல்பாடுகள். [ஆவணம்](https://biobase.com/docs/guides/database/functions)
-  - [x] விளிம்பு செயல்பாடுகள் [ஆவணம்](https://biobase.com/docs/guides/functions)
-- [x] கோப்பு சேமிப்பகம். [ஆவணம்](https://biobase.com/docs/guides/storage)
+  - [x] தரவுத்தளம் செயல்பாடுகள். [ஆவணம்](https://biobase.studio/docs/guides/database/functions)
+  - [x] விளிம்பு செயல்பாடுகள் [ஆவணம்](https://biobase.studio/docs/guides/functions)
+- [x] கோப்பு சேமிப்பகம். [ஆவணம்](https://biobase.studio/docs/guides/storage)
 - [x] டாஷ்போர்டு
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## ஆவணப்படுத்தல்
 
-முழு ஆவணங்களுக்கு, பார்வையிடவும் [biobase.com/docs](https://biobase.com/docs)
+முழு ஆவணங்களுக்கு, பார்வையிடவும் [biobase.studio/docs](https://biobase.studio/docs)
 
 எவ்வாறு பங்களிப்பது என்பதைப் பார்க்க, பார்வையிடவும் [தொடங்குதல்](../DEVELOPERS.md)
 
@@ -33,13 +33,13 @@
 
 - [சமூக மன்றம்](https://github.com/biobase-ai/biobase/discussions). சிறந்த: கட்டிடம் உதவி, தரவுத்தள சிறந்த நடைமுறைகள் பற்றி விவாதம்.
 - [கிட்ஹப் சிக்கல்கள்](https://github.com/biobase-ai/biobase/issues). சிறந்தது: சுபாபேஸைப் பயன்படுத்தி நீங்கள் சந்திக்கும் பிழைகள் மற்றும் பிழைகள்.
-- [மின்னஞ்சல் ஆதரவு](https://biobase.com/docs/support#business-support). சிறந்தது: உங்கள் தரவுத்தளம் அல்லது உள்கட்டமைப்பில் உள்ள சிக்கல்கள்.
-- [திஸ்கார்ட்](https://discord.biobase.com). இதற்கு சிறந்தது: உங்கள் விண்ணப்பங்களைப் பகிர்வது மற்றும் சமூகத்துடன் ஹேங்அவுட் செய்வது.
+- [மின்னஞ்சல் ஆதரவு](https://biobase.studio/docs/support#business-support). சிறந்தது: உங்கள் தரவுத்தளம் அல்லது உள்கட்டமைப்பில் உள்ள சிக்கல்கள்.
+- [திஸ்கார்ட்](https://discord.biobase.studio). இதற்கு சிறந்தது: உங்கள் விண்ணப்பங்களைப் பகிர்வது மற்றும் சமூகத்துடன் ஹேங்அவுட் செய்வது.
 
 ## நிலை
 
 - [x] ஆல்ஃபா: நாங்கள் வாடிக்கையாளர்களின் மூடிய தொகுப்புடன் சுபாபேஸை சோதிக்கிறோம்
-- [x] பொது ஆல்ஃபா: எவரும் [biobase.com/dashboard](https://biobase.com/dashboard) இல் பதிவு செய்யலாம், ஆனால் எங்களுக்கு எளிதாக செல்லுங்கள், ஒரு சில கின்க்ஸ் உள்ளன
+- [x] பொது ஆல்ஃபா: எவரும் [biobase.studio/dashboard](https://biobase.studio/dashboard) இல் பதிவு செய்யலாம், ஆனால் எங்களுக்கு எளிதாக செல்லுங்கள், ஒரு சில கின்க்ஸ் உள்ளன
 - [x] பொது பீட்டா: பெரும்பாலான அல்லாத நிறுவன பயன்பாட்டு-வழக்குகளுக்கு போதுமான நிலையானது
 - [ ] பொது: உற்பத்தி-தயார்
 
@@ -55,8 +55,8 @@
 
 **கட்டிடக்கலை**
 
-சுபாபேஸ் ஒரு [ஹோஸ்ட் செய்யப்பட்ட தளம்](https://biobase.com/dashboard). எதையும் நிறுவாமல் நீங்கள் பதிவுசெய்து Biobase ஐப் பயன்படுத்தத் தொடங்கலாம்.
-நீங்கள் [சுய ஹோஸ்ட்](https://biobase.com/docs/guides/hosting/overview) மற்றும் [உள்நாட்டில் உருவாக்க](https://biobase.com/docs/guides/local-development) ஆகியவற்றையும் செய்யலாம்.
+சுபாபேஸ் ஒரு [ஹோஸ்ட் செய்யப்பட்ட தளம்](https://biobase.studio/dashboard). எதையும் நிறுவாமல் நீங்கள் பதிவுசெய்து Biobase ஐப் பயன்படுத்தத் தொடங்கலாம்.
+நீங்கள் [சுய ஹோஸ்ட்](https://biobase.studio/docs/guides/hosting/overview) மற்றும் [உள்நாட்டில் உருவாக்க](https://biobase.studio/docs/guides/local-development) ஆகியவற்றையும் செய்யலாம்.
 
 ![கட்டிடக்கலை](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

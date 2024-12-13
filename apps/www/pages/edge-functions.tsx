@@ -35,10 +35,10 @@ function EdgeFunctions() {
         openGraph={{
           title: pageData.metaTitle,
           description: pageData.metaDescription,
-          url: `https://biobase.com/edge-functions`,
+          url: `https://biobase.studio/edge-functions`,
           images: [
             {
-              url: `https://biobase.com${basePath}/images/product/functions/functions-og.jpg`,
+              url: `https://biobase.studio${basePath}/images/product/functions/functions-og.jpg`,
             },
           ],
         }}

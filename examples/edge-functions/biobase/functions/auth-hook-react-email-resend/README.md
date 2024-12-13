@@ -1,6 +1,6 @@
 # Biobase Auth Send Email Hook with React Email and Resend
 
-- [Biobase docs](https://biobase.com/docs/guides/auth/auth-hooks/send-email-hook?queryGroups=language&language=http)
+- [Biobase docs](https://biobase.studio/docs/guides/auth/auth-hooks/send-email-hook?queryGroups=language&language=http)
 - [React Email Docs](https://react.email/docs/introduction)
 - [Create a Resend account](https://resend.com/)
 

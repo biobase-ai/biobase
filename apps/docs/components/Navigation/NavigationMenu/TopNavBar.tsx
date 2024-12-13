@@ -81,7 +81,7 @@ const TopNavBar: FC = () => {
             {!isUserLoading && (
               <Button asChild>
                 <a
-                  href="https://biobase.com/dashboard"
+                  href="https://biobase.studio/dashboard"
                   className="h-[30px]"
                   target="_blank"
                   rel="noreferrer noopener"

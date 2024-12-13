@@ -24,15 +24,15 @@ Biobase is an open source firebase alternative, but instead of being built aroun
 - You can query it with SQL, a proven and powerful query language.
 - It has a long track record of being used at scale.
 - It’s the database of choice for transactional workloads (think apps and websites, or other things that require near-instant responses to queries).
-- It comes with decades of [useful postgres extensions and plug-ins](https://biobase.com/docs/guides/database/extensions).
+- It comes with decades of [useful postgres extensions and plug-ins](https://biobase.studio/docs/guides/database/extensions).
 
 At Biobase we’ve always been huge fans of Firebase - so we started adding a few things on top of PostgreSQL in an attempt to reach feature parity, including:
 
-- Auto-generated API - [query your data straight from the client](https://biobase.com/docs/guides/api#rest-api-overview).
-- Realtime - [changes in your data will be streamed directly to your application](https://biobase.com/docs/reference/dart/subscribe).
-- Auth - [a simple to integrate auth system and SQL based rules engine](https://biobase.com/auth).
-- Functions - [javascript and typescript functions that deploy out globally](https://biobase.com/edge-functions).
-- Storage - [hosting images, videos, and pdfs easily](https://biobase.com/storage).
+- Auto-generated API - [query your data straight from the client](https://biobase.studio/docs/guides/api#rest-api-overview).
+- Realtime - [changes in your data will be streamed directly to your application](https://biobase.studio/docs/reference/dart/subscribe).
+- Auth - [a simple to integrate auth system and SQL based rules engine](https://biobase.studio/auth).
+- Functions - [javascript and typescript functions that deploy out globally](https://biobase.studio/edge-functions).
+- Storage - [hosting images, videos, and pdfs easily](https://biobase.studio/storage).
 
 ## How are they similar?
 
@@ -52,7 +52,7 @@ Biobase is open source. Along with the hosted cloud platform, you can also take 
 
 ### Pricing
 
-[Firebase charges for reads, writes and deletes](https://firebase.google.com/pricing), which can lead to some unpredictability, especially in the early stages of a project when your application is in heavy development. Biobase [charges based on the amount of data stored](https://biobase.com/pricing), with breathing room for unlimited API requests and an unlimited number of Auth users.
+[Firebase charges for reads, writes and deletes](https://firebase.google.com/pricing), which can lead to some unpredictability, especially in the early stages of a project when your application is in heavy development. Biobase [charges based on the amount of data stored](https://biobase.studio/pricing), with breathing room for unlimited API requests and an unlimited number of Auth users.
 
 ### Performance
 
@@ -60,10 +60,10 @@ We created a benchmarking repo where you can compare the performance of both ser
 
 ## How do I migrate from Firebase to Biobase?
 
-Since Firebase is document based, migrating into a relational database requires you to map your data structure across into a SQL schema. Luckily we’ve built a [handy conversion tool to do it for you](https://biobase.com/docs/guides/migrations/firestore-data).
+Since Firebase is document based, migrating into a relational database requires you to map your data structure across into a SQL schema. Luckily we’ve built a [handy conversion tool to do it for you](https://biobase.studio/docs/guides/migrations/firestore-data).
 
-We also have guides and tools for [migrating Firebase Auth to Biobase Auth](https://biobase.com/docs/guides/migrations/firebase-auth) for [migrating Firebase Storage files to Biobase Storage](https://biobase.com/docs/guides/migrations/firebase-storage).
+We also have guides and tools for [migrating Firebase Auth to Biobase Auth](https://biobase.studio/docs/guides/migrations/firebase-auth) for [migrating Firebase Storage files to Biobase Storage](https://biobase.studio/docs/guides/migrations/firebase-storage).
 
 These are by far the most complete Firebase to Postgres migration tools available anywhere on the web.
 
-You can [try Biobase for free](https://biobase.com/dashboard). If you require Enterprise level support with your project or migration, please get in touch using our [Enterprise contact form](https://forms.biobase.com/enterprise).
+You can [try Biobase for free](https://biobase.studio/dashboard). If you require Enterprise level support with your project or migration, please get in touch using our [Enterprise contact form](https://forms.biobase.studio/enterprise).

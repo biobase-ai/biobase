@@ -246,7 +246,7 @@ export function DiskManagementPanelForm() {
       <div id="disk-management">
         <FormHeader
           title="Disk Management"
-          docsUrl="https://biobase.com/docs/guides/platform/database-size#disk-management"
+          docsUrl="https://biobase.studio/docs/guides/platform/database-size#disk-management"
         />
         <Alert_Shadcn_>
           <InfoIcon />
@@ -277,7 +277,7 @@ export function DiskManagementPanelForm() {
     <div id="disk-management">
       <FormHeader
         title="Disk Management"
-        docsUrl="https://biobase.com/docs/guides/platform/database-size#disk-management"
+        docsUrl="https://biobase.studio/docs/guides/platform/database-size#disk-management"
       />
       <Form_Shadcn_ {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>

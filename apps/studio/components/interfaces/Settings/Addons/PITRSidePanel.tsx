@@ -159,7 +159,7 @@ const PITRSidePanel = () => {
           <h4>Point in Time Recovery</h4>
           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
             <Link
-              href="https://biobase.com/docs/guides/platform/backups#point-in-time-recovery"
+              href="https://biobase.studio/docs/guides/platform/backups#point-in-time-recovery"
               target="_blank"
               rel="noreferrer"
             >

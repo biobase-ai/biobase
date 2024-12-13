@@ -127,7 +127,7 @@ export const EnablePhysicalBackupsModal = ({ selectedRegion }: EnablePhysicalBac
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://biobase.com/docs/guides/platform/read-replicas#how-are-read-replicas-made"
+                href="https://biobase.studio/docs/guides/platform/read-replicas#how-are-read-replicas-made"
               >
                 Documentation
               </a>

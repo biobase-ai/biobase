@@ -74,7 +74,7 @@ const Extensions = () => {
           ) : (
             <Button className="ml-auto" asChild type="default" icon={<ExternalLink />}>
               <Link
-                href="https://biobase.com/docs/guides/database/extensions"
+                href="https://biobase.studio/docs/guides/database/extensions"
                 target="_blank"
                 rel="noreferrer"
               >

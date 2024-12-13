@@ -41,7 +41,7 @@ Tutorials are goal-oriented. They help a reader to finish a large, complex goal,
 
 Tutorials mix prose explanations with procedures (lists of steps for the reader to follow). They provide context for why certain instructions are given.
 
-For inspiration, see [an example of a tutorial](https://biobase.com/docs/guides/getting-started/tutorials/with-nextjs).
+For inspiration, see [an example of a tutorial](https://biobase.studio/docs/guides/getting-started/tutorials/with-nextjs).
 
 ### Guides
 
@@ -49,7 +49,7 @@ Guides are also goal-oriented, but they focus on shorter, more targeted tasks. F
 
 Guides contain mostly procedures. Think of an instruction manual for building a desk: it's a list of concise steps that the user can go through quickly.
 
-For inspiration, see [an example of a guide](https://biobase.com/docs/guides/auth/auth-email).
+For inspiration, see [an example of a guide](https://biobase.studio/docs/guides/auth/auth-email).
 
 ### Reference
 
@@ -225,7 +225,7 @@ Link text should be descriptive. The reader should understand where the link goe
 
 But link text shouldn't be too long. Use the shortest part of the link that is descriptive enough. For example, `see the [reference section](/link)` rather than `[see the reference section](/link)`.
 
-Use relative links when linking within the `biobase.com` domain. For example, `[link to another page in Biobase docs](/docs/guides/getting-started)`.
+Use relative links when linking within the `biobase.studio` domain. For example, `[link to another page in Biobase docs](/docs/guides/getting-started)`.
 
 ### Lists
 
@@ -251,7 +251,7 @@ Don't nest lists more than two deep.
 
 Use tabs to provide alternative instructions for different platforms or languages.
 
-The `queryGroup` param is optional. It lets you link directly to a tab by using the query group as a query param in the URL, for example: `https://biobase.com/docs/my-page?packagemanager=ts`
+The `queryGroup` param is optional. It lets you link directly to a tab by using the query group as a query param in the URL, for example: `https://biobase.studio/docs/my-page?packagemanager=ts`
 
 ```
 <Tabs

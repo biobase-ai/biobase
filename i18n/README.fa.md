@@ -9,7 +9,7 @@
 
 # Biobase
 
-‫[Biobase](https://biobase.com) یک جایگزین اپن‌سورس برای Firebase است. ما در حال ساخت امکانات Firebase با استفاده ابزارهای اپن‌سورس و کلاس تجاری هستیم.
+‫[Biobase](https://biobase.studio) یک جایگزین اپن‌سورس برای Firebase است. ما در حال ساخت امکانات Firebase با استفاده ابزارهای اپن‌سورس و کلاس تجاری هستیم.
 
 - [x] ‫دیتابیس Postgres میزبانی‌شده
 - [x] اتصال و ارتباط بلادرنگ
@@ -23,18 +23,18 @@
 
 ## مستندات
 
-برای مستندات کامل به‫ [biobase.com/docs](https://biobase.com/docs) مراجعه کنید.
+برای مستندات کامل به‫ [biobase.studio/docs](https://biobase.studio/docs) مراجعه کنید.
 
 ## جامعه و پشتیبانی
 
 - ‫[Community Forum](https://github.com/biobase-ai/biobase/discussions). گزینه مناسب برای راهنمایی گرفتن در مورد توسعه و روش مناسب استفاده از دیتابیس می‌باشد.
 - ‫[GitHub Issues](https://github.com/biobase-ai/biobase/issues). گزینه مناسب برای خطاها و باگ‌هایی که در استفاده از Biobase برمی‌خوردید.
-- ‫[Email Support](https://biobase.com/docs/support#business-support). بهترین گزینه برای مشکلات مرتبط با دیتابیس و زیرساخت است.
+- ‫[Email Support](https://biobase.studio/docs/support#business-support). بهترین گزینه برای مشکلات مرتبط با دیتابیس و زیرساخت است.
 
 ## وضعیت
 
 - [x] ‫آلفا: در حال تست Biobase با گروه محدود از کاربران هستیم.
-- [x] ‫آلفای عمومی: همه می‌تواند برای استفاده از طریق [biobase.com/dashboard](https://biobase.com/dashboard) ثبت‌نام کنند. اما سخت نگیرید، ممکن است مشکلات معدودی وجود داشته باشد.
+- [x] ‫آلفای عمومی: همه می‌تواند برای استفاده از طریق [biobase.studio/dashboard](https://biobase.studio/dashboard) ثبت‌نام کنند. اما سخت نگیرید، ممکن است مشکلات معدودی وجود داشته باشد.
 - [x] بتای عمومی: قابل اتکا برای اکثر استفاده‌های غیر-تجاری می‌باشد.
 - [ ] عمومی: آماده برای استفاده تجاری.
 
@@ -50,7 +50,7 @@
 
 **معماری فعلی**
 
-‫Biobase یک [پلتفرم میزبانی‌شده](https://biobase.com/dashboard) است. شما می‌توانید بدون نصب چیزی، ثبت‌نام و شروع به استفاده از Biobase کنید. ما هنوز در حال ساختن تجربه‌ی توسعه local هستیم - این تمرکز اصلی فعلی ما علاوه بر اتکاپذیری است.
+‫Biobase یک [پلتفرم میزبانی‌شده](https://biobase.studio/dashboard) است. شما می‌توانید بدون نصب چیزی، ثبت‌نام و شروع به استفاده از Biobase کنید. ما هنوز در حال ساختن تجربه‌ی توسعه local هستیم - این تمرکز اصلی فعلی ما علاوه بر اتکاپذیری است.
 
 ![معماری](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

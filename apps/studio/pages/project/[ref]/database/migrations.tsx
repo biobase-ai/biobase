@@ -29,7 +29,7 @@ const MigrationsPage: NextPageWithLayout = () => {
               target="_blank"
               rel="noreferrer"
               className="no-underline"
-              href="https://biobase.com/docs/guides/getting-started/local-development#database-migrations"
+              href="https://biobase.studio/docs/guides/getting-started/local-development#database-migrations"
             >
               Documentation
             </a>

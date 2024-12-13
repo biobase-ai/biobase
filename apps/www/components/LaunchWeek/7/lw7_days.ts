@@ -116,7 +116,7 @@ const days: WeekDayProps[] = [
     d: 0,
     dd: 'Pre-release',
     youtube_id: '',
-    blogpost: 'https://biobase.com/blog/designing-with-ai-midjourney',
+    blogpost: 'https://biobase.studio/blog/designing-with-ai-midjourney',
     docs: '',
     steps: [
       {

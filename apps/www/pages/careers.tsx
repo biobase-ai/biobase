@@ -102,10 +102,10 @@ const CareerPage: NextPage<CareersPageProps> = ({ jobs, placeholderJob, contribu
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.com/careers`,
+          url: `https://biobase.studio/careers`,
           images: [
             {
-              url: `https://biobase.com${basePath}/images/career/careers_og.jpg`,
+              url: `https://biobase.studio${basePath}/images/career/careers_og.jpg`,
             },
           ],
         }}

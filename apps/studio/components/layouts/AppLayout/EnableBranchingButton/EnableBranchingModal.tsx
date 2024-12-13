@@ -154,7 +154,7 @@ const EnableBranchingModal = () => {
               </div>
               <Button type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                 <Link
-                  href="https://biobase.com/docs/guides/platform/branching"
+                  href="https://biobase.studio/docs/guides/platform/branching"
                   target="_blank"
                   rel="noreferrer"
                 >

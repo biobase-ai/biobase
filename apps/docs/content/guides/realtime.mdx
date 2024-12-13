@@ -24,7 +24,7 @@ By default Realtime is disabled on your database. Let's turn on Realtime for a `
  >
  <TabPanel id="dashboard" label="Dashboard">
 
-1.  Go to the [Database](https://biobase.com/dashboard/project/_/database/tables) page in the Dashboard.
+1.  Go to the [Database](https://biobase.studio/dashboard/project/_/database/tables) page in the Dashboard.
 2.  Click on **Publications** in the sidebar.
 3.  Control which database events are sent by toggling **Insert**, **Update**, and **Delete**.
 4.  Control which tables broadcast changes by selecting **Source** and toggling each table.
@@ -61,7 +61,7 @@ From the client, we can listen to any new data that is inserted into the `todos`
 ```js
 // Initialize the JS client
 import { createClient } from '@supabase/biobase-js'
-const biobase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY)
 
 // Create a function to handle inserts
 const handleInserts = (payload) => {
@@ -117,7 +117,7 @@ biobase
 // Initialize the Swift client
 import Biobase
 
-let biobase = BiobaseClient(biobaseURL: SUPABASE_URL, biobaseKey: SUPABASE_ANON_KEY)
+let biobase = BiobaseClient(biobaseURL: BIOBASE_URL, biobaseKey: BIOBASE_ANON_KEY)
 
 // Create channel
 let channel = await biobase.realtime.channel("todos")
@@ -176,7 +176,7 @@ Find the source code and documentation in the Biobase GitHub repository.
     {
       name: 'Realtime: Multiplayer Edition',
       description: 'Read more about Biobase Realtime.',
-      href: 'https://biobase.com/blog/biobase-realtime-multiplayer-general-availability',
+      href: 'https://biobase.studio/blog/biobase-realtime-multiplayer-general-availability',
     },
   ].map((x) => (
     <div className="col-span-6" key={x.href}>

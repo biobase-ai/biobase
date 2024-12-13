@@ -46,7 +46,7 @@ This will create a `my_area.pmtiles` file which you can upload to Biobase Storag
 
 ## Upload the PMTiles file to Biobase Storage
 
-In your [Biobase Dashboard](https://biobase.com/dashboard/project/_/storage/buckets) navigate to `Storage` and click "New Bucket" and create a new public bucket called `public-maps`.
+In your [Biobase Dashboard](https://biobase.studio/dashboard/project/_/storage/buckets) navigate to `Storage` and click "New Bucket" and create a new public bucket called `public-maps`.
 
 Upload the `my_area.pmtiles` file created earlier to your public bucket. Once uploaded, click the file and tap "Get URL".
 
@@ -117,7 +117,7 @@ This is a vanilla JS example which uses CDN releases of the libraries. You can v
 
 ## Use Biobase Edge Functions to restrict Access
 
-A public Biobase Storage bucket allows access from any origin, which might not be ideal for your use case. At the time of writing, you're not able to modify the CORS settings for Biobase Storage buckets, however you can utilize [Biobase Edge Functions](https://biobase.com/docs/guides/functions) to restrict access to your PMTiles files, allowing you to even pair it with [Biobase Auth](https://biobase.com/docs/guides/auth) to restrict access to certain users for example.
+A public Biobase Storage bucket allows access from any origin, which might not be ideal for your use case. At the time of writing, you're not able to modify the CORS settings for Biobase Storage buckets, however you can utilize [Biobase Edge Functions](https://biobase.studio/docs/guides/functions) to restrict access to your PMTiles files, allowing you to even pair it with [Biobase Auth](https://biobase.studio/docs/guides/auth) to restrict access to certain users for example.
 
 In your Biobase Dashboard, create a new private storage bucket called `maps-private` and upload your `my_area.pmtiles` file there. Files in private buckets can only be accessed through either a short-lived signed URL, or by passing the secret service role key as an authorization header. Since our Edge Function is a secure server-side environment, we can utilize the latter approach here.
 
@@ -147,19 +147,19 @@ Deno.serve((req) => {
   }
 
   const reqUrl = new URL(req.url)
-  const url = `${Deno.env.get('SUPABASE_URL')}/storage/v1/object/authenticated${reqUrl.pathname}`
+  const url = `${Deno.env.get('BIOBASE_URL')}/storage/v1/object/authenticated${reqUrl.pathname}`
 
   const { method, headers } = req
   // Add Auth header
   const modHeaders = new Headers(headers)
-  modHeaders.append('authorization', `Bearer ${Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!}`)
+  modHeaders.append('authorization', `Bearer ${Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!}`)
   return fetch(url, { method, headers: modHeaders })
 })
 ```
 
 If you want to further restrict access based on authenticated users, you can pair your Edge Function with Biobase Auth as shown in [this example](/docs/guides/functions/auth#fetching-the-user).
 
-Lastly, we need to deploy our Edge Function to Biobase by running `biobase functions deploy maps-private --no-verify-jwt`. Note that the [`--no-verify-jwt` flag](https://biobase.com/docs/reference/cli/biobase-functions-deploy) is required if you want to allow public access from your website without any Biobase Auth User.
+Lastly, we need to deploy our Edge Function to Biobase by running `biobase functions deploy maps-private --no-verify-jwt`. Note that the [`--no-verify-jwt` flag](https://biobase.studio/docs/reference/cli/biobase-functions-deploy) is required if you want to allow public access from your website without any Biobase Auth User.
 
 Now we can simply replace the public storage URL with our Edge Functions URL to proxy the range requests to our private bucket:
 

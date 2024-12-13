@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) yra atvirojo kodo Firebase alternatyva. Kuriame "Firebase" funkcijas naudodami įmonių klasės atvirojo kodo įrankius.
+[Biobase](https://biobase.studio) yra atvirojo kodo Firebase alternatyva. Kuriame "Firebase" funkcijas naudodami įmonių klasės atvirojo kodo įrankius.
 
-- [x] Prieglobos Postgres duomenų bazė. [Dokumentai](https://biobase.com/docs/guides/database)
-- [x] Autentiškumo nustatymas ir autorizavimas. [Dokumentai](https://biobase.com/docs/guides/auth)
+- [x] Prieglobos Postgres duomenų bazė. [Dokumentai](https://biobase.studio/docs/guides/database)
+- [x] Autentiškumo nustatymas ir autorizavimas. [Dokumentai](https://biobase.studio/docs/guides/auth)
 - [x] Automatiškai generuojamos API.
-  - [x] REST. [Dokumentai](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Dokumentai](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Realaus laiko prenumeratos. [Dokumentai](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Dokumentai](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Dokumentai](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Realaus laiko prenumeratos. [Dokumentai](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funkcijos.
-  - [x] Duomenų bazės funkcijos. [Dokumentai](https://biobase.com/docs/guides/database/functions)
-  - [x] Kraštų funkcijos [Docs](https://biobase.com/docs/guides/functions)
-- [x] Failų saugojimas. [Dokumentai](https://biobase.com/docs/guides/storage)
+  - [x] Duomenų bazės funkcijos. [Dokumentai](https://biobase.studio/docs/guides/database/functions)
+  - [x] Kraštų funkcijos [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Failų saugojimas. [Dokumentai](https://biobase.studio/docs/guides/storage)
 - [x] Prietaisų skydelis
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokumentacija
 
-Išsamios dokumentacijos rasite [biobase.com/docs](https://biobase.com/docs)
+Išsamios dokumentacijos rasite [biobase.studio/docs](https://biobase.studio/docs)
 
 Norėdami sužinoti, kaip prisidėti, apsilankykite [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@ Norėdami sužinoti, kaip prisidėti, apsilankykite [Getting Started](../DEVELOP
 
 - [Bendrijos forumas](https://github.com/biobase-ai/biobase/discussions). Geriausiai tinka: pagalbai kuriant, diskusijoms apie geriausią duomenų bazių praktiką.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Geriausia: klaidos ir klaidos, su kuriomis susiduriate naudodami "Biobase".
-- [Pagalba el. paštu](https://biobase.com/docs/support#business-support). Geriausiai tinka: problemoms, susijusioms su jūsų duomenų baze ar infrastruktūra, spręsti.
-- [Discord](https://discord.biobase.com). Geriausiai tinka: dalytis savo programomis ir bendrauti su bendruomene.
+- [Pagalba el. paštu](https://biobase.studio/docs/support#business-support). Geriausiai tinka: problemoms, susijusioms su jūsų duomenų baze ar infrastruktūra, spręsti.
+- [Discord](https://discord.biobase.studio). Geriausiai tinka: dalytis savo programomis ir bendrauti su bendruomene.
 
 ## Statusas
 
 - [x] Alfa: Bandome "Biobase" su uždaru klientų rinkiniu
-- [x] Viešoji Alfa versija: [biobase.com/dashboard](https://biobase.com/dashboard). Tačiau neskubėkite su mumis, yra keletas trūkumų
+- [x] Viešoji Alfa versija: [biobase.studio/dashboard](https://biobase.studio/dashboard). Tačiau neskubėkite su mumis, yra keletas trūkumų
 - [x] Viešoji beta versija: Pakankamai stabili daugeliui ne įmonių naudojimo atvejų
-- [ ] Vieša: Bendras prieinamumas [[statusas](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Vieša: Bendras prieinamumas [[statusas](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 Šiuo metu esame viešojoje beta versijoje. Stebėkite šios repozitorijos "releases", kad gautumėte pranešimus apie svarbius atnaujinimus.
 
@@ -55,8 +55,8 @@ Norėdami sužinoti, kaip prisidėti, apsilankykite [Getting Started](../DEVELOP
 
 **Architektūra**
 
-Biobase yra [prieglobos platforma](https://biobase.com/dashboard). Galite užsiregistruoti ir pradėti naudotis "Biobase" nieko neįdiegę.
-Taip pat galite [savarankiškai talpinti](https://biobase.com/docs/guides/hosting/overview) ir [kurti vietoje](https://biobase.com/docs/guides/local-development).
+Biobase yra [prieglobos platforma](https://biobase.studio/dashboard). Galite užsiregistruoti ir pradėti naudotis "Biobase" nieko neįdiegę.
+Taip pat galite [savarankiškai talpinti](https://biobase.studio/docs/guides/hosting/overview) ir [kurti vietoje](https://biobase.studio/docs/guides/local-development).
 
 ![Architektūra](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

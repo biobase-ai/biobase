@@ -44,7 +44,7 @@ const Entities = ({ language }: ContentProps) => {
         <div className="flex items-center space-x-2 px-4 mt-3">
           <Button asChild type="default" icon={<ExternalLink />}>
             <Link
-              href="https://biobase.com/docs/guides/database/api/generating-types"
+              href="https://biobase.studio/docs/guides/database/api/generating-types"
               target="_blank"
               rel="noreferrer"
             >

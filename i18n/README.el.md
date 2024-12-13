@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) είναι μια εναλλακτική λύση της Firebase ανοιχτού κώδικα. Χτίζουμε τα χαρακτηριστικά της Firebase χρησιμοποιώντας εργαλεία ανοιχτού κώδικα επιχειρηματικού επιπέδου.
+[Biobase](https://biobase.studio) είναι μια εναλλακτική λύση της Firebase ανοιχτού κώδικα. Χτίζουμε τα χαρακτηριστικά της Firebase χρησιμοποιώντας εργαλεία ανοιχτού κώδικα επιχειρηματικού επιπέδου.
 
-- [x] Hosted Postgres Database. [Docs](https://biobase.com/docs/guides/database)
-- [x] Αυθεντικοποίηση και εξουσιοδότηση. [Έγγραφα](https://biobase.com/docs/guides/auth)
+- [x] Hosted Postgres Database. [Docs](https://biobase.studio/docs/guides/database)
+- [x] Αυθεντικοποίηση και εξουσιοδότηση. [Έγγραφα](https://biobase.studio/docs/guides/auth)
 - [x] Αυτόματα παραγόμενα APIs.
-  - [x] REST. [Έγγραφα](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Docs](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Συνδρομές σε πραγματικό χρόνο. [Έγγραφα](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Έγγραφα](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Docs](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Συνδρομές σε πραγματικό χρόνο. [Έγγραφα](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Συναρτήσεις.
-  - [x] Συναρτήσεις βάσης δεδομένων. [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] Edge Functions [Docs](https://biobase.com/docs/guides/functions)
-- [x] Αποθήκευση αρχείων. [Docs](https://biobase.com/docs/guides/storage)
+  - [x] Συναρτήσεις βάσης δεδομένων. [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] Edge Functions [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Αποθήκευση αρχείων. [Docs](https://biobase.studio/docs/guides/storage)
 - [x] Ταμπλό
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Τεκμηρίωση
 
-Για πλήρη τεκμηρίωση, επισκεφθείτε τη διεύθυνση [biobase.com/docs](https://biobase.com/docs)
+Για πλήρη τεκμηρίωση, επισκεφθείτε τη διεύθυνση [biobase.studio/docs](https://biobase.studio/docs)
 
 Για να δείτε πώς μπορείτε να συνεισφέρετε, επισκεφθείτε το [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@
 
 - [Community Forum](https://github.com/biobase-ai/biobase/discussions). Το καλύτερο για: βοήθεια με την κατασκευή, συζήτηση σχετικά με τις βέλτιστες πρακτικές της βάσης δεδομένων.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Το καλύτερο για: σφάλματα και λάθη που αντιμετωπίζετε χρησιμοποιώντας την Biobase.
-- [Email Support](https://biobase.com/docs/support#business-support). Το καλύτερο για: προβλήματα με τη βάση δεδομένων ή την υποδομή σας.
-- [Discord](https://discord.biobase.com). Το καλύτερο για: να μοιράζεστε τις εφαρμογές σας και να κάνετε παρέα με την κοινότητα.
+- [Email Support](https://biobase.studio/docs/support#business-support). Το καλύτερο για: προβλήματα με τη βάση δεδομένων ή την υποδομή σας.
+- [Discord](https://discord.biobase.studio). Το καλύτερο για: να μοιράζεστε τις εφαρμογές σας και να κάνετε παρέα με την κοινότητα.
 
 ## Κατάσταση
 
 - [x] Alpha: Δοκιμάζουμε το Biobase με ένα κλειστό σύνολο πελατών
-- [x] Δημόσια Alpha: [biobase.com/dashboard](https://biobase.com/dashboard). Αλλά να είστε προσεκτικοί μαζί μας, υπάρχουν μερικές ατέλειες
+- [x] Δημόσια Alpha: [biobase.studio/dashboard](https://biobase.studio/dashboard). Αλλά να είστε προσεκτικοί μαζί μας, υπάρχουν μερικές ατέλειες
 - [x] Δημόσια Beta: Αρκετά σταθερό για τις περισσότερες περιπτώσεις μη επιχειρηματικής χρήσης
-- [ ] Δημόσια: [[status](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Δημόσια: [[status](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 Βρισκόμαστε επί του παρόντος σε Public Beta. Παρακολουθήστε τις "κυκλοφορίες" αυτού του repo για να ειδοποιηθείτε για σημαντικές ενημερώσεις.
 
@@ -55,8 +55,8 @@
 
 **Αρχιτεκτονική**
 
-Η Biobase είναι μια [φιλοξενούμενη πλατφόρμα](https://biobase.com/dashboard). Μπορείτε να εγγραφείτε και να αρχίσετε να χρησιμοποιείτε το Biobase χωρίς να εγκαταστήσετε τίποτα.
-Μπορείτε επίσης να κάνετε [αυτο-ξενάγηση](https://biobase.com/docs/guides/hosting/overview) και [ανάπτυξη τοπικά](https://biobase.com/docs/guides/local-development).
+Η Biobase είναι μια [φιλοξενούμενη πλατφόρμα](https://biobase.studio/dashboard). Μπορείτε να εγγραφείτε και να αρχίσετε να χρησιμοποιείτε το Biobase χωρίς να εγκαταστήσετε τίποτα.
+Μπορείτε επίσης να κάνετε [αυτο-ξενάγηση](https://biobase.studio/docs/guides/hosting/overview) και [ανάπτυξη τοπικά](https://biobase.studio/docs/guides/local-development).
 
 ![Αρχιτεκτονική](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

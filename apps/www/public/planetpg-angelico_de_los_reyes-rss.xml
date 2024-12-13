@@ -2,36 +2,36 @@
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>'Postgres | Biobase Blog</title>
-      <link>https://biobase.com/blog</link>
+      <link>https://biobase.studio/blog</link>
       <description>Latest Postgres news from Angelico de los Reyes at Biobase</description>
       <language>en</language>
       <lastBuildDate>Thu, 15 Dec 2022 23:00:00 GMT</lastBuildDate>
-      <atom:link href="https://biobase.com/planetpg-angelico_de_los_reyes-rss.xml" rel="self" type="application/rss+xml"/>
+      <atom:link href="https://biobase.studio/planetpg-angelico_de_los_reyes-rss.xml" rel="self" type="application/rss+xml"/>
       <item>
-  <guid>https://biobase.com/blog/postgres-point-in-time-recovery</guid>
+  <guid>https://biobase.studio/blog/postgres-point-in-time-recovery</guid>
   <title>Point in Time Recovery is now available for Pro projects</title>
-  <link>https://biobase.com/blog/postgres-point-in-time-recovery</link>
+  <link>https://biobase.studio/blog/postgres-point-in-time-recovery</link>
   <description>We&apos;re making PITR available for more projects, with a new Dashboard UI that makes it simple to use.</description>
   <pubDate>Thu, 15 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.com/blog/continuous-postgresql-backup-walg</guid>
+  <guid>https://biobase.studio/blog/continuous-postgresql-backup-walg</guid>
   <title>Continuous PostgreSQL Backups using WAL-G</title>
-  <link>https://biobase.com/blog/continuous-postgresql-backup-walg</link>
+  <link>https://biobase.studio/blog/continuous-postgresql-backup-walg</link>
   <description>Have you ever wanted to restore your database&apos;s state to a particular moment in time? This post explains how, using WAL-G.</description>
   <pubDate>Sat, 01 Aug 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.com/blog/postgresql-templates</guid>
+  <guid>https://biobase.studio/blog/postgresql-templates</guid>
   <title>What are PostgreSQL Templates?</title>
-  <link>https://biobase.com/blog/postgresql-templates</link>
+  <link>https://biobase.studio/blog/postgresql-templates</link>
   <description>What are PostgreSQL templates and what are they used for?</description>
   <pubDate>Wed, 08 Jul 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.com/blog/postgresql-physical-logical-backups</guid>
+  <guid>https://biobase.studio/blog/postgresql-physical-logical-backups</guid>
   <title>Physical vs Logical Backups in PostgreSQL</title>
-  <link>https://biobase.com/blog/postgresql-physical-logical-backups</link>
+  <link>https://biobase.studio/blog/postgresql-physical-logical-backups</link>
   <description>What are physical and logical backups in Postgres?</description>
   <pubDate>Mon, 06 Jul 2020 22:00:00 GMT</pubDate>
 </item>

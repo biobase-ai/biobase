@@ -47,7 +47,7 @@ const footerData = [
       },
       {
         text: 'System Status',
-        url: 'https://status.biobase.com/',
+        url: 'https://status.biobase.studio/',
       },
       {
         text: 'Become a Partner',
@@ -79,7 +79,7 @@ const footerData = [
       },
       {
         text: 'HIPAA',
-        url: 'https://forms.biobase.com/hipaa2',
+        url: 'https://forms.biobase.studio/hipaa2',
       },
     ],
   },

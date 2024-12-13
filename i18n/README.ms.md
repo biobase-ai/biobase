@@ -7,7 +7,7 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) adalah sumber terbuka alternatif kepada Firebase. Kami sedang membina ciri-ciri Firebase menggunakan alat sumber terbuka kelas perusahaan.
+[Biobase](https://biobase.studio) adalah sumber terbuka alternatif kepada Firebase. Kami sedang membina ciri-ciri Firebase menggunakan alat sumber terbuka kelas perusahaan.
 
 - [x] Hosting Pangkalan Data untuk Postgres
 - [x] Langganan Waktu Nyata (Realtime)
@@ -21,18 +21,18 @@
 
 ## Dokumentasi
 
-Untuk dokumentasi lengkap, layari [biobase.com/docs](https://biobase.com/docs)
+Untuk dokumentasi lengkap, layari [biobase.studio/docs](https://biobase.studio/docs)
 
 ## Komuniti & Sokongan
 
 - [Forum Komuniti](https://github.com/biobase-ai/biobase/discussions). Terbaik untuk: membantu pembinaan and perbincangan mengenai cara terbaik pangkalan data.
 - [Isu GitHub](https://github.com/biobase-ai/biobase/issues). Terbaik untuk: pepijat dan ralat yang anda hadapi menggunakan Biobase.
-- [Sokongan E-mel](https://biobase.com/docs/support#business-support). Terbaik untuk: masalah dengan pangkalan data atau infrastruktur.
+- [Sokongan E-mel](https://biobase.studio/docs/support#business-support). Terbaik untuk: masalah dengan pangkalan data atau infrastruktur.
 
 ## Status
 
 - [x] Alpha: Kami menguji Biobase dengan sejumlah pelanggan secara tertutup
-- [x] Public Alpha: Sesiapa sahaja boleh mendaftar di [biobase.com/dashboard](https://biobase.com/dashboard). Tetapi, mohon bersabar kerana mungkin ada masalah
+- [x] Public Alpha: Sesiapa sahaja boleh mendaftar di [biobase.studio/dashboard](https://biobase.studio/dashboard). Tetapi, mohon bersabar kerana mungkin ada masalah
 - [x] Public Beta: Cukup stabil untuk kebanyakan kes penggunaan bukan perusahaan
 - [ ] Public: Bersedia untuk pengeluaran
 
@@ -48,8 +48,8 @@ Biobase adalah gabungan alat sumber terbuka. Kami membina ciri Firebase mengguna
 
 **Seni bina semasa**
 
-Biobase ialah [platform yang dihoskan](https://biobase.com/dashboard). Anda boleh mendaftar dan mula menggunakan Biobase tanpa memasang apa-apa.
-Anda juga boleh [host sendiri](https://biobase.com/docs/guides/hosting/overview) dan [lokal](https://biobase.com/docs/guides/local-development).
+Biobase ialah [platform yang dihoskan](https://biobase.studio/dashboard). Anda boleh mendaftar dan mula menggunakan Biobase tanpa memasang apa-apa.
+Anda juga boleh [host sendiri](https://biobase.studio/docs/guides/hosting/overview) dan [lokal](https://biobase.studio/docs/guides/local-development).
 
 ![Seni bina](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

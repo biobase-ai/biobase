@@ -26,10 +26,10 @@ npm i @supabase/biobase-js
 npx wrangler secret put NAME
 ```
 
-**Add a secret for SUPABASE_URL**
+**Add a secret for BIOBASE_URL**
 
 ```bash
-npx wrangler secret put SUPABASE_URL
+npx wrangler secret put BIOBASE_URL
 ```
 
 **Run wrangler development server**
@@ -38,10 +38,10 @@ npx wrangler secret put SUPABASE_URL
 npx wrangler dev
 ```
 
-**Add a secret for SUPABASE_ANON_KEY**
+**Add a secret for BIOBASE_ANON_KEY**
 
 ```bash
-npx wrangler secret put SUPABASE_ANON_KEY
+npx wrangler secret put BIOBASE_ANON_KEY
 ```
 
 **Query data from Biobase**
@@ -62,7 +62,7 @@ return new Response(JSON.stringify(data), {
 
 ## Resources
 
-- [Selecting data with Biobase JS](https://biobase.com/docs/reference/javascript/select)
+- [Selecting data with Biobase JS](https://biobase.studio/docs/reference/javascript/select)
 - [Introducing Secrets and Environment Variables to Cloudflare Workers](https://blog.cloudflare.com/workers-secrets-environment/)
 - [Cloudflare docs for sending JSON responses](https://developers.cloudflare.com/workers/examples/return-json/)
 

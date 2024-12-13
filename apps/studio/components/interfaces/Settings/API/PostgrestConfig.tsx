@@ -200,7 +200,7 @@ export const PostgrestConfig = () => {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="https://biobase.com/docs/guides/database/connecting-to-postgres#data-apis"
+                    href="https://biobase.studio/docs/guides/database/connecting-to-postgres#data-apis"
                   >
                     Documentation
                   </a>

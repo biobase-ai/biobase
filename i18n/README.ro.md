@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) este o alternativă open source la Firebase. Construim caracteristicile Firebase folosind instrumente open source de nivel enterprise.
+[Biobase](https://biobase.studio) este o alternativă open source la Firebase. Construim caracteristicile Firebase folosind instrumente open source de nivel enterprise.
 
-- [x] Baza de date Postgres găzduită. [Docs](https://biobase.com/docs/guides/database)
-- [x] Autentificare și autorizare. [Docs](https://biobase.com/docs/guides/auth)
+- [x] Baza de date Postgres găzduită. [Docs](https://biobase.studio/docs/guides/database)
+- [x] Autentificare și autorizare. [Docs](https://biobase.studio/docs/guides/auth)
 - [x] API-uri generate automat.
-  - [x] REST. [Docs](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Docs](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Abonamente în timp real. [Docs](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Docs](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Docs](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Abonamente în timp real. [Docs](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funcții.
-  - [x] Funcții de baze de date. [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] Funcții de margine. [Docs](https://biobase.com/docs/guides/functions)
-- [x] Stocarea fișierelor. [Docs](https://biobase.com/docs/guides/storage)
+  - [x] Funcții de baze de date. [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] Funcții de margine. [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Stocarea fișierelor. [Docs](https://biobase.studio/docs/guides/storage)
 - [x] Tablou de bord
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Documentație
 
-Pentru documentația completă, vizitați [biobase.com/docs](https://biobase.com/docs)
+Pentru documentația completă, vizitați [biobase.studio/docs](https://biobase.studio/docs)
 
 Pentru a vedea cum să contribui, vizitați [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@ Pentru a vedea cum să contribui, vizitați [Getting Started](../DEVELOPERS.md)
 
 - [Community Forum](https://github.com/biobase-ai/biobase/discussions). Cel mai bun pentru: ajutor la construcție, discuții despre cele mai bune practici în materie de baze de date.
 - [Probleme GitHub](https://github.com/biobase-ai/biobase/issues). Cel mai bun pentru: bug-uri și erori pe care le întâlniți folosind Biobase.
-- [Email Support](https://biobase.com/docs/support#business-support). Cel mai bun pentru: probleme cu baza de date sau cu infrastructura.
-- [Discord](https://discord.biobase.com). Cel mai bun pentru: împărtășirea aplicațiilor dvs. și petrecerea timpului cu comunitatea.
+- [Email Support](https://biobase.studio/docs/support#business-support). Cel mai bun pentru: probleme cu baza de date sau cu infrastructura.
+- [Discord](https://discord.biobase.studio). Cel mai bun pentru: împărtășirea aplicațiilor dvs. și petrecerea timpului cu comunitatea.
 
 ## Status
 
 - [x] Alpha: Testăm Biobase cu un set închis de clienți
-- [x] Public Alpha: Oricine se poate înscrie la [biobase.com/dashboard](https://biobase.com/dashboard). Dar fiți blânzi cu noi, există câteva probleme
+- [x] Public Alpha: Oricine se poate înscrie la [biobase.studio/dashboard](https://biobase.studio/dashboard). Dar fiți blânzi cu noi, există câteva probleme
 - [x] Public Beta: Suficient de stabilă pentru majoritatea cazurilor de utilizare non-întreprindere
-- [ ] Public: Disponibilitate generală [[status](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Public: Disponibilitate generală [[status](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 În prezent, suntem în faza Public Beta. Urmăriți "releases" din acest repo pentru a fi anunțați de actualizările majore.
 
@@ -55,8 +55,8 @@ Biobase este o combinație de instrumente open source. Construim caracteristicil
 
 **Arhitectură**
 
-Biobase este o [platformă găzduită](https://biobase.com/dashboard). Vă puteți înscrie și puteți începe să utilizați Biobase fără a instala nimic.
-Puteți, de asemenea, [auto-hosting](https://biobase.com/docs/guides/hosting/overview) și [dezvolta local](https://biobase.com/docs/guides/local-development).
+Biobase este o [platformă găzduită](https://biobase.studio/dashboard). Vă puteți înscrie și puteți începe să utilizați Biobase fără a instala nimic.
+Puteți, de asemenea, [auto-hosting](https://biobase.studio/docs/guides/hosting/overview) și [dezvolta local](https://biobase.studio/docs/guides/local-development).
 
 ![Arhitectură](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

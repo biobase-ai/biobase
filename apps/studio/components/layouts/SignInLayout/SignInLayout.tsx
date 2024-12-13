@@ -93,7 +93,7 @@ const SignInLayout = ({
           <nav className="relative flex items-center justify-between sm:h-10">
             <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
               <div className="flex items-center justify-between w-full md:w-auto">
-                <Link href={logoLinkToMarketingSite ? 'https://biobase.com' : '/projects'}>
+                <Link href={logoLinkToMarketingSite ? 'https://biobase.studio' : '/projects'}>
                   <Image
                     src={
                       resolvedTheme?.includes('dark')
@@ -110,7 +110,7 @@ const SignInLayout = ({
 
             <div className="items-center hidden space-x-3 md:ml-10 md:flex md:pr-4">
               <Button asChild type="default" icon={<FileText />}>
-                <Link href="https://biobase.com/docs" target="_blank" rel="noreferrer">
+                <Link href="https://biobase.studio/docs" target="_blank" rel="noreferrer">
                   Documentation
                 </Link>
               </Button>
@@ -134,14 +134,14 @@ const SignInLayout = ({
                 <p className="text-xs text-foreground-lighter sm:mx-auto sm:max-w-sm">
                   By continuing, you agree to Biobase's{' '}
                   <Link
-                    href="https://biobase.com/terms"
+                    href="https://biobase.studio/terms"
                     className="underline hover:text-foreground-light"
                   >
                     Terms of Service
                   </Link>{' '}
                   and{' '}
                   <Link
-                    href="https://biobase.com/privacy"
+                    href="https://biobase.studio/privacy"
                     className="underline hover:text-foreground-light"
                   >
                     Privacy Policy
@@ -168,7 +168,7 @@ const SignInLayout = ({
                   className="flex items-center gap-4"
                 >
                   <img
-                    src={`https://biobase.com${quote.img_url}`}
+                    src={`https://biobase.studio${quote.img_url}`}
                     alt={quote.handle}
                     className="w-12 h-12 rounded-full"
                   />

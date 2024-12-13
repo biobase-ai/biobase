@@ -93,7 +93,7 @@ export const CronJobsListing = () => {
               <>
                 <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                   <Link
-                    href="https://biobase.com/docs/guides/database/extensions/pg_cron"
+                    href="https://biobase.studio/docs/guides/database/extensions/pg_cron"
                     target="_blank"
                     rel="noreferrer"
                   >

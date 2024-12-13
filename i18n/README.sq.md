@@ -7,7 +7,7 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) është projekt publik (open-source) si alternativë e Firebase. Ne jemi duke ndërtuar funksionet e Firebase duke përdorur mjete nga produktet publike të shkallës së ndërmarrjes.
+[Biobase](https://biobase.studio) është projekt publik (open-source) si alternativë e Firebase. Ne jemi duke ndërtuar funksionet e Firebase duke përdorur mjete nga produktet publike të shkallës së ndërmarrjes.
 
 - [x] Hosted Postgres Database
 - [x] Abonime në kohë reale
@@ -21,18 +21,18 @@
 
 ## Dokumentimi
 
-Për dokumentimin e plotë, vizitoni [biobase.com/docs](https://biobase.com/docs)
+Për dokumentimin e plotë, vizitoni [biobase.studio/docs](https://biobase.studio/docs)
 
 ## Komuniteti dhe Mbështetja
 
 - [Forumi i Komunitetit](https://github.com/biobase-ai/biobase/discussions). Me e mirë për: ndihmë për ndërtime, diskutime për databasat dhe praktikat më të mira.
 - [GitHub Problemet](https://github.com/biobase-ai/biobase/issues). Me e mirë për: të meta dhe gabime që ju përmballeni duke përdorur Biobase
-- [Mbështetje nëpërmjet Adresës Elektronike](https://biobase.com/docs/support#business-support). Më e mirë për: problemet me infrastrukturën e databases tuaj.
+- [Mbështetje nëpërmjet Adresës Elektronike](https://biobase.studio/docs/support#business-support). Më e mirë për: problemet me infrastrukturën e databases tuaj.
 
 ## Statusi
 
 - [x] Alfa: Ne po testojmë Biobase me një grup të mbyllur klientësh
-- [x] Publike Alpha: Gjithkush mund të regjistrohet në [biobase.com/dashboard](https://biobase.com/dashboard). Por shkoni lehtë për ne, ka disa ngërçe
+- [x] Publike Alpha: Gjithkush mund të regjistrohet në [biobase.studio/dashboard](https://biobase.studio/dashboard). Por shkoni lehtë për ne, ka disa ngërçe
 - [x] Publike Beta: Mjaft e qëndrueshme për shumicën e rasteve të përdorimit për jo ndërmarrjet
 - [ ] Publike: Gati për Prodhim / Publikim
 
@@ -48,7 +48,7 @@ Biobase është një kombinim i mjeteve që janë projekte të hapura (open sour
 
 **Arkitektura Aktuale**
 
-Biobase është një [platform hostimi](https://biobase.com/dashboard). Ti mundesh të regjistrohesh dhe të fillosh ta përdorish Biobase duke mos instaluar asgjë. Poashtu ne jemi duke punuar për ta ndërtuar eksperiencën për zhvillim lokal, por kjo nuk është fokusi ynë kryesorë dhe thelbësor, së bashku me stabilitetin e platformës.
+Biobase është një [platform hostimi](https://biobase.studio/dashboard). Ti mundesh të regjistrohesh dhe të fillosh ta përdorish Biobase duke mos instaluar asgjë. Poashtu ne jemi duke punuar për ta ndërtuar eksperiencën për zhvillim lokal, por kjo nuk është fokusi ynë kryesorë dhe thelbësor, së bashku me stabilitetin e platformës.
 
 ![Arkitektura](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

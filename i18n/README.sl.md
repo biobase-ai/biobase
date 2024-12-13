@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) je odprtokodna alternativa Firebase. Funkcije Firebase gradimo z odprtokodnimi orodji za podjetja.
+[Biobase](https://biobase.studio) je odprtokodna alternativa Firebase. Funkcije Firebase gradimo z odprtokodnimi orodji za podjetja.
 
-- [x] Gostovana podatkovna baza Postgres. [Dokumenti](https://biobase.com/docs/guides/database)
-- [x] Avtentikacija in avtorizacija. [Dokumenti](https://biobase.com/docs/guides/auth)
+- [x] Gostovana podatkovna baza Postgres. [Dokumenti](https://biobase.studio/docs/guides/database)
+- [x] Avtentikacija in avtorizacija. [Dokumenti](https://biobase.studio/docs/guides/auth)
 - [x] Samodejno generirani API-ji.
-  - [x] REST. [Dokumenti](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Dokumenti](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Naročnine v realnem času. [Dokumenti](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Dokumenti](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Dokumenti](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Naročnine v realnem času. [Dokumenti](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funkcije.
-  - [x] Funkcije podatkovne zbirke. [Dokumenti](https://biobase.com/docs/guides/database/functions)
-  - [x] Funkcije robov [Dokumenti](https://biobase.com/docs/guides/functions)
-- [x] Shranjevanje datotek. [Dokumenti](https://biobase.com/docs/guides/storage)
+  - [x] Funkcije podatkovne zbirke. [Dokumenti](https://biobase.studio/docs/guides/database/functions)
+  - [x] Funkcije robov [Dokumenti](https://biobase.studio/docs/guides/functions)
+- [x] Shranjevanje datotek. [Dokumenti](https://biobase.studio/docs/guides/storage)
 - [x] Nadzorna plošča
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokumentacija
 
-Za celotno dokumentacijo obiščite [biobase.com/docs](https://biobase.com/docs)
+Za celotno dokumentacijo obiščite [biobase.studio/docs](https://biobase.studio/docs)
 
 Če si želite ogledati, kako prispevati, obiščite [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@ Za celotno dokumentacijo obiščite [biobase.com/docs](https://biobase.com/docs)
 
 - [Forum skupnosti](https://github.com/biobase-ai/biobase/discussions). Najprimernejši za: pomoč pri gradnji, razpravo o najboljših praksah zbirke podatkov.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Najprimernejši za: hrošče in napake, na katere naletite pri uporabi zbirke Biobase.
-- [E-poštna podpora](https://biobase.com/docs/support#business-support). Najboljše za: težave s podatkovno zbirko ali infrastrukturo.
-- [Discord](https://discord.biobase.com). Najboljši za: izmenjavo aplikacij in druženje s skupnostjo.
+- [E-poštna podpora](https://biobase.studio/docs/support#business-support). Najboljše za: težave s podatkovno zbirko ali infrastrukturo.
+- [Discord](https://discord.biobase.studio). Najboljši za: izmenjavo aplikacij in druženje s skupnostjo.
 
 ## Status
 
 - [x] Alfa: Testiramo bazo Biobase z zaprtim naborom strank
-- [x] Javna alfa: [biobase.com/dashboard](https://biobase.com/dashboard). Vendar nas ne obremenjujte, saj je še nekaj pomanjkljivosti
+- [x] Javna alfa: [biobase.studio/dashboard](https://biobase.studio/dashboard). Vendar nas ne obremenjujte, saj je še nekaj pomanjkljivosti
 - [x] Javna beta različica: Dovolj stabilna za večino primerov uporabe, ki niso povezani s podjetji
-- [ ] Javna: Splošna razpoložljivost [[status](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Javna: Splošna razpoložljivost [[status](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 Trenutno smo v javni beta različici. Spremljajte "releases" tega repozitorija, da boste obveščeni o večjih posodobitvah.
 
@@ -55,8 +55,8 @@ Supabaza je kombinacija odprtokodnih orodij. Funkcije Firebase gradimo z odprtok
 
 **Arhitektura**
 
-Biobase je [gostovana platforma](https://biobase.com/dashboard). Prijavite se lahko in začnete uporabljati bazo Biobase, ne da bi kar koli namestili.
-Lahko tudi [gostujete sami](https://biobase.com/docs/guides/hosting/overview) in [razvijate lokalno](https://biobase.com/docs/guides/local-development).
+Biobase je [gostovana platforma](https://biobase.studio/dashboard). Prijavite se lahko in začnete uporabljati bazo Biobase, ne da bi kar koli namestili.
+Lahko tudi [gostujete sami](https://biobase.studio/docs/guides/hosting/overview) in [razvijate lokalno](https://biobase.studio/docs/guides/local-development).
 
 ![Arhitektura](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

@@ -85,20 +85,20 @@ const useLogsQuery = (
     if (usesWith) {
       error = {
         message: 'The parser does not yet support WITH and subquery statements.',
-        docs: 'https://biobase.com/docs/guides/platform/advanced-log-filtering#the-with-keyword-and-subqueries-are-not-supported',
+        docs: 'https://biobase.studio/docs/guides/platform/advanced-log-filtering#the-with-keyword-and-subqueries-are-not-supported',
       }
     }
     if (usesILIKE) {
       error = {
         message: 'BigQuery does not support ILIKE. Use REGEXP_CONTAINS instead.',
-        docs: 'https://biobase.com/docs/guides/platform/advanced-log-filtering#the-ilike-and-similar-to-keywords-are-not-supported',
+        docs: 'https://biobase.studio/docs/guides/platform/advanced-log-filtering#the-ilike-and-similar-to-keywords-are-not-supported',
       }
     }
     if (usesWildcard) {
       error = {
         message:
           'Wildcard (*) queries are not supported. Please remove the wildcard and try again.',
-        docs: 'https://biobase.com/docs/guides/platform/advanced-log-filtering#the-wildcard-operator--to-select-columns-is-not-supported',
+        docs: 'https://biobase.studio/docs/guides/platform/advanced-log-filtering#the-wildcard-operator--to-select-columns-is-not-supported',
       }
     }
   }

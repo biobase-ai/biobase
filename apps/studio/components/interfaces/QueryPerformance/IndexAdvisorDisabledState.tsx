@@ -92,7 +92,7 @@ export const IndexAdvisorDisabledState = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://biobase.com/docs/guides/database/extensions/index_advisor"
+              href="https://biobase.studio/docs/guides/database/extensions/index_advisor"
             >
               Documentation
             </a>

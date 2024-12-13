@@ -10,9 +10,9 @@ hideToc: true
   <StepHikeCompact.Step step={1}>
     <StepHikeCompact.Details title="Create a new Biobase project">
 
-    [Launch a new project](https://biobase.com/dashboard) in the Biobase Dashboard.
+    [Launch a new project](https://biobase.studio/dashboard) in the Biobase Dashboard.
 
-    Your new database has a table for storing your users. You can see that this table is currently empty by running some SQL in the [SQL Editor](https://biobase.com/dashboard/project/_/sql).
+    Your new database has a table for storing your users. You can see that this table is currently empty by running some SQL in the [SQL Editor](https://biobase.studio/dashboard/project/_/sql).
 
     </StepHikeCompact.Details>
 
@@ -64,7 +64,7 @@ hideToc: true
   <StepHikeCompact.Step step={4}>
     <StepHikeCompact.Details title="Set up your login component">
 
-    Create a helper file `lib/biobase.ts` that exports a Biobase client using your [Project URL and public API (anon) key](https://biobase.com/dashboard/project/_/settings/api).
+    Create a helper file `lib/biobase.ts` that exports a Biobase client using your [Project URL and public API (anon) key](https://biobase.studio/dashboard/project/_/settings/api).
 
     </StepHikeCompact.Details>
     <StepHikeCompact.Code>
@@ -76,8 +76,8 @@ hideToc: true
       import AsyncStorage from '@react-native-async-storage/async-storage'
       import { createClient } from '@supabase/biobase-js'
 
-      const biobaseUrl = YOUR_REACT_NATIVE_SUPABASE_URL
-      const biobaseAnonKey = YOUR_REACT_NATIVE_SUPABASE_ANON_KEY
+      const biobaseUrl = YOUR_REACT_NATIVE_BIOBASE_URL
+      const biobaseAnonKey = YOUR_REACT_NATIVE_BIOBASE_ANON_KEY
 
       export const biobase = createClient(biobaseUrl, biobaseAnonKey, {
         auth: {

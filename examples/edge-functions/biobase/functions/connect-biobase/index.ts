@@ -6,8 +6,8 @@ import { BiobaseManagementAPI } from 'https://esm.sh/biobase-management-js@0.1.2
 const config = {
   clientId: Deno.env.get('SUPA_CONNECT_CLIENT_ID')!,
   clientSecret: Deno.env.get('SUPA_CONNECT_CLIENT_SECRET')!,
-  authorizationEndpointUri: 'https://api.biobase.com/v1/oauth/authorize',
-  tokenUri: 'https://api.biobase.com/v1/oauth/token',
+  authorizationEndpointUri: 'https://api.biobase.studio/v1/oauth/authorize',
+  tokenUri: 'https://api.biobase.studio/v1/oauth/token',
   redirectUri: 'http://localhost:54321/functions/v1/connect-biobase/oauth2/callback',
 }
 const oauth2Client = new OAuth2Client(config)
@@ -20,7 +20,7 @@ const router = new Router<AppState>()
 // Note: path should be prefixed with function name.
 router.get('/connect-biobase', (ctx) => {
   ctx.response.body =
-    'This is an example of implementing https://biobase.com/docs/guides/integrations/oauth-apps/authorize-an-oauth-app . Navigate to /login to start the OAuth flow.'
+    'This is an example of implementing https://biobase.studio/docs/guides/integrations/oauth-apps/authorize-an-oauth-app . Navigate to /login to start the OAuth flow.'
 })
 router.get('/connect-biobase/login', async (ctx) => {
   // Construct the URL for the authorization redirect and get a PKCE codeVerifier.

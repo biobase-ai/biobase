@@ -72,8 +72,8 @@ Push notifications are an important part of any mobile app. They allow you to se
     }
 
     const biobase = createClient(
-      Deno.env.get('SUPABASE_URL')!,
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+      Deno.env.get('BIOBASE_URL')!,
+      Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!
     )
 
     Deno.serve(async (req) => {
@@ -105,7 +105,7 @@ Push notifications are an important part of any mobile app. They allow you to se
 
     ## Create the database webhook
 
-    Navigate to the [Database Webhooks settings](https://biobase.com/dashboard/project/_/database/hooks) in your Biobase Dashboard.
+    Navigate to the [Database Webhooks settings](https://biobase.studio/dashboard/project/_/database/hooks) in your Biobase Dashboard.
 
     1. Enable and create a new hook.
     1. Conditions to fire webhook: Select the `notifications` table and tick the `Insert` event.
@@ -116,7 +116,7 @@ Push notifications are an important part of any mobile app. They allow you to se
 
     ## Send push notification
 
-    1. Navigate to the [table editor](https://biobase.com/dashboard/project/_/editor) in your Biobase Dashboard.
+    1. Navigate to the [table editor](https://biobase.studio/dashboard/project/_/editor) in your Biobase Dashboard.
     1. In your `notifications` table, insert a new row.
     1. Watch the magic happen 🪄
 
@@ -184,8 +184,8 @@ Push notifications are an important part of any mobile app. They allow you to se
     }
 
     const biobase = createClient(
-      Deno.env.get('SUPABASE_URL')!,
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+      Deno.env.get('BIOBASE_URL')!,
+      Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!
     )
 
     Deno.serve(async (req) => {
@@ -277,7 +277,7 @@ Push notifications are an important part of any mobile app. They allow you to se
 
     ## Create the database webhook
 
-    Navigate to the [Database Webhooks settings](https://biobase.com/dashboard/project/_/database/hooks) in your Biobase Dashboard.
+    Navigate to the [Database Webhooks settings](https://biobase.studio/dashboard/project/_/database/hooks) in your Biobase Dashboard.
 
     1. Enable and create a new hook.
     1. Conditions to fire webhook: Select the `public.notifications` table and tick the `Insert` event.
@@ -288,7 +288,7 @@ Push notifications are an important part of any mobile app. They allow you to se
     ## Send push notification
 
     1. Make sure you have a user with an FCM token in the `profiles` table.
-    1. Navigate to the [table editor](https://biobase.com/dashboard/project/_/editor) in your Biobase Dashboard.
+    1. Navigate to the [table editor](https://biobase.studio/dashboard/project/_/editor) in your Biobase Dashboard.
     1. In your `notifications` table, insert a new row.
     1. Watch the magic happen 🪄
 

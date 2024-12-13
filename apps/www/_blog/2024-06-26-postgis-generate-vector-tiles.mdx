@@ -81,7 +81,7 @@ CREATE EXTENSION IF NOT EXISTS "postgis" WITH SCHEMA "gis";
 Import the open map data into a `places` table in Biobase:
 
 ```bash
-psql -h aws-0-us-west-1.pooler.biobase.com -p 5432 -d postgres -U postgres.project-ref < places.sql
+psql -h aws-0-us-west-1.pooler.biobase.studio -p 5432 -d postgres -U postgres.project-ref < places.sql
 ```
 
 You can find the credentials in the [Database settings](/dashboard/project/_/settings/database) of your Biobase Dashboard.

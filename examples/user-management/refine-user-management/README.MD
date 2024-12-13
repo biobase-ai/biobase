@@ -29,7 +29,7 @@ npm run build
 
 ### 1. Create new project
 
-Sign up to Biobase - [https://app.biobase.com](https://app.biobase.com) and create a new project. Wait for your database to start.
+Sign up to Biobase - [https://app.biobase.studio](https://app.biobase.studio) and create a new project. Wait for your database to start.
 
 ### 2. Run "User Management" Quickstart
 
@@ -50,8 +50,8 @@ The `anon` key is your client-side API key. It allows "anonymous access" to your
 Create a file in this folder `.env.local`
 
 ```
-VITE_SUPABASE_URL=YOUR_SUPABASE_URL
-VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+VITE_BIOBASE_URL=YOUR_BIOBASE_URL
+VITE_BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
 ```
 
 Populate this file with your URL and Key.

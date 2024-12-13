@@ -166,7 +166,7 @@ export const ConnectionPooling = () => {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://biobase.com/docs/guides/database/connecting-to-postgres#connection-pooler"
+                href="https://biobase.studio/docs/guides/database/connecting-to-postgres#connection-pooler"
               >
                 Documentation
               </a>
@@ -355,7 +355,7 @@ export const ConnectionPooling = () => {
                       <FormDescription_Shadcn_ className="col-start-5 col-span-8">
                         Please refer to our{' '}
                         <a
-                          href="https://biobase.com/docs/guides/platform/custom-postgres-config#pooler-config"
+                          href="https://biobase.studio/docs/guides/platform/custom-postgres-config#pooler-config"
                           target="_blank"
                           rel="noreferrer"
                           className="underline"
@@ -393,7 +393,7 @@ export const ConnectionPooling = () => {
                       <FormDescription_Shadcn_ className="col-start-5 col-span-8">
                         Please refer to our{' '}
                         <a
-                          href="https://biobase.com/docs/guides/platform/custom-postgres-config#pooler-config"
+                          href="https://biobase.studio/docs/guides/platform/custom-postgres-config#pooler-config"
                           target="_blank"
                           rel="noreferrer"
                           className="underline"

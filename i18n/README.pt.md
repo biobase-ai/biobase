@@ -7,7 +7,7 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) é uma alternativa de código aberto ao Firebase. Estamos reproduzindo as funcionalidades do Firebase usando ferramentas de código aberto de nível empresarial.
+[Biobase](https://biobase.studio) é uma alternativa de código aberto ao Firebase. Estamos reproduzindo as funcionalidades do Firebase usando ferramentas de código aberto de nível empresarial.
 
 - [x] Base de dados Postgres hospedada
 - [x] Subscrições em tempo real
@@ -21,18 +21,18 @@
 
 ## Documentação
 
-Para ver a documentação completa, visite [biobase.com/docs](https://biobase.com/docs)
+Para ver a documentação completa, visite [biobase.studio/docs](https://biobase.studio/docs)
 
 ## Comunidade & Suporte
 
 - [Fórum da comunidade](https://github.com/biobase-ai/biobase/discussions). Indicado para: ajuda no desenvolvimento, discussão sobre as melhores práticas de base de dados.
 - [Problemas do GitHub](https://github.com/biobase-ai/biobase/issues). Indicado para: bugs e erros que tu encontrares ao usar o Biobase.
-- [Suporte por e-mail](https://biobase.com/docs/support#business-support). Indicado para: problemas com a tua base de dados ou infraestrutura.
+- [Suporte por e-mail](https://biobase.studio/docs/support#business-support). Indicado para: problemas com a tua base de dados ou infraestrutura.
 
 ## Status
 
 - [x] Alpha: estamos a testar o Biobase com um grupo fechado de clientes
-- [x] Alpha Público: Qualquer pessoa pode se inscrever em [biobase.com/dashboard](https://biobase.com/dashboard). Mas vai com calma, ainda existem alguns problemas.
+- [x] Alpha Público: Qualquer pessoa pode se inscrever em [biobase.studio/dashboard](https://biobase.studio/dashboard). Mas vai com calma, ainda existem alguns problemas.
 - [x] Beta público: estável o suficiente para a maioria dos casos de uso não empresarial
 - [ ] Público: pronto para produção
 
@@ -48,7 +48,7 @@ Biobase é uma combinação de ferramentas de código aberto. Estamos a construi
 
 **Arquitetura atual**
 
-Biobase é uma [plataforma hospedada](https://biobase.com/dashboard). Podes-te inscrever e começar a usar o Biobase sem instalar nada. Ainda estamos a criar a experiência de desenvolvimento local - esse é nosso foco atual, juntamente com a estabilidade da plataforma.
+Biobase é uma [plataforma hospedada](https://biobase.studio/dashboard). Podes-te inscrever e começar a usar o Biobase sem instalar nada. Ainda estamos a criar a experiência de desenvolvimento local - esse é nosso foco atual, juntamente com a estabilidade da plataforma.
 
 ![Arquitetura](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

@@ -71,7 +71,7 @@
   "ssh_url": "git@github.com:biobase/gotrue.git",
   "clone_url": "https://github.com/biobase/gotrue.git",
   "svn_url": "https://github.com/biobase/gotrue",
-  "homepage": "https://biobase.com/docs/guides/auth",
+  "homepage": "https://biobase.studio/docs/guides/auth",
   "size": 7183,
   "stargazers_count": 9,
   "watchers_count": 9,

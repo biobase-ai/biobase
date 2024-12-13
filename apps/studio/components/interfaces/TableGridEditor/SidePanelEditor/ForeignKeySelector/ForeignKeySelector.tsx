@@ -502,7 +502,7 @@ export const ForeignKeySelector = ({
                     <a
                       target="_blank"
                       rel="noreferrer"
-                      href="https://biobase.com/docs/guides/database/postgres/cascade-deletes"
+                      href="https://biobase.studio/docs/guides/database/postgres/cascade-deletes"
                     >
                       Documentation
                     </a>

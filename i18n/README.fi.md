@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) on avoimen lähdekoodin Firebase-vaihtoehto. Rakennamme Firebasen ominaisuuksia käyttäen yritystason avoimen lähdekoodin työkaluja.
+[Biobase](https://biobase.studio) on avoimen lähdekoodin Firebase-vaihtoehto. Rakennamme Firebasen ominaisuuksia käyttäen yritystason avoimen lähdekoodin työkaluja.
 
-- [x] Hosted Postgres Database. [Docs](https://biobase.com/docs/guides/database)
-- [x] Tunnistus ja valtuutus. [Docs](https://biobase.com/docs/guides/auth)
+- [x] Hosted Postgres Database. [Docs](https://biobase.studio/docs/guides/database)
+- [x] Tunnistus ja valtuutus. [Docs](https://biobase.studio/docs/guides/auth)
 - [x] Automaattisesti luodut API:t.
-  - [x] REST. [Asiakirjat](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL. [Asiakirjat](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] Reaaliaikaiset tilaukset. [Asiakirjat](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST. [Asiakirjat](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL. [Asiakirjat](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] Reaaliaikaiset tilaukset. [Asiakirjat](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] Funktiot.
-  - [x] Tietokantafunktiot. [Docs](https://biobase.com/docs/guides/database/functions)
-  - [x] Reunatoiminnot [Docs](https://biobase.com/docs/guides/functions)
-- [x] Tiedostojen tallennus. [Docs](https://biobase.com/docs/guides/storage)
+  - [x] Tietokantafunktiot. [Docs](https://biobase.studio/docs/guides/database/functions)
+  - [x] Reunatoiminnot [Docs](https://biobase.studio/docs/guides/functions)
+- [x] Tiedostojen tallennus. [Docs](https://biobase.studio/docs/guides/storage)
 - [x] Kojelauta
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokumentaatio
 
-Täydellinen dokumentaatio löytyy osoitteesta [biobase.com/docs](https://biobase.com/docs)
+Täydellinen dokumentaatio löytyy osoitteesta [biobase.studio/docs](https://biobase.studio/docs)
 
 Jos haluat nähdä, miten osallistuminen tapahtuu, käy osoitteessa [Getting Started](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@ Jos haluat nähdä, miten osallistuminen tapahtuu, käy osoitteessa [Getting Sta
 
 - [Yhteisön foorumi](https://github.com/biobase-ai/biobase/discussions). Sopii parhaiten: Apua rakentamiseen, keskustelua tietokannan parhaista käytännöistä.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Sopii parhaiten: Biobasea käytettäessä kohdatut viat ja virheet.
-- [Sähköpostituki](https://biobase.com/docs/support#business-support). Sopii parhaiten: Tietokantaan tai infrastruktuuriin liittyvät ongelmat.
-- [Discord](https://discord.biobase.com). Sopii parhaiten: Sovellusten jakamiseen ja yhteisön kanssa hengailuun.
+- [Sähköpostituki](https://biobase.studio/docs/support#business-support). Sopii parhaiten: Tietokantaan tai infrastruktuuriin liittyvät ongelmat.
+- [Discord](https://discord.biobase.studio). Sopii parhaiten: Sovellusten jakamiseen ja yhteisön kanssa hengailuun.
 
 ## Status
 
 - [x] Alpha: Testaamme Biobasea suljetulla asiakasjoukolla
-- [x] Julkinen Alpha: Kuka tahansa voi rekisteröityä osoitteessa [biobase.com/dashboard](https://biobase.com/dashboard). Mutta olkaa varovaisia, sillä on vielä muutamia ongelmia
+- [x] Julkinen Alpha: Kuka tahansa voi rekisteröityä osoitteessa [biobase.studio/dashboard](https://biobase.studio/dashboard). Mutta olkaa varovaisia, sillä on vielä muutamia ongelmia
 - [x] Julkinen beta: Tarpeeksi vakaa useimpiin ei-yrityskäyttötapauksiin
-- [ ] Julkinen: Yleinen saatavuus [[status](https://biobase.com/docs/guides/getting-started/features#feature-status)]
+- [ ] Julkinen: Yleinen saatavuus [[status](https://biobase.studio/docs/guides/getting-started/features#feature-status)]
 
 Olemme tällä hetkellä Public Betassa. Seuraa tämän repon "releases" -osiota saadaksesi ilmoituksen tärkeimmistä päivityksistä.
 
@@ -55,8 +55,8 @@ Biobase on yhdistelmä avoimen lähdekoodin työkaluja. Rakennamme Firebasen omi
 
 **Arkkitehtuuri**
 
-Biobase on [hosted platform](https://biobase.com/dashboard). Voit rekisteröityä ja aloittaa Biobasen käytön asentamatta mitään.
-Voit myös [itse isännöidä](https://biobase.com/docs/guides/hosting/overview) ja [kehittää paikallisesti](https://biobase.com/docs/guides/local-development).
+Biobase on [hosted platform](https://biobase.studio/dashboard). Voit rekisteröityä ja aloittaa Biobasen käytön asentamatta mitään.
+Voit myös [itse isännöidä](https://biobase.studio/docs/guides/hosting/overview) ja [kehittää paikallisesti](https://biobase.studio/docs/guides/local-development).
 
 ![Arkkitehtuuri](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

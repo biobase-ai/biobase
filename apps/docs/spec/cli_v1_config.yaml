@@ -219,7 +219,7 @@ parameters:
       An array of files or glob patterns to find seeds in.
     links:
       - name: 'Seeding your database'
-        link: 'https://biobase.com/docs/guides/cli/seeding-your-database'
+        link: 'https://biobase.studio/docs/guides/cli/seeding-your-database'
 
   - id: 'realtime.enabled'
     title: 'realtime.enabled'
@@ -329,7 +329,7 @@ parameters:
       Enable the local Storage service.
     links:
       - name: 'Storage server configuration'
-        link: 'https://biobase.com/docs/guides/self-hosting/storage/config'
+        link: 'https://biobase.studio/docs/guides/self-hosting/storage/config'
 
   - id: 'storage.file_size_limit'
     title: 'storage.file_size_limit'
@@ -340,7 +340,7 @@ parameters:
       The maximum file size allowed (e.g. "5MB", "500KB").
     links:
       - name: 'Storage server configuration'
-        link: 'https://biobase.com/docs/guides/self-hosting/storage/config'
+        link: 'https://biobase.studio/docs/guides/self-hosting/storage/config'
 
   - id: 'auth.enabled'
     title: 'auth.enabled'
@@ -351,7 +351,7 @@ parameters:
       Enable the local GoTrue service.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.site_url'
     title: 'auth.site_url'
@@ -362,7 +362,7 @@ parameters:
       The base URL of your website. Used as an allow-list for redirects and for constructing URLs used in emails.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.additional_redirect_urls'
     title: 'auth.additional_redirect_urls'
@@ -373,7 +373,7 @@ parameters:
       A list of _exact_ URLs that auth providers are permitted to redirect to post authentication.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.jwt_expiry'
     title: 'auth.jwt_expiry'
@@ -384,7 +384,7 @@ parameters:
       How long tokens are valid for, in seconds. Defaults to 3600 (1 hour), maximum 604,800 seconds (one week).
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.enable_refresh_token_rotation'
     title: 'auth.enable_refresh_token_rotation'
@@ -395,7 +395,7 @@ parameters:
       If disabled, the refresh token will never expire.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.refresh_token_reuse_interval'
     title: 'auth.refresh_token_reuse_interval'
@@ -406,7 +406,7 @@ parameters:
       Allows refresh tokens to be reused after expiry, up to the specified interval in seconds. Requires enable_refresh_token_rotation = true.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.enable_signup'
     title: 'auth.enable_signup'
@@ -417,7 +417,7 @@ parameters:
       Allow/disallow new user signups to your project.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.enable_anonymous_sign_ins'
     title: 'auth.enable_anonymous_sign_ins'
@@ -428,7 +428,7 @@ parameters:
       Allow/disallow anonymous sign-ins to your project.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.email.enable_signup'
     title: 'auth.email.enable_signup'
@@ -439,7 +439,7 @@ parameters:
       Allow/disallow new user signups via email to your project.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.email.double_confirm_changes'
     title: 'auth.email.double_confirm_changes'
@@ -450,7 +450,7 @@ parameters:
       If enabled, a user will be required to confirm any email change on both the old, and new email addresses. If disabled, only the new email is required to confirm.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.email.enable_confirmations'
     title: 'auth.email.enable_confirmations'
@@ -461,7 +461,7 @@ parameters:
       If enabled, users need to confirm their email address before signing in.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.email.smtp.host'
     title: 'auth.email.smtp.host'
@@ -522,7 +522,7 @@ parameters:
       - `email_change`
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.email.template.type.content_path'
     title: 'auth.email.template.<type>.content_path'
@@ -538,7 +538,7 @@ parameters:
       - `email_change`
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.enable_signup'
     title: 'auth.sms.enable_signup'
@@ -549,7 +549,7 @@ parameters:
       Allow/disallow new user signups via SMS to your project.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.enable_confirmations'
     title: 'auth.sms.enable_confirmations'
@@ -560,7 +560,7 @@ parameters:
       If enabled, users need to confirm their phone number before signing in.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.test_otp'
     title: 'auth.sms.test_otp'
@@ -570,7 +570,7 @@ parameters:
       Use pre-defined map of phone number to OTP for testing.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
     usage: |
       [auth.sms.test_otp]
       4152127777 = "123456"
@@ -590,7 +590,7 @@ parameters:
       - `vonage`
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.twilio.account_sid'
     title: 'auth.sms.<twilio|twilio_verify>.account_sid'
@@ -600,7 +600,7 @@ parameters:
       Twilio Account SID
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.twilio.message_service_sid'
     title: 'auth.sms.<twilio|twilio_verify>.message_service_sid'
@@ -610,20 +610,20 @@ parameters:
       Twilio Message Service SID
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.twilio.auth_token'
     title: 'auth.sms.<twilio|twilio_verify>.auth_token'
     tags: ['auth']
     required: true
-    default: 'env(SUPABASE_AUTH_SMS_TWILIO_AUTH_TOKEN)'
+    default: 'env(BIOBASE_AUTH_SMS_TWILIO_AUTH_TOKEN)'
     description: |
       Twilio Auth Token
 
       DO NOT commit your Twilio auth token to git. Use environment variable substitution instead.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.messagebird.originator'
     title: 'auth.sms.messagebird.originator'
@@ -633,20 +633,20 @@ parameters:
       MessageBird Originator
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.messagebird.access_key'
     title: 'auth.sms.messagebird.access_key'
     tags: ['auth']
     required: true
-    default: 'env(SUPABASE_AUTH_SMS_MESSAGEBIRD_ACCESS_KEY)'
+    default: 'env(BIOBASE_AUTH_SMS_MESSAGEBIRD_ACCESS_KEY)'
     description: |
       MessageBird Access Key
 
       DO NOT commit your MessageBird access key to git. Use environment variable substitution instead.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.textlocal.sender'
     title: 'auth.sms.textlocal.sender'
@@ -656,20 +656,20 @@ parameters:
       TextLocal Sender
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.textlocal.api_key'
     title: 'auth.sms.textlocal.api_key'
     tags: ['auth']
     required: true
-    default: 'env(SUPABASE_AUTH_SMS_TEXTLOCAL_API_KEY)'
+    default: 'env(BIOBASE_AUTH_SMS_TEXTLOCAL_API_KEY)'
     description: |
       TextLocal API Key
 
       DO NOT commit your TextLocal API key to git. Use environment variable substitution instead.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.vonage.from'
     title: 'auth.sms.vonage.from'
@@ -679,7 +679,7 @@ parameters:
       Vonage From
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.vonage.api_key'
     title: 'auth.sms.vonage.api_key'
@@ -689,20 +689,20 @@ parameters:
       Vonage API Key
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.sms.vonage.api_secret'
     title: 'auth.sms.vonage.api_secret'
     tags: ['auth']
     required: true
-    default: 'env(SUPABASE_AUTH_SMS_VONAGE_API_SECRET)'
+    default: 'env(BIOBASE_AUTH_SMS_VONAGE_API_SECRET)'
     description: |
       Vonage API Secret
 
       DO NOT commit your Vonage API secret to git. Use environment variable substitution instead.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.external.provider.enabled'
     title: 'auth.external.<provider>.enabled'
@@ -732,7 +732,7 @@ parameters:
       - `zoom`
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.external.provider.client_id'
     title: 'auth.external.<provider>.client_id'
@@ -742,20 +742,20 @@ parameters:
       Client ID for the external OAuth provider.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.external.provider.secret'
     title: 'auth.external.<provider>.secret'
     tags: ['auth']
     required: true
-    default: 'env(SUPABASE_AUTH_EXTERNAL_<PROVIDER>_SECRET)'
+    default: 'env(BIOBASE_AUTH_EXTERNAL_<PROVIDER>_SECRET)'
     description: |
       Client secret for the external OAuth provider.
 
       DO NOT commit your OAuth provider secret to git. Use environment variable substitution instead.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.external.provider.url'
     title: 'auth.external.<provider>.url'
@@ -768,7 +768,7 @@ parameters:
       for example: https://keycloak.example.com/realms/myrealm .
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'auth.external.provider.redirect_uri'
     title: 'auth.external.<provider>.redirect_uri'
@@ -778,7 +778,7 @@ parameters:
       The URI a OAuth2 provider will redirect to with the code and state values.
     links:
       - name: 'Auth Server configuration'
-        link: 'https://biobase.com/docs/reference/auth'
+        link: 'https://biobase.studio/docs/reference/auth'
 
   - id: 'functions.function_name.enabled'
     title: 'functions.<function_name>.enabled'
@@ -792,7 +792,7 @@ parameters:
       without removing its code.
     links:
       - name: '`biobase functions` CLI subcommands'
-        link: 'https://biobase.com/docs/reference/cli/biobase-functions'
+        link: 'https://biobase.studio/docs/reference/cli/biobase-functions'
 
   - id: 'functions.function_name.verify_jwt'
     title: 'functions.<function_name>.verify_jwt'
@@ -807,7 +807,7 @@ parameters:
       Note that the `--no-verify-jwt` flag overrides this configuration.
     links:
       - name: '`biobase functions` CLI subcommands'
-        link: 'https://biobase.com/docs/reference/cli/biobase-functions'
+        link: 'https://biobase.studio/docs/reference/cli/biobase-functions'
 
   - id: 'functions.function_name.import_map'
     title: 'functions.<function_name>.import_map'
@@ -819,7 +819,7 @@ parameters:
       Note that the `--import-map` flag overrides this configuration.
     links:
       - name: '`biobase functions` CLI subcommands'
-        link: 'https://biobase.com/docs/reference/cli/biobase-functions'
+        link: 'https://biobase.studio/docs/reference/cli/biobase-functions'
 
   - id: 'analytics.enabled'
     title: 'analytics.enabled'
@@ -830,7 +830,7 @@ parameters:
       Enable the local Logflare service.
     links:
       - name: Self-hosted Logflare Configuration
-        link: https://biobase.com/docs/reference/self-hosting-analytics/list-endpoints#getting-started
+        link: https://biobase.studio/docs/reference/self-hosting-analytics/list-endpoints#getting-started
 
   - id: 'analytics.port'
     title: 'analytics.port'
@@ -862,4 +862,4 @@ parameters:
       - `bigquery`
     links:
       - name: Self-hosted Logflare Configuration
-        link: https://biobase.com/docs/reference/self-hosting-analytics/list-endpoints#getting-started
+        link: https://biobase.studio/docs/reference/self-hosting-analytics/list-endpoints#getting-started

@@ -10,7 +10,7 @@ const useChangelogCommand = ({ enabled = true }: { enabled?: boolean } = {}) => 
       {
         id: 'changelog',
         name: 'Changelog',
-        route: BASE_PATH ? 'https://biobase.com/changelog' : '/changelog',
+        route: BASE_PATH ? 'https://biobase.studio/changelog' : '/changelog',
         icon: () => <Inbox />,
       },
     ],

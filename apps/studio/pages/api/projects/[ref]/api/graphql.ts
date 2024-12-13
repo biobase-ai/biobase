@@ -19,13 +19,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 const handleGet = async (req: NextApiRequest, res: NextApiResponse) => {
   const authorizationHeader = req.headers['x-graphql-authorization']
 
-  const response = await fetch(`${process.env.SUPABASE_URL}/graphql/v1`, {
+  const response = await fetch(`${process.env.BIOBASE_URL}/graphql/v1`, {
     method: 'POST',
     headers: {
-      apikey: process.env.SUPABASE_SERVICE_KEY!,
+      apikey: process.env.BIOBASE_SERVICE_KEY!,
       Authorization:
         (Array.isArray(authorizationHeader) ? authorizationHeader[0] : authorizationHeader) ??
-        `Bearer ${process.env.SUPABASE_ANON_KEY}`,
+        `Bearer ${process.env.BIOBASE_ANON_KEY}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(req.body),

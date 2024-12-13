@@ -285,7 +285,7 @@ const NewOrgForm = ({ onPaymentMethodReset }: NewOrgFormProps) => {
                 <span>Plan</span>
 
                 <a
-                  href="https://biobase.com/pricing"
+                  href="https://biobase.studio/pricing"
                   target="_blank"
                   rel="noreferrer noopener"
                   className="text-sm flex items-center gap-2 opacity-75 hover:opacity-100 transition"

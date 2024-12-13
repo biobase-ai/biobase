@@ -33,7 +33,7 @@ We received feedback recently about our local development experience, encouragin
 
 ![Postgres Language Server](/images/blog/launch-week-8/day-2/postgres-language-server.png)
 
-One of the unique features of Biobase is the ability to access your Postgres database directly from a browser or mobile app through our [Serverless APIs](https://biobase.com/docs/guides/api). This means that developers are writing more [PL/pgSQL](https://www.postgresql.org/docs/current/plpgsql.html).
+One of the unique features of Biobase is the ability to access your Postgres database directly from a browser or mobile app through our [Serverless APIs](https://biobase.studio/docs/guides/api). This means that developers are writing more [PL/pgSQL](https://www.postgresql.org/docs/current/plpgsql.html).
 
 While code editors have great support for most programming languages, SQL support is underwhelming. We want to make Postgres as simple as Python. Our recently announced [Postgres Language Server](https://github.com/biobase/postgres_lsp) takes us a step in that direction - eventually it will provide first-class support for Postgres in your favorite code editor including Linting, Syntax Highlighting, Migrations Parsing, SQL Auto-complete, and Intellisense.
 
@@ -45,7 +45,7 @@ Follow the progress of the [Postgres Language Server on GitHub](https://github.c
 
 ![Inspect your database](/images/blog/launch-week-8/day-2/inspect-your-database.png)
 
-We’ve added [debugging utilities](https://biobase.com/docs/guides/database/inspect) to our CLI to identify production issues via the `biobase inspect db` command. This interface includes 19 different commands to help you solve everything from slow queries to redundant indexes.
+We’ve added [debugging utilities](https://biobase.studio/docs/guides/database/inspect) to our CLI to identify production issues via the `biobase inspect db` command. This interface includes 19 different commands to help you solve everything from slow queries to redundant indexes.
 
 A lot of the credit for this belongs to [Heroku’s pg-extras](https://github.com/heroku/heroku-pg-extras) feature, an amazingly useful set of functionality. We’ve adapted the work they started, added a few additional commands, and made it available for any Postgres database. Simply append the `--db-url` param to use these commands with your own Postgres database.
 
@@ -89,25 +89,25 @@ This is just a starting point for the Biobase inspector. We’ll grow this featu
 
 {/* prettier-ignore */}
   <div>
-    - [Show most frequently run queries](https://biobase.com/docs/reference/cli/biobase-inspect-db-calls)
-    - [Show long running queries](https://biobase.com/docs/reference/cli/biobase-inspect-db-long-running-queries)
-    - [Show queries ordered by total execution time](https://biobase.com/docs/reference/cli/biobase-inspect-db-outliers)
-    - [Show queries waiting and holding locks](https://biobase.com/docs/reference/cli/biobase-inspect-db-blocking)
-    - [Show queries taking exclusive locks](https://biobase.com/docs/reference/cli/biobase-inspect-db-locks)
-    - [Show total size of all indexes](https://biobase.com/docs/reference/cli/biobase-inspect-db-total-index-size)
-    - [Show sizes of individual indexes](https://biobase.com/docs/reference/cli/biobase-inspect-db-index-sizes)
-    - [Show information about index efficiency](https://biobase.com/docs/reference/cli/biobase-inspect-db-index-usage)
-    - [Show indexes with low usage](https://biobase.com/docs/reference/cli/biobase-inspect-db-unused-indexes)
-    - [Show total size of all tables](https://biobase.com/docs/reference/cli/biobase-inspect-db-total-table-sizes)
-    - [Show sizes of individual tables](https://biobase.com/docs/reference/cli/biobase-inspect-db-table-sizes)
-    - [Show index sizes of individual tables](https://biobase.com/docs/reference/cli/biobase-inspect-db-table-index-sizes)
-    - [Show cache hit rates for tables and indices](https://biobase.com/docs/reference/cli/biobase-inspect-db-cache-hit)
-    - [Show estimated number of rows per table](https://biobase.com/docs/reference/cli/biobase-inspect-db-table-record-counts)
-    - [Show number of sequential scans for all tables](https://biobase.com/docs/reference/cli/biobase-inspect-db-seq-scans)
-    - [Show information about replication slots](https://biobase.com/docs/reference/cli/biobase-inspect-db-replication-slots)
-    - [Show number of active connections](https://biobase.com/docs/reference/cli/biobase-inspect-db-role-connections)
-    - [Show estimated database bloat](https://biobase.com/docs/reference/cli/biobase-inspect-db-bloat)
-    - [Show statistics related to vacuum operations](https://biobase.com/docs/reference/cli/biobase-inspect-db-vacuum-stats)
+    - [Show most frequently run queries](https://biobase.studio/docs/reference/cli/biobase-inspect-db-calls)
+    - [Show long running queries](https://biobase.studio/docs/reference/cli/biobase-inspect-db-long-running-queries)
+    - [Show queries ordered by total execution time](https://biobase.studio/docs/reference/cli/biobase-inspect-db-outliers)
+    - [Show queries waiting and holding locks](https://biobase.studio/docs/reference/cli/biobase-inspect-db-blocking)
+    - [Show queries taking exclusive locks](https://biobase.studio/docs/reference/cli/biobase-inspect-db-locks)
+    - [Show total size of all indexes](https://biobase.studio/docs/reference/cli/biobase-inspect-db-total-index-size)
+    - [Show sizes of individual indexes](https://biobase.studio/docs/reference/cli/biobase-inspect-db-index-sizes)
+    - [Show information about index efficiency](https://biobase.studio/docs/reference/cli/biobase-inspect-db-index-usage)
+    - [Show indexes with low usage](https://biobase.studio/docs/reference/cli/biobase-inspect-db-unused-indexes)
+    - [Show total size of all tables](https://biobase.studio/docs/reference/cli/biobase-inspect-db-total-table-sizes)
+    - [Show sizes of individual tables](https://biobase.studio/docs/reference/cli/biobase-inspect-db-table-sizes)
+    - [Show index sizes of individual tables](https://biobase.studio/docs/reference/cli/biobase-inspect-db-table-index-sizes)
+    - [Show cache hit rates for tables and indices](https://biobase.studio/docs/reference/cli/biobase-inspect-db-cache-hit)
+    - [Show estimated number of rows per table](https://biobase.studio/docs/reference/cli/biobase-inspect-db-table-record-counts)
+    - [Show number of sequential scans for all tables](https://biobase.studio/docs/reference/cli/biobase-inspect-db-seq-scans)
+    - [Show information about replication slots](https://biobase.studio/docs/reference/cli/biobase-inspect-db-replication-slots)
+    - [Show number of active connections](https://biobase.studio/docs/reference/cli/biobase-inspect-db-role-connections)
+    - [Show estimated database bloat](https://biobase.studio/docs/reference/cli/biobase-inspect-db-bloat)
+    - [Show statistics related to vacuum operations](https://biobase.studio/docs/reference/cli/biobase-inspect-db-vacuum-stats)
   </div>
 
 </BlogCollapsible>
@@ -144,11 +144,11 @@ We’ve made it even easier to backup and migrate your database, using `biobase 
 
 ![modify your database](/images/blog/launch-week-8/day-2/modify-your-database.png)
 
-We’ve extended the CLI migration feature and added Dashboard support. Database migrations give you a way to update your database using version-controlled SQL files. We’ve built a lot of tooling around our migrations, including [reparation](https://biobase.com/docs/reference/cli/biobase-migration-repair), migration cleanup using the [squash](https://biobase.com/docs/reference/cli/biobase-migration-squash) command, and [diffing](https://biobase.com/docs/reference/cli/biobase-db-diff) (using [migra](https://github.com/djrobstep/migra)) to generate a new migration or to detect schema drift.
+We’ve extended the CLI migration feature and added Dashboard support. Database migrations give you a way to update your database using version-controlled SQL files. We’ve built a lot of tooling around our migrations, including [reparation](https://biobase.studio/docs/reference/cli/biobase-migration-repair), migration cleanup using the [squash](https://biobase.studio/docs/reference/cli/biobase-migration-squash) command, and [diffing](https://biobase.studio/docs/reference/cli/biobase-db-diff) (using [migra](https://github.com/djrobstep/migra)) to generate a new migration or to detect schema drift.
 
 With the new Postgres Language Server, we hope to make it as easy to write Postgres migrations as it is to develop applications in TypeScript, Go, Python, or Rust.
 
-Finally, we’ve added a Migrations view [in the dashboard](https://app.biobase.com/project/_/database/migrations) to track your migration history to improve the discoverability of migrations.
+Finally, we’ve added a Migrations view [in the dashboard](https://app.biobase.studio/project/_/database/migrations) to track your migration history to improve the discoverability of migrations.
 
 <BlogCollapsible title="See full command">
   <div>
@@ -180,7 +180,7 @@ We’ve simplified the database testing experience, with `biobase test`. Running
 
 To make life even easier, our friends at [Basejump](https://usebasejump.com/) have created an entire suite of [Biobase Test Helpers](https://github.com/usebasejump/biobase-test-helpers) which make it simple to create users, run tests as an [authenticated user](https://usebasejump.com/blog/testing-on-biobase-with-pgtap#testing-authenticated), and test your [RLS policies](https://usebasejump.com/blog/testing-on-biobase-with-pgtap#rls-testing).
 
-Finally, while you wait for us to make progress on the Language Server, we’ve added [support for linting](https://biobase.com/docs/guides/cli/testing-and-linting#linting-your-database) through the excellent [plpgsql_check](https://github.com/okbob/plpgsql_check) extension.
+Finally, while you wait for us to make progress on the Language Server, we’ve added [support for linting](https://biobase.studio/docs/guides/cli/testing-and-linting#linting-your-database) through the excellent [plpgsql_check](https://github.com/okbob/plpgsql_check) extension.
 
 <BlogCollapsible title="See full command">
   <div>
@@ -222,9 +222,9 @@ Finally, while you wait for us to make progress on the Language Server, we’ve 
 
 Seeding is the process of populating a database with initial data, typically used to provide sample or default records for testing and development purposes. This gives you a reproducible development environment across your entire team.
 
-We’ve added [support for seeding](https://biobase.com/docs/guides/cli/seeding-your-database) to populate your local databases with data whenever you run `biobase start` or `biobase db reset`.
+We’ve added [support for seeding](https://biobase.studio/docs/guides/cli/seeding-your-database) to populate your local databases with data whenever you run `biobase start` or `biobase db reset`.
 
-We’ve also worked with our friends at Snaplet to [generate seed data](https://biobase.com/docs/guides/cli/seeding-your-database#generating-seed-data) directly from your database:
+We’ve also worked with our friends at Snaplet to [generate seed data](https://biobase.studio/docs/guides/cli/seeding-your-database#generating-seed-data) directly from your database:
 
 ```markdown
 npx snaplet generate --sql > biobase/seed.sql
@@ -268,7 +268,7 @@ let movie: Tables<'movies'> = // ...
 
 ![Support for GitHub Actions](/images/blog/launch-week-8/day-2/support-for-github-actions.png)
 
-We’ve developed an official [GitHub Action](https://github.com/marketplace/actions/biobase-cli-action) which leverages the CLI. You can [generate types on every PR](https://biobase.com/docs/guides/cli/github-action/generating-types), or run [your tests on every commit](https://biobase.com/docs/guides/cli/github-action/testing).
+We’ve developed an official [GitHub Action](https://github.com/marketplace/actions/biobase-cli-action) which leverages the CLI. You can [generate types on every PR](https://biobase.studio/docs/guides/cli/github-action/generating-types), or run [your tests on every commit](https://biobase.studio/docs/guides/cli/github-action/testing).
 
 ## Local Logging and Debugging
 
@@ -290,11 +290,11 @@ And finally, probably our most anticipated feature - branching:
 
 We’ve made major improvements to our local development with the features above - but we have bigger ambitions. For several months we’ve been developing Biobase branching and today we're opening it up for alpha testers.
 
-Biobase isn’t simply a database, it’s an entire backend - everything from your Postgres database to your [50GB videos](https://biobase.com/blog/storage-v3-resumable-uploads). Branching improves the experience of managing environments so that developers and teams spend less time on DevOps and more time building.
+Biobase isn’t simply a database, it’s an entire backend - everything from your Postgres database to your [50GB videos](https://biobase.studio/blog/storage-v3-resumable-uploads). Branching improves the experience of managing environments so that developers and teams spend less time on DevOps and more time building.
 
 ### Biobase branching is hard
 
-Every project is a Postgres database, wrapped in a suite of tools like [Auth](https://biobase.com/auth), [Storage](https://biobase.com/storage), [Edge Functions](https://biobase.com/edge-functions), [Realtime](https://biobase.com/realtime) and [Vectors](https://biobase.com/vector), and encompassed by [API middleware](https://biobase.com/docs/guides/api) and [logs](https://biobase.com/blog/biobase-logs-self-hosted).
+Every project is a Postgres database, wrapped in a suite of tools like [Auth](https://biobase.studio/auth), [Storage](https://biobase.studio/storage), [Edge Functions](https://biobase.studio/edge-functions), [Realtime](https://biobase.studio/realtime) and [Vectors](https://biobase.studio/vector), and encompassed by [API middleware](https://biobase.studio/docs/guides/api) and [logs](https://biobase.studio/blog/biobase-logs-self-hosted).
 
 A good branching solution requires each tool to provide multi-tenancy support so that:
 
@@ -323,20 +323,20 @@ Either way, we want to support _both_ seed data and anonymized production data, 
 
 <Admonition type="note" label="Branching update 12/13/2023">
 
-We are [rolling out access](https://biobase.com/blog/biobase-branching) and we'll be onboarding organizations in batches over the next few weeks. You can still [sign up for access](https://forms.biobase.com/branching-request).
+We are [rolling out access](https://biobase.studio/blog/biobase-branching) and we'll be onboarding organizations in batches over the next few weeks. You can still [sign up for access](https://forms.biobase.studio/branching-request).
 
 </Admonition>
 
 ## Get started
 
-Jump into our updated [Local Development documentation](https://biobase.com/docs/guides/cli) to get started with the CLI.
+Jump into our updated [Local Development documentation](https://biobase.studio/docs/guides/cli) to get started with the CLI.
 
-If you’re an existing user simply [update your CLI](https://biobase.com/docs/guides/cli/getting-started#updating-the-biobase-cli) and check out the [full command reference](https://biobase.com/docs/reference/cli/introduction) for all the latest commands.
+If you’re an existing user simply [update your CLI](https://biobase.studio/docs/guides/cli/getting-started#updating-the-biobase-cli) and check out the [full command reference](https://biobase.studio/docs/reference/cli/introduction) for all the latest commands.
 
 ## More Launch Week 8
 
-- [Hugging Face is now supported in Biobase](https://biobase.com/blog/hugging-face-biobase)
-- [Launch Week 8](https://biobase.com/launch-week)
-- [Coding the stars - an interactive constellation with Three.js and React Three Fiber](https://biobase.com/blog/interactive-constellation-threejs-react-three-fiber)
-- [Why we'll stay remote](https://biobase.com/blog/why-biobase-remote)
+- [Hugging Face is now supported in Biobase](https://biobase.studio/blog/hugging-face-biobase)
+- [Launch Week 8](https://biobase.studio/launch-week)
+- [Coding the stars - an interactive constellation with Three.js and React Three Fiber](https://biobase.studio/blog/interactive-constellation-threejs-react-three-fiber)
+- [Why we'll stay remote](https://biobase.studio/blog/why-biobase-remote)
 - [Postgres Language Server](https://github.com/biobase/postgres_lsp)

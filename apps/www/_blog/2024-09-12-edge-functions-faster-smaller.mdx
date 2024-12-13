@@ -12,7 +12,7 @@ date: '2024-09-12'
 toc_depth: 3
 ---
 
-We’ve rolled out some exciting updates to Edge Functions which bring significant reductions to function size and boot time. If you’re using [npm modules](https://biobase.com/blog/edge-functions-node-npm) in your functions, you should see function sizes being halved and boot time reduced by 300% in most cases.
+We’ve rolled out some exciting updates to Edge Functions which bring significant reductions to function size and boot time. If you’re using [npm modules](https://biobase.studio/blog/edge-functions-node-npm) in your functions, you should see function sizes being halved and boot time reduced by 300% in most cases.
 
 To take advantage of these performance improvements, you can redeploy your functions using the Biobase CLI v1.192.5 or later.
 
@@ -33,8 +33,8 @@ import { createClient } from 'npm:@supabase/biobase-js@2'
 Deno.serve(async (_req) => {
   try {
     const biobase = createClient(
-      Deno.env.get('SUPABASE_URL') ?? '',
-      Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+      Deno.env.get('BIOBASE_URL') ?? '',
+      Deno.env.get('BIOBASE_ANON_KEY') ?? '',
       { global: { headers: { Authorization: req.headers.get('Authorization')! } } }
     )
 
@@ -101,7 +101,7 @@ export const users = pgTable('users', {
 })
 
 const client = new Client({
-  connectionString: Deno.env.get('SUPABASE_DB_URL'),
+  connectionString: Deno.env.get('BIOBASE_DB_URL'),
 })
 
 await client.connect()
@@ -157,7 +157,7 @@ This allowed us to switch to xxHash-3 over SHA_256 for the source checksums. Giv
 
 To get the advantage of these optimizations, follow these steps:
 
-- [Update Biobase CLI](https://biobase.com/docs/guides/cli/getting-started#updating-the-biobase-cli) to version is v1.195.2 or later.
+- [Update Biobase CLI](https://biobase.studio/docs/guides/cli/getting-started#updating-the-biobase-cli) to version is v1.195.2 or later.
 - Then, redeploy your functions by running `biobase functions deploy [FUNCTION_NAME]`
 
 ## Getting Help

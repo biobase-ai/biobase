@@ -43,7 +43,7 @@ export default async function ProtectedPage() {
         <p>
           Powered by{" "}
           <a
-            href="https://biobase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
+            href="https://biobase.studio/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
             target="_blank"
             className="font-bold hover:underline"
             rel="noreferrer"

@@ -70,7 +70,7 @@ const EdgeFunctionSecrets = () => {
                     <a
                       target="_blank"
                       rel="noreferrer"
-                      href="https://biobase.com/docs/guides/functions/secrets"
+                      href="https://biobase.studio/docs/guides/functions/secrets"
                     >
                       Documentation
                     </a>

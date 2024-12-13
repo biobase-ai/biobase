@@ -69,7 +69,7 @@ const CostControl = ({}: CostControlProps) => {
               <p className="text-sm text-foreground-light m-0">More information</p>
               <div>
                 <Link
-                  href="https://biobase.com/docs/guides/platform/spend-cap"
+                  href="https://biobase.studio/docs/guides/platform/spend-cap"
                   target="_blank"
                   rel="noreferrer"
                 >

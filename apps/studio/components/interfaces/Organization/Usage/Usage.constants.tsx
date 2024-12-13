@@ -114,13 +114,13 @@ export const USAGE_CATEGORIES: (subscription?: OrgSubscription) => CategoryMeta[
         links: [
           {
             name: 'Documentation',
-            url: 'https://biobase.com/docs/guides/platform/database-size',
+            url: 'https://biobase.studio/docs/guides/platform/database-size',
           },
           ...(subscription?.usage_based_billing_project_addons === true
             ? [
                 {
                   name: 'Disk Management',
-                  url: 'https://biobase.com/docs/guides/platform/database-size#disk-management',
+                  url: 'https://biobase.studio/docs/guides/platform/database-size#disk-management',
                 },
               ]
             : []),
@@ -180,7 +180,7 @@ export const USAGE_CATEGORIES: (subscription?: OrgSubscription) => CategoryMeta[
         links: [
           {
             name: 'Storage',
-            url: 'https://biobase.com/docs/guides/storage',
+            url: 'https://biobase.studio/docs/guides/storage',
           },
         ],
       },
@@ -206,7 +206,7 @@ export const USAGE_CATEGORIES: (subscription?: OrgSubscription) => CategoryMeta[
         links: [
           {
             name: 'Auth',
-            url: 'https://biobase.com/docs/guides/auth',
+            url: 'https://biobase.studio/docs/guides/auth',
           },
         ],
       },
@@ -225,7 +225,7 @@ export const USAGE_CATEGORIES: (subscription?: OrgSubscription) => CategoryMeta[
         links: [
           {
             name: 'SSO with SAML 2.0',
-            url: 'https://biobase.com/docs/guides/auth/sso/auth-sso-saml',
+            url: 'https://biobase.studio/docs/guides/auth/sso/auth-sso-saml',
           },
         ],
       },
@@ -246,7 +246,7 @@ export const USAGE_CATEGORIES: (subscription?: OrgSubscription) => CategoryMeta[
         links: [
           {
             name: 'Documentation',
-            url: 'https://biobase.com/docs/guides/storage/image-transformations',
+            url: 'https://biobase.studio/docs/guides/storage/image-transformations',
           },
         ],
       },
@@ -262,7 +262,7 @@ export const USAGE_CATEGORIES: (subscription?: OrgSubscription) => CategoryMeta[
         links: [
           {
             name: 'Edge Functions',
-            url: 'https://biobase.com/docs/guides/functions',
+            url: 'https://biobase.studio/docs/guides/functions',
           },
         ],
       },
@@ -278,7 +278,7 @@ export const USAGE_CATEGORIES: (subscription?: OrgSubscription) => CategoryMeta[
         links: [
           {
             name: 'Realtime Quotas',
-            url: 'https://biobase.com/docs/guides/realtime/quotas',
+            url: 'https://biobase.studio/docs/guides/realtime/quotas',
           },
         ],
       },
@@ -297,7 +297,7 @@ export const USAGE_CATEGORIES: (subscription?: OrgSubscription) => CategoryMeta[
         links: [
           {
             name: 'Realtime Quotas',
-            url: 'https://biobase.com/docs/guides/realtime/quotas',
+            url: 'https://biobase.studio/docs/guides/realtime/quotas',
           },
         ],
       },

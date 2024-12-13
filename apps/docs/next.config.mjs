@@ -105,7 +105,7 @@ const nextConfig = {
         has: [
           {
             type: 'host',
-            value: 'biobase.com',
+            value: 'biobase.studio',
           },
         ],
       },
@@ -157,7 +157,7 @@ const nextConfig = {
       // Redirect dashboard links in dev/preview envs
       {
         source: '/dashboard/:path*',
-        destination: 'https://biobase.com/dashboard/:path*',
+        destination: 'https://biobase.studio/dashboard/:path*',
         basePath: false,
         permanent: false,
       },
@@ -165,7 +165,7 @@ const nextConfig = {
       // Redirect blog links in dev/preview envs
       {
         source: '/blog/:path*',
-        destination: 'https://biobase.com/blog/:path*',
+        destination: 'https://biobase.studio/blog/:path*',
         basePath: false,
         permanent: false,
       },

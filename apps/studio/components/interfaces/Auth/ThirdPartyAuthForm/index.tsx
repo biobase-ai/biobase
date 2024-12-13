@@ -69,7 +69,7 @@ export const ThirdPartyAuthForm = () => {
             <AddIntegrationDropdown onSelectIntegrationType={setSelectedIntegration} />
           ) : null
         }
-        docsUrl="https://biobase.com/docs/guides/auth/third-party/overview"
+        docsUrl="https://biobase.studio/docs/guides/auth/third-party/overview"
       />
       <div className="prose text-sm mb-6 max-w-full">
         <span>

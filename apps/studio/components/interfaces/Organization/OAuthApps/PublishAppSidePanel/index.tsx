@@ -339,7 +339,7 @@ const PublishAppSidePanel = ({
                         </div>
                         <Button asChild type="default" icon={<ExternalLink />}>
                           <Link
-                            href="https://biobase.com/docs/guides/platform/oauth-apps/oauth-scopes"
+                            href="https://biobase.studio/docs/guides/platform/oauth-apps/oauth-scopes"
                             target="_blank"
                             rel="noreferrer"
                           >

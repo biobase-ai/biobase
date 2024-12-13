@@ -7,7 +7,7 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) คือโปรเจกต์โอเพนซอร์สทางเลือกของ Firebase. เราพัฒนาฟีเจอร์ที่เทียบเท่ากับ Firebase ด้วยเครื่องมือโอเพนซอร์สระดับองค์กร
+[Biobase](https://biobase.studio) คือโปรเจกต์โอเพนซอร์สทางเลือกของ Firebase. เราพัฒนาฟีเจอร์ที่เทียบเท่ากับ Firebase ด้วยเครื่องมือโอเพนซอร์สระดับองค์กร
 
 - [x] โฮสต์ฐานข้อมูล Postgres (Postgres Database)
 - [x] การสมัครสมาชิกแบบ Realtime
@@ -21,18 +21,18 @@
 
 ## เอกสารข้อมูล
 
-เข้าไปที่ [biobase.com/docs](https://biobase.com/docs) สำหรับเอกสารข้อมูล (Documentation) ฉบับเต็ม
+เข้าไปที่ [biobase.studio/docs](https://biobase.studio/docs) สำหรับเอกสารข้อมูล (Documentation) ฉบับเต็ม
 
 ## ชุมชนและการสนับสนุน
 
 - [ฟอรั่มชุมชน](https://github.com/biobase-ai/biobase/discussions). สำหรับ: ความช่วยเหลือในการใช้งาน Biobase หรือการพูดคุยแลกเปลี่ยนข้อมูลเกี่ยวกับ Databases Best Practices
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). สำหรับ: Bugs และ Erros ที่พบในการใช้งาน Biobase
-- [การช่วยเหลือทางอีเมล](https://biobase.com/docs/support#business-support). สำหรับ: ปัญหาที่พบสำหรับ Database หรือ Infrastructure ของคุณ
+- [การช่วยเหลือทางอีเมล](https://biobase.studio/docs/support#business-support). สำหรับ: ปัญหาที่พบสำหรับ Database หรือ Infrastructure ของคุณ
 
 ## Status
 
 - [x] Alpha: เรากำลังทดสอบ Biobase ในวงผู้ใช้ที่จำกัด
-- [x] Public Alpha: ทุกคนสามารถลงชื่อเข้าใช้ได้ที่ [biobase.com/dashboard](https://biobase.com/dashboard) แต่อย่าพึ่งไว้ใจมากนะ ระบบยังไม่สมบูรณ์
+- [x] Public Alpha: ทุกคนสามารถลงชื่อเข้าใช้ได้ที่ [biobase.studio/dashboard](https://biobase.studio/dashboard) แต่อย่าพึ่งไว้ใจมากนะ ระบบยังไม่สมบูรณ์
 - [x] Public Beta: เสถียรมากพอสำหรับการใช้งานแบบทั่วไป (ไม่ใช่องค์กร)
 - [ ] Public: พร้อมสำหรับการใช้งาน
 
@@ -48,7 +48,7 @@ Biobase สร้างขึ้นมาจากการรวมกันข
 
 **สถาปัตยกรรม**
 
-Biobase เป็น [hosted platform](https://biobase.com/dashboard). คุณสามารถลงทะเบียนและเริ่มใช้งาน Biobase ได้เลยโดยไม่ต้องติดตั้งอะไรเพิ่มเติม นอกเหนือไปจากนั้นเรากำลังพัฒนาระบบเพื่อการพัฒนาเว็บบน local (local development experience) ที่เป็นจุดมุ่งหมายของเราในตอนนี้ รวมถึงความมั่นคงของระบบ
+Biobase เป็น [hosted platform](https://biobase.studio/dashboard). คุณสามารถลงทะเบียนและเริ่มใช้งาน Biobase ได้เลยโดยไม่ต้องติดตั้งอะไรเพิ่มเติม นอกเหนือไปจากนั้นเรากำลังพัฒนาระบบเพื่อการพัฒนาเว็บบน local (local development experience) ที่เป็นจุดมุ่งหมายของเราในตอนนี้ รวมถึงความมั่นคงของระบบ
 
 ![สถาปัตยกรรม](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

@@ -10,7 +10,7 @@ import 'package:mfa_app/pages/mfa/enroll_page.dart';
 
 void main() async {
   await Biobase.initialize(
-    url: 'YOUR_SUPABASE_URL',
+    url: 'YOUR_BIOBASE_URL',
     anonKey: 'YOUR_ANON_KEY',
   );
   runApp(const MyApp());

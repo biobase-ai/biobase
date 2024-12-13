@@ -5,7 +5,7 @@ import 'package:biobase_flutter/biobase_flutter.dart';
 void main() async {
   /// TODO: update Biobase credentials with your own
   await Biobase.initialize(
-    url: 'YOUR_SUPABASE_URL',
+    url: 'YOUR_BIOBASE_URL',
     anonKey: 'YOUR_ANON_KEY',
   );
   runApp(const MyApp());

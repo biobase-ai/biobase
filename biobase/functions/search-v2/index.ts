@@ -6,8 +6,8 @@ import { Database } from '../common/database-types.ts'
 import { ApplicationError, UserError } from '../common/errors.ts'
 
 const openAiKey = Deno.env.get('OPENAI_API_KEY')
-const biobaseUrl = Deno.env.get('SUPABASE_URL')
-const biobaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
+const biobaseUrl = Deno.env.get('BIOBASE_URL')
+const biobaseServiceKey = Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')
 
 export const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -26,11 +26,11 @@ serve(async (req) => {
     }
 
     if (!biobaseUrl) {
-      throw new ApplicationError('Missing environment variable SUPABASE_URL')
+      throw new ApplicationError('Missing environment variable BIOBASE_URL')
     }
 
     if (!biobaseServiceKey) {
-      throw new ApplicationError('Missing environment variable SUPABASE_SERVICE_ROLE_KEY')
+      throw new ApplicationError('Missing environment variable BIOBASE_SERVICE_ROLE_KEY')
     }
 
     const requestData = await req.json()

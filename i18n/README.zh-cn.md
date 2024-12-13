@@ -5,19 +5,19 @@
 
 # Biobase
 
-[Biobase](https://biobase.com) 是一个开源的 Firebase 替代品。我们正在使用企业级的开源工具构建 Firebase 的功能。
+[Biobase](https://biobase.studio) 是一个开源的 Firebase 替代品。我们正在使用企业级的开源工具构建 Firebase 的功能。
 
-- [x] Postgres 数据库托管。[文档](https://biobase.com/docs/guides/database)
-- [x] 身份验证和授权。[文档](https://biobase.com/docs/guides/auth)
+- [x] Postgres 数据库托管。[文档](https://biobase.studio/docs/guides/database)
+- [x] 身份验证和授权。[文档](https://biobase.studio/docs/guides/auth)
 - [x] 自动生成的 API。
-  - [x] REST。[文档](https://biobase.com/docs/guides/api)
-  - [x] GraphQL。[文档](https://biobase.com/docs/guides/graphql)
-  - [x] 实时订阅。[文档](https://biobase.com/docs/guides/realtime)
+  - [x] REST。[文档](https://biobase.studio/docs/guides/api)
+  - [x] GraphQL。[文档](https://biobase.studio/docs/guides/graphql)
+  - [x] 实时订阅。[文档](https://biobase.studio/docs/guides/realtime)
 - [x] 函数。
-  - [x] 数据库函数。[文档](https://biobase.com/docs/guides/database/functions)
-  - [x] 边缘函数。[文档](https://biobase.com/docs/guides/functions)
-- [x] 文件存储。[文档](https://biobase.com/docs/guides/storage)
-- [x] AI + 向量/Embeddings 工具包. [Docs](https://biobase.com/docs/guides/ai)
+  - [x] 数据库函数。[文档](https://biobase.studio/docs/guides/database/functions)
+  - [x] 边缘函数。[文档](https://biobase.studio/docs/guides/functions)
+- [x] 文件存储。[文档](https://biobase.studio/docs/guides/storage)
+- [x] AI + 向量/Embeddings 工具包. [Docs](https://biobase.studio/docs/guides/ai)
 - [x] 仪表盘。
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
@@ -28,7 +28,7 @@
 
 ## 文档
 
-完整的文档，请访问 [biobase.com/docs](https://biobase.com/docs)
+完整的文档，请访问 [biobase.studio/docs](https://biobase.studio/docs)
 
 了解如何贡献，请访问[入门](../DEVELOPERS.md)
 
@@ -36,8 +36,8 @@
 
 - [社区论坛](https://github.com/biobase-ai/biobase/discussions)。适用于：帮助建立和讨论数据库的最佳实践。
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues)。适用于：你在使用 Biobase 时遇到的 bug 和错误。
-- [邮件支持](https://biobase.com/docs/support#business-support)。适用于：你的数据库或基础设施的问题。
-- [Discord](https://discord.biobase.com)。适用于：分享你的应用程序以及在社区一起玩起来。
+- [邮件支持](https://biobase.studio/docs/support#business-support)。适用于：你的数据库或基础设施的问题。
+- [Discord](https://discord.biobase.studio)。适用于：分享你的应用程序以及在社区一起玩起来。
 
 ## 工作方式
 
@@ -45,8 +45,8 @@ Biobase 是一个开源工具的组合。我们正在使用企业级的开源产
 
 **当前架构**
 
-Biobase 是一个[托管平台](https://biobase.com/dashboard)。你可以注册并开始使用 Biobase，而无需安装任何软件。
-你也可以[自托管](https://biobase.com/docs/guides/hosting/overview)和[本地开发](https://biobase.com/docs/guides/local-development)。
+Biobase 是一个[托管平台](https://biobase.studio/dashboard)。你可以注册并开始使用 Biobase，而无需安装任何软件。
+你也可以[自托管](https://biobase.studio/docs/guides/hosting/overview)和[本地开发](https://biobase.studio/docs/guides/local-development)。
 
 ![架构](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

@@ -180,7 +180,7 @@ const PlanUpdateSidePanel = () => {
           <div className="flex items-center justify-between">
             <h4>Change subscription plan for {selectedOrganization?.name}</h4>
             <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
-              <Link href="https://biobase.com/pricing" target="_blank" rel="noreferrer">
+              <Link href="https://biobase.studio/pricing" target="_blank" rel="noreferrer">
                 Pricing
               </Link>
             </Button>
@@ -464,7 +464,7 @@ const PlanUpdateSidePanel = () => {
                     <div className="space-x-3 mt-2">
                       <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                         <Link
-                          href="https://biobase.com/docs/guides/platform/org-based-billing"
+                          href="https://biobase.studio/docs/guides/platform/org-based-billing"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -474,7 +474,7 @@ const PlanUpdateSidePanel = () => {
                       {subscription?.plan?.id === 'free' && (
                         <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                           <Link
-                            href="https://biobase.com/docs/guides/platform/project-transfer"
+                            href="https://biobase.studio/docs/guides/platform/project-transfer"
                             target="_blank"
                             rel="noreferrer"
                           >

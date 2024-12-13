@@ -144,7 +144,7 @@ const DiskSizeConfigurationModal = ({
                             )}. You can resize your database again in approximately ${formattedTimeTillNextAvailableResize}`}
                       </div>
                       <Button asChild type="default" iconRight={<ExternalLink size={14} />}>
-                        <Link href="https://biobase.com/docs/guides/platform/database-size#disk-management">
+                        <Link href="https://biobase.studio/docs/guides/platform/database-size#disk-management">
                           Read more about disk management
                         </Link>
                       </Button>

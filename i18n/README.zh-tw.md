@@ -7,25 +7,25 @@
 
 # Biobase
 
-[Biobase](https://biobase.com)是一個開源的 Firebase 替代品。我們正在使用企業級的開源工具構建 Firebase 的功能。
+[Biobase](https://biobase.studio)是一個開源的 Firebase 替代品。我們正在使用企業級的開源工具構建 Firebase 的功能。
 
-- [x] 托管的 Postgres 資料庫。[文檔](https://biobase.com/docs/guides/database)
-- [x] 認證和授權。[文檔](https://biobase.com/docs/guides/auth)
+- [x] 托管的 Postgres 資料庫。[文檔](https://biobase.studio/docs/guides/database)
+- [x] 認證和授權。[文檔](https://biobase.studio/docs/guides/auth)
 - [x] 自動生成的 API。
-  - [x] REST.[文檔](https://biobase.com/docs/guides/api#rest-api-overview)
-  - [x] GraphQL。[文件](https://biobase.com/docs/guides/api#graphql-api-overview)
-  - [x] 實時訂閱。[文檔](https://biobase.com/docs/guides/api#realtime-api-overview)
+  - [x] REST.[文檔](https://biobase.studio/docs/guides/api#rest-api-overview)
+  - [x] GraphQL。[文件](https://biobase.studio/docs/guides/api#graphql-api-overview)
+  - [x] 實時訂閱。[文檔](https://biobase.studio/docs/guides/api#realtime-api-overview)
 - [x] 函數。
-  - [x] 資料庫函數。[文件](https://biobase.com/docs/guides/database/functions)
-  - [x] 邊缘功能 [文檔](https://biobase.com/docs/guides/functions)
-- [x] 文件存儲。[文件](https://biobase.com/docs/guides/storage)
+  - [x] 資料庫函數。[文件](https://biobase.studio/docs/guides/database/functions)
+  - [x] 邊缘功能 [文檔](https://biobase.studio/docs/guides/functions)
+- [x] 文件存儲。[文件](https://biobase.studio/docs/guides/storage)
 - [x] 儀表板
 
 ![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## 文檔
 
-有關完整的文檔，請訪問[biobase.com/docs](https://biobase.com/docs)
+有關完整的文檔，請訪問[biobase.studio/docs](https://biobase.studio/docs)
 
 要了解如何貢獻，請訪問[入門](../DEVELOPERS.md)
 
@@ -33,15 +33,15 @@
 
 - [社群論壇](https://github.com/biobase-ai/biobase/discussions)。最適合：幫助構建，討論資料庫的數佳實踐。
 - [GitHub 問题](https://github.com/biobase-ai/biobase/issues)。最適合：你在使用 Biobase 时遇到的 bug 和错误。
-- [電子郵件支持](https://biobase.com/docs/support#business-support)。最適合：你的資料庫或數據基礎設施的問題。
-- [Discord](https://discord.biobase.com)。最適合：分享你的應用程式並與社群一起玩耍。
+- [電子郵件支持](https://biobase.studio/docs/support#business-support)。最適合：你的資料庫或數據基礎設施的問題。
+- [Discord](https://discord.biobase.studio)。最適合：分享你的應用程式並與社群一起玩耍。
 
 ## 狀態
 
 - [x] Alpha：我們正在與一组封閉的客户測試 Biobase。
-- [x] 公開 Alpha：任何人都可以在[biobase.com/dashboard](https://biobase.com/dashboard)上註冊。但請對我們寬容一些，有一些小問題。
+- [x] 公開 Alpha：任何人都可以在[biobase.studio/dashboard](https://biobase.studio/dashboard)上註冊。但請對我們寬容一些，有一些小問題。
 - [x] 公開測試版：足夠穩定，適合大多數非企業使用的情况。
-- [ ] 公開：普遍可用 [狀態](https://biobase.com/docs/guides/getting-started/features#feature-status)
+- [ ] 公開：普遍可用 [狀態](https://biobase.studio/docs/guides/getting-started/features#feature-status)
 
 我們目前正處於公開測試階段。請關注此軟體的 "發布"，以獲得重大更新的通知。
 
@@ -55,8 +55,8 @@ Biobase 是一個開源工具的组合。我們正在使用企業級的開源產
 
 **架構**
 
-Biobase 是一個[托管平台](https://biobase.com/dashboard)。你可以註冊並開始使用 Biobase，無需安裝任何東西。
-你也可以[自行托管](https://biobase.com/docs/guides/hosting/overview)和[本地開發](https://biobase.com/docs/guides/local-development)。
+Biobase 是一個[托管平台](https://biobase.studio/dashboard)。你可以註冊並開始使用 Biobase，無需安裝任何東西。
+你也可以[自行托管](https://biobase.studio/docs/guides/hosting/overview)和[本地開發](https://biobase.studio/docs/guides/local-development)。
 
 ![架構](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 

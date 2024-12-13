@@ -173,7 +173,7 @@ const Addons = () => {
                     <p className="text-sm text-foreground-light m-0">More information</p>
                     <div>
                       <Link
-                        href="https://biobase.com/docs/guides/platform/compute-add-ons"
+                        href="https://biobase.studio/docs/guides/platform/compute-add-ons"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -185,7 +185,7 @@ const Addons = () => {
                     </div>
                     <div>
                       <Link
-                        href="https://biobase.com/docs/guides/database/connecting-to-postgres#connection-pooler"
+                        href="https://biobase.studio/docs/guides/database/connecting-to-postgres#connection-pooler"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -379,7 +379,7 @@ const Addons = () => {
                     <p className="text-sm text-foreground-light m-0">More information</p>
                     <div>
                       <Link
-                        href="https://biobase.com/docs/guides/platform/ipv4-address"
+                        href="https://biobase.studio/docs/guides/platform/ipv4-address"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -474,7 +474,7 @@ const Addons = () => {
                     <p className="text-sm text-foreground-light m-0">More information</p>
                     <div>
                       <Link
-                        href="https://biobase.com/docs/guides/platform/backups#point-in-time-recovery"
+                        href="https://biobase.studio/docs/guides/platform/backups#point-in-time-recovery"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -584,7 +584,7 @@ const Addons = () => {
                     <p className="text-sm text-foreground-light m-0">More information</p>
                     <div>
                       <Link
-                        href="https://biobase.com/docs/guides/platform/custom-domains"
+                        href="https://biobase.studio/docs/guides/platform/custom-domains"
                         target="_blank"
                         rel="noreferrer"
                       >

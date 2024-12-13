@@ -45,7 +45,7 @@ const FunctionsPage: NextPageWithLayout = () => {
           <div className="col-span-12">
             <FormHeader
               title="Database Functions"
-              docsUrl="https://biobase.com/docs/guides/database/functions"
+              docsUrl="https://biobase.studio/docs/guides/database/functions"
             />
             <FunctionsList
               createFunction={createFunction}
