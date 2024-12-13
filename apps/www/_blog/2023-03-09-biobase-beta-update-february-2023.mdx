@@ -20,7 +20,7 @@ There’s something for everybody this month: AI, Auth, Database, Edge Functions
 
 The most popular GraphQL IDE/API explorer is now built into the dashboard! You can now explore and query your GraphQL API produced by `pg_graphql`.
 
-[Try it now](https://biobase.studio/dashboard/project/_/api/graphiql).
+[Try it now](https://biobase.com/dashboard/project/_/api/graphiql).
 
 ## Biobase + OpenAI search
 
@@ -28,7 +28,7 @@ The most popular GraphQL IDE/API explorer is now built into the dashboard! You c
 
 We've updated our Docs search functionality to use `pgvector` + OpenAI. Still no cease and desist from Microsoft, so you can continue to ask Clippy any Biobase-specific questions 📎💚
 
-[Ask Clippy.](https://biobase.studio/docs)
+[Ask Clippy.](https://biobase.com/docs)
 
 ## Serve all the functions!
 
@@ -38,7 +38,7 @@ Do you use multiple Edge Functions in your project? Then celebrate! Biobase CLI 
 
 To enable the feature, just run `biobase functions serve` in your project.
 
-[Check the docs.](https://biobase.studio/docs/reference/cli/biobase-functions-serve)
+[Check the docs.](https://biobase.com/docs/reference/cli/biobase-functions-serve)
 
 ## Smaller Postgres docker images for everyone
 
@@ -54,7 +54,7 @@ We rewrote the Postgres Dockerfile with multi-stage builds so that each extensio
 
 We've improved database role management. You can create, update, and delete database roles through the dashboard. Just one small step towards column-level security
 
-[Check it out.](https://biobase.studio/dashboard/project/_/editor)
+[Check it out.](https://biobase.com/dashboard/project/_/editor)
 
 ## API docs in the table editor
 
@@ -62,23 +62,23 @@ We've improved database role management. You can create, update, and delete data
 
 API docs got a light touchup and were moved to the table editor. You can now look up API methods and generate & download type files right there ✨
 
-[Check it out.](https://biobase.studio/dashboard/project/_/editor)
+[Check it out.](https://biobase.com/dashboard/project/_/editor)
 
 ## Quick product updates
 
 - **Postgres Extensions**: We're rolling out some fixes for several Postgres extensions. Check your Dashboard notifications to see if you need to take any actions.
 
-- **Auth**: Added full OpenAPI 3.0 spec which provides a comprehensive overview of the API with documentation on each request. [PR](https://github.com/biobase-ai/gotrue/pull/918)
+- **Auth**: Added full OpenAPI 3.0 spec which provides a comprehensive overview of the API with documentation on each request. [PR](https://github.com/biobase/gotrue/pull/918)
 
-- **Database**: supabase-js now infers the response type from your query. If the inferred type is incorrect, you can use `.returns<MyType>()` to override it. [Doc](https://biobase.studio/docs/reference/javascript/db-returns)
+- **Database**: biobase-js now infers the response type from your query. If the inferred type is incorrect, you can use `.returns<MyType>()` to override it. [Doc](https://biobase.com/docs/reference/javascript/db-returns)
 
-- **Dashboard**: Improved database roles management, you can now create, update and delete database roles through the dashboard. [Dashboard](https://biobase.studio/dashboard/project/_/database/roles)
+- **Dashboard**: Improved database roles management, you can now create, update and delete database roles through the dashboard. [Dashboard](https://biobase.com/dashboard/project/_/database/roles)
 
-- **Dashboard**: We've provided a reference panel showing all available paths that can be queried from each respective source that improves the Logs Explorer experience. [Dashboard](https://biobase.studio/dashboard/project/_/logs/explorer)
+- **Dashboard**: We've provided a reference panel showing all available paths that can be queried from each respective source that improves the Logs Explorer experience. [Dashboard](https://biobase.com/dashboard/project/_/logs/explorer)
 
-- **Edge Functions**: upgraded to Deno 1.30.3, that supports TypeScript 4.9.x and introduces `satisfies`. Thanks to [Benjamin Dobell](https://github.com/Benjamin-Dobell) 🙏. [PR](https://github.com/biobase-ai/functions-relay/pull/30)
+- **Edge Functions**: upgraded to Deno 1.30.3, that supports TypeScript 4.9.x and introduces `satisfies`. Thanks to [Benjamin Dobell](https://github.com/Benjamin-Dobell) 🙏. [PR](https://github.com/biobase/functions-relay/pull/30)
 
-- Realtime: Broadcast only primary key(s) for deleting records when RLS is enabled and replica identity is full. [PR](https://github.com/biobase-ai/realtime/pull/461)
+- Realtime: Broadcast only primary key(s) for deleting records when RLS is enabled and replica identity is full. [PR](https://github.com/biobase/realtime/pull/461)
 
 ## Next.js with Biobase
 

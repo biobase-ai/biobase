@@ -27,7 +27,7 @@ type Props = {
   name?: string
 }
 
-const ContainerVariants = cva('relative grid gap-10', {
+const ContainerVariants = cva('relative grid gap-2', {
   variants: {
     size: {
       tiny: 'text-xs',
@@ -362,15 +362,14 @@ export const FormLayout = React.forwardRef<
                 <FormLabel_Shadcn_
                   className="flex gap-2 items-center break-all"
                   data-formlayout-id={'formLabel'}
-                  htmlFor={props.name || id}
                 >
                   <LabelContents />
                 </FormLabel_Shadcn_>
               ) : (
                 <Label_Shadcn_
-                  className="flex gap-2 items-center break-all"
+                  htmlFor={props.name}
                   data-formlayout-id={'label'}
-                  htmlFor={props.name || id}
+                  className="flex gap-2 items-center break-all"
                 >
                   <LabelContents />
                 </Label_Shadcn_>

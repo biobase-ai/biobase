@@ -23,7 +23,7 @@
         "NEXT_PUBLIC_*",
         "NODE_ENV",
         "OPENAI_API_KEY",
-        "BIOBASE_SECRET_KEY"
+        "SUPABASE_SECRET_KEY"
       ],
       "inputs": ["$TURBO_DEFAULT$", "../../examples"],
       "outputs": [".next/**", "!.next/cache/**"]
@@ -46,10 +46,10 @@
         "READ_ONLY_API_KEY",
         "READ_ONLY_URL",
         "STUDIO_PG_META_URL",
-        "BIOBASE_ANON_KEY",
-        "BIOBASE_PUBLIC_URL",
-        "BIOBASE_SERVICE_KEY",
-        "BIOBASE_URL",
+        "SUPABASE_ANON_KEY",
+        "SUPABASE_PUBLIC_URL",
+        "SUPABASE_SERVICE_KEY",
+        "SUPABASE_URL",
         "VERCEL_GIT_COMMIT_SHA",
         "VERCEL_ENV",
         "VERCEL_URL"
@@ -67,21 +67,15 @@
         "NODE_ENV",
         "OPENAI_API_KEY",
         "npm_lifecycle_event",
-        "LIVE_BIOBASE_COM_SERVICE_ROLE_KEY",
+        "LIVE_SUPABASE_COM_SERVICE_ROLE_KEY",
         "VERCEL_URL",
         "HUBSPOT_PORTAL_ID",
-        "HUBSPOT_ENTERPRISE_FORM_GUID",
-        "EMAIL_REPORT_SLACK_WEBHOOK",
-        "EMAIL_ABUSE_SERVICE_KEY"
+        "HUBSPOT_ENTERPRISE_FORM_GUID"
       ],
       "outputs": [".next/**", "!.next/cache/**", ".contentlayer/**"]
     },
     "lint": {
       "outputs": []
-    },
-    "clean": {
-      "outputs": [],
-      "cache": false
     },
     "dev": {
       "cache": false

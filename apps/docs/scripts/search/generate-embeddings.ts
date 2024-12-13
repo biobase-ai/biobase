@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import dotenv from 'dotenv'
 import { parseArgs } from 'node:util'
 import { OpenAI } from 'openai'
@@ -20,8 +20,8 @@ async function generateEmbeddings() {
   const shouldRefresh = Boolean(args.values.refresh)
 
   const requiredEnvVars = [
-    'NEXT_PUBLIC_BIOBASE_URL',
-    'BIOBASE_SERVICE_ROLE_KEY',
+    'NEXT_PUBLIC_SUPABASE_URL',
+    'SUPABASE_SERVICE_ROLE_KEY',
     'OPENAI_API_KEY',
     'NEXT_PUBLIC_MISC_USE_URL',
     'NEXT_PUBLIC_MISC_USE_ANON_KEY',
@@ -39,9 +39,9 @@ async function generateEmbeddings() {
   }
 
   const biobaseClient = createClient(
-    process.env.NEXT_PUBLIC_BIOBASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
     // eslint-disable-next-line turbo/no-undeclared-env-vars
-    process.env.BIOBASE_SERVICE_ROLE_KEY,
+    process.env.SUPABASE_SERVICE_ROLE_KEY,
     {
       auth: {
         persistSession: false,

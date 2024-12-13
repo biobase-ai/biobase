@@ -1,35 +1,40 @@
+import type { PostgresColumn, PostgresRelationship, PostgresTable } from '@supabase/postgres-meta'
 import { PermissionAction } from '@supabase/shared-types/out/constants'
 import { QueryKey, useQueryClient } from '@tanstack/react-query'
 import { find, isUndefined } from 'lodash'
+import { ExternalLink } from 'lucide-react'
 import { useRouter } from 'next/router'
 import { toast } from 'sonner'
 
 import { useParams } from 'common'
 import { BiobaseGrid } from 'components/grid/BiobaseGrid'
 import { parseSupaTable } from 'components/grid/BiobaseGrid.utils'
+import { SupaTable } from 'components/grid/types'
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
-import { DocsButton } from 'components/ui/DocsButton'
+import { FOREIGN_KEY_CASCADE_ACTION } from 'data/database/database-query-constants'
 import {
-  Entity,
-  isMaterializedView,
-  isTableLike,
-  isView,
-} from 'data/table-editor/table-editor-types'
-import { tableRowKeys } from 'data/table-rows/keys'
+  ForeignKeyConstraint,
+  useForeignKeyConstraintsQuery,
+} from 'data/database/foreign-key-constraints-query'
+import { ENTITY_TYPE } from 'data/entity-types/entity-type-constants'
+import { sqlKeys } from 'data/sql/keys'
 import { useTableRowUpdateMutation } from 'data/table-rows/table-row-update-mutation'
-import { TableRowsData } from 'data/table-rows/table-rows-query'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
+import useEntityType from 'hooks/misc/useEntityType'
 import useLatest from 'hooks/misc/useLatest'
+import type { TableLike } from 'hooks/misc/useTable'
 import { useUrlState } from 'hooks/ui/useUrlState'
-import { PROTECTED_SCHEMAS } from 'lib/constants/schemas'
+import { EXCLUDED_SCHEMAS } from 'lib/constants/schemas'
 import { EMPTY_ARR } from 'lib/void'
 import { useGetImpersonatedRole } from 'state/role-impersonation-state'
 import { useTableEditorStateSnapshot } from 'state/table-editor'
-import type { Dictionary } from 'types'
+import type { Dictionary, SchemaView } from 'types'
+import { Button } from 'ui'
 import GridHeaderActions from './GridHeaderActions'
 import { TableGridSkeletonLoader } from './LoadingState'
 import NotFoundState from './NotFoundState'
 import SidePanelEditor from './SidePanelEditor/SidePanelEditor'
+import { useEncryptedColumns } from './SidePanelEditor/SidePanelEditor.utils'
 import TableDefinition from './TableDefinition'
 
 export interface TableGridEditorProps {
@@ -37,7 +42,7 @@ export interface TableGridEditorProps {
   theme?: 'dark' | 'light'
 
   isLoadingSelectedTable?: boolean
-  selectedTable?: Entity
+  selectedTable?: TableLike
 }
 
 const TableGridEditor = ({
@@ -57,21 +62,30 @@ const TableGridEditor = ({
   const canEditColumns = useCheckPermissions(PermissionAction.TENANT_SQL_ADMIN_WRITE, 'columns')
   const isReadOnly = !canEditTables && !canEditColumns
 
+  const encryptedColumns = useEncryptedColumns({
+    schemaName: selectedTable?.schema,
+    tableName: selectedTable?.name,
+  })
+
   const queryClient = useQueryClient()
   const { mutate: mutateUpdateTableRow } = useTableRowUpdateMutation({
     async onMutate({ projectRef, table, configuration, payload }) {
       const primaryKeyColumns = new Set(Object.keys(configuration.identifiers))
 
-      const queryKey = tableRowKeys.tableRows(projectRef, { table: { id: table.id } })
+      const queryKey = sqlKeys.query(projectRef, [
+        table.schema,
+        table.name,
+        { table: { name: table.name, schema: table.schema } },
+      ])
 
       await queryClient.cancelQueries(queryKey)
 
-      const previousRowsQueries = queryClient.getQueriesData<TableRowsData>(queryKey)
+      const previousRowsQueries = queryClient.getQueriesData<{ result: any[] }>(queryKey)
 
-      queryClient.setQueriesData<TableRowsData>(queryKey, (old) => {
+      queryClient.setQueriesData<{ result: any[] }>(queryKey, (old) => {
         return {
-          rows:
-            old?.rows.map((row) => {
+          result:
+            old?.result.map((row) => {
               // match primary keys
               if (
                 Object.entries(row)
@@ -112,6 +126,14 @@ const TableGridEditor = ({
     },
   })
 
+  const { data } = useForeignKeyConstraintsQuery({
+    projectRef: project?.ref,
+    connectionString: project?.connectionString,
+    schema: selectedTable?.schema,
+  })
+  const foreignKeyMeta = data || []
+
+  const entityType = useEntityType(selectedTable?.id)
   const columnsRef = useLatest(selectedTable?.columns ?? EMPTY_ARR)
 
   // NOTE: DO NOT PUT HOOKS AFTER THIS LINE
@@ -123,16 +145,49 @@ const TableGridEditor = ({
     return <NotFoundState id={Number(id)} />
   }
 
-  const isViewSelected = isView(selectedTable) || isMaterializedView(selectedTable)
-  const isTableSelected = isTableLike(selectedTable)
-  const isLocked = PROTECTED_SCHEMAS.includes(selectedTable?.schema ?? '')
+  const isViewSelected =
+    entityType?.type === ENTITY_TYPE.VIEW || entityType?.type === ENTITY_TYPE.MATERIALIZED_VIEW
+  const isTableSelected = entityType?.type === ENTITY_TYPE.TABLE
+  const isForeignTableSelected = entityType?.type === ENTITY_TYPE.FOREIGN_TABLE
+  const isLocked = EXCLUDED_SCHEMAS.includes(entityType?.schema ?? '')
   const canEditViaTableEditor = isTableSelected && !isLocked
 
-  const gridTable = parseSupaTable(selectedTable)
+  // [Joshen] We can tweak below to eventually support composite keys as the data
+  // returned from foreignKeyMeta should be easy to deal with, rather than pg-meta
+  const formattedRelationships = (
+    ('relationships' in selectedTable && selectedTable.relationships) ||
+    []
+  ).map((relationship: PostgresRelationship) => {
+    const relationshipMeta = foreignKeyMeta.find(
+      (fk: ForeignKeyConstraint) => fk.id === relationship.id
+    )
+    return {
+      ...relationship,
+      deletion_action: relationshipMeta?.deletion_action ?? FOREIGN_KEY_CASCADE_ACTION.NO_ACTION,
+    }
+  })
+
+  const gridTable =
+    !isViewSelected && !isForeignTableSelected
+      ? parseSupaTable(
+          {
+            table: selectedTable as PostgresTable,
+            columns: (selectedTable as PostgresTable).columns ?? [],
+            primaryKeys: (selectedTable as PostgresTable).primary_keys ?? [],
+            relationships: formattedRelationships,
+          },
+          encryptedColumns
+        )
+      : parseSupaTable({
+          table: selectedTable as SchemaView,
+          columns: (selectedTable as SchemaView).columns ?? [],
+          primaryKeys: [],
+          relationships: [],
+        })
 
   const gridKey = `${selectedTable.schema}_${selectedTable.name}`
 
-  const onTableCreated = (table: { id: number }) => {
+  const onTableCreated = (table: PostgresTable) => {
     router.push(`/project/${projectRef}/editor/${table.id}`)
   }
 
@@ -140,7 +195,7 @@ const TableGridEditor = ({
   // stale as they are accessed via some react-tracked madness
   // [TODO]: refactor out all of react-tracked
   const onSelectEditColumn = (name: string) => {
-    const column = find(columnsRef.current, { name })
+    const column = find(columnsRef.current, { name }) as PostgresColumn
     if (column) {
       snap.onEditColumn(column)
     } else {
@@ -149,7 +204,7 @@ const TableGridEditor = ({
   }
 
   const onSelectDeleteColumn = (name: string) => {
-    const column = find(columnsRef.current ?? [], { name })
+    const column = find(columnsRef.current ?? [], { name }) as PostgresColumn
     if (column) {
       snap.onDeleteColumn(column)
     } else {
@@ -164,17 +219,19 @@ const TableGridEditor = ({
   const updateTableRow = (previousRow: any, updatedData: any) => {
     if (!project) return
 
-    const enumArrayColumns = selectedTable.columns
-      ?.filter((column) => {
-        return (column?.enums ?? []).length > 0 && column.data_type.toLowerCase() === 'array'
-      })
-      .map((column) => column.name)
+    const enumArrayColumns =
+      ('columns' in selectedTable &&
+        selectedTable.columns
+          ?.filter((column) => {
+            return (column?.enums ?? []).length > 0 && column.data_type.toLowerCase() === 'array'
+          })
+          .map((column) => column.name)) ||
+      []
 
     const identifiers = {} as Dictionary<any>
-    isTableLike(selectedTable) &&
-      selectedTable.primary_keys.forEach(
-        (column) => (identifiers[column.name] = previousRow[column.name])
-      )
+    ;(selectedTable as PostgresTable).primary_keys.forEach(
+      (column) => (identifiers[column.name] = previousRow[column.name])
+    )
 
     const configuration = { identifiers }
     if (Object.keys(identifiers).length === 0) {
@@ -186,7 +243,15 @@ const TableGridEditor = ({
               row before updating or deleting the row.
             </p>
             <div className="mt-3">
-              <DocsButton href="https://biobase.studio/docs/guides/database/tables#primary-keys" />
+              <Button asChild type="outline" icon={<ExternalLink />}>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://biobase.com/docs/guides/database/tables#primary-keys"
+                >
+                  Documentation
+                </a>
+              </Button>
             </div>
           </div>
         ),
@@ -196,7 +261,7 @@ const TableGridEditor = ({
     mutateUpdateTableRow({
       projectRef: project.ref,
       connectionString: project.connectionString,
-      table: selectedTable,
+      table: gridTable as SupaTable,
       configuration,
       payload: updatedData,
       enumArrayColumns,
@@ -220,7 +285,10 @@ const TableGridEditor = ({
         schema={selectedTable.schema}
         table={gridTable}
         headerActions={
-          <GridHeaderActions table={selectedTable} canEditViaTableEditor={canEditViaTableEditor} />
+          <GridHeaderActions
+            table={selectedTable as TableLike}
+            canEditViaTableEditor={canEditViaTableEditor}
+          />
         }
         onAddColumn={snap.onAddColumn}
         onEditColumn={onSelectEditColumn}
@@ -249,12 +317,12 @@ const TableGridEditor = ({
           ) : null
         }
       >
-        {(isViewSelected || isTableSelected) && <TableDefinition entity={selectedTable} />}
+        {(isViewSelected || isTableSelected) && <TableDefinition id={selectedTable?.id} />}
       </BiobaseGrid>
 
       <SidePanelEditor
         editable={!isReadOnly && canEditViaTableEditor}
-        selectedTable={isTableLike(selectedTable) ? selectedTable : undefined}
+        selectedTable={selectedTable as PostgresTable}
         onTableCreated={onTableCreated}
       />
     </>

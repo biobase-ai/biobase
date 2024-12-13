@@ -1,11 +1,11 @@
-import { SupabaseClient, Session } from '@supabase/supabase-js'
+import { BiobaseClient, Session } from '@supabase/biobase-js'
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 declare global {
 	namespace App {
 		// interface Error {}
 		interface Locals {
-			biobase: SupabaseClient
+			biobase: BiobaseClient
 			safeGetSession(): Promise<{ session: Session | null; user: User | null }>
 		}
 		interface PageData {

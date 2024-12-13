@@ -30,7 +30,7 @@ export type LogDrainsyError = ResponseError
 
 export const useLogDrainsQuery = <TData = LogDrainsData>(
   { ref }: LogDrainsVariables,
-  { enabled = true, ...options }: UseQueryOptions<LogDrainsData, LogDrainsyError, TData> = {}
+  { enabled, ...options }: UseQueryOptions<LogDrainsData, LogDrainsyError, TData> = {}
 ) =>
   useQuery<LogDrainsData, LogDrainsyError, TData>(
     logDrainsKeys.list(ref),

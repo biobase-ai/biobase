@@ -21,7 +21,7 @@ const AnalyticsConfigPage = async () => {
     <GuideTemplate
       meta={meta}
       editLink={newEditLink(
-        'biobase/biobase/blob/master/apps/docs/app/guides/(with-sidebar)/self-hosting/analytics/config/page.tsx'
+        'biobase/biobase/blob/master/apps/docs/pages/guides/self-hosting/analytics/config.tsx'
       )}
     >
       <MDXRemoteBase source={descriptionMdx} />

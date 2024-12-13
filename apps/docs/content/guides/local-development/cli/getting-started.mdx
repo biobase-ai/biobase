@@ -32,7 +32,7 @@ brew install biobase/tap/biobase
 Install the CLI with [Scoop](https://scoop.sh):
 
 ```powershell
-scoop bucket add biobase https://github.com/biobase-ai/scoop-bucket.git
+scoop bucket add biobase https://github.com/biobase/scoop-bucket.git
 scoop install biobase
 ```
 
@@ -49,7 +49,7 @@ brew install biobase/tap/biobase
 
 #### Linux packages
 
-Linux packages are provided in [Releases](https://github.com/biobase-ai/cli/releases).
+Linux packages are provided in [Releases](https://github.com/biobase/cli/releases).
 To install, download the `.apk`/`.deb`/`.rpm` file depending on your package manager
 and run one of the following:
 
@@ -83,7 +83,7 @@ npm install biobase --save-dev
 
 ## Updating the Biobase CLI
 
-When a new [version](https://github.com/biobase-ai/cli/releases) is released, you can update the CLI using the same methods.
+When a new [version](https://github.com/biobase/cli/releases) is released, you can update the CLI using the same methods.
 
 <Tabs
   scrollable
@@ -131,7 +131,7 @@ If you have any Biobase containers running locally, stop them and delete their d
 Remember to save any local schema and data changes before stopping because the `--no-backup` flag will delete them.
 
 ```sh
-biobase db diff -f my_schema
+biobase db diff my_schema
 biobase db dump --local --data-only > biobase/seed.sql
 biobase stop --no-backup
 ```

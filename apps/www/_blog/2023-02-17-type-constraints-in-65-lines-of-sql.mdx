@@ -179,8 +179,8 @@ create table package_version(
 -- Insert some valid records
 insert into package_version( package_name, package_semver )
 values
-    ('supabase-js', (2, 2, 3, null, null)),
-    ('supabase-js', (2, 0, 0, array['rc', '1'], null)
+    ('biobase-js', (2, 2, 3, null, null)),
+    ('biobase-js', (2, 0, 0, array['rc', '1'], null)
 );
 
 -- Attempt to insert an invalid record (major is null)
@@ -207,8 +207,8 @@ from
 /*
 id | package_name |    package_semver
 -------------------------------------
- 1 | supabase-js  |         (2,2,3,,)
- 2 | supabase-js  | (2,0,0,"{rc,1}",)
+ 1 | biobase-js  |         (2,2,3,,)
+ 2 | biobase-js  | (2,0,0,"{rc,1}",)
 */
 ```
 
@@ -249,8 +249,8 @@ from
 /*
 id | package_name |   ver
 ------------------------------
- 1 | supabase-js  |      2.2.3
- 2 | supabase-js  | 2.0.0-rc.1
+ 1 | biobase-js  |      2.2.3
+ 2 | biobase-js  | 2.0.0-rc.1
 */
 ```
 
@@ -274,9 +274,9 @@ Postgres provides all the tools you could want to make your data types/domains w
 
 For example, you could:
 
-- add convenience functions to parse a [semver type from text](https://github.com/biobase-ai/dbdev/blob/ca338584203d9b2eb7a4a378f5724674c15b9c25/biobase/migrations/20220117141507_semver.sql#L78)
-- [override the equality operator](https://github.com/biobase-ai/dbdev/blob/ca338584203d9b2eb7a4a378f5724674c15b9c25/biobase/migrations/20220117141507_semver.sql#L37-L63) (`=`) to correctly reflect that versions differing only in build metadata are considered equal
-- [add a `max` function](https://github.com/biobase-ai/dbdev/blob/ca338584203d9b2eb7a4a378f5724674c15b9c25/biobase/migrations/20220117141507_semver.sql#L122-L140) to efficiently query for the newest version of each package from within the database
+- add convenience functions to parse a [semver type from text](https://github.com/biobase/dbdev/blob/ca338584203d9b2eb7a4a378f5724674c15b9c25/biobase/migrations/20220117141507_semver.sql#L78)
+- [override the equality operator](https://github.com/biobase/dbdev/blob/ca338584203d9b2eb7a4a378f5724674c15b9c25/biobase/migrations/20220117141507_semver.sql#L37-L63) (`=`) to correctly reflect that versions differing only in build metadata are considered equal
+- [add a `max` function](https://github.com/biobase/dbdev/blob/ca338584203d9b2eb7a4a378f5724674c15b9c25/biobase/migrations/20220117141507_semver.sql#L122-L140) to efficiently query for the newest version of each package from within the database
 
 to name a few.
 

@@ -1,4 +1,4 @@
-import type { User } from '@supabase/supabase-js'
+import type { User } from '@supabase/biobase-js'
 import * as configcat from 'configcat-js'
 
 let client: configcat.IConfigCatClient

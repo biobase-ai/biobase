@@ -10,8 +10,8 @@ void main() async {
   usePathUrlStrategy();
 
   await Biobase.initialize(
-    url: 'YOUR_BIOBASE_URL',
-    anonKey: 'YOUR_BIOBASE_ANON_KEY',
+    url: 'YOUR_SUPABASE_URL',
+    anonKey: 'YOUR_SUPABASE_ANON_KEY',
   );
   runApp(const MyApp());
 }

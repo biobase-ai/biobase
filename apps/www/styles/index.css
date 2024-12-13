@@ -8,28 +8,12 @@
 @import './../../../packages/ui/build/css/themes/dark-combined.css';
 @import './../../../packages/ui/build/css/themes/light.css';
 
-@layer base {
-  :root {
-    --color-background: 0 0% 100%;
-    --color-foreground: 222.2 47.4% 11.2%;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-}
-
-@layer components {
+@layer utilities {
   .run {
     animation-play-state: running;
   }
   .pause {
     animation-play-state: paused;
-  }
-  .toc-animate {
-    @apply translate-x-1 text-brand;
   }
 }
 
@@ -55,6 +39,12 @@
 
 html {
   scroll-behavior: smooth !important;
+}
+
+body {
+  @apply bg text-foreground;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* h1,
@@ -112,7 +102,7 @@ h6:not(.overwrite) {
 }
 
 .label:not(.prose *):not(.overwrite) {
-  @apply text-xs font-mono uppercase text-foreground/75 tracking-wider;
+  @apply text-xs font-mono uppercase text-foreground-lighter tracking-wider;
 }
 
 .heading-gradient {
@@ -120,7 +110,11 @@ h6:not(.overwrite) {
 }
 
 .heading-gradient-brand {
-  @apply text-[#3ECF8E00] bg-clip-text bg-gradient-to-b from-emerald-500 to-emerald-500/80;
+  @apply text-[#3ECF8E00] bg-clip-text bg-gradient-to-b from-brand to-brand/80;
+}
+
+.toc-animate {
+  @apply !translate-x-1 !text-brand;
 }
 
 .prose-toc a {
@@ -155,7 +149,7 @@ h6:not(.overwrite) {
 }
 
 .p:not(.prose *):not(.overwrite) {
-  @apply text-foreground/75;
+  @apply text-foreground-light;
   margin-bottom: 16px;
 }
 
@@ -273,28 +267,24 @@ table {
   overflow: hidden;
   grid-column: 1 / -1;
 }
-.next-image--dynamic-fill.wide,
-video.wide {
-  @apply sm:my-0 sm:max-w-none sm:-mx-8 sm:w-[calc(100%_+_4rem)];
+.next-image--dynamic-fill.wide {
+  @apply my-0 max-w-none -mx-8 w-[calc(100%_+_4rem)];
 }
 @media (min-width: 560px) {
-  .next-image--dynamic-fill.wide,
-  video.wide {
-    width: calc(100% + 6rem) !important;
+  .next-image--dynamic-fill.wide {
+    width: calc(100% + 6rem);
     margin: 0 -3rem;
   }
 }
 @media (min-width: 1280px) {
-  .next-image--dynamic-fill.wide,
-  video.wide {
-    width: calc(100% + 10rem) !important;
+  .next-image--dynamic-fill.wide {
+    width: calc(100% + 10rem);
     margin: 0 -5rem;
   }
 }
 @media (min-width: 1535px) {
-  .next-image--dynamic-fill.wide,
-  video.wide {
-    width: calc(100% + 14rem) !important;
+  .next-image--dynamic-fill.wide {
+    width: calc(100% + 14rem);
     margin: 0 -7rem;
   }
 }
@@ -714,6 +704,10 @@ launch week
   transition-timing-function: linear;
 }
 
+/* .lw8-particle-handle {
+  @apply text-xs bg-black flex items-center justify-center rounded-full py-1 px-2 [&>div]:!relative;
+} */
+
 /* dat.GUI */
 
 .dg.ac {
@@ -738,72 +732,4 @@ launch week
 }
 [data-rmiz-modal-img] {
   image-rendering: high-quality;
-}
-
-/* Loader dots */
-
-.loader-dots div {
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
-}
-
-.loader-dots div:nth-child(1) {
-  left: 4px;
-  animation: loader-dots1 0.6s infinite;
-}
-
-.loader-dots div:nth-child(2) {
-  left: 4px;
-  animation: loader-dots2 0.6s infinite;
-}
-
-.loader-dots div:nth-child(3) {
-  left: 16px;
-  animation: loader-dots2 0.6s infinite;
-}
-
-.loader-dots div:nth-child(4) {
-  left: 28px;
-  animation: loader-dots3 0.6s infinite;
-}
-
-@keyframes loader-dots1 {
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes loader-dots3 {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(0);
-  }
-}
-
-@keyframes loader-dots2 {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(12px, 0);
-  }
-}
-
-.lw13-game-input {
-  visibility: none;
-  opacity: 0;
-}
-
-@media (hover: none) {
-  .lw13-game-input {
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
 }

@@ -9,7 +9,6 @@ import { mdxjs } from 'micromark-extension-mdxjs'
 import remarkMkDocsAdmonition from '~/lib/mdx/plugins/remarkAdmonition'
 import remarkPyMdownTabs from '~/lib/mdx/plugins/remarkTabs'
 import { getGitHubFileContents } from '~/lib/octokit'
-import { getGitHubFileContentsImmutableOnly } from '~/lib/octokit'
 import { codeSampleRemark } from './CodeSample'
 
 type Transformer = (ast: Root) => Root | Promise<Root>
@@ -32,8 +31,6 @@ export function preprocessMdxWithDefaults(mdx: string) {
   return preprocessMdx(mdx, [
     remarkMkDocsAdmonition(),
     remarkPyMdownTabs(),
-    codeSampleRemark({
-      fetchFromGitHub: getGitHubFileContentsImmutableOnly,
-    }),
+    codeSampleRemark({ fetchFromGitHub: getGitHubFileContents }),
   ])
 }

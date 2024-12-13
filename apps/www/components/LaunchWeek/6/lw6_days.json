@@ -7,8 +7,8 @@
     "d": 1,
     "dd": "Monday",
     "youtube_id": "OpPOaJI_Z28",
-    "blogpost": "https://biobase.studio/blog/new-biobase-docs-built-with-nextjs",
-    "docs": "https://biobase.studio/docs",
+    "blogpost": "https://biobase.com/blog/new-biobase-docs-built-with-nextjs",
+    "docs": "https://biobase.com/docs",
     "steps": [
       {
         "title": "Biobase Docs",
@@ -27,8 +27,8 @@
     "d": 2,
     "dd": "Tuesday",
     "youtube_id": "iqZlPtl_b-I",
-    "blogpost": "https://biobase.studio/blog",
-    "docs": "https://biobase.studio/docs",
+    "blogpost": "https://biobase.com/blog",
+    "docs": "https://biobase.com/docs",
     "steps": [
       {
         "title": "Image Transformations",
@@ -54,8 +54,8 @@
     "d": 3,
     "dd": "Wednesday",
     "youtube_id": "CGZr5tybW18",
-    "blogpost": "https://biobase.studio/blog",
-    "docs": "https://biobase.studio/docs",
+    "blogpost": "https://biobase.com/blog",
+    "docs": "https://biobase.com/docs",
     "steps": [
       {
         "title": "Multi-factor Authentication",
@@ -75,12 +75,12 @@
     "dd": "Thursday",
     "youtube_id": "QA2qC5F-4OU",
     "blogpost": "/blog/postgres-foreign-data-wrappers-rust",
-    "docs": "https://biobase.studio/docs",
+    "docs": "https://biobase.com/docs",
     "steps": [
       {
         "title": "Biobase Wrappers",
         "blog": "/blog/postgres-foreign-data-wrappers-rust",
-        "docs": "https://biobase-ai.github.io/wrappers/",
+        "docs": "https://biobase.github.io/wrappers/",
         "isNew": true,
         "description": "Connect Postgres to external systems with Postgres Foreign Data Wrappers"
       }
@@ -94,8 +94,8 @@
     "d": 5,
     "dd": "Friday",
     "youtube_id": "6bGQotxisoY",
-    "blogpost": "https://biobase.studio/blog",
-    "docs": "https://biobase.studio/docs",
+    "blogpost": "https://biobase.com/blog",
+    "docs": "https://biobase.com/docs",
     "steps": [
       {
         "title": "Vault Release",

@@ -13,14 +13,14 @@ const useSupportCommands = () => {
         {
           id: 'support',
           name: 'Support',
-          route: 'https://www.biobase.studio/support',
+          route: 'https://www.biobase.com/support',
           icon: () => <LifeBuoy />,
         },
         {
           id: 'system-status',
           name: 'System Status',
           value: 'Support: System Status',
-          route: 'https://status.biobase.studio',
+          route: 'https://status.biobase.com',
           icon: () => <LifeBuoy />,
         },
         {

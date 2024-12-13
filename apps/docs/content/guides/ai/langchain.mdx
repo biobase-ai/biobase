@@ -20,7 +20,7 @@ Prepare you database with the relevant tables:
 >
 <TabPanel id="dashboard" label="Dashboard">
 
-1. Go to the [SQL Editor](https://biobase.studio/dashboard/project/_/sql) page in the Dashboard.
+1. Go to the [SQL Editor](https://biobase.com/dashboard/project/_/sql) page in the Dashboard.
 2. Click **LangChain** in the Quick start section.
 3. Click **Run**.
 
@@ -78,13 +78,13 @@ You can now search your documents using any Node.js application. This is intende
 ```js
 import { BiobaseVectorStore } from 'langchain/vectorstores/biobase'
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
-const biobaseKey = process.env.BIOBASE_SERVICE_ROLE_KEY
-if (!biobaseKey) throw new Error(`Expected BIOBASE_SERVICE_ROLE_KEY`)
+const biobaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+if (!biobaseKey) throw new Error(`Expected SUPABASE_SERVICE_ROLE_KEY`)
 
-const url = process.env.BIOBASE_URL
-if (!url) throw new Error(`Expected env var BIOBASE_URL`)
+const url = process.env.SUPABASE_URL
+if (!url) throw new Error(`Expected env var SUPABASE_URL`)
 
 export const run = async () => {
   const client = createClient(url, biobaseKey)
@@ -113,15 +113,15 @@ Given the above `match_documents` Postgres function, you can also pass a filter 
 ```js
 import { BiobaseVectorStore } from 'langchain/vectorstores/biobase'
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 // First, follow set-up instructions above
 
-const privateKey = process.env.BIOBASE_SERVICE_ROLE_KEY
-if (!privateKey) throw new Error(`Expected env var BIOBASE_SERVICE_ROLE_KEY`)
+const privateKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+if (!privateKey) throw new Error(`Expected env var SUPABASE_SERVICE_ROLE_KEY`)
 
-const url = process.env.BIOBASE_URL
-if (!url) throw new Error(`Expected env var BIOBASE_URL`)
+const url = process.env.SUPABASE_URL
+if (!url) throw new Error(`Expected env var SUPABASE_URL`)
 
 export const run = async () => {
   const client = createClient(url, privateKey)
@@ -147,20 +147,20 @@ export const run = async () => {
 
 ### Advanced metadata filtering
 
-You can also use query builder-style filtering ([similar to how the Biobase JavaScript library works](https://biobase.studio/docs/reference/javascript/using-filters)) instead of passing an object. Note that since the filter properties will be in the metadata column, you need to use arrow operators (`->` for integer or `->>` for text) as defined in [Postgrest API documentation](https://postgrest.org/en/stable/references/api/tables_views.html?highlight=operators#json-columns) and specify the data type of the property (e.g. the column should look something like `metadata->some_int_value::int`).
+You can also use query builder-style filtering ([similar to how the Biobase JavaScript library works](https://biobase.com/docs/reference/javascript/using-filters)) instead of passing an object. Note that since the filter properties will be in the metadata column, you need to use arrow operators (`->` for integer or `->>` for text) as defined in [Postgrest API documentation](https://postgrest.org/en/stable/references/api/tables_views.html?highlight=operators#json-columns) and specify the data type of the property (e.g. the column should look something like `metadata->some_int_value::int`).
 
 ```js
 import { BiobaseFilterRPCCall, BiobaseVectorStore } from 'langchain/vectorstores/biobase'
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 // First, follow set-up instructions above
 
-const privateKey = process.env.BIOBASE_SERVICE_ROLE_KEY
-if (!privateKey) throw new Error(`Expected env var BIOBASE_SERVICE_ROLE_KEY`)
+const privateKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+if (!privateKey) throw new Error(`Expected env var SUPABASE_SERVICE_ROLE_KEY`)
 
-const url = process.env.BIOBASE_URL
-if (!url) throw new Error(`Expected env var BIOBASE_URL`)
+const url = process.env.SUPABASE_URL
+if (!url) throw new Error(`Expected env var SUPABASE_URL`)
 
 export const run = async () => {
   const client = createClient(url, privateKey)

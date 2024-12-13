@@ -23,7 +23,6 @@ import { useIsAPIDocsSidePanelEnabled } from '../App/FeaturePreview/FeaturePrevi
 import { navigateToSection } from './Content/Content.utils'
 import { DOCS_RESOURCE_CONTENT } from './ProjectAPIDocs.constants'
 import { ChevronLeft, Code, ExternalLink } from 'lucide-react'
-import { DocsButton } from 'components/ui/DocsButton'
 
 const SecondLevelNav = () => {
   const { ref } = useParams()
@@ -44,22 +43,22 @@ const SecondLevelNav = () => {
     entities: {
       title: 'Tables & Views',
       options: tables,
-      docsUrl: 'https://biobase.studio/docs/reference/javascript/select',
+      docsUrl: 'https://biobase.com/docs/reference/javascript/select',
     },
     'stored-procedures': {
       title: 'Stored Procedures',
       options: functions,
-      docsUrl: 'https://biobase.studio/docs/reference/javascript/rpc',
+      docsUrl: 'https://biobase.com/docs/reference/javascript/rpc',
     },
     storage: {
       title: 'Storage',
       options: buckets ?? [],
-      docsUrl: 'https://biobase.studio/docs/reference/javascript/storage-createbucket',
+      docsUrl: 'https://biobase.com/docs/reference/javascript/storage-createbucket',
     },
     'edge-functions': {
       title: 'Edge Functions',
       options: edgeFunctions ?? [],
-      docsUrl: 'https://biobase.studio/docs/reference/javascript/functions-invoke',
+      docsUrl: 'https://biobase.com/docs/reference/javascript/functions-invoke',
     },
   }
 
@@ -156,7 +155,17 @@ const SecondLevelNav = () => {
             <p className="text-xs !leading-normal">
               Head over to our docs site for the full API documentation.
             </p>
-            <DocsButton className="!mt-2" href={content[section].docsUrl} />
+            <Button
+              asChild
+              className="!mt-2"
+              size="tiny"
+              type="default"
+              icon={<ExternalLink strokeWidth={1.5} />}
+            >
+              <Link href={content[section].docsUrl} target="_blank" rel="noreferrer">
+                Documentation
+              </Link>
+            </Button>
           </AlertDescription_Shadcn_>
         </Alert_Shadcn_>
       </div>

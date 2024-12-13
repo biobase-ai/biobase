@@ -89,15 +89,15 @@ To call the function from a browser you need to handle CORS requests. See [CORS]
 
 ```bash cURL
 curl --request POST 'http://localhost:54321/functions/v1/hello-world' \
-  --header 'Authorization: Bearer BIOBASE_ANON_KEY' \
+  --header 'Authorization: Bearer SUPABASE_ANON_KEY' \
   --header 'Content-Type: application/json' \
   --data '{ "name":"Functions" }'
 ```
 
 ```js JavaScript
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
-const biobase = createClient(process.env.BIOBASE_URL, process.env.BIOBASE_ANON_KEY)
+const biobase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
 
 const { data, error } = await biobase.functions.invoke('hello-world', {
   body: { name: 'Functions' },
@@ -106,7 +106,7 @@ const { data, error } = await biobase.functions.invoke('hello-world', {
 
 </CH.Code>
 
-<Admonition type="tip" label="Where is my BIOBASE_ANON_KEY?">
+<Admonition type="tip" label="Where is my SUPABASE_ANON_KEY?">
 
 Run `biobase status` to see your local credentials.
 
@@ -186,32 +186,12 @@ verify_jwt = false
 import_map = './import_map.json'
 ```
 
-### Not using TypeScript
-
-When you create a new Edge Function, it will use TypeScript by default. However, it is possible to write and deploy Edge Functions using pure JavaScript.
-
-Save your Function as a JavaScript file (eg: `index.js`) and then update the `biobase/config.toml` as follows:
-
-<Admonition type="info">
-
-`entrypoint` is available only in Biobase CLI version 1.215.0 or higher.
-
-</Admonition>
-
-```toml biobase/config.toml
-[functions.hello-world]
-# other entries
-entrypoint = './functions/hello-world/index.js' # path must be relative to config.toml
-```
-
-You can use any `.ts`, `.js`, `.tsx`, `.jsx` or `.mjs` file as the `entrypoint` for a Function.
-
 ### Error handling
 
-The `supabase-js` library provides several error types that you can use to handle errors that might occur when invoking Edge Functions:
+The `biobase-js` library provides several error types that you can use to handle errors that might occur when invoking Edge Functions:
 
 ```js
-import { FunctionsHttpError, FunctionsRelayError, FunctionsFetchError } from '@supabase/supabase-js'
+import { FunctionsHttpError, FunctionsRelayError, FunctionsFetchError } from '@supabase/biobase-js'
 
 const { data, error } = await biobase.functions.invoke('hello', {
   headers: { 'my-custom-header': 'my-custom-header-value' },

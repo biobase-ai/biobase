@@ -20,7 +20,7 @@ Finally, add the menu to `menuItems` under a new key - the key should be what yo
 
 ## Adding navigation for a section that requires versioning
 
-This is more applicable for client libraries (e.g supabase-js and biobase-dart). Versions will all sit within their own folder - if the folder doesn't exist yet, just create one. The navigation for each section will then be named as 'v1', 'v2', and so on.
+This is more applicable for client libraries (e.g biobase-js and biobase-dart). Versions will all sit within their own folder - if the folder doesn't exist yet, just create one. The navigation for each section will then be named as 'v1', 'v2', and so on.
 
 Then, update `REFERENCES` accordingly.
 

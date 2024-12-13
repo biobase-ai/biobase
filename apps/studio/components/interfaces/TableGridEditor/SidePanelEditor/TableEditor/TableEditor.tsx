@@ -2,11 +2,10 @@ import type { PostgresTable } from '@supabase/postgres-meta'
 import { isEmpty, isUndefined, noop } from 'lodash'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
-import { Badge, Checkbox, Input, SidePanel } from 'ui'
+import { Alert, Badge, Button, Checkbox, Input, SidePanel } from 'ui'
 import ConfirmationModal from 'ui-patterns/Dialogs/ConfirmationModal'
 
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
-import { DocsButton } from 'components/ui/DocsButton'
 import { useDatabasePublicationsQuery } from 'data/database-publications/database-publications-query'
 import {
   CONSTRAINT_TYPE,
@@ -21,9 +20,8 @@ import { useEnumeratedTypesQuery } from 'data/enumerated-types/enumerated-types-
 import { useIsFeatureEnabled } from 'hooks/misc/useIsFeatureEnabled'
 import { useQuerySchemaState } from 'hooks/misc/useSchemaQueryState'
 import { useUrlState } from 'hooks/ui/useUrlState'
-import { PROTECTED_SCHEMAS_WITHOUT_EXTENSIONS } from 'lib/constants/schemas'
-import { useTableEditorStateSnapshot } from 'state/table-editor'
-import { Admonition } from 'ui-patterns'
+import { EXCLUDED_SCHEMAS_WITHOUT_EXTENSIONS } from 'lib/constants/schemas'
+import { ExternalLink } from 'lucide-react'
 import ActionBar from '../ActionBar'
 import type { ForeignKey } from '../ForeignKeySelector/ForeignKeySelector.types'
 import { formatForeignKeys } from '../ForeignKeySelector/ForeignKeySelector.utils'
@@ -41,6 +39,7 @@ import {
   generateTableFieldFromPostgresTable,
   validateFields,
 } from './TableEditor.utils'
+import { useTableEditorStateSnapshot } from 'state/table-editor'
 
 export interface TableEditorProps {
   table?: PostgresTable
@@ -97,7 +96,7 @@ const TableEditor = ({
     connectionString: project?.connectionString,
   })
   const enumTypes = (types ?? []).filter(
-    (type) => !PROTECTED_SCHEMAS_WITHOUT_EXTENSIONS.includes(type.schema)
+    (type) => !EXCLUDED_SCHEMAS_WITHOUT_EXTENSIONS.includes(type.schema)
   )
 
   const { data: publications } = useDatabasePublicationsQuery({
@@ -124,7 +123,8 @@ const TableEditor = ({
   const { data: constraints } = useTableConstraintsQuery({
     projectRef: project?.ref,
     connectionString: project?.connectionString,
-    id: table?.id,
+    schema: table?.schema,
+    table: table?.name,
   })
   const primaryKey = (constraints ?? []).find(
     (constraint) => constraint.type === CONSTRAINT_TYPE.PRIMARY_KEY_CONSTRAINT
@@ -304,43 +304,49 @@ const TableEditor = ({
           size="medium"
         />
         {tableFields.isRLSEnabled ? (
-          <Admonition
-            type="default"
-            className="!mt-3"
+          <Alert
+            withIcon
+            variant="info"
+            className="!px-4 !py-3 !mt-3"
             title="Policies are required to query data"
-            description={
-              <>
-                You need to create an access policy before you can query data from this table.
-                Without a policy, querying this table will return an{' '}
-                <u className="text-foreground">empty array</u> of results.{' '}
-                {isNewRecord ? 'You can create policies after saving this table.' : ''}
-              </>
-            }
           >
-            <DocsButton
-              abbrev={false}
-              className="mt-2"
-              href="https://biobase.studio/docs/guides/auth/row-level-security"
-            />
-          </Admonition>
+            <p>
+              You need to create an access policy before you can query data from this table. Without
+              a policy, querying this table will return an{' '}
+              <u className="text-foreground">empty array</u> of results.{' '}
+              {isNewRecord ? 'You can create policies after saving this table.' : ''}
+            </p>
+            <Button asChild type="default" icon={<ExternalLink />} className="mt-4">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://biobase.com/docs/guides/auth/row-level-security"
+              >
+                RLS Documentation
+              </a>
+            </Button>
+          </Alert>
         ) : (
-          <Admonition
-            type="warning"
-            className="!mt-3"
+          <Alert
+            withIcon
+            variant="warning"
+            className="!px-4 !py-3 mt-3"
             title="You are allowing anonymous access to your table"
-            description={
-              <>
-                {tableFields.name ? `The table ${tableFields.name}` : 'Your table'} will be publicly
-                writable and readable
-              </>
-            }
           >
-            <DocsButton
-              abbrev={false}
-              className="mt-2"
-              href="https://biobase.studio/docs/guides/auth/row-level-security"
-            />
-          </Admonition>
+            <p>
+              {tableFields.name ? `The table ${tableFields.name}` : 'Your table'} will be publicly
+              writable and readable
+            </p>
+            <Button asChild type="default" icon={<ExternalLink />} className="mt-4">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://biobase.com/docs/guides/auth/row-level-security"
+              >
+                RLS Documentation
+              </a>
+            </Button>
+          </Alert>
         )}
         {realtimeEnabled && (
           <Checkbox

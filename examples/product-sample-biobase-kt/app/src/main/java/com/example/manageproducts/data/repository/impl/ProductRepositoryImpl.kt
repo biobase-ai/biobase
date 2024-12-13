@@ -84,5 +84,5 @@ class ProductRepositoryImpl @Inject constructor(
     }
 
     private fun buildImageUrl(imageFileName: String) =
-        "${BuildConfig.BIOBASE_URL}/storage/v1/object/public/${imageFileName}".replace(" ", "%20")
+        "${BuildConfig.SUPABASE_URL}/storage/v1/object/public/${imageFileName}".replace(" ", "%20")
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { useSupabaseClient } from '@supabase/auth-helpers-react'
+import { useBiobaseClient } from '@supabase/auth-helpers-react'
 import { Check, MessageSquareQuote, X } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import {
@@ -79,7 +79,7 @@ function Feedback({ className }: { className?: string }) {
   const pathname = usePathname() ?? ''
   const sendTelemetryEvent = useSendTelemetryEvent()
   const { mutate: sendFeedbackComment } = useSendFeedbackMutation()
-  const biobase = useSupabaseClient<Database>()
+  const biobase = useBiobaseClient<Database>()
 
   const unanswered = state.type === 'unanswered'
   const isYes = 'response' in state && state.response === 'yes'

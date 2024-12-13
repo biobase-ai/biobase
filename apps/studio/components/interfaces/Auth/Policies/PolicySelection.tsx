@@ -79,7 +79,7 @@ const PolicySelection = ({
             </Button>
             <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
               <a
-                href="https://biobase.studio/blog/studio-introducing-assistant#introducing-the-biobase-assistant"
+                href="https://biobase.com/blog/studio-introducing-assistant#introducing-the-biobase-assistant"
                 target="_blank"
                 rel="noreferrer"
               >

@@ -2,8 +2,8 @@
 
 import { Loader2 } from 'lucide-react'
 import React, { ChangeEvent, useRef } from 'react'
-import { ExpandingTextArea } from '@ui'
-import { cn } from '@ui/src/lib/utils'
+import { ExpandingTextArea } from 'ui'
+import { cn } from 'ui/src/lib/utils'
 
 export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
   /* The ref for the textarea, optional. Exposed for the CommandsPopover to attach events. */
@@ -68,12 +68,7 @@ const AssistantChatForm = React.forwardRef<HTMLFormElement, FormProps>(
     }
 
     return (
-      <form
-        ref={formRef}
-        {...props}
-        onSubmit={onSubmit}
-        className={cn('relative', props.className)}
-      >
+      <form ref={formRef} className="relative" {...props} onSubmit={onSubmit}>
         {icon && (
           <div className={cn('absolute', 'top-2 left-2', 'ml-1 w-6 h-6 rounded-full bg-dbnew')}>
             {icon}

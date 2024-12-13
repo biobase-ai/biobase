@@ -1,6 +1,5 @@
 import { SVGProps, forwardRef } from 'react'
 import { cn } from '../lib/utils'
-import { Check } from 'lucide-react'
 
 export interface StatusIconProps {
   hideBackground?: boolean
@@ -17,8 +16,6 @@ export const StatusIcon = forwardRef<
     Icon = WarningIcon
   } else if (variant === 'destructive') {
     Icon = CriticalIcon
-  } else if (variant === 'success') {
-    Icon = CheckIcon
   } else {
     Icon = InfoIcon
   }
@@ -104,32 +101,4 @@ const WarningIcon: React.FC<SVGProps<SVGSVGElement> & StatusIconProps> = ({
   )
 }
 
-const CheckIcon: React.FC<SVGProps<SVGSVGElement> & StatusIconProps> = ({
-  hideBackground = false,
-  ...props
-}) => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      {...props}
-      className={cn(
-        !hideBackground
-          ? 'w-4 h-4 p-0.5 bg-foreground text-background rounded'
-          : 'w-3 h-3 text-success-600',
-        props.className
-      )}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={3}
-        d="m4.5 12.75 6 6 9-13.5"
-      />
-    </svg>
-  )
-}
-
-export { CriticalIcon, InfoIcon, WarningIcon, CheckIcon }
+export { CriticalIcon, InfoIcon, WarningIcon }

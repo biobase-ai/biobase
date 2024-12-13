@@ -13,7 +13,7 @@
 
 import 'dotenv/config'
 
-import { createClient, type SupabaseClient } from '@supabase/supabase-js'
+import { createClient, type BiobaseClient } from '@supabase/biobase-js'
 import matter from 'gray-matter'
 import { createHash } from 'node:crypto'
 import { readdirSync } from 'node:fs'
@@ -35,7 +35,7 @@ interface Stats {
 }
 
 interface Ctx {
-  biobase: SupabaseClient
+  biobase: BiobaseClient
   git: SimpleGit
   stats: Stats
 }
@@ -46,8 +46,8 @@ type SectionWithChecksum = Omit<Section, 'heading'> &
   }
 
 const REQUIRED_ENV_VARS = {
-  BIOBASE_URL: 'NEXT_PUBLIC_BIOBASE_URL',
-  SERVICE_ROLE_KEY: 'BIOBASE_SERVICE_ROLE_KEY',
+  SUPABASE_URL: 'NEXT_PUBLIC_SUPABASE_URL',
+  SERVICE_ROLE_KEY: 'SUPABASE_SERVICE_ROLE_KEY',
 } as const
 
 async function main() {
@@ -56,7 +56,7 @@ async function main() {
   checkEnv()
 
   const { reset } = parseOptions()
-  const biobase = createSupabaseClient()
+  const biobase = createBiobaseClient()
   const git = simpleGit()
 
   const stats: Stats = {
@@ -105,9 +105,9 @@ function parseOptions(): Options {
   return { reset: reset ?? false }
 }
 
-function createSupabaseClient() {
+function createBiobaseClient() {
   return createClient(
-    process.env[REQUIRED_ENV_VARS.BIOBASE_URL],
+    process.env[REQUIRED_ENV_VARS.SUPABASE_URL],
     process.env[REQUIRED_ENV_VARS.SERVICE_ROLE_KEY]
   )
 }

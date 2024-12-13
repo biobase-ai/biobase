@@ -2,18 +2,20 @@ import { useQueryClient } from '@tanstack/react-query'
 import { RefreshCw } from 'lucide-react'
 
 import { useParams } from 'common'
-import { tableRowKeys } from 'data/table-rows/keys'
+import type { SupaTable } from 'components/grid/types'
+import { sqlKeys } from 'data/sql/keys'
+import type { TableLike } from 'hooks/misc/useTable'
 import { Button } from 'ui'
 
 export type RefreshButtonProps = {
-  table: { id: number }
+  table: TableLike | SupaTable
   isRefetching?: boolean
 }
 
 const RefreshButton = ({ table, isRefetching }: RefreshButtonProps) => {
   const { ref } = useParams()
   const queryClient = useQueryClient()
-  const queryKey = tableRowKeys.tableRowsAndCount(ref, table.id)
+  const queryKey = sqlKeys.query(ref, [table.schema, table.name])
 
   async function onClick() {
     await queryClient.invalidateQueries(queryKey)

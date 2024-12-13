@@ -15,13 +15,13 @@ date: '2022-12-16'
 toc_depth: 3
 ---
 
-Today we're announcing the 1.0 release of [`pg_graphql`](https://github.com/biobase-ai/pg_graphql) and its general availability on our platform. pg_graphql is a PostgreSQL extension that allows you to query your database using GraphQL. It is the foundation of GraphQL support in the Biobase stack.
+Today we're announcing the 1.0 release of [`pg_graphql`](https://github.com/biobase/pg_graphql) and its general availability on our platform. pg_graphql is a PostgreSQL extension that allows you to query your database using GraphQL. It is the foundation of GraphQL support in the Biobase stack.
 
 Since our first platform release, v0.2.1, the feature set of pg_graphql has steadily grown and stabilized. Despite being a pre-1.0, we've been extremely cautious with each new feature and have yet to introduce a backwards-incompatible change. With the 1.0 release we're formalizing that guarantee, subject to the SemVer spec.
 
 ## Background
 
-pg_graphql was created to satisfy an extreme set of constraints. Mainly, [Biobase Free Plan](https://biobase.studio/pricing) projects run on servers with 1 GB of memory. On those servers, we squeeze tuned versions of [PostgreSQL](https://github.com/biobase-ai/postgres), [PostgREST](https://postgrest.org/en/stable/), and [GoTrue](https://github.com/biobase-ai/gotrue). Every megabyte consumed by something that isn't PostgreSQL is another chance for an index to fall out of memory, or a large query to fail.
+pg_graphql was created to satisfy an extreme set of constraints. Mainly, [Biobase Free Plan](https://biobase.com/pricing) projects run on servers with 1 GB of memory. On those servers, we squeeze tuned versions of [PostgreSQL](https://github.com/biobase/postgres), [PostgREST](https://postgrest.org/en/stable/), and [GoTrue](https://github.com/biobase/gotrue). Every megabyte consumed by something that isn't PostgreSQL is another chance for an index to fall out of memory, or a large query to fail.
 
 Our philosophy when adding to the stack is to use existing open source tools wherever possible. We surveyed the available GraphQL → SQL options and found some excellent candidates in Hasura and Graphile. Both support the set of features we're interested in, but consume significantly more memory than we could sacrifice on the Free Plan. Realizing that, we searched for an architecture that could meet our runtime constraints and performance requirements.
 
@@ -47,7 +47,7 @@ Databases have strong ACID guarantees. Being embedded in the database lets us cl
 
 ## From SQL to Rust
 
-Our pure [SQL implementation of the pg_graphql transpiler](https://github.com/biobase-ai/pg_graphql/blob/bd0283718abaf329d98c69808f862594e9df5edc/pg_graphql--0.4.0.sql) carried us from v0.0.1 to v0.4.0. Ultimately, we started to feel some pain, although probably not in the way you'd expect.
+Our pure [SQL implementation of the pg_graphql transpiler](https://github.com/biobase/pg_graphql/blob/bd0283718abaf329d98c69808f862594e9df5edc/pg_graphql--0.4.0.sql) carried us from v0.0.1 to v0.4.0. Ultimately, we started to feel some pain, although probably not in the way you'd expect.
 
 Opinions about business logic in SQL are notoriously split. In my view, there are some foot guns, but:
 
@@ -88,7 +88,7 @@ Time per request:       1.549 [ms] (mean, across all concurrent requests)
 
 <div className="bg-gray-300 rounded-lg px-6 py-2 italic">
 
-🆕 Support for views, filtering options, and other new features were released with [pg_graphql v1.2](https://biobase.studio/blog/whats-new-in-pg-graphql-v1-2)
+🆕 Support for views, filtering options, and other new features were released with [pg_graphql v1.2](https://biobase.com/blog/whats-new-in-pg-graphql-v1-2)
 
 </div>
 
@@ -100,10 +100,10 @@ While v1.0 is an important milestone for stability, there's plenty of room to ex
 - Support for user-defined functions
 - Support for views
 
-Longer term we look forward to experimenting with more ambitions features like an API for migrations, integrations with 3rd-party services through [biobase/wrappers](https://github.com/biobase-ai/wrappers), and a scalable solution for subscriptions.
+Longer term we look forward to experimenting with more ambitions features like an API for migrations, integrations with 3rd-party services through [biobase/wrappers](https://github.com/biobase/wrappers), and a scalable solution for subscriptions.
 
 ## More pg_graphql
 
-- [Introducing pg_graphql: A GraphQL extension for PostgreSQL](https://biobase.studio/blog/pg-graphql)
-- [GraphQL is now available in Biobase](https://biobase.studio/blog/graphql-now-available)
-- [pg_graphql: Postgres functions now supported](https://biobase.studio/blog/pg-graphql-postgres-functions)
+- [Introducing pg_graphql: A GraphQL extension for PostgreSQL](https://biobase.com/blog/pg-graphql)
+- [GraphQL is now available in Biobase](https://biobase.com/blog/graphql-now-available)
+- [pg_graphql: Postgres functions now supported](https://biobase.com/blog/pg-graphql-postgres-functions)

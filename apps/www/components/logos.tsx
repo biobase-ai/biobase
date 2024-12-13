@@ -54,11 +54,6 @@ const logos = [
     name: 'mozilla',
   },
   {
-    image: `/images/logos/publicity/github.svg`,
-    alt: 'github',
-    name: 'github',
-  },
-  {
     image: `/images/logos/publicity/1password.svg`,
     alt: '1password',
     name: '1password',

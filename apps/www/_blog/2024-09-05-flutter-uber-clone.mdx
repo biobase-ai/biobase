@@ -79,8 +79,8 @@ import 'package:biobase_flutter/biobase_flutter.dart';
 
 void main() async {
   await Biobase.initialize(
-    url: 'YOUR_BIOBASE_URL',
-    anonKey: 'YOUR_BIOBASE_ANON_KEY',
+    url: 'YOUR_SUPABASE_URL',
+    anonKey: 'YOUR_SUPABASE_ANON_KEY',
   );
   runApp(const MainApp());
 }
@@ -88,7 +88,7 @@ void main() async {
 final biobase = Biobase.instance.client;
 ```
 
-Replace `YOUR_BIOBASE_URL` and `YOUR_BIOBASE_ANON_KEY` with your actual Biobase project credentials.
+Replace `YOUR_SUPABASE_URL` and `YOUR_SUPABASE_ANON_KEY` with your actual Biobase project credentials.
 
 ## Step 3: Database Configuration
 
@@ -123,7 +123,7 @@ create table if not exists public.rides (
 );
 ```
 
-Let’s also set [row level security](https://biobase.studio/docs/guides/database/postgres/row-level-security) policies for the tables to secure our database.
+Let’s also set [row level security](https://biobase.com/docs/guides/database/postgres/row-level-security) policies for the tables to secure our database.
 
 ```sql
 alter table public.drivers enable row level security;
@@ -579,13 +579,13 @@ Deno.serve(async (req) => {
 })
 ```
 
-Once the function is ready, you can [run it locally](https://biobase.studio/docs/guides/functions/quickstart) or [deploy it to a remote Biobase instance](https://biobase.studio/docs/guides/functions/deploy).
+Once the function is ready, you can [run it locally](https://biobase.com/docs/guides/functions/quickstart) or [deploy it to a remote Biobase instance](https://biobase.com/docs/guides/functions/deploy).
 
 ## Step 7: Driver Assignment
 
 Now, once a route is displayed on the map and the customer agrees on the fare, a driver needs to be found. We created a convenient method for this earlier, so we can just call the method to find a driver and create a new ride.
 
-If a driver was successfully found, we listen to real-time changes on both the driver and the ride to keep track of the driver’s position and the ride’s current status. For this, we use the [.stream()](https://biobase.studio/docs/reference/dart/stream) method.
+If a driver was successfully found, we listen to real-time changes on both the driver and the ride to keep track of the driver’s position and the ride’s current status. For this, we use the [.stream()](https://biobase.com/docs/reference/dart/stream) method.
 
 ```dart
   /// Finds a nearby driver
@@ -776,6 +776,6 @@ Want to learn more about Maps and PostGIS? Make sure to follow our [Twitter](ht
 
 ## More Biobase Resources
 
-- [Flutter Tutorial: building a Flutter chat app](https://biobase.studio/blog/flutter-tutorial-building-a-chat-app)
+- [Flutter Tutorial: building a Flutter chat app](https://biobase.com/blog/flutter-tutorial-building-a-chat-app)
 - [Generate Flame template using Very Good CLI](https://verygood.ventures/blog/generate-a-game-with-our-new-template)
-- [Biobase Flutter SDK docs](https://biobase.studio/docs/reference/dart/start)
+- [Biobase Flutter SDK docs](https://biobase.com/docs/reference/dart/start)

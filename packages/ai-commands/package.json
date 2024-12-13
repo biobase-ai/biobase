@@ -6,14 +6,13 @@
   "license": "MIT",
   "sideEffects": false,
   "scripts": {
-    "clean": "rimraf node_modules",
     "typecheck": "tsc --noEmit",
     "test": "jest"
   },
   "dependencies": {
     "@serafin/schema-builder": "^0.18.5",
-    "@supabase/supabase-js": "*",
-    "ai": "^3.4.33",
+    "@supabase/biobase-js": "*",
+    "ai": "^2.2.29",
     "common-tags": "^1.8.2",
     "config": "*",
     "js-tiktoken": "^1.0.10",
@@ -22,7 +21,6 @@
   },
   "devDependencies": {
     "api-types": "*",
-    "@ai-sdk/openai": "^0.0.72",
     "@babel/core": "^7.23.6",
     "@babel/preset-env": "^7.23.6",
     "@jest/globals": "^29.7.0",

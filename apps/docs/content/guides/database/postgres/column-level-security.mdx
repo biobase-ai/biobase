@@ -12,7 +12,7 @@ PostgreSQL's [Row Level Security (RLS)](https://www.postgresql.org/docs/current/
   roles.
 </Admonition>
 
-## Policies at the row level
+## Policies at the Row Level
 
 Policies in Row Level Security (RLS) are used to restrict access to rows in a table. Think of them like adding a `WHERE` clause to every query.
 
@@ -35,7 +35,7 @@ update
 
 However, this gives the post owner full access to update the row, including all of the columns.
 
-## Privileges at the column level
+## Privileges at the Column Level
 
 To restrict access to columns, you can use [Privileges](https://www.postgresql.org/docs/current/ddl-priv.html).
 
@@ -76,20 +76,20 @@ This time, we are revoking the column-level `UPDATE` privilege of the `title` co
 
 ## Manage column privileges in the Dashboard
 
-You can view and edit the privileges in the [Biobase Studio](https://biobase.studio/dashboard/project/_/database/column-privileges).
+You can view and edit the privileges in the [Biobase Studio](https://biobase.com/dashboard/project/_/database/column-privileges).
 
 ![Column level privileges](/docs/img/guides/privileges/column-level-privileges-2.png)
 
-## Manage column privileges in migrations
+## Manage column privileges in Migrations
 
-While you can manage privileges directly from the Dashboard, as your project grows you may want to manage them in your migrations. Read about database migrations in the [Local Development](https://biobase.studio/docs/guides/deployment/database-migrations) guide.
+While you can manage privileges directly from the Dashboard, as your project grows you may want to manage them in your migrations. Read about database migrations in the [Local Development](https://biobase.com/docs/guides/getting-started/local-development#database-migrations) guide.
 
 <StepHikeCompact>
 
   <StepHikeCompact.Step step={1}>
     <StepHikeCompact.Details title="Create a migration file">
 
-      To get started, generate a [new migration](https://biobase.studio/docs/reference/cli/biobase-migration-new) to store the SQL needed to create your table along with row and column-level privileges.
+      To get started, generate a [new migration](https://biobase.com/docs/reference/cli/biobase-migration-new) to store the SQL needed to create your table along with row and column-level privileges.
 
     </StepHikeCompact.Details>
 

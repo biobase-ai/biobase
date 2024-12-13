@@ -11,14 +11,14 @@ Set up Server-Side Auth to use cookie-based authentication with SvelteKit.
 
 <StepHikeCompact.Details title="Install Biobase packages">
 
-Install the `@supabase/supabase-js` package and the helper `@supabase/ssr` package.
+Install the `@supabase/biobase-js` package and the helper `@supabase/ssr` package.
 
 </StepHikeCompact.Details>
 
 <StepHikeCompact.Code>
 
 ```sh
-npm install @supabase/supabase-js @supabase/ssr
+npm install @supabase/biobase-js @supabase/ssr
 ```
 
 </StepHikeCompact.Code>
@@ -31,7 +31,7 @@ npm install @supabase/supabase-js @supabase/ssr
 
 Create a `.env.local` file in your project root directory.
 
-Fill in your `PUBLIC_BIOBASE_URL` and `PUBLIC_BIOBASE_ANON_KEY`:
+Fill in your `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY`:
 
 <ProjectConfigVariables variable="url" />
 <ProjectConfigVariables variable="anonKey" />
@@ -41,8 +41,8 @@ Fill in your `PUBLIC_BIOBASE_URL` and `PUBLIC_BIOBASE_ANON_KEY`:
 <StepHikeCompact.Code>
 
 ```txt .env.local
-PUBLIC_BIOBASE_URL=<your_biobase_project_url>
-PUBLIC_BIOBASE_ANON_KEY=<your_biobase_anon_key>
+PUBLIC_SUPABASE_URL=<your_biobase_project_url>
+PUBLIC_SUPABASE_ANON_KEY=<your_biobase_anon_key>
 ```
 
 </StepHikeCompact.Code>
@@ -68,7 +68,7 @@ import { createServerClient } from '@supabase/ssr'
 import { type Handle, redirect } from '@sveltejs/kit'
 import { sequence } from '@sveltejs/kit/hooks'
 
-import { PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY } from '$env/static/public'
+import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public'
 
 const biobase: Handle = async ({ event, resolve }) => {
   /**
@@ -76,7 +76,7 @@ const biobase: Handle = async ({ event, resolve }) => {
    *
    * The Biobase client gets the Auth token from the request cookies.
    */
-  event.locals.biobase = createServerClient(PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY, {
+  event.locals.biobase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
     cookies: {
       getAll: () => event.cookies.getAll(),
       /**
@@ -162,13 +162,13 @@ To prevent TypeScript errors, add type definitions for the new `event.locals` pr
 <StepHikeCompact.Code>
 
 ```ts src/app.d.ts
-import type { Session, SupabaseClient, User } from '@supabase/supabase-js'
+import type { Session, BiobaseClient, User } from '@supabase/biobase-js'
 
 declare global {
   namespace App {
     // interface Error {}
     interface Locals {
-      biobase: SupabaseClient
+      biobase: BiobaseClient
       safeGetSession: () => Promise<{ session: Session | null; user: User | null }>
       session: Session | null
       user: User | null
@@ -202,7 +202,7 @@ Create a Biobase client in your root `+layout.ts`. This client can be used to ac
 
 ```ts src/routes/+layout.ts
 import { createBrowserClient, createServerClient, isBrowser } from '@supabase/ssr'
-import { PUBLIC_BIOBASE_ANON_KEY, PUBLIC_BIOBASE_URL } from '$env/static/public'
+import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public'
 import type { LayoutLoad } from './$types'
 
 export const load: LayoutLoad = async ({ data, depends, fetch }) => {
@@ -213,12 +213,12 @@ export const load: LayoutLoad = async ({ data, depends, fetch }) => {
   depends('biobase:auth')
 
   const biobase = isBrowser()
-    ? createBrowserClient(PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY, {
+    ? createBrowserClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
         global: {
           fetch,
         },
       })
-    : createServerClient(PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY, {
+    : createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
         global: {
           fetch,
         },
@@ -276,24 +276,24 @@ Set up a listener for Auth events on the client, to handle session refreshes and
 
 ```svelte src/routes/+layout.svelte
 <script>
-  import { invalidate } from '$app/navigation'
-  import { onMount } from 'svelte'
+	import { invalidate } from '$app/navigation';
+	import { onMount } from 'svelte';
 
-  let { data, children } = $props()
-  let { session, biobase } = $derived(data)
+	export let data;
+	$: ({ session, biobase } = data);
 
-  onMount(() => {
-    const { data } = biobase.auth.onAuthStateChange((_, newSession) => {
-      if (newSession?.expires_at !== session?.expires_at) {
-        invalidate('biobase:auth')
-      }
-    })
+	onMount(() => {
+		const { data } = biobase.auth.onAuthStateChange((_, newSession) => {
+			if (newSession?.expires_at !== session?.expires_at) {
+				invalidate('biobase:auth');
+			}
+		});
 
-    return () => data.subscription.unsubscribe()
-  })
+		return () => data.subscription.unsubscribe();
+	});
 </script>
 
-{@render children()}
+<slot />
 ```
 
 </StepHikeCompact.Code>
@@ -327,15 +327,15 @@ export const load: PageServerLoad = async ({ locals: { biobase } }) => {
 
 ```svelte src/routes/+page.svelte
 <script>
-  let { data } = $props()
-  let { countries } = $derived(data)
+	export let data;
+	$: ({ countries } = data);
 </script>
 
 <h1>Welcome to Biobase!</h1>
 <ul>
-  {#each countries as country}
-    <li>{country.name}</li>
-  {/each}
+	{#each countries as country}
+		<li>{country.name}</li>
+	{/each}
 </ul>
 ```
 
@@ -353,7 +353,7 @@ If you have email confirmation turned on (the default), a new user will receive 
 
 Change the email template to support a server-side authentication flow.
 
-Go to the [Auth templates](https://biobase.studio/dashboard/project/_/auth/templates) page in your dashboard. In the `Confirm signup` template, change `{{ .ConfirmationURL }}` to `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email`.
+Go to the [Auth templates](https://biobase.com/dashboard/project/_/auth/templates) page in your dashboard. In the `Confirm signup` template, change `{{ .ConfirmationURL }}` to `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email`.
 
 </StepHikeCompact.Details>
 
@@ -408,31 +408,26 @@ export const actions: Actions = {
 
 ```svelte src/routes/auth/+page.svelte
 <form method="POST" action="?/login">
-  <label>
-    Email
-    <input name="email" type="email" />
-  </label>
-  <label>
-    Password
-    <input name="password" type="password" />
-  </label>
-  <button>Login</button>
-  <button formaction="?/signup">Sign up</button>
+	<label>
+		Email
+		<input name="email" type="email" />
+	</label>
+	<label>
+		Password
+		<input name="password" type="password" />
+	</label>
+	<button>Login</button>
+	<button formaction="?/signup">Sign up</button>
 </form>
 ```
 
 ```svelte src/routes/auth/+layout.svelte
-<script>
-  let { children } = $props()
-</script>
-
 <header>
-  <nav>
-    <a href="/">Home</a>
-  </nav>
+	<nav>
+		<a href="/">Home</a>
+	</nav>
 </header>
-
-{@render children()}
+<slot />
 ```
 
 ```svelte src/routes/auth/error/+page.svelte
@@ -456,7 +451,7 @@ Finish the signup flow by creating the API route to handle email verification.
 <StepHikeCompact.Code>
 
 ```ts src/routes/auth/confirm/+server.ts
-import type { EmailOtpType } from '@supabase/supabase-js'
+import type { EmailOtpType } from '@supabase/biobase-js'
 import { redirect } from '@sveltejs/kit'
 
 import type { RequestHandler } from './$types'
@@ -517,25 +512,25 @@ To ensure that `hooks.server.ts` runs for every nested path, put a `+layout.serv
 
 ```svelte src/routes/private/+layout.svelte
 <script>
-  let { data, children } = $props()
-  let { biobase } = $derived(data)
+	export let data;
+	$: ({ biobase } = data);
 
-  const logout = async () => {
-    const { error } = await biobase.auth.signOut()
-    if (error) {
-      console.error(error)
-    }
-  }
+	$: logout = async () => {
+		const { error } = await biobase.auth.signOut();
+		if (error) {
+			console.error(error);
+		}
+	};
 </script>
 
 <header>
-  <nav>
-    <a href="/">Home</a>
-  </nav>
-  <button onclick={logout}>Logout</button>
+	<nav>
+		<a href="/">Home</a>
+	</nav>
+	<button on:click={logout}>Logout</button>
 </header>
 <main>
-  {@render children()}
+	<slot />
 </main>
 ```
 
@@ -566,54 +561,55 @@ using ((select auth.uid()) = user_id);
 ```
 
 ```svelte src/routes/private/+page.server.ts
-import type { PageServerLoad } from './$types'
+import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ depends, locals: { biobase } }) => {
-  depends('biobase:db:notes')
-  const { data: notes } = await biobase.from('notes').select('id,note').order('id')
-  return { notes: notes ?? [] }
-}
+	depends('biobase:db:notes');
+	const { data: notes } = await biobase.from('notes').select('id,note').order('id');
+	return { notes: notes ?? [] };
+};
 ```
 
 ```svelte src/routes/private/+page.svelte
 <script lang="ts">
-  import { invalidate } from '$app/navigation'
-  import type { EventHandler } from 'svelte/elements'
+	import { invalidate } from '$app/navigation';
+	import type { EventHandler } from 'svelte/elements';
 
-  import type { PageData } from './$types'
+	import type { PageData } from './$types';
 
-  let { data } = $props()
-  let { notes, biobase, user } = $derived(data)
+	export let data: PageData;
+	$: ({ notes, biobase, user } = data);
 
-  const handleSubmit: EventHandler<SubmitEvent, HTMLFormElement> = async (evt) => {
-    evt.preventDefault()
-    if (!evt.target) return
+	let handleSubmit: EventHandler<SubmitEvent, HTMLFormElement>;
+	$: handleSubmit = async (evt) => {
+		evt.preventDefault();
+		if (!evt.target) return;
 
-    const form = evt.target as HTMLFormElement
+		const form = evt.target as HTMLFormElement;
 
-    const note = (new FormData(form).get('note') ?? '') as string
-    if (!note) return
+		const note = (new FormData(form).get('note') ?? '') as string;
+		if (!note) return;
 
-    const { error } = await biobase.from('notes').insert({ note })
-    if (error) console.error(error)
+		const { error } = await biobase.from('notes').insert({ note });
+		if (error) console.error(error);
 
-    invalidate('biobase:db:notes')
-    form.reset()
-  }
+		invalidate('biobase:db:notes');
+		form.reset();
+	};
 </script>
 
 <h1>Private page for user: {user?.email}</h1>
 <h2>Notes</h2>
 <ul>
-  {#each notes as note}
-    <li>{note.note}</li>
-  {/each}
+	{#each notes as note}
+		<li>{note.note}</li>
+	{/each}
 </ul>
-<form onsubmit={handleSubmit}>
-  <label>
-    Add a note
-    <input name="note" type="text" />
-  </label>
+<form on:submit={handleSubmit}>
+	<label>
+		Add a note
+		<input name="note" type="text" />
+	</label>
 </form>
 ```
 

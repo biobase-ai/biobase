@@ -16,10 +16,10 @@ Finally, we use the Thunder Client extension to simulate a POST request to the `
 router.post(
   "/revalidate",
   withContent,
-  async (request, { BIOBASE_URL, BIOBASE_ANON_KEY, ARTICLES }, context) => {
+  async (request, { SUPABASE_URL, SUPABASE_ANON_KEY, ARTICLES }, context) => {
     const updateCache = async () => {
       const { type, record, old_record } = request.content;
-      const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY);
+      const biobase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
       if (type === "INSERT" || type === "UPDATE") {
         await writeTo(ARTICLES, `/articles/${record.id}`, record);
@@ -52,7 +52,7 @@ npx wrangler dev
 ## Resources
 
 - [Cloudflare waitUntil docs](https://developers.cloudflare.com/workers/runtime-apis/scheduled-event/)
-- [Biobase.js docs](https://github.com/supabase/supabase-js)
+- [Biobase.js docs](https://github.com/biobase-ai/biobase-js)
 - [Wrangler CLI docs](https://developers.cloudflare.com/workers/wrangler/commands/)
 - [KV Storage docs](https://developers.cloudflare.com/workers/runtime-apis/kv/)
 - [Thunder Client VS Code extension](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)

@@ -21,11 +21,11 @@ const DPA = () => {
             Please review these details and add data specific to user processing where required.
             Sign and return the signed DPA document to{' '}
             <a
-              href="mailto:privacy@supabase.com"
+              href="mailto:privacy@biobase.com"
               target="_blank"
               className="text-brand hover:text-brand"
             >
-              privacy@supabase.com
+              privacy@biobase.com
             </a>{' '}
             for the document to be considered executed.
           </p>
@@ -33,7 +33,7 @@ const DPA = () => {
       </ScaffoldSectionDetail>
       <ScaffoldSectionContent className="flex items-center justify-center h-full">
         <a
-          href="https://biobase.studio/downloads/docs/Biobase+DPA+231211.pdf"
+          href="https://biobase.com/downloads/docs/Biobase+DPA+231211.pdf"
           target="_blank"
           rel="noreferrer noopener"
           download={true}

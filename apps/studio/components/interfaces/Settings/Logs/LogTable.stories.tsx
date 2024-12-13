@@ -9,6 +9,7 @@ export default {
 export const Functions = (args: any) => (
   <div>
     <LogTable
+      params={{}}
       queryType="functions"
       projectRef="123"
       data={[

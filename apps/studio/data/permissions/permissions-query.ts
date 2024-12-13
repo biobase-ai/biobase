@@ -26,7 +26,7 @@ export const usePermissionsQuery = <TData = PermissionsData>(
     ({ signal }) => getPermissions(signal),
     {
       ...options,
-      enabled: IS_PLATFORM && (options.enabled ?? true),
+      enabled: IS_PLATFORM && options.enabled,
       staleTime: 30 * 60 * 1000,
     }
   )

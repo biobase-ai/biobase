@@ -13,7 +13,6 @@ export type UpdateCollectionArgs = {
 export type UpdateCollectionPayload = {
   name?: string
   // description?: string
-  retention_days?: number
 }
 
 export async function updateCollection(
@@ -52,7 +51,7 @@ export const useUpdateCollection = ({
     (payload) =>
       updateCollection(
         { projectRef: payload.projectRef, collectionToken: payload.collectionToken },
-        { name: payload.name, retention_days: payload.retention_days }
+        { name: payload.name }
       ),
     {
       async onSuccess(data, variables, context) {

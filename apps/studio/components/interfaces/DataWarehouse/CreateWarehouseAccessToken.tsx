@@ -40,9 +40,7 @@ const CreateWarehouseAccessToken = ({ onSubmit, loading, open, setOpen }: Create
         tooltip={{
           content: {
             side: 'bottom',
-            text: !canCreateAccessTokens
-              ? 'You need additional permissions to create access tokens'
-              : undefined,
+            text: 'You need additional permissions to create access tokens',
           },
         }}
       >

@@ -13,7 +13,7 @@ const cards: { [name: string]: CardProps } = {
     ctas: [
       {
         label: 'Learn more',
-        href: 'https://biobase.studio/docs/guides/platform/branching',
+        href: 'https://biobase.com/docs/guides/platform/branching',
         target: '_blank',
         type: 'default',
       },
@@ -35,7 +35,7 @@ const cards: { [name: string]: CardProps } = {
     ctas: [
       {
         label: 'Learn more',
-        href: 'https://biobase.studio/docs/guides/platform/read-replicas',
+        href: 'https://biobase.com/docs/guides/platform/read-replicas',
         target: '_blank',
         type: 'default',
       },

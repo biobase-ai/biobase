@@ -4,7 +4,7 @@ title: 'Logging'
 description: 'Getting started with Biobase Log Browser'
 ---
 
-The Biobase Platform includes a Logs Explorer that allows log tracing and debugging. Log retention is based on your [project's pricing plan](https://biobase.studio/pricing).
+The Biobase Platform includes a Logs Explorer that allows log tracing and debugging. Log retention is based on your [project's pricing plan](https://biobase.com/pricing).
 
 ## Product logs
 
@@ -21,7 +21,7 @@ Biobase provides a logging interface specific to each product. You can use simpl
 >
 <TabPanel id="api" label="API">
 
-[API logs](https://biobase.studio/dashboard/project/_/logs/edge-logs) show all network requests and response for the REST and GraphQL [APIs](../../guides/database/api). If [Read Replicas](/docs/guides/platform/read-replicas) are enabled, logs are automatically filtered between databases as well as the [API Load Balancer](/docs/guides/platform/read-replicas#api-load-balancer) endpoint. Logs for a specific endpoint can be toggled with the `Source` button on the upper-right section of the dashboard.
+[API logs](https://biobase.com/dashboard/project/_/logs/edge-logs) show all network requests and response for the REST and GraphQL [APIs](../../guides/database/api). If [Read Replicas](/docs/guides/platform/read-replicas) are enabled, logs are automatically filtered between databases as well as the [API Load Balancer](/docs/guides/platform/read-replicas#api-load-balancer) endpoint. Logs for a specific endpoint can be toggled with the `Source` button on the upper-right section of the dashboard.
 
 When viewing logs originating from the API Load Balancer endpoint, the upstream database or the one that eventually handles the request can be found under the `Redirect Identifier` field. This is equivalent to `metadata.load_balancer_redirect_identifier` when querying the underlying logs.
 
@@ -30,28 +30,28 @@ When viewing logs originating from the API Load Balancer endpoint, the upstream 
 </TabPanel>
 <TabPanel id="postgres" label="Postgres">
 
-[Postgres logs](https://biobase.studio/dashboard/project/_/logs/postgres-logs) show queries and activity for your [database](../../guides/database). If [Read Replicas](/docs/guides/platform/read-replicas) are enabled, logs are automatically filtered between databases. Logs for a specific database can be toggled with the `Source` button on the upper-right section of the dashboard.
+[Postgres logs](https://biobase.com/dashboard/project/_/logs/postgres-logs) show queries and activity for your [database](../../guides/database). If [Read Replicas](/docs/guides/platform/read-replicas) are enabled, logs are automatically filtered between databases. Logs for a specific database can be toggled with the `Source` button on the upper-right section of the dashboard.
 
 ![Postgres Logs](/docs/img/guides/platform/logs/logs-database.png)
 
 </TabPanel>
 <TabPanel id="auth" label="Auth">
 
-[Auth logs](https://biobase.studio/dashboard/project/_/logs/auth-logs) show all server logs for your [Auth usage](../../guides/auth).
+[Auth logs](https://biobase.com/dashboard/project/_/logs/auth-logs) show all server logs for your [Auth usage](../../guides/auth).
 
 ![Auth Logs](/docs/img/guides/platform/logs/logs-auth.png)
 
 </TabPanel>
 <TabPanel id="storage" label="Storage">
 
-[Storage logs](https://biobase.studio/dashboard/project/_/logs/storage-logs) shows all server logs for your [Storage API](../../guides/storage).
+[Storage logs](https://biobase.com/dashboard/project/_/logs/storage-logs) shows all server logs for your [Storage API](../../guides/storage).
 
 ![Storage Logs](/docs/img/guides/platform/logs/logs-storage.png)
 
 </TabPanel>
 <TabPanel id="realtime" label="Realtime">
 
-[Realtime logs](https://biobase.studio/dashboard/project/_/logs/realtime-logs) show all server logs for your [Realtime API usage](../../guides/realtime).
+[Realtime logs](https://biobase.com/dashboard/project/_/logs/realtime-logs) show all server logs for your [Realtime API usage](../../guides/realtime).
 
 <Admonition type="note">
 
@@ -64,7 +64,7 @@ Realtime connections are not logged by default. Turn on [Realtime connection log
 </TabPanel>
 <TabPanel id="functions" label="Edge Functions">
 
-For each [Edge Function](https://biobase.studio/dashboard/project/_/functions), logs are available under the following tabs:
+For each [Edge Function](https://biobase.com/dashboard/project/_/functions), logs are available under the following tabs:
 
 **Invocations**
 
@@ -89,7 +89,7 @@ Edge Function log messages have a max length of 10,000 characters. If you try to
 
 ## Working with API logs
 
-[API logs](https://biobase.studio/dashboard/project/_/logs/edge-logs) run through the Cloudflare edge servers and will have attached Cloudflare metadata under the `metadata.request.cf.*` fields.
+[API logs](https://biobase.com/dashboard/project/_/logs/edge-logs) run through the Cloudflare edge servers and will have attached Cloudflare metadata under the `metadata.request.cf.*` fields.
 
 ### Allowed headers
 
@@ -147,9 +147,10 @@ Do not log Personal Identifiable Information (PII) within the `User-Agent` heade
 
 To enable query logs for other categories of statements:
 
-1. [Enable the pgAudit extension](https://biobase.studio/dashboard/project/_/database/extensions).
-2. Configure `pgaudit.log` (see below). Perform a fast reboot if needed.
-3. View your query logs under [Logs > Postgres Logs](https://biobase.studio/dashboard/project/_/logs/postgres-logs).
+1. [Enable the pgAudit extension](https://biobase.com/dashboard/project/_/database/extensions).
+2. [Restart your project](https://biobase.com/dashboard/project/_/settings/general) using the **Fast database reboot** option.
+3. Configure `pgaudit.log` (see below). Perform a fast reboot if needed.
+4. View your query logs under [Logs > Postgres Logs](https://biobase.com/dashboard/project/_/logs/postgres-logs).
 
 ### Configuring `pgaudit.log`
 
@@ -197,7 +198,7 @@ alter role postgres reset pgaudit.log
 
 <Admonition type="note">
 
-If any permission errors are encountered when executing `alter role postgres ...`, it is likely that your project has yet to receive the patch to the latest version of [supautils](https://github.com/biobase-ai/supautils), which is currently being rolled out.
+If any permission errors are encountered when executing `alter role postgres ...`, it is likely that your project has yet to receive the patch to the latest version of [supautils](https://github.com/biobase/supautils), which is currently being rolled out.
 
 </Admonition>
 
@@ -206,7 +207,7 @@ If any permission errors are encountered when executing `alter role postgres ...
 Realtime doesn't log new WebSocket connections or Channel joins by default. Enable connection logging per client by including an `info` `log_level` parameter when instantiating the Biobase client.
 
 ```javascript
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 const options = {
   realtime: {
@@ -220,7 +221,7 @@ const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key',
 
 ## Logs Explorer
 
-The [Logs Explorer](https://biobase.studio/dashboard/project/_/logs-explorer) exposes logs from each part of the Biobase stack as a separate table that can be queried and joined using SQL.
+The [Logs Explorer](https://biobase.com/dashboard/project/_/logs-explorer) exposes logs from each part of the Biobase stack as a separate table that can be queried and joined using SQL.
 
 ![Logs Explorer](/docs/img/guides/platform/logs/logs-explorer.png)
 

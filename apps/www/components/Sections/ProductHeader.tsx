@@ -12,14 +12,12 @@ interface Types {
   image?: React.ReactNode
   footer?: React.ReactNode
   documentation_url?: string
-  callout?: React.ReactNode
 }
 
 const ProductHeader = (props: Types) => (
-  <div className="container relative mx-auto px-6 pt-16 pb-0 sm:px-16 lg:pt-28 xl:px-20">
+  <div className="container relative mx-auto px-6 pt-16 pb-0 sm:px-16 lg:pt-32 xl:px-20">
     <div className="grid grid-cols-12">
       <div className="col-span-12 space-y-8 lg:col-span-5">
-        {props.callout && props.callout}
         <div>
           {props.icon || props.title ? (
             <div className="mb-4 flex items-center gap-3">
@@ -47,7 +45,7 @@ const ProductHeader = (props: Types) => (
         </div>
         <div className="flex flex-row md:flex-row md:items-center">
           <Button asChild size="medium">
-            <Link href="https://biobase.studio/dashboard" as="https://biobase.studio/dashboard">
+            <Link href="https://biobase.com/dashboard" as="https://biobase.com/dashboard">
               Start a project
             </Link>
           </Button>

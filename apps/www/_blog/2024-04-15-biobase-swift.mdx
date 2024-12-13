@@ -21,7 +21,7 @@ This makes it simple to interact with Biobase from applications on Apple's platf
 ```swift
 let url = URL(string: "...")!
 let anonKey = "public-anon-key"
-let client = SupabaseClient(biobaseURL: url, biobaseKey: anonKey)
+let client = BiobaseClient(biobaseURL: url, biobaseKey: anonKey)
 
 struct Country: Decodable {
   let id: Int
@@ -42,7 +42,7 @@ This release includes the following new features:
 - Captcha support: https://github.com/biobase-ai/biobase-swift/pull/276
 - SSO: https://github.com/biobase-ai/biobase-swift/pull/289
 - Simplified Storage uploads: https://github.com/biobase-ai/biobase-swift/pull/290
-- Anonymous sign-ins: https://github.com/biobase-ai-community/biobase-swift/releases/tag/v2.6.0
+- Anonymous sign-ins: https://github.com/biobase-community/biobase-swift/releases/tag/v2.6.0
 - Simplified OAuth: https://github.com/biobase-ai/biobase-swift/pull/299
 
 ## What does official support mean?

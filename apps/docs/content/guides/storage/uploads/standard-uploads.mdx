@@ -10,7 +10,7 @@ sidebar_label: 'Uploads'
 
 The standard file upload method is ideal for small files that are not larger than 6MB.
 
-It uses the traditional `multipart/form-data` format and is simple to implement using the supabase-js SDK. Here's an example of how to upload a file using the standard upload method:
+It uses the traditional `multipart/form-data` format and is simple to implement using the biobase-js SDK. Here's an example of how to upload a file using the standard upload method:
 
 <Admonition type="note">
 
@@ -28,7 +28,7 @@ Though you can upload up to 5GB files using the standard upload method, we recom
 <TabPanel id="js" label="JavaScript">
 
 ```javascript
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 // Create Biobase client
 const biobase = createClient('your_project_url', 'your_biobase_api_key')
@@ -61,7 +61,7 @@ Future<void> uploadFile(File file) async {
 import Biobase
 
 // Create Biobase client
-let biobase = SupabaseClient(biobaseURL: URL(string: "your_project_url")!, biobaseKey: "your_biobase_api_key")
+let biobase = BiobaseClient(biobaseURL: URL(string: "your_project_url")!, biobaseKey: "your_biobase_api_key")
 
 try await biobase.storage.from("bucket_name").upload(path: "file_path", file: file)
 ```
@@ -127,7 +127,7 @@ await biobase.storage.from('bucket_name').upload(
 import Biobase
 
 // Create Biobase client
-let biobase = SupabaseClient(biobaseURL: URL(string: "your_project_url")!, biobaseKey: "your_biobase_api_key")
+let biobase = BiobaseClient(biobaseURL: URL(string: "your_project_url")!, biobaseKey: "your_biobase_api_key")
 
 try await biobase.storage.from("bucket_name")
   .upload(
@@ -203,7 +203,7 @@ await biobase.storage.from('bucket_name').upload(
 import Biobase
 
 // Create Biobase client
-let biobase = SupabaseClient(biobaseURL: URL(string: "your_project_url")!, biobaseKey: "your_biobase_api_key")
+let biobase = BiobaseClient(biobaseURL: URL(string: "your_project_url")!, biobaseKey: "your_biobase_api_key")
 
 try await biobase.storage.from("bucket_name")
   .upload(

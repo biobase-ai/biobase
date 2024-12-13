@@ -21,7 +21,7 @@ const RealtimeConfigPage = async () => {
     <GuideTemplate
       meta={meta}
       editLink={newEditLink(
-        'biobase/biobase/blob/master/apps/docs/app/guides/(with-sidebar)/self-hosting/realtime/config/page.tsx'
+        'biobase/biobase/blob/master/apps/docs/pages/guides/self-hosting/realtime/config.tsx'
       )}
     >
       <MDXRemoteBase source={descriptionMdx} />

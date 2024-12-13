@@ -22,7 +22,7 @@ const CPUWarnings = ({ isFreePlan, upgradeUrl, severity }: CPUWarningsProps) => 
         </AlertDescription_Shadcn_>
         <div className="mt-3 flex items-center space-x-2">
           <Button asChild type="default">
-            <Link href="https://biobase.studio/docs/guides/platform/exhaust-cpu">Learn more</Link>
+            <Link href="https://biobase.com/docs/guides/platform/exhaust-cpu">Learn more</Link>
           </Button>
           <Button asChild type="warning">
             <Link href={upgradeUrl}>
@@ -46,7 +46,7 @@ const CPUWarnings = ({ isFreePlan, upgradeUrl, severity }: CPUWarningsProps) => 
         </AlertDescription_Shadcn_>
         <div className="mt-3 flex items-center space-x-2">
           <Button asChild type="default">
-            <Link href="https://biobase.studio/docs/guides/platform/exhaust-cpu">Learn more</Link>
+            <Link href="https://biobase.com/docs/guides/platform/exhaust-cpu">Learn more</Link>
           </Button>
           <Button asChild type="danger">
             <Link href={upgradeUrl}>

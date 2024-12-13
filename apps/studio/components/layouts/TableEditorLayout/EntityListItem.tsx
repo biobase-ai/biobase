@@ -27,12 +27,10 @@ import {
 } from 'components/interfaces/TableGridEditor/TableEntity.utils'
 import type { ItemRenderer } from 'components/ui/InfiniteList'
 import { ENTITY_TYPE } from 'data/entity-types/entity-type-constants'
-import { Entity } from 'data/entity-types/entity-types-infinite-query'
+import type { Entity } from 'data/entity-types/entity-type-query'
 import { useProjectLintsQuery } from 'data/lint/lint-query'
-import { EditorTablePageLink } from 'data/prefetchers/project.$ref.editor.$id'
-import { getTableEditor } from 'data/table-editor/table-editor-query'
-import { isTableLike } from 'data/table-editor/table-editor-types'
 import { fetchAllTableRows } from 'data/table-rows/table-rows-query'
+import { getTable } from 'data/tables/table-query'
 import { useQuerySchemaState } from 'hooks/misc/useSchemaQueryState'
 import { useTableEditorStateSnapshot } from 'state/table-editor'
 import {
@@ -47,6 +45,7 @@ import {
   DropdownMenuTrigger,
 } from 'ui'
 import { useProjectContext } from '../ProjectLayout/ProjectContext'
+import { Markdown } from 'components/interfaces/Markdown'
 
 export interface EntityListItemProps {
   id: number
@@ -109,23 +108,29 @@ const EntityListItem: ItemRenderer<Entity, EntityListItemProps> = ({
     const toastId = toast.loading(`Exporting ${entity.name} as CSV...`)
 
     try {
-      const table = await getTableEditor({
+      const table = await getTable({
         id: entity.id,
         projectRef,
         connectionString: project?.connectionString,
       })
-      if (isTableLike(table) && table.live_rows_estimate > MAX_EXPORT_ROW_COUNT) {
+      if (table.live_rows_estimate > MAX_EXPORT_ROW_COUNT) {
         return toast.error(
-          <div className="text-foreground prose text-sm">{MAX_EXPORT_ROW_COUNT_MESSAGE}</div>,
+          <Markdown content={MAX_EXPORT_ROW_COUNT_MESSAGE} className="text-foreground" />,
           { id: toastId }
         )
       }
 
-      const supaTable = table && parseSupaTable(table)
-
-      if (!supaTable) {
-        return toast.error(`Failed to export table: ${entity.name}`, { id: toastId })
-      }
+      const supaTable =
+        table &&
+        parseSupaTable(
+          {
+            table: table,
+            columns: table.columns ?? [],
+            primaryKeys: table.primary_keys,
+            relationships: table.relationships,
+          },
+          []
+        )
 
       const rows = await fetchAllTableRows({
         projectRef,
@@ -162,24 +167,30 @@ const EntityListItem: ItemRenderer<Entity, EntityListItemProps> = ({
     const toastId = toast.loading(`Exporting ${entity.name} as SQL...`)
 
     try {
-      const table = await getTableEditor({
+      const table = await getTable({
         id: entity.id,
         projectRef,
         connectionString: project?.connectionString,
       })
 
-      if (isTableLike(table) && table.live_rows_estimate > MAX_EXPORT_ROW_COUNT) {
+      if (table.live_rows_estimate > MAX_EXPORT_ROW_COUNT) {
         return toast.error(
-          <div className="text-foreground prose text-sm">{MAX_EXPORT_ROW_COUNT_MESSAGE}</div>,
+          <Markdown content={MAX_EXPORT_ROW_COUNT_MESSAGE} className="text-foreground" />,
           { id: toastId }
         )
       }
 
-      const supaTable = table && parseSupaTable(table)
-
-      if (!supaTable) {
-        return toast.error(`Failed to export table: ${entity.name}`, { id: toastId })
-      }
+      const supaTable =
+        table &&
+        parseSupaTable(
+          {
+            table: table,
+            columns: table.columns ?? [],
+            primaryKeys: table.primary_keys,
+            relationships: table.relationships,
+          },
+          []
+        )
 
       const rows = await fetchAllTableRows({
         projectRef,
@@ -266,9 +277,8 @@ const EntityListItem: ItemRenderer<Entity, EntityListItemProps> = ({
   }
 
   return (
-    <EditorTablePageLink
+    <Link
       title={entity.name}
-      id={String(entity.id)}
       href={`/project/${projectRef}/editor/${entity.id}?schema=${selectedSchema}`}
       role="button"
       aria-label={`View ${entity.name}`}
@@ -437,7 +447,7 @@ const EntityListItem: ItemRenderer<Entity, EntityListItemProps> = ({
           </DropdownMenuContent>
         </DropdownMenu>
       )}
-    </EditorTablePageLink>
+    </Link>
   )
 }
 

@@ -1,4 +1,4 @@
-import createSupabaseIcon from '../createSupabaseIcon';
+import createBiobaseIcon from '../createBiobaseIcon';
 
 /**
  * @component @name ApiDocs
@@ -10,7 +10,7 @@ import createSupabaseIcon from '../createSupabaseIcon';
  * @returns {JSX.Element} JSX Element
  *
  */
-const ApiDocs = createSupabaseIcon('ApiDocs', [
+const ApiDocs = createBiobaseIcon('ApiDocs', [
   [
     'path',
     {

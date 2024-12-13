@@ -30,28 +30,28 @@ ionic start biobase-ionic-react blank --type react
 cd biobase-ionic-react
 ```
 
-Then let's install the only additional dependency: [supabase-js](https://github.com/supabase/supabase-js)
+Then let's install the only additional dependency: [biobase-js](https://github.com/biobase-ai/biobase-js)
 
 ```bash
-npm install @supabase/supabase-js
+npm install @supabase/biobase-js
 ```
 
 And finally we want to save the environment variables in a `.env`.
 All we need are the API URL and the `anon` key that you copied [earlier](#get-the-api-keys).
 
 ```bash .env
-REACT_APP_BIOBASE_URL=YOUR_BIOBASE_URL
-REACT_APP_BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
+REACT_APP_SUPABASE_URL=YOUR_SUPABASE_URL
+REACT_APP_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 ```
 
 Now that we have the API credentials in place, let's create a helper file to initialize the Biobase client. These variables will be exposed
 on the browser, and that's completely fine since we have [Row Level Security](/docs/guides/auth#row-level-security) enabled on our Database.
 
 ```js src/biobaseClient.js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
-const biobaseUrl = process.env.REACT_APP_BIOBASE_URL
-const biobaseAnonKey = process.env.REACT_APP_BIOBASE_ANON_KEY
+const biobaseUrl = process.env.REACT_APP_SUPABASE_URL
+const biobaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY
 
 export const biobase = createClient(biobaseUrl, biobaseAnonKey)
 ```
@@ -306,7 +306,7 @@ import './theme/variables.css'
 import { LoginPage } from './pages/Login'
 import { AccountPage } from './pages/Account'
 import { useEffect, useState } from 'react'
-import { Session } from '@supabase/supabase-js'
+import { Session } from '@supabase/biobase-js'
 
 setupIonicReact()
 

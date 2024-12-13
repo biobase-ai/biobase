@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Badge, Button, Image, Tabs } from 'ui'
 
 // data
-import MainProducts from '~/data/MainProducts'
+import Solutions from 'data/Solutions'
 import ApiExamplesData from 'data/products/database/api-examples'
 import ExtensionsExamplesData from 'data/products/database/extensions-examples'
 import SqlViewCarouselData from 'data/products/database/sql-view-carousel.json'
@@ -61,10 +61,10 @@ function Database() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.studio/database`,
+          url: `https://biobase.com/database`,
           images: [
             {
-              url: `https://biobase.studio${basePath}/images/product/database/database-og.jpg`,
+              url: `https://biobase.com${basePath}/images/product/database/database-og.jpg`,
             },
           ],
         }}
@@ -72,8 +72,8 @@ function Database() {
       <DefaultLayout>
         <ProductsNav activePage={PRODUCT_NAMES.DATABASE} />
         <ProductHeader
-          icon={MainProducts['database'].icon}
-          title={MainProducts['database'].name}
+          icon={Solutions['database'].icon}
+          title={Solutions['database'].name}
           h1={[
             <span key={'database-h1'}>
               Open Source SQL Database
@@ -103,7 +103,7 @@ function Database() {
           <div className="grid grid-cols-12">
             <div className="col-span-12 mb-10 lg:col-span-3 lg:mb-0">
               <div className="p mb-4 flex items-center space-x-2">
-                <ProductIcon icon={MainProducts['database'].icon} />
+                <ProductIcon icon={Solutions['database'].icon} />
                 <X />
                 <div className="flex w-fit items-center">
                   <NextImage
@@ -122,9 +122,9 @@ function Database() {
             </div>
             <div className="col-span-12 mb-10 lg:col-span-3 lg:col-start-5 lg:mb-0">
               <div className="p mb-4 flex items-center space-x-2">
-                <ProductIcon icon={MainProducts['database'].icon} />
+                <ProductIcon icon={Solutions['database'].icon} />
                 <X />
-                <ProductIcon icon={MainProducts['authentication'].icon} />
+                <ProductIcon icon={Solutions['authentication'].icon} />
               </div>
 
               <h4 className="h4">Built-in Auth</h4>
@@ -136,7 +136,7 @@ function Database() {
             </div>
             <div className="col-span-12 lg:col-span-3 lg:col-start-9">
               <div className="p mb-4 flex items-center space-x-2">
-                <ProductIcon icon={MainProducts['database'].icon} />
+                <ProductIcon icon={Solutions['database'].icon} />
                 <X />
                 <ProductIcon icon={'M13 10V3L4 14h7v7l9-11h-7z'} />
               </div>
@@ -210,7 +210,7 @@ function Database() {
                       handle="@Elsolo244"
                       key="@Elsolo244"
                       img_url={`${basePath}/images/twitter-profiles/v6citnk33y2wpeyzrq05_400x400.jpeg`}
-                      quote="Where has @supabase been all my life? 😍"
+                      quote="Where has @biobase been all my life? 😍"
                     />,
                   ]}
                 />
@@ -225,7 +225,7 @@ function Database() {
                       handle="@jim_bisenius"
                       key="@jim_bisenius"
                       img_url={`${basePath}/images/twitter-profiles/rLgwUZSB_400x400.jpg`}
-                      quote="@MongoDB or @MySQL?!?! Please, let me introduce you to @supabase and the wonderful world of @PostgreSQL before it's too late!!"
+                      quote="@MongoDB or @MySQL?!?! Please, let me introduce you to @biobase and the wonderful world of @PostgreSQL before it's too late!!"
                     />,
                   ]}
                 />

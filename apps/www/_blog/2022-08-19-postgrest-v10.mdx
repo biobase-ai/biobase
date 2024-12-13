@@ -1,6 +1,6 @@
 ---
 title: 'PostgREST v10: EXPLAIN and Improved Relationship Detection'
-description: "Today, PostgREST 10 was released. Let's take a look at some of the new features that go hand in hand with supabase-js v2."
+description: "Today, PostgREST 10 was released. Let's take a look at some of the new features that go hand in hand with biobase-js v2."
 author: steve_chavez
 image: lw5/postgrest-v10.png
 thumb: lw5/postgrest-v10.png
@@ -13,13 +13,13 @@ date: '2022-08-19'
 toc_depth: 3
 ---
 
-PostgREST turns your PostgreSQL database automatically into a RESTful API. Today, PostgREST v10 was [released](https://github.com/PostgREST/postgrest/releases/tag/v10.0.0). v10 is not available on the Biobase Platform yet, but it is available for [self-hosting](https://biobase.studio/docs/guides/hosting/overview) or as a executable binary from the GitHub release page.
+PostgREST turns your PostgreSQL database automatically into a RESTful API. Today, PostgREST v10 was [released](https://github.com/PostgREST/postgrest/releases/tag/v10.0.0). v10 is not available on the Biobase Platform yet, but it is available for [self-hosting](https://biobase.com/docs/guides/hosting/overview) or as a executable binary from the GitHub release page.
 
-Let's take a look at some of its new features that go hand in hand with [supabase-js v2](https://biobase.studio/blog/supabase-js-v2).
+Let's take a look at some of its new features that go hand in hand with [biobase-js v2](https://biobase.com/blog/biobase-js-v2).
 
 ## EXPLAIN
 
-Akin to the [PostgreSQL EXPLAIN](https://www.postgresql.org/docs/current/sql-explain.html) command, you can now get the execution plan of a request through HTTP or `supabase-js`. This works transparently for reads, writes and RPC because every request to PostgREST generates a single SQL query.
+Akin to the [PostgreSQL EXPLAIN](https://www.postgresql.org/docs/current/sql-explain.html) command, you can now get the execution plan of a request through HTTP or `biobase-js`. This works transparently for reads, writes and RPC because every request to PostgREST generates a single SQL query.
 
 This is only suitable for development environments and is only enabled when the `db-plan-enabled` config is set to `true`.
 
@@ -38,9 +38,9 @@ Aggregate  (cost=8.18..8.20 rows=1 width=112)
 
 The `text` format is used by default, which gives you the same output you’d get in other SQL clients like `psql`. You can change the format to JSON by using a media type suffix `application/vnd.pgrst.plan+json`.
 
-### Explaining supabase-js queries
+### Explaining biobase-js queries
 
-For `supabase-js`, you can get the execution plan using the `explain()` transform. This works for every `supabase-js` method, including `rpc()`. Here’s an example for `select()`.
+For `biobase-js`, you can get the execution plan using the `explain()` transform. This works for every `biobase-js` method, including `rpc()`. Here’s an example for `select()`.
 
 {/* prettier-ignore */}
 ```jsx

@@ -1,18 +1,18 @@
 import React from 'https://esm.sh/react@18.2.0?deno-std=0.140.0'
 import { ImageResponse } from 'https://deno.land/x/og_edge@0.0.4/mod.ts'
-import { createClient } from 'jsr:@supabase/supabase-js@2'
+import { createClient } from 'jsr:@supabase/biobase-js@2'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
-const BIOBASE_URL =
-  Deno.env.get('BIOBASE_URL') !== 'http://kong:8000'
-    ? Deno.env.get('BIOBASE_URL')
+const SUPABASE_URL =
+  Deno.env.get('SUPABASE_URL') !== 'http://kong:8000'
+    ? Deno.env.get('SUPABASE_URL')
     : 'http://host.docker.internal:54321'
 
-const STORAGE_URL = `${BIOBASE_URL}/storage/v1/object/public/images/launch-week/lw12`
+const STORAGE_URL = `${SUPABASE_URL}/storage/v1/object/public/images/launch-week/lw12`
 
 // Load custom font
 const FONT_URL = `${STORAGE_URL}/assets/font/CircularStd-Book.otf`
@@ -103,9 +103,9 @@ export async function handler(req: Request) {
 
     const biobaseAdminClient = createClient(
       // Biobase API URL - env var exported by default when deployed.
-      Deno.env.get('LIVE_BIOBASE_URL') ?? 'http://host.docker.internal:54321',
+      Deno.env.get('LIVE_SUPABASE_URL') ?? 'http://host.docker.internal:54321',
       // Biobase API SERVICE ROLE KEY - env var exported by default when deployed.
-      Deno.env.get('BIOBASE_SERVICE_ROLE_KEY') ?? ''
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     )
 
     // Track social shares

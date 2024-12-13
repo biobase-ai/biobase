@@ -8,7 +8,6 @@ import { useReadReplicasQuery } from 'data/read-replicas/replicas-query'
 import { useQueryAbortMutation } from 'data/sql/abort-query-mutation'
 import { useOngoingQueriesQuery } from 'data/sql/ongoing-queries-query'
 import { useSelectedProject } from 'hooks/misc/useSelectedProject'
-import { useUrlState } from 'hooks/ui/useUrlState'
 import { IS_PLATFORM } from 'lib/constants'
 import { useDatabaseSelectorStateSnapshot } from 'state/database-selector'
 import { ResponseError } from 'types'
@@ -34,7 +33,6 @@ interface OngoingQueriesPanel {
 }
 
 export const OngoingQueriesPanel = ({ visible, onClose }: OngoingQueriesPanel) => {
-  const [_, setParams] = useUrlState({ replace: true })
   const project = useSelectedProject()
   const state = useDatabaseSelectorStateSnapshot()
   const [selectedId, setSelectedId] = useState<number>()
@@ -68,14 +66,9 @@ export const OngoingQueriesPanel = ({ visible, onClose }: OngoingQueriesPanel) =
     },
   })
 
-  const closePanel = () => {
-    setParams({ viewOngoingQueries: undefined })
-    onClose()
-  }
-
   return (
     <>
-      <Sheet open={visible} onOpenChange={() => closePanel()}>
+      <Sheet open={visible} onOpenChange={() => onClose()}>
         <SheetContent size="lg">
           <SheetHeader>
             <SheetTitle className="flex items-center gap-x-2">

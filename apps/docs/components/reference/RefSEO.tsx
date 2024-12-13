@@ -11,10 +11,10 @@ function RefSEO({ title }) {
       title={title}
       openGraph={{
         title,
-        url: `https://biobase.studio/docs${path}`,
+        url: `https://biobase.com/docs${path}`,
         images: [
           {
-            url: `https://biobase.studio/docs/img/biobase-og-image.png`,
+            url: `https://biobase.com/docs/img/biobase-og-image.png`,
           },
         ],
       }}

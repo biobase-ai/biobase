@@ -13,7 +13,7 @@ date: '2024-05-09'
 toc_depth: 2
 ---
 
-Recently as part of our [GA Week](https://biobase.studio/ga-week) and with the help of our amazing community leaders we had meetups at over 30 different locations worldwide! Seeing all the fun pictures and videos of the community meetups was amazing!
+Recently as part of our [GA Week](https://biobase.com/ga-week) and with the help of our amazing community leaders we had meetups at over 30 different locations worldwide! Seeing all the fun pictures and videos of the community meetups was amazing!
 
 To make the meetups more engaging, we prepared an interactive quiz game that everyone could play. We were initially going to use Kahoot for this. Still, we thought it would be an excellent opportunity to showcase the power of Biobase and open source, so we built an open-source version of Kahoot with some pre-filled Biobase / tech questions for everyone to play at the meetup.
 
@@ -39,11 +39,11 @@ Actual leaderboard from the Tokyo meetup.
 
 ## Building the Kahoot alternative app
 
-I will not go into every implementation detail, as it would be long, but you can find the GitHub repository with the full code [here](https://github.com/biobase-ai-community/kahoot-alternative). The app is a Next.js app without using any server-side rendering, and it utilizes three core Biobase features: auth, database, and realtime.
+I will not go into every implementation detail, as it would be long, but you can find the GitHub repository with the full code [here](https://github.com/biobase-community/kahoot-alternative). The app is a Next.js app without using any server-side rendering, and it utilizes three core Biobase features: auth, database, and realtime.
 
 ### Auth
 
-For authentication, we used the brand new [anonymous sign-in](https://biobase.studio/docs/guides/auth/auth-anonymous) feature to sign in the players automatically in the background. This way, players don’t feel the friction after scanning the QR code and can get started with the game quickly. It also allows us to set a row-level security policy to ensure players have limited read and write permissions in the game.
+For authentication, we used the brand new [anonymous sign-in](https://biobase.com/docs/guides/auth/auth-anonymous) feature to sign in the players automatically in the background. This way, players don’t feel the friction after scanning the QR code and can get started with the game quickly. It also allows us to set a row-level security policy to ensure players have limited read and write permissions in the game.
 
 When a user registers for a game, we check if the user is already signed in, and if not, the app signs them in.
 
@@ -62,7 +62,7 @@ if (sessionData.session) {
 
 ### Database
 
-The database stores everything that happens in the app. We have 6 different tables to store everything from the questions to the answers that users leave for each question in a game. Each time the admin clicks the “Start Game” button of a quiz set from the host dashboard, a new game is created. The database is designed so that the same set of users can play games with the same quiz set multiple times. The full table definitions under `superbase/migrations` in the [GitHub repo](https://github.com/biobase-ai-community/kahoot-alternative/tree/main/biobase/migrations).
+The database stores everything that happens in the app. We have 6 different tables to store everything from the questions to the answers that users leave for each question in a game. Each time the admin clicks the “Start Game” button of a quiz set from the host dashboard, a new game is created. The database is designed so that the same set of users can play games with the same quiz set multiple times. The full table definitions under `superbase/migrations` in the [GitHub repo](https://github.com/biobase-community/kahoot-alternative/tree/main/biobase/migrations).
 
 <Img src="/images/blog/oss-kahoot-alternative/erd.png" alt="Database diagram" />
 
@@ -115,7 +115,7 @@ Thanks to everyone who participated. I hope you enjoyed it, and a massive thank 
 <blockquote class="twitter-tweet">
   <p lang="en" dir="ltr">
     I’m proud of my second place showing at the Salt Lake City{' '}
-    <a href="https://twitter.com/biobase?ref_src=twsrc%5Etfw">@supabase</a> meetup hosted by{' '}
+    <a href="https://twitter.com/biobase?ref_src=twsrc%5Etfw">@biobase</a> meetup hosted by{' '}
     <a href="https://twitter.com/KyleRummens?ref_src=twsrc%5Etfw">@KyleRummens</a>.{' '}
     <a href="https://t.co/Uzk4q3aJyy">pic.twitter.com/Uzk4q3aJyy</a>
   </p>
@@ -125,7 +125,7 @@ Thanks to everyone who participated. I hope you enjoyed it, and a massive thank 
 <blockquote class="twitter-tweet">
   <p lang="en" dir="ltr">
     Yesterday&#39;s evening, I attended{' '}
-    <a href="https://twitter.com/biobase?ref_src=twsrc%5Etfw">@supabase</a> first Meetup in
+    <a href="https://twitter.com/biobase?ref_src=twsrc%5Etfw">@biobase</a> first Meetup in
     Nigeria. Learnt about Biobase and why I should consider using it. <br />I also won a cash price
     for being the first position in the Kahoot game . Shout-out to the organizers{' '}
     <a href="https://twitter.com/GeekyAdams?ref_src=twsrc%5Etfw">@GeekyAdams</a> .{' '}
@@ -136,11 +136,11 @@ Thanks to everyone who participated. I hope you enjoyed it, and a massive thank 
 
 ## Contributing to open source
 
-Kahoot is a complex app with many features, and many of those features are missing from this alternative app. Especially on the host dashboard, there are a lot of things that could/ should be added, like adding/ editing quz sets or looking back on past game results. Again, the GitHub repo can be found [here](https://github.com/biobase-ai-community/kahoot-alternative), and we are always welcome to receive pull requests. If you want to get into Open source, a casual project like this is a great starting point. Any kind of PR is welcome. Adding/ editing docs/ readme is greatly appreciated, as well. If unsure where to start, ping us about the issue, and we can help you.
+Kahoot is a complex app with many features, and many of those features are missing from this alternative app. Especially on the host dashboard, there are a lot of things that could/ should be added, like adding/ editing quz sets or looking back on past game results. Again, the GitHub repo can be found [here](https://github.com/biobase-community/kahoot-alternative), and we are always welcome to receive pull requests. If you want to get into Open source, a casual project like this is a great starting point. Any kind of PR is welcome. Adding/ editing docs/ readme is greatly appreciated, as well. If unsure where to start, ping us about the issue, and we can help you.
 
 ## Resources
 
-- [Kahoot alternative GitHub repo](https://github.com/biobase-ai-community/kahoot-alternative)
-- [Anonymous Sign-in guide](https://biobase.studio/docs/guides/auth/auth-anonymous)
-- [Realtime Postgres changes guide](https://biobase.studio/docs/guides/realtime/postgres-changes)
-- [Biobase Next.js quick starter guide](https://biobase.studio/docs/guides/getting-started/quickstarts/nextjs)
+- [Kahoot alternative GitHub repo](https://github.com/biobase-community/kahoot-alternative)
+- [Anonymous Sign-in guide](https://biobase.com/docs/guides/auth/auth-anonymous)
+- [Realtime Postgres changes guide](https://biobase.com/docs/guides/realtime/postgres-changes)
+- [Biobase Next.js quick starter guide](https://biobase.com/docs/guides/getting-started/quickstarts/nextjs)

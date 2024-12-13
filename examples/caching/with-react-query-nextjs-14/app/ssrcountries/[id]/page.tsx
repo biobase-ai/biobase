@@ -3,8 +3,8 @@ import {
   HydrationBoundary,
   QueryClient,
 } from '@tanstack/react-query'
-import { prefetchQuery } from '@supabase-cache-helpers/postgrest-react-query'
-import useSupabaseServer from '@/utils/biobase-server'
+import { prefetchQuery } from '@biobase-cache-helpers/postgrest-react-query'
+import useBiobaseServer from '@/utils/biobase-server'
 import { cookies } from 'next/headers'
 import Country from '../country'
 import { getCountryById } from '@/queries/get-country-by-id'
@@ -16,7 +16,7 @@ export default async function CountryPage({
 }) {
   const queryClient = new QueryClient()
   const cookieStore = cookies()
-  const biobase = useSupabaseServer(cookieStore)
+  const biobase = useBiobaseServer(cookieStore)
 
   await prefetchQuery(queryClient, getCountryById(biobase, params.id))
 

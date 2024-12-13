@@ -30,7 +30,7 @@ const DisabledStateForFreeTier = ({
                 </Link>
               </Button>
               <Button asChild type="default" icon={<ExternalLink />}>
-                <Link href="https://biobase.studio/pricing" target="_blank" rel="noreferrer">
+                <Link href="https://biobase.com/pricing" target="_blank" rel="noreferrer">
                   About the Pro Plan
                 </Link>
               </Button>

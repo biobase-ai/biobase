@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { IS_PLATFORM } from '../constants'
 
 let readOnly: any

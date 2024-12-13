@@ -3,11 +3,6 @@ import { cn } from 'ui'
 
 const logos = [
   {
-    image: `/images/logos/publicity/github.svg`,
-    alt: 'github',
-    name: 'github',
-  },
-  {
     image: `/images/logos/publicity/mozilla.svg`,
     alt: 'mozilla',
     name: 'mozilla',
@@ -37,7 +32,7 @@ const EnterpriseLogos: React.FC<Props> = ({ className }) => {
   return (
     <div
       className={cn(
-        'flex lg:grid grid-cols-2 xl:flex flex-nowrap gap-4 md:gap-8 lg:gap-4 2xl:gap-8',
+        'flex lg:grid grid-cols-2 xl:flex flex-wrap gap-4 md:gap-8 lg:gap-4 2xl:gap-8',
         className
       )}
       suppressHydrationWarning

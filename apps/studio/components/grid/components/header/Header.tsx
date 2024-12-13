@@ -1,6 +1,8 @@
+import * as Tooltip from '@radix-ui/react-tooltip'
 import { PermissionAction } from '@supabase/shared-types/out/constants'
+import clsx from 'clsx'
 import saveAs from 'file-saver'
-import { ArrowUp, ChevronDown, FileText, Trash } from 'lucide-react'
+import { ArrowUp, ChevronDown, Download, FileText, Trash, X } from 'lucide-react'
 import Papa from 'papaparse'
 import { ReactNode, useState } from 'react'
 import { toast } from 'sonner'
@@ -9,7 +11,6 @@ import { useDispatch, useTrackedState } from 'components/grid/store/Store'
 import type { Filter, Sort, SupaTable } from 'components/grid/types'
 import { formatTableRowsToSQL } from 'components/interfaces/TableGridEditor/TableEntity.utils'
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
-import { ButtonTooltip } from 'components/ui/ButtonTooltip'
 import { useTableRowsCountQuery } from 'data/table-rows/table-rows-count-query'
 import { fetchAllTableRows, useTableRowsQuery } from 'data/table-rows/table-rows-query'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
@@ -26,26 +27,16 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  Separator,
 } from 'ui'
 import FilterPopover from './filter/FilterPopover'
 import { SortPopover } from './sort'
-import Link from 'next/link'
+import { Markdown } from 'components/interfaces/Markdown'
 
 // [Joshen] CSV exports require this guard as a fail-safe if the table is
 // just too large for a browser to keep all the rows in memory before
 // exporting. Either that or export as multiple CSV sheets with max n rows each
 export const MAX_EXPORT_ROW_COUNT = 500000
-export const MAX_EXPORT_ROW_COUNT_MESSAGE = (
-  <>
-    Sorry! We're unable to support exporting row counts larger than $
-    {MAX_EXPORT_ROW_COUNT.toLocaleString()} at the moment. Alternatively, you may consider using
-    <Link href="https://biobase.studio/docs/reference/cli/biobase-db-dump" target="_blank">
-      pg_dump
-    </Link>{' '}
-    via our CLI instead.
-  </>
-)
+export const MAX_EXPORT_ROW_COUNT_MESSAGE = `Sorry! We're unable to support exporting row counts larger than ${MAX_EXPORT_ROW_COUNT.toLocaleString()} at the moment. Alternatively, you may consider using [pg_dump](https://biobase.com/docs/reference/cli/biobase-db-dump) via our CLI instead.`
 
 export type HeaderProps = {
   table: SupaTable
@@ -73,7 +64,7 @@ const Header = ({
 
   return (
     <div>
-      <div className="flex h-10 items-center justify-between bg-dash-sidebar px-1.5 py-1.5 gap-2 overflow-x-auto">
+      <div className="flex h-10 items-center justify-between bg-dash-sidebar px-5 py-1.5 gap-2 overflow-x-auto">
         {customHeader ? (
           <>{customHeader}</>
         ) : (
@@ -122,7 +113,7 @@ const DefaultHeader = ({ table, onAddColumn, onAddRow, onImportData }: DefaultHe
       </div>
       {canAddNew && (
         <>
-          <div className="h-[20px] w-px border-r border-control" />
+          <div className="h-[20px] w-px border-r border-control"></div>
           <div className="flex items-center gap-2">
             {canCreateColumns && (
               <DropdownMenu>
@@ -204,7 +195,7 @@ const DefaultHeader = ({ table, onAddColumn, onAddRow, onImportData }: DefaultHe
                                 className="-translate-x-[2px]"
                               />
                               <ArrowUp
-                                className={cn(
+                                className={clsx(
                                   'transition duration-200 absolute bottom-0 right-0 translate-y-1 opacity-0 bg-brand-400 rounded-full',
                                   'group-data-[highlighted]:translate-y-0 group-data-[highlighted]:text-brand group-data-[highlighted]:opacity-100'
                                 )}
@@ -248,9 +239,10 @@ const RowHeader = ({ table, sorts, filters }: RowHeaderProps) => {
   const [isExporting, setIsExporting] = useState(false)
 
   const { data } = useTableRowsQuery({
+    queryKey: [table.schema, table.name],
     projectRef: project?.ref,
     connectionString: project?.connectionString,
-    tableId: table.id,
+    table,
     sorts,
     filters,
     page: snap.page,
@@ -260,11 +252,11 @@ const RowHeader = ({ table, sorts, filters }: RowHeaderProps) => {
 
   const { data: countData } = useTableRowsCountQuery(
     {
+      queryKey: [table?.schema, table?.name, 'count-estimate'],
       projectRef: project?.ref,
       connectionString: project?.connectionString,
-      tableId: table.id,
+      table,
       filters,
-      enforceExactCount: snap.enforceExactCount,
       impersonatedRole: roleImpersonationState.role,
     },
     { keepPreviousData: true }
@@ -299,9 +291,7 @@ const RowHeader = ({ table, sorts, filters }: RowHeaderProps) => {
     setIsExporting(true)
 
     if (allRowsSelected && totalRows > MAX_EXPORT_ROW_COUNT) {
-      toast.error(
-        <div className="prose text-sm text-foreground">{MAX_EXPORT_ROW_COUNT_MESSAGE}</div>
-      )
+      toast.error(<Markdown content={MAX_EXPORT_ROW_COUNT_MESSAGE} className="text-foreground" />)
       return setIsExporting(false)
     }
 
@@ -342,9 +332,7 @@ const RowHeader = ({ table, sorts, filters }: RowHeaderProps) => {
     setIsExporting(true)
 
     if (allRowsSelected && totalRows > MAX_EXPORT_ROW_COUNT) {
-      toast.error(
-        <div className="prose text-sm text-foreground">{MAX_EXPORT_ROW_COUNT_MESSAGE}</div>
-      )
+      toast.error(<Markdown content={MAX_EXPORT_ROW_COUNT_MESSAGE} className="text-foreground" />)
       return setIsExporting(false)
     }
 
@@ -387,61 +375,82 @@ const RowHeader = ({ table, sorts, filters }: RowHeaderProps) => {
   })
 
   return (
-    <div className="flex items-center gap-x-2">
-      {editable && (
-        <ButtonTooltip
-          type="default"
-          size="tiny"
-          icon={<Trash />}
-          onClick={onRowsDelete}
-          disabled={allRowsSelected && isImpersonatingRole}
-          tooltip={{
-            content: {
-              side: 'bottom',
-              text:
-                allRowsSelected && isImpersonatingRole
-                  ? 'Table truncation is not supported when impersonating a role'
-                  : undefined,
-            },
-          }}
-        >
+    <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
+        <Button type="default" className="px-1" icon={<X />} onClick={deselectRows} />
+        <span className="text-xs text-foreground">
           {allRowsSelected
-            ? `Delete all rows in table`
+            ? `All rows in table selected`
             : selectedRows.size > 1
-              ? `Delete ${selectedRows.size} rows`
-              : `Delete ${selectedRows.size} row`}
-        </ButtonTooltip>
-      )}
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button
-            type="default"
-            size="tiny"
-            iconRight={<ChevronDown />}
-            loading={isExporting}
-            disabled={isExporting}
-          >
-            Export
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-40">
-          <DropdownMenuItem onClick={onRowsExportCSV}>
-            <span className="text-foreground-light">Export to CSV</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem onClick={onRowsExportSQL}>Export to SQL</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-
-      {!allRowsSelected && totalRows > allRows.length && (
-        <>
-          <div className="h-6 ml-0.5">
-            <Separator orientation="vertical" />
-          </div>
-          <Button type="text" onClick={() => onSelectAllRows()}>
+              ? `${selectedRows.size} rows selected`
+              : `${selectedRows.size} row selected`}
+        </span>
+        {!allRowsSelected && totalRows > allRows.length && (
+          <Button type="link" onClick={() => onSelectAllRows()}>
             Select all rows in table
           </Button>
-        </>
-      )}
+        )}
+      </div>
+      <div className="h-[20px] border-r border-strong" />
+      <div className="flex items-center gap-2">
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <Button
+              type="primary"
+              size="tiny"
+              icon={<Download />}
+              loading={isExporting}
+              disabled={isExporting}
+            >
+              Export
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-40">
+            <DropdownMenuItem onClick={onRowsExportCSV}>
+              <span className="text-foreground-light">Export to CSV</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={onRowsExportSQL}>Export to SQL</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        {editable && (
+          <Tooltip.Root delayDuration={0}>
+            <Tooltip.Trigger asChild>
+              <Button
+                type="default"
+                size="tiny"
+                icon={<Trash />}
+                onClick={onRowsDelete}
+                disabled={allRowsSelected && isImpersonatingRole}
+              >
+                {allRowsSelected
+                  ? `Delete all rows in table`
+                  : selectedRows.size > 1
+                    ? `Delete ${selectedRows.size} rows`
+                    : `Delete ${selectedRows.size} row`}
+              </Button>
+            </Tooltip.Trigger>
+
+            {allRowsSelected && isImpersonatingRole && (
+              <Tooltip.Portal>
+                <Tooltip.Content side="bottom">
+                  <Tooltip.Arrow className="radix-tooltip-arrow" />
+                  <div
+                    className={[
+                      'rounded bg-alternative py-1 px-2 leading-none shadow',
+                      'border border-background',
+                    ].join(' ')}
+                  >
+                    <span className="text-xs text-foreground">
+                      Table truncation is not supported when impersonating a role
+                    </span>
+                  </div>
+                </Tooltip.Content>
+              </Tooltip.Portal>
+            )}
+          </Tooltip.Root>
+        )}
+      </div>
     </div>
   )
 }

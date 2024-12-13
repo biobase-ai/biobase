@@ -1,26 +1,10 @@
-@use "sass:math";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @import './../../../packages/ui/build/css/source/global.css';
-  @import './../../../packages/ui/build/css/themes/dark-combined.css';
-  @import './../../../packages/ui/build/css/themes/light.css';
-}
-
-:root {
-  --sidebar-width: 300px;
-  --header-height: 50px;
-  --colors-foreground-light: #71717a;
-  --colors-foreground-muted: #a1a1aa;
-}
-
-@layer utilities {
-  .text-foreground-light {
-    color: var(--colors-foreground-light);
-  }
-}
+@import './../../../packages/ui/build/css/source/global.css';
+@import './../../../packages/ui/build/css/themes/dark-combined.css';
+@import './../../../packages/ui/build/css/themes/light.css';
 
 @font-face {
   font-family: 'custom-font';
@@ -40,6 +24,11 @@
   font-weight: 500;
   font-style: normal;
   font-display: swap;
+}
+
+:root {
+  --sidebar-width: 300px;
+  --header-height: 50px;
 }
 
 body {

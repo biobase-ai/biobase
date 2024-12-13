@@ -1,7 +1,6 @@
 import * as Tooltip from '@radix-ui/react-tooltip'
 import { PermissionAction } from '@supabase/shared-types/out/constants'
 import { useQueryClient } from '@tanstack/react-query'
-import { ExternalLink, Info } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useMemo, useState } from 'react'
@@ -32,11 +31,13 @@ import {
   AlertTitle_Shadcn_,
   Badge,
   Button,
+  CriticalIcon,
   Modal,
   Radio,
   SidePanel,
   WarningIcon,
 } from 'ui'
+import { ExternalLink, Info } from 'lucide-react'
 
 const ComputeInstanceSidePanel = () => {
   const queryClient = useQueryClient()
@@ -44,14 +45,17 @@ const ComputeInstanceSidePanel = () => {
   const { ref: projectRef } = useParams()
   const { project: selectedProject } = useProjectContext()
   const organization = useSelectedOrganization()
+
   const computeSizeChangesDisabled = useFlag('disableComputeSizeChanges')
-  const diskAndComputeForm = useFlag('diskAndComputeForm')
   const [showConfirmationModal, setShowConfirmationModal] = useState(false)
+
   const canUpdateCompute = useCheckPermissions(
     PermissionAction.BILLING_WRITE,
     'stripe.subscriptions'
   )
+
   const isProjectActive = useIsProjectActive()
+
   const { panel, setPanel, closePanel } = useAddonsPagePanel()
   const visible = panel === 'computeInstance'
 
@@ -64,7 +68,7 @@ const ComputeInstanceSidePanel = () => {
         `Successfully updated compute instance to ${selectedCompute?.name}. Your project is currently being restarted to update its instance`,
         { duration: 8000 }
       )
-      setProjectStatus(queryClient, projectRef!, PROJECT_STATUS.RESIZING)
+      setProjectStatus(queryClient, projectRef!, PROJECT_STATUS.RESTORING)
       closePanel()
       router.push(`/project/${projectRef}`)
     },
@@ -78,7 +82,7 @@ const ComputeInstanceSidePanel = () => {
         `Successfully updated compute instance. Your project is currently being restarted to update its instance`,
         { duration: 8000 }
       )
-      setProjectStatus(queryClient, projectRef!, PROJECT_STATUS.RESIZING)
+      setProjectStatus(queryClient, projectRef!, PROJECT_STATUS.RESTORING)
       closePanel()
       router.push(`/project/${projectRef}`)
     },
@@ -172,6 +176,16 @@ const ComputeInstanceSidePanel = () => {
     hasReadReplicas &&
     (isDowngradingToBelowSmall || hasMoreThanTwoReplicasForXLAndAbove)
 
+  useEffect(() => {
+    if (visible) {
+      if (subscriptionCompute !== undefined) {
+        setSelectedOption(subscriptionCompute.variant.identifier)
+      } else {
+        setSelectedOption(defaultInstanceSize)
+      }
+    }
+  }, [visible, isLoading])
+
   const onConfirmUpdateComputeInstance = async () => {
     if (!projectRef) return console.error('Project ref is required')
     if (!projectId) return console.error('Project ID is required')
@@ -195,22 +209,6 @@ const ComputeInstanceSidePanel = () => {
       })
     }
   }
-
-  useEffect(() => {
-    if (visible) {
-      if (subscriptionCompute !== undefined) {
-        setSelectedOption(subscriptionCompute.variant.identifier)
-      } else {
-        setSelectedOption(defaultInstanceSize)
-      }
-    }
-  }, [visible, isLoading])
-
-  useEffect(() => {
-    if (visible && diskAndComputeForm) {
-      router.push(`/project/${projectRef}/settings/compute-and-disk`)
-    }
-  }, [visible, diskAndComputeForm, router, projectRef])
 
   return (
     <>
@@ -243,7 +241,7 @@ const ComputeInstanceSidePanel = () => {
             <h4>Change project compute size</h4>
             <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
               <Link
-                href="https://biobase.studio/docs/guides/platform/compute-add-ons"
+                href="https://biobase.com/docs/guides/platform/compute-add-ons"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -383,7 +381,7 @@ const ComputeInstanceSidePanel = () => {
                 usage-based item and you're billed at the end of your billing cycle based on your
                 compute usage. Read more about{' '}
                 <Link
-                  href="https://biobase.studio/docs/guides/platform/org-based-billing#billing-for-compute-compute-hours"
+                  href="https://biobase.com/docs/guides/platform/org-based-billing#billing-for-compute-compute-hours"
                   target="_blank"
                   rel="noreferrer"
                   className="underline"
@@ -456,6 +454,18 @@ const ComputeInstanceSidePanel = () => {
                 </AlertDescription_Shadcn_>
               </Alert_Shadcn_>
             ) : null}
+
+            {hasChanges &&
+              subscription?.billing_via_partner &&
+              subscription.scheduled_plan_change?.target_plan !== undefined && (
+                <Alert_Shadcn_ variant={'warning'} className="mb-2">
+                  <CriticalIcon />
+                  <AlertDescription_Shadcn_>
+                    You have a scheduled subscription change that will be canceled if you change
+                    your compute size.
+                  </AlertDescription_Shadcn_>
+                </Alert_Shadcn_>
+              )}
           </div>
         </SidePanel.Content>
       </SidePanel>

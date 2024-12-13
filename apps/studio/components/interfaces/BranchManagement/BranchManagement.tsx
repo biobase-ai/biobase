@@ -10,7 +10,6 @@ import { useParams } from 'common'
 import { ScaffoldContainer, ScaffoldSection } from 'components/layouts/Scaffold'
 import AlertError from 'components/ui/AlertError'
 import { ButtonTooltip } from 'components/ui/ButtonTooltip'
-import { DocsButton } from 'components/ui/DocsButton'
 import NoPermission from 'components/ui/NoPermission'
 import { useBranchDeleteMutation } from 'data/branches/branch-delete-mutation'
 import { useBranchesDisableMutation } from 'data/branches/branches-disable-mutation'
@@ -78,7 +77,25 @@ const BranchManagement = () => {
     isLoading: isLoadingBranches,
     isError: isErrorBranches,
     isSuccess: isSuccessBranches,
-  } = useBranchesQuery({ projectRef })
+  } = useBranchesQuery(
+    { projectRef },
+    {
+      refetchInterval(data) {
+        if (
+          data?.some(
+            (branch) =>
+              branch.status === 'CREATING_PROJECT' ||
+              branch.status === 'RUNNING_MIGRATIONS' ||
+              branch.status === 'MIGRATIONS_FAILED'
+          )
+        ) {
+          return 1000 * 3 // 3 seconds
+        }
+
+        return false
+      },
+    }
+  )
   const [[mainBranch], previewBranchesUnsorted] = partition(branches, (branch) => branch.is_default)
   const previewBranches = previewBranchesUnsorted.sort((a, b) =>
     new Date(a.updated_at) < new Date(b.updated_at) ? 1 : -1
@@ -173,21 +190,25 @@ const BranchManagement = () => {
                     All branches
                   </Button>
                 </div>
-                <div className="flex items-center justify-between gap-x-2">
+                <div className="flex items-center justify-between space-x-2">
                   <Button
-                    asChild
-                    type="text"
+                    type={'text'}
                     icon={<MessageCircle className="text-muted" strokeWidth={1} />}
+                    asChild
                   >
-                    <a
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://github.com/orgs/biobase/discussions/18937"
-                    >
+                    <a href="https://github.com/orgs/biobase/discussions/18937" target="_blank">
                       Branching Feedback
                     </a>
                   </Button>
-                  <DocsButton href="https://biobase.studio/docs/guides/platform/branching" />
+                  <Button type="default" icon={<ExternalLink strokeWidth={1.5} />}>
+                    <Link
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://biobase.com/docs/guides/platform/branching"
+                    >
+                      Documentation
+                    </Link>
+                  </Button>
                   <ButtonTooltip
                     type="primary"
                     disabled={!canCreateBranches}
@@ -195,9 +216,7 @@ const BranchManagement = () => {
                     tooltip={{
                       content: {
                         side: 'bottom',
-                        text: !canCreateBranches
-                          ? 'You need additional permissions to create branches'
-                          : undefined,
+                        text: 'You need additional permissions to create branches',
                       },
                     }}
                   >
@@ -252,9 +271,7 @@ const BranchManagement = () => {
                         tooltip={{
                           content: {
                             side: 'bottom',
-                            text: !canDisableBranching
-                              ? 'You need additional permissions to disable branching'
-                              : undefined,
+                            text: 'You need additional permissions to disable branching',
                           },
                         }}
                       >

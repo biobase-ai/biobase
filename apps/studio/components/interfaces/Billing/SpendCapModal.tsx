@@ -1,5 +1,16 @@
-import { DocsButton } from 'components/ui/DocsButton'
-import { Button, Modal, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from 'ui'
+import { ExternalLink } from 'lucide-react'
+import Link from 'next/link'
+import { Button, Modal } from 'ui'
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from 'ui'
 
 interface SpendCapModalProps {
   visible: boolean
@@ -15,7 +26,11 @@ const SpendCapModal = ({ visible, onHide }: SpendCapModalProps) => {
       header={
         <div className="flex justify-between items-center">
           <span>Spend Cap</span>
-          <DocsButton href="https://biobase.studio/docs/guides/platform/spend-cap" />
+          <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
+            <a target="_blank" href="https://biobase.com/docs/guides/platform/spend-cap">
+              Documentation
+            </a>
+          </Button>
         </div>
       }
       showCloseButton={false}

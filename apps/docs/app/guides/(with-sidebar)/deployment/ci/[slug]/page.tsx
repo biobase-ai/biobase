@@ -12,11 +12,11 @@ import { removeTitle } from '~/lib/mdx/plugins/remarkRemoveTitle'
 import remarkPyMdownTabs from '~/lib/mdx/plugins/remarkTabs'
 
 // We fetch these docs at build time from an external repo
-const org = 'biobase-ai'
+const org = 'biobase'
 const repo = 'setup-cli'
 const branch = 'gh-pages'
 const docsDir = 'docs'
-const externalSite = 'https://biobase-ai.github.io/setup-cli'
+const externalSite = 'https://biobase.github.io/setup-cli'
 
 // Each external docs page is mapped to a local page
 const pageMap = [

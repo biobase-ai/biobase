@@ -1,8 +1,9 @@
-import { useQuery, UseQueryOptions } from '@tanstack/react-query'
-import { executeSql, ExecuteSqlError } from '../sql/execute-sql-query'
-import { databaseKeys } from './keys'
+import { UseQueryOptions } from '@tanstack/react-query'
+import { ExecuteSqlData, ExecuteSqlError, useExecuteSqlQuery } from '../sql/execute-sql-query'
 
-export const getKeywordsSql = () => {
+export type DatabaseKeyword = { word: string }
+
+export const getKeywordsQuery = () => {
   const sql = /* SQL */ `
 SELECT word FROM pg_get_keywords();
 `.trim()
@@ -15,32 +16,27 @@ export type KeywordsVariables = {
   connectionString?: string
 }
 
-export async function getKeywords(
-  { projectRef, connectionString }: KeywordsVariables,
-  signal?: AbortSignal
-) {
-  const sql = getKeywordsSql()
-
-  const { result } = await executeSql(
-    { projectRef, connectionString, sql, queryKey: ['keywords'] },
-    signal
-  )
-
-  return result.map((x: { word: string }) => x.word.toLocaleLowerCase()) as string[]
-}
-
-export type KeywordsData = Awaited<ReturnType<typeof getKeywords>>
+export type KeywordsData = { result: string[] }
 export type KeywordsError = ExecuteSqlError
 
-export const useKeywordsQuery = <TData = KeywordsData>(
+export const useKeywordsQuery = <TData extends KeywordsData = KeywordsData>(
   { projectRef, connectionString }: KeywordsVariables,
-  { enabled = true, ...options }: UseQueryOptions<KeywordsData, KeywordsError, TData> = {}
-) =>
-  useQuery<KeywordsData, KeywordsError, TData>(
-    databaseKeys.keywords(projectRef),
-    ({ signal }) => getKeywords({ projectRef, connectionString }, signal),
+  options: UseQueryOptions<ExecuteSqlData, KeywordsError, TData> = {}
+) => {
+  return useExecuteSqlQuery(
     {
-      enabled: enabled && typeof projectRef !== 'undefined',
+      projectRef,
+      connectionString,
+      sql: getKeywordsQuery(),
+      queryKey: ['keywords'],
+    },
+    {
+      select: (data) => {
+        return {
+          result: data.result.map((x: DatabaseKeyword) => x.word.toLocaleLowerCase()),
+        } as any
+      },
       ...options,
     }
   )
+}

@@ -10,11 +10,8 @@ import { useDatabasePublicationsQuery } from 'data/database-publications/databas
 import { useDatabasePublicationUpdateMutation } from 'data/database-publications/database-publications-update-mutation'
 import type { Constraint } from 'data/database/constraints-query'
 import type { ForeignKeyConstraint } from 'data/database/foreign-key-constraints-query'
-import { databaseKeys } from 'data/database/keys'
 import { entityTypeKeys } from 'data/entity-types/keys'
-import { tableEditorKeys } from 'data/table-editor/keys'
-import { isTableLike } from 'data/table-editor/table-editor-types'
-import { tableRowKeys } from 'data/table-rows/keys'
+import { sqlKeys } from 'data/sql/keys'
 import { useTableRowCreateMutation } from 'data/table-rows/table-row-create-mutation'
 import { useTableRowUpdateMutation } from 'data/table-rows/table-row-update-mutation'
 import { tableKeys } from 'data/tables/keys'
@@ -114,7 +111,7 @@ const SidePanelEditor = ({
         await createTableRows({
           projectRef: project.ref,
           connectionString: project.connectionString,
-          table: selectedTable,
+          table: selectedTable as any,
           payload,
           enumArrayColumns,
           impersonatedRole: getImpersonatedRole(),
@@ -130,7 +127,7 @@ const SidePanelEditor = ({
             await updateTableRow({
               projectRef: project.ref,
               connectionString: project.connectionString,
-              table: selectedTable,
+              table: selectedTable as any,
               configuration,
               payload,
               enumArrayColumns,
@@ -219,16 +216,12 @@ const SidePanelEditor = ({
     const selectedColumnToEdit = snap.sidePanel?.type === 'column' && snap.sidePanel.column
     const { columnId, primaryKey, foreignKeyRelations, existingForeignKeyRelations } = configuration
 
-    if (!project || selectedTable === undefined) {
-      return console.error('no project or table selected')
-    }
-
     const response = isNewRecord
       ? await createColumn({
           projectRef: project?.ref!,
           connectionString: project?.connectionString,
           payload: payload as CreateColumnPayload,
-          selectedTable,
+          selectedTable: selectedTable as PostgresTable,
           primaryKey,
           foreignKeyRelations,
         })
@@ -237,7 +230,7 @@ const SidePanelEditor = ({
           connectionString: project?.connectionString,
           id: columnId as string,
           payload: payload as UpdateColumnPayload,
-          selectedTable,
+          selectedTable: selectedTable as PostgresTable,
           primaryKey,
           foreignKeyRelations,
           existingForeignKeyRelations,
@@ -256,20 +249,20 @@ const SidePanelEditor = ({
       }
 
       await Promise.all([
-        queryClient.invalidateQueries(tableEditorKeys.tableEditor(project?.ref, selectedTable?.id)),
+        queryClient.invalidateQueries(tableKeys.table(project?.ref, selectedTable!.id)),
+        queryClient.invalidateQueries(sqlKeys.query(project?.ref, ['foreign-key-constraints'])),
         queryClient.invalidateQueries(
-          databaseKeys.foreignKeyConstraints(project?.ref, selectedTable?.schema)
-        ),
-        queryClient.invalidateQueries(
-          databaseKeys.tableDefinition(project?.ref, selectedTable?.id)
+          sqlKeys.query(project?.ref, [
+            'table-definition',
+            selectedTable!.schema,
+            selectedTable!.name,
+          ])
         ),
         queryClient.invalidateQueries(entityTypeKeys.list(project?.ref)),
       ])
 
-      // We need to invalidate tableRowsAndCount after tableEditor
-      // to ensure the query sent is correct
       await queryClient.invalidateQueries(
-        tableRowKeys.tableRowsAndCount(project?.ref, selectedTable?.id)
+        sqlKeys.query(project?.ref, [selectedTable!.schema, selectedTable!.name])
       )
 
       setIsEdited(false)
@@ -439,7 +432,7 @@ const SidePanelEditor = ({
           isRLSEnabled,
           importContent,
         })
-        if (isRealtimeEnabled) await updateTableRealtime(table, true)
+        if (isRealtimeEnabled) await updateTableRealtime(table as PostgresTable, true)
 
         await Promise.all([
           queryClient.invalidateQueries(tableKeys.list(project?.ref, table.schema, includeColumns)),
@@ -447,7 +440,7 @@ const SidePanelEditor = ({
         ])
 
         toast.success(`Table ${table.name} is good to go!`, { id: toastId })
-        onTableCreated(table)
+        onTableCreated(table as PostgresTable)
       } else if (selectedTable) {
         toastId = toast.loading(`Updating table: ${selectedTable?.name}...`)
 
@@ -463,16 +456,27 @@ const SidePanelEditor = ({
           primaryKey,
         })
 
-        if (table === undefined) {
-          return toast.error('Failed to update table')
-        }
-        if (isTableLike(table)) {
-          await updateTableRealtime(table, isRealtimeEnabled)
-        }
+        await updateTableRealtime(table, isRealtimeEnabled)
 
         if (hasError) {
           toast(`Table ${table.name} has been updated, but there were some errors`, { id: toastId })
         } else {
+          queryClient.invalidateQueries(sqlKeys.query(project?.ref, ['foreign-key-constraints']))
+          await Promise.all([
+            queryClient.invalidateQueries(
+              sqlKeys.query(project?.ref, [selectedTable.schema, selectedTable.name])
+            ),
+            queryClient.invalidateQueries(
+              sqlKeys.query(project?.ref, [
+                'table-definition',
+                selectedTable.schema,
+                selectedTable.name,
+              ])
+            ),
+            queryClient.invalidateQueries(entityTypeKeys.list(project?.ref)),
+            queryClient.invalidateQueries(tableKeys.table(project?.ref, table.id)),
+          ])
+
           toast.success(`Successfully updated ${table.name}!`, { id: toastId })
         }
       }
@@ -547,9 +551,11 @@ const SidePanelEditor = ({
       }
     }
 
-    await queryClient.invalidateQueries(
-      tableRowKeys.tableRowsAndCount(project?.ref, selectedTable?.id)
-    )
+    await Promise.all([
+      queryClient.invalidateQueries(
+        sqlKeys.query(project?.ref, [selectedTable!.schema, selectedTable!.name])
+      ),
+    ])
     toast.success(`Successfully imported ${rowCount} rows of data into ${selectedTable.name}`, {
       id: toastId,
     })
@@ -581,7 +587,7 @@ const SidePanelEditor = ({
         <ColumnEditor
           column={
             snap.sidePanel?.type === 'column'
-              ? (snap.sidePanel.column as unknown as PostgresColumn)
+              ? (snap.sidePanel.column as PostgresColumn)
               : undefined
           }
           selectedTable={selectedTable}

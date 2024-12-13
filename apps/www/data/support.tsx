@@ -50,7 +50,7 @@ const data = {
         },
         {
           label: 'Join Discord',
-          link: 'https://discord.biobase.studio/',
+          link: 'https://discord.biobase.com/',
           target: '_blank',
           icon: <IconDiscord fill="hsl(var(--background-default))" />,
           type: 'secondary',
@@ -73,13 +73,13 @@ const data = {
     links: [
       {
         label: 'Contact Enterprise Sales',
-        link: 'https://forms.biobase.studio/enterprise',
+        link: 'https://forms.biobase.com/enterprise',
         target: '_blank',
         type: 'default',
       },
       {
         label: 'Open Ticket',
-        link: 'https://biobase.studio/dashboard/support/new',
+        link: 'https://biobase.com/dashboard/support/new',
         target: '_blank',
         icon: <ArrowUpRight />,
         className: '!text-foreground-light hover:!text-foreground',

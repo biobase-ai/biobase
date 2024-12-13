@@ -28,14 +28,14 @@
 </template>
 
 <script setup>
-const biobase = useSupabaseClient()
+const biobase = useBiobaseClient()
 
 const loading = ref(false)
 const username = ref('')
 const website = ref('')
 const avatar_path = ref('')
 
-const user = useSupabaseUser();
+const user = useBiobaseUser();
 const { data: profile } = await useAsyncData('profile', async () => {
     loading.value = true
     const { data } = await biobase
@@ -57,7 +57,7 @@ if (profile.value.username) {
 async function updateProfile() {
     try {
         loading.value = true
-        const user = useSupabaseUser();
+        const user = useBiobaseUser();
         const updates = {
             id: user.value.id,
             username: username.value,
@@ -74,7 +74,7 @@ async function updateProfile() {
     }
 }
 
-const biobaseAuth = useSupabaseAuthClient()
+const biobaseAuth = useBiobaseAuthClient()
 async function signOut() {
     try {
         loading.value = true

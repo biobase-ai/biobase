@@ -1,6 +1,6 @@
 import * as Tooltip from '@radix-ui/react-tooltip'
 import { Maximize2 } from 'lucide-react'
-import { ChangeEvent, InputHTMLAttributes, SyntheticEvent, useEffect, useRef } from 'react'
+import { ChangeEvent, InputHTMLAttributes, SyntheticEvent } from 'react'
 import {
   CalculatedColumn,
   RenderCellProps,
@@ -144,9 +144,10 @@ function SelectCellFormatter({
             <Button
               type="text"
               size="tiny"
-              className="px-1 rdg-row__select-column__edit-action"
+              className="rdg-row__select-column__edit-action"
               icon={<Maximize2 />}
               onClick={onEditClick}
+              style={{ padding: '3px' }}
             />
           </Tooltip.Trigger>
           <Tooltip.Portal>
@@ -182,19 +183,6 @@ function SelectCellHeader({
   'aria-label': ariaLabel,
   'aria-labelledby': ariaLabelledBy,
 }: SelectCellHeaderProps) {
-  const state = useTrackedState()
-  const { selectedRows, allRowsSelected } = state
-  const inputRef = useRef<HTMLInputElement>(null)
-
-  // indeterminate state === some rows are selected but not all
-  const isIndeterminate = selectedRows.size > 0 && !allRowsSelected
-
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.indeterminate = isIndeterminate
-    }
-  }, [isIndeterminate])
-
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     onChange(e.target.checked, (e.nativeEvent as MouseEvent).shiftKey)
   }
@@ -202,7 +190,6 @@ function SelectCellHeader({
   return (
     <div className="sb-grid-select-cell__header">
       <input
-        ref={inputRef}
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
         tabIndex={tabIndex}

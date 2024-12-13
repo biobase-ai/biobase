@@ -10,13 +10,13 @@ import 'package:mfa_app/pages/mfa/enroll_page.dart';
 
 void main() async {
   await Biobase.initialize(
-    url: 'YOUR_BIOBASE_URL',
+    url: 'YOUR_SUPABASE_URL',
     anonKey: 'YOUR_ANON_KEY',
   );
   runApp(const MyApp());
 }
 
-/// Extract SupabaseClient instance in a handy variable
+/// Extract BiobaseClient instance in a handy variable
 final biobase = Biobase.instance.client;
 
 final _router = GoRouter(

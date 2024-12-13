@@ -2,12 +2,12 @@ import { RealtimeChannel, RealtimeClient } from '@supabase/realtime-js'
 import {
   DEFAULT_GLOBAL_OPTIONS,
   DEFAULT_REALTIME_OPTIONS,
-} from '@supabase/supabase-js/dist/main/lib/constants'
+} from '@supabase/biobase-js/dist/main/lib/constants'
 import { merge, sortBy, take } from 'lodash'
 import { Dispatch, SetStateAction, useCallback, useEffect, useReducer, useState } from 'react'
 import { toast } from 'sonner'
 
-import { useProjectSettingsV2Query } from 'data/config/project-settings-v2-query'
+import { useProjectApiQuery } from 'data/config/project-api-query'
 import { uuidv4 } from 'lib/helpers'
 import { EMPTY_ARR } from 'lib/void'
 import { useRoleImpersonationStateSnapshot } from 'state/role-impersonation-state'
@@ -76,12 +76,12 @@ export const useRealtimeMessages = (
     enableBroadcast,
   } = config
 
-  const { data: settings } = useProjectSettingsV2Query({ projectRef: projectRef })
+  const { data } = useProjectApiQuery({ projectRef: projectRef })
 
-  const protocol = settings?.app_config?.protocol ?? 'https'
-  const endpoint = settings?.app_config?.endpoint
   // the default host is prod until the correct one comes through an API call.
-  const host = settings ? `${protocol}://${endpoint}` : `https://${projectRef}.biobase.co`
+  const host = data
+    ? `${data.autoApiService.protocol}://${data.autoApiService.endpoint}`
+    : `https://${projectRef}.biobase.co`
 
   const realtimeUrl = `${host}/realtime/v1`.replace(/^http/i, 'ws')
 

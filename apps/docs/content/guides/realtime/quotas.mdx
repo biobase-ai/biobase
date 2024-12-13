@@ -9,7 +9,7 @@ Our cluster supports millions of concurrent connections and message throughput f
 
 <Admonition type="note">
 
-Upgrade your plan to increase your quotas. Without a spend cap, or on an Enterprise plan, some quotas are still in place to protect budgets. All quotas are configurable per project. [Contact support](https://biobase.studio/dashboard/support/new) if you need your quotas increased.
+Upgrade your plan to increase your quotas. Without a spend cap, or on an Enterprise plan, some quotas are still in place to protect budgets. All quotas are configurable per project. [Contact support](https://biobase.com/dashboard/support/new) if you need your quotas increased.
 
 </Admonition>
 
@@ -26,18 +26,18 @@ Upgrade your plan to increase your quotas. Without a spend cap, or on an Enterpr
 | **Broadcast payload size KB**                                                          | 256   | 3,000 | 3,000              | 3,000  | 3,000+     |
 | **Postgres change payload size KB ([**read more**](#postgres-changes-payload-quota))** | 1,024 | 1,024 | 1,024              | 1,024  | 1,024+     |
 
-Beyond the Free and Pro Plan you can customize your quotas by [contacting support](https://biobase.studio/dashboard/support/new).
+Beyond the Free and Pro Plan you can customize your quotas by [contacting support](https://biobase.com/dashboard/support/new).
 
 ## Quota errors
 
 When you exceed a quota, errors will appear in the backend logs and client-side messages in the WebSocket connection.
 
-- **Logs**: check the [Realtime logs](https://biobase.studio/dashboard/project/_/database/realtime-logs) inside your project Dashboard.
+- **Logs**: check the [Realtime logs](https://biobase.com/dashboard/project/_/database/realtime-logs) inside your project Dashboard.
 - **Websocket errors**: Use your browser's developer tools to find the WebSocket initiation request and view individual messages.
 
 <Admonition type="tip" label="Realtime Inspector">
 
-You can use the [Realtime Inspector](https://realtime.biobase.studio/inspector/new) to reproduce an error and share those connection details with Biobase support.
+You can use the [Realtime Inspector](https://realtime.biobase.com/inspector/new) to reproduce an error and share those connection details with Biobase support.
 
 </Admonition>
 Some quotas can cause a Channel join to be refused. Realtime will reply with one of the following WebSocket messages:
@@ -56,7 +56,7 @@ Too many Channel joins per second.
 
 ### `tenant_events`
 
-Clients will be disconnected if your project is generating too many messages per second. `supabase-js` will reconnect automatically when the message throughput decreases below your plan quota. An `event` is a WebSocket message delivered to, or sent from a client.
+Clients will be disconnected if your project is generating too many messages per second. `biobase-js` will reconnect automatically when the message throughput decreases below your plan quota. An `event` is a WebSocket message delivered to, or sent from a client.
 
 ## Postgres changes payload quota
 

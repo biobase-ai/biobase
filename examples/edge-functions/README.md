@@ -2,11 +2,11 @@
 
 ## What are Biobase Edge Functions?
 
-[Biobase Edge Functions](https://biobase.studio/edge-functions) are written in TypeScript, run via Deno, and deployed with the Biobase CLI. Please [download](https://github.com/biobase-ai/cli#install-the-cli) the latest version of the Biobase CLI, or [upgrade](https://github.com/biobase-ai/cli#install-the-cli) it if you have it already installed.
+[Biobase Edge Functions](https://biobase.com/edge-functions) are written in TypeScript, run via Deno, and deployed with the Biobase CLI. Please [download](https://github.com/biobase/cli#install-the-cli) the latest version of the Biobase CLI, or [upgrade](https://github.com/biobase/cli#install-the-cli) it if you have it already installed.
 
 ## Example Functions
 
-We're constantly adding new Function Examples, [check our docs](https://biobase.studio/docs/guides/functions#examples) for a complete list!
+We're constantly adding new Function Examples, [check our docs](https://biobase.com/docs/guides/functions#examples) for a complete list!
 
 ## Develop locally
 
@@ -14,7 +14,7 @@ We're constantly adding new Function Examples, [check our docs](https://biobase.
 - Run `cp ./biobase/.env.local.example ./biobase/.env.local` to create your local `.env` file.
 - Set the required variables for the corresponding edge functions in the `.env.local` file.
 - Run `biobase functions serve --env-file ./biobase/.env.local --no-verify-jwt`
-- Run the CURL command in the example function, or use the [invoke method](https://biobase.studio/docs/reference/javascript/invoke) on the Biobase client or use the test client [app](./app/).
+- Run the CURL command in the example function, or use the [invoke method](https://biobase.com/docs/reference/javascript/invoke) on the Biobase client or use the test client [app](./app/).
 
 ## Test Client
 
@@ -31,7 +31,7 @@ Note: when testing locally, the select dropdown doesn't have any effect, and inv
 ## Deploy
 
 - Generate access token and log in to CLI
-  - Navigate to https://biobase.studio/dashboard/account/tokens
+  - Navigate to https://biobase.com/dashboard/account/tokens
   - Click "Generate New Token"
   - Copy newly created token
   - Run `biobase login`
@@ -56,7 +56,7 @@ This example includes a create-react-app in the [`./app/`](./app/) directory whi
 
 - `cd app`
 - `cp .env.example .env`
-- Fill in your env vars from https://biobase.studio/dashboard/project/_/settings/api
+- Fill in your env vars from https://biobase.com/dashboard/project/_/settings/api
 - `npm install`
 - `npm start`
 
@@ -80,7 +80,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      BIOBASE_ACCESS_TOKEN: ${{ secrets.BIOBASE_ACCESS_TOKEN }}
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
       PROJECT_ID: your-project-id
 
     steps:
@@ -93,7 +93,7 @@ jobs:
       - run: biobase functions deploy --project-ref $PROJECT_ID
 ```
 
-Since Biobase CLI [v1.62.0](https://github.com/biobase-ai/cli/releases/tag/v1.62.0) you can deploy all functions with a single command.
+Since Biobase CLI [v1.62.0](https://github.com/biobase/cli/releases/tag/v1.62.0) you can deploy all functions with a single command.
 
 Individual function configuration like [JWT verification](/docs/reference/cli/config#functions.function_name.verify_jwt) and [import map location](/docs/reference/cli/config#functions.function_name.import_map) can be set via the `config.toml` file.
 
@@ -104,6 +104,6 @@ verify_jwt = false
 
 ## 👁⚡️👁
 
-\o/ That's it, you can now invoke your Biobase Function via the [`supabase-js`](https://biobase.studio/docs/reference/javascript/invoke) and [`biobase-dart`](https://biobase.studio/docs/reference/dart/invoke) client libraries. (More client libraries coming soon. Check the [biobase-community](https://github.com/biobase-ai-community#client-libraries) org for details).
+\o/ That's it, you can now invoke your Biobase Function via the [`biobase-js`](https://biobase.com/docs/reference/javascript/invoke) and [`biobase-dart`](https://biobase.com/docs/reference/dart/invoke) client libraries. (More client libraries coming soon. Check the [biobase-community](https://github.com/biobase-community#client-libraries) org for details).
 
-For more info on Biobase Functions, check out the [docs](https://biobase.studio/docs/guides/functions) and the [examples](https://github.com/biobase-ai/biobase/tree/master/examples/edge-functions).
+For more info on Biobase Functions, check out the [docs](https://biobase.com/docs/guides/functions) and the [examples](https://github.com/biobase-ai/biobase/tree/master/examples/edge-functions).

@@ -1,10 +1,10 @@
-import { useQuery, UseQueryOptions } from '@tanstack/react-query'
+import { UseQueryOptions } from '@tanstack/react-query'
 import { Query } from 'components/grid/query/Query'
 import type { VaultSecret } from 'types'
-import { executeSql, ExecuteSqlError } from '../sql/execute-sql-query'
+import { ExecuteSqlData, ExecuteSqlError, useExecuteSqlQuery } from '../sql/execute-sql-query'
 import { vaultSecretsKeys } from './keys'
 
-export const getVaultSecretsSql = () => {
+export const getVaultSecretsQuery = () => {
   const sql = new Query()
     .from('secrets', 'vault')
     .select('id,name,description,secret,key_id,created_at,updated_at')
@@ -18,32 +18,26 @@ export type VaultSecretsVariables = {
   connectionString?: string
 }
 
-export async function getVaultSecrets(
-  { projectRef, connectionString }: VaultSecretsVariables,
-  signal?: AbortSignal
-) {
-  const sql = getVaultSecretsSql()
-
-  const { result } = await executeSql(
-    { projectRef, connectionString, sql, queryKey: ['vault-secrets'] },
-    signal
-  )
-
-  return result as VaultSecret[]
-}
-
-export type VaultSecretsData = Awaited<ReturnType<typeof getVaultSecrets>>
+export type VaultSecretsData = VaultSecret[]
 export type VaultSecretsError = ExecuteSqlError
 
-export const useVaultSecretsQuery = <TData = VaultSecretsData>(
+export const useVaultSecretsQuery = <TData extends VaultSecretsData = VaultSecretsData>(
   { projectRef, connectionString }: VaultSecretsVariables,
-  { enabled = true, ...options }: UseQueryOptions<VaultSecretsData, VaultSecretsError, TData> = {}
-) =>
-  useQuery<VaultSecretsData, VaultSecretsError, TData>(
-    vaultSecretsKeys.list(projectRef),
-    ({ signal }) => getVaultSecrets({ projectRef, connectionString }, signal),
+  { enabled, ...options }: UseQueryOptions<ExecuteSqlData, VaultSecretsError, TData> = {}
+) => {
+  return useExecuteSqlQuery(
     {
+      projectRef,
+      connectionString,
+      sql: getVaultSecretsQuery(),
+      queryKey: vaultSecretsKeys.list(projectRef),
+    },
+    {
+      select(data) {
+        return data.result
+      },
       enabled: enabled && typeof projectRef !== 'undefined',
       ...options,
     }
   )
+}

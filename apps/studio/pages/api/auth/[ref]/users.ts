@@ -1,14 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import SqlString from 'sqlstring'
-import { createClient } from '@supabase/supabase-js'
 
 import { post } from 'lib/common/fetch'
 import { tryParseInt } from 'lib/helpers'
 import { PG_META_URL } from 'lib/constants'
 import apiWrapper from 'lib/api/apiWrapper'
 import { constructHeaders } from 'lib/api/apiHelpers'
-
-const biobase = createClient(process.env.BIOBASE_URL!, process.env.BIOBASE_SERVICE_KEY!)
 
 export default (req: NextApiRequest, res: NextApiResponse) => apiWrapper(req, res, handler)
 
@@ -18,12 +15,10 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   switch (method) {
     case 'GET':
       return handleGetAll(req, res)
-    case 'POST':
-      return handlePost(req, res)
     case 'DELETE':
       return handleDelete(req, res)
     default:
-      res.setHeader('Allow', ['GET', 'POST', 'DELETE'])
+      res.setHeader('Allow', ['GET', 'DELETE'])
       res.status(405).json({ data: null, error: { message: `Method ${method} Not Allowed` } })
   }
 }
@@ -115,18 +110,18 @@ const handleGetAll = async (req: NextApiRequest, res: NextApiResponse) => {
   return res.status(200).json({ total, users: getUsers })
 }
 
-const handlePost = async (req: NextApiRequest, res: NextApiResponse) => {
-  const { email, password, email_confirm } = req.body
-  const { data, error } = await biobase.auth.admin.createUser({ email, password, email_confirm })
-
-  if (error) return res.status(400).json({ error: { message: error.message } })
-  return res.status(200).json(data.user)
-}
-
 const handleDelete = async (req: NextApiRequest, res: NextApiResponse) => {
-  const { id } = req.body
-  const { data, error } = await biobase.auth.admin.deleteUser(id)
+  const headers = constructHeaders(req.headers)
 
-  if (error) return res.status(400).json({ error: { message: error.message } })
-  return res.status(200).json(data.user)
+  const payload = req.body
+  const query = { query: `DELETE from auth.users where id='${payload.id}';` }
+
+  const response = await post(`${PG_META_URL}/query`, query, { headers })
+
+  if (response.error) {
+    console.error('Delete Users POST:', response.error)
+    return res.status(400).json({ error: response.error })
+  }
+
+  return res.status(200).json(response)
 }

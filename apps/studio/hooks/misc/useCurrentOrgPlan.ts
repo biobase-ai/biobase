@@ -10,14 +10,12 @@ export function useCurrentOrgPlan() {
   if (isLoading) {
     return {
       plan: null,
-      usageBillingEnabled: null,
       isLoading,
       isSuccess: false,
     }
   } else {
     return {
       plan: data?.plan,
-      usageBillingEnabled: data?.usage_billing_enabled,
       isLoading,
       isSuccess,
     }

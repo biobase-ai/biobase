@@ -1,9 +1,9 @@
 import { useParams } from 'common'
-import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
 import { GridFooter } from 'components/ui/GridFooter'
 import TwoOptionToggle from 'components/ui/TwoOptionToggle'
-import { useTableEditorQuery } from 'data/table-editor/table-editor-query'
-import { isTableLike, isViewLike } from 'data/table-editor/table-editor-types'
+import { ENTITY_TYPE } from 'data/entity-types/entity-type-constants'
+import useEntityType from 'hooks/misc/useEntityType'
+import useTable from 'hooks/misc/useTable'
 import { useUrlState } from 'hooks/ui/useUrlState'
 import RefreshButton from '../header/RefreshButton'
 import { Pagination } from './pagination'
@@ -13,15 +13,10 @@ export interface FooterProps {
 }
 
 const Footer = ({ isRefetching }: FooterProps) => {
-  const { project } = useProjectContext()
   const { id: _id } = useParams()
   const id = _id ? Number(_id) : undefined
-
-  const { data: entity } = useTableEditorQuery({
-    projectRef: project?.ref,
-    connectionString: project?.connectionString,
-    id,
-  })
+  const { data: selectedTable } = useTable(id)
+  const entityType = useEntityType(selectedTable?.id)
 
   const [{ view: selectedView = 'data' }, setUrlState] = useUrlState()
 
@@ -33,16 +28,17 @@ const Footer = ({ isRefetching }: FooterProps) => {
     }
   }
 
-  const isViewSelected = isViewLike(entity)
-  const isTableSelected = isTableLike(entity)
+  const isViewSelected =
+    entityType?.type === ENTITY_TYPE.VIEW || entityType?.type === ENTITY_TYPE.MATERIALIZED_VIEW
+  const isTableSelected = entityType?.type === ENTITY_TYPE.TABLE
 
   return (
     <GridFooter>
       {selectedView === 'data' && <Pagination />}
 
       <div className="ml-auto flex items-center gap-x-2">
-        {entity && selectedView === 'data' && (
-          <RefreshButton table={entity} isRefetching={isRefetching} />
+        {selectedTable && selectedView === 'data' && (
+          <RefreshButton table={selectedTable} isRefetching={isRefetching} />
         )}
 
         {(isViewSelected || isTableSelected) && (

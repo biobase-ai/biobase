@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { revalidateTag } from 'next/cache'
 import { headers } from 'next/headers'
 import { type NextRequest } from 'next/server'
@@ -59,8 +59,8 @@ export async function _handleRevalidateRequest(request: NextRequest) {
   }
 
   const biobaseAdmin = createClient<Database>(
-    process.env.NEXT_PUBLIC_BIOBASE_URL!,
-    process.env.BIOBASE_SECRET_KEY!
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SECRET_KEY!
   )
 
   if (authorizationLevel === AuthorizationLevel.Basic) {

@@ -35,9 +35,9 @@ These variables will be exposed on the application, and that's completely fine s
 ```swift Biobase.swift
 import Biobase
 
-let biobase = SupabaseClient(
-  biobaseURL: URL(string: "YOUR_BIOBASE_URL")!,
-  biobaseKey: "YOUR_BIOBASE_ANON_KEY"
+let biobase = BiobaseClient(
+  biobaseURL: URL(string: "YOUR_SUPABASE_URL")!,
+  biobaseKey: "YOUR_SUPABASE_ANON_KEY"
 )
 ```
 
@@ -293,8 +293,6 @@ Update the entry point to the newly created `AppView`. Run in Xcode to launch yo
 Every Biobase project is configured with [Storage](/docs/guides/storage) for managing large files like
 photos and videos.
 
-{/* supa-mdx-lint-disable-next-line Rule001HeadingCase */}
-
 ### Add PhotosPicker
 
 Let's add support for the user to pick an image from the library and upload it.
@@ -333,8 +331,6 @@ enum TransferError: Error {
   case importFailed
 }
 ```
-
-{/* supa-mdx-lint-disable-next-line Rule001HeadingCase */}
 
 #### Add PhotosPicker to profile page
 

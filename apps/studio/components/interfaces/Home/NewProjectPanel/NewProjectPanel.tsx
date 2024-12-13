@@ -1,9 +1,8 @@
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-import { useParams } from 'common'
 import Panel from 'components/ui/Panel'
-import { EditorIndexPageLink } from 'data/prefetchers/project.$ref.editor'
 import { useIsFeatureEnabled } from 'hooks/misc/useIsFeatureEnabled'
 import { Auth, EdgeFunctions, Realtime, SqlEditor, Storage, TableEditor } from 'icons'
 import { Button } from 'ui'
@@ -11,7 +10,8 @@ import APIKeys from './APIKeys'
 import GetStartedHero from './GetStartedHero'
 
 const NewProjectPanel = () => {
-  const { ref } = useParams()
+  const router = useRouter()
+  const { ref } = router.query
 
   const {
     projectAuthAll: authEnabled,
@@ -47,14 +47,14 @@ const NewProjectPanel = () => {
               </div>
               <div className="flex flex-wrap items-center gap-2">
                 <Button asChild type="default" icon={<TableEditor strokeWidth={1.5} />}>
-                  <EditorIndexPageLink projectRef={ref}>Table Editor</EditorIndexPageLink>
+                  <Link href={`/project/${ref}/editor`}>Table Editor</Link>
                 </Button>
                 <Button asChild type="default" icon={<SqlEditor strokeWidth={1.5} />}>
-                  <Link href={`/project/${ref}/sql/new`}>SQL Editor</Link>
+                  <Link href={`/project/${ref}/sql/new`}>SQL editor</Link>
                 </Button>
                 <Button asChild type="default" icon={<ExternalLink />}>
                   <Link
-                    href="https://biobase.studio/docs/guides/database"
+                    href="https://biobase.com/docs/guides/database"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -103,7 +103,7 @@ const NewProjectPanel = () => {
                         asChild
                       >
                         <Link
-                          href="https://biobase.studio/docs/guides/auth"
+                          href="https://biobase.com/docs/guides/auth"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -139,7 +139,7 @@ const NewProjectPanel = () => {
                         asChild
                       >
                         <Link
-                          href="https://biobase.studio/docs/guides/storage"
+                          href="https://biobase.com/docs/guides/storage"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -175,7 +175,7 @@ const NewProjectPanel = () => {
                         asChild
                       >
                         <Link
-                          href="https://biobase.studio/docs/guides/functions"
+                          href="https://biobase.com/docs/guides/functions"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -209,7 +209,7 @@ const NewProjectPanel = () => {
                         asChild
                       >
                         <Link
-                          href="https://biobase.studio/docs/guides/realtime"
+                          href="https://biobase.com/docs/guides/realtime"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -231,7 +231,7 @@ const NewProjectPanel = () => {
             <h3 className="text-xl text-foreground">Connecting to your new project</h3>
             <p className="text-base text-foreground-light lg:max-w-sm">
               Interact with your database through the{' '}
-              <Link href="https://biobase.studio/docs/reference" className="text-brand">
+              <Link href="https://biobase.com/docs/reference" className="text-brand">
                 Biobase client libraries
               </Link>{' '}
               with your API keys.
@@ -247,7 +247,7 @@ const NewProjectPanel = () => {
             </Button>
             <Button asChild className="translate-y-[1px]" type="default" icon={<ExternalLink />}>
               <Link
-                href="https://biobase.studio/docs/guides/database/api"
+                href="https://biobase.com/docs/guides/database/api"
                 target="_blank"
                 rel="noreferrer"
               >

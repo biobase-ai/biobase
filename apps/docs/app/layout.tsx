@@ -17,7 +17,7 @@ const metadata: Metadata = {
   title: 'Biobase Docs',
   description:
     'Biobase is an open source Firebase alternative providing all the backend features you need to build a product.',
-  metadataBase: new URL('https://biobase.studio'),
+  metadataBase: new URL('https://biobase.com'),
   icons: genFaviconData(BASE_PATH),
   robots: {
     index: IS_PRODUCTION,
@@ -33,8 +33,8 @@ const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@supabase',
-    creator: '@supabase',
+    site: '@biobase',
+    creator: '@biobase',
     images: `${BASE_PATH}/img/biobase-og-image.png`,
   },
 }

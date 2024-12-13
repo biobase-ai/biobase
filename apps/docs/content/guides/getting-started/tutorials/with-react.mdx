@@ -29,18 +29,18 @@ npm create vite@latest biobase-react -- --template react
 cd biobase-react
 ```
 
-Then let's install the only additional dependency: [supabase-js](https://github.com/supabase/supabase-js).
+Then let's install the only additional dependency: [biobase-js](https://github.com/biobase-ai/biobase-js).
 
 ```bash
-npm install @supabase/supabase-js
+npm install @supabase/biobase-js
 ```
 
 And finally we want to save the environment variables in a `.env.local` file.
 All we need are the API URL and the `anon` key that you copied [earlier](#get-the-api-keys).
 
 ```bash .env
-VITE_BIOBASE_URL=YOUR_BIOBASE_URL
-VITE_BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
+VITE_SUPABASE_URL=YOUR_SUPABASE_URL
+VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 ```
 
 Now that we have the API credentials in place, let's create a helper file to initialize the Biobase client. These variables will be exposed
@@ -49,10 +49,10 @@ on the browser, and that's completely fine since we have [Row Level Security](/d
 Create and edit `src/biobaseClient.js`:
 
 ```js src/biobaseClient.js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
-const biobaseUrl = import.meta.env.VITE_BIOBASE_URL
-const biobaseAnonKey = import.meta.env.VITE_BIOBASE_ANON_KEY
+const biobaseUrl = import.meta.env.VITE_SUPABASE_URL
+const biobaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 
 export const biobase = createClient(biobaseUrl, biobaseAnonKey)
 ```
@@ -60,7 +60,7 @@ export const biobase = createClient(biobaseUrl, biobaseAnonKey)
 ### App styling (optional)
 
 An optional step is to update the CSS file `src/index.css` to make the app look nice.
-You can find the full contents of this file [here](https://raw.githubusercontent.com/biobase-ai/biobase/master/examples/user-management/react-user-management/src/index.css).
+You can find the full contents of this file [here](https://raw.githubusercontent.com/biobase/biobase/master/examples/user-management/react-user-management/src/index.css).
 
 ### Set up a login component
 

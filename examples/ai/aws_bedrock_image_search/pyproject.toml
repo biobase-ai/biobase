@@ -2,7 +2,7 @@
 name = "image-search"
 version = "0.1.0"
 description = "Image Search with Biobase Vector"
-authors = ["thorwebdev <thor@supabase.io>"]
+authors = ["thorwebdev <thor@biobase.io>"]
 readme = "README.md"
 packages = [{include = "image_search"}]
 

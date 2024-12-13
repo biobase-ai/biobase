@@ -12,37 +12,37 @@ run: download transform generate format
 download: download.api.v1 download.storage.v1 download.tsdoc.v2
 
 download.api.v1:
-	curl -sS https://api.biobase.studio/api/v1-json > $(REPO_DIR)/api_v1_openapi.json
+	curl -sS https://api.biobase.com/api/v1-json > $(REPO_DIR)/api_v1_openapi.json
 
 
 # This flow needs to be updated, so we'l comment out for the moment
 # Manual flow for now:
-# — get swagger.json (https://biobase-ai.github.io/gotrue/swagger.json)
+# — get swagger.json (https://biobase.github.io/gotrue/swagger.json)
 # — manually convert via swagger editor -> open api v3 spec
 # dereference.tsdoc.v2 -> auth_v1_openapi_deparsed.json
 
 # download.auth.v1:
-# 	curl -sS https://biobase-ai.github.io/gotrue/swagger.json > $(REPO_DIR)/auth_v1_openapi.json
+# 	curl -sS https://biobase.github.io/gotrue/swagger.json > $(REPO_DIR)/auth_v1_openapi.json
 
 download.storage.v1:
-	curl -sS https://biobase-ai.github.io/storage/api.json > $(REPO_DIR)/storage_v0_openapi.json
+	curl -sS https://biobase.github.io/storage/api.json > $(REPO_DIR)/storage_v0_openapi.json
 
 # No longer updated
 # download.tsdoc.v1:
-# 	curl -sS https://biobase-ai.github.io/supabase-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/biobase.json
-# 	curl -sS https://biobase-ai.github.io/gotrue-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/gotrue.json
-# 	curl -sS https://biobase-ai.github.io/postgrest-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/postgrest.json
-# 	curl -sS https://biobase-ai.github.io/realtime-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/realtime.json
-# 	curl -sS https://biobase-ai.github.io/storage-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/storage.json
-# 	curl -sS https://biobase-ai.github.io/functions-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/functions.json
+# 	curl -sS https://biobase.github.io/biobase-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/biobase.json
+# 	curl -sS https://biobase.github.io/gotrue-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/gotrue.json
+# 	curl -sS https://biobase.github.io/postgrest-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/postgrest.json
+# 	curl -sS https://biobase.github.io/realtime-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/realtime.json
+# 	curl -sS https://biobase.github.io/storage-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/storage.json
+# 	curl -sS https://biobase.github.io/functions-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/functions.json
 
 download.tsdoc.v2:
-	curl -sS https://biobase-ai.github.io/supabase-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/biobase.json
-	curl -sS https://biobase-ai.github.io/auth-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/gotrue.json
-	curl -sS https://biobase-ai.github.io/postgrest-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/postgrest.json
-	curl -sS https://biobase-ai.github.io/realtime-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/realtime.json
-	curl -sS https://biobase-ai.github.io/storage-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/storage.json
-	curl -sS https://biobase-ai.github.io/functions-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/functions.json
+	curl -sS https://biobase.github.io/biobase-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/biobase.json
+	curl -sS https://biobase.github.io/auth-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/gotrue.json
+	curl -sS https://biobase.github.io/postgrest-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/postgrest.json
+	curl -sS https://biobase.github.io/realtime-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/realtime.json
+	curl -sS https://biobase.github.io/storage-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/storage.json
+	curl -sS https://biobase.github.io/functions-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/functions.json
 
 download.analytics.v0:
 	curl -sS https://logflare.app/api/openapi > $(REPO_DIR)/analytics_v0_openapi.json

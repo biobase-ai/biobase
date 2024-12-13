@@ -12,7 +12,7 @@ Download this example:
 curl https://codeload.github.com/biobase-ai/biobase/tar.gz/master | tar -xz --strip=3 biobase-master/examples/caching/with-nextjs-13
 ```
 
-Then, start Biobase locally and seed your local development database with the [Biobase CLI](https://biobase.studio/docs/reference/cli):
+Then, start Biobase locally and seed your local development database with the [Biobase CLI](https://biobase.com/docs/reference/cli):
 
 ```bash
 biobase start

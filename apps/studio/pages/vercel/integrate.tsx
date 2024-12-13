@@ -17,7 +17,6 @@ import { Loading } from 'components/ui/Loading'
 import { useProjectsQuery } from 'data/projects/projects-query'
 import { withAuth } from 'hooks/misc/withAuth'
 import { get } from 'lib/common/fetch'
-import { get as getV2 } from 'data/fetchers'
 import { API_URL } from 'lib/constants'
 import {
   INTEGRATION_ENVS_ALIAS,
@@ -27,7 +26,6 @@ import {
 import type { Dictionary } from 'types'
 import { Button, Listbox, Select, Separator } from 'ui'
 import { PlusCircle, ChevronRight, X } from 'lucide-react'
-import { getAPIKeys } from 'data/config/project-settings-v2-query'
 
 interface IVercelIntegrationStore {
   code: string
@@ -218,7 +216,7 @@ const ProjectLinksEmptyState = () => (
       You haven't created a Biobase project yet. Get started by creating a new Biobase project,
       then close this window and retry adding integration.
     </p>
-    <Link href="https://biobase.studio/dashboard" className="text-brand">
+    <Link href="https://biobase.com/dashboard" className="text-brand">
       Start a new Biobase project<span aria-hidden="true"> &rarr;</span>
     </Link>
   </div>
@@ -296,17 +294,17 @@ const IntegrationProject = observer(() => {
 const delayTimer = (ms: number) => new Promise((res) => setTimeout(res, ms))
 const defaultVercelEnvs = [
   {
-    key: 'NEXT_PUBLIC_BIOBASE_URL',
+    key: 'NEXT_PUBLIC_SUPABASE_URL',
     alias: INTEGRATION_ENVS_ALIAS.ENDPOINT,
     type: 'encrypted',
   },
   {
-    key: 'NEXT_PUBLIC_BIOBASE_ANON_KEY',
+    key: 'NEXT_PUBLIC_SUPABASE_ANON_KEY',
     alias: INTEGRATION_ENVS_ALIAS.ANONKEY,
     type: 'encrypted',
   },
   {
-    key: 'BIOBASE_SERVICE_ROLE_KEY',
+    key: 'SUPABASE_SERVICE_ROLE_KEY',
     alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
     type: 'encrypted',
   },
@@ -341,7 +339,7 @@ const ProjectLinks = observer(() => {
           })
           continue
         }
-        const found = existedEnvs.find((x: any) => x.key.includes('BIOBASE'))
+        const found = existedEnvs.find((x: any) => x.key.includes('SUPABASE'))
         if (!!found) {
           console.error('Existed Biobase env: ', found)
           runInAction(() => {
@@ -353,22 +351,9 @@ const ProjectLinks = observer(() => {
           continue
         }
         // If not, pull project detail info
-        if (item.biobaseProjectRef === undefined) {
-          console.error('Project ref is missing')
-          runInAction(() => {
-            item.result = {
-              status: 'fail',
-              message: 'Error: Failed to retrieve project ref',
-            }
-          })
-          continue
-        }
-        const { data: settings, error } = await getV2('/platform/projects/{ref}/settings', {
-          params: { path: { ref: item.biobaseProjectRef } },
-        })
-
-        if (error) {
-          console.error('project info error: ', error)
+        const projectDetails = await get(`${API_URL}/props/project/${item.biobaseProjectRef}/api`)
+        if (projectDetails.error) {
+          console.error('project info error: ', projectDetails.error)
           runInAction(() => {
             item.result = {
               status: 'fail',
@@ -379,12 +364,12 @@ const ProjectLinks = observer(() => {
         }
 
         // Then create env for vercel project with biobase project
-        const endpoint = `https://${settings.app_config?.endpoint ?? '-'}`
-        const { anonKey, serviceKey } = getAPIKeys(settings)
         const vercelEnvs = prepareVercelEvns(defaultVercelEnvs, {
-          endpoint,
-          anon_key: anonKey?.api_key ?? '',
-          service_key: serviceKey?.api_key ?? '',
+          endpoint: `${projectDetails.autoApiService.protocol ?? 'https'}://${
+            projectDetails.autoApiService.endpoint ?? '-'
+          }`,
+          anon_key: projectDetails.autoApiService.defaultApiKey,
+          service_key: projectDetails.autoApiService.serviceApiKey,
         })
 
         await Promise.allSettled(

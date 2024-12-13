@@ -1,4 +1,4 @@
-import { Session, SupabaseClient } from '@supabase/supabase-js'
+import { Session, BiobaseClient } from '@supabase/biobase-js'
 import { createContext, useContext } from 'react'
 
 export type TicketState = 'registration' | 'ticket' | 'loading' | 'game'
@@ -24,7 +24,6 @@ export type UserData = {
     hasSharedSecret?: boolean
     hideAvatar?: boolean
     hideMetadata?: boolean
-    theme?: string
   }
   shared_on_twitter?: string
   shared_on_linkedin?: string
@@ -32,7 +31,7 @@ export type UserData = {
 }
 
 type ConfDataContextType = {
-  biobase: SupabaseClient | null
+  biobase: BiobaseClient | null
   session: Session | null
   userData: UserData
   setUserData: React.Dispatch<React.SetStateAction<UserData>>

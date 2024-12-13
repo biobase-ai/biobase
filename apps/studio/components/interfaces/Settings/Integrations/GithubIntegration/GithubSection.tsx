@@ -3,8 +3,8 @@ import { useCallback } from 'react'
 import { toast } from 'sonner'
 
 import { useParams } from 'common'
-import { IntegrationConnectionItem } from 'components/interfaces/Integrations/VercelGithub/IntegrationConnection'
-import { EmptyIntegrationConnection } from 'components/interfaces/Integrations/VercelGithub/IntegrationPanels'
+import { IntegrationConnectionItem } from 'components/interfaces/Integrations/IntegrationConnection'
+import { EmptyIntegrationConnection } from 'components/interfaces/Integrations/IntegrationPanels'
 import { Markdown } from 'components/interfaces/Markdown'
 import {
   ScaffoldContainer,
@@ -45,7 +45,6 @@ const GitHubSection = () => {
   const project = useSelectedProject()
   const org = useSelectedOrganization()
   const sidePanelsStateSnapshot = useSidePanelsStateSnapshot()
-  const isBranch = project?.parent_project_ref !== undefined
 
   const canReadGitHubConnection = useCheckPermissions(
     PermissionAction.READ,
@@ -67,6 +66,8 @@ const GitHubSection = () => {
       toast.success('Successfully deleted Github connection')
     },
   })
+
+  const isBranch = project?.parent_project_ref !== undefined
 
   const connections =
     allConnections?.filter((connection) =>
@@ -137,7 +138,7 @@ const GitHubSection = () => {
 
                       <div className="border-b border-l border-r rounded-b-lg">
                         <GitHubIntegrationConnectionForm
-                          disabled={isBranch || !canUpdateGitHubConnection}
+                          disabled={!canUpdateGitHubConnection}
                           connection={{
                             id: String(connection.id),
                             added_by: {
@@ -169,7 +170,7 @@ const GitHubSection = () => {
                   onClick={onAddGitHubConnection}
                   orgSlug={org?.slug}
                   showNode={false}
-                  disabled={isBranch || !canCreateGitHubConnection}
+                  disabled={!canCreateGitHubConnection}
                 >
                   Add new project connection
                 </EmptyIntegrationConnection>

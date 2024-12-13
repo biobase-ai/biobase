@@ -96,7 +96,7 @@ const BarChart = ({
     return (
       <NoDataPlaceholder
         message={emptyStateMessage}
-        description="It may take up to 24 hours for data to refresh"
+        description="It may take up to 24 hours for data to show"
         size={size}
         className={className}
         attribute={title}

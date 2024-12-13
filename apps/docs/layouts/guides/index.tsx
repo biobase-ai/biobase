@@ -1,5 +1,5 @@
 import 'katex/dist/katex.min.css'
-import type { ReactNode, PropsWithChildren } from 'react'
+import { type PropsWithChildren } from 'react'
 
 import { type NavMenuSection } from '~/components/Navigation/Navigation.types'
 import { LayoutMainContent } from '~/layouts/DefaultLayout'
@@ -8,13 +8,9 @@ import { SidebarSkeleton } from '~/layouts/MainSkeleton'
 const Layout = ({
   children,
   additionalNavItems,
-  NavigationMenu,
-}: PropsWithChildren<{
-  additionalNavItems?: Record<string, Partial<NavMenuSection>[]>
-  NavigationMenu?: ReactNode
-}>) => {
+}: PropsWithChildren<{ additionalNavItems?: Partial<NavMenuSection>[] }>) => {
   return (
-    <SidebarSkeleton NavigationMenu={NavigationMenu} additionalNavItems={additionalNavItems}>
+    <SidebarSkeleton additionalNavItems={additionalNavItems}>
       <LayoutMainContent className="pb-0">{children}</LayoutMainContent>
     </SidebarSkeleton>
   )

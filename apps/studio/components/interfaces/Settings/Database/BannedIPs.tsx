@@ -14,7 +14,6 @@ import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
 import { BASE_PATH } from 'lib/constants'
 import { Badge, Button } from 'ui'
 import ConfirmationModal from 'ui-patterns/Dialogs/ConfirmationModal'
-import { DocsButton } from 'components/ui/DocsButton'
 
 const BannedIPs = () => {
   const { ref } = useParams()
@@ -70,13 +69,18 @@ const BannedIPs = () => {
 
   return (
     <div id="banned-ips">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between">
         <FormHeader
-          className="mb-0"
           title="Network Bans"
           description="List of IP addresses that are temporarily blocked if their traffic pattern looks abusive"
         />
-        <DocsButton href="https://biobase.studio/docs/reference/cli/biobase-network-bans" />
+        <div className="flex items-center space-x-2 mb-6">
+          <Button asChild type="default" icon={<ExternalLink />}>
+            <a target="_blank" href="https://biobase.com/docs/reference/cli/biobase-network-bans">
+              Documentation
+            </a>
+          </Button>
+        </div>
       </div>
       <FormPanel>
         {ipList && ipList.banned_ipv4_addresses.length > 0 ? (
@@ -95,9 +99,7 @@ const BannedIPs = () => {
                   tooltip={{
                     content: {
                       side: 'bottom',
-                      text: !canUnbanNetworks
-                        ? 'You need additional permissions to unban networks'
-                        : undefined,
+                      text: 'You need additional permissions to unban networks',
                     },
                   }}
                 >

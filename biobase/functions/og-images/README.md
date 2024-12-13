@@ -26,7 +26,7 @@ This link will generate an image for the docs site with the title "Example Title
 
 ## Run locally
 
-First we need to start up biobase using the [biobase cli](https://biobase.studio/docs/reference/cli/introduction)
+First we need to start up biobase using the [biobase cli](https://biobase.com/docs/reference/cli/introduction)
 
 ```bash
 biobase start

@@ -96,7 +96,6 @@ const referenceSections = new Map<string, Array<AbbrevApiReferenceSection>>()
 
 export async function getReferenceSections(sdkId: string, version: string) {
   const key = `${sdkId}.${version}`
-  console.log('Getting reference sections for %s', key)
   if (!referenceSections.has(key)) {
     const data = await readFile(
       join(process.cwd(), 'features/docs', `./generated/${sdkId}.${version}.sections.json`),
@@ -106,16 +105,13 @@ export async function getReferenceSections(sdkId: string, version: string) {
     referenceSections.set(key, JSON.parse(data))
   }
 
-  const result = referenceSections.get(key)
-  console.log('Got reference sections for %s', key)
-  return result
+  return referenceSections.get(key)
 }
 
 const flatSections = new Map<string, Array<AbbrevApiReferenceSection>>()
 
 export async function getFlattenedSections(sdkId: string, version: string) {
   const key = `${sdkId}.${version}`
-  console.log('Getting flattened sections for %s', key)
   if (!flatSections.has(key)) {
     const data = await readFile(
       join(process.cwd(), 'features/docs', `./generated/${sdkId}.${version}.flat.json`),
@@ -125,9 +121,7 @@ export async function getFlattenedSections(sdkId: string, version: string) {
     flatSections.set(key, JSON.parse(data))
   }
 
-  const result = flatSections.get(key)
-  console.log('Got flattened sections for %s', key)
-  return result
+  return flatSections.get(key)
 }
 
 const sectionsBySlug = new Map<string, Map<string, AbbrevApiReferenceSection>>()

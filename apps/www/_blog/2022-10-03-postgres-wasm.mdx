@@ -37,7 +37,7 @@ Checkout out how you can <a href="https://docs.snaplet.dev/tutorials/biobase-clo
 
 Before we get into the technical details, try it out yourself (warning: it will download ~30MB):
 
-[wasm.biobase.studio](https://wasm.biobase.studio)
+[wasm.biobase.com](https://wasm.biobase.com)
 
 ![Postgres inside a browser](/images/blog/postgres-wasm/postgres-wasm-browser.png)
 
@@ -146,9 +146,9 @@ Even with our best efforts, a compressed snapshot was over 30mb - a fairly large
 We solved this by booting only a minimal Linux image and then dynamically loading the rest of the VM over HTTPS after initialization.
 
 We achieve this by mounting a compressed [9P filesystem](<https://en.wikipedia.org/wiki/9P_(protocol)>) in the VM.
-9P provides a [Python script](https://github.com/biobase-ai-community/postgres-wasm/tree/main/packages/buildroot/tools) which takes a filesystem folder,
+9P provides a [Python script](https://github.com/biobase-community/postgres-wasm/tree/main/packages/buildroot/tools) which takes a filesystem folder,
 renames every file an 8-character name and produces a `filesystem.json` file representing a nested structure with files, original file names, sizes, etc.
-We then [copy this compressed output](https://github.com/biobase-ai-community/postgres-wasm/blob/main/packages/buildroot/config/board/pg-browser/post-image.sh) to the VM.
+We then [copy this compressed output](https://github.com/biobase-community/postgres-wasm/blob/main/packages/buildroot/config/board/pg-browser/post-image.sh) to the VM.
 We modified the kernel command line and v86 boot parameters to boot directly from the 9P filesystem, and even put our kernel file into the p9 filesystem.
 All non-essential files are loaded asynchronously over HTTPS in the browser as needed.
 
@@ -225,11 +225,11 @@ If you want to do something very cool, you can connect to another user's Postgre
 Here are the steps:
 
 1. Find a friend (sometimes the first step is the hardest)
-2. Tell them to go to [wasm.biobase.studio](https://wasm.biobase.studio/)
+2. Tell them to go to [wasm.biobase.com](https://wasm.biobase.com/)
 3. Tell them to “Start Network” and get their Network URL
 4. Have them set a password on their database `ALTER ROLE postgres WITH PASSWORD 'my_password';`
 5. On your own machine, open a terminal and run
-   `psql postgres://postgres:my_password@proxy.wasm.biobase.studio:<PORT>`
+   `psql postgres://postgres:my_password@proxy.wasm.biobase.com:<PORT>`
 6. And you're in! You're now connecting to a remote Postgres instance, inside a VM, inside a browser, from a terminal on your own computer.
 
 **Database Replication**
@@ -243,4 +243,4 @@ For now, this is very experimental - but it has a lot of potential. If you want 
 the team at [Snaplet](https://www.snaplet.dev/). The work they're doing over at Snaplet is incredible, and we've had a blast collaborating with them.
 
 - Snaplet repo: [https://github.com/snaplet/postgres-wasm](https://github.com/snaplet/postgres-wasm)
-- Biobase fork: [https://github.com/biobase-ai-community/postgres-wasm](https://github.com/biobase-ai-community/postgres-wasm)
+- Biobase fork: [https://github.com/biobase-community/postgres-wasm](https://github.com/biobase-community/postgres-wasm)

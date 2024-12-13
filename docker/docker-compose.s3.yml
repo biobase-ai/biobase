@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
 
   minio:
@@ -31,7 +33,7 @@ services:
 
   storage:
     container_name: biobase-storage
-    image: biobase/storage-api:v1.11.13
+    image: biobase/storage-api:v0.43.11
     depends_on:
       db:
         # Disable this if you are using an external Postgres database
@@ -73,7 +75,7 @@ services:
       AWS_DEFAULT_REGION: stub
       FILE_STORAGE_BACKEND_PATH: /var/lib/storage
       TENANT_ID: stub
-      # TODO: https://github.com/biobase-ai/storage-api/issues/55
+      # TODO: https://github.com/biobase/storage-api/issues/55
       REGION: stub
       ENABLE_IMAGE_TRANSFORMATION: "true"
       IMGPROXY_URL: http://imgproxy:5001

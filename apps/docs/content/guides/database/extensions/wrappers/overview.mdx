@@ -7,7 +7,7 @@ subtitle: 'Connecting to external systems using Postgres Foreign Data Wrappers.'
 
 Foreign Data Wrappers (FDW) are a core feature of Postgres that allow you to access and query data stored in external data sources as if they were native Postgres tables.
 
-Postgres includes several built-in foreign data wrappers, such as [`postgres_fdw`](https://www.postgresql.org/docs/current/postgres-fdw.html) for accessing other PostgreSQL databases, and [`file_fdw`](https://www.postgresql.org/docs/current/file-fdw.html) for reading data from files. Biobase extends this feature to query other databases or any other external systems. We do this with our open source [Wrappers](https://github.com/biobase-ai/wrappers) framework. In these guides we'll refer to them as "Wrappers", Foreign Data Wrappers, or FDWs. They are conceptually the same thing.
+Postgres includes several built-in foreign data wrappers, such as [`postgres_fdw`](https://www.postgresql.org/docs/current/postgres-fdw.html) for accessing other PostgreSQL databases, and [`file_fdw`](https://www.postgresql.org/docs/current/file-fdw.html) for reading data from files. Biobase extends this feature to query other databases or any other external systems. We do this with our open source [Wrappers](https://github.com/biobase/wrappers) framework. In these guides we'll refer to them as "Wrappers", Foreign Data Wrappers, or FDWs. They are conceptually the same thing.
 
 ## Concepts
 
@@ -127,15 +127,15 @@ This process can be taxing on your database if you are moving large amounts of d
 
 WebAssembly (Wasm) is a binary instruction format that enables high-performance execution of code on the web. Wrappers now includes a Wasm runtime, which provides a sandboxed execution environment, to run Wasm foreign data wrappers. Combined Wrappers with Wasm, developing and distributing new FDW becomes much easier and you can even build your own Wasm FDW and use it on Biobase platform.
 
-To learn more about Wasm FDW, visit [Wrappers official documentation](https://biobase-ai.github.io/wrappers/).
+To learn more about Wasm FDW, visit [Wrappers official documentation](https://biobase.github.io/wrappers/).
 
 ## Security
 
 Foreign Data Wrappers do not provide Row Level Security, thus it is not advised to expose them via your API. Wrappers should _always_ be stored in a private schema. For example, if you are connecting to your Stripe account, you should create a `stripe` schema to store all of your foreign tables inside. This schema should _not_ be added to the “Additional Schemas” setting in the API section.
 
-If you want to expose any of the foreign table columns to your public API, you can create a [Database Function with security definer](https://biobase.studio/docs/guides/database/functions#security-definer-vs-invoker) in the `public` schema, and then you can interact with your foreign table through API. For better access control, the function should have appropriate filters on the foreign table to apply security rules based on your business needs.
+If you want to expose any of the foreign table columns to your public API, you can create a [Database Function with security definer](https://biobase.com/docs/guides/database/functions#security-definer-vs-invoker) in the `public` schema, and then you can interact with your foreign table through API. For better access control, the function should have appropriate filters on the foreign table to apply security rules based on your business needs.
 
-As an example, go to [SQL Editor](https://biobase.studio/dashboard/project/_/sql/new) and then follow below steps,
+As an example, go to [SQL Editor](https://biobase.com/dashboard/project/_/sql/new) and then follow below steps,
 
 1. Create a Stripe Products foreign table:
 
@@ -217,4 +217,4 @@ else console.log(data)
 
 ## Resources
 
-- Official [`biobase/wrappers` documentation](https://biobase-ai.github.io/wrappers/)
+- Official [`biobase/wrappers` documentation](https://biobase.github.io/wrappers/)

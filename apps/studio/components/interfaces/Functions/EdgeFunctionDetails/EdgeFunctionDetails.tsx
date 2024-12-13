@@ -1,4 +1,6 @@
 import { PermissionAction } from '@supabase/shared-types/out/constants'
+import clsx from 'clsx'
+import { useParams } from 'common'
 import dayjs from 'dayjs'
 import { ExternalLink, Maximize2, Minimize2, Terminal } from 'lucide-react'
 import Link from 'next/link'
@@ -6,13 +8,12 @@ import { useRouter } from 'next/router'
 import { useEffect, useMemo, useState } from 'react'
 import { toast } from 'sonner'
 
-import { useParams } from 'common'
 import { ButtonTooltip } from 'components/ui/ButtonTooltip'
 import { FormActions } from 'components/ui/Forms/FormActions'
 import { FormHeader } from 'components/ui/Forms/FormHeader'
 import { FormPanel } from 'components/ui/Forms/FormPanel'
 import { FormSection, FormSectionContent, FormSectionLabel } from 'components/ui/Forms/FormSection'
-import { getAPIKeys, useProjectSettingsV2Query } from 'data/config/project-settings-v2-query'
+import { useProjectApiQuery } from 'data/config/project-api-query'
 import { useCustomDomainsQuery } from 'data/custom-domains/custom-domains-query'
 import { useEdgeFunctionQuery } from 'data/edge-functions/edge-function-query'
 import { useEdgeFunctionDeleteMutation } from 'data/edge-functions/edge-functions-delete-mutation'
@@ -28,7 +29,6 @@ import {
   Input,
   Modal,
   Toggle,
-  cn,
 } from 'ui'
 import CommandRender from '../CommandRender'
 import { generateCLICommands } from './EdgeFunctionDetails.utils'
@@ -39,7 +39,7 @@ const EdgeFunctionDetails = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false)
   const [showInstructions, setShowInstructions] = useState(false)
 
-  const { data: settings } = useProjectSettingsV2Query({ projectRef })
+  const { data: settings } = useProjectApiQuery({ projectRef })
   const { data: customDomainData } = useCustomDomainsQuery({ projectRef })
   const { data: selectedFunction } = useEdgeFunctionQuery({ projectRef, slug: functionSlug })
   const { mutate: updateEdgeFunction, isLoading: isUpdating } = useEdgeFunctionUpdateMutation()
@@ -53,20 +53,20 @@ const EdgeFunctionDetails = () => {
   const formId = 'edge-function-update-form'
   const canUpdateEdgeFunction = useCheckPermissions(PermissionAction.FUNCTIONS_WRITE, '*')
 
-  const { anonKey } = getAPIKeys(settings)
-  const apiKey = anonKey?.api_key ?? '[YOUR ANON KEY]'
+  // Get the API service
+  const apiService = settings?.autoApiService
+  const anonKey = apiService?.defaultApiKey ?? '[YOUR ANON KEY]'
 
-  const protocol = settings?.app_config?.protocol ?? 'https'
-  const endpoint = settings?.app_config?.endpoint ?? ''
+  const endpoint = apiService?.app_config.endpoint ?? ''
   const functionUrl =
     customDomainData?.customDomain?.status === 'active'
-      ? `https://${customDomainData.customDomain.hostname}/functions/v1/${selectedFunction?.slug}`
-      : `${protocol}://${endpoint}/functions/v1/${selectedFunction?.slug}`
+      ? `${apiService?.protocol}://${customDomainData.customDomain.hostname}/functions/v1/${selectedFunction?.slug}`
+      : `${apiService?.protocol}://${endpoint}/functions/v1/${selectedFunction?.slug}`
 
   const { managementCommands, secretCommands, invokeCommands } = generateCLICommands(
     selectedFunction,
     functionUrl,
-    apiKey
+    anonKey
   )
 
   const onUpdateFunction = async (values: any, { resetForm }: any) => {
@@ -181,7 +181,7 @@ const EdgeFunctionDetails = () => {
                         <div className="flex items-center space-x-2">
                           <p className="text-sm">
                             Import maps are{' '}
-                            <span className={cn(hasImportMap ? 'text-brand' : 'text-amber-900')}>
+                            <span className={clsx(hasImportMap ? 'text-brand' : 'text-amber-900')}>
                               {hasImportMap ? 'used' : 'not used'}
                             </span>{' '}
                             for this function
@@ -194,7 +194,7 @@ const EdgeFunctionDetails = () => {
                         <div className="!mt-4">
                           <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                             <Link
-                              href="https://biobase.studio/docs/guides/functions/import-maps"
+                              href="https://biobase.com/docs/guides/functions/import-maps"
                               target="_blank"
                               rel="noreferrer"
                             >
@@ -258,9 +258,7 @@ const EdgeFunctionDetails = () => {
                 tooltip={{
                   content: {
                     side: 'bottom',
-                    text: !canUpdateEdgeFunction
-                      ? 'You need additional permissions to delete edge functions'
-                      : undefined,
+                    text: 'You need additional permissions to delete edge functions',
                   },
                 }}
               >

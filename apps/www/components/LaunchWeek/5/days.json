@@ -28,23 +28,23 @@
     ]
   },
   {
-    "title": "supabase-js v2",
+    "title": "biobase-js v2",
     "shipped": true,
     "date": "16th Aug 2022",
-    "description": "Today we're releasing supabase-js v2, which focuses on “quality-of-life” improvements for developers.",
+    "description": "Today we're releasing biobase-js v2, which focuses on “quality-of-life” improvements for developers.",
     "d": 2,
     "dd": "Tuesday",
     "youtube_id": "iqZlPtl_b-I",
     "articles": [
       {
-        "title": "supabase-js v2 Release Candidate",
-        "url": "/blog/supabase-js-v2",
-        "description": "First peek of supabase-js v2, which focuses on quality-of-life improvements for developers.",
+        "title": "biobase-js v2 Release Candidate",
+        "url": "/blog/biobase-js-v2",
+        "description": "First peek of biobase-js v2, which focuses on quality-of-life improvements for developers.",
         "products": [
           {
             "title": "Biobase.js v2 Docs",
             "url": "/docs/reference/javascript/installing",
-            "description": "Updated documentation for supabase-js"
+            "description": "Updated documentation for biobase-js"
           },
           {
             "title": "TypeScript support",
@@ -79,17 +79,17 @@
         "products": [
           {
             "title": "Security portal",
-            "url": "https://security.biobase.studio/",
+            "url": "https://security.biobase.com/",
             "description": "Monitor security at Biobase."
           },
           {
             "title": "SOC 2 Document",
-            "url": "https://security.biobase.studio/",
+            "url": "https://security.biobase.com/",
             "description": "Request the SOC 2 Type I document through the Security Portal."
           },
           {
             "title": "DPA Document",
-            "url": "https://security.biobase.studio/",
+            "url": "https://security.biobase.com/",
             "description": "Request Data Processing Agreement document through the Security Portal."
           }
         ]

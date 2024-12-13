@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { AuthSession } from '@supabase/supabase-js';
+import { AuthSession } from '@supabase/biobase-js';
 import { Profile, BiobaseService } from '../biobase.service';
 
 @Component({

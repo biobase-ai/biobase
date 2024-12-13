@@ -17,7 +17,7 @@ functions:
   - id: initializing
     title: 'Initializing'
     description: |
-      You can initialize Biobase with the `SupabaseClient` by passing your `Project URL` and `Project Key`. You can find these under your `Project Settings` → `API Settings`
+      You can initialize Biobase with the `BiobaseClient` by passing your `Project URL` and `Project Key`. You can find these under your `Project Settings` → `API Settings`
       The Biobase client is your entrypoint to the rest of the Biobase functionality and is the easiest way to interact with everything we offer within the Biobase ecosystem.
 
     examples:
@@ -25,16 +25,16 @@ functions:
         name: Initialize Client
         code: |
           ```swift
-          let client = SupabaseClient(biobaseURL: URL(string: "https://xyzcompany.biobase.co")!, biobaseKey: "public-anon-key")
+          let client = BiobaseClient(biobaseURL: URL(string: "https://xyzcompany.biobase.co")!, biobaseKey: "public-anon-key")
           ```
       - id: initialize-client-custom-options
         name: Initialize Client with custom options
         code: |
           ```swift
-          let client = SupabaseClient(
+          let client = BiobaseClient(
             biobaseURL: URL(string: "https://xyzcompany.biobase.co")!, 
             biobaseKey: "public-anon-key",
-            options: SupabaseClientOptions(
+            options: BiobaseClientOptions(
               db: .init(
                 schema: "public"
               ),
@@ -53,10 +53,10 @@ functions:
         name: With custom schemas
         code: |
           ```swift
-          let biobase = SupabaseClient(
+          let biobase = BiobaseClient(
             biobaseURL: URL(string: "https://xyzcompany.biobase.co")!,
             biobaseKey: "public-anon-key",
-            options: SupabaseClientOptions(
+            options: BiobaseClientOptions(
               db: .init(
                 // Provide a custom schema. Defaults to "public".
                 schema: "other_schema"
@@ -127,7 +127,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let biobase = SupabaseClient(biobaseURL: URL(string: "https://xyzcompany.biobase.co")!, biobaseKey: "public-anon-key")
+          let biobase = BiobaseClient(biobaseURL: URL(string: "https://xyzcompany.biobase.co")!, biobaseKey: "public-anon-key")
           let auth = biobase.auth
           ```
       - id: create-auth-client-with-custom-storage
@@ -135,7 +135,7 @@ functions:
         isSpotlight: true
         code: |
           ```swift
-          let biobase = SupabaseClient(
+          let biobase = BiobaseClient(
             biobaseURL: URL(string: "https://xyzcompany.biobase.co")!, 
             biobaseKey: "public-anon-key",
             options: .init(
@@ -487,7 +487,7 @@ functions:
           A custom configuration callback for opening the OAuth flow externally.
     notes: |
       - This method is used for signing in using a third-party provider.
-      - Biobase supports many different [third-party providers](https://biobase.studio/docs/guides/auth#providers).
+      - Biobase supports many different [third-party providers](https://biobase.com/docs/guides/auth#providers).
     examples:
       - id: sign-in-using-ASWebAuthenticationSession
         name: Sign in with OAuth using ASWebAuthenticationSession
@@ -757,7 +757,7 @@ functions:
     notes: |
       - In order to use the `updateUser()` method, the user needs to be signed in first.
       - By default, email updates sends a confirmation link to both the user's current and new email.
-      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://biobase.studio/dashboard/project/_/auth/providers).
+      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://biobase.com/dashboard/project/_/auth/providers).
     examples:
       - id: update-the-email-for-an-authenticated-user
         name: Update the email for an authenticated user
@@ -1000,7 +1000,7 @@ functions:
       - `setSession()` takes in a refresh token and uses it to get a new session.
       - The refresh token can only be used once to obtain a new session.
       - [Refresh token rotation](/docs/reference/auth/config#refresh_token_rotation_enabled) is enabled by default on all projects to guard against replay attacks.
-      - You can configure the [`REFRESH_TOKEN_REUSE_INTERVAL`](https://biobase.studio/docs/reference/auth/config#refresh_token_reuse_interval) which provides a short window in which the same refresh token can be used multiple times in the event of concurrency or offline issues.
+      - You can configure the [`REFRESH_TOKEN_REUSE_INTERVAL`](https://biobase.com/docs/reference/auth/config#refresh_token_reuse_interval) which provides a short window in which the same refresh token can be used multiple times in the event of concurrency or offline issues.
     examples:
       - id: refresh-the-session
         name: Refresh the session
@@ -1187,7 +1187,7 @@ functions:
           ```swift
           import Biobase
 
-          let biobase = SupabaseClient(
+          let biobase = BiobaseClient(
             biobaseURL: biobaseURL,
             biobaseKey: serviceRoleKey
           )
@@ -3041,7 +3041,7 @@ functions:
                   )
                 """
               )
-              .order("name", ascending: false, referencedTable: "cities")
+              .order("name", ascending: false, foreignTable: "cities")
               .execute()
             ```
         data:
@@ -3152,7 +3152,7 @@ functions:
               )
               """
             )
-            .limit(1, referencedTable: "cities")
+            .limit(1, foreignTable: "cities")
             .execute()
           ```
         data:
@@ -3500,7 +3500,7 @@ functions:
       - id: passing-custom-headers
         name: Passing custom headers
         description: |
-          You can pass custom headers to your function. Note: supabase-js automatically passes the `Authorization` header with the signed in user's JWT.
+          You can pass custom headers to your function. Note: biobase-js automatically passes the `Authorization` header with the signed in user's JWT.
         isSpotlight: true
         code: |
           ```swift
@@ -4005,7 +4005,7 @@ functions:
           ```
   - id: remove-all-channels
     title: removeAllChannels()
-    $ref: '@supabase/supabase-js.index.SupabaseClient.removeAllChannels'
+    $ref: '@supabase/biobase-js.index.BiobaseClient.removeAllChannels'
     notes: |
       Unsubscribes and removes all Realtime channels from Realtime client.
       - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Biobase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
@@ -4020,7 +4020,7 @@ functions:
           ```
   - id: get-channels
     title: getChannels()
-    $ref: '@supabase/supabase-js.index.SupabaseClient.getChannels'
+    $ref: '@supabase/biobase-js.index.BiobaseClient.getChannels'
     notes: |
       Returns all Realtime channels.
     examples:
@@ -4311,7 +4311,7 @@ functions:
   - id: from-get-public-url
     title: from.getPublicUrl()
     notes: |
-      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/javascript/storage-updatebucket) or by going to Storage on [biobase.studio/dashboard](https://biobase.studio/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
+      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/javascript/storage-updatebucket) or by going to Storage on [biobase.com/dashboard](https://biobase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
       - RLS policy permissions required:
         - `buckets` table permissions: none
         - `objects` table permissions: none

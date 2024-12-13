@@ -37,16 +37,9 @@ const LinkComponent = (props: PropsWithChildren<HTMLAnchorElement>) => (
   </a>
 )
 
-const BlogCollapsible = ({
-  title,
-  containerClassName,
-  ...props
-}: {
-  title: string
-  containerClassName?: string
-}) => {
+const BlogCollapsible = ({ title, ...props }: { title: string }) => {
   return (
-    <Collapsible_Shadcn_ className={containerClassName}>
+    <Collapsible_Shadcn_>
       <CollapsibleTrigger_Shadcn_
         className="
         data-[state=open]:text
@@ -112,8 +105,12 @@ export default function mdxComponents(type?: 'blog' | 'lp' | undefined) {
     Img: ({ zoomable = true, className, ...props }: ImageProps & { wide?: boolean }) => (
       <Image
         fill
-        containerClassName={cn(props.wide && 'wide')}
-        className={cn('m-0 object-cover', type === 'blog' ? 'rounded-md border' : '', className)}
+        className={cn(
+          'm-0 object-cover',
+          type === 'blog' ? 'rounded-md border' : '',
+          props.wide && 'wide',
+          className
+        )}
         zoomable={zoomable}
         {...props}
       />

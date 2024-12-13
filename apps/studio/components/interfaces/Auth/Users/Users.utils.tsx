@@ -1,13 +1,13 @@
 import dayjs from 'dayjs'
-import { UserIcon } from 'lucide-react'
 import { UIEvent } from 'react'
 import { Column } from 'react-data-grid'
+import { UserIcon } from 'lucide-react'
 
-import { User } from 'data/auth/users-infinite-query'
+import { User } from 'data/auth/users-query'
 import { BASE_PATH } from 'lib/constants'
-import { cn } from 'ui'
+import { ColumnConfiguration, USERS_TABLE_COLUMNS, UsersTableColumn } from './UsersV2'
 import { HeaderCell } from './UsersGridComponents'
-import { ColumnConfiguration, USERS_TABLE_COLUMNS } from './UsersV2'
+import { cn } from 'ui'
 
 const SUPPORTED_CSP_AVATAR_URLS = [
   'https://avatars.githubusercontent.com',
@@ -95,7 +95,7 @@ const providers = {
 
 // [Joshen] Just FYI this is not stress tested as I'm not sure what
 // all the potential values for each provider is under user.raw_app_meta_data.provider
-// Will need to go through one by one to properly verify https://biobase.studio/docs/guides/auth/social-login
+// Will need to go through one by one to properly verify https://biobase.com/docs/guides/auth/social-login
 // But I've made the UI handle to not render any icon if nothing matches in this map
 export const providerIconMap: { [key: string]: string } = Object.values([
   ...providers.social,
@@ -114,20 +114,6 @@ const phoneProviders = providers.phone.map((x) => {
   const [key] = Object.keys(x)
   return key
 })
-
-function toPrettyJsonString(value: unknown): string | undefined {
-  if (!value) return undefined
-  if (typeof value === 'string') return value
-  if (Array.isArray(value)) return value.map((item) => toPrettyJsonString(item)).join(' ')
-
-  try {
-    return JSON.stringify(value)
-  } catch (error) {
-    // ignore the error
-  }
-
-  return undefined
-}
 
 export function getDisplayName(user: User, fallback = '-'): string {
   const {
@@ -163,44 +149,39 @@ export function getDisplayName(user: User, fallback = '-'): string {
     first_name: cc_first_name,
   } = custom_claims ?? {}
 
-  const last = toPrettyJsonString(
+  const last =
     familyName ||
-      family_name ||
-      surname ||
-      lastName ||
-      last_name ||
-      ccFamilyName ||
-      cc_family_name ||
-      ccSurname ||
-      ccLastName ||
-      cc_last_name
-  )
+    family_name ||
+    surname ||
+    lastName ||
+    last_name ||
+    ccFamilyName ||
+    cc_family_name ||
+    ccSurname ||
+    ccLastName ||
+    cc_last_name
 
-  const first = toPrettyJsonString(
+  const first =
     givenName ||
-      given_name ||
-      firstName ||
-      first_name ||
-      ccGivenName ||
-      cc_given_name ||
-      ccFirstName ||
-      cc_first_name
-  )
+    given_name ||
+    firstName ||
+    first_name ||
+    ccGivenName ||
+    cc_given_name ||
+    ccFirstName ||
+    cc_first_name
 
   return (
-    toPrettyJsonString(
-      displayName ||
-        display_name ||
-        ccDisplayName ||
-        cc_display_name ||
-        fullName ||
-        full_name ||
-        ccFullName ||
-        cc_full_name ||
-        (first && last && `${first} ${last}`) ||
-        last ||
-        first
-    ) || fallback
+    displayName ||
+    display_name ||
+    ccDisplayName ||
+    cc_display_name ||
+    fullName ||
+    full_name ||
+    ccFullName ||
+    cc_full_name ||
+    (first && last && `${first} ${last}`) ||
+    fallback
   )
 }
 
@@ -229,12 +210,9 @@ export function getAvatarUrl(user: User): string | undefined {
     profile_url ||
     profileImageUrl ||
     profileImageURL ||
-    profile_image_url ||
-    '') as unknown
+    profile_image_url) as string | undefined
 
-  if (typeof url !== 'string') return undefined
-  const isSupported = SUPPORTED_CSP_AVATAR_URLS.some((x) => url.startsWith(x))
-  return isSupported ? url : undefined
+  return SUPPORTED_CSP_AVATAR_URLS.some((x) => (url ?? '').startsWith(x)) ? url : undefined
 }
 
 export const formatUserColumns = ({

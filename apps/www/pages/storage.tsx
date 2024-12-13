@@ -1,7 +1,7 @@
 import ApiExamples from 'data/products/storage/api-examples'
 import DashboardViewData from 'data/products/storage/dashboard-carousel.json'
 import StoragePermissionsData from 'data/products/storage/permissions-examples'
-import Solutions from '~/data/MainProducts'
+import Solutions from 'data/Solutions'
 import { ArrowUpRight, Shuffle, Wifi, X } from 'lucide-react'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
@@ -36,10 +36,10 @@ function StoragePage() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.studio/storage`,
+          url: `https://biobase.com/storage`,
           images: [
             {
-              url: `https://biobase.studio${basePath}/images/product/storage/storage-og.jpg`,
+              url: `https://biobase.com${basePath}/images/product/storage/storage-og.jpg`,
             },
           ],
         }}
@@ -151,7 +151,7 @@ function StoragePage() {
                     'Update a user account with public profile information, including uploading a profile image.'
                   }
                   author={'biobase'}
-                  author_url={'https://github.com/biobase-ai'}
+                  author_url={'https://github.com/biobase'}
                   author_img={'https://avatars.githubusercontent.com/u/54469796'}
                   repo_name={'nextjs-user-management'}
                   repo_url={

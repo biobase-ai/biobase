@@ -3,10 +3,10 @@
 exports[`TS type spec parsing > matches snapshot 1`] = `
 "[
   {
-    "name": "@supabase/supabase-js",
+    "name": "@supabase/biobase-js",
     "methods": {
-      "@supabase/supabase-js.index.SupabaseClient.constructor": {
-        "name": "@supabase/supabase-js.index.SupabaseClient.constructor",
+      "@supabase/biobase-js.index.BiobaseClient.constructor": {
+        "name": "@supabase/biobase-js.index.BiobaseClient.constructor",
         "params": [
           {
             "name": "biobaseUrl",
@@ -31,7 +31,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           {
             "name": "options",
             "type": {
-              "name": "SupabaseClientOptions",
+              "name": "BiobaseClientOptions",
               "type": "object",
               "properties": [
                 {
@@ -218,8 +218,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           "shortText": "Create a new client for use in the browser."
         }
       },
-      "@supabase/supabase-js.index.SupabaseClient._getAccessToken": {
-        "name": "@supabase/supabase-js.index.SupabaseClient._getAccessToken",
+      "@supabase/biobase-js.index.BiobaseClient._getAccessToken": {
+        "name": "@supabase/biobase-js.index.BiobaseClient._getAccessToken",
         "params": [],
         "ret": {
           "type": {
@@ -241,8 +241,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           }
         }
       },
-      "@supabase/supabase-js.index.SupabaseClient._handleTokenChanged": {
-        "name": "@supabase/supabase-js.index.SupabaseClient._handleTokenChanged",
+      "@supabase/biobase-js.index.BiobaseClient._handleTokenChanged": {
+        "name": "@supabase/biobase-js.index.BiobaseClient._handleTokenChanged",
         "params": [
           {
             "name": "event",
@@ -283,8 +283,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           }
         }
       },
-      "@supabase/supabase-js.index.SupabaseClient._initRealtimeClient": {
-        "name": "@supabase/supabase-js.index.SupabaseClient._initRealtimeClient",
+      "@supabase/biobase-js.index.BiobaseClient._initRealtimeClient": {
+        "name": "@supabase/biobase-js.index.BiobaseClient._initRealtimeClient",
         "params": [
           {
             "name": "options",
@@ -301,8 +301,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           }
         }
       },
-      "@supabase/supabase-js.index.SupabaseClient._initBiobaseAuthClient": {
-        "name": "@supabase/supabase-js.index.SupabaseClient._initBiobaseAuthClient",
+      "@supabase/biobase-js.index.BiobaseClient._initBiobaseAuthClient": {
+        "name": "@supabase/biobase-js.index.BiobaseClient._initBiobaseAuthClient",
         "params": [
           {
             "type": {
@@ -378,12 +378,12 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           }
         }
       },
-      "@supabase/supabase-js.index.SupabaseClient._listenForAuthEvents": {
-        "name": "@supabase/supabase-js.index.SupabaseClient._listenForAuthEvents",
+      "@supabase/biobase-js.index.BiobaseClient._listenForAuthEvents": {
+        "name": "@supabase/biobase-js.index.BiobaseClient._listenForAuthEvents",
         "params": []
       },
-      "@supabase/supabase-js.index.SupabaseClient.channel": {
-        "name": "@supabase/supabase-js.index.SupabaseClient.channel",
+      "@supabase/biobase-js.index.BiobaseClient.channel": {
+        "name": "@supabase/biobase-js.index.BiobaseClient.channel",
         "params": [
           {
             "name": "name",
@@ -416,8 +416,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           "shortText": "Creates a Realtime channel with Broadcast, Presence, and Postgres Changes."
         }
       },
-      "@supabase/supabase-js.index.SupabaseClient.from": {
-        "name": "@supabase/supabase-js.index.SupabaseClient.from",
+      "@supabase/biobase-js.index.BiobaseClient.from": {
+        "name": "@supabase/biobase-js.index.BiobaseClient.from",
         "params": [
           {
             "name": "relation",
@@ -465,8 +465,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           }
         ]
       },
-      "@supabase/supabase-js.index.SupabaseClient.getChannels": {
-        "name": "@supabase/supabase-js.index.SupabaseClient.getChannels",
+      "@supabase/biobase-js.index.BiobaseClient.getChannels": {
+        "name": "@supabase/biobase-js.index.BiobaseClient.getChannels",
         "params": [],
         "ret": {
           "type": {
@@ -481,8 +481,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           "shortText": "Returns all Realtime channels."
         }
       },
-      "@supabase/supabase-js.index.SupabaseClient.removeAllChannels": {
-        "name": "@supabase/supabase-js.index.SupabaseClient.removeAllChannels",
+      "@supabase/biobase-js.index.BiobaseClient.removeAllChannels": {
+        "name": "@supabase/biobase-js.index.BiobaseClient.removeAllChannels",
         "params": [],
         "ret": {
           "type": {
@@ -514,8 +514,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           "shortText": "Unsubscribes and removes all Realtime channels from Realtime client."
         }
       },
-      "@supabase/supabase-js.index.SupabaseClient.removeChannel": {
-        "name": "@supabase/supabase-js.index.SupabaseClient.removeChannel",
+      "@supabase/biobase-js.index.BiobaseClient.removeChannel": {
+        "name": "@supabase/biobase-js.index.BiobaseClient.removeChannel",
         "params": [
           {
             "name": "channel",
@@ -555,8 +555,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           "shortText": "Unsubscribes and removes Realtime channel from Realtime client."
         }
       },
-      "@supabase/supabase-js.index.SupabaseClient.rpc": {
-        "name": "@supabase/supabase-js.index.SupabaseClient.rpc",
+      "@supabase/biobase-js.index.BiobaseClient.rpc": {
+        "name": "@supabase/biobase-js.index.BiobaseClient.rpc",
         "params": [
           {
             "name": "fn",
@@ -646,8 +646,8 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
           "shortText": "Perform a function call."
         }
       },
-      "@supabase/supabase-js.index.SupabaseClient.schema": {
-        "name": "@supabase/supabase-js.index.SupabaseClient.schema",
+      "@supabase/biobase-js.index.BiobaseClient.schema": {
+        "name": "@supabase/biobase-js.index.BiobaseClient.schema",
         "params": [
           {
             "name": "schema",
@@ -20413,7 +20413,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
         },
         "comment": {
           "shortText": "If there's an error with the query, throwOnError will reject the promise by\\nthrowing the error instead of returning it as part of a successful response.",
-          "text": "{@link https://github.com/supabase/supabase-js/issues/92}\\n"
+          "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\\n"
         }
       },
       "@supabase/postgrest-js.PostgrestClient.constructor": {
@@ -21166,7 +21166,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
         },
         "comment": {
           "shortText": "Return \`data\` as the EXPLAIN plan for the query.",
-          "text": "You need to enable the\\n[db_plan_enabled](https://biobase.studio/docs/guides/database/debugging-performance#enabling-explain)\\nsetting before using this method.\\n"
+          "text": "You need to enable the\\n[db_plan_enabled](https://biobase.com/docs/guides/database/debugging-performance#enabling-explain)\\nsetting before using this method.\\n"
         }
       },
       "@supabase/postgrest-js.PostgrestFilterBuilder.filter": {
@@ -23835,7 +23835,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
         },
         "comment": {
           "shortText": "If there's an error with the query, throwOnError will reject the promise by\\nthrowing the error instead of returning it as part of a successful response.",
-          "text": "{@link https://github.com/supabase/supabase-js/issues/92}\\n"
+          "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\\n"
         }
       },
       "@supabase/postgrest-js.PostgrestQueryBuilder.constructor": {
@@ -24598,7 +24598,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
         },
         "comment": {
           "shortText": "Return \`data\` as the EXPLAIN plan for the query.",
-          "text": "You need to enable the\\n[db_plan_enabled](https://biobase.studio/docs/guides/database/debugging-performance#enabling-explain)\\nsetting before using this method.\\n"
+          "text": "You need to enable the\\n[db_plan_enabled](https://biobase.com/docs/guides/database/debugging-performance#enabling-explain)\\nsetting before using this method.\\n"
         }
       },
       "@supabase/postgrest-js.PostgrestTransformBuilder.geojson": {
@@ -25334,7 +25334,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
         },
         "comment": {
           "shortText": "If there's an error with the query, throwOnError will reject the promise by\\nthrowing the error instead of returning it as part of a successful response.",
-          "text": "{@link https://github.com/supabase/supabase-js/issues/92}\\n"
+          "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\\n"
         }
       }
     }
@@ -26074,7 +26074,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
               }
             ],
             "comment": {
-              "shortText": "The following is placed here to display on biobase.studio/docs/reference/javascript/subscribe."
+              "shortText": "The following is placed here to display on biobase.com/docs/reference/javascript/subscribe."
             }
           },
           {

@@ -1,4 +1,4 @@
-import type { User } from '@supabase/supabase-js'
+import type { User } from '@supabase/biobase-js'
 import { FlagValues } from '@vercel/flags/react'
 import { PropsWithChildren, useEffect, useState } from 'react'
 

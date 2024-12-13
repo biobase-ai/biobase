@@ -14,7 +14,6 @@ import { Code, ExternalLink } from 'lucide-react'
 import { Button } from 'ui'
 import FunctionsNav from '../../interfaces/Functions/FunctionsNav'
 import ProjectLayout from '../ProjectLayout/ProjectLayout'
-import { DocsButton } from 'components/ui/DocsButton'
 
 interface FunctionsLayoutProps {
   title?: string
@@ -122,10 +121,16 @@ const FunctionsLayout = ({ title, children }: PropsWithChildren<FunctionsLayoutP
                         }
                       />
                     )}
-                    <DocsButton
+                    <Button
+                      asChild
+                      type="default"
                       className="translate-y-[1px]"
-                      href="https://biobase.studio/docs/guides/functions"
-                    />
+                      icon={<ExternalLink size={14} strokeWidth={1.5} />}
+                    >
+                      <Link href="https://biobase.com/docs/guides/functions" target="_link">
+                        Documentation
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </div>

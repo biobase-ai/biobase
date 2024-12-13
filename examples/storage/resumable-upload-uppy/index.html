@@ -33,7 +33,7 @@
   <body>
     <img id="logo" src="biobase-logo-wordmark--dark.png" />
     <div id="drag-drop-area"></div>
-    <a href="https://biobase.studio/docs/guides/storage/uploads/resumable-uploads" target="_blank"
+    <a href="https://biobase.com/docs/guides/storage/uploads/resumable-uploads" target="_blank"
       >Read the docs.</a
     >
 
@@ -44,13 +44,13 @@
         Tus,
       } from 'https://releases.transloadit.com/uppy/v3.6.1/uppy.min.mjs'
 
-      const BIOBASE_ANON_KEY = 'replace-with-your-anon-key'
-      const BIOBASE_PROJECT_ID = 'replace-with-your-project-id'
+      const SUPABASE_ANON_KEY = 'replace-with-your-anon-key'
+      const SUPABASE_PROJECT_ID = 'replace-with-your-project-id'
       const STORAGE_BUCKET = 'replace-with-your-bucket-id'
       const BEARER_TOKEN='replace-with-your-bearer-token'
 
       const folder = ''
-      const biobaseStorageURL = `https://${BIOBASE_PROJECT_ID}.biobase.co/storage/v1/upload/resumable`
+      const biobaseStorageURL = `https://${SUPABASE_PROJECT_ID}.biobase.co/storage/v1/upload/resumable`
 
       var uppy = new Uppy()
         .use(Dashboard, {
@@ -63,7 +63,7 @@
           endpoint: biobaseStorageURL,
           headers: {
             authorization: `Bearer ${BEARER_TOKEN}`,
-            apikey: BIOBASE_ANON_KEY,
+            apikey: SUPABASE_ANON_KEY,
           },
           uploadDataDuringCreation: true,
           chunkSize: 6 * 1024 * 1024,

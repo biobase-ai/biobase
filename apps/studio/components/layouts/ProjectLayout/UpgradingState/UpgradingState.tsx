@@ -22,11 +22,9 @@ import {
   Loader,
   Check,
 } from 'lucide-react'
-import { useSearchParams } from 'next/navigation'
 
 const UpgradingState = () => {
   const { ref } = useParams()
-  const queryParams = useSearchParams()
   const queryClient = useQueryClient()
   const { project } = useProjectContext()
   const [loading, setLoading] = useState(false)
@@ -35,7 +33,6 @@ const UpgradingState = () => {
     {
       projectRef: ref,
       projectStatus: project?.status,
-      trackingId: queryParams.get('trackingId'),
     },
     {
       enabled: IS_PLATFORM,

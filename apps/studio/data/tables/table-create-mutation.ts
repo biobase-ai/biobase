@@ -1,4 +1,3 @@
-import type { PostgresTable } from '@supabase/postgres-meta'
 import { useMutation, UseMutationOptions, useQueryClient } from '@tanstack/react-query'
 import { toast } from 'sonner'
 
@@ -30,10 +29,7 @@ export async function createTable({ projectRef, connectionString, payload }: Tab
   })
 
   if (error) handleError(error)
-
-  // [Alaister] we have to manually cast the data to PostgresTable
-  // because the API types are slightly wrong
-  return data as PostgresTable
+  return data
 }
 
 type TableCreateData = Awaited<ReturnType<typeof createTable>>

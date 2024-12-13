@@ -26,7 +26,6 @@ import BranchingPITRNotice from './BranchingPITRNotice'
 import BranchingPlanNotice from './BranchingPlanNotice'
 import BranchingPostgresVersionNotice from './BranchingPostgresVersionNotice'
 import GithubRepositorySelection from './GithubRepositorySelection'
-import { DocsButton } from 'components/ui/DocsButton'
 
 const EnableBranchingModal = () => {
   const { ref } = useParams()
@@ -153,7 +152,15 @@ const EnableBranchingModal = () => {
                   <p className="text-sm text-foreground-light">Manage environments in Biobase</p>
                 </div>
               </div>
-              <DocsButton href="https://biobase.studio/docs/guides/platform/branching" />
+              <Button type="default" icon={<ExternalLink strokeWidth={1.5} />}>
+                <Link
+                  href="https://biobase.com/docs/guides/platform/branching"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Documentation
+                </Link>
+              </Button>
             </Modal.Content>
 
             {isLoading && (

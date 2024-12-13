@@ -1,5 +1,4 @@
 import { products } from 'shared-data'
-import ProductModules from '../ProductModules'
 
 export default {
   metaTitle: 'Biobase Open Source Community',
@@ -44,7 +43,7 @@ export default {
         'supa_audit',
         'biobase',
         'biobase-dart',
-        'supabase-js',
+        'biobase-js',
         'biobase-flutter',
         'biobase-audit',
         'biobase.dev',
@@ -60,7 +59,7 @@ export default {
       repos: [
         'biobase',
         'biobase-cli',
-        'supabase-js',
+        'biobase-js',
         'auth-helpers',
         'auth-elements',
         'auth-ui',
@@ -88,23 +87,23 @@ export default {
         'functions-js',
         'functions-relay',
         'biobase',
-        'supabase-js',
+        'biobase-js',
       ],
     },
     {
       label: 'Realtime',
       icon: products.realtime.icon[16],
-      repos: ['realtime', 'realtime-js', 'realtime-dart', 'biobase', 'supabase-js', 'walrus'],
+      repos: ['realtime', 'realtime-js', 'realtime-dart', 'biobase', 'biobase-js', 'walrus'],
     },
     {
       label: 'Vector',
-      icon: ProductModules.vector.icon[16],
+      icon: products.vector.icon[16],
       repos: [
         'embeddings-generator',
         'headless-vector-search',
         'pgvector',
         'biobase',
-        'supabase-js',
+        'biobase-js',
         'vecs',
       ],
     },

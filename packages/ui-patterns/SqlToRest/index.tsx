@@ -147,7 +147,7 @@ export default function SqlToRest({
         }
 
         const result: ResultBundle = {
-          type: 'supabase-js',
+          type: 'biobase-js',
           language: currentLanguage,
           statement,
           ...jsQuery,
@@ -187,7 +187,7 @@ export default function SqlToRest({
         }
 
         const result: ResultBundle = {
-          type: 'supabase-js',
+          type: 'biobase-js',
           language: currentLanguage,
           statement,
           ...jsQuery,
@@ -233,7 +233,7 @@ export default function SqlToRest({
       } else if (error instanceof RenderError) {
         if (error.renderer === 'http') {
           setHttpRenderError(error)
-        } else if (error.renderer === 'supabase-js') {
+        } else if (error.renderer === 'biobase-js') {
           setBiobaseJsRenderError(error)
         } else {
           console.error(error)
@@ -328,7 +328,7 @@ export default function SqlToRest({
             <div className="mt-2 text-white flex gap-1 leading-6">
               <GitPullRequest className="inline-block" width={16} />
               <a
-                href="https://github.com/biobase-ai-community/sql-to-rest/issues/new/choose"
+                href="https://github.com/biobase-community/sql-to-rest/issues/new/choose"
                 target="_blank"
                 rel="noopener noreferrer"
               >

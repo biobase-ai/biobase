@@ -1,6 +1,5 @@
+import clsx from 'clsx'
 import Link from 'next/link'
-
-import { cn } from 'ui'
 
 interface SettingsMenuItemProps {
   href: string
@@ -13,7 +12,7 @@ const SettingsMenuItem = ({ href, label, isActive }: SettingsMenuItemProps) => {
     <div>
       <Link
         href={href}
-        className={cn(
+        className={clsx(
           'text-sm',
           isActive ? 'text-foreground' : 'text-foreground-light hover:text-foreground transition'
         )}

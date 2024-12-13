@@ -8,7 +8,6 @@ import { copyToClipboard } from 'lib/helpers'
 import { BookOpen, Check, Clipboard, ExternalLink, List, X } from 'lucide-react'
 import { logConstants } from 'shared-data'
 import { Button, SidePanel, Tabs } from 'ui'
-import { DocsButton } from '../DocsButton'
 
 export interface LogsExplorerHeaderProps {
   subtitle?: string
@@ -32,7 +31,9 @@ const LogsExplorerHeader = ({ subtitle }: LogsExplorerHeaderProps) => {
         {subtitle && <span className="text-2xl text-foreground-light">{subtitle}</span>}
       </div>
       <div className="flex flex-row gap-2">
-        <DocsButton href={LOGS_EXPLORER_DOCS_URL} />
+        <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
+          <Link href={LOGS_EXPLORER_DOCS_URL}>Documentation</Link>
+        </Button>
 
         <SidePanel
           size="large"
@@ -68,7 +69,7 @@ const LogsExplorerHeader = ({ subtitle }: LogsExplorerHeaderProps) => {
                 respective source. Do note that to access nested keys, you would need to perform the
                 necessary{' '}
                 <Link
-                  href="https://biobase.studio/docs/guides/platform/logs#unnesting-arrays"
+                  href="https://biobase.com/docs/guides/platform/logs#unnesting-arrays"
                   target="_blank"
                   rel="noreferrer"
                   className="text-brand"

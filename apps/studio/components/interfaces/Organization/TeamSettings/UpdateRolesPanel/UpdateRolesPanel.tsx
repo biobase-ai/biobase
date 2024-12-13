@@ -1,9 +1,8 @@
 import { isEqual } from 'lodash'
-import { X } from 'lucide-react'
+import { ExternalLink, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 import { useParams } from 'common'
-import { DocsButton } from 'components/ui/DocsButton'
 import { useOrganizationRolesV2Query } from 'data/organization-members/organization-roles-query'
 import { OrganizationMember } from 'data/organizations/organization-members-query'
 import { usePermissionsQuery } from 'data/permissions/permissions-query'
@@ -171,7 +170,15 @@ export const UpdateRolesPanel = ({ visible, member, onClose }: UpdateRolesPanelP
               <p className="truncate" title={`Manage access for ${member.username}`}>
                 Manage access for {member.username}
               </p>
-              <DocsButton href="https://biobase.studio/docs/guides/platform/access-control" />
+              <Button asChild type="default" icon={<ExternalLink />}>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://biobase.com/docs/guides/platform/access-control"
+                >
+                  Documentation
+                </a>
+              </Button>
             </SheetHeader>
 
             <SheetSection className="h-full overflow-auto flex flex-col gap-y-4">

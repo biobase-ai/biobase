@@ -20,7 +20,7 @@ const TIA = () => {
       </ScaffoldSectionDetail>
       <ScaffoldSectionContent className="flex items-center justify-center h-full">
         <a
-          href="https://biobase.studio/downloads/docs/Biobase+TIA+241030.pdf"
+          href="https://biobase.com/downloads/docs/Biobase+TIA+241009.pdf"
           target="_blank"
           rel="noreferrer noopener"
           download={true}

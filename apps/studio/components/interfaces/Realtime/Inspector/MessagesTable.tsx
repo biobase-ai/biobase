@@ -12,7 +12,6 @@ import MessageSelection from './MessageSelection'
 import type { LogData } from './Messages.types'
 import NoChannelEmptyState from './NoChannelEmptyState'
 import { ColumnRenderer } from './RealtimeMessageColumnRenderer'
-import { DocsButton } from 'components/ui/DocsButton'
 
 export const isErrorLog = (l: LogData) => {
   return l.message === 'SYSTEM' && l.metadata?.status === 'error'
@@ -84,7 +83,15 @@ const NoResultAlert = ({
                 <p className="text-foreground">Not sure what to do?</p>
                 <p className="text-foreground-lighter text-xs">Browse our documentation</p>
               </div>
-              <DocsButton href="https://biobase.studio/docs/guides/realtime" />
+              <Button type="default" iconRight={<ExternalLink />}>
+                <a
+                  href="https://biobase.com/docs/guides/realtime"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Documentation
+                </a>
+              </Button>
             </div>
           </div>
         </>

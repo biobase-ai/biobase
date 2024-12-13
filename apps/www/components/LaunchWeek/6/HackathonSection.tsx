@@ -20,7 +20,7 @@ export default function LaunchHero() {
 
           <div className="flex gap-3">
             <Button asChild type="primary" size="small" className="text-white">
-              <Link href="https://www.madewithbiobase.studio/tag/Launch%20Week%205">
+              <Link href="https://www.madewithbiobase.com/tag/Launch%20Week%205">
                 view projects
               </Link>
             </Button>
@@ -42,8 +42,8 @@ export default function LaunchHero() {
             <h3 className="text-foreground text-lg">Submission</h3>
             <p className="text-foreground-light text-sm">
               Submit your project through{' '}
-              <a className="text-brand" href="https://madewithbiobase.studio">
-                madewithbiobase.studio
+              <a className="text-brand" href="https://madewithbiobase.com">
+                madewithbiobase.com
               </a>
               .
             </p>

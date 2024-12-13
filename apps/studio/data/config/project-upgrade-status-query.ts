@@ -7,22 +7,16 @@ import { configKeys } from './keys'
 export type ProjectUpgradingStatusVariables = {
   projectRef?: string
   projectStatus?: string
-  trackingId?: string | null
 }
 
 export async function getProjectUpgradingStatus(
-  { projectRef, trackingId }: ProjectUpgradingStatusVariables,
+  { projectRef }: ProjectUpgradingStatusVariables,
   signal?: AbortSignal
 ) {
   if (!projectRef) throw new Error('projectRef is required')
 
-  const queryParams: Record<string, string> = {}
-  if (trackingId) {
-    queryParams['tracking_id'] = trackingId
-  }
-
   const { data, error } = await get(`/v1/projects/{ref}/upgrade/status`, {
-    params: { path: { ref: projectRef }, query: queryParams },
+    params: { path: { ref: projectRef } },
     signal,
   })
   if (error) handleError(error)
@@ -34,7 +28,7 @@ export type ProjectUpgradingStatusData = Awaited<ReturnType<typeof getProjectUpg
 export type ProjectUpgradingStatusError = unknown
 
 export const useProjectUpgradingStatusQuery = <TData = ProjectUpgradingStatusData>(
-  { projectRef, projectStatus, trackingId }: ProjectUpgradingStatusVariables,
+  { projectRef, projectStatus }: ProjectUpgradingStatusVariables,
   {
     enabled = true,
     ...options
@@ -44,7 +38,7 @@ export const useProjectUpgradingStatusQuery = <TData = ProjectUpgradingStatusDat
 
   return useQuery<ProjectUpgradingStatusData, ProjectUpgradingStatusError, TData>(
     configKeys.upgradeStatus(projectRef),
-    ({ signal }) => getProjectUpgradingStatus({ projectRef, trackingId }, signal),
+    ({ signal }) => getProjectUpgradingStatus({ projectRef }, signal),
     {
       enabled: enabled && typeof projectRef !== 'undefined',
       refetchInterval(data) {

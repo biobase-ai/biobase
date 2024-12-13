@@ -15,7 +15,7 @@ async function generate() {
   const cliPages = generateCLIPages()
   const referencePages = await generateReferencePages()
 
-  const contentFiles = await globby(['content/guides/**/!(_)*.mdx'])
+  const contentFiles = await globby(['content/**/!(_)*.mdx'])
   const contentPages = await Promise.all(
     contentFiles.map(async (filePath) => {
       const fileContents = await fs.promises.readFile(filePath, 'utf8')
@@ -30,18 +30,7 @@ async function generate() {
     })
   )
 
-  const troubleshootingFiles = await globby(['content/troubleshooting/**/!(_)*.mdx'])
-  const troubleshootingPages = await Promise.all(
-    troubleshootingFiles.map(async (filePath) => {
-      return {
-        link: filePath.replace(/^content/, 'guides').replace(/\.mdx$/, ''),
-        priority: 1,
-      }
-    })
-  )
-
   const allPages = (contentPages as Array<{ link: string; priority?: number }>).concat(
-    troubleshootingPages,
     referencePages,
     cliPages
   )
@@ -53,7 +42,7 @@ async function generate() {
           .map(({ link, priority }) => {
             return `
               <url>
-                  <loc>${`https://biobase.studio/docs/${link}`}</loc>
+                  <loc>${`https://biobase.com/docs/${link}`}</loc>
                   <changefreq>weekly</changefreq>
                   ${priority ? `<priority>${priority}</priority>` : ''}
               </url>

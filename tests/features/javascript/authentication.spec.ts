@@ -2,7 +2,7 @@ import { suite, test, timeout } from '@testdeck/jest'
 import { faker } from '@faker-js/faker'
 import { Severity } from 'allure-js-commons'
 
-import { AuthChangeEvent, Session } from '@supabase/supabase-js'
+import { AuthChangeEvent, Session } from '@supabase/biobase-js'
 
 import { FEATURE } from '../templates/enums'
 import { description, feature, log, severity, step } from '../../.jest/jest-custom-reporter'
@@ -15,7 +15,7 @@ class Authentication extends Hooks {
   @description('When user sign up then corresponding user in auth schema should be created')
   @test
   async 'signup should create user'() {
-    const biobase = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY_ANON)
+    const biobase = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY_ANON)
 
     const fakeUser = {
       email: faker.internet.exampleEmail(),
@@ -42,7 +42,7 @@ class Authentication extends Hooks {
   @test
   async 'sing up new user and sign in'() {
     // sign up user
-    const biobase = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY_ANON)
+    const biobase = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY_ANON)
 
     const fakeUser = {
       email: faker.internet.exampleEmail(),
@@ -92,7 +92,7 @@ class Authentication extends Hooks {
   @test
   async 'create new users by phone auth'() {
     // sign up user
-    const biobase = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY_ANON)
+    const biobase = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY_ANON)
 
     const fakeUser = {
       password: faker.internet.password(),
@@ -134,7 +134,7 @@ class Authentication extends Hooks {
     const fakeUser = await this.createUser()
 
     // sign in as user
-    const biobase = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY_ANON)
+    const biobase = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY_ANON)
     const {
       data: { session, user },
       error: signInError,
@@ -178,7 +178,7 @@ class Authentication extends Hooks {
     })
 
     // sign in as user
-    const biobase = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY_ANON)
+    const biobase = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY_ANON)
     await biobase.auth.signInWithPassword({
       email: fakeUser.email,
       password: fakeUser.password,
@@ -212,7 +212,7 @@ class Authentication extends Hooks {
     const fakeUser = await this.createUser()
 
     // sign in as user
-    const biobase = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY_ANON)
+    const biobase = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY_ANON)
     await biobase.auth.signInWithPassword({
       email: fakeUser.email,
       password: fakeUser.password,
@@ -259,7 +259,7 @@ class Authentication extends Hooks {
     const fakeUser = await this.createUser()
 
     // sign in as user
-    const sb = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY_ANON)
+    const sb = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY_ANON)
     const {
       data: { session },
     } = await sb.auth.signInWithPassword({
@@ -267,7 +267,7 @@ class Authentication extends Hooks {
       password: fakeUser.password,
     })
 
-    const biobase = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY_ANON)
+    const biobase = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY_ANON)
     const { error: sessionErr } = await biobase.auth.setSession(session)
     expect(sessionErr).toBeNull()
 
@@ -296,7 +296,7 @@ class Authentication extends Hooks {
     }
 
     // create client and subscribe on auth state changes
-    const biobase = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY_ANON)
+    const biobase = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY_ANON)
     const {
       data: { subscription },
     } = biobase.auth.onAuthStateChange(onAuthStateChanged)

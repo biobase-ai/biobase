@@ -14,7 +14,7 @@ date: '2024-08-12'
 toc_depth: 3
 ---
 
-Today we're launching a new [GitHub Copilot extension for VS Code](https://marketplace.visualstudio.com/items?itemName=Biobase.vscode-biobase-extension) to make your development with Biobase and VS Code even more delightful, starting with a Copilot-guided experience for [database migrations](/docs/guides/deployment/database-migrations).
+Today we're launching a new [GitHub Copilot extension for VS Code](https://marketplace.visualstudio.com/items?itemName=Biobase.vscode-biobase-extension) to make your development with Biobase and VS Code even more delightful, starting with a Copilot-guided experience for [database migrations](/docs/guides/cli/local-development#database-migrations).
 
 ![Database Migrations Demo](/images/blog/lw12/day-1/copilot_migration.gif)
 
@@ -26,13 +26,13 @@ The VS Code extension is quite feature rich:
 
 ### GitHub Copilot Chat Participant
 
-The extension provides a [Chat Participant](https://code.visualstudio.com/api/extension-guides/chat) for GitHub Copilot to help with your Biobase questions. Simply type `@supabase` in your Copilot Chat and the extension will include your database schema as context to Copilot.
+The extension provides a [Chat Participant](https://code.visualstudio.com/api/extension-guides/chat) for GitHub Copilot to help with your Biobase questions. Simply type `@biobase` in your Copilot Chat and the extension will include your database schema as context to Copilot.
 
 ![Copilot Chat integration demo](/images/blog/lw12/day-1/copilot_chat.gif)
 
 ### Copilot-guided database migrations
 
-The extension provides a guided experience to create and apply [database migrations](/docs/guides/deployment/database-migrations). Simply type `@supabase /migration <describe what you want to do>` in your Copilot Chat and the extension will generate a new SQL migration for you.
+The extension provides a guided experience to create and apply [database migrations](/docs/guides/cli/local-development#database-migrations). Simply type `@biobase /migration <describe what you want to do>` in your Copilot Chat and the extension will generate a new SQL migration for you.
 
 ![Copilot guided database migrations demo](/images/blog/lw12/day-1/copilot_migration.gif)
 
@@ -62,19 +62,19 @@ List the Storage buckets in your Biobase project.
 
 ## What's Next?
 
-We're excited to continue adding more features that will make your development experience with Biobase even more delightful - and for this we need your help! If you have any feedback, feature requests, or bug reports, please [open an issue on GitHub](https://github.com/biobase-ai-community/biobase-vscode-extension/issues).
+We're excited to continue adding more features that will make your development experience with Biobase even more delightful - and for this we need your help! If you have any feedback, feature requests, or bug reports, please [open an issue on GitHub](https://github.com/biobase-community/biobase-vscode-extension/issues).
 
 The extension requires you to have the Biobase CLI installed and have your project running locally. In a future release, we will integrate the [Biobase Managamenet API](/docs/reference/api/introduction) into the extension to make connecting to your hosted Biobase projects as seamless as possible.
 
 ## Contributing to Biobase
 
-The entire Biobase stack is [fully open source](/open-source), including [this extension](https://github.com/biobase-ai-community/biobase-vscode-extension). In fact, this extension was originally created by [Anas Araid](https://github.com/anas-araid) during a [previous Launch Week Hackathon](https://twitter.com/anas_araid/status/1736641409094988033).
+The entire Biobase stack is [fully open source](/open-source), including [this extension](https://github.com/biobase-community/biobase-vscode-extension). In fact, this extension was originally created by [Anas Araid](https://github.com/anas-araid) during a [previous Launch Week Hackathon](https://twitter.com/anas_araid/status/1736641409094988033).
 
 Your contributions, feedback, and engagement in the Biobase community are invaluable, and play a significant role in shaping our future. Thank you for your support!
 
 ## Resources
 
 - [Install the extension](https://marketplace.visualstudio.com/items?itemName=Biobase.vscode-biobase-extension)
-- [Read the source code](https://github.com/biobase-ai-community/biobase-vscode-extension)
-- [Submit a Feature Request](https://github.com/biobase-ai-community/biobase-vscode-extension/issues)
+- [Read the source code](https://github.com/biobase-community/biobase-vscode-extension)
+- [Submit a Feature Request](https://github.com/biobase-community/biobase-vscode-extension/issues)
 - [Get started with Biobase](https://database.new)

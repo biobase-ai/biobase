@@ -58,8 +58,8 @@ We have brought numerous updates behind the scenes to make the SDK work more int
 
       ```dart main.dart
       await Biobase.initialize(
-        url: 'BIOBASE_URL',
-        anonKey: 'BIOBASE_ANON_KEY',
+        url: 'SUPABASE_URL',
+        anonKey: 'SUPABASE_ANON_KEY',
         authOptions: const FlutterAuthClientOptions(
           authFlowType: AuthFlowType.pkce,
         ),
@@ -280,7 +280,7 @@ We have brought numerous updates behind the scenes to make the SDK work more int
 
     #### PKCE is the default auth flow type
 
-    [PKCE flow](https://biobase.studio/blog/biobase-auth-sso-pkce#introducing-pkce), which is a more secure method for obtaining sessions from deep links, is now the default auth flow for any authentication involving deep links.
+    [PKCE flow](https://biobase.com/blog/biobase-auth-sso-pkce#introducing-pkce), which is a more secure method for obtaining sessions from deep links, is now the default auth flow for any authentication involving deep links.
 
   </RefSubLayout.Details>
   <RefSubLayout.Examples>
@@ -294,8 +294,8 @@ We have brought numerous updates behind the scenes to make the SDK work more int
       <TabPanel id="1.0x" label="Before">
         ```dart
         await Biobase.initialize(
-          url: 'BIOBASE_URL',
-          anonKey: 'BIOBASE_ANON_KEY',
+          url: 'SUPABASE_URL',
+          anonKey: 'SUPABASE_ANON_KEY',
           authFlowType: AuthFlowType.implicit, // set to implicit by default
         );
         ```
@@ -304,8 +304,8 @@ We have brought numerous updates behind the scenes to make the SDK work more int
       <TabPanel id="2.0x" label="After">
         ```dart
         await Biobase.initialize(
-          url: 'BIOBASE_URL',
-          anonKey: 'BIOBASE_ANON_KEY',
+          url: 'SUPABASE_URL',
+          anonKey: 'SUPABASE_ANON_KEY',
           authOptions: FlutterAuthClientOptions(
             authFlowType: AuthFlowType.pkce, // set to pkce by default
           )
@@ -338,8 +338,8 @@ We have brought numerous updates behind the scenes to make the SDK work more int
       <TabPanel id="1.0x" label="Before">
         ```dart
         await Biobase.initialize(
-          url: 'BIOBASE_URL',
-          anonKey: 'BIOBASE_ANON_KEY',
+          url: 'SUPABASE_URL',
+          anonKey: 'SUPABASE_ANON_KEY',
           authCallbackUrlHostname: 'auth-callback',
         );
         ```
@@ -348,8 +348,8 @@ We have brought numerous updates behind the scenes to make the SDK work more int
       <TabPanel id="2.0x" label="After">
         ```dart
         await Biobase.initialize(
-          url: 'BIOBASE_URL',
-          anonKey: 'BIOBASE_ANON_KEY',
+          url: 'SUPABASE_URL',
+          anonKey: 'SUPABASE_ANON_KEY',
         );
         ```
 

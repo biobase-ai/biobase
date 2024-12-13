@@ -7,8 +7,7 @@ import {
 } from 'lib/role-impersonation'
 import type { ResponseError } from 'types'
 import { sqlKeys } from './keys'
-import { MB, PROJECT_STATUS } from 'lib/constants'
-import { useSelectedProject } from 'hooks/misc/useSelectedProject'
+import { MB } from 'lib/constants'
 
 export type ExecuteSqlVariables = {
   projectRef?: string
@@ -37,8 +36,7 @@ export async function executeSql(
     | 'handleError'
     | 'isRoleImpersonationEnabled'
   >,
-  signal?: AbortSignal,
-  headersInit?: HeadersInit
+  signal?: AbortSignal
 ): Promise<{ result: any }> {
   if (!projectRef) throw new Error('projectRef is required')
 
@@ -48,7 +46,7 @@ export async function executeSql(
     throw new Error('Query is too large to be run via the SQL Editor')
   }
 
-  let headers = new Headers(headersInit)
+  let headers = new Headers()
   if (connectionString) headers.set('x-connection-encrypted', connectionString)
 
   let { data, error } = await post('/platform/pg-meta/{ref}/query', {
@@ -56,16 +54,12 @@ export async function executeSql(
     params: {
       header: { 'x-connection-encrypted': connectionString ?? '' },
       path: { ref: projectRef },
-      // @ts-expect-error: This is just a client side thing to identify queries better
-      query: {
-        key:
-          queryKey?.filter((seg) => typeof seg === 'string' || typeof seg === 'number').join('-') ??
-          '',
-      },
+      // @ts-ignore: This is just a client side thing to identify queries better
+      query: { key: queryKey?.filter((seg) => typeof seg === 'string').join('-') ?? '' },
     },
     body: { query: sql },
     headers: Object.fromEntries(headers),
-  })
+  } as any) // Needed to fix generated api types for now
 
   if (error) {
     if (
@@ -115,9 +109,6 @@ export async function executeSql(
 export type ExecuteSqlData = Awaited<ReturnType<typeof executeSql>>
 export type ExecuteSqlError = ResponseError
 
-/**
- * @deprecated Use the regular useQuery with a function that calls executeSql() instead
- */
 export const useExecuteSqlQuery = <TData = ExecuteSqlData>(
   {
     projectRef,
@@ -128,17 +119,13 @@ export const useExecuteSqlQuery = <TData = ExecuteSqlData>(
     isRoleImpersonationEnabled,
   }: ExecuteSqlVariables,
   { enabled = true, ...options }: UseQueryOptions<ExecuteSqlData, ExecuteSqlError, TData> = {}
-) => {
-  const project = useSelectedProject()
-  const isActive = project?.status === PROJECT_STATUS.ACTIVE_HEALTHY
-
-  return useQuery<ExecuteSqlData, ExecuteSqlError, TData>(
+) =>
+  useQuery<ExecuteSqlData, ExecuteSqlError, TData>(
     sqlKeys.query(projectRef, queryKey ?? [btoa(sql)]),
     ({ signal }) =>
       executeSql(
         { projectRef, connectionString, sql, queryKey, handleError, isRoleImpersonationEnabled },
         signal
       ),
-    { enabled: enabled && typeof projectRef !== 'undefined' && isActive, staleTime: 0, ...options }
+    { enabled: enabled && typeof projectRef !== 'undefined', staleTime: 0, ...options }
   )
-}

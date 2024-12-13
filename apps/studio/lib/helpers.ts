@@ -61,7 +61,7 @@ export const getURL = () => {
       ? process.env.NEXT_PUBLIC_SITE_URL
       : process?.env?.VERCEL_URL && process.env.VERCEL_URL !== ''
         ? process.env.VERCEL_URL
-        : 'https://biobase.studio/dashboard'
+        : 'https://biobase.com/dashboard'
   return url.includes('http') ? url : `https://${url}`
 }
 

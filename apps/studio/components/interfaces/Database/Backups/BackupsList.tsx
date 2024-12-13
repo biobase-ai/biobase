@@ -1,3 +1,4 @@
+import { PermissionAction } from '@supabase/shared-types/out/constants'
 import { useQueryClient } from '@tanstack/react-query'
 import dayjs from 'dayjs'
 import { Clock } from 'lucide-react'
@@ -11,22 +12,27 @@ import UpgradeToPro from 'components/ui/UpgradeToPro'
 import { useBackupRestoreMutation } from 'data/database/backup-restore-mutation'
 import { DatabaseBackup, useBackupsQuery } from 'data/database/backups-query'
 import { setProjectStatus } from 'data/projects/projects-query'
+import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
 import { PROJECT_STATUS } from 'lib/constants'
 import ConfirmationModal from 'ui-patterns/Dialogs/ConfirmationModal'
 import BackupItem from './BackupItem'
 import BackupsEmpty from './BackupsEmpty'
 import BackupsStorageAlert from './BackupsStorageAlert'
-import { useParams } from 'common'
 
 const BackupsList = () => {
   const router = useRouter()
   const queryClient = useQueryClient()
-  const { ref: projectRef } = useParams()
 
   const { project: selectedProject } = useProjectContext()
+  const projectRef = selectedProject?.ref || 'default'
   const isHealthy = selectedProject?.status === PROJECT_STATUS.ACTIVE_HEALTHY
 
   const [selectedBackup, setSelectedBackup] = useState<DatabaseBackup>()
+
+  const canTriggerScheduledBackups = useCheckPermissions(
+    PermissionAction.INFRA_EXECUTE,
+    'queue_job.restore.prepare'
+  )
 
   const { data: backups } = useBackupsQuery({ projectRef })
   const {
@@ -35,17 +41,15 @@ const BackupsList = () => {
     isSuccess: isSuccessBackup,
   } = useBackupRestoreMutation({
     onSuccess: () => {
-      if (projectRef) {
-        setTimeout(() => {
-          setProjectStatus(queryClient, projectRef, PROJECT_STATUS.RESTORING)
-          toast.success(
-            `Restoring database back to ${dayjs(selectedBackup?.inserted_at).format(
-              'DD MMM YYYY HH:mm:ss'
-            )}`
-          )
-          router.push(`/project/${projectRef}`)
-        }, 3000)
-      }
+      setTimeout(() => {
+        setProjectStatus(queryClient, projectRef, PROJECT_STATUS.RESTORING)
+        toast.success(
+          `Restoring database back to ${dayjs(selectedBackup?.inserted_at).format(
+            'DD MMM YYYY HH:mm:ss'
+          )}`
+        )
+        router.push(`/project/${projectRef}`)
+      }, 3000)
     },
   })
 
@@ -82,6 +86,7 @@ const BackupsList = () => {
                   <BackupItem
                     key={x.id}
                     backup={x}
+                    projectRef={projectRef}
                     index={i}
                     isHealthy={isHealthy}
                     onSelectBackup={() => setSelectedBackup(x)}
@@ -101,7 +106,6 @@ const BackupsList = () => {
         loading={isRestoring || isSuccessBackup}
         onCancel={() => setSelectedBackup(undefined)}
         onConfirm={() => {
-          if (projectRef === undefined) return console.error('Project ref required')
           if (selectedBackup === undefined) return console.error('Backup required')
           restoreFromBackup({ ref: projectRef, backup: selectedBackup })
         }}

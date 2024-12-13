@@ -1,7 +1,7 @@
 'use client'
 
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { useQueryClient } from '@tanstack/react-query'
 import { AuthProvider, useConstant } from 'common'
 import { type PropsWithChildren, useCallback } from 'react'
@@ -13,8 +13,8 @@ const AuthContainerInternal = ({ children }: PropsWithChildren) => {
   const biobase = useConstant(() =>
     IS_PLATFORM
       ? createClient(
-          process.env.NEXT_PUBLIC_BIOBASE_URL!,
-          process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY!
+          process.env.NEXT_PUBLIC_SUPABASE_URL!,
+          process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
         )
       : undefined
   )

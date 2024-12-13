@@ -1,4 +1,4 @@
-import { createServerSupabaseClient, User } from '@supabase/auth-helpers-nextjs'
+import { createServerBiobaseClient, User } from '@supabase/auth-helpers-nextjs'
 import { GetServerSidePropsContext } from 'next'
 import Link from 'next/link'
 
@@ -16,7 +16,7 @@ export default function Profile({ user }: { user: User }) {
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   // Create authenticated Biobase Client
-  const biobase = createServerSupabaseClient(ctx)
+  const biobase = createServerBiobaseClient(ctx)
   // Check if we have a session
   const {
     data: { session },

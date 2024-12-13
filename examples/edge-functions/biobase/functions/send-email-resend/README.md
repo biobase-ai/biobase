@@ -1,6 +1,6 @@
 # Resend with Biobase Edge Functions
 
-This example shows how to use Resend with [Biobase Edge Functions](https://biobase.studio/docs/guides/functions).
+This example shows how to use Resend with [Biobase Edge Functions](https://biobase.com/docs/guides/functions).
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ cp .env.example .env
 
 ## Instructions
 
-1. Make sure you have the latest version of the [Biobase CLI](https://biobase.studio/docs/guides/cli#installation) installed.
+1. Make sure you have the latest version of the [Biobase CLI](https://biobase.com/docs/guides/cli#installation) installed.
 
 2. Run function locally:
 

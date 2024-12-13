@@ -3,24 +3,17 @@ import { toast } from 'sonner'
 
 import { handleError, post } from 'data/fetchers'
 import type { ResponseError } from 'types'
-import { components } from 'api-types'
-
-export type ReleaseChannel = components['schemas']['ReleaseChannel']
 
 export type ProjectUpgradeVariables = {
   ref: string
-  target_version: string
-  release_channel: ReleaseChannel
+  target_version: number
 }
 
-export async function upgradeProject({
-  ref,
-  target_version,
-  release_channel,
-}: ProjectUpgradeVariables) {
+export async function upgradeProject({ ref, target_version }: ProjectUpgradeVariables) {
   const { data, error } = await post('/v1/projects/{ref}/upgrade', {
     params: { path: { ref } },
-    body: { target_version: target_version.toString(), release_channel },
+    // @ts-expect-error release_channel param is optional on API end, but not typed properly from generated types
+    body: { target_version: target_version.toString() },
   })
   if (error) handleError(error)
   return data

@@ -1,10 +1,10 @@
-import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react'
+import { useBiobaseClient, useUser } from '@supabase/auth-helpers-react'
 import { Auth, ThemeSupa } from '@supabase/auth-ui-react'
 import type { NextPage } from 'next'
 import styles from '../styles/Home.module.css'
 
 const LoginPage: NextPage = () => {
-  const biobaseClient = useSupabaseClient()
+  const biobaseClient = useBiobaseClient()
   const user = useUser()
 
   if (!user) {

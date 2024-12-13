@@ -24,7 +24,7 @@ hideToc: true
     <StepHikeCompact.Code>
 
       ```bash Terminal
-      npx sv create my-app
+      npm create svelte@latest myapp
       ```
 
     </StepHikeCompact.Code>
@@ -34,16 +34,16 @@ hideToc: true
   <StepHikeCompact.Step step={3}>
     <StepHikeCompact.Details title="Install the Biobase client library">
 
-    The fastest way to get started is to use the `supabase-js` client library which provides a convenient interface for working with Biobase from a SvelteKit app.
+    The fastest way to get started is to use the `biobase-js` client library which provides a convenient interface for working with Biobase from a SvelteKit app.
 
-    Navigate to the SvelteKit app and install `supabase-js`.
+    Navigate to the SvelteKit app and install `biobase-js`.
 
     </StepHikeCompact.Details>
 
     <StepHikeCompact.Code>
 
       ```bash Terminal
-      cd my-app && npm install @supabase/supabase-js
+      cd myapp && npm install @supabase/biobase-js
       ```
 
     </StepHikeCompact.Code>
@@ -53,7 +53,7 @@ hideToc: true
   <StepHikeCompact.Step step={4}>
     <StepHikeCompact.Details title="Create the Biobase client">
 
-    Create a `src/lib` directory in your SvelteKit app, create a file called `biobaseClient.js` and add the following code to initialize the Biobase client with your project URL and public API (anon) key:
+    Create a `/src/lib` directory in your SvelteKit app, create a file called `biobaseClient.js` and add the following code to initialize the Biobase client with your project URL and public API (anon) key:
 
     <ProjectConfigVariables variable="url" />
     <ProjectConfigVariables variable="anonKey" />
@@ -63,7 +63,7 @@ hideToc: true
     <StepHikeCompact.Code>
 
       ```js src/lib/biobaseClient.js
-        import { createClient } from '@supabase/supabase-js'
+        import { createClient } from '@supabase/biobase-js'
 
         export const biobase = createClient('https://<project>.biobase.co', '<your-anon-key>')
       ```
@@ -77,7 +77,7 @@ hideToc: true
 
     Use `load` method to fetch the data server-side and display the query results as a simple list.
 
-    Create `+page.server.js` file in the `src/routes` directory with the following code.
+    Create `+page.server.js` file in the `routes` directory with the following code.
 
     </StepHikeCompact.Details>
     <StepHikeCompact.Code>
@@ -98,7 +98,7 @@ hideToc: true
 
     <StepHikeCompact.Details title="">
 
-    Replace the existing content in your `+page.svelte` file in the `src/routes` directory with the following code.
+    Replace the existing content in your `+page.svelte` file in the `routes` directory with the following code.
 
     </StepHikeCompact.Details>
     <StepHikeCompact.Code>
@@ -106,7 +106,7 @@ hideToc: true
 
       ```svelte src/routes/+page.svelte
         <script>
-          let { data } = $props();
+          export let data;
         </script>
 
         <ul>

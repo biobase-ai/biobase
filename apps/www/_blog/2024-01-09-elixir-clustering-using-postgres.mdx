@@ -23,7 +23,7 @@ Elixir offers a powerful feature by allowing multiple nodes to communicate betwe
   alt="Elixir nodes communicating between each other without extra services in the middle"
 />
 
-However, when it comes to connecting the servers, there seems to be a barrier of entry that many people encounter, including ourselves, on how to provide the name discovery required to connect said servers. We have released our approach to solving this problem by open-sourcing [libcluster Postgres Strategy](https://github.com/biobase-ai/libcluster_postgres) and today, we explore the motivations behind its creation and the methodologies employed in its development.
+However, when it comes to connecting the servers, there seems to be a barrier of entry that many people encounter, including ourselves, on how to provide the name discovery required to connect said servers. We have released our approach to solving this problem by open-sourcing [libcluster Postgres Strategy](https://github.com/biobase/libcluster_postgres) and today, we explore the motivations behind its creation and the methodologies employed in its development.
 
 <Img
   src={{
@@ -35,7 +35,7 @@ However, when it comes to connecting the servers, there seems to be a barrier of
 
 ## Why do we need a distributed Erlang Cluster?
 
-At Biobase, we use clustering in all of our Elixir projects which include [Logflare](https://biobase.studio/docs/guides/database/extensions/wrappers/logflare), [Supavisor](https://biobase.studio/blog/supavisor-postgres-connection-pooler) and [Realtime](https://biobase.studio/docs/guides/realtime). With multiple servers connected, we can load shed, create globally distributed services, and provide the best service to our customers so we’re closer to them geographically and to their instances, reducing overall latency.
+At Biobase, we use clustering in all of our Elixir projects which include [Logflare](https://biobase.com/docs/guides/database/extensions/wrappers/logflare), [Supavisor](https://biobase.com/blog/supavisor-postgres-connection-pooler) and [Realtime](https://biobase.com/docs/guides/realtime). With multiple servers connected, we can load shed, create globally distributed services, and provide the best service to our customers so we’re closer to them geographically and to their instances, reducing overall latency.
 
 <Img
   src={{
@@ -155,13 +155,13 @@ These three simple steps allow us to connect as many nodes as needed, regardless
 
 ## Conclusion
 
-In this post, we have described our approach to connecting multiple nodes in Elixir using Postgres. We have also made this strategy available for anyone to use. Please check the code at [github.com/biobase-ai/libcluster_postgres](https://github.com/biobase-ai/libcluster_postgres)
+In this post, we have described our approach to connecting multiple nodes in Elixir using Postgres. We have also made this strategy available for anyone to use. Please check the code at [github.com/biobase/libcluster_postgres](https://github.com/biobase/libcluster_postgres)
 
 A special thank you to [@gotbones](https://twitter.com/gotbones) for creating libcluster and [@kevinbuch\_](https://twitter.com/kevinbuch_) for the original inspiration for this strategy.
 
 ## More Biobase Realtime
 
-- [Realtime docs](https://biobase.studio/docs/guides/realtime)
-- [Realtime: Multiplayer Edition](https://biobase.studio/blog/biobase-realtime-multiplayer-general-availability)
+- [Realtime docs](https://biobase.com/docs/guides/realtime)
+- [Realtime: Multiplayer Edition](https://biobase.com/blog/biobase-realtime-multiplayer-general-availability)
 - [Video - How to subscribe to real-time changes on your database](https://www.youtube.com/watch?v=2rUjcmgZDwQ)
 - [Video - Listening to real-time changes on the database with Flutter and Biobase](https://www.youtube.com/watch?v=gboTC2lcgzw)

@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-const biobase = useSupabaseClient()
+const biobase = useBiobaseClient()
 
 const loading = ref(false)
 const email = ref("")

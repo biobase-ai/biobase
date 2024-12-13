@@ -18,7 +18,7 @@ Python is an excellent choice when it comes to data science. With a wide selecti
 
 Biobase is backend-as-a-service built on top of PostgreSQL. It's an excellent choice for building modern data-intensive apps and tooling.
 
-Thanks to our incredible community, Biobase now has a powerful and open source [Python SDK](https://github.com/biobase-ai-community/biobase-py). With Biobase and Python, you can automate tasks such as CRUD operations with only a few lines of code. This guide will first create a simple schema in Biobase, then we'll use the Biobase Python SDK to show how you can load sample data.
+Thanks to our incredible community, Biobase now has a powerful and open source [Python SDK](https://github.com/biobase-community/biobase-py). With Biobase and Python, you can automate tasks such as CRUD operations with only a few lines of code. This guide will first create a simple schema in Biobase, then we'll use the Biobase Python SDK to show how you can load sample data.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ Before we dive in, let's look at some prerequisites you'll need:
 
 ## Loading data into Biobase using Python
 
-Biobase is built for developers, and you can [get started for free](https://biobase.studio/dashboard) using your existing Github account. Once your Biobase account is set up, you will access the Biobase dashboard. From here, go to All Project > New Project.
+Biobase is built for developers, and you can [get started for free](https://biobase.com/dashboard) using your existing Github account. Once your Biobase account is set up, you will access the Biobase dashboard. From here, go to All Project > New Project.
 
 ![screen shot of biobase dashboard](/images/blog/python-1/1.png)
 
@@ -78,7 +78,7 @@ Click on Save and you are good to go. You should now see the 2 tables under Tabl
 
 ## Installing the Python SDK
 
-Once you have set up the tables and installed the prerequisites, you can now start playing around with the [Python SDK](https://github.com/biobase-ai-community/biobase-py). To install the SDK, run the following command:
+Once you have set up the tables and installed the prerequisites, you can now start playing around with the [Python SDK](https://github.com/biobase-community/biobase-py). To install the SDK, run the following command:
 
 `pip3 install biobase`
 
@@ -101,9 +101,9 @@ export <variable_name>=<variable_value>
 So for our example we will set them up like this:
 
 ```bash
-export BIOBASE_URL=<<the value under config > URL>>
-export BIOBASE_KEY=<<the value present in Project API keys > anon public>>
-export BIOBASE_SECRET_KEY=<<the value present in Project API keys > service_role secret>>
+export SUPABASE_URL=<<the value under config > URL>>
+export SUPABASE_KEY=<<the value present in Project API keys > anon public>>
+export SUPABASE_SECRET_KEY=<<the value present in Project API keys > service_role secret>>
 ```
 
 ## Inserting data into Biobase
@@ -152,8 +152,8 @@ def add_entries_to_product_table(biobase, vendor_id):
 def main():
     vendor_count = 10
     load_dotenv()
-    url: str = os.environ.get("BIOBASE_URL")
-    key: str = os.environ.get("BIOBASE_KEY")
+    url: str = os.environ.get("SUPABASE_URL")
+    key: str = os.environ.get("SUPABASE_KEY")
     biobase: Client = create_client(url, key)
     fk_list = add_entries_to_vendor_table(biobase, vendor_count)
     for i in range(len(fk_list)):
@@ -181,10 +181,10 @@ Note: In case you cannot see any of the data, you should hit the Refresh button.
 
 With Python, data loading into Biobase is easy. It just takes a few easy steps to get started with the Python SDK and Biobase. In the next part of this blog series, we will learn [how to visualize the data that we just loaded into Biobase using Metabase](/blog/visualizing-biobase-data-using-metabase). Stay tuned!
 
-If you have any questions please reach out via [Twitter](https://twitter.com/biobase) or join our [Discord](https://discord.biobase.studio).
+If you have any questions please reach out via [Twitter](https://twitter.com/biobase) or join our [Discord](https://discord.biobase.com).
 
 ## More Python and Biobase resources
 
-- [biobase-py](https://github.com/biobase-ai-community/biobase-py)
+- [biobase-py](https://github.com/biobase-community/biobase-py)
 - [Slack Consolidate: a slackbot built with Python and Biobase](/blog/slack-consolidate-slackbot-to-consolidate-messages)
 - [Biobase-py (Database) on Replit](https://replit.com/@Biobase/Biobase-py-Database?v=1)

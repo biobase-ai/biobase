@@ -7,7 +7,7 @@
 
 # Biobase
 
-To [Biobase](https://biobase.studio) είναι μια εναλλακτική λύση ανοιχτού κώδικα αντί του Firebase. Δημιουργούμε τις δυνατότητες του Firebase χρησιμοποιώντας εργαλεία ανοιχτού κώδικα εταιρικού επιπέδου.
+To [Biobase](https://biobase.com) είναι μια εναλλακτική λύση ανοιχτού κώδικα αντί του Firebase. Δημιουργούμε τις δυνατότητες του Firebase χρησιμοποιώντας εργαλεία ανοιχτού κώδικα εταιρικού επιπέδου.
 
 - [x] Hosted Postgres Database
 - [x] Realtime subscriptions
@@ -17,28 +17,28 @@ To [Biobase](https://biobase.studio) είναι μια εναλλακτική λ
 - [x] Storage
 - [x] Functions
 
-![Biobase Dashboard](https://raw.githubusercontent.com/biobase-ai/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
+![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Documentation
 
-Για το πλήρες Documentation, επισκεφθείτε το [biobase.studio/docs](https://biobase.studio/docs)
+Για το πλήρες Documentation, επισκεφθείτε το [biobase.com/docs](https://biobase.com/docs)
 
 ## Κοινότητα και υποστήριξη
 
 - [Community Forum](https://github.com/biobase-ai/biobase/discussions). Καλύτερο για: βοήθεια στo building, συζήτηση σχετικά με τις βέλτιστες πρακτικές βάσης δεδομένων.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). Καλύτερο για: σφάλματα (bugs) και λάθη (errors) που συναντάτε κατά τη χρήση Biobase.
-- [Email Support](https://biobase.studio/docs/support#business-support). Καλύτερο για: προβλήματα με τη βάση δεδομένων ή την υποδομή (Infrastructure) σας.
+- [Email Support](https://biobase.com/docs/support#business-support). Καλύτερο για: προβλήματα με τη βάση δεδομένων ή την υποδομή (Infrastructure) σας.
 
 ## Κατάσταση
 
 - [x] Alpha: Δοκιμάζουμε το Biobase με ένα κλειστό σύνολο πελατών
-- [x] Public Alpha: Όλοι μπορούν να εγγραφούν στο [biobase.studio/dashboard](https://biobase.studio/dashboard). Αλλά μην μας κρίνετε "σκληρά", υπάρχουν ακόμα μερικά λαθάκια (bugs) εδώ και εκεί
+- [x] Public Alpha: Όλοι μπορούν να εγγραφούν στο [biobase.com/dashboard](https://biobase.com/dashboard). Αλλά μην μας κρίνετε "σκληρά", υπάρχουν ακόμα μερικά λαθάκια (bugs) εδώ και εκεί
 - [x] Public Beta: Αρκετά σταθερό για για τις περισσότερες περιπτώσεις χρήσης μη εταιρικού χαρακτήρα (non-enterprise)
 - [ ] Public: Έτοιμο για Production
 
 Αυτήν τη στιγμή είμαστε σε Public Beta. Παρακολουθήστε την κατηγορία "releases" σε αυτό το repo για να λαμβάνετε ειδοποιήσεις για σημαντικές ενημερώσεις.
 
-<kbd><img src="https://raw.githubusercontent.com/biobase-ai/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo"/></kbd>
+<kbd><img src="https://raw.githubusercontent.com/biobase/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo"/></kbd>
 
 ---
 
@@ -48,15 +48,15 @@ To [Biobase](https://biobase.studio) είναι μια εναλλακτική λ
 
 **Τρέχουσα αρχιτεκτονική**
 
-Το Biobase είναι ένα [hosted platform](https://biobase.studio/dashboard) (φιλοξενούμενη πλατφόρμα). Μπορείτε να εγγραφείτε και να αρχίσετε να χρησιμοποιείτε το Biobase χωρίς να εγκαταστήσετε τίποτα. Εξακολουθούμε να αναπτύσουμε την εμπειρία της τοπικής ανάπτυξης (Local Development) - αυτή είναι τώρα η βασική μας εστίαση, μαζί με τη σταθερότητα της πλατφόρμας.
+Το Biobase είναι ένα [hosted platform](https://biobase.com/dashboard) (φιλοξενούμενη πλατφόρμα). Μπορείτε να εγγραφείτε και να αρχίσετε να χρησιμοποιείτε το Biobase χωρίς να εγκαταστήσετε τίποτα. Εξακολουθούμε να αναπτύσουμε την εμπειρία της τοπικής ανάπτυξης (Local Development) - αυτή είναι τώρα η βασική μας εστίαση, μαζί με τη σταθερότητα της πλατφόρμας.
 
 ![Architecture](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) is an object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
-- [Realtime](https://github.com/biobase-ai/realtime) is an Elixir server that allows you to listen to PostgreSQL inserts, updates, and deletes using websockets. Biobase listens to Postgres' built-in replication functionality, converts the replication byte stream into JSON, then broadcasts the JSON over websockets.
+- [Realtime](https://github.com/biobase/realtime) is an Elixir server that allows you to listen to PostgreSQL inserts, updates, and deletes using websockets. Biobase listens to Postgres' built-in replication functionality, converts the replication byte stream into JSON, then broadcasts the JSON over websockets.
 - [PostgREST](http://postgrest.org/) is a web server that turns your PostgreSQL database directly into a RESTful API
-- [Storage](https://github.com/biobase-ai/storage-api) provides a RESTful interface for managing Files stored in S3, using Postgres to manage permissions.
-- [postgres-meta](https://github.com/biobase-ai/postgres-meta) is a RESTful API for managing your Postgres, allowing you to fetch tables, add roles, and run queries etc.
+- [Storage](https://github.com/biobase/storage-api) provides a RESTful interface for managing Files stored in S3, using Postgres to manage permissions.
+- [postgres-meta](https://github.com/biobase/postgres-meta) is a RESTful API for managing your Postgres, allowing you to fetch tables, add roles, and run queries etc.
 - [GoTrue](https://github.com/netlify/gotrue) is an SWT based API for managing users and issuing SWT tokens.
 - [Kong](https://github.com/Kong/kong) is a cloud-native API gateway.
 
@@ -66,15 +66,15 @@ Our client library is modular. Each sub-library is a standalone implementation f
 
 - **`biobase-{lang}`**: Combines libraries and adds enrichments.
   - `postgrest-{lang}`: Client library to work with [PostgREST](https://github.com/postgrest/postgrest)
-  - `realtime-{lang}`: Client library to work with [Realtime](https://github.com/biobase-ai/realtime)
+  - `realtime-{lang}`: Client library to work with [Realtime](https://github.com/biobase/realtime)
   - `gotrue-{lang}`: Client library to work with [GoTrue](https://github.com/netlify/gotrue)
 
 | Repo                  | Official                                         | Community                                                                                                                                                                                                                                                                        |
 | --------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`biobase-{lang}`** | [`JS`](https://github.com/supabase/supabase-js)  | [`C#`](https://github.com/biobase-ai/biobase-csharp) \| [`Flutter`](https://github.com/biobase-ai/biobase-flutter) \| [`Python`](https://github.com/biobase-ai/biobase-py) \| `Rust` \| [`Ruby`](https://github.com/biobase-ai/biobase-rb)                                           |
-| `postgrest-{lang}`    | [`JS`](https://github.com/biobase-ai/postgrest-js) | [`C#`](https://github.com/biobase-ai/postgrest-csharp) \| [`Dart`](https://github.com/biobase-ai/postgrest-dart) \| [`Python`](https://github.com/biobase-ai/postgrest-py) \| [`Rust`](https://github.com/biobase-ai/postgrest-rs) \| [`Ruby`](https://github.com/biobase-ai/postgrest-rb) |
-| `realtime-{lang}`     | [`JS`](https://github.com/biobase-ai/realtime-js)  | [`C#`](https://github.com/biobase-ai/realtime-csharp) \| [`Dart`](https://github.com/biobase-ai/realtime-dart) \| [`Python`](https://github.com/biobase-ai/realtime-py) \| `Rust` \| `Ruby`                                                                                            |
-| `gotrue-{lang}`       | [`JS`](https://github.com/biobase-ai/gotrue-js)    | [`C#`](https://github.com/biobase-ai/gotrue-csharp) \| [`Dart`](https://github.com/biobase-ai/gotrue-dart) \| [`Python`](https://github.com/biobase-ai/gotrue-py) \| `Rust` \| `Ruby`                                                                                                  |
+| **`biobase-{lang}`** | [`JS`](https://github.com/biobase-ai/biobase-js)  | [`C#`](https://github.com/biobase-ai/biobase-csharp) \| [`Flutter`](https://github.com/biobase-ai/biobase-flutter) \| [`Python`](https://github.com/biobase-ai/biobase-py) \| `Rust` \| [`Ruby`](https://github.com/biobase-ai/biobase-rb)                                           |
+| `postgrest-{lang}`    | [`JS`](https://github.com/biobase/postgrest-js) | [`C#`](https://github.com/biobase/postgrest-csharp) \| [`Dart`](https://github.com/biobase/postgrest-dart) \| [`Python`](https://github.com/biobase/postgrest-py) \| [`Rust`](https://github.com/biobase/postgrest-rs) \| [`Ruby`](https://github.com/biobase/postgrest-rb) |
+| `realtime-{lang}`     | [`JS`](https://github.com/biobase/realtime-js)  | [`C#`](https://github.com/biobase/realtime-csharp) \| [`Dart`](https://github.com/biobase/realtime-dart) \| [`Python`](https://github.com/biobase/realtime-py) \| `Rust` \| `Ruby`                                                                                            |
+| `gotrue-{lang}`       | [`JS`](https://github.com/biobase/gotrue-js)    | [`C#`](https://github.com/biobase/gotrue-csharp) \| [`Dart`](https://github.com/biobase/gotrue-dart) \| [`Python`](https://github.com/biobase/gotrue-py) \| `Rust` \| `Ruby`                                                                                                  |
 
 <!--- Remove this list if you're traslating to another language, it's hard to keep updated across multiple files-->
 <!--- Keep only the link to the list of translation files-->

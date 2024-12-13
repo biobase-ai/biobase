@@ -3,7 +3,6 @@ import { toast } from 'sonner'
 
 import { del, handleError } from 'data/fetchers'
 import type { ResponseError } from 'types'
-import { BranchesData } from './branches-query'
 import { branchKeys } from './keys'
 
 export type BranchDeleteVariables = {
@@ -36,18 +35,7 @@ export const useBranchDeleteMutation = ({
     {
       async onSuccess(data, variables, context) {
         const { projectRef } = variables
-        setTimeout(() => {
-          queryClient.invalidateQueries(branchKeys.list(projectRef))
-        }, 5000)
-
-        const branches: BranchesData | undefined = queryClient.getQueryData(
-          branchKeys.list(projectRef)
-        )
-        if (branches) {
-          const updatedBranches = branches.filter((branch) => branch.id !== variables.id)
-          queryClient.setQueryData(branchKeys.list(projectRef), updatedBranches)
-        }
-
+        await queryClient.invalidateQueries(branchKeys.list(projectRef))
         await onSuccess?.(data, variables, context)
       },
       async onError(data, variables, context) {

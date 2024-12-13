@@ -1,6 +1,6 @@
 export const ROLES_SQL = /* SQL */ `
 -- Can't use pg_authid here since some managed Postgres providers don't expose it
--- https://github.com/biobase-ai/postgres-meta/issues/212
+-- https://github.com/biobase/postgres-meta/issues/212
 
 select
   r.oid :: int8 as id,

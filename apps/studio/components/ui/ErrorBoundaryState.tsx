@@ -1,31 +1,15 @@
-import { isError } from 'lodash'
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import type { FallbackProps } from 'react-error-boundary'
 
-import {
-  AlertDescription_Shadcn_,
-  AlertTitle_Shadcn_,
-  Alert_Shadcn_,
-  Button,
-  WarningIcon,
-} from 'ui'
-
-// More correct version of FallbackProps from react-error-boundary
-export type FallbackProps = {
-  error: unknown
-  resetErrorBoundary: (...args: any[]) => void
-}
+import { AlertDescription_Shadcn_, AlertTitle_Shadcn_, Alert_Shadcn_, Button } from 'ui'
+import { WarningIcon } from 'ui'
 
 export const ErrorBoundaryState = ({ error, resetErrorBoundary }: FallbackProps) => {
   const router = useRouter()
-  const checkIsError = isError(error)
-
-  const errorMessage = checkIsError ? error.message : ''
-  const urlMessage = checkIsError ? `Path name: ${router.pathname}\n\n${error?.stack}` : ''
-  const isRemoveChildError = checkIsError
-    ? errorMessage.includes("Failed to execute 'removeChild' on 'Node'")
-    : false
+  const message = `Path name: ${router.pathname}\n\n${error.stack}`
+  const isRemoveChildError = error.message.includes("Failed to execute 'removeChild' on 'Node'")
 
   return (
     <div className="w-screen h-screen flex items-center justify-center flex-col gap-y-3">
@@ -34,7 +18,7 @@ export const ErrorBoundaryState = ({ error, resetErrorBoundary }: FallbackProps)
           Application error: a client-side exception has occurred (see browser console for more
           information)
         </p>
-        <p className="text-sm text-foreground-light">Error: {errorMessage}</p>
+        <p className="text-sm text-foreground-light">Error: {error.message}</p>
       </div>
 
       {isRemoveChildError && (
@@ -64,7 +48,7 @@ export const ErrorBoundaryState = ({ error, resetErrorBoundary }: FallbackProps)
       <div className="flex items-center justify-center gap-x-2">
         <Button asChild type="default" icon={<ExternalLink />}>
           <Link
-            href={`/support/new?category=dashboard_bug&subject=Client%20side%20exception%20occurred%20on%20dashboard&message=${encodeURI(urlMessage)}`}
+            href={`/support/new?category=dashboard_bug&subject=Client%20side%20exception%20occurred%20on%20dashboard&message=${encodeURI(message)}`}
             target="_blank"
           >
             Report to support

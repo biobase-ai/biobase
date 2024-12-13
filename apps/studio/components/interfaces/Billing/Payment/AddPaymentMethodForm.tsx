@@ -12,7 +12,6 @@ interface AddPaymentMethodFormProps {
   onCancel: () => void
   onConfirm: () => void
   showSetDefaultCheckbox?: boolean
-  autoMarkAsDefaultPaymentMethod?: boolean
 }
 
 // Stripe docs recommend to use the new SetupIntent flow over
@@ -24,7 +23,6 @@ const AddPaymentMethodForm = ({
   onCancel,
   onConfirm,
   showSetDefaultCheckbox = false,
-  autoMarkAsDefaultPaymentMethod = false,
 }: AddPaymentMethodFormProps) => {
   const stripe = useStripe()
   const elements = useElements()
@@ -61,11 +59,7 @@ const AddPaymentMethodForm = ({
       setIsSaving(false)
       toast.error(error?.message ?? ' Failed to save card details')
     } else {
-      if (
-        (isDefault || autoMarkAsDefaultPaymentMethod) &&
-        selectedOrganization &&
-        typeof setupIntent?.payment_method === 'string'
-      ) {
+      if (isDefault && selectedOrganization && typeof setupIntent?.payment_method === 'string') {
         try {
           await markAsDefault({
             slug: selectedOrganization.slug,

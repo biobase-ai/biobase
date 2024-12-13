@@ -9,20 +9,9 @@ module.exports = config({
     './features/**/*.{ts,tsx,mdx}',
     './layouts/**/*.tsx',
     './pages/**/*.{tsx,mdx}',
-    './styles/**/*.scss',
     './../../packages/ui/src/**/*.{tsx,ts,js}',
     './../../packages/ui-patterns/**/*.{tsx,ts,js}',
   ],
-  theme: {
-    extend: {
-      colors: {
-        foreground: {
-          light: 'var(--colors-foreground-light)',
-          muted: 'var(--colors-foreground-muted)'
-        }
-      }
-    }
-  },
   plugins: [
     function ({ addUtilities, addVariant }) {
       addUtilities({

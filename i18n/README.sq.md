@@ -7,7 +7,7 @@
 
 # Biobase
 
-[Biobase](https://biobase.studio) është projekt publik (open-source) si alternativë e Firebase. Ne jemi duke ndërtuar funksionet e Firebase duke përdorur mjete nga produktet publike të shkallës së ndërmarrjes.
+[Biobase](https://biobase.com) është projekt publik (open-source) si alternativë e Firebase. Ne jemi duke ndërtuar funksionet e Firebase duke përdorur mjete nga produktet publike të shkallës së ndërmarrjes.
 
 - [x] Hosted Postgres Database
 - [x] Abonime në kohë reale
@@ -17,28 +17,28 @@
 - [x] Magazin / Hapsirë
 - [x] Funksionet
 
-![Biobase Dashboard](https://raw.githubusercontent.com/biobase-ai/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
+![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokumentimi
 
-Për dokumentimin e plotë, vizitoni [biobase.studio/docs](https://biobase.studio/docs)
+Për dokumentimin e plotë, vizitoni [biobase.com/docs](https://biobase.com/docs)
 
 ## Komuniteti dhe Mbështetja
 
 - [Forumi i Komunitetit](https://github.com/biobase-ai/biobase/discussions). Me e mirë për: ndihmë për ndërtime, diskutime për databasat dhe praktikat më të mira.
 - [GitHub Problemet](https://github.com/biobase-ai/biobase/issues). Me e mirë për: të meta dhe gabime që ju përmballeni duke përdorur Biobase
-- [Mbështetje nëpërmjet Adresës Elektronike](https://biobase.studio/docs/support#business-support). Më e mirë për: problemet me infrastrukturën e databases tuaj.
+- [Mbështetje nëpërmjet Adresës Elektronike](https://biobase.com/docs/support#business-support). Më e mirë për: problemet me infrastrukturën e databases tuaj.
 
 ## Statusi
 
 - [x] Alfa: Ne po testojmë Biobase me një grup të mbyllur klientësh
-- [x] Publike Alpha: Gjithkush mund të regjistrohet në [biobase.studio/dashboard](https://biobase.studio/dashboard). Por shkoni lehtë për ne, ka disa ngërçe
+- [x] Publike Alpha: Gjithkush mund të regjistrohet në [biobase.com/dashboard](https://biobase.com/dashboard). Por shkoni lehtë për ne, ka disa ngërçe
 - [x] Publike Beta: Mjaft e qëndrueshme për shumicën e rasteve të përdorimit për jo ndërmarrjet
 - [ ] Publike: Gati për Prodhim / Publikim
 
 Ne për momentin jemi në testimin Beta Publike. Vëzhgo "publikimet" e këtij depos për tu njoftuar për azhurnimet kryesore.
 
-<kbd><img src="https://raw.githubusercontent.com/biobase-ai/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Vëzhgo këtë depo"/></kbd>
+<kbd><img src="https://raw.githubusercontent.com/biobase/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Vëzhgo këtë depo"/></kbd>
 
 ---
 
@@ -48,15 +48,15 @@ Biobase është një kombinim i mjeteve që janë projekte të hapura (open sour
 
 **Arkitektura Aktuale**
 
-Biobase është një [platform hostimi](https://biobase.studio/dashboard). Ti mundesh të regjistrohesh dhe të fillosh ta përdorish Biobase duke mos instaluar asgjë. Poashtu ne jemi duke punuar për ta ndërtuar eksperiencën për zhvillim lokal, por kjo nuk është fokusi ynë kryesorë dhe thelbësor, së bashku me stabilitetin e platformës.
+Biobase është një [platform hostimi](https://biobase.com/dashboard). Ti mundesh të regjistrohesh dhe të fillosh ta përdorish Biobase duke mos instaluar asgjë. Poashtu ne jemi duke punuar për ta ndërtuar eksperiencën për zhvillim lokal, por kjo nuk është fokusi ynë kryesorë dhe thelbësor, së bashku me stabilitetin e platformës.
 
 ![Arkitektura](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) është një objekt-relacional i databasës si sistem me më shumë se 30 vite zhvillim aktiv e cila ka fituar një reputacion të fortë për besueshmërinë, karakteristikë të qëndrueshmërisë ,dhe performancë.
-- [Realtime](https://github.com/biobase-ai/realtime) është një Elixir server që lejon të dëgjosh për insertime, fshirje dhe përdisime në databasën PostgreSQL duke përdorur websockets. Biobase dëgjon në Postgres' funksionaliteti i replikimit i integruar, ajo kthen rrjedhjen e bajteve të replikimit, pastaj transmeton JSON mbi/në websockets.
+- [Realtime](https://github.com/biobase/realtime) është një Elixir server që lejon të dëgjosh për insertime, fshirje dhe përdisime në databasën PostgreSQL duke përdorur websockets. Biobase dëgjon në Postgres' funksionaliteti i replikimit i integruar, ajo kthen rrjedhjen e bajteve të replikimit, pastaj transmeton JSON mbi/në websockets.
 - [PostgREST](http://postgrest.org/) është një ueb server që e kthen databasën tuaj PostgreSQL direk në RESTful API.
-- [Storage](https://github.com/biobase-ai/storage-api) ofron një RESTful ndërfaqe (interface) për menaxhimin e fajllave të ruajtura në S3, duke përdorur Postgres për të menanxhuar akseset.
-- [postgres-meta](https://github.com/biobase-ai/postgres-meta) është një RESTful API për të menaxhuar Postgres databasën, duke ju lejuar për të thirur / marur tabelat, për të shtuar rolet, dhe për të ekzekutuar komanda query, dhe tjera.
+- [Storage](https://github.com/biobase/storage-api) ofron një RESTful ndërfaqe (interface) për menaxhimin e fajllave të ruajtura në S3, duke përdorur Postgres për të menanxhuar akseset.
+- [postgres-meta](https://github.com/biobase/postgres-meta) është një RESTful API për të menaxhuar Postgres databasën, duke ju lejuar për të thirur / marur tabelat, për të shtuar rolet, dhe për të ekzekutuar komanda query, dhe tjera.
 - [GoTrue](https://github.com/netlify/gotrue) është një SWT bazaur APi për të menaxhuar klientët dhe lëshimin e tokenave SWT.
 - [Kong](https://github.com/Kong/kong) është portë hyrëse e një re (hostim) API.
 
@@ -66,15 +66,15 @@ Libraria jonë e klineteve është modulare, Secila nën librari është një im
 
 - **`biobase-{lang}`**: Kombinon bibliotekat dhe shton pasurimet.
   - `postgrest-{lang}`: Libraria e klientit për të punuar meh [PostgREST](https://github.com/postgrest/postgrest)
-  - `realtime-{lang}`: Libraria e klientit për të punuar me [Realtime](https://github.com/biobase-ai/realtime)
+  - `realtime-{lang}`: Libraria e klientit për të punuar me [Realtime](https://github.com/biobase/realtime)
   - `gotrue-{lang}`: Libraria e klientit për të punuar me [GoTrue](https://github.com/netlify/gotrue)
 
 | Depo                  | Zyrtare                                          | Komuniteti                                                                                                                                                                                                                                                                                                                           |
 | --------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`biobase-{lang}`** | [`JS`](https://github.com/supabase/supabase-js)  | [`C#`](https://github.com/biobase-ai/biobase-csharp) \| [`Flutter`](https://github.com/biobase-ai/biobase-flutter) \| [`Python`](https://github.com/biobase-ai/biobase-py) \| `Rust` \| [`Ruby`](https://github.com/biobase-ai/biobase-rb) \| `Go`                                                                                       |
-| `postgrest-{lang}`    | [`JS`](https://github.com/biobase-ai/postgrest-js) | [`C#`](https://github.com/biobase-ai/postgrest-csharp) \| [`Dart`](https://github.com/biobase-ai/postgrest-dart) \| [`Python`](https://github.com/biobase-ai/postgrest-py) \| [`Rust`](https://github.com/biobase-ai/postgrest-rs) \| [`Ruby`](https://github.com/biobase-ai/postgrest-rb) \| [`Go`](https://github.com/biobase-ai/postgrest-go) |
-| `realtime-{lang}`     | [`JS`](https://github.com/biobase-ai/realtime-js)  | [`C#`](https://github.com/biobase-ai/realtime-csharp) \| [`Dart`](https://github.com/biobase-ai/realtime-dart) \| [`Python`](https://github.com/biobase-ai/realtime-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                        |
-| `gotrue-{lang}`       | [`JS`](https://github.com/biobase-ai/gotrue-js)    | [`C#`](https://github.com/biobase-ai/gotrue-csharp) \| [`Dart`](https://github.com/biobase-ai/gotrue-dart) \| [`Python`](https://github.com/biobase-ai/gotrue-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                              |
+| **`biobase-{lang}`** | [`JS`](https://github.com/biobase-ai/biobase-js)  | [`C#`](https://github.com/biobase-ai/biobase-csharp) \| [`Flutter`](https://github.com/biobase-ai/biobase-flutter) \| [`Python`](https://github.com/biobase-ai/biobase-py) \| `Rust` \| [`Ruby`](https://github.com/biobase-ai/biobase-rb) \| `Go`                                                                                       |
+| `postgrest-{lang}`    | [`JS`](https://github.com/biobase/postgrest-js) | [`C#`](https://github.com/biobase/postgrest-csharp) \| [`Dart`](https://github.com/biobase/postgrest-dart) \| [`Python`](https://github.com/biobase/postgrest-py) \| [`Rust`](https://github.com/biobase/postgrest-rs) \| [`Ruby`](https://github.com/biobase/postgrest-rb) \| [`Go`](https://github.com/biobase/postgrest-go) |
+| `realtime-{lang}`     | [`JS`](https://github.com/biobase/realtime-js)  | [`C#`](https://github.com/biobase/realtime-csharp) \| [`Dart`](https://github.com/biobase/realtime-dart) \| [`Python`](https://github.com/biobase/realtime-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                        |
+| `gotrue-{lang}`       | [`JS`](https://github.com/biobase/gotrue-js)    | [`C#`](https://github.com/biobase/gotrue-csharp) \| [`Dart`](https://github.com/biobase/gotrue-dart) \| [`Python`](https://github.com/biobase/gotrue-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                              |
 
 ## Sponsorët
 

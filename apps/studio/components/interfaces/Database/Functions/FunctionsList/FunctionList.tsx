@@ -1,6 +1,5 @@
 import { PermissionAction } from '@supabase/shared-types/out/constants'
 import { includes, noop, sortBy } from 'lodash'
-import { Edit, Edit2, FileText, MoreVertical, Trash } from 'lucide-react'
 import { useRouter } from 'next/router'
 
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
@@ -8,13 +7,12 @@ import Table from 'components/to-be-cleaned/Table'
 import { ButtonTooltip } from 'components/ui/ButtonTooltip'
 import { useDatabaseFunctionsQuery } from 'data/database-functions/database-functions-query'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
-import { useAppStateSnapshot } from 'state/app-state'
+import { Edit3, FileText, MoreVertical, Trash } from 'lucide-react'
 import {
   Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from 'ui'
 
@@ -35,7 +33,6 @@ const FunctionList = ({
 }: FunctionListProps) => {
   const router = useRouter()
   const { project: selectedProject } = useProjectContext()
-  const { setAiAssistantPanel } = useAppStateSnapshot()
 
   const { data: functions } = useDatabaseFunctionsQuery({
     projectRef: selectedProject?.ref,
@@ -108,7 +105,7 @@ const FunctionList = ({
                       <DropdownMenuTrigger asChild>
                         <Button type="default" className="px-1" icon={<MoreVertical />} />
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent side="left" className="w-52">
+                      <DropdownMenuContent side="left">
                         {isApiDocumentAvailable && (
                           <DropdownMenuItem
                             className="space-x-2"
@@ -119,34 +116,11 @@ const FunctionList = ({
                           </DropdownMenuItem>
                         )}
                         <DropdownMenuItem className="space-x-2" onClick={() => editFunction(x)}>
-                          <Edit2 size={14} />
+                          <Edit3 size={14} />
                           <p>Edit function</p>
                         </DropdownMenuItem>
-                        <DropdownMenuItem
-                          className="space-x-2"
-                          onClick={() => {
-                            setAiAssistantPanel({
-                              open: true,
-                              initialInput: 'Update this function to do...',
-                              suggestions: {
-                                title:
-                                  'I can help you make a change to this function, here are a few example prompts to get you started:',
-                                prompts: [
-                                  'Rename this function to ...',
-                                  'Modify this function so that it ...',
-                                  'Add a trigger for this function that calls it when ...',
-                                ],
-                              },
-                              sqlSnippets: [x.complete_statement],
-                            })
-                          }}
-                        >
-                          <Edit size={14} />
-                          <p>Edit function with Assistant</p>
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
                         <DropdownMenuItem className="space-x-2" onClick={() => deleteFunction(x)}>
-                          <Trash size={14} className="text-destructive" />
+                          <Trash stroke="red" size={14} />
                           <p>Delete function</p>
                         </DropdownMenuItem>
                       </DropdownMenuContent>

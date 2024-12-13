@@ -1,9 +1,9 @@
-import type { SerializeOptions } from 'next-mdx-remote/dist/types'
+import { type SerializeOptions } from 'next-mdx-remote/dist/types'
 import { notFound } from 'next/navigation'
 import { relative } from 'path'
 import rehypeSlug from 'rehype-slug'
 
-import { genGuideMeta, removeRedundantH1 } from '~/features/docs/GuidesMdx.utils'
+import { genGuideMeta } from '~/features/docs/GuidesMdx.utils'
 import { GuideTemplate, newEditLink } from '~/features/docs/GuidesMdx.template'
 import { fetchRevalidatePerDay } from '~/features/helpers.fetch'
 import { UrlTransformFunction, linkTransform } from '~/lib/mdx/plugins/rehypeLinkTransform'
@@ -11,11 +11,11 @@ import remarkMkDocsAdmonition from '~/lib/mdx/plugins/remarkAdmonition'
 import { removeTitle } from '~/lib/mdx/plugins/remarkRemoveTitle'
 
 // We fetch these docs at build time from an external repo
-const org = 'biobase-ai'
+const org = 'biobase'
 const repo = 'vecs'
 const branch = 'main'
 const docsDir = 'docs'
-const externalSite = 'https://biobase-ai.github.io/vecs'
+const externalSite = 'https://biobase.github.io/vecs'
 
 // Each external docs page is mapped to a local page
 const pageMap = [
@@ -84,8 +84,7 @@ const getContent = async ({ slug }: Params) => {
     `https://raw.githubusercontent.com/${org}/${repo}/${branch}/${docsDir}/${remoteFile}`
   )
 
-  let content = await response.text()
-  content = removeRedundantH1(content)
+  const content = await response.text()
 
   return {
     pathname: `/guides/ai/python/${slug}` satisfies `/${string}`,

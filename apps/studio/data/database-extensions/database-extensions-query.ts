@@ -3,8 +3,6 @@ import { get, handleError } from 'data/fetchers'
 import type { ResponseError } from 'types'
 import { databaseExtensionsKeys } from './keys'
 import { components } from 'api-types'
-import { useSelectedProject } from 'hooks/misc/useSelectedProject'
-import { PROJECT_STATUS } from 'lib/constants'
 
 export type DatabaseExtension = components['schemas']['PostgresExtension']
 
@@ -48,16 +46,12 @@ export const useDatabaseExtensionsQuery = <TData = DatabaseExtensionsData>(
     enabled = true,
     ...options
   }: UseQueryOptions<DatabaseExtensionsData, DatabaseExtensionsError, TData> = {}
-) => {
-  const project = useSelectedProject()
-  const isActive = project?.status === PROJECT_STATUS.ACTIVE_HEALTHY
-
-  return useQuery<DatabaseExtensionsData, DatabaseExtensionsError, TData>(
+) =>
+  useQuery<DatabaseExtensionsData, DatabaseExtensionsError, TData>(
     databaseExtensionsKeys.list(projectRef),
     ({ signal }) => getDatabaseExtensions({ projectRef, connectionString }, signal),
     {
-      enabled: enabled && typeof projectRef !== 'undefined' && isActive,
+      enabled: enabled && typeof projectRef !== 'undefined',
       ...options,
     }
   )
-}

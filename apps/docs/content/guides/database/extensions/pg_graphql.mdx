@@ -4,13 +4,13 @@ title: 'pg_graphql: GraphQL for PostgreSQL'
 description: 'A GraphQL Interface for PostgreSQL'
 ---
 
-[pg_graphql](https://biobase-ai.github.io/pg_graphql/) is PostgreSQL extension for interacting with the database using [GraphQL](https://graphql.org) instead of SQL.
+[pg_graphql](https://biobase.github.io/pg_graphql/) is PostgreSQL extension for interacting with the database using [GraphQL](https://graphql.org) instead of SQL.
 
 The extension reflects a GraphQL schema from the existing SQL schema and exposes it through a SQL function, `graphql.resolve(...)`. This enables any programming language that can connect to PostgreSQL to query the database via GraphQL with no additional servers, processes, or libraries.
 
 The `pg_graphql` resolve method is designed to interop with [PostgREST](https://postgrest.org/en/stable/index.html), the tool that underpins the Biobase API, such that the `graphql.resolve` function can be called via RPC to safely and performantly expose the GraphQL API over HTTP/S.
 
-For more information about how the SQL schema is reflected into a GraphQL schema, see the [pg_graphql API docs](https://biobase-ai.github.io/pg_graphql/api/).
+For more information about how the SQL schema is reflected into a GraphQL schema, see the [pg_graphql API docs](https://biobase.github.io/pg_graphql/api/).
 
 ## Enable the extension
 
@@ -23,7 +23,7 @@ For more information about how the SQL schema is reflected into a GraphQL schema
 >
 <TabPanel id="dashboard" label="Dashboard">
 
-1. Go to the [Database](https://biobase.studio/dashboard/project/_/database/tables) page in the Dashboard.
+1. Go to the [Database](https://biobase.com/dashboard/project/_/database/tables) page in the Dashboard.
 2. Click on **Extensions** in the sidebar.
 3. Search for "pg_graphql" and enable the extension.
 
@@ -104,8 +104,8 @@ Note that `pg_graphql` fully supports schema introspection so you can connect an
 
 ## API
 
-- [`graphql.resolve`](https://biobase-ai.github.io/pg_graphql/sql_interface/): A SQL function for executing GraphQL queries.
+- [`graphql.resolve`](https://biobase.github.io/pg_graphql/sql_interface/): A SQL function for executing GraphQL queries.
 
 ## Resources
 
-- Official [`pg_graphql` documentation](https://github.com/biobase-ai/pg_graphql)
+- Official [`pg_graphql` documentation](https://github.com/biobase/pg_graphql)

@@ -36,7 +36,7 @@ const cards: CardInterface[] = [
     avatar: '',
     author: 'Yasser',
     quote:
-      '@kiwicopple @supabase @PostgreSQL @OpenAI Adding vector embeddings support to @Biobase is awesome. Glad I built https://t.co/jnCYOLa4iK on biobase.',
+      '@kiwicopple @biobase @PostgreSQL @OpenAI Adding vector embeddings support to @Biobase is awesome. Glad I built https://t.co/jnCYOLa4iK on biobase.',
   },
   {
     type: 'customer-story',
@@ -68,7 +68,7 @@ const cards: CardInterface[] = [
     author: 'Batuhan',
     quote: (
       <>
-        To create long-term memory for your ChatGPT application you can use @supabase vector
+        To create long-term memory for your ChatGPT application you can use @biobase vector
         database.
         <br />
         You can fix two common problems with this method:

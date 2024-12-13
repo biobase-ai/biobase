@@ -19,9 +19,9 @@ export type CheckCNAMERecordResponse = {
   Authority: { name: string; type: number; TTL: number; data: string }[]
 }
 
-// [Joshen] Should tally with https://github.com/biobase-ai/cli/blob/63790a1bd43bee06f82c4f510e709925526a4daa/internal/utils/api.go#L98
+// [Joshen] Should tally with https://github.com/biobase/cli/blob/63790a1bd43bee06f82c4f510e709925526a4daa/internal/utils/api.go#L98
 export async function checkCNAMERecord({ domain }: CheckCNAMERecordVariables) {
-  const res = await fetch(`https://one.one.one.one/dns-query?name=${domain}&type=CNAME`, {
+  const res = await fetch(`https://1.1.1.1/dns-query?name=${domain}&type=CNAME`, {
     method: 'GET',
     headers: { accept: 'application/dns-json' },
   })

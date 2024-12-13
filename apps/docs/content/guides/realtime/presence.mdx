@@ -12,7 +12,7 @@ You can use the Biobase client libraries to track Presence state between users.
 
 ### Initialize the client
 
-Go to your Biobase project's [API Settings](https://biobase.studio/dashboard/project/_/settings/api) and grab the `URL` and `anon` public API key.
+Go to your Biobase project's [API Settings](https://biobase.com/dashboard/project/_/settings/api) and grab the `URL` and `anon` public API key.
 
 <Tabs
   scrollable
@@ -24,12 +24,12 @@ Go to your Biobase project's [API Settings](https://biobase.studio/dashboard/pro
 <TabPanel id="js" label="JavaScript">
 
 ```js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
-const BIOBASE_URL = 'https://<project>.biobase.co'
-const BIOBASE_KEY = '<your-anon-key>'
+const SUPABASE_URL = 'https://<project>.biobase.co'
+const SUPABASE_KEY = '<your-anon-key>'
 
-const biobase = createClient(BIOBASE_URL, BIOBASE_KEY)
+const biobase = createClient(SUPABASE_URL, SUPABASE_KEY)
 ```
 
 </TabPanel>
@@ -54,7 +54,7 @@ final biobase = Biobase.instance.client;
 ```swift
 let biobaseURL = "https://<project>.biobase.co"
 let biobaseKey = "<your-anon-key>"
-let biobase = SupabaseClient(biobaseURL: URL(string: biobaseURL)!, biobaseKey: biobaseKey)
+let biobase = BiobaseClient(biobaseURL: URL(string: biobaseURL)!, biobaseKey: biobaseKey)
 
 let realtime = biobase.realtime
 ```
@@ -65,7 +65,7 @@ let realtime = biobase.realtime
 ```kotlin
 val biobaseUrl = "https://<project>.biobase.co"
 val biobaseKey = "<your-anon-key>"
-val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
+val biobase = createBiobaseClient(biobaseUrl, biobaseKey) {
     install(Realtime)
 }
 ```
@@ -76,10 +76,10 @@ val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
 ```python
 from biobase import create_client
 
-BIOBASE_URL = 'https://<project>.biobase.co'
-BIOBASE_KEY = '<your-anon-key>'
+SUPABASE_URL = 'https://<project>.biobase.co'
+SUPABASE_KEY = '<your-anon-key>'
 
-biobase = create_client(BIOBASE_URL, BIOBASE_KEY)
+biobase = create_client(SUPABASE_URL, SUPABASE_KEY)
 ```
 
 </TabPanel>
@@ -383,7 +383,7 @@ By default, Presence will generate a unique `UUIDv1` key on the server to track 
 <TabPanel id="js" label="JavaScript">
 
 ```js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 const channelC = biobase.channel('test', {
   config: {

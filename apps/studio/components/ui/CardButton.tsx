@@ -1,7 +1,6 @@
-import { ChevronRight, Loader } from 'lucide-react'
+import { Loader, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
-import React, { cloneElement, PropsWithChildren } from 'react'
-
+import React, { PropsWithChildren } from 'react'
 import { cn } from 'ui'
 
 interface CardButtonProps {
@@ -19,7 +18,6 @@ interface CardButtonProps {
   fixedHeight?: boolean
   hideChevron?: boolean
   titleClass?: string
-  containerElement?: React.ReactNode
 }
 
 // Define separate interfaces for each type of container
@@ -58,7 +56,6 @@ const CardButton = ({
   fixedHeight = true,
   hideChevron = false,
   titleClass = '',
-  containerElement,
   ...props
 }: PropsWithChildren<CardButtonProps & ContainerProps>) => {
   const isLink = url || linkHref || props.onClick
@@ -66,28 +63,23 @@ const CardButton = ({
   let Container: React.ElementType
   let containerProps: ContainerProps = {}
 
-  const ContainerComponentOverride =
-    containerElement && React.isValidElement(containerElement)
-      ? (props: any) => cloneElement<any>(containerElement, { ...props })
-      : undefined
-
   if (props.onClick) {
-    Container = ContainerComponentOverride ?? 'button'
+    Container = 'button'
     containerProps = props
   } else if (linkHref) {
-    Container = ContainerComponentOverride ?? Link
+    Container = Link
     containerProps = {
       href: linkHref,
       ...props,
     }
   } else if (url) {
-    Container = ContainerComponentOverride ?? 'a'
+    Container = 'a'
     containerProps = {
       href: url,
       ...props,
     }
   } else {
-    Container = ContainerComponentOverride ?? 'div'
+    Container = 'div'
     containerProps = props
   }
 

@@ -5,17 +5,17 @@ description: 'Migrate Firebase auth users to Biobase Auth.'
 subtitle: 'Migrate Firebase auth users to Biobase Auth.'
 ---
 
-Biobase provides several [tools](https://github.com/biobase-ai-community/firebase-to-biobase/tree/main/auth) to help migrate auth users from a Firebase project to a Biobase project. There are two parts to the migration process:
+Biobase provides several [tools](https://github.com/biobase-community/firebase-to-biobase/tree/main/auth) to help migrate auth users from a Firebase project to a Biobase project. There are two parts to the migration process:
 
-- `firestoreusers2json` ([TypeScript](https://github.com/biobase-ai-community/firebase-to-biobase/blob/main/auth/firestoreusers2json.ts), [JavaScript](https://github.com/biobase-ai-community/firebase-to-biobase/blob/main/auth/firestoreusers2json.js)) exports users from an existing Firebase project to a `.json` file on your local system.
-- `import_users` ([TypeScript](https://github.com/biobase-ai-community/firebase-to-biobase/blob/main/auth/import_users.ts), [JavaScript](https://github.com/biobase-ai-community/firebase-to-biobase/blob/main/auth/import_users.js)) imports users from a saved `.json` file into your Biobase project (inserting those users into the `auth.users` table of your `Postgres` database instance).
+- `firestoreusers2json` ([TypeScript](https://github.com/biobase-community/firebase-to-biobase/blob/main/auth/firestoreusers2json.ts), [JavaScript](https://github.com/biobase-community/firebase-to-biobase/blob/main/auth/firestoreusers2json.js)) exports users from an existing Firebase project to a `.json` file on your local system.
+- `import_users` ([TypeScript](https://github.com/biobase-community/firebase-to-biobase/blob/main/auth/import_users.ts), [JavaScript](https://github.com/biobase-community/firebase-to-biobase/blob/main/auth/import_users.js)) imports users from a saved `.json` file into your Biobase project (inserting those users into the `auth.users` table of your `Postgres` database instance).
 
 ## Set up the migration tool [#set-up-migration-tool]
 
-1. Clone the [firebase-to-biobase](https://github.com/biobase-ai-community/firebase-to-biobase) repository:
+1. Clone the [firebase-to-biobase](https://github.com/biobase-community/firebase-to-biobase) repository:
 
    ```bash
-   git clone https://github.com/biobase-ai-community/firebase-to-biobase.git
+   git clone https://github.com/biobase-community/firebase-to-biobase.git
    ```
 
 1. In the `/auth` directory, create a file named `biobase-service.json` with the following contents:
@@ -30,7 +30,7 @@ Biobase provides several [tools](https://github.com/biobase-ai-community/firebas
    }
    ```
 
-1. Go to the [Database settings](https://biobase.studio/dashboard/project/_/settings/database) for your project in the Biobase Dashboard.
+1. Go to the [Database settings](https://biobase.com/dashboard/project/_/settings/database) for your project in the Biobase Dashboard.
 1. Under `Connection parameters`, enable `Use connection pooling` and set the mode to `Session`. Replace the `Host` and `User` fields with the values shown.
 1. Enter the password you used when you created your Biobase project in the `password` entry in the `biobase-service.json` file.
 
@@ -78,14 +78,14 @@ hash_config {
 
 ## Notes
 
-For more advanced migrations, including the use of a middleware server component for verifying a user's existing Firebase password and updating that password in your Biobase project the first time a user logs in, see the [firebase-to-biobase repo](https://github.com/biobase-ai-community/firebase-to-biobase/tree/main/auth).
+For more advanced migrations, including the use of a middleware server component for verifying a user's existing Firebase password and updating that password in your Biobase project the first time a user logs in, see the [firebase-to-biobase repo](https://github.com/biobase-community/firebase-to-biobase/tree/main/auth).
 
 ## Resources
 
-- [Biobase vs Firebase](https://biobase.studio/alternatives/biobase-vs-firebase)
+- [Biobase vs Firebase](https://biobase.com/alternatives/biobase-vs-firebase)
 - [Firestore Data Migration](/docs/guides/migrations/firestore-data)
 - [Firestore Storage Migration](/docs/guides/migrations/firebase-storage)
 
 ## Enterprise
 
-[Contact us](https://forms.biobase.studio/enterprise) if you need more help migrating your project.
+[Contact us](https://forms.biobase.com/enterprise) if you need more help migrating your project.

@@ -1,4 +1,4 @@
-import { type SupabaseClient, createClient } from '@supabase/supabase-js'
+import { type BiobaseClient, createClient } from '@supabase/biobase-js'
 import { upperFirst } from 'lodash'
 
 import { BaseLoader, BaseSource } from './base'
@@ -9,8 +9,8 @@ type PartnerData = {
   overview: string // The Markdown content for indexing
 }
 
-let biobaseClient: SupabaseClient
-function getSupabaseClient() {
+let biobaseClient: BiobaseClient
+function getBiobaseClient() {
   if (!biobaseClient) {
     biobaseClient = createClient(
       process.env.NEXT_PUBLIC_MISC_USE_URL!,
@@ -21,7 +21,7 @@ function getSupabaseClient() {
 }
 
 export async function fetchPartners() {
-  const biobase = getSupabaseClient()
+  const biobase = getBiobaseClient()
   const { data: partners } = await biobase
     .from('partners')
     .select('slug,overview')

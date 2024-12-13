@@ -168,10 +168,10 @@ const GlobalMobileMenu = ({ open, setOpen }: Props) => {
                   ) : (
                     <>
                       <Button block size="medium" type="default" asChild>
-                        <Link href="https://biobase.studio/dashboard/sign-in">Sign in</Link>
+                        <Link href="https://biobase.com/dashboard/sign-in">Sign in</Link>
                       </Button>
                       <Button block size="medium" asChild>
-                        <Link href="https://biobase.studio/dashboard/new">Start your project</Link>
+                        <Link href="https://biobase.com/dashboard/new">Start your project</Link>
                       </Button>
                     </>
                   )}

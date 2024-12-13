@@ -359,30 +359,6 @@
   },
   {
     "type": "category",
-    "title": "Organizations",
-    "items": [
-      {
-        "id": "biobase-orgs",
-        "title": "Manage organizations",
-        "slug": "biobase-orgs",
-        "type": "cli-command"
-      },
-      {
-        "id": "biobase-orgs-create",
-        "title": "Create an organization",
-        "slug": "biobase-orgs-create",
-        "type": "cli-command"
-      },
-      {
-        "id": "biobase-orgs-list",
-        "title": "List all organizations",
-        "slug": "biobase-orgs-list",
-        "type": "cli-command"
-      }
-    ]
-  },
-  {
-    "type": "category",
     "title": "Projects",
     "items": [
       {
@@ -413,24 +389,6 @@
         "id": "biobase-projects-delete",
         "title": "Delete a project",
         "slug": "biobase-projects-delete",
-        "type": "cli-command"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "title": "Config",
-    "items": [
-      {
-        "id": "biobase-config",
-        "title": "Manage project configurations",
-        "slug": "biobase-config",
-        "type": "cli-command"
-      },
-      {
-        "id": "biobase-config-push",
-        "title": "Push config from a local file",
-        "slug": "biobase-config-push",
         "type": "cli-command"
       }
     ]
@@ -479,6 +437,30 @@
         "id": "biobase-branches-disable",
         "title": "Disable preview branching",
         "slug": "biobase-branches-disable",
+        "type": "cli-command"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "title": "Organizations",
+    "items": [
+      {
+        "id": "biobase-orgs",
+        "title": "Manage organizations",
+        "slug": "biobase-orgs",
+        "type": "cli-command"
+      },
+      {
+        "id": "biobase-orgs-create",
+        "title": "Create an organization",
+        "slug": "biobase-orgs-create",
+        "type": "cli-command"
+      },
+      {
+        "id": "biobase-orgs-list",
+        "title": "List all organizations",
+        "slug": "biobase-orgs-list",
         "type": "cli-command"
       }
     ]

@@ -1,24 +1,22 @@
 import Link from 'next/link'
-import { cn, IconLinkedinSolid, IconTwitterX, IconYCombinator } from 'ui'
+import { IconLinkedinSolid, IconTwitterX, IconYCombinator } from 'ui'
 
 const ShareArticleActions = ({
   title,
   slug,
   iconSize = 20,
-  basePath = 'https://biobase.studio/blog/',
-  className,
+  basePath = 'https://biobase.com/blog/',
 }: {
   title: string
   slug: string
   iconSize?: number
   basePath?: string
-  className?: string
 }) => {
   const permalink = encodeURIComponent(`${basePath}${slug}`)
   const encodedTitle = encodeURIComponent(title)
 
   return (
-    <div className={cn('mt-4 flex items-center gap-4', className)}>
+    <div className="mt-4 flex items-center gap-4">
       <Link
         aria-label="Share on X"
         href={`https://twitter.com/intent/tweet?url=${permalink}&text=${encodedTitle}`}

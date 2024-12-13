@@ -28,7 +28,7 @@ const TwitterSocialSection = () => {
             </Link>
           </Button>
           <Button asChild type="default" size="small" iconRight={<MessageCircle size={14} />}>
-            <Link href={'https://discord.biobase.studio/'} target="_blank" tabIndex={-1}>
+            <Link href={'https://discord.biobase.com/'} target="_blank" tabIndex={-1}>
               Discord
             </Link>
           </Button>

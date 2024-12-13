@@ -16,7 +16,6 @@ import ShimmeringLoader from 'components/ui/ShimmeringLoader'
 import { useFreeProjectLimitCheckQuery } from 'data/organizations/free-project-limit-check-query'
 import { organizationKeys } from 'data/organizations/keys'
 import { useOrganizationBillingSubscriptionPreview } from 'data/organizations/organization-billing-subscription-preview'
-import { useOrganizationQuery } from 'data/organizations/organization-query'
 import { useProjectsQuery } from 'data/projects/projects-query'
 import { useOrgPlansQuery } from 'data/subscriptions/org-plans-query'
 import { useOrgSubscriptionQuery } from 'data/subscriptions/org-subscription-query'
@@ -24,7 +23,6 @@ import { useOrgSubscriptionUpdateMutation } from 'data/subscriptions/org-subscri
 import type { OrgPlan, SubscriptionTier } from 'data/subscriptions/types'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
 import { useSelectedOrganization } from 'hooks/misc/useSelectedOrganization'
-import { useFlag } from 'hooks/ui/useFlag'
 import { PRICING_TIER_PRODUCT_IDS } from 'lib/constants'
 import { formatCurrency } from 'lib/helpers'
 import { pickFeatures, pickFooter, plans as subscriptionsPlans } from 'shared-data/plans'
@@ -43,8 +41,8 @@ const PlanUpdateSidePanel = () => {
   const slug = selectedOrganization?.slug
 
   const queryClient = useQueryClient()
+
   const originalPlanRef = useRef<string>()
-  const allowOrioleDB = useFlag('allowOrioleDb')
 
   const [showExitSurvey, setShowExitSurvey] = useState(false)
   const [showUpgradeSurvey, setShowUpgradeSurvey] = useState(false)
@@ -61,9 +59,6 @@ const PlanUpdateSidePanel = () => {
   const orgProjects = (allProjects || []).filter(
     (it) => it.organization_id === selectedOrganization?.id
   )
-
-  const { data } = useOrganizationQuery({ slug }, { enabled: allowOrioleDB })
-  const hasOrioleProjects = allowOrioleDB ? false : !!data?.has_oriole_project
 
   const snap = useOrgSettingsPageStateSnapshot()
   const visible = snap.panelKey === 'subscriptionPlan'
@@ -87,7 +82,7 @@ const PlanUpdateSidePanel = () => {
         setSelectedTier(undefined)
         onClose()
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-        if (planMeta?.change_type === 'upgrade') setShowUpgradeSurvey(true)
+        setShowUpgradeSurvey(true)
       },
       onError: (error) => {
         toast.error(`Unable to update subscription: ${error.message}`)
@@ -107,9 +102,7 @@ const PlanUpdateSidePanel = () => {
   } = useOrganizationBillingSubscriptionPreview({ tier: selectedTier, organizationSlug: slug })
 
   const availablePlans: OrgPlan[] = plans?.plans ?? []
-  const hasMembersExceedingFreeTierLimit =
-    (membersExceededLimit || []).length > 0 &&
-    orgProjects.filter((it) => it.status !== 'INACTIVE' && it.status !== 'GOING_DOWN').length > 0
+  const hasMembersExceedingFreeTierLimit = (membersExceededLimit || []).length > 0
   const subscriptionPlanMeta = subscriptionsPlans.find((tier) => tier.id === selectedTier)
 
   const expandUsageFee = (fee: string) => {
@@ -186,10 +179,10 @@ const PlanUpdateSidePanel = () => {
         header={
           <div className="flex items-center justify-between">
             <h4>Change subscription plan for {selectedOrganization?.name}</h4>
-            <Button asChild type="default" icon={<ExternalLink />}>
-              <a href="https://biobase.studio/pricing" target="_blank" rel="noreferrer">
+            <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
+              <Link href="https://biobase.com/pricing" target="_blank" rel="noreferrer">
                 Pricing
-              </a>
+              </Link>
             </Button>
           </div>
         }
@@ -218,14 +211,13 @@ const PlanUpdateSidePanel = () => {
               return (
                 <div
                   key={plan.id}
-                  className={cn(
-                    'px-4 py-4 flex flex-col items-start justify-between',
-                    'border rounded-md col-span-12 md:col-span-4 bg-surface-200'
-                  )}
+                  className={
+                    'border rounded-md px-4 py-4 flex flex-col items-start justify-between col-span-12 md:col-span-4 bg-surface-200'
+                  }
                 >
                   <div className="w-full">
                     <div className="flex items-center space-x-2">
-                      <p className="text-brand text-sm uppercase">{plan.name}</p>
+                      <p className={cn('text-brand text-sm uppercase')}>{plan.name}</p>
                       {isCurrentPlan ? (
                         <div className="text-xs bg-surface-300 text-foreground-light rounded px-2 py-0.5">
                           Current plan
@@ -234,7 +226,9 @@ const PlanUpdateSidePanel = () => {
                         <div className="text-xs bg-brand-400 text-brand-600 rounded px-2 py-0.5">
                           {plan.nameBadge}
                         </div>
-                      ) : null}
+                      ) : (
+                        <></>
+                      )}
                     </div>
                     <div className="mt-4 flex items-center space-x-1 mb-4">
                       {(price ?? 0) > 0 && <p className="text-foreground-light text-sm">From</p>}
@@ -255,24 +249,17 @@ const PlanUpdateSidePanel = () => {
                       <ButtonTooltip
                         block
                         type={isDowngradeOption ? 'default' : 'primary'}
-                        disabled={
-                          subscription?.plan?.id === 'enterprise' ||
-                          hasOrioleProjects ||
-                          !canUpdateSubscription
-                        }
+                        disabled={subscription?.plan?.id === 'enterprise' || !canUpdateSubscription}
                         onClick={() => setSelectedTier(plan.id as any)}
                         tooltip={{
                           content: {
                             side: 'bottom',
-                            className: hasOrioleProjects ? 'w-96 text-center' : '',
                             text:
                               subscription?.plan?.id === 'enterprise'
                                 ? 'Reach out to us via support to update your plan from Enterprise'
-                                : hasOrioleProjects
-                                  ? 'Your organization has projects that are using the OrioleDB extension which is only available on the Free plan. Remove all OrioleDB projects before changing your plan.'
-                                  : !canUpdateSubscription
-                                    ? 'You do not have permission to change the subscription plan'
-                                    : undefined,
+                                : !canUpdateSubscription
+                                  ? 'You do not have permission to change the subscription plan'
+                                  : undefined,
                           },
                         }}
                       >
@@ -477,7 +464,7 @@ const PlanUpdateSidePanel = () => {
                     <div className="space-x-3 mt-2">
                       <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                         <Link
-                          href="https://biobase.studio/docs/guides/platform/org-based-billing"
+                          href="https://biobase.com/docs/guides/platform/org-based-billing"
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -487,7 +474,7 @@ const PlanUpdateSidePanel = () => {
                       {subscription?.plan?.id === 'free' && (
                         <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                           <Link
-                            href="https://biobase.studio/docs/guides/platform/project-transfer"
+                            href="https://biobase.com/docs/guides/platform/project-transfer"
                             target="_blank"
                             rel="noreferrer"
                           >

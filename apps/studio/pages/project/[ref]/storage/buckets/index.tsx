@@ -24,7 +24,7 @@ const PageLayout: NextPageWithLayout = () => {
       <ProductEmptyState
         title="Storage"
         infoButtonLabel="About storage"
-        infoButtonUrl="https://biobase.studio/docs/guides/storage"
+        infoButtonUrl="https://biobase.com/docs/guides/storage"
       >
         <p className="text-foreground-light text-sm">
           Create buckets to store and serve any type of digital content.

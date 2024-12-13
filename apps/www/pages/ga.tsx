@@ -34,7 +34,7 @@ export default function IndexPage() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.studio/${router.pathname}`,
+          url: `https://biobase.com/${router.pathname}`,
           images: [
             {
               url: meta_image,

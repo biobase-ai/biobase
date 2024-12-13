@@ -1,21 +1,21 @@
-import { createClient } from '@/utils/biobase/server'
-import Link from 'next/link'
-import { redirect } from 'next/navigation'
+import { createClient } from "@/utils/biobase/server";
+import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default async function AuthButton() {
-  const biobase = await createClient()
+  const biobase = createClient();
 
   const {
     data: { user },
-  } = await biobase.auth.getUser()
+  } = await biobase.auth.getUser();
 
   const signOut = async () => {
-    'use server'
+    "use server";
 
-    const biobase = await createClient()
-    await biobase.auth.signOut()
-    return redirect('/login')
-  }
+    const biobase = createClient();
+    await biobase.auth.signOut();
+    return redirect("/login");
+  };
 
   return user ? (
     <div className="flex items-center gap-4">
@@ -33,5 +33,5 @@ export default async function AuthButton() {
     >
       Login
     </Link>
-  )
+  );
 }

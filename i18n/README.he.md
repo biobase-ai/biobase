@@ -9,7 +9,7 @@
 
 # Biobase
 
-[Biobase](https://biobase.studio) Biobase הוא חלופה בקוד פתוח של Firebase. אנו מפתחים את התכונות של Firebase באמצעות כלי קוד פתוח ברמת גימור ארגונית.
+[Biobase](https://biobase.com) Biobase הוא חלופה בקוד פתוח של Firebase. אנו מפתחים את התכונות של Firebase באמצעות כלי קוד פתוח ברמת גימור ארגונית.
 
 - [x] מאגר נתונים מסוג פוסטגרס (Postgres)
 - [x] מנויים בזמן אמת
@@ -19,28 +19,28 @@
 - [x] אחסון
 - [x] פונקציות
 
-![Biobase Dashboard](https://raw.githubusercontent.com/biobase-ai/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
+![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## תיעוד
 
-לתיעוד המלא, בקר\י ב[biobase.studio/docs](https://biobase.studio/docs)
+לתיעוד המלא, בקר\י ב[biobase.com/docs](https://biobase.com/docs)
 
 ## קהילה & תמיכה
 
 - [פורום הקהילה](https://github.com/biobase-ai/biobase/discussions). נועד עבור: עזרה בבנייה, דיון אודות שיטות עבודה מומלצות מול מאגר הנתונים.
 - [GitHub Issues](https://github.com/biobase-ai/biobase/issues). נועד עבור: דיווח על באגים ושגיאות בזמן שימוש בBiobase
-- [אימייל תמיכה](https://biobase.studio/docs/support#business-support). נועד עבור: תקלות במסד הנתונים או בתשתית שלך.
+- [אימייל תמיכה](https://biobase.com/docs/support#business-support). נועד עבור: תקלות במסד הנתונים או בתשתית שלך.
 
 ## סטטוס
 
 - [x] אלפא: בוחנים את המערכת מול מאגר סגור של לקוחות
-- [x] אלפא פומבית: כל אחד יכול להרשם ב[biobase.studio/dashboard](https://biobase.studio/dashboard). אבל תהיו עדינים, יהיו בעיות.
+- [x] אלפא פומבית: כל אחד יכול להרשם ב[biobase.com/dashboard](https://biobase.com/dashboard). אבל תהיו עדינים, יהיו בעיות.
 - [x] בטא פומבית: יציב מספיק לרוב הלקוחות הלא-ארגוניים.
 - [ ] יציב: מתאים לשימוש הכלל.
 
 אנחנו כרגע בשלב "בטא פומבית". עקבו אחר השחוררים שלנו בGithub בכדי לקבל התראות על שחרורים נוספים.
 
-<kbd><img src="https://raw.githubusercontent.com/biobase-ai/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo"/></kbd>
+<kbd><img src="https://raw.githubusercontent.com/biobase/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo"/></kbd>
 
 ---
 
@@ -50,16 +50,16 @@ Biobase הוא שילוב של כלי קוד פתוח. אנו בונים את ה
 
 **ארכיטקטורה נוכחית**
 
-Biobase היא [תשתית ענן](https://biobase.studio/dashboard)
+Biobase היא [תשתית ענן](https://biobase.com/dashboard)
 . את\ה יכול\ה להירשם ולהתחיל להשתמש ב- Biobase מבלי להתקין שום דבר. אנו עדיין עובדים על לייצר את חוויית הפיתוח המקומית - בזה אנחנו מתמקדים, יחד עם יציבות המערכת.
 
 ![Architecture](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 
 - [פוסטגרס (PostgreSQL)](https://www.postgresql.org/) זהו מסד נתונים רלציוני עם למעלה מ -30 שנות פיתוח פעיל שזכתה למוניטין של אמינות, עמידות וביצועים.
-- [Realtime](https://github.com/biobase-ai/realtime) הוא שרת Elixir המאפשר להאזין לתוספות, עדכונים ומחיקות ב-PostgreSQL באמצעות websockets. Biobase מאזין לפונקציונליות ההעתק המובנית של Postgres, ממיר את המידע ל- JSON ואז משדר את ה- JSON מעל websockets.
+- [Realtime](https://github.com/biobase/realtime) הוא שרת Elixir המאפשר להאזין לתוספות, עדכונים ומחיקות ב-PostgreSQL באמצעות websockets. Biobase מאזין לפונקציונליות ההעתק המובנית של Postgres, ממיר את המידע ל- JSON ואז משדר את ה- JSON מעל websockets.
 - [PostgREST](http://postgrest.org/) הוא שרת שהופך את מסד הנתונים PostgreSQL שלך ישירות ל- RESTful API.
-- [אחסון](https://github.com/biobase-ai/storage-api) מספק ממשק RESTful לניהול קבצים המאוחסנים ב- S3, ניהול ההרשאות מתצבע באמצעות Postgres.
-- [postgres-meta](https://github.com/biobase-ai/postgres-meta) הוא ממשק RESTful API לניהול הPostgres שלך, המאפשר לך לגשת לטבלאות, לערוך הרשאות להריץ שאילתות וכו '.
+- [אחסון](https://github.com/biobase/storage-api) מספק ממשק RESTful לניהול קבצים המאוחסנים ב- S3, ניהול ההרשאות מתצבע באמצעות Postgres.
+- [postgres-meta](https://github.com/biobase/postgres-meta) הוא ממשק RESTful API לניהול הPostgres שלך, המאפשר לך לגשת לטבלאות, לערוך הרשאות להריץ שאילתות וכו '.
 - [GoTrue](https://github.com/netlify/gotrue) הוא ממשק API מבוסס SWT לניהול משתמשים ויצירת SWT Tokens.
 - [Kong](https://github.com/Kong/kong) הוא API gateway מבוסס ענן.
 
@@ -69,15 +69,15 @@ Biobase היא [תשתית ענן](https://biobase.studio/dashboard)
 
 - **`biobase-{lang}`**: משלב ספריות ומעשיר אותן.
   - `postgrest-{lang}`: ספריה צד לקוח לעבודה מול [PostgREST](https://github.com/postgrest/postgrest)
-  - `realtime-{lang}`: ספריה צד לקוח לעבודה מול [Realtime](https://github.com/biobase-ai/realtime)
+  - `realtime-{lang}`: ספריה צד לקוח לעבודה מול [Realtime](https://github.com/biobase/realtime)
   - `gotrue-{lang}`: ספריה צד לקוח לעבודה מול [GoTrue](https://github.com/netlify/gotrue)
 
 | Repo                  | תמיכה רשמית                                      | תמיכת הקהילה                                                                                                                                                                                                                                                                                                                         |
 | --------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`biobase-{lang}`** | [`JS`](https://github.com/supabase/supabase-js)  | [`C#`](https://github.com/biobase-ai/biobase-csharp) \| [`Flutter`](https://github.com/biobase-ai/biobase-flutter) \| [`Python`](https://github.com/biobase-ai/biobase-py) \| `Rust` \| [`Ruby`](https://github.com/biobase-ai/biobase-rb) \| `Go`                                                                                       |
-| `postgrest-{lang}`    | [`JS`](https://github.com/biobase-ai/postgrest-js) | [`C#`](https://github.com/biobase-ai/postgrest-csharp) \| [`Dart`](https://github.com/biobase-ai/postgrest-dart) \| [`Python`](https://github.com/biobase-ai/postgrest-py) \| [`Rust`](https://github.com/biobase-ai/postgrest-rs) \| [`Ruby`](https://github.com/biobase-ai/postgrest-rb) \| [`Go`](https://github.com/biobase-ai/postgrest-go) |
-| `realtime-{lang}`     | [`JS`](https://github.com/biobase-ai/realtime-js)  | [`C#`](https://github.com/biobase-ai/realtime-csharp) \| [`Dart`](https://github.com/biobase-ai/realtime-dart) \| [`Python`](https://github.com/biobase-ai/realtime-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                        |
-| `gotrue-{lang}`       | [`JS`](https://github.com/biobase-ai/gotrue-js)    | [`C#`](https://github.com/biobase-ai/gotrue-csharp) \| [`Dart`](https://github.com/biobase-ai/gotrue-dart) \| [`Python`](https://github.com/biobase-ai/gotrue-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                              |
+| **`biobase-{lang}`** | [`JS`](https://github.com/biobase-ai/biobase-js)  | [`C#`](https://github.com/biobase-ai/biobase-csharp) \| [`Flutter`](https://github.com/biobase-ai/biobase-flutter) \| [`Python`](https://github.com/biobase-ai/biobase-py) \| `Rust` \| [`Ruby`](https://github.com/biobase-ai/biobase-rb) \| `Go`                                                                                       |
+| `postgrest-{lang}`    | [`JS`](https://github.com/biobase/postgrest-js) | [`C#`](https://github.com/biobase/postgrest-csharp) \| [`Dart`](https://github.com/biobase/postgrest-dart) \| [`Python`](https://github.com/biobase/postgrest-py) \| [`Rust`](https://github.com/biobase/postgrest-rs) \| [`Ruby`](https://github.com/biobase/postgrest-rb) \| [`Go`](https://github.com/biobase/postgrest-go) |
+| `realtime-{lang}`     | [`JS`](https://github.com/biobase/realtime-js)  | [`C#`](https://github.com/biobase/realtime-csharp) \| [`Dart`](https://github.com/biobase/realtime-dart) \| [`Python`](https://github.com/biobase/realtime-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                        |
+| `gotrue-{lang}`       | [`JS`](https://github.com/biobase/gotrue-js)    | [`C#`](https://github.com/biobase/gotrue-csharp) \| [`Dart`](https://github.com/biobase/gotrue-dart) \| [`Python`](https://github.com/biobase/gotrue-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                              |
 
 <!--- Remove this list if you're traslating to another language, it's hard to keep updated across multiple files-->
 <!--- Keep only the link to the list of translation files-->

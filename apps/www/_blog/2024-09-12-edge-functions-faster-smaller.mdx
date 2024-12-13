@@ -12,7 +12,7 @@ date: '2024-09-12'
 toc_depth: 3
 ---
 
-We’ve rolled out some exciting updates to Edge Functions which bring significant reductions to function size and boot time. If you’re using [npm modules](https://biobase.studio/blog/edge-functions-node-npm) in your functions, you should see function sizes being halved and boot time reduced by 300% in most cases.
+We’ve rolled out some exciting updates to Edge Functions which bring significant reductions to function size and boot time. If you’re using [npm modules](https://biobase.com/blog/edge-functions-node-npm) in your functions, you should see function sizes being halved and boot time reduced by 300% in most cases.
 
 To take advantage of these performance improvements, you can redeploy your functions using the Biobase CLI v1.192.5 or later.
 
@@ -28,13 +28,13 @@ Let’s compare the bundle size and boot time using some popular examples.
 | Boot time   | 275ms           | 25ms            | -1100%     |
 
 ```jsx
-import { createClient } from 'npm:@supabase/supabase-js@2'
+import { createClient } from 'npm:@supabase/biobase-js@2'
 
 Deno.serve(async (_req) => {
   try {
     const biobase = createClient(
-      Deno.env.get('BIOBASE_URL') ?? '',
-      Deno.env.get('BIOBASE_ANON_KEY') ?? '',
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_ANON_KEY') ?? '',
       { global: { headers: { Authorization: req.headers.get('Authorization')! } } }
     )
 
@@ -101,7 +101,7 @@ export const users = pgTable('users', {
 })
 
 const client = new Client({
-  connectionString: Deno.env.get('BIOBASE_DB_URL'),
+  connectionString: Deno.env.get('SUPABASE_DB_URL'),
 })
 
 await client.connect()
@@ -143,7 +143,7 @@ Another issue was that while serializing npm packages for embedding into eszip b
 
 We refactored the serialization using the [`rkyv` crate](https://github.com/rkyv/rkyv) to encode this to lower to the byte level, which helped reducing the bundle sizes of eszip binaries containing npm packages.
 
-You can find full details of the implementation in this PR https://github.com/biobase-ai/edge-runtime/pull/343
+You can find full details of the implementation in this PR https://github.com/biobase/edge-runtime/pull/343
 
 ### Using a more computationally efficient hashing function
 
@@ -157,11 +157,11 @@ This allowed us to switch to xxHash-3 over SHA_256 for the source checksums. Giv
 
 To get the advantage of these optimizations, follow these steps:
 
-- [Update Biobase CLI](https://biobase.studio/docs/guides/cli/getting-started#updating-the-biobase-cli) to version is v1.195.2 or later.
+- [Update Biobase CLI](https://biobase.com/docs/guides/cli/getting-started#updating-the-biobase-cli) to version is v1.195.2 or later.
 - Then, redeploy your functions by running `biobase functions deploy [FUNCTION_NAME]`
 
 ## Getting Help
 
-[Biobase Edge Runtime](https://github.com/biobase-ai/edge-runtime) is fully open-source, and we value community contributions. If you would like to make any improvements, feel free to dive into the source and [create an issue](https://github.com/biobase-ai/edge-runtime/issues).
+[Biobase Edge Runtime](https://github.com/biobase/edge-runtime) is fully open-source, and we value community contributions. If you would like to make any improvements, feel free to dive into the source and [create an issue](https://github.com/biobase/edge-runtime/issues).
 
 If you have any issues with Edge Functions in your hosted project, please request support via [superbase.help](http://biobase.help).

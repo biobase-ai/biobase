@@ -39,11 +39,9 @@ import { addRegionNodes, generateNodes, getDagreGraphLayout } from './InstanceCo
 import { LoadBalancerNode, PrimaryNode, RegionNode, ReplicaNode } from './InstanceNode'
 import MapView from './MapView'
 import { RestartReplicaConfirmationModal } from './RestartReplicaConfirmationModal'
-import { useIsOrioleDb } from 'hooks/misc/useSelectedProject'
 
 const InstanceConfigurationUI = () => {
   const reactFlow = useReactFlow()
-  const isOrioleDb = useIsOrioleDb()
   const { resolvedTheme } = useTheme()
   const { ref: projectRef } = useParams()
   const numTransition = useRef<number>()
@@ -209,7 +207,7 @@ const InstanceConfigurationUI = () => {
   }, [isSuccessReplicas, isSuccessLoadBalancers, nodes, edges, view])
 
   return (
-    <div className="nowheel border-y">
+    <div className="nowheel">
       <div
         className={`h-[500px] w-full relative ${
           isSuccessReplicas && !isLoadingProject ? '' : 'flex items-center justify-center px-28'
@@ -227,17 +225,13 @@ const InstanceConfigurationUI = () => {
               <div className="flex items-center justify-center">
                 <ButtonTooltip
                   type="default"
-                  disabled={!canManageReplicas || isOrioleDb}
+                  disabled={!canManageReplicas}
                   className={cn(replicas.length > 0 ? 'rounded-r-none' : '')}
                   onClick={() => setShowNewReplicaPanel(true)}
                   tooltip={{
                     content: {
                       side: 'bottom',
-                      text: !canManageReplicas
-                        ? 'You need additional permissions to deploy replicas'
-                        : isOrioleDb
-                          ? 'Read replicas are not supported with OrioleDB'
-                          : undefined,
+                      text: 'You need additional permissions to deploy replicas',
                     },
                   }}
                 >

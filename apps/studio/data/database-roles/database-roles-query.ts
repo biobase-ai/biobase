@@ -1,9 +1,9 @@
 import pgMeta from '@supabase/pg-meta'
-import { QueryClient, useQuery, UseQueryOptions } from '@tanstack/react-query'
+import { QueryClient, UseQueryOptions } from '@tanstack/react-query'
 import { z } from 'zod'
 
-import { executeSql, ExecuteSqlError } from 'data/sql/execute-sql-query'
-import { databaseRoleKeys } from './keys'
+import { ExecuteSqlData, ExecuteSqlError, useExecuteSqlQuery } from 'data/sql/execute-sql-query'
+import { sqlKeys } from 'data/sql/keys'
 
 export type DatabaseRolesVariables = {
   projectRef?: string
@@ -14,34 +14,28 @@ export type PgRole = z.infer<typeof pgMeta.roles.zod>
 
 const pgMetaRolesList = pgMeta.roles.list()
 
-export async function getDatabaseRoles(
-  { projectRef, connectionString }: DatabaseRolesVariables,
-  signal?: AbortSignal
-) {
-  const { result } = await executeSql(
-    { projectRef, connectionString, sql: pgMetaRolesList.sql, queryKey: ['database-roles'] },
-    signal
-  )
-
-  return result as PgRole[]
-}
-
 export type DatabaseRolesData = z.infer<typeof pgMetaRolesList.zod>
 export type DatabaseRolesError = ExecuteSqlError
 
 export const useDatabaseRolesQuery = <TData = DatabaseRolesData>(
   { projectRef, connectionString }: DatabaseRolesVariables,
-  { enabled = true, ...options }: UseQueryOptions<DatabaseRolesData, DatabaseRolesError, TData> = {}
+  options: UseQueryOptions<ExecuteSqlData, DatabaseRolesError, TData> = {}
 ) =>
-  useQuery<DatabaseRolesData, DatabaseRolesError, TData>(
-    databaseRoleKeys.databaseRoles(projectRef),
-    ({ signal }) => getDatabaseRoles({ projectRef, connectionString }, signal),
+  useExecuteSqlQuery(
     {
-      enabled: enabled && typeof projectRef !== 'undefined',
+      projectRef,
+      connectionString,
+      sql: pgMetaRolesList.sql,
+      queryKey: ['roles', 'list'],
+    },
+    {
+      select(data) {
+        return data.result
+      },
       ...options,
     }
   )
 
 export function invalidateRolesQuery(client: QueryClient, projectRef: string | undefined) {
-  return client.invalidateQueries(databaseRoleKeys.databaseRoles(projectRef))
+  return client.invalidateQueries(sqlKeys.query(projectRef, ['roles', 'list']))
 }

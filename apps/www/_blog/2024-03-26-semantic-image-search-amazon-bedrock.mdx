@@ -42,17 +42,17 @@ If you haven't already, head over to [database.new](https://database.new) and cr
 
 When creating your project, make sure to note down your database password as you will need it to construct the `DB_URL` in the next step.
 
-You can find the database connection string in your Biobase Dashboard [database settings](https://biobase.studio/dashboard/project/_/settings/database). Select "Use connection pooling" with `Mode: Session` for a direct connection to your Postgres database. It will look something like this:
+You can find the database connection string in your Biobase Dashboard [database settings](https://biobase.com/dashboard/project/_/settings/database). Select "Use connection pooling" with `Mode: Session` for a direct connection to your Postgres database. It will look something like this:
 
 ```txt
-postgresql://postgres.[PROJECT-REF]:[YOUR-PASSWORD]@aws-0-[REGION].pooler.biobase.studio:5432/postgres
+postgresql://postgres.[PROJECT-REF]:[YOUR-PASSWORD]@aws-0-[REGION].pooler.biobase.com:5432/postgres
 ```
 
 ## Install the dependencies
 
 We will need to add the following dependencies to our project:
 
-- [`vecs`](https://github.com/biobase-ai/vecs#vecs): Biobase Vector Python Client.
+- [`vecs`](https://github.com/biobase/vecs#vecs): Biobase Vector Python Client.
 - [`boto3`](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html): AWS SDK for Python.
 - [`matplotlib`](https://matplotlib.org/): for displaying our image result.
 
@@ -74,7 +74,7 @@ from matplotlib import pyplot as plt
 from matplotlib import image as mpimg
 from typing import Optional
 
-DB_CONNECTION = "postgresql://postgres.[PROJECT-REF]:[YOUR-PASSWORD]@aws-0-[REGION].pooler.biobase.studio:5432/postgres"
+DB_CONNECTION = "postgresql://postgres.[PROJECT-REF]:[YOUR-PASSWORD]@aws-0-[REGION].pooler.biobase.com:5432/postgres"
 ```
 
 Next, get the [credentials to your AWS account](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html) and instantiate the `boto3` client:
@@ -196,7 +196,7 @@ seed = "image_search.main:seed"
 search = "image_search.main:search"
 ```
 
-After activating the virtual environtment with `poetry shell` you can now run your seed script via `poetry run seed`. You can inspect the generated embeddings in your Biobase Dashboard by visiting the [Table Editor](https://biobase.studio/dashboard/project/_/editor), selecting the `vecs` schema, and the `image_vectors` table.
+After activating the virtual environtment with `poetry shell` you can now run your seed script via `poetry run seed`. You can inspect the generated embeddings in your Biobase Dashboard by visiting the [Table Editor](https://biobase.com/dashboard/project/_/editor), selecting the `vecs` schema, and the `image_vectors` table.
 
 ## Perform an image search from a text query
 

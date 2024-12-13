@@ -1,7 +1,7 @@
 // Follow this setup guide to integrate the Deno language server with your editor:
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
-import { createClient } from 'jsr:@supabase/supabase-js@2'
+import { createClient } from 'jsr:@supabase/biobase-js@2'
 
 console.log('Hello from Functions!')
 
@@ -20,8 +20,8 @@ interface WebhookPayload {
 }
 
 const biobase = createClient(
-  Deno.env.get('BIOBASE_URL')!,
-  Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!
+  Deno.env.get('SUPABASE_URL')!,
+  Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
 )
 
 Deno.serve(async (req) => {

@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      BIOBASE_ACCESS_TOKEN: ${{ secrets.BIOBASE_ACCESS_TOKEN }}
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
       PROJECT_ID: zdtdtxajzydjqzuktnqx
 
     steps:

@@ -1,4 +1,4 @@
-import createSupabaseIcon from '../createSupabaseIcon';
+import createBiobaseIcon from '../createBiobaseIcon';
 
 /**
  * @component @name Database
@@ -10,7 +10,7 @@ import createSupabaseIcon from '../createSupabaseIcon';
  * @returns {JSX.Element} JSX Element
  *
  */
-const Database = createSupabaseIcon('Database', [
+const Database = createBiobaseIcon('Database', [
   ['path', { d: ' M5.56774 9.70642H18.4547V15.7064H5.56774V9.70642Z', key: 'g5hndz' }],
   [
     'path',

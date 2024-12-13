@@ -4,6 +4,4 @@ export const replicaKeys = {
     ['project', projectRef, 'replicas-statuses'] as const,
   loadBalancers: (projectRef: string | undefined) =>
     ['project', projectRef, 'load-balancers'] as const,
-  replicaLag: (projectRef: string | undefined, id: string) =>
-    ['project', projectRef, 'replica-lag', id] as const,
 }

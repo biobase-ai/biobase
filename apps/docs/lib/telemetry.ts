@@ -1,6 +1,7 @@
-import { isBrowser } from 'common'
 import { usePathname } from 'next/navigation'
+
 import { useConsent } from 'ui-patterns/ConsentToast'
+
 import { unauthedAllowedPost } from './fetch/fetchWrappers'
 
 type TelemetryEvent = {
@@ -17,36 +18,20 @@ const noop = () => {}
  * Checks for user consent to telemetry before sending.
  */
 const useSendTelemetryEvent = () => {
-  const pathname = usePathname()
   const { hasAcceptedConsent } = useConsent()
+  const pathname = usePathname()
 
   if (!hasAcceptedConsent) return noop
 
-  const title = typeof document !== 'undefined' ? document?.title : ''
-  const referrer = typeof document !== 'undefined' ? document?.referrer : ''
-
   return (event: TelemetryEvent) =>
     unauthedAllowedPost('/platform/telemetry/event', {
+      // @ts-ignore - endpoint will accept this just fine
       body: {
-        pathname,
-        action: event.action,
-        page_url: isBrowser ? window.location.href : '',
-        page_title: title,
-        ph: {
-          referrer,
-          language: navigator.language ?? 'en-US',
-          user_agent: navigator.userAgent,
-          search: isBrowser ? window.location.search : '',
-          viewport_height: isBrowser ? window.innerHeight : 0,
-          viewport_width: isBrowser ? window.innerWidth : 0,
-        },
-        custom_properties: {
-          category: event.category,
-          label: event.label,
-        } as any,
+        ...event,
+        page_title: document?.title,
+        // @ts-ignore [JOSHEN] To be fixed for PH
+        page_location: pathname,
       },
-      headers: { Version: '2' },
-      credentials: 'include',
     })
       .then(({ error }) => {
         if (error) console.error(error)

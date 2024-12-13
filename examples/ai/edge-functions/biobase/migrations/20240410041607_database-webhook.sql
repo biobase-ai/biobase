@@ -1,5 +1,5 @@
--- Insert your <PROJECT-REF> and <BIOBASE_ANON_KEY> below, then uncomment the trigger creation and run `biobase db push`
--- Alternatively, head to the Database Webhook settings https://biobase.studio/dashboard/project/_/database/hooks
+-- Insert your <PROJECT-REF> and <SUPABASE_ANON_KEY> below, then uncomment the trigger creation and run `biobase db push`
+-- Alternatively, head to the Database Webhook settings https://biobase.com/dashboard/project/_/database/hooks
 -- Select "Create a new Hook" > Table "public.embeddings" > check "INSERT" & "Update" > Biobase Edge Functions > Add auth header with service key
 
 -- CREATE TRIGGER "on_inserted_or_updated_embedding"
@@ -9,7 +9,7 @@
 -- EXECUTE FUNCTION biobase_functions.http_request (
 --   'https://<PROJECT-REF>.biobase.co/functions/v1/generate-embedding',
 --   'POST',
---   '{"Content-type":"application/json","Authorization":"Bearer <BIOBASE_ANON_KEY>"}',
+--   '{"Content-type":"application/json","Authorization":"Bearer <SUPABASE_ANON_KEY>"}',
 --   '{}',
 --   '5000'
 -- );

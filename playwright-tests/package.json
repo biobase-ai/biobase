@@ -9,8 +9,7 @@
     "test": "playwright test",
     "posttest": "biobase stop --no-backup",
     "codegen:setup": "npm run env:setup && NODE_ENV=test npm --prefix ../apps/studio run dev",
-    "codegen": "playwright codegen http://localhost:8082/project/default",
-    "clean": "rimraf node_modules"
+    "codegen": "playwright codegen http://localhost:8082/project/default"
   },
   "keywords": [],
   "author": "",

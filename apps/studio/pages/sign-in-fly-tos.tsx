@@ -115,12 +115,12 @@ const SignInFlyTos = () => {
       <div className="sm:text-center">
         <p className="text-xs text-foreground-lighter sm:mx-auto sm:max-w-sm">
           By continuing, you agree to Biobase's{' '}
-          <Link href="https://biobase.studio/terms" className="underline hover:text-foreground-light">
+          <Link href="https://biobase.com/terms" className="underline hover:text-foreground-light">
             Terms of Service
           </Link>{' '}
           and{' '}
           <Link
-            href="https://biobase.studio/privacy"
+            href="https://biobase.com/privacy"
             className="underline hover:text-foreground-light"
           >
             Privacy Policy

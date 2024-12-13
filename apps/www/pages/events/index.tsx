@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
 
 import { getSortedPosts } from '~/lib/posts'
-import biobase from '~/lib/biobase'
 
 import { cn } from 'ui'
 import DefaultLayout from '~/components/Layouts/Default'
@@ -34,10 +33,10 @@ function Events({ events: allEvents, onDemandEvents, categories }: Props) {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.studio/${router.pathname}`,
+          url: `https://biobase.com/${router.pathname}`,
           images: [
             {
-              url: `https://biobase.studio/images/og/biobase-og.png`,
+              url: `https://biobase.com/images/og/biobase-og.png`,
             },
           ],
         }}
@@ -45,7 +44,7 @@ function Events({ events: allEvents, onDemandEvents, categories }: Props) {
           {
             rel: 'alternate',
             type: 'application/rss+xml',
-            href: `https://biobase.studio/rss.xml`,
+            href: `https://biobase.com/rss.xml`,
           },
         ]}
       />
@@ -122,42 +121,11 @@ function Events({ events: allEvents, onDemandEvents, categories }: Props) {
 }
 
 export async function getStaticProps() {
-  const { data: meetups, error } = await biobase
-    .from('meetups')
-    .select('id, city, country, link, start_at, timezone, launch_week')
-    .eq('is_published', true)
-
-  if (error) console.log('meetups error: ', error)
-
-  const meetupEvents: BlogPost[] =
-    meetups?.map((meetup: any) => ({
-      slug: '',
-      type: 'event',
-      title: `Launch Week ${meetup.launch_week.slice(2)} Meetup: ${meetup.city}, ${meetup.country}`,
-      date: meetup.start_at,
-      description: '',
-      thumb: '',
-      path: '',
-      url: meetup.link ?? '',
-      tags: ['meetup', 'launch-week'],
-      categories: ['meetup'],
-      timezone: meetup.timezone ?? 'America/Los_Angeles',
-      disable_page_build: true,
-      link: {
-        href: meetup.link ?? '#',
-        target: '_blank',
-      },
-    })) ?? []
-
-  const staticEvents = getSortedPosts({
+  const allEvents = getSortedPosts({
     directory: '_events',
     runner: '** EVENTS PAGE **',
   }) as BlogPost[]
-
-  const allEvents = [...staticEvents, ...meetupEvents]
-  const upcomingEvents = allEvents.filter((event: BlogPost) =>
-    event.end_date ? new Date(event.end_date!) >= new Date() : new Date(event.date!) >= new Date()
-  )
+  const upcomingEvents = allEvents.filter((event: BlogPost) => new Date(event.date!) >= new Date())
   const onDemandEvents = allEvents.filter(
     (event: BlogPost) => new Date(event.date!) < new Date() && event.onDemand === true
   )

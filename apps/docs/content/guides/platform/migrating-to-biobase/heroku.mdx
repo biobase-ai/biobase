@@ -6,9 +6,9 @@ subtitle: 'Migrate your Heroku Postgres database to Biobase.'
 tocVideo: 'xsRhPMphtZ4'
 ---
 
-Biobase is one of the best [free alternatives to Heroku Postgres](https://biobase.studio/alternatives/biobase-vs-heroku-postgres). This guide shows how to migrate your Heroku Postgres database to Biobase. This migration requires the [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) and [psql](https://www.postgresql.org/docs/current/app-psql.html) CLI tools, which are installed automatically as part of the complete PostgreSQL installation package.
+Biobase is one of the best [free alternatives to Heroku Postgres](https://biobase.com/alternatives/biobase-vs-heroku-postgres). This guide shows how to migrate your Heroku Postgres database to Biobase. This migration requires the [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) and [psql](https://www.postgresql.org/docs/current/app-psql.html) CLI tools, which are installed automatically as part of the complete PostgreSQL installation package.
 
-Alternatively, use the [Heroku to Biobase migration tool](https://migrate.biobase.studio/) to migrate in just a few clicks.
+Alternatively, use the [Heroku to Biobase migration tool](https://migrate.biobase.com/) to migrate in just a few clicks.
 
 ## Quick demo
 
@@ -34,8 +34,8 @@ Alternatively, use the [Heroku to Biobase migration tool](https://migrate.biobas
 
 ## Retrieve your Biobase connection string [#retrieve-biobase-connection-string]
 
-1. If you're new to Biobase, [create a project](https://biobase.studio/dashboard).
-1. Go to the [Database settings](https://biobase.studio/dashboard/project/_/settings/database) for your project in the Biobase Dashboard.
+1. If you're new to Biobase, [create a project](https://biobase.com/dashboard).
+1. Go to the [Database settings](https://biobase.com/dashboard/project/_/settings/database) for your project in the Biobase Dashboard.
 1. Under **Connection string**, make sure `Use connection pooling` is enabled. Copy the URI and replace the password placeholder with your database password.
 
 ## Export your Heroku database to a file [#export-heroku-database]
@@ -69,4 +69,4 @@ Run `pg_dump --help` for a full list of options.
 
 ## Enterprise
 
-[Contact us](https://forms.biobase.studio/enterprise) if you need more help migrating your project.
+[Contact us](https://forms.biobase.com/enterprise) if you need more help migrating your project.

@@ -43,7 +43,7 @@ const Docs = (props: Props) => {
         <div tw="flex flex-row items-center" style={{ lineHeight: '100%' }}>
           {icon && (
             <img
-              src={`https://raw.githubusercontent.com/biobase-ai/biobase/master/apps/docs/public/img/icons/${icon}-icon.svg`}
+              src={`https://raw.githubusercontent.com/biobase/biobase/master/apps/docs/public/img/icons/${icon}-icon.svg`}
               width="50px"
               height="50px"
             />
@@ -52,7 +52,7 @@ const Docs = (props: Props) => {
           {type && (
             <>
               <img
-                src={`https://raw.githubusercontent.com/biobase-ai/biobase/master/apps/docs/public/img/icons/menu/grayscale/${typeIcon}.svg`}
+                src={`https://raw.githubusercontent.com/biobase/biobase/master/apps/docs/public/img/icons/menu/grayscale/${typeIcon}.svg`}
                 width="40px"
                 height="40px"
               />
@@ -62,7 +62,7 @@ const Docs = (props: Props) => {
         </div>
         <div tw="flex flex-row items-center justify-center">
           <img
-            src="https://raw.githubusercontent.com/biobase-ai/biobase/master/packages/common/assets/images/biobase-logo-wordmark--dark.svg"
+            src="https://raw.githubusercontent.com/biobase/biobase/master/packages/common/assets/images/biobase-logo-wordmark--dark.svg"
             width={180}
             height={34}
           />

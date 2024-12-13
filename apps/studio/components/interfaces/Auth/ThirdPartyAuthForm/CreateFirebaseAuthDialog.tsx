@@ -170,7 +170,7 @@ export const CreateFirebaseAuthIntegrationDialog = ({
               Third-party Auth with Firebase is currently in a private alpha release.{' '}
               <a
                 className="underline"
-                href="https://forms.biobase.studio/third-party-auth-with-firebase"
+                href="https://forms.biobase.com/third-party-auth-with-firebase"
                 target="_blank"
               >
                 Please submit your interest for it
@@ -204,7 +204,7 @@ export const CreateFirebaseAuthIntegrationDialog = ({
                 Cancel
               </Button>
               <Button onClick={() => onClose()} asChild>
-                <a href="https://forms.biobase.studio/third-party-auth-with-firebase" target="_blank">
+                <a href="https://forms.biobase.com/third-party-auth-with-firebase" target="_blank">
                   Register interest
                 </a>
               </Button>

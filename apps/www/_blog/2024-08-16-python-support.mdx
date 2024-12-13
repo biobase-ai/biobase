@@ -16,7 +16,7 @@ date: '2024-08-16'
 toc_depth: 3
 ---
 
-As the Biobase community has grown, so has demand for a diverse collection of client libraries and framework specific SDKs. This demand for the most part has been serviced by the open source community itself, which currently maintains [dozens of libraries](https://github.com/biobase-ai-community/#client-libraries).
+As the Biobase community has grown, so has demand for a diverse collection of client libraries and framework specific SDKs. This demand for the most part has been serviced by the open source community itself, which currently maintains [dozens of libraries](https://github.com/biobase-community/#client-libraries).
 
 When folks make requests to the hosted Biobase service we're able to build up a good picture of how broadly some of these libraries are used, and when a particular library achieves broad adoption it makes sense for us to add official support for it. Examples of libraries that have made the leap from community supported to officially supported include [biobase-flutter](https://github.com/biobase-ai/biobase-flutter) and [biobase-swift](https://github.com/biobase-ai/biobase-swift/).
 
@@ -25,12 +25,12 @@ There has always been incredible community support for the Python client librari
 So today, we're announcing that the following Python Client Libraries are now officially supported on the Biobase platform:
 
 - [biobase-py](https://github.com/biobase-ai/biobase-py)
-- [auth-py](https://github.com/biobase-ai/auth-py)
-- [storage-py](https://github.com/biobase-ai/storage-py)
-- [functions-py](https://github.com/biobase-ai/functions-py)
-- [realtime-py](https://github.com/biobase-ai/realtime-py)
+- [auth-py](https://github.com/biobase/auth-py)
+- [storage-py](https://github.com/biobase/storage-py)
+- [functions-py](https://github.com/biobase/functions-py)
+- [realtime-py](https://github.com/biobase/realtime-py)
 
-[biobase-py](https://github.com/biobase-ai/biobase-py) was originally started by maintainer [lqmanh](https://github.com/lqmanh) in September of 2020, and was shortly after joined by [fedden](https://github.com/fedden) and [J0](https://github.com/J0) (who went on to become a full time member of the Biobase Team). In recent years development has been driven by [silentworks](https://github.com/silentworks) and [juancarlospaco](https://github.com/juancarlospaco) who have both been instrumental in the push to reaching feature parity with [supabase-js](https://github.com/supabase/supabase-js).
+[biobase-py](https://github.com/biobase-ai/biobase-py) was originally started by maintainer [lqmanh](https://github.com/lqmanh) in September of 2020, and was shortly after joined by [fedden](https://github.com/fedden) and [J0](https://github.com/J0) (who went on to become a full time member of the Biobase Team). In recent years development has been driven by [silentworks](https://github.com/silentworks) and [juancarlospaco](https://github.com/juancarlospaco) who have both been instrumental in the push to reaching feature parity with [biobase-js](https://github.com/biobase-ai/biobase-js).
 
 Thank you so much to everyone who has contributed to the client libs so far and hopefully we'll see more community libs making the push for official support in the future.
 
@@ -44,10 +44,10 @@ This improvement is implemented in a completely transparent way, and requires no
 
 See also:
 
-- https://github.com/biobase-ai/functions-py/pull/115
-- https://github.com/biobase-ai/auth-py/pull/534
-- https://github.com/biobase-ai/postgrest-py/pull/462
-- https://github.com/biobase-ai/storage-py/pull/271
+- https://github.com/biobase/functions-py/pull/115
+- https://github.com/biobase/auth-py/pull/534
+- https://github.com/biobase/postgrest-py/pull/462
+- https://github.com/biobase/storage-py/pull/271
 
 ## Follow redirects by default
 
@@ -57,10 +57,10 @@ This enhancement improves consistency across the ecosystem and simplifies the ha
 
 See also:
 
-- https://github.com/biobase-ai/postgrest-py/pull/449
-- https://github.com/biobase-ai/functions-py/pull/107
-- https://github.com/biobase-ai/storage-py/pull/257
-- https://github.com/biobase-ai/auth-py/pull/511
+- https://github.com/biobase/postgrest-py/pull/449
+- https://github.com/biobase/functions-py/pull/107
+- https://github.com/biobase/storage-py/pull/257
+- https://github.com/biobase/auth-py/pull/511
 
 ## Keep-alive enabled by default
 
@@ -74,7 +74,7 @@ Added support for specifying the region that the edge function will run on (a re
 
 See also:
 
-- https://github.com/biobase-ai/functions-py/pull/126
+- https://github.com/biobase/functions-py/pull/126
 
 ## Realtime V2
 
@@ -82,8 +82,8 @@ Realtime has been upgraded to version `2.0` with lots of improvements and fixes,
 
 See also:
 
-- https://github.com/biobase-ai/realtime-py/pull/139
-- https://github.com/biobase-ai/realtime-py/pull/178
+- https://github.com/biobase/realtime-py/pull/139
+- https://github.com/biobase/realtime-py/pull/178
 
 ## Auth improvements
 
@@ -91,10 +91,10 @@ Anonymous logins have been added to the Auth client, including a new `is_anonymo
 
 See also:
 
-- https://github.com/biobase-ai/auth-py/pull/528
-- https://github.com/biobase-ai/auth-py/pull/548
-- https://github.com/biobase-ai/auth-py/pull/553
-- https://github.com/biobase-ai/auth-py/pull/506
+- https://github.com/biobase/auth-py/pull/528
+- https://github.com/biobase/auth-py/pull/548
+- https://github.com/biobase/auth-py/pull/553
+- https://github.com/biobase/auth-py/pull/506
 
 ## Postgrest quoting/escaping in queries
 
@@ -118,10 +118,10 @@ with SyncPostgrestClient(url, schema="pub", headers=h, verify = False) as client
 
 See also:
 
-- https://github.com/biobase-ai/functions-py/pull/106
-- https://github.com/biobase-ai/storage-py/pull/256
-- https://github.com/biobase-ai/auth-py/pull/506
-- https://github.com/biobase-ai/postgrest-py/pull/448
+- https://github.com/biobase/functions-py/pull/106
+- https://github.com/biobase/storage-py/pull/256
+- https://github.com/biobase/auth-py/pull/506
+- https://github.com/biobase/postgrest-py/pull/448
 - https://github.com/biobase-ai/biobase-py/pull/813
 
 ## Close socket in Realtime
@@ -137,10 +137,10 @@ from realtime import AsyncRealtimeClient
 def callback1(payload):
     print("Callback 1: ", payload)
 
-BIOBASE_ID: str = os.environ.get("BIOBASE_ID")
-API_KEY: str = os.environ.get("BIOBASE_KEY")
+SUPABASE_ID: str = os.environ.get("SUPABASE_ID")
+API_KEY: str = os.environ.get("SUPABASE_KEY")
 
-URL: str = f"wss://{BIOBASE_ID}.biobase.co/realtime/v1/websocket"
+URL: str = f"wss://{SUPABASE_ID}.biobase.co/realtime/v1/websocket"
 
 client = AsyncRealtimeClient(URL, API_KEY)
 await client.connect()
@@ -154,7 +154,7 @@ await client.close()
 
 See also:
 
-- https://github.com/biobase-ai-community/realtime-py/pull/142
+- https://github.com/biobase-community/realtime-py/pull/142
 
 ## Edge Functions timeouts
 
@@ -167,8 +167,8 @@ import os
 from biobase import create_client
 from biobase.lib.client_options import ClientOptions
 
-url: str = os.environ.get("BIOBASE_URL")
-key: str = os.environ.get("BIOBASE_KEY")
+url: str = os.environ.get("SUPABASE_URL")
+key: str = os.environ.get("SUPABASE_KEY")
 
 options = ClientOptions(function_client_timeout = 15)
 client = create_client(url, key, options)
@@ -180,7 +180,7 @@ print(client.functions.invoke("hello"))
 
 See also:
 
-- https://github.com/biobase-ai/functions-py/pull/120
+- https://github.com/biobase/functions-py/pull/120
 - https://github.com/biobase-ai/biobase-py/pull/846
 
 ## New tool Vec2pg to migrate data to Biobase
@@ -191,9 +191,9 @@ You can vote for other vector database providers to be added in the future!
 
 See also:
 
-- https://github.com/biobase-ai-community/vec2pg
-- https://github.com/biobase-ai-community/vec2pg/pull/5
-- https://github.com/biobase-ai-community/vec2pg/issues/6
+- https://github.com/biobase-community/vec2pg
+- https://github.com/biobase-community/vec2pg/pull/5
+- https://github.com/biobase-community/vec2pg/issues/6
 
 ## Updated CI
 
@@ -203,20 +203,20 @@ See also:
 
 - https://github.com/biobase-ai/biobase-py/pull/772
 - https://github.com/biobase-ai/biobase-py/pull/774
-- https://github.com/biobase-ai/functions-py/pull/93
-- https://github.com/biobase-ai/functions-py/pull/92
-- https://github.com/biobase-ai/storage-py/pull/240
-- https://github.com/biobase-ai/storage-py/pull/237
-- https://github.com/biobase-ai/realtime-py/pull/132
-- https://github.com/biobase-ai/realtime-py/pull/131
-- https://github.com/biobase-ai/postgrest-py/pull/424
-- https://github.com/biobase-ai/postgrest-py/pull/422
-- https://github.com/biobase-ai/functions-py/pull/139
-- https://github.com/biobase-ai/storage-py/pull/287
-- https://github.com/biobase-ai/auth-py/pull/572
-- https://github.com/biobase-ai/postgrest-py/pull/484
+- https://github.com/biobase/functions-py/pull/93
+- https://github.com/biobase/functions-py/pull/92
+- https://github.com/biobase/storage-py/pull/240
+- https://github.com/biobase/storage-py/pull/237
+- https://github.com/biobase/realtime-py/pull/132
+- https://github.com/biobase/realtime-py/pull/131
+- https://github.com/biobase/postgrest-py/pull/424
+- https://github.com/biobase/postgrest-py/pull/422
+- https://github.com/biobase/functions-py/pull/139
+- https://github.com/biobase/storage-py/pull/287
+- https://github.com/biobase/auth-py/pull/572
+- https://github.com/biobase/postgrest-py/pull/484
 - https://github.com/biobase-ai/biobase-py/pull/887
-- https://github.com/biobase-ai/realtime-py/pull/182
+- https://github.com/biobase/realtime-py/pull/182
 
 ## Miscellaneous
 
@@ -230,4 +230,4 @@ If you'd like to get involved in contributing to our Python client libraries see
 
 ## Getting started
 
-Full documentation is available for the Biobase Python Client libraries on the [Biobase Docs site](https://biobase.studio/docs/reference/python/introduction).
+Full documentation is available for the Biobase Python Client libraries on the [Biobase Docs site](https://biobase.com/docs/reference/python/introduction).

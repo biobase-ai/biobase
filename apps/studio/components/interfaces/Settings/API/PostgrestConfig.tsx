@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { PermissionAction } from '@supabase/shared-types/out/constants'
 import { indexOf } from 'lodash'
-import { Lock } from 'lucide-react'
+import { ExternalLink, Lock } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -10,7 +10,6 @@ import { z } from 'zod'
 
 import { useParams } from 'common'
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
-import { DocsButton } from 'components/ui/DocsButton'
 import { FormActions } from 'components/ui/Forms/FormActions'
 import {
   FormPanelContainer,
@@ -45,6 +44,7 @@ import { FormItemLayout } from 'ui-patterns/form/FormItemLayout/FormItemLayout'
 import {
   MultiSelector,
   MultiSelectorContent,
+  MultiSelectorInput,
   MultiSelectorItem,
   MultiSelectorList,
   MultiSelectorTrigger,
@@ -196,7 +196,15 @@ export const PostgrestConfig = () => {
             <FormPanelHeader className="flex items-center justify-between">
               <span>Data API Settings</span>
               <div className="flex items-center gap-x-2">
-                <DocsButton href="https://biobase.studio/docs/guides/database/connecting-to-postgres#data-apis" />
+                <Button asChild type="default" icon={<ExternalLink />}>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://biobase.com/docs/guides/database/connecting-to-postgres#data-apis"
+                  >
+                    Documentation
+                  </a>
+                </Button>
                 <Button type="default" icon={<Lock />} onClick={() => setShowModal(true)}>
                   Harden Data API
                 </Button>
@@ -296,35 +304,28 @@ export const PostgrestConfig = () => {
                                 <MultiSelector
                                   onValuesChange={field.onChange}
                                   values={field.value}
-                                  size="small"
+                                  size={'small'}
                                   disabled={!canUpdatePostgrestConfig || !isDataApiEnabledInForm}
                                 >
-                                  <MultiSelectorTrigger
-                                    mode="inline-combobox"
-                                    label="Select schemas for Data API..."
-                                    badgeLimit="wrap"
-                                    showIcon={false}
-                                    deletableBadge
-                                  />
+                                  <MultiSelectorTrigger>
+                                    <MultiSelectorInput placeholder="Select schemas for Data API..." />
+                                  </MultiSelectorTrigger>
                                   <MultiSelectorContent>
-                                    <MultiSelectorList>
-                                      {schema.length <= 0 ? (
-                                        <MultiSelectorItem key="empty" value="no">
+                                    {schema.length <= 0 ? (
+                                      <MultiSelectorList>
+                                        <MultiSelectorItem key={'empty'} value={'no'}>
                                           no
                                         </MultiSelectorItem>
-                                      ) : (
-                                        <>
-                                          {schema.map((x) => (
-                                            <MultiSelectorItem
-                                              key={x.id + '-' + x.name}
-                                              value={x.name}
-                                            >
-                                              {x.name}
-                                            </MultiSelectorItem>
-                                          ))}
-                                        </>
-                                      )}
-                                    </MultiSelectorList>
+                                      </MultiSelectorList>
+                                    ) : (
+                                      <MultiSelectorList>
+                                        {schema.map((x, i) => (
+                                          <MultiSelectorItem key={x.id + '-' + i} value={x.name}>
+                                            {x.name}
+                                          </MultiSelectorItem>
+                                        ))}
+                                      </MultiSelectorList>
+                                    )}
                                   </MultiSelectorContent>
                                 </MultiSelector>
                               )}
@@ -338,7 +339,7 @@ export const PostgrestConfig = () => {
                                     <>
                                       <p>
                                         You will not be able to query tables and views in the{' '}
-                                        <code>public</code> schema via supabase-js or HTTP clients.
+                                        <code>public</code> schema via biobase-js or HTTP clients.
                                       </p>
                                       {isGraphqlExtensionEnabled && (
                                         <>

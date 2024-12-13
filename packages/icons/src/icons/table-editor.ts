@@ -1,4 +1,4 @@
-import createSupabaseIcon from '../createSupabaseIcon';
+import createBiobaseIcon from '../createBiobaseIcon';
 
 /**
  * @component @name TableEditor
@@ -10,7 +10,7 @@ import createSupabaseIcon from '../createSupabaseIcon';
  * @returns {JSX.Element} JSX Element
  *
  */
-const TableEditor = createSupabaseIcon('TableEditor', [
+const TableEditor = createBiobaseIcon('TableEditor', [
   [
     'path',
     {

@@ -81,7 +81,7 @@ const PublicationsList = ({ onSelectPublication = noop }: PublicationsListProps)
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Input
-              size="tiny"
+              size="small"
               icon={<Search size="14" />}
               placeholder={'Filter'}
               value={filterString}

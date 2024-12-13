@@ -1,6 +1,6 @@
 import React from 'https://esm.sh/react@18.2.0?deno-std=0.177.0'
 import { ImageResponse } from 'https://deno.land/x/og_edge@0.0.4/mod.ts'
-import { createClient } from 'jsr:@supabase/supabase-js@2'
+import { createClient } from 'jsr:@supabase/biobase-js@2'
 import { corsHeaders } from '../_shared/cors.ts'
 
 const STORAGE_URL = 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/lw6'
@@ -151,7 +151,7 @@ export async function handler(req: Request) {
                 color: golden ? '#fff' : '#A0A0A0',
               }}
             >
-              biobase.studio/launch-week
+              biobase.com/launch-week
             </p>
           </div>
           {/* Ticket No  */}
@@ -199,9 +199,9 @@ export async function handler(req: Request) {
 
     const biobaseAdminClient = createClient(
       // Biobase API URL - env var exported by default when deployed.
-      Deno.env.get('BIOBASE_URL') ?? '',
+      Deno.env.get('SUPABASE_URL') ?? '',
       // Biobase API SERVICE ROLE KEY - env var exported by default when deployed.
-      Deno.env.get('BIOBASE_SERVICE_ROLE_KEY') ?? ''
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     )
 
     // Upload image to storage.

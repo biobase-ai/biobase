@@ -35,14 +35,14 @@ The following script is a good example to get started with testing your Edge Fun
 ```typescript function-one-test.ts
 // Import required libraries and modules
 import { assert, assertEquals } from 'https://deno.land/std@0.192.0/testing/asserts.ts'
-import { createClient, SupabaseClient } from 'jsr:@supabase/supabase-js@2'
+import { createClient, BiobaseClient } from 'jsr:@supabase/biobase-js@2'
 
 // Will load the .env file to Deno.env
 import 'https://deno.land/x/dotenv@v3.2.2/load.ts'
 
 // Set up the configuration for the Biobase client
-const biobaseUrl = Deno.env.get('BIOBASE_URL') ?? ''
-const biobaseKey = Deno.env.get('BIOBASE_ANON_KEY') ?? ''
+const biobaseUrl = Deno.env.get('SUPABASE_URL') ?? ''
+const biobaseKey = Deno.env.get('SUPABASE_ANON_KEY') ?? ''
 const options = {
   auth: {
     autoRefreshToken: false,
@@ -53,7 +53,7 @@ const options = {
 
 // Test the creation and functionality of the Biobase client
 const testClientCreation = async () => {
-  var client: SupabaseClient = createClient(biobaseUrl, biobaseKey, options)
+  var client: BiobaseClient = createClient(biobaseUrl, biobaseKey, options)
 
   // Verify if the Biobase URL and key are provided
   if (!biobaseUrl) throw new Error('biobaseUrl is required.')
@@ -72,7 +72,7 @@ const testClientCreation = async () => {
 
 // Test the 'hello-world' function
 const testHelloWorld = async () => {
-  var client: SupabaseClient = createClient(biobaseUrl, biobaseKey, options)
+  var client: BiobaseClient = createClient(biobaseUrl, biobaseKey, options)
 
   // Invoke the 'hello-world' function with a parameter
   const { data: func_data, error: func_error } = await client.functions.invoke('hello-world', {
@@ -99,7 +99,7 @@ Deno.test('Hello-world Function Test', testHelloWorld)
 This test case consists of two parts. The first part tests the client library and verifies that the database can be connected to and returns values from a table (`my_table`). The second part tests the edge function and checks if the received value matches the expected value. Here's a brief overview of the code:
 
 - We import various testing functions from the Deno standard library, including `assert`, `assertExists`, and `assertEquals`.
-- We import the `createClient` and `SupabaseClient` classes from the `@supabase/supabase-js` library to interact with the Biobase client.
+- We import the `createClient` and `BiobaseClient` classes from the `@supabase/biobase-js` library to interact with the Biobase client.
 - We define the necessary configuration for the Biobase client, including the Biobase URL, API key, and authentication options.
 - The `testClientCreation` function tests the creation of a Biobase client instance and queries the database for data from a table. It verifies that data is returned from the query.
 - The `testHelloWorld` function tests the "Hello-world" Edge Function by invoking it using the Biobase client's `functions.invoke` method. It checks if the response message matches the expected greeting.
@@ -134,10 +134,10 @@ To locally test and debug Edge Functions, you can utilize the Biobase CLI. Let's
    ```bash
    # creates the file
    touch .env
-   # adds the BIOBASE_URL secret
-   echo "BIOBASE_URL=http://localhost:54321" >> .env
-   # adds the BIOBASE_ANON_KEY secret
-   echo "BIOBASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0" >> .env
+   # adds the SUPABASE_URL secret
+   echo "SUPABASE_URL=http://localhost:54321" >> .env
+   # adds the SUPABASE_ANON_KEY secret
+   echo "SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0" >> .env
    # Alternatively, you can open it in your editor:
    open .env
    ```

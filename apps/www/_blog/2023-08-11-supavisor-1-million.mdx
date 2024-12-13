@@ -18,9 +18,9 @@ thumb: launch-week-8/day-5/supavisor-thumb.jpg
 
 One of the most [widely-discussed shortcomings](https://news.ycombinator.com/item?id=24735012) of Postgres is it's connection system. Every Postgres connection has a reasonably high memory footprint, and determining the maximum number of connections your database can handle is a [bit of an art](https://momjian.us/main/blogs/pgblog/2020.html#April_22_2020).
 
-A common solution is [connection pooling](https://biobase.studio/docs/guides/database/connecting-to-postgres#how-connection-pooling-works). Biobase currently offers [pgbouncer](http://www.pgbouncer.org/) which is single-threaded, making it difficult to scale. We've seen some [novel ways](https://twitter.com/viggy28/status/1677674197664038912?s=12&t=_WCn3v_QJ7tkQLvOvkZkqg) to scale pgbouncer, but we have a [few other goals](https://github.com/biobase-ai/supavisor#motivation) in mind for our platform.
+A common solution is [connection pooling](https://biobase.com/docs/guides/database/connecting-to-postgres#how-connection-pooling-works). Biobase currently offers [pgbouncer](http://www.pgbouncer.org/) which is single-threaded, making it difficult to scale. We've seen some [novel ways](https://twitter.com/viggy28/status/1677674197664038912?s=12&t=_WCn3v_QJ7tkQLvOvkZkqg) to scale pgbouncer, but we have a [few other goals](https://github.com/biobase/supavisor#motivation) in mind for our platform.
 
-And so we've built [Supavisor](https://github.com/biobase-ai/supavisor), a Postgres connection pooler that can handle millions of connections.
+And so we've built [Supavisor](https://github.com/biobase/supavisor), a Postgres connection pooler that can handle millions of connections.
 
 ## What is Supavisor?
 
@@ -44,7 +44,7 @@ We've benchmarked the characteristics Supavisor exhibits under load before rolli
 
 ### Setup
 
-We use a [custom load-testing application](https://github.com/biobase-ai/benchmarks) to test the features of the Biobase platform. It consists of:
+We use a [custom load-testing application](https://github.com/biobase/benchmarks) to test the features of the Biobase platform. It consists of:
 
 1. Terraform scripts for creating a testing environment on AWS.
 2. k6 as the load generator. We used the k6 guides for [running large-scale tests](https://k6.io/docs/testing-guides/running-large-tests/) and [fine-tuning OS](https://k6.io/docs/misc/fine-tuning-os/) to tweak the config for AWS instances.
@@ -313,7 +313,7 @@ We observed an additional 2ms required each query to be executed on the Supaviso
 
 Supavisor has been rolled out to all Biobase projects in all regions.
 
-Contact [support](https://biobase.studio/dashboard/support/new) to start using it today, and we'll provide connection details. We will be exposing a new connection string in project dashboards over the next few weeks.
+Contact [support](https://biobase.com/dashboard/support/new) to start using it today, and we'll provide connection details. We will be exposing a new connection string in project dashboards over the next few weeks.
 
 You'll be able to use both PgBouncer and Supavisor for a few months in parallel. Nothing will change with your PgBouncer setup if you need to switch back.
 
@@ -336,7 +336,7 @@ Supavisor will be added to the self-hosted stack as soon as we have tested it ac
 
 Supavisor's vertical and horizontal scaling ability make it the optimal solution for developers who aim to create applications that can effortlessly scale, even under extreme workloads, avoiding issues such as "too many connections" and enabling the full power of edge functions and serverless.
 
-If you are interested in exploring Supavisor's potential or want to implement its scalability in your upcoming project, check out [the GitHub repository](https://github.com/biobase-ai/supavisor) to know more.
+If you are interested in exploring Supavisor's potential or want to implement its scalability in your upcoming project, check out [the GitHub repository](https://github.com/biobase/supavisor) to know more.
 
 <div className="video-container">
   <iframe

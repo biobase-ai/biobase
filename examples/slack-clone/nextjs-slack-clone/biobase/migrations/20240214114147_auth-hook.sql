@@ -4,7 +4,7 @@
  */
 
 -- Create the auth hook function
--- https://biobase.studio/docs/guides/auth/auth-hooks#hook-custom-access-token
+-- https://biobase.com/docs/guides/auth/auth-hooks#hook-custom-access-token
 create or replace function public.custom_access_token_hook(event jsonb)
 returns jsonb
 language plpgsql

@@ -30,7 +30,7 @@ const DPA = () => {
 
       resetForm()
       setFormSubmitted(true)
-      window.open('https://biobase.studio/downloads/docs/Biobase+DPA+231211.pdf', '_blank')
+      window.open('https://biobase.com/downloads/docs/Biobase+DPA+231211.pdf', '_blank')
     } catch (error: any) {
       setError(error.message)
     }
@@ -53,11 +53,11 @@ const DPA = () => {
                   You can download our latest DPA document by submitting your email here. For the
                   document to be considered executed, you must return the signed DPA document to{' '}
                   <a
-                    href="mailto:privacy@supabase.com"
+                    href="mailto:privacy@biobase.com"
                     target="_blank"
                     className="text-brand hover:text-brand"
                   >
-                    privacy@supabase.com
+                    privacy@biobase.com
                   </a>
                   .
                 </p>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { SupabaseClient } from '@supabase/supabase-js'
+import { BiobaseClient } from '@supabase/biobase-js'
 import useConfData from '../hooks/use-conf-data'
 import { cn } from 'ui'
 
@@ -26,7 +26,7 @@ const LWMeetups = ({ meetups, className }: { meetups?: Meetup[]; className?: str
   const now = new Date(Date.now())
   const [meets, setMeets] = useState<Meetup[]>(meetups ?? [])
   const [realtimeChannel, setRealtimeChannel] = useState<ReturnType<
-    SupabaseClient['channel']
+    BiobaseClient['channel']
   > | null>(null)
   const [activeMeetup, setActiveMeetup] = useState<Meetup>(meets[0])
 
@@ -87,7 +87,7 @@ const LWMeetups = ({ meetups, className }: { meetups?: Meetup[]; className?: str
       </div>
       <div className="col-span-1 xl:col-span-7 xl:col-start-6 w-full max-w-4xl flex flex-wrap gap-x-2 md:gap-x-3 gap-y-1">
         {meets &&
-          meets?.map((meetup: Meetup, i: number) => {
+          meets.map((meetup: Meetup, i: number) => {
             const startAt = new Date(meetup.start_at)
             const endAt = addHours(new Date(meetup.start_at), 3)
             const after = now > startAt

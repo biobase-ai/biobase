@@ -97,6 +97,7 @@ const Modal = forwardRef<
     ref
   ) => {
     const [open, setOpen] = React.useState(visible ? visible : false)
+    const __styles = styleHandler('modal')
 
     useEffect(() => {
       setOpen(visible)
@@ -120,7 +121,7 @@ const Modal = forwardRef<
           onClick={onConfirm}
           disabled={loading}
           loading={loading}
-          type={variant === 'danger' ? 'danger' : variant === 'warning' ? 'warning' : 'primary'}
+          type={variant === 'danger' ? 'danger' : 'primary'}
         >
           {confirmText}
         </Button>

@@ -8,7 +8,7 @@ import remarkGfm from 'remark-gfm'
 import configureBundleAnalyzer from '@next/bundle-analyzer'
 import withYaml from 'next-plugin-yaml'
 
-import codeHikeTheme from '../../packages/config/code-hike.theme.json' assert { type: 'json' }
+import codeHikeTheme from 'config/code-hike.theme.json' assert { type: 'json' }
 import remotePatterns from './lib/remotePatterns.js'
 
 const withBundleAnalyzer = configureBundleAnalyzer({
@@ -58,8 +58,6 @@ const nextConfig = {
   experimental: {
     outputFileTracingIncludes: {
       '/api/crawlers': ['./features/docs/generated/**/*', './docs/ref/**/*'],
-      '/guides/**/*': ['./content/guides/**/*', './content/troubleshooting/**/*'],
-      '/reference/**/*': ['./features/docs/generated/**/*', './docs/ref/**/*'],
     },
   },
   webpack: (config, options) => {
@@ -107,7 +105,7 @@ const nextConfig = {
         has: [
           {
             type: 'host',
-            value: 'biobase.studio',
+            value: 'biobase.com',
           },
         ],
       },
@@ -159,7 +157,7 @@ const nextConfig = {
       // Redirect dashboard links in dev/preview envs
       {
         source: '/dashboard/:path*',
-        destination: 'https://biobase.studio/dashboard/:path*',
+        destination: 'https://biobase.com/dashboard/:path*',
         basePath: false,
         permanent: false,
       },
@@ -167,7 +165,7 @@ const nextConfig = {
       // Redirect blog links in dev/preview envs
       {
         source: '/blog/:path*',
-        destination: 'https://biobase.studio/blog/:path*',
+        destination: 'https://biobase.com/blog/:path*',
         basePath: false,
         permanent: false,
       },

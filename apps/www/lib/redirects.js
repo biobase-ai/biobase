@@ -6,11 +6,6 @@ module.exports = [
   },
   {
     permanent: true,
-    source: '/docs/guides/platform/compute-add-ons',
-    destination: '/docs/guides/platform/compute-and-disk',
-  },
-  {
-    permanent: true,
     source: '/docs/guides/storage-caching',
     destination: '/docs/guides/storage/cdn/fundamentals',
   },
@@ -515,12 +510,12 @@ module.exports = [
   {
     permanent: false,
     source: '/docs/careers',
-    destination: 'https://about.biobase.studio/careers',
+    destination: 'https://about.biobase.com/careers',
   },
   {
     permanent: false,
     source: '/docs/careers/:match*',
-    destination: 'https://about.biobase.studio/careers//:match*',
+    destination: 'https://about.biobase.com/careers//:match*',
   },
 
   { permanent: false, source: '/docs/resources', destination: '/docs/guides' },
@@ -638,7 +633,7 @@ module.exports = [
   {
     permanent: true,
     source: '/join',
-    destination: 'https://biobase.studio/',
+    destination: 'https://biobase.com/',
   },
   {
     permanent: true,
@@ -653,7 +648,7 @@ module.exports = [
   {
     permanent: true,
     source: '/_app',
-    destination: 'https://biobase.studio/dashboard',
+    destination: 'https://biobase.com/dashboard',
   },
   {
     permanent: true,
@@ -1324,7 +1319,7 @@ module.exports = [
     destination: '/docs/guides/platform/migrating-and-upgrading-projects',
   },
 
-  // supabase-js v1 to v2 redirects
+  // biobase-js v1 to v2 redirects
   // v1: /auth-update
   // v2: /auth-updateuser
   {
@@ -1513,17 +1508,17 @@ module.exports = [
   {
     permanent: true,
     source: '/sign-in',
-    destination: 'https://biobase.studio/dashboard/sign-in',
+    destination: 'https://biobase.com/dashboard/sign-in',
   },
   {
     permanent: true,
     source: '/sign-up',
-    destination: 'https://biobase.studio/dashboard/sign-up',
+    destination: 'https://biobase.com/dashboard/sign-up',
   },
   {
     permanent: true,
     source: '/forgot-password',
-    destination: 'https://biobase.studio/dashboard/forgot-password',
+    destination: 'https://biobase.com/dashboard/forgot-password',
   },
   {
     permanent: true,
@@ -1543,7 +1538,7 @@ module.exports = [
   {
     permanent: true,
     source: '/projects',
-    destination: 'https://biobase.studio/dashboard/projects',
+    destination: 'https://biobase.com/dashboard/projects',
   },
   // Reorganizing pooler docs:-----------------------------
 
@@ -1984,12 +1979,12 @@ module.exports = [
   {
     permanent: true,
     source: '/contact/enterprise',
-    destination: 'https://forms.biobase.studio/enterprise',
+    destination: 'https://forms.biobase.com/enterprise',
   },
   {
     permanent: true,
     source: '/legal/soc2',
-    destination: 'https://forms.biobase.studio/soc2',
+    destination: 'https://forms.biobase.com/soc2',
   },
   {
     permanent: true,
@@ -2184,16 +2179,6 @@ module.exports = [
     permanent: true,
     source: '/docs/guides/database/extensions/pgrepack',
     destination: '/docs/guides/database/extensions/pg_repack',
-  },
-  {
-    permanent: false,
-    source: '/docs/guides/database/extensions/pgmq',
-    destination: '/docs/guides/database/extensions',
-  },
-  {
-    permanent: false,
-    source: '/docs/guides/database/extensions/pg_partman',
-    destination: '/docs/guides/database/extensions',
   },
   {
     permanent: true,
@@ -2821,42 +2806,12 @@ module.exports = [
     source: '/docs/guides/platform/log-drains',
     destination: '/docs/guides/monitoring-troubleshooting/log-drains',
   },
-  {
-    // [Charis] This is a nice URL and I'm not 100% on permanently
-    // decommissioning it yet (cache-busting a permanent redirect could be a
-    // hassle if we ever resurrect it with new content)
-    permanent: false,
-    source: '/docs/guides/resources/examples',
-    destination: '/docs/guides/getting-started',
-  },
-  {
-    permanent: true,
-    source: '/docs/guides/database/connecting-to-postgres/serverless-drivers',
-    destination: '/docs/guides/database/connecting-to-postgres',
-  },
-  {
-    permanent: true,
-    source: '/partners/experts',
-    destination: '/partners',
-  },
-  {
-    permanent: true,
-    source: '/partners/experts/:path*',
-    destination: '/partners',
-  },
 
   // marketing
 
   {
     permanent: true,
     source: '/changelogpod',
-    destination: 'https://forms.biobase.studio/changelog-podcast-sponsorship',
-  },
-
-  // features
-  {
-    permanent: true,
-    source: '/features/ai-query-assistance',
-    destination: '/features/ai-assistant',
+    destination: 'https://forms.biobase.com/changelog-podcast-sponsorship',
   },
 ]

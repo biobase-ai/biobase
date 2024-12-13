@@ -1,4 +1,4 @@
-import type { PostgresPolicy } from '@supabase/postgres-meta'
+import type { PostgresPolicy, PostgresTable } from '@supabase/postgres-meta'
 import { noop } from 'lodash'
 
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
@@ -9,20 +9,10 @@ import { cn, Tooltip_Shadcn_, TooltipContent_Shadcn_, TooltipTrigger_Shadcn_ } f
 import PolicyRow from './PolicyRow'
 import PolicyTableRowHeader from './PolicyTableRowHeader'
 
-export interface PolicyTableRowProps {
-  table: {
-    id: number
-    schema: string
-    name: string
-    rls_enabled: boolean
-  }
+interface PolicyTableRowProps {
+  table: PostgresTable
   isLocked: boolean
-  onSelectToggleRLS: (table: {
-    id: number
-    schema: string
-    name: string
-    rls_enabled: boolean
-  }) => void
+  onSelectToggleRLS: (table: PostgresTable) => void
   onSelectCreatePolicy: () => void
   onSelectEditPolicy: (policy: PostgresPolicy) => void
   onSelectDeletePolicy: (policy: PostgresPolicy) => void
@@ -88,7 +78,6 @@ const PolicyTableRow = ({
       {policies?.map((policy) => (
         <PolicyRow
           key={policy.id}
-          isLocked={isLocked}
           policy={policy}
           onSelectEditPolicy={onSelectEditPolicy}
           onSelectDeletePolicy={onSelectDeletePolicy}

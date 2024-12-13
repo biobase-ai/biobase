@@ -1,15 +1,14 @@
-import { ChevronDown, Plus, Trash } from 'lucide-react'
+import clsx from 'clsx'
 import Link from 'next/link'
 
-import { useParams } from 'common'
+import { useParams } from 'common/hooks'
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
 import { FormSection, FormSectionContent, FormSectionLabel } from 'components/ui/Forms/FormSection'
-import { getAPIKeys, useProjectSettingsV2Query } from 'data/config/project-settings-v2-query'
+import { useProjectApiQuery } from 'data/config/project-api-query'
 import { useEdgeFunctionsQuery } from 'data/edge-functions/edge-functions-query'
 import { uuidv4 } from 'lib/helpers'
 import {
   Button,
-  cn,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -20,6 +19,7 @@ import {
   SidePanel,
 } from 'ui'
 import { HTTPArgument } from './EditHookPanel'
+import { Trash, Plus, ChevronDown } from 'lucide-react'
 
 interface HTTPRequestFieldsProps {
   type: 'http_request' | 'biobase_function'
@@ -48,12 +48,12 @@ const HTTPRequestFields = ({
 }: HTTPRequestFieldsProps) => {
   const { project: selectedProject } = useProjectContext()
   const { ref } = useParams()
-  const { data: settings } = useProjectSettingsV2Query({ projectRef: ref })
+  const { data: settings } = useProjectApiQuery({ projectRef: ref })
   const { data: functions } = useEdgeFunctionsQuery({ projectRef: ref })
 
   const edgeFunctions = functions ?? []
-  const { serviceKey } = getAPIKeys(settings)
-  const apiKey = serviceKey?.api_key ?? '[YOUR API KEY]'
+  const apiService = settings?.autoApiService
+  const apiKey = apiService?.serviceApiKey ?? '[YOUR API KEY]'
 
   return (
     <>
@@ -115,7 +115,7 @@ const HTTPRequestFields = ({
             id="timeout_ms"
             name="timeout_ms"
             label="Timeout"
-            labelOptional="Between 1000ms to 10,000ms"
+            labelOptional="Between 1000ms to 5000ms"
             type="number"
             actions={<p className="text-foreground-light pr-2">ms</p>}
           />
@@ -157,7 +157,7 @@ const HTTPRequestFields = ({
                 type="default"
                 size="tiny"
                 icon={<Plus />}
-                className={cn(type === 'biobase_function' && 'rounded-r-none px-3')}
+                className={clsx(type === 'biobase_function' && 'rounded-r-none px-3')}
                 onClick={onAddHeader}
               >
                 Add a new header

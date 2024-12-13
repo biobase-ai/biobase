@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next'
 import { NextSeo } from 'next-seo'
 import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 import { SITE_ORIGIN, SITE_URL } from '~/lib/constants'
 

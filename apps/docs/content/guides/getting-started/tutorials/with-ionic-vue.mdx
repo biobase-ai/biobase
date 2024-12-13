@@ -30,28 +30,28 @@ ionic start biobase-ionic-vue blank --type vue
 cd biobase-ionic-vue
 ```
 
-Then let's install the only additional dependency: [supabase-js](https://github.com/supabase/supabase-js)
+Then let's install the only additional dependency: [biobase-js](https://github.com/biobase-ai/biobase-js)
 
 ```bash
-npm install @supabase/supabase-js
+npm install @supabase/biobase-js
 ```
 
 And finally we want to save the environment variables in a `.env`.
 All we need are the API URL and the `anon` key that you copied [earlier](#get-the-api-keys).
 
 ```bash .env
-VUE_APP_BIOBASE_URL=YOUR_BIOBASE_URL
-VUE_APP_BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
+VUE_APP_SUPABASE_URL=YOUR_SUPABASE_URL
+VUE_APP_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 ```
 
 Now that we have the API credentials in place, let's create a helper file to initialize the Biobase client. These variables will be exposed
 on the browser, and that's completely fine since we have [Row Level Security](/docs/guides/auth#row-level-security) enabled on our Database.
 
 ```js src/biobase.ts"
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/biobase-js';
 
-const biobaseUrl = process.env.VUE_APP_BIOBASE_URL as string;
-const biobaseAnonKey = process.env.VUE_APP_BIOBASE_ANON_KEY as string;
+const biobaseUrl = process.env.VUE_APP_SUPABASE_URL as string;
+const biobaseAnonKey = process.env.VUE_APP_SUPABASE_ANON_KEY as string;
 
 export const biobase = createClient(biobaseUrl, biobaseAnonKey);
 ```
@@ -210,7 +210,7 @@ Let's create a new component for that called `Account.vue`.
     IonButton,
     IonLabel,
   } from '@ionic/vue'
-  import { User } from '@supabase/supabase-js'
+  import { User } from '@supabase/biobase-js'
   import { defineComponent, onMounted, ref } from 'vue'
   export default defineComponent({
     name: 'AccountPage',

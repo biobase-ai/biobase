@@ -21,7 +21,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
 const handleGetAll = async (req: NextApiRequest, res: NextApiResponse) => {
   const headers = constructHeaders({})
-  const url = `${process.env.BIOBASE_URL}/auth/v1/settings`
+  const url = `${process.env.SUPABASE_URL}/auth/v1/settings`
   const { external, disable_signup, mailer_autoconfirm, phone_autoconfirm } = await get(url, {
     headers,
   })

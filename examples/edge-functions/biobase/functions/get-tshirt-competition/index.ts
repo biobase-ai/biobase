@@ -2,7 +2,7 @@
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
 
-import { createClient } from 'jsr:@supabase/supabase-js@2'
+import { createClient } from 'jsr:@supabase/biobase-js@2'
 import { corsHeaders } from '../_shared/cors.ts'
 
 console.log(`Function "get-tshirt-competition" up and running!`)
@@ -54,9 +54,9 @@ Deno.serve(async (req) => {
 
     const biobaseAdminClient = createClient(
       // Biobase API URL - env var exported by default when deployed.
-      Deno.env.get('BIOBASE_URL') ?? '',
+      Deno.env.get('SUPABASE_URL') ?? '',
       // Biobase API SERVICE ROLE KEY - env var exported by default when deployed.
-      Deno.env.get('BIOBASE_SERVICE_ROLE_KEY') ?? ''
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     )
     // Submit email to draw
     const { error } = await biobaseAdminClient.from('get-tshirt-competition-2').upsert(

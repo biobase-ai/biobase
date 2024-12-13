@@ -10,42 +10,32 @@ describe('Auth.constants: urlRegex', () => {
       'www.test-domain.com',
       'exp://exp.host/some-app',
       'exp://exp.host/some-app?release-channel=default',
-      'https://biobase.studio/dashboard',
+      'https://biobase.com/dashboard',
       'http://localhost:3000',
-      'https://biobase.studio?name=test',
-      'https://biobase.studio?name=test&description=hello&page=2',
+      'https://biobase.com?name=test',
+      'https://biobase.com?name=test&description=hello&page=2',
       'https://biobase*.com',
-      'https://biobase.studio/*',
+      'https://biobase.com/*',
       'https://new-*-domain.com/*',
       'https://new-*-domain.com/*/*/*',
       'https://sub-*-domain.new-*-domain.com/*/*/*',
     ]
 
     validUrls.forEach((url) => {
-      expect(urlRegex().test(url)).toBe(true)
+      expect(urlRegex.test(url)).toBe(true)
     })
   })
 
   it('should not match invalid URLs', () => {
     const invalidUrls = ['biobase', 'mailto:test@gmail.com', 'hello world.com', 'email@domain.com']
 
-    const failingInvalidUrls = invalidUrls.filter((url) => urlRegex().test(url))
+    const failingInvalidUrls = invalidUrls.filter((url) => urlRegex.test(url))
     if (failingInvalidUrls.length > 0) {
       console.log('Failing invalid URLs:', failingInvalidUrls)
     }
 
     invalidUrls.forEach((url) => {
-      expect(urlRegex().test(url)).toBe(false)
+      expect(urlRegex.test(url)).toBe(false)
     })
-  })
-
-  it('should not match simple domain URLs when excludeSimpleDomains is true', () => {
-    const simpleDomainUrl = 'smtp-pulse.com'
-    expect(urlRegex({ excludeSimpleDomains: true }).test(simpleDomainUrl)).toBe(false)
-  })
-
-  it('should match simple domain URLs when excludeSimpleDomains is false', () => {
-    const simpleDomainUrl = 'smtp-pulse.com'
-    expect(urlRegex({ excludeSimpleDomains: false }).test(simpleDomainUrl)).toBe(true)
   })
 })

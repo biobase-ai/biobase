@@ -1,4 +1,4 @@
-import type { AuthMFAGetAuthenticatorAssuranceLevelResponse } from '@supabase/supabase-js'
+import type { AuthMFAGetAuthenticatorAssuranceLevelResponse } from '@supabase/biobase-js'
 import { useQuery, UseQueryOptions } from '@tanstack/react-query'
 import { auth } from 'lib/gotrue'
 import { profileKeys } from './keys'

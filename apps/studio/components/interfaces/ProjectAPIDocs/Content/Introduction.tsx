@@ -1,17 +1,17 @@
 import { useParams } from 'common'
 import { Button, Input } from 'ui'
 
-import { useProjectSettingsV2Query } from 'data/config/project-settings-v2-query'
+import { useProjectApiQuery } from 'data/config/project-api-query'
 import { copyToClipboard } from 'lib/helpers'
-import { Copy } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import ContentSnippet from '../ContentSnippet'
 import { DOCS_CONTENT } from '../ProjectAPIDocs.constants'
 import type { ContentProps } from './Content.types'
+import { Copy } from 'lucide-react'
 
 const Introduction = ({ showKeys, language, apikey, endpoint }: ContentProps) => {
   const { ref } = useParams()
-  const { data } = useProjectSettingsV2Query({ projectRef: ref })
+  const { data } = useProjectApiQuery({ projectRef: ref })
 
   const [copied, setCopied] = useState<'anon' | 'service'>()
 
@@ -19,10 +19,9 @@ const Introduction = ({ showKeys, language, apikey, endpoint }: ContentProps) =>
     if (copied !== undefined) setTimeout(() => setCopied(undefined), 2000)
   }, [copied])
 
-  const anonApiKey = (data?.service_api_keys ?? []).find((key) => key.tags === 'anon')?.api_key
-  const serviceApiKey =
-    (data?.service_api_keys ?? []).find((key) => key.tags === 'service_role')?.api_key ??
-    'BIOBASE_CLIENT_SERVICE_KEY'
+  const serviceKey = showKeys
+    ? data?.autoApiService.serviceApiKey ?? 'SUPABASE_CLIENT_SERVICE_KEY'
+    : 'SUPABASE_CLIENT_SERVICE_KEY'
 
   return (
     <>
@@ -53,7 +52,9 @@ const Introduction = ({ showKeys, language, apikey, endpoint }: ContentProps) =>
                   icon={<Copy />}
                   onClick={() => {
                     setCopied('anon')
-                    copyToClipboard(anonApiKey ?? 'BIOBASE_CLIENT_ANON_KEY')
+                    copyToClipboard(
+                      data?.autoApiService.defaultApiKey ?? 'SUPABASE_CLIENT_ANON_KEY'
+                    )
                   }}
                 >
                   {copied === 'anon' ? 'Copied' : 'Copy'}
@@ -67,11 +68,7 @@ const Introduction = ({ showKeys, language, apikey, endpoint }: ContentProps) =>
               disabled
               readOnly
               size="small"
-              value={
-                showKeys
-                  ? serviceApiKey ?? 'BIOBASE_CLIENT_SERVICE_KEY'
-                  : 'Reveal API keys via dropdown in the header'
-              }
+              value={showKeys ? serviceKey : 'Reveal API keys via dropdown in the header'}
               className="w-full"
               descriptionText={
                 <p>
@@ -86,7 +83,9 @@ const Introduction = ({ showKeys, language, apikey, endpoint }: ContentProps) =>
                   icon={<Copy />}
                   onClick={() => {
                     setCopied('service')
-                    copyToClipboard(serviceApiKey)
+                    copyToClipboard(
+                      data?.autoApiService.serviceApiKey ?? 'SUPABASE_CLIENT_SERVICE_KEY'
+                    )
                   }}
                 >
                   {copied === 'service' ? 'Copied' : 'Copy'}
@@ -106,7 +105,7 @@ const Introduction = ({ showKeys, language, apikey, endpoint }: ContentProps) =>
 
       <ContentSnippet
         selectedLanguage={language}
-        apikey={showKeys ? serviceApiKey : 'BIOBASE_CLIENT_SERVICE_KEY'}
+        apikey={serviceKey}
         endpoint={endpoint}
         snippet={DOCS_CONTENT.serviceApiKeys}
       />

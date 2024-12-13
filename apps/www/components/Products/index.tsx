@@ -12,23 +12,21 @@ import StorageVisual from './StorageVisual'
 import VectorVisual from './VectorVisual'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 
-import { PRODUCT_MODULES_SHORTNAMES, PRODUCT_SHORTNAMES } from 'shared-data/products'
+import { PRODUCT_SHORTNAMES } from 'shared-data/products'
 import gaEvents from '~/lib/gaEvents'
 import Telemetry from '~/lib/telemetry'
 
-import type { ProductType } from '~/data/MainProducts'
+import type { SolutionsType } from '~/data/Solutions'
 
 interface Props {
-  products: ProductType
+  products: SolutionsType
 }
 
 const Products: React.FC<Props> = (props) => {
   const router = useRouter()
   const telemetryProps = useTelemetryProps()
 
-  const sendTelemetryEvent = async (
-    product: PRODUCT_SHORTNAMES | PRODUCT_MODULES_SHORTNAMES | 'data-api'
-  ) => {
+  const sendTelemetryEvent = async (product: PRODUCT_SHORTNAMES | 'data-api') => {
     switch (product) {
       case PRODUCT_SHORTNAMES.DATABASE:
         return await Telemetry.sendEvent(
@@ -60,7 +58,7 @@ const Products: React.FC<Props> = (props) => {
           telemetryProps,
           router
         )
-      case PRODUCT_MODULES_SHORTNAMES.VECTOR:
+      case PRODUCT_SHORTNAMES.VECTOR:
         return await Telemetry.sendEvent(
           gaEvents['www_hp_subhero_products_vector'],
           telemetryProps,
@@ -242,7 +240,7 @@ const Products: React.FC<Props> = (props) => {
             </li>
           </ul>
         }
-        onClick={() => sendTelemetryEvent(PRODUCT_MODULES_SHORTNAMES.VECTOR)}
+        onClick={() => sendTelemetryEvent(PRODUCT_SHORTNAMES.VECTOR)}
         image={<VectorVisual className="hidden sm:block" />}
       />
       <ProductCard

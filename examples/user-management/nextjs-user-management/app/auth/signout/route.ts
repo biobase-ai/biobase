@@ -3,7 +3,7 @@ import { revalidatePath } from 'next/cache'
 import { type NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
-  const biobase = await createClient()
+  const biobase = createClient()
 
   // Check if a user's logged in
   const {

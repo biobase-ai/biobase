@@ -1,11 +1,11 @@
-import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
-import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react'
-import { RealtimePresenceState } from '@supabase/supabase-js'
+import { createServerBiobaseClient } from '@supabase/auth-helpers-nextjs'
+import { useBiobaseClient, useUser } from '@supabase/auth-helpers-react'
+import { RealtimePresenceState } from '@supabase/biobase-js'
 import type { GetServerSidePropsContext, NextPage } from 'next'
 import { useEffect, useState } from 'react'
 
 const HomePage: NextPage = () => {
-  const biobaseClient = useSupabaseClient()
+  const biobaseClient = useBiobaseClient()
   const this_user = useUser()
   const [userState, setUserState] = useState<RealtimePresenceState>({})
 
@@ -55,7 +55,7 @@ const HomePage: NextPage = () => {
 
 export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   // Create authenticated Biobase Client
-  const biobase = createServerSupabaseClient(ctx)
+  const biobase = createServerBiobaseClient(ctx)
   // Check if we have a session
   const {
     data: { session },

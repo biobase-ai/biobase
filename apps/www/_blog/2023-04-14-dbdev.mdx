@@ -23,7 +23,7 @@ Today we’re publicly previewing [**`database.dev`**](https://database.dev), a 
   alt="db dev landing page"
 />
 
-`dbdev` fills the same role for PostgreSQL as `npm` for JavaScript, `pip` for Python and `cargo` for Rust in that it enables publishing libraries and applications for repeatable deployment. We'll be releasing the tooling necessary for third-parties to publish packages to the registry once we’ve collected some community feedback and incorporate any great new ideas. Our goal is to create an [open ecosystem](https://github.com/biobase-ai/dbdev) for packaging and discovering SQL.
+`dbdev` fills the same role for PostgreSQL as `npm` for JavaScript, `pip` for Python and `cargo` for Rust in that it enables publishing libraries and applications for repeatable deployment. We'll be releasing the tooling necessary for third-parties to publish packages to the registry once we’ve collected some community feedback and incorporate any great new ideas. Our goal is to create an [open ecosystem](https://github.com/biobase/dbdev) for packaging and discovering SQL.
 
 The initial preview is compatible with [new projects](https://database.new) on the Biobase platform. It can also be installed on any PostgreSQL instance that support [`pg_tle`](https://github.com/aws/pg_tle) and [`pgsql-http`](https://github.com/pramsey/pgsql-http).
 
@@ -117,14 +117,14 @@ That creates the relevant `documents` table and associated search functions. The
 
 ```jsx
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { BiobaseHybridSearch } from 'langchain/retrievers/biobase'
 
-const privateKey = process.env.BIOBASE_PRIVATE_KEY
-if (!privateKey) throw new Error(`Expected env var BIOBASE_PRIVATE_KEY`)
+const privateKey = process.env.SUPABASE_PRIVATE_KEY
+if (!privateKey) throw new Error(`Expected env var SUPABASE_PRIVATE_KEY`)
 
-const url = process.env.BIOBASE_URL
-if (!url) throw new Error(`Expected env var BIOBASE_URL`)
+const url = process.env.SUPABASE_URL
+if (!url) throw new Error(`Expected env var SUPABASE_URL`)
 
 export const run = async () => {
   const client = createClient(url, privateKey)
@@ -239,7 +239,7 @@ A recent development in the PostgreSQL extension ecosystem is the 1.0 release of
 
 ## Please Give Feedback
 
-As this is a preview, we anticipate that there may be a few rough edges. If you do take the time to explore `dbdev` at this stage, please contribute to its development at [github.com/biobase-ai/dbdev](https://github.com/biobase-ai/dbdev).
+As this is a preview, we anticipate that there may be a few rough edges. If you do take the time to explore `dbdev` at this stage, please contribute to its development at [github.com/biobase/dbdev](https://github.com/biobase/dbdev).
 
 We are particularly interested in hearing about:
 

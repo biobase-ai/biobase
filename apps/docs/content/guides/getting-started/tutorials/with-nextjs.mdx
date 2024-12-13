@@ -48,24 +48,24 @@ cd biobase-nextjs
 </TabPanel>
 </Tabs>
 
-Then install the Biobase client library: [supabase-js](https://github.com/supabase/supabase-js)
+Then install the Biobase client library: [biobase-js](https://github.com/biobase-ai/biobase-js)
 
 ```bash
-npm install @supabase/supabase-js
+npm install @supabase/biobase-js
 ```
 
 And finally we want to save the environment variables in a `.env.local`.
 Create a `.env.local` file at the root of the project, and paste the API URL and the `anon` key that you copied [earlier](#get-the-api-keys).
 
 ```bash .env.local
-NEXT_PUBLIC_BIOBASE_URL=YOUR_BIOBASE_URL
-NEXT_PUBLIC_BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
+NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 ```
 
 ### App styling (optional)
 
 An optional step is to update the CSS file `app/globals.css` to make the app look nice.
-You can find the full contents of this file [here](https://raw.githubusercontent.com/biobase-ai/biobase/master/examples/user-management/nextjs-user-management/app/globals.css).
+You can find the full contents of this file [here](https://raw.githubusercontent.com/biobase/biobase/master/examples/user-management/nextjs-user-management/app/globals.css).
 
 ### Biobase Server-Side Auth
 
@@ -108,8 +108,8 @@ import { createBrowserClient } from '@supabase/ssr'
 export function createClient() {
   // Create a biobase client on the browser with project's credentials
   return createBrowserClient(
-    process.env.NEXT_PUBLIC_BIOBASE_URL,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   )
 }
 ```
@@ -118,14 +118,14 @@ export function createClient() {
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
-export async function createClient() {
-  const cookieStore = await cookies()
+export function createClient() {
+  const cookieStore = cookies()
 
   // Create a server's biobase client with newly configured cookie,
   // which could be used to maintain user's session
   return createServerClient(
-    process.env.NEXT_PUBLIC_BIOBASE_URL,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY,
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     {
       cookies: {
         getAll() {
@@ -244,8 +244,8 @@ export async function updateSession(request) {
   })
 
   const biobase = createServerClient(
-    process.env.NEXT_PUBLIC_BIOBASE_URL,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY,
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     {
       cookies: {
         getAll() {
@@ -301,7 +301,7 @@ meta="utils/biobase/middleware.ts"
 
 ## Set up a login page
 
-### Login and signup form
+### Login and Signup form
 
 Create a login/signup page for your application:
 
@@ -385,7 +385,7 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/utils/biobase/server'
 
 export async function login(formData) {
-  const biobase = await createClient()
+  const biobase = createClient()
 
   // type-casting here for convenience
   // in practice, you should validate your inputs
@@ -405,7 +405,7 @@ export async function login(formData) {
 }
 
 export async function signup(formData) {
-  const biobase = await createClient()
+  const biobase = createClient()
 
   const data = {
     email: formData.get('email'),
@@ -512,7 +512,7 @@ export async function GET(request) {
   redirectTo.searchParams.delete('type')
 
   if (token_hash && type) {
-    const biobase = await createClient()
+    const biobase = createClient()
 
     const { error } = await biobase.auth.verifyOtp({
       type,
@@ -720,7 +720,7 @@ import AccountForm from './account-form'
 import { createClient } from '@/utils/biobase/server'
 
 export default async function Account() {
-  const biobase = await createClient()
+  const biobase = createClient()
 
   const {
     data: { user },
@@ -763,7 +763,7 @@ import { revalidatePath } from 'next/cache'
 import { NextResponse } from 'next/server'
 
 export async function POST(req) {
-  const biobase = await createClient()
+  const biobase = createClient()
 
   // Check if a user's logged in
   const {

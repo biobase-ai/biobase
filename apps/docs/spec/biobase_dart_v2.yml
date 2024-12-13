@@ -103,7 +103,7 @@ functions:
         name: For other Dart projects
         code: |
           ```dart
-          final biobase = SupabaseClient(
+          final biobase = BiobaseClient(
             'https://xyzcompany.biobase.co',
             'public-anon-key',
           );
@@ -114,11 +114,11 @@ functions:
     description: |
       Creates a new user.
     notes: |
-      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://biobase.studio/dashboard/project/_/auth/providers).
+      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://biobase.com/dashboard/project/_/auth/providers).
       - **Confirm email** determines if users need to confirm their email address after signing up.
         - If **Confirm email** is enabled, a `user` is returned but `session` is null.
         - If **Confirm email** is disabled, both a `user` and a `session` are returned.
-      - When the user confirms their email address, they are redirected to the [`SITE_URL`](https://biobase.studio/docs/guides/auth/redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://biobase.studio/dashboard/project/_/auth/url-configuration).
+      - When the user confirms their email address, they are redirected to the [`SITE_URL`](https://biobase.com/docs/guides/auth/redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://biobase.com/dashboard/project/_/auth/url-configuration).
       - If signUp() is called for an existing confirmed user:
         - When both **Confirm email** and **Confirm phone** (even when phone provider is disabled) are enabled in [your project](/dashboard/project/_/auth/providers), an obfuscated/fake user object is returned.
         - When either **Confirm email** or **Confirm phone** (even when phone provider is disabled) is disabled, the error message, `User already registered` is returned.
@@ -484,7 +484,7 @@ functions:
       - This method is used for passwordless sign-ins where an OTP is sent to the user's email or phone number.
       - If you're using an email, you can configure whether you want the user to receive a magiclink or an OTP.
       - If you're using phone, you can configure whether you want the user to receive an OTP.
-      - The magic link's destination URL is determined by the [`SITE_URL`](https://biobase.studio/docs/guides/auth/redirect-urls). You can modify the `SITE_URL` or add additional redirect urls in [your project](https://biobase.studio/dashboard/project/_/auth/url-configuration).
+      - The magic link's destination URL is determined by the [`SITE_URL`](https://biobase.com/docs/guides/auth/redirect-urls). You can modify the `SITE_URL` or add additional redirect urls in [your project](https://biobase.com/dashboard/project/_/auth/url-configuration).
     params:
       - name: email
         isOptional: true
@@ -594,7 +594,7 @@ functions:
           - [Steps to obtain Android client ID](https://developers.google.com/identity/sign-in/android/start-integrating#configure_a_project)
           - [Steps to obtain iOS client ID](https://developers.google.com/identity/sign-in/ios/start-integrating#get_an_oauth_client_id)
 
-          Add the web client ID to the `Authentication -> Providers -> Google -> Client IDs` section in your Biobase dashboard
+          Add the web client ID to the `Authentication -> Providers -> Google -> Authorized Client IDs` section in your Biobase dashboard
         code: |
           ```dart
           import 'package:google_sign_in/google_sign_in.dart';
@@ -725,7 +725,7 @@ functions:
       Signs the user in using third-party OAuth providers.
     notes: |
       - This method is used for signing in using a third-party provider.
-      - Biobase supports many different [third-party providers](https://biobase.studio/docs/guides/auth#providers).
+      - Biobase supports many different [third-party providers](https://biobase.com/docs/guides/auth#providers).
     params:
       - name: provider
         isOptional: false
@@ -1102,7 +1102,7 @@ functions:
     notes: |
       - In order to use the `updateUser()` method, the user needs to be signed in first.
       - By default, email updates sends a confirmation link to both the user's current and new email.
-      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://biobase.studio/dashboard/project/_/auth/providers).
+      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://biobase.com/dashboard/project/_/auth/providers).
     params:
       - name: attributes
         isOptional: false
@@ -1637,7 +1637,7 @@ functions:
 
       Having a 2nd TOTP factor for recovery means the user doesn't have to store their recovery codes. It also reduces the attack surface since the recovery factor is usually time-limited and not a single static code.
 
-      Learn more about implementing MFA on your application on our guide [here](https://biobase.studio/docs/guides/auth/auth-mfa#overview).
+      Learn more about implementing MFA on your application on our guide [here](https://biobase.com/docs/guides/auth/auth-mfa#overview).
   - id: mfa-enroll
     title: 'mfa.enroll()'
     notes: |
@@ -1941,7 +1941,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final biobase = SupabaseClient(biobaseUrl, serviceRoleKey);
+          final biobase = BiobaseClient(biobaseUrl, serviceRoleKey);
           ```
   - id: get-user-by-id
     title: 'getUserById()'
@@ -3772,7 +3772,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: `select`
         - `objects` permissions: none
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     examples:
       - id: list-buckets
         name: List buckets
@@ -3809,7 +3809,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: `select`
         - `objects` permissions: none
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: id
         isOptional: false
@@ -3848,7 +3848,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: `insert`
         - `objects` permissions: none
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: id
         isOptional: false
@@ -3894,7 +3894,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: `select`
         - `objects` permissions: `select` and `delete`
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: id
         isOptional: false
@@ -3922,7 +3922,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: `update`
         - `objects` permissions: none
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: id
         isOptional: false
@@ -3968,7 +3968,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: `select` and `delete`
         - `objects` permissions: none
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: id
         isOptional: false
@@ -3997,7 +3997,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `insert`
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: path
         isOptional: false
@@ -4072,7 +4072,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `update` and `select`
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: path
         isOptional: false
@@ -4147,7 +4147,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `update` and `select`
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: fromPath
         isOptional: false
@@ -4181,7 +4181,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `select`
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: path
         isOptional: false
@@ -4253,11 +4253,11 @@ functions:
       Retrieve URLs for assets in public buckets
     title: 'from.getPublicUrl()'
     notes: |
-      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/dart/storage-updatebucket) or by going to Storage on [biobase.studio/dashboard](https://biobase.studio/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
+      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/dart/storage-updatebucket) or by going to Storage on [biobase.com/dashboard](https://biobase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: none
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: path
         isOptional: false
@@ -4332,7 +4332,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `select`
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: path
         isOptional: false
@@ -4407,7 +4407,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `delete` and `select`
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: paths
         isOptional: false
@@ -4453,7 +4453,7 @@ functions:
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: `select`
-      - Refer to the [Storage guide](https://biobase.studio/docs/guides/storage/security/access-control) on how access control works
+      - Refer to the [Storage guide](https://biobase.com/docs/guides/storage/security/access-control) on how access control works
     params:
       - name: path
         isOptional: false

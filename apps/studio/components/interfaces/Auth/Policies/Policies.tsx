@@ -1,4 +1,4 @@
-import type { PostgresPolicy } from '@supabase/postgres-meta'
+import type { PostgresPolicy, PostgresTable } from '@supabase/postgres-meta'
 import { isEmpty } from 'lodash'
 import { HelpCircle } from 'lucide-react'
 import { useRouter } from 'next/router'
@@ -6,9 +6,7 @@ import { useState } from 'react'
 import { toast } from 'sonner'
 
 import { useParams } from 'common'
-import PolicyTableRow, {
-  PolicyTableRowProps,
-} from 'components/interfaces/Auth/Policies/PolicyTableRow'
+import PolicyTableRow from 'components/interfaces/Auth/Policies/PolicyTableRow'
 import ProtectedSchemaWarning from 'components/interfaces/Database/ProtectedSchemaWarning'
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
 import NoSearchResults from 'components/to-be-cleaned/NoSearchResults'
@@ -20,7 +18,7 @@ import ConfirmModal from 'ui-patterns/Dialogs/ConfirmDialog'
 
 interface PoliciesProps {
   schema: string
-  tables: PolicyTableRowProps['table'][]
+  tables: PostgresTable[]
   hasTables: boolean
   isLocked: boolean
   onSelectCreatePolicy: (table: string) => void
@@ -39,12 +37,7 @@ const Policies = ({
   const { ref } = useParams()
   const { project } = useProjectContext()
 
-  const [selectedTableToToggleRLS, setSelectedTableToToggleRLS] = useState<{
-    id: number
-    schema: string
-    name: string
-    rls_enabled: boolean
-  }>()
+  const [selectedTableToToggleRLS, setSelectedTableToToggleRLS] = useState<any>({})
   const [selectedPolicyToDelete, setSelectedPolicyToDelete] = useState<any>({})
 
   const { mutate: updateTable } = useTableUpdateMutation({
@@ -66,15 +59,10 @@ const Policies = ({
 
   const closeConfirmModal = () => {
     setSelectedPolicyToDelete({})
-    setSelectedTableToToggleRLS(undefined)
+    setSelectedTableToToggleRLS({})
   }
 
-  const onSelectToggleRLS = (table: {
-    id: number
-    schema: string
-    name: string
-    rls_enabled: boolean
-  }) => {
+  const onSelectToggleRLS = (table: PostgresTable) => {
     setSelectedTableToToggleRLS(table)
   }
 
@@ -88,8 +76,6 @@ const Policies = ({
 
   // Methods that involve some API
   const onToggleRLS = async () => {
-    if (!selectedTableToToggleRLS) return console.error('Table is required')
-
     const payload = {
       id: selectedTableToToggleRLS.id,
       rls_enabled: !selectedTableToToggleRLS.rls_enabled,
@@ -99,7 +85,7 @@ const Policies = ({
       projectRef: project?.ref!,
       connectionString: project?.connectionString,
       id: payload.id,
-      schema: selectedTableToToggleRLS.schema,
+      schema: (selectedTableToToggleRLS as PostgresTable).schema,
       payload: payload,
     })
   }
@@ -121,7 +107,7 @@ const Policies = ({
           title="Row-Level Security (RLS) Policies"
           ctaButtonLabel="Create a table"
           infoButtonLabel="What is RLS?"
-          infoButtonUrl="https://biobase.studio/docs/guides/auth/row-level-security"
+          infoButtonUrl="https://biobase.com/docs/guides/auth/row-level-security"
           onClickCta={() => router.push(`/project/${ref}/editor`)}
         >
           <div className="space-y-4">
@@ -184,14 +170,14 @@ const Policies = ({
       />
 
       <ConfirmModal
-        danger={selectedTableToToggleRLS?.rls_enabled}
-        visible={selectedTableToToggleRLS !== undefined}
+        danger={selectedTableToToggleRLS.rls_enabled}
+        visible={!isEmpty(selectedTableToToggleRLS)}
         title={`Confirm to ${
-          selectedTableToToggleRLS?.rls_enabled ? 'disable' : 'enable'
+          selectedTableToToggleRLS.rls_enabled ? 'disable' : 'enable'
         } Row Level Security`}
         description={`Are you sure you want to ${
-          selectedTableToToggleRLS?.rls_enabled ? 'disable' : 'enable'
-        } Row Level Security for the table "${selectedTableToToggleRLS?.name}"?`}
+          selectedTableToToggleRLS.rls_enabled ? 'disable' : 'enable'
+        } Row Level Security for the table "${selectedTableToToggleRLS.name}"?`}
         buttonLabel="Confirm"
         buttonLoadingLabel="Saving"
         onSelectCancel={closeConfirmModal}

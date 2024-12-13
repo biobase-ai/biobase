@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { biobase } from "$lib/db";
   import Auth from "$lib/Auth.svelte";
-  import type { User } from "@supabase/supabase-js";
+  import type { User } from "@supabase/biobase-js";
   import Home from "$lib/Home.svelte";
 
   let user: User;

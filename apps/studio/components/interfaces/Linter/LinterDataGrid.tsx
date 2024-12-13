@@ -247,7 +247,7 @@ const LinterDataGrid = ({
                               href={
                                 lintInfoMap.find((item) => item.name === selectedLint.name)
                                   ?.docsLink ||
-                                'https://biobase.studio/docs/guides/database/database-linter'
+                                'https://biobase.com/docs/guides/database/database-linter'
                               }
                               target="_blank"
                               rel="noreferrer"

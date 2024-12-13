@@ -1,27 +1,27 @@
 import { PermissionAction } from '@supabase/shared-types/out/constants'
 import { JwtSecretUpdateStatus } from '@supabase/shared-types/out/events'
-import { AlertCircle, Loader } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 
+import { useParams } from 'common/hooks'
 import { SimpleCodeBlock } from '@ui/components/SimpleCodeBlock'
-import { useParams } from 'common'
 import Panel from 'components/ui/Panel'
 import { useJwtSecretUpdatingStatusQuery } from 'data/config/jwt-secret-updating-status-query'
-import { getAPIKeys, useProjectSettingsV2Query } from 'data/config/project-settings-v2-query'
+import { useProjectApiQuery } from 'data/config/project-api-query'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
 import { Input } from 'ui'
+import { AlertCircle, Loader } from 'lucide-react'
 
 const generateInitSnippet = (endpoint: string) => ({
   js: `
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 const biobaseUrl = '${endpoint}'
-const biobaseKey = process.env.BIOBASE_KEY
+const biobaseKey = process.env.SUPABASE_KEY
 const biobase = createClient(biobaseUrl, biobaseKey)`,
   dart: `
 const biobaseUrl = '${endpoint}';
-const biobaseKey = String.fromEnvironment('BIOBASE_KEY');
+const biobaseKey = String.fromEnvironment('SUPABASE_KEY');
 
 Future<void> main() async {
   await Biobase.initialize(url: biobaseUrl, anonKey: biobaseKey);
@@ -42,7 +42,7 @@ const APIKeys = () => {
     data: settings,
     isError: isProjectSettingsError,
     isLoading: isProjectSettingsLoading,
-  } = useProjectSettingsV2Query({
+  } = useProjectApiQuery({
     projectRef,
   })
 
@@ -55,17 +55,17 @@ const APIKeys = () => {
 
   const canReadAPIKeys = useCheckPermissions(PermissionAction.READ, 'service_api_keys')
 
-  const isNotUpdatingJwtSecret =
-    jwtSecretUpdateStatus === undefined || jwtSecretUpdateStatus === JwtSecretUpdateStatus.Updated
-
-  const protocol = settings?.app_config?.protocol ?? 'https'
-  const endpoint = settings?.app_config?.endpoint
-  const apiUrl = `${protocol}://${endpoint ?? '-'}`
-  const apiKeys = settings?.service_api_keys ?? []
-  const { anonKey } = getAPIKeys(settings)
+  // Get the API service
+  const apiService = settings?.autoApiService
+  const apiKeys = apiService?.service_api_keys ?? []
 
   // API keys should not be empty. However it can be populated with a delay on project creation
   const isApiKeysEmpty = apiKeys.length === 0
+  const isNotUpdatingJwtSecret =
+    jwtSecretUpdateStatus === undefined || jwtSecretUpdateStatus === JwtSecretUpdateStatus.Updated
+
+  const apiUrl = `${apiService?.protocol ?? 'https'}://${apiService?.endpoint ?? '-'}`
+  const anonKey = apiKeys.find((key) => key.tags === 'anon')
 
   const clientInitSnippet: any = generateInitSnippet(apiUrl)
   const selectedLanguageSnippet = clientInitSnippet[selectedLanguage.key] ?? 'No snippet available'
@@ -146,7 +146,7 @@ const APIKeys = () => {
                     ? 'JWT secret update failed, new API key may have issues'
                     : jwtSecretUpdateStatus === JwtSecretUpdateStatus.Updating
                       ? 'Updating JWT secret...'
-                      : anonKey?.api_key
+                      : apiService?.defaultApiKey
               }
               onChange={() => {}}
               descriptionText={

@@ -34,7 +34,7 @@ From any local directory, run `biobase bootstrap` and you will be prompted to ch
 
 ## How templates work
 
-The list of starter templates is published on GitHub as [samples.json](https://github.com/biobase-ai-community/biobase-samples/blob/main/samples.json). Whenever we (and in the future the community) add a new starter, it will automatically become available to all Biobase users.
+The list of starter templates is published on GitHub as [samples.json](https://github.com/biobase-community/biobase-samples/blob/main/samples.json). Whenever we (and in the future the community) add a new starter, it will automatically become available to all Biobase users.
 
 The template repository typically includes the full frontend code, following the file structure below:
 
@@ -72,9 +72,9 @@ Once the linking is completed, you will be prompted to push any template migrati
 After pushing the migrations, your project credentials will be exported to a `.env` file for you to connect from any frontend or backend code. The default environment variables include:
 
 - `POSTGRES_URL`
-- `BIOBASE_URL`
-- `BIOBASE_ANON_KEY`
-- `BIOBASE_SERVICE_ROLE_KEY`
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
 
 Other custom variables from `.env.example` file defined by your chosen template will also be merged to your local `.env` file.
 

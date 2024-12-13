@@ -10,7 +10,7 @@ The Vercel Marketplace is a feature that allows you to manage third-party resour
 
 When you create an organization and projects through Vercel Marketplace, they function just like those created directly within Biobase. However, the billing is handled through your Vercel account, and you can manage your resources directly from the Vercel dashboard or CLI. Additionally, environment variables are automatically synchronized, making them immediately available for your connected projects.
 
-For more information, see [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace) blog post.
+For more information, see [Introducing the Vercel Marketplace](https://vercel.com/blog/share/introducing-the-vercel-marketplace) blog post.
 
 <Admonition type="note">
 
@@ -46,12 +46,12 @@ POSTGRES_USER
 POSTGRES_HOST
 POSTGRES_PASSWORD
 POSTGRES_DATABASE
-BIOBASE_SERVICE_ROLE_KEY
-BIOBASE_ANON_KEY
-BIOBASE_URL
-BIOBASE_JWT_SECRET
-NEXT_PUBLIC_BIOBASE_ANON_KEY
-NEXT_PUBLIC_BIOBASE_URL
+SUPABASE_SERVICE_ROLE_KEY
+SUPABASE_ANON_KEY
+SUPABASE_URL
+SUPABASE_JWT_SECRET
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+NEXT_PUBLIC_SUPABASE_URL
 ```
 
 These variables ensure your applications can connect securely to the database and interact with Biobase APIs.
@@ -84,9 +84,9 @@ Note: you can invite non-Vercel users to your Biobase Organization, but their pe
 
 ## Pricing
 
-Pricing for databases created through Vercel Marketplace is identical to those created directly within Biobase. Detailed pricing information is available on the [Biobase pricing page](https://biobase.studio/pricing).
+Pricing for databases created through Vercel Marketplace is identical to those created directly within Biobase. Detailed pricing information is available on the [Biobase pricing page](https://biobase.com/pricing).
 
-The [usage page](https://biobase.studio/dashboard/org/_/usage) tracks the usage of your Vercel databases, with this information sent to Vercel for billing, which appears on your Vercel invoice.
+The [usage page](https://biobase.com/dashboard/org/_/usage) tracks the usage of your Vercel databases, with this information sent to Vercel for billing, which appears on your Vercel invoice.
 
 Note: Biobase Organization billing cycle is separate from Vercel's. Plan changes will reset the billing cycle to the day of the change, with the initial billing cycle starting the day you install the integration.
 

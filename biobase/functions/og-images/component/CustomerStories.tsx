@@ -11,7 +11,7 @@ const STORAGE_URL =
 const CustomerStories = (props: Props) => {
   const { title, customer } = props
 
-  const imageUrl = `https://biobase.studio/images/customers/logos/light/${customer}.png`
+  const imageUrl = `https://biobase.com/images/customers/logos/light/${customer}.png`
   const biobaseLogoUrl = `${STORAGE_URL}/customers/biobase-gradient-icon.svg?t=2024-06-01T16%3A09%3A05.507Z`
 
   return (

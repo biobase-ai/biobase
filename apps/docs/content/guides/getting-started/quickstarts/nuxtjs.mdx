@@ -34,16 +34,16 @@ hideToc: true
   <StepHikeCompact.Step step={3}>
     <StepHikeCompact.Details title="Install the Biobase client library">
 
-      The fastest way to get started is to use the `supabase-js` client library which provides a convenient interface for working with Biobase from a NuxtJS app.
+      The fastest way to get started is to use the `biobase-js` client library which provides a convenient interface for working with Biobase from a NuxtJS app.
 
-      Navigate to the NuxtJS app and install `supabase-js`.
+      Navigate to the NuxtJS app and install `biobase-js`.
 
     </StepHikeCompact.Details>
 
     <StepHikeCompact.Code>
 
       ```bash Terminal
-      cd my-app && npm install @supabase/supabase-js
+      cd my-app && npm install @supabase/biobase-js
       ```
 
     </StepHikeCompact.Code>
@@ -53,20 +53,20 @@ hideToc: true
   <StepHikeCompact.Step step={4}>
     <StepHikeCompact.Details title="Query data from the app">
 
-    In `app.vue`, create a Biobase client using your project URL and public API (anon) key:
+    In `src/App.vue`, create a Biobase client using your project URL and public API (anon) key:
 
     <ProjectConfigVariables variable="url" />
     <ProjectConfigVariables variable="anonKey" />
 
-    Replace the existing content in your `app.vue` file with the following code.
+    Replace the existing content in your `src/App.vue` file with the following code.
 
     </StepHikeCompact.Details>
 
     <StepHikeCompact.Code>
 
-      ```vue app.vue
+      ```vue src/App.vue
       <script setup>
-      import { createClient } from '@supabase/supabase-js'
+      import { createClient } from '@supabase/biobase-js'
       const biobase = createClient('https://<project>.biobase.co', '<your-anon-key>')
       const countries = ref([])
 
@@ -108,9 +108,3 @@ hideToc: true
 
   </StepHikeCompact.Step>
 </StepHikeCompact>
-
-<Admonition type="tip">
-
-The community-maintained [@nuxtjs/biobase](https://biobase.nuxtjs.org/) module provides an alternate DX for working with Biobase in Nuxt.
-
-</Admonition>

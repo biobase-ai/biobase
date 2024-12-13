@@ -28,12 +28,8 @@ import { InitialStateType } from './store/reducers'
 import type { BiobaseGridProps } from './types'
 import { getGridColumns } from './utils/gridColumns'
 
-export function loadTableEditorSortsAndFiltersFromLocalStorage(
-  projectRef: string,
-  tableName: string,
-  schema?: string | null
-) {
-  const storageKey = getStorageKey(STORAGE_KEY_PREFIX, projectRef)
+function onLoadStorage(storageRef: string, tableName: string, schema?: string | null) {
+  const storageKey = getStorageKey(STORAGE_KEY_PREFIX, storageRef)
   const jsonStr = localStorage.getItem(storageKey)
   if (!jsonStr) return
   const json = JSON.parse(jsonStr)
@@ -49,11 +45,7 @@ async function initTable(
   filter?: string[] // Comes directly from URL param
 ): Promise<{ savedState: { sorts?: string[]; filters?: string[] } }> {
   const savedState = props.projectRef
-    ? loadTableEditorSortsAndFiltersFromLocalStorage(
-        props.projectRef,
-        props.table.name,
-        props.table.schema
-      )
+    ? onLoadStorage(props.projectRef, props.table.name, props.table.schema)
     : undefined
 
   // Check for saved state on initial load and also, load sort and filters via URL param only if given
@@ -149,9 +141,10 @@ const BiobaseGridLayout = (props: BiobaseGridProps) => {
   const { project } = useProjectContext()
   const { data, error, isSuccess, isError, isLoading, isRefetching } = useTableRowsQuery(
     {
+      queryKey: [props.table.schema, props.table.name],
       projectRef: project?.ref,
       connectionString: project?.connectionString,
-      tableId: props.table.id,
+      table: props.table,
       sorts,
       filters,
       page: snap.page,
@@ -253,7 +246,7 @@ const BiobaseGridLayout = (props: BiobaseGridProps) => {
         table={props.table}
         sorts={sorts}
         filters={filters}
-        onAddRow={editable && (props.table.columns ?? []).length > 0 ? onAddRow : undefined}
+        onAddRow={editable ? onAddRow : undefined}
         onAddColumn={editable ? onAddColumn : undefined}
         onImportData={editable ? onImportData : undefined}
         headerActions={headerActions}

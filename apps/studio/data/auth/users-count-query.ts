@@ -1,8 +1,8 @@
-import { useQuery, UseQueryOptions } from '@tanstack/react-query'
+import { UseQueryOptions } from '@tanstack/react-query'
 
-import { executeSql, ExecuteSqlError } from 'data/sql/execute-sql-query'
-import { authKeys } from './keys'
+import { ExecuteSqlData, ExecuteSqlError, useExecuteSqlQuery } from 'data/sql/execute-sql-query'
 import { Filter } from './users-infinite-query'
+import { authKeys } from './keys'
 
 type UsersCountVariables = {
   projectRef?: string
@@ -12,12 +12,12 @@ type UsersCountVariables = {
   providers?: string[]
 }
 
-const getUsersCountSql = ({
-  filter,
+const getUsersCountSQl = ({
+  verified,
   keywords,
   providers,
 }: {
-  filter?: Filter
+  verified?: Filter
   keywords?: string
   providers?: string[]
 }) => {
@@ -32,11 +32,11 @@ const getUsersCountSql = ({
     )
   }
 
-  if (filter === 'verified') {
+  if (verified === 'verified') {
     conditions.push(`email_confirmed_at IS NOT NULL or phone_confirmed_at IS NOT NULL`)
-  } else if (filter === 'anonymous') {
+  } else if (verified === 'anonymous') {
     conditions.push(`is_anonymous is true`)
-  } else if (filter === 'unverified') {
+  } else if (verified === 'unverified') {
     conditions.push(`email_confirmed_at IS NULL AND phone_confirmed_at IS NULL`)
   }
 
@@ -59,44 +59,19 @@ const getUsersCountSql = ({
   return `${baseQueryCount}${conditions.length > 0 ? ` where ${combinedConditions}` : ''};`
 }
 
-export async function getUsersCount(
-  { projectRef, connectionString, keywords, filter, providers }: UsersCountVariables,
-  signal?: AbortSignal
-) {
-  const sql = getUsersCountSql({ filter, keywords, providers })
+export type UsersCountData = { result: [{ count: number }] }
+export type UsersCountError = ExecuteSqlError
 
-  const { result } = await executeSql(
+export const useUsersCountQuery = <TData extends UsersCountData = UsersCountData>(
+  { projectRef, connectionString, keywords, filter, providers }: UsersCountVariables,
+  options: UseQueryOptions<ExecuteSqlData, UsersCountError, TData> = {}
+) =>
+  useExecuteSqlQuery(
     {
       projectRef,
       connectionString,
-      sql,
-      queryKey: ['users-count'],
+      sql: getUsersCountSQl({ keywords, verified: filter, providers }),
+      queryKey: authKeys.usersCount(projectRef, { keywords, filter, providers }),
     },
-    signal
-  )
-
-  const count = result?.[0]?.count
-
-  if (typeof count !== 'number') {
-    throw new Error('Error fetching users count')
-  }
-
-  return count
-}
-
-export type UsersCountData = Awaited<ReturnType<typeof getUsersCount>>
-export type UsersCountError = ExecuteSqlError
-
-export const useUsersCountQuery = <TData = UsersCountData>(
-  { projectRef, connectionString, keywords, filter, providers }: UsersCountVariables,
-  { enabled = true, ...options }: UseQueryOptions<UsersCountData, UsersCountError, TData> = {}
-) =>
-  useQuery<UsersCountData, UsersCountError, TData>(
-    authKeys.usersCount(projectRef, { keywords, filter, providers }),
-    ({ signal }) =>
-      getUsersCount({ projectRef, connectionString, keywords, filter, providers }, signal),
-    {
-      enabled: enabled && typeof projectRef !== 'undefined',
-      ...options,
-    }
+    options
   )

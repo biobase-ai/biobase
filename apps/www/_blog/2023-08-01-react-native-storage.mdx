@@ -13,7 +13,7 @@ date: '2023-08-01'
 toc_depth: 2
 ---
 
-If you want to upload files from your React Native app, you need a backend to store the files, [Biobase Storage](https://biobase.studio/docs/guides/storage) is a great choice for this as it provides a simple API to upload files, and we can easily combine this with authentication to build a powerful app.
+If you want to upload files from your React Native app, you need a backend to store the files, [Biobase Storage](https://biobase.com/docs/guides/storage) is a great choice for this as it provides a simple API to upload files, and we can easily combine this with authentication to build a powerful app.
 
 This means you can quickly build your own image-sharing app, a file-sharing app, or any other app that needs to upload files to a backend!
 
@@ -22,17 +22,17 @@ This means you can quickly build your own image-sharing app, a file-sharing app,
 In this tutorial, you will learn to:
 
 - Set up a React Native app with [Expo SDK49](https://expo.dev/)
-- Use [Biobase Authentication](https://biobase.studio/docs/guides/auth)
+- Use [Biobase Authentication](https://biobase.com/docs/guides/auth)
 - Work with Expo Router v2 and protected routes
-- Upload files to [Biobase Storage](https://biobase.studio/docs/guides/storage)
+- Upload files to [Biobase Storage](https://biobase.com/docs/guides/storage)
 
 You can also directly check out the [full source code on Github](https://github.com/saimon24/react-native-resumable-upload-biobase) so you can get started with Biobase fast!
 
-Before we get into the app, let's quickly [start a new Biobase project](https://biobase.studio/dashboard).
+Before we get into the app, let's quickly [start a new Biobase project](https://biobase.com/dashboard).
 
 ## Creating the Biobase Project
 
-To use authentication and storage we need a new Biobase project. If you don't have a Biobase account yet, you can [get started for free](https://biobase.studio/dashboard)!
+To use authentication and storage we need a new Biobase project. If you don't have a Biobase account yet, you can [get started for free](https://biobase.com/dashboard)!
 
 In your dashboard, click "New Project" and leave it to the default settings, but make sure you keep a copy of your Database password!
 
@@ -60,7 +60,7 @@ First, select **Storage** from the menu, then click **New bucket** and call it `
 
 Make sure that this is not a public bucket, otherwise, even unauthenticated users can upload or read the files!
 
-To protect that bucket and allow users only access to their own folder, we need to add some [Storage policies](https://biobase.studio/docs/guides/storage/security/access-control).
+To protect that bucket and allow users only access to their own folder, we need to add some [Storage policies](https://biobase.com/docs/guides/storage/security/access-control).
 
 You can either do this through the UI and pick from examples, or simply run my SQL script in the **SQL Editor** which you can select from the menu:
 
@@ -85,7 +85,7 @@ Get started by setting up a new Expo app with the tabs template and install some
 npx create-expo-app@latest cloudApp --template tabs@49
 
 # Install dependencies
-npm i @supabase/supabase-js
+npm i @supabase/biobase-js
 npm i react-native-url-polyfill base64-arraybuffer react-native-loading-spinner-overlay @react-native-async-storage/async-storage
 
 # Install Expo packages
@@ -108,8 +108,8 @@ To use Biobase we need to initialize the client with our project URL and the pub
 You can put both of them in a `.env` file at the root of your project:
 
 ```env
-EXPO_PUBLIC_BIOBASE_URL=
-EXPO_PUBLIC_BIOBASE_ANON_KEY=
+EXPO_PUBLIC_SUPABASE_URL=
+EXPO_PUBLIC_SUPABASE_ANON_KEY=
 ```
 
 We can now simply read those values from the environment variables and initialize the Biobase client, so create a file at `config/initBiobase.ts` and add the following code:
@@ -118,10 +118,10 @@ We can now simply read those values from the environment variables and initializ
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import 'react-native-url-polyfill/auto'
 
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
-const url = process.env.EXPO_PUBLIC_BIOBASE_URL
-const key = process.env.EXPO_PUBLIC_BIOBASE_ANON_KEY
+const url = process.env.EXPO_PUBLIC_SUPABASE_URL
+const key = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY
 
 // Initialize the Biobase client
 export const biobase = createClient(url, key, {
@@ -257,7 +257,7 @@ For this, create a new file at `provider/AuthProvider.tsx` and add the following
 
 ```tsx
 import React, { useState, useEffect, createContext, PropsWithChildren } from 'react'
-import { Session, User } from '@supabase/supabase-js'
+import { Session, User } from '@supabase/biobase-js'
 import { biobase } from '../config/initBiobase'
 
 type AuthProps = {
@@ -592,7 +592,7 @@ And with that in place, you have a fully functional image gallery app with React
 
 ## What about resumable uploads?
 
-Initially, I wanted to include [resumable uploads](https://biobase.studio/blog/storage-v3-resumable-uploads) in this tutorial, but apparently, the [Uppy](https://uppy.io/) client didn't work 100% for React Native yet.
+Initially, I wanted to include [resumable uploads](https://biobase.com/blog/storage-v3-resumable-uploads) in this tutorial, but apparently, the [Uppy](https://uppy.io/) client didn't work 100% for React Native yet.
 
 You can still see an [initial implementation of resumable downloads with Biobase and React Native](https://github.com/saimon24/react-native-resumable-upload-biobase/commit/bb45455dc2d4d3fdd42089a8a26a521cc5b5e60f#diff-2d97fcb7ad2b1ac426a8d5391cfd0ab970e525ede1f11e14885f65e6dcd116a1) in the repository of this tutorial.
 
@@ -614,7 +614,7 @@ Until next time and happy coding with Biobase!
 
 ## More React Native/Expo resources
 
-- [Getting started with React Native authentication](https://biobase.studio/blog/react-native-authentication)
-- [Offline-first React Native Apps with Expo, WatermelonDB](https://biobase.studio/blog/react-native-offline-first-watermelon-db)
-- [React Native Quickstart](https://biobase.studio/docs/guides/auth/quickstarts/react-native)
+- [Getting started with React Native authentication](https://biobase.com/blog/react-native-authentication)
+- [Offline-first React Native Apps with Expo, WatermelonDB](https://biobase.com/blog/react-native-offline-first-watermelon-db)
+- [React Native Quickstart](https://biobase.com/docs/guides/auth/quickstarts/react-native)
 - [Watch our React Native video tutorials](https://youtube.com/playlist?list=PL5S4mPUpp4OsrbRTx21k34aACOgpqQGlx&si=Ez-0S4QhBxtayYsq)

@@ -87,7 +87,7 @@ select
         fk.table_name,
         fk.fkey_name
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0001_unindexed_foreign_keys' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0001_unindexed_foreign_keys' as remediation,
     jsonb_build_object(
         'schema', fk.schema_name,
         'name', fk.table_name,
@@ -127,7 +127,7 @@ select
         'View/Materialized View "%s" in the public schema may expose \`auth.users\` data to anon or authenticated roles.',
         c.relname
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0002_auth_users_exposed' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0002_auth_users_exposed' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -241,12 +241,12 @@ select
     array['PERFORMANCE'] as categories,
     'Detects if calls to \`auth.<function>()\` in RLS policies are being unnecessarily re-evaluated for each row' as description,
     format(
-        'Table \`%s.%s\` has a row level security policy \`%s\` that re-evaluates an auth.<function>() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \`auth.<function>()\` with \`(select auth.<function>())\`. See [docs](https://biobase.studio/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.',
+        'Table \`%s.%s\` has a row level security policy \`%s\` that re-evaluates an auth.<function>() for each row. This produces suboptimal query performance at scale. Resolve the issue by replacing \`auth.<function>()\` with \`(select auth.<function>())\`. See [docs](https://biobase.com/docs/guides/database/postgres/row-level-security#call-functions-with-select) for more info.',
         schema_name,
         table_name,
         policy_name
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0003_auth_rls_initplan' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0003_auth_rls_initplan' as remediation,
     jsonb_build_object(
         'schema', schema_name,
         'name', table_name,
@@ -310,7 +310,7 @@ select
         pgns.nspname,
         pgc.relname
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0004_no_primary_key' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0004_no_primary_key' as remediation,
      jsonb_build_object(
         'schema', pgns.nspname,
         'name', pgc.relname,
@@ -357,7 +357,7 @@ select
         psui.schemaname,
         psui.relname
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0005_unused_index' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0005_unused_index' as remediation,
     jsonb_build_object(
         'schema', psui.schemaname,
         'name', psui.relname,
@@ -402,7 +402,7 @@ select
         act.cmd,
         array_agg(p.polname order by p.polname)
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0006_multiple_permissive_policies' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -473,7 +473,7 @@ select
         c.relname,
         array_agg(p.polname order by p.polname)
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0007_policy_exists_rls_disabled' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0007_policy_exists_rls_disabled' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -518,7 +518,7 @@ select
         n.nspname,
         c.relname
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -565,7 +565,7 @@ select
         c.relname,
         array_agg(pi.indexname order by pi.indexname)
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0009_duplicate_index' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0009_duplicate_index' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -619,7 +619,7 @@ select
         n.nspname,
         c.relname
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0010_security_definer_view' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0010_security_definer_view' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -672,7 +672,7 @@ select
         n.nspname,
         p.proname
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0011_function_search_path_mutable' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0011_function_search_path_mutable' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', p.proname,
@@ -712,7 +712,7 @@ select
         n.nspname,
         c.relname
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0013_rls_disabled_in_public' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0013_rls_disabled_in_public' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -752,7 +752,7 @@ select
         'Extension \`%s\` is installed in the public schema. Move it to another schema.',
         pe.extname
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0014_extension_in_public' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0014_extension_in_public' as remediation,
     jsonb_build_object(
         'schema', pe.extnamespace::regnamespace,
         'name', pe.extname,
@@ -806,7 +806,7 @@ select
         table_name,
         policy_name
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0015_rls_references_user_metadata' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0015_rls_references_user_metadata' as remediation,
     jsonb_build_object(
         'schema', schema_name,
         'name', table_name,
@@ -842,7 +842,7 @@ select
         n.nspname,
         c.relname
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0016_materialized_view_in_api' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0016_materialized_view_in_api' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -885,7 +885,7 @@ select
         n.nspname,
         c.relname
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=0017_foreign_table_in_api' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=0017_foreign_table_in_api' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,
@@ -930,7 +930,7 @@ select
         a.attname,
         t.typname
     ) as detail,
-    'https://biobase.studio/docs/guides/database/database-linter?lint=unsupported_reg_types' as remediation,
+    'https://biobase.com/docs/guides/database/database-linter?lint=unsupported_reg_types' as remediation,
     jsonb_build_object(
         'schema', n.nspname,
         'name', c.relname,

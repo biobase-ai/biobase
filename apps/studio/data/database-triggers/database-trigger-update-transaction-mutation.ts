@@ -8,7 +8,7 @@ import { databaseTriggerKeys } from './keys'
 
 // [Joshen] Writing this query within FE as the PATCH endpoint from pg-meta only supports updating
 // trigger name and enabled mode. So we'll delete and create the trigger, within a single transaction
-// Copying the SQL from https://github.com/biobase-ai/postgres-meta/blob/master/src/lib/PostgresMetaTriggers.ts
+// Copying the SQL from https://github.com/biobase/postgres-meta/blob/master/src/lib/PostgresMetaTriggers.ts
 
 export type DatabaseTriggerUpdateVariables = {
   projectRef: string

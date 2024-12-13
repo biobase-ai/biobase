@@ -15,10 +15,10 @@ export const DOCS_CONTENT = {
     title: `Connect to your project`,
     description: `Projects have a RESTful endpoint that you can use with your project's API key to query and manage your database. Put these keys in your .env file.`,
     js: (apikey?: string, endpoint?: string) => `
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 const biobaseUrl = '${endpoint}'
-const biobaseKey = process.env.BIOBASE_KEY
+const biobaseKey = process.env.SUPABASE_KEY
 const biobase = createClient(biobaseUrl, biobaseKey)`,
     bash: () => `# No client library required for Bash.`,
   },
@@ -28,11 +28,11 @@ const biobase = createClient(biobaseUrl, biobaseKey)`,
     title: `Client API Keys`,
     description: `Client keys allow "anonymous access" to your database, until the user has logged in. After logging in, the keys will switch to the user's own login token.
 
-In this documentation, we will refer to the key using the name \`BIOBASE_KEY\`. You can find the \`anon\` key in the [API settings](/project/[ref]/settings/api) page.`,
+In this documentation, we will refer to the key using the name \`SUPABASE_KEY\`. You can find the \`anon\` key in the [API settings](/project/[ref]/settings/api) page.`,
     js: (apikey?: string, endpoint?: string) => `
-const BIOBASE_KEY = '${apikey}'
-const BIOBASE_URL = '${endpoint}'
-const biobase = createClient(BIOBASE_URL, process.env.BIOBASE_KEY);`,
+const SUPABASE_KEY = '${apikey}'
+const SUPABASE_URL = '${endpoint}'
+const biobase = createClient(SUPABASE_URL, process.env.SUPABASE_KEY);`,
     bash: (apikey?: string, endpoint?: string) => `${apikey}`,
   },
   serviceApiKeys: {
@@ -43,9 +43,9 @@ const biobase = createClient(BIOBASE_URL, process.env.BIOBASE_KEY);`,
 
 In this documentation, we refer to the key using the name \`SERVICE_KEY\`. You can find the \`service_role\` key above or in the [API settings](/project/[ref]/settings/api) page.`,
     js: (apikey?: string, endpoint?: string) => `
-const BIOBASE_KEY = '${apikey}'
-const BIOBASE_URL = 'https://${endpoint}'
-const biobase = createClient(BIOBASE_URL, process.env.BIOBASE_KEY);`,
+const SUPABASE_KEY = '${apikey}'
+const SUPABASE_URL = 'https://${endpoint}'
+const biobase = createClient(SUPABASE_URL, process.env.SUPABASE_KEY);`,
     bash: (apikey?: string, endpoint?: string) => `${apikey}`,
   },
   // User Management
@@ -207,9 +207,9 @@ curl -X POST '${endpoint}/auth/v1/verify' \\
     category: 'user-management',
     title: `Log in with Third Party OAuth`,
     description: `
-Users can log in with Third Party OAuth like Google, Facebook, GitHub, and more. You must first enable each of these in the Auth Providers settings [here](https://biobase.studio).
+Users can log in with Third Party OAuth like Google, Facebook, GitHub, and more. You must first enable each of these in the Auth Providers settings [here](https://biobase.com).
 
-View all the available [Third Party OAuth providers](https://biobase.studio).
+View all the available [Third Party OAuth providers](https://biobase.com).
 
 After they have logged in, all interactions using the Biobase JS client will be performed as "that user".
 
@@ -345,11 +345,11 @@ Edge Functions are server-side TypeScript functions, distributed globally at the
     description: `
 Follow the steps to prepare your Biobase project on your local machine.
 
-- Install the Biobase [CLI](https://biobase.studio/docs/guides/cli).
-- [Login to the CLI](https://biobase.studio/docs/reference/cli/usage#biobase-login) using the command: \`biobase login\`..
-- [Initialize Biobase](https://biobase.studio/docs/guides/getting-started/local-development#getting-started) inside your project using the command: \`biobase init\`..
-- [Link to your Remote Project](https://biobase.studio/docs/reference/cli/usage#biobase-link) using the command \`biobase link --project-ref [ref]\`..
-- Setup your environment: Follow the steps [here](https://biobase.studio/docs/guides/functions/quickstart#setting-up-your-environment).
+- Install the Biobase [CLI](https://biobase.com/docs/guides/cli).
+- [Login to the CLI](https://biobase.com/docs/reference/cli/usage#biobase-login) using the command: \`biobase login\`..
+- [Initialize Biobase](https://biobase.com/docs/guides/getting-started/local-development#getting-started) inside your project using the command: \`biobase init\`..
+- [Link to your Remote Project](https://biobase.com/docs/reference/cli/usage#biobase-link) using the command \`biobase link --project-ref [ref]\`..
+- Setup your environment: Follow the steps [here](https://biobase.com/docs/guides/functions/quickstart#setting-up-your-environment).
 `,
     js: undefined,
     bash: undefined,
@@ -397,7 +397,7 @@ If you don't want to expose tables in your API, simply add them to a different s
     description: `
 Biobase APIs are generated from your database, which means that we can use database introspection to generate type-safe API definitions.
 
-You can generate types from your database either through the [Biobase CLI](https://biobase.studio/docs/guides/database/api/generating-types), or by downloading the types file via the button on the right and importing it in your application within \`src/index.ts\`.
+You can generate types from your database either through the [Biobase CLI](https://biobase.com/docs/guides/database/api/generating-types), or by downloading the types file via the button on the right and importing it in your application within \`src/index.ts\`.
 `,
     js: undefined,
     bash: undefined,
@@ -480,9 +480,9 @@ The API endpoint supports POST (and in some cases GET) to execute the function.
     description: `
 Biobase provides a globally distributed cluster of Realtime servers that enable the following functionality:
 
-- [Broadcast](https://biobase.studio/docs/guides/realtime/broadcast): Send ephemeral messages from client to clients with low latency.
-- [Presence](https://biobase.studio/docs/guides/realtime/presence): Track and synchronize shared state between clients.
-- [Postgres Changes](https://biobase.studio/docs/guides/realtime/postgres-changes): Listen to Postgres database changes and send them to authorized clients.
+- [Broadcast](https://biobase.com/docs/guides/realtime/broadcast): Send ephemeral messages from client to clients with low latency.
+- [Presence](https://biobase.com/docs/guides/realtime/presence): Track and synchronize shared state between clients.
+- [Postgres Changes](https://biobase.com/docs/guides/realtime/postgres-changes): Listen to Postgres database changes and send them to authorized clients.
 `,
     js: undefined,
     bash: undefined,
@@ -495,7 +495,7 @@ Biobase provides a globally distributed cluster of Realtime servers that enable 
 Creates an event handler that listens to changes.
 
 - By default, Broadcast and Presence are enabled for all projects.
-- By default, listening to database changes is disabled for new projects due to database performance and security concerns. You can turn it on by managing Realtime's [replication](https://biobase.studio/docs/guides/api#realtime-api-overview).
+- By default, listening to database changes is disabled for new projects due to database performance and security concerns. You can turn it on by managing Realtime's [replication](https://biobase.com/docs/guides/api#realtime-api-overview).
 - You can receive the "previous" data for updates and deletes by setting the table's \`REPLICA IDENTITY\` to \`FULL\` (e.g., \`ALTER TABLE your_table REPLICA IDENTITY FULL;\`).
 - Row level security is not applied to delete statements. When RLS is enabled and replica identity is set to full, only the primary key is sent to clients.
 `,
@@ -568,7 +568,7 @@ export const DOCS_RESOURCE_CONTENT: {
     title: 'Invoke function',
     category: 'stored-procedures',
     description: undefined,
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/rpc',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/rpc',
     code: ({
       rpcName,
       rpcParams,
@@ -624,7 +624,7 @@ else console.log(data)
     key: 'read-rows',
     title: `Read rows`,
     category: 'entities',
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/select',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/select',
     description: `To read rows in this table, use the \`select\` method.`,
     code: ({
       resourceId,
@@ -707,7 +707,7 @@ let { data: ${resourceId}, error } = await biobase
     category: 'entities',
     title: 'Filtering',
     description: `Biobase provides a wide range of filters`,
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/using-filters',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/using-filters',
     code: ({
       resourceId,
       endpoint,
@@ -761,7 +761,7 @@ let { data: ${resourceId}, error } = await biobase
 
 \`insert\` will also return the replaced values for UPSERT.
 `,
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/insert',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/insert',
     code: ({
       resourceId,
       endpoint,
@@ -842,7 +842,7 @@ const { data, error } = await biobase
 
 \`update\` will also return the replaced values for UPDATE.
 `,
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/update',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/update',
     code: ({
       resourceId,
       endpoint,
@@ -882,7 +882,7 @@ const { data, error } = await biobase
     description: `
 \`delete\` lets you delete rows. \`delete\` will match all rows by default, so remember to specify your filters!
 `,
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/delete',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/delete',
     code: ({
       resourceId,
       endpoint,
@@ -918,7 +918,7 @@ const { error } = await biobase
     description: `
 Biobase provides realtime functionality and broadcasts database changes to authorized users depending on Row Level Security (RLS) policies.
 `,
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/subscribe',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/subscribe',
     code: ({ resourceId }: { resourceId: string }) => {
       return [
         {
@@ -1003,7 +1003,7 @@ const channels = biobase.channel('custom-filter-channel')
     key: 'upload-file',
     category: 'storage',
     title: 'Upload a file',
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/storage-from-upload',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/storage-from-upload',
     description: `
 Upload a file to an existing bucket. RLS policy permissions required:
 - \`buckets\` table permissions: none
@@ -1039,7 +1039,7 @@ const { data, error } = await biobase
     key: 'delete-files',
     category: 'storage',
     title: 'Delete files',
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/storage-from-remove',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/storage-from-remove',
     description: `
 Delete files within the bucket. RLS policy permissions required:
 - \`buckets\` table permissions: none
@@ -1068,7 +1068,7 @@ const { data, error } = await biobase
     key: 'list-files',
     category: 'storage',
     title: 'List all files',
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/storage-from-list',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/storage-from-list',
     description: `
 List all files within the bucket. RLS policy permissions required:
 - \`buckets\` table permissions: none
@@ -1100,7 +1100,7 @@ const { data, error } = await biobase
     key: 'download-file',
     category: 'storage',
     title: 'Download a file',
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/storage-from-download',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/storage-from-download',
     description: `
 Downloads a file from a private bucket. For public buckets, make a request to the URL returned from getPublicUrl instead. RLS policy permissions required:
 - \`buckets\` table permissions: none
@@ -1129,7 +1129,7 @@ const { data, error } = await biobase
     key: 'create-signed-url',
     category: 'storage',
     title: 'Create a signed URL',
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/storage-from-createsignedurl',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/storage-from-createsignedurl',
     description: `
 Create a signed URL which can be used to share a file for a fixed amount of time. RLS policy permissions required:
 - \`buckets\` table permissions: none
@@ -1158,13 +1158,13 @@ const { data, error } = await biobase
     key: 'retrieve-public-url',
     category: 'storage',
     title: 'Retrieve public URL',
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/storage-from-getpublicurl',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/storage-from-getpublicurl',
     description: `
 A simple convenience function to get the URL for an asset in a public bucket. If you do not want to use this function, you can construct the public URL by concatenating the bucket URL with the path to the asset.
 
 This function does not verify if the bucket is public. If a public URL is created for a bucket which is not public, you will not be able to download the asset.
 
-The bucket needs to be set to public, either via \`updateBucket()\` or by going to Storage on biobase.studio/dashboard, clicking the overflow menu on a bucket and choosing "Make public"
+The bucket needs to be set to public, either via \`updateBucket()\` or by going to Storage on biobase.com/dashboard, clicking the overflow menu on a bucket and choosing "Make public"
 
 RLS policy permissions required:
 - \`buckets\` table permissions: none
@@ -1191,7 +1191,7 @@ const { data } = biobase
     key: 'invoke-edge-function',
     category: 'edge-functions',
     title: 'Invoke an edge function',
-    docsUrl: 'https://biobase.studio/docs/reference/javascript/functions-invoke',
+    docsUrl: 'https://biobase.com/docs/reference/javascript/functions-invoke',
     description: `
 Invokes a Biobase Edge Function. Requires an Authorization header, and invoke params generally match the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) spec.
 

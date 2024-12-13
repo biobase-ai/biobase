@@ -84,22 +84,12 @@ export const TimestampInfo = ({
             setCopied(false)
           }, 1000)
         }}
-        className={cn(
-          'relative cursor-default grid grid-cols-2 gap-2 hover:bg-surface-100 px-2 py-1',
-          {
-            'bg-surface-100': copied,
-          }
-        )}
+        className={cn('grid grid-cols-2 gap-2 hover:bg-surface-100 px-2 py-1', {
+          'bg-surface-100': copied,
+        })}
       >
         <span className="text-right truncate">{label}:</span>
-        <div className="relative">
-          {copied && (
-            <span className="absolute inset-0 flex items-center text-brand-600 bg-surface-100">
-              Copied!
-            </span>
-          )}
-          <span>{value}</span>
-        </div>
+        <span className={copied ? 'text-brand-600' : ''}>{copied ? 'Copied!' : value}</span>
       </span>
     )
   }

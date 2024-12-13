@@ -53,7 +53,7 @@ const RateLimits = () => {
   })
 
   const canUpdateEmailLimit = authConfig?.EXTERNAL_EMAIL_ENABLED && isSmtpEnabled(authConfig)
-  const canUpdateSMSRateLimit = authConfig?.EXTERNAL_PHONE_ENABLED
+  const canUpdateSMSRateLimit = authConfig?.EXTERNAL_PHONE_ENABLED && !authConfig?.SMS_AUTOCONFIRM
   const canUpdateAnonymousUsersRateLimit = authConfig?.EXTERNAL_ANONYMOUS_USERS_ENABLED
 
   const FormSchema = z.object({
@@ -132,7 +132,7 @@ const RateLimits = () => {
       <FormHeader
         title="Rate Limits"
         description="Safeguard against bursts of incoming traffic to prevent abuse and maximize stability"
-        docsUrl="https://biobase.studio/docs/guides/platform/going-into-prod#rate-limiting-resource-allocation--abuse-prevention"
+        docsUrl="https://biobase.com/docs/guides/platform/going-into-prod#rate-limiting-resource-allocation--abuse-prevention"
       />
 
       {isError && <AlertError subject="Failed to retrieve auth config rate limits" error={error} />}
@@ -408,8 +408,8 @@ const RateLimits = () => {
                   <FormSectionLabel
                     description={
                       <p className="text-foreground-light text-sm">
-                        Number of sign up and sign-in requests that can be made in a 5 minute
-                        interval per IP address (excludes anonymous users).
+                        Number of sign up and sign-in requests that can be made per hour per IP
+                        address (excludes anonymous users).
                       </p>
                     }
                   >

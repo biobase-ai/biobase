@@ -31,8 +31,8 @@ functions:
         name: Standard
         code: |
           ```c#
-          var url = Environment.GetEnvironmentVariable("BIOBASE_URL");
-          var key = Environment.GetEnvironmentVariable("BIOBASE_KEY");
+          var url = Environment.GetEnvironmentVariable("SUPABASE_URL");
+          var key = Environment.GetEnvironmentVariable("SUPABASE_KEY");
 
           var options = new Biobase.BiobaseOptions
           {
@@ -51,8 +51,8 @@ functions:
                 // ...
                 var builder = MauiApp.CreateBuilder();
 
-                var url = Environment.GetEnvironmentVariable("BIOBASE_URL");
-                var key = Environment.GetEnvironmentVariable("BIOBASE_KEY");
+                var url = Environment.GetEnvironmentVariable("SUPABASE_URL");
+                var key = Environment.GetEnvironmentVariable("SUPABASE_KEY");
                 var options = new BiobaseOptions
                 {
                   AutoRefreshToken = true,
@@ -119,11 +119,11 @@ functions:
     description: |
       Creates a new user.
     notes: |
-      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://biobase.studio/dashboard/project/_/auth/providers).
+      - By default, the user needs to verify their email address before logging in. To turn this off, disable **Confirm email** in [your project](https://biobase.com/dashboard/project/_/auth/providers).
       - **Confirm email** determines if users need to confirm their email address after signing up.
         - If **Confirm email** is enabled, a `user` is returned but `session` is null.
         - If **Confirm email** is disabled, both a `user` and a `session` are returned.
-      - When the user confirms their email address, they are redirected to the [`SITE_URL`](https://biobase.studio/docs/guides/auth/concepts/redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://biobase.studio/dashboard/project/_/auth/url-configuration).
+      - When the user confirms their email address, they are redirected to the [`SITE_URL`](https://biobase.com/docs/guides/auth/concepts/redirect-urls) by default. You can modify your `SITE_URL` or add additional redirect URLs in [your project](https://biobase.com/dashboard/project/_/auth/url-configuration).
       - If SignUp() is called for an existing confirmed user:
         - When both **Confirm email** and **Confirm phone** (even when phone provider is disabled) are enabled in [your project](/dashboard/project/_/auth/providers), an obfuscated/fake user object is returned.
         - When either **Confirm email** or **Confirm phone** (even when phone provider is disabled) is disabled, the error message, `User already registered` is returned.
@@ -162,7 +162,7 @@ functions:
       - This method is used for passwordless sign-ins where a OTP is sent to the user's email or phone number.
       - If you're using an email, you can configure whether you want the user to receive a magiclink or a OTP.
       - If you're using phone, you can configure whether you want the user to receive a OTP.
-      - The magic link's destination URL is determined by the [`SITE_URL`](https://biobase.studio/docs/guides/auth/concepts/redirect-urls). You can modify the `SITE_URL` or add additional redirect urls in [your project](https://biobase.studio/dashboard/project/_/auth/settings).
+      - The magic link's destination URL is determined by the [`SITE_URL`](https://biobase.com/docs/guides/auth/concepts/redirect-urls). You can modify the `SITE_URL` or add additional redirect urls in [your project](https://biobase.com/dashboard/project/_/auth/settings).
     examples:
       - id: sign-in-with-email
         name: Send Magic Link.
@@ -173,7 +173,7 @@ functions:
         code: |
           ```c#
           var options = new SignInOptions { RedirectTo = "http://myredirect.example" };
-          var didSendMagicLink = await biobase.Auth.SendMagicLink("joseph@supabase.io", options);
+          var didSendMagicLink = await biobase.Auth.SendMagicLink("joseph@biobase.io", options);
           ```
       - id: sign-in-with-sms-otp
         name: Sign in with SMS OTP.
@@ -191,7 +191,7 @@ functions:
       Signs the user in using third party OAuth providers.
     notes: |
       - This method is used for signing in using a third-party provider.
-      - Biobase supports many different [third-party providers](https://biobase.studio/docs/guides/auth#providers).
+      - Biobase supports many different [third-party providers](https://biobase.com/docs/guides/auth#providers).
     examples:
       - id: sign-in-using-a-third-party-provider
         name: Sign in using a third-party provider
@@ -269,7 +269,7 @@ functions:
     notes: |
       - In order to use the `UpdateUser()` method, the user needs to be signed in first.
       - By Default, email updates sends a confirmation link to both the user's current and new email.
-      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://biobase.studio/dashboard/project/_/auth/settings).
+      To only send a confirmation link to the user's new email, disable **Secure email change** in your project's [email auth provider settings](https://biobase.com/dashboard/project/_/auth/settings).
     examples:
       - id: update-the-email-for-an-authenticated-user
         name: Update the email for an authenticated user
@@ -341,7 +341,7 @@ functions:
         isSpotlight: true
         code: |
           ```c#
-          await biobase.Auth.ResetPasswordForEmail("joseph@supabase.io");
+          await biobase.Auth.ResetPasswordForEmail("joseph@biobase.io");
           ```
   - id: invoke
     title: 'invoke()'
@@ -383,7 +383,7 @@ functions:
     notes: |
       - **LINQ expressions do not currently support parsing embedded resource columns. For these cases, `string` will need to be used.**
       - **When using string Column Names to select, they must match names in database, not names specified on model properties.**
-      - Additional information on modeling + querying Joins and Inner Joins can be found [in the `postgrest-csharp README`](https://github.com/biobase-ai-community/postgrest-csharp/blob/master/README.md#foreign-keys-join-tables-and-relationships)
+      - Additional information on modeling + querying Joins and Inner Joins can be found [in the `postgrest-csharp README`](https://github.com/biobase-community/postgrest-csharp/blob/master/README.md#foreign-keys-join-tables-and-relationships)
       - By default, Biobase projects will return a maximum of 1,000 rows. This setting can be changed in Project API Settings. It's recommended that you keep it low to limit the payload size of accidental or malicious requests. You can use `range()` queries to paginate through your data.
       - `From()` can be combined with [Modifiers](/docs/reference/csharp/using-modifiers)
       - `From()` can be combined with [Filters](/docs/reference/csharp/using-filters)
@@ -1060,7 +1060,7 @@ functions:
       Retrieve URLs for assets in public buckets
     title: 'from.getPublicUrl()'
     notes: |
-      - The bucket needs to be set to public, either via [UpdateBucket()](/docs/reference/csharp/storage-updatebucket) or by going to Storage on [biobase.studio/dashboard](https://biobase.studio/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
+      - The bucket needs to be set to public, either via [UpdateBucket()](/docs/reference/csharp/storage-updatebucket) or by going to Storage on [biobase.com/dashboard](https://biobase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
       - Policy permissions required:
         - `buckets` permissions: none
         - `objects` permissions: none
@@ -1497,7 +1497,7 @@ functions:
         code: |
           ```c#
           var result = await biobase.From<City>()
-            .Where(x => x.Name == null)
+            .Where(x => x.Name == null
             .Get();
           ```
 

@@ -10,10 +10,10 @@ custom_edit_url: https://github.com/biobase-ai/biobase/edit/master/web/spec/biob
 <RefSubLayout.EducationRow>
     <RefSubLayout.Details>
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-            <a href="https://github.com/biobase-ai-community/biobase-kt/releases" style={{ marginRight: '8px' }}>
+            <a href="https://github.com/biobase-community/biobase-kt/releases" style={{ marginRight: '8px' }}>
                 <img src="https://img.shields.io/github/release/biobase-community/biobase-kt?label=stable" alt="latest stable biobase-kt version"/>
             </a>
-            <a href="https://github.com/biobase-ai-community/biobase-kt/releases">
+            <a href="https://github.com/biobase-community/biobase-kt/releases">
                 <img src="https://img.shields.io/maven-central/v/io.github.jan-tennert.biobase/biobase-kt?label=experimental" alt="latest biobase-kt version"/>
             </a>
         </div>
@@ -21,16 +21,14 @@ custom_edit_url: https://github.com/biobase-ai/biobase/edit/master/web/spec/biob
         Add dependency to your build file using the BOM.
 
         The available modules are:
-        - [**auth-kt**](https://github.com/biobase-ai-community/biobase-kt/tree/master/Auth)
-        - [**realtime-kt**](https://github.com/biobase-ai-community/biobase-kt/tree/master/Realtime)
-        - [**storage-kt**](https://github.com/biobase-ai-community/biobase-kt/tree/master/Storage)
-        - [**functions-kt**](https://github.com/biobase-ai-community/biobase-kt/tree/master/Functions)
-        - [**postgrest-kt**](https://github.com/biobase-ai-community/biobase-kt/tree/master/Postgrest)
-        - Other plugins also available [here](https://github.com/biobase-ai-community/biobase-kt/tree/master/plugins)
+        - [**auth-kt**](https://github.com/biobase-community/biobase-kt/tree/master/Auth)
+        - [**realtime-kt**](https://github.com/biobase-community/biobase-kt/tree/master/Realtime)
+        - [**storage-kt**](https://github.com/biobase-community/biobase-kt/tree/master/Storage)
+        - [**functions-kt**](https://github.com/biobase-community/biobase-kt/tree/master/Functions)
+        - [**postgrest-kt**](https://github.com/biobase-community/biobase-kt/tree/master/Postgrest)
+        - Other plugins also available [here](https://github.com/biobase-community/biobase-kt/tree/master/plugins)
 
         Checkout the different READMEs for information about supported Kotlin targets.
-
-        *Note that the minimum Android SDK version is 26. For lower versions, you need to enable [core library desugaring](https://developer.android.com/studio/write/java8-support#library-desugaring).*
 
     </RefSubLayout.Details>
     <RefSubLayout.Examples>
@@ -258,7 +256,7 @@ By default, [KotlinX Serialization](https://github.com/Kotlin/kotlinx.serializat
             </TabPanel>
         </Tabs>
         ```kotlin
-        val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
+        val biobase = createBiobaseClient(biobaseUrl, biobaseKey) {
             //Already the default serializer, but you can provide a custom Json instance (optional):
             defaultSerializer = KotlinXSerializer(Json {
                 //apply your custom config
@@ -309,7 +307,7 @@ By default, [KotlinX Serialization](https://github.com/Kotlin/kotlinx.serializat
             </TabPanel>
         </Tabs>
         ```kotlin
-        val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
+        val biobase = createBiobaseClient(biobaseUrl, biobaseKey) {
             defaultSerializer = MoshiSerializer()
         }
         ```
@@ -358,7 +356,7 @@ By default, [KotlinX Serialization](https://github.com/Kotlin/kotlinx.serializat
             </TabPanel>
         </Tabs>
         ```kotlin
-        val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
+        val biobase = createBiobaseClient(biobaseUrl, biobaseKey) {
             defaultSerializer = JacksonSerializer()
         }
         ```
@@ -389,7 +387,7 @@ By default, [KotlinX Serialization](https://github.com/Kotlin/kotlinx.serializat
         ```
 
         ```kotlin
-        val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
+        val biobase = createBiobaseClient(biobaseUrl, biobaseKey) {
             defaultSerializer = CustomSerializer()
         }
         ```

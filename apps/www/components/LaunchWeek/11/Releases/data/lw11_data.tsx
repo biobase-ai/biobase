@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 import { products } from 'shared-data/products'
-import ProductModules from '../../../../../data/ProductModules'
 
 type StepLinkType = 'productHunt' | 'video' | 'docs' | 'xSpace' | 'blog' | 'podcast'
 
@@ -82,37 +81,37 @@ const days: (isDark?: boolean) => WeekDayProps[] = (isDark = true) => [
         icon: products.database.icon[16],
         title: 'Database',
         description: 'Fully portable Postgres Database',
-        url: 'https://biobase.studio/docs/guides/database/overview',
+        url: 'https://biobase.com/docs/guides/database/overview',
       },
       {
         icon: products.authentication.icon[16],
         title: 'Auth',
         description: 'User management out of the box',
-        url: 'https://biobase.studio/docs/guides/auth',
+        url: 'https://biobase.com/docs/guides/auth',
       },
       {
         icon: products.storage.icon[16],
         title: 'Storage',
         description: 'Serverless storage for any media',
-        url: 'https://biobase.studio/docs/guides/storage',
+        url: 'https://biobase.com/docs/guides/storage',
       },
       {
         icon: products.functions.icon[16],
         title: 'Edge Functions',
         description: 'Deploy code globally on the edge',
-        url: 'https://biobase.studio/docs/guides/functions',
+        url: 'https://biobase.com/docs/guides/functions',
       },
       {
         icon: products.realtime.icon[16],
         title: 'Realtime',
         description: 'Synchronize and broadcast events',
-        url: 'https://biobase.studio/docs/guides/realtime',
+        url: 'https://biobase.com/docs/guides/realtime',
       },
       {
-        icon: ProductModules.vector.icon[16],
+        icon: products.vector.icon[16],
         title: 'Vector',
         description: 'AI toolkit to manage embeddings',
-        url: 'https://biobase.studio/docs/guides/ai',
+        url: 'https://biobase.com/docs/guides/ai',
       },
     ],
   },

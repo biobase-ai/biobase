@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = require('config/tailwind.config')
+
+module.exports = config({
   content: [
     './_blog/*.mdx',
     './components/**/*.tsx',
@@ -9,16 +10,9 @@ module.exports = {
     './pages/**/*.{tsx,mdx}',
     './../../packages/ui/src/**/*.{tsx,ts,js}',
     './../../packages/ui-patterns/**/*.{tsx,ts,js}',
-    './styles/**/*.css',
   ],
   theme: {
     extend: {
-      colors: {
-        background: 'hsl(var(--color-background) / <alpha-value>)',
-        foreground: 'hsl(var(--color-foreground) / <alpha-value>)',
-        'background-alternative': 'hsl(var(--color-background-alternative) / <alpha-value>)',
-        'border-strong': 'hsl(var(--color-border-strong) / <alpha-value>)',
-      },
       keyframes: {
         'flash-code': {
           '0%': { backgroundColor: 'rgba(63, 207, 142, 0.1)' },
@@ -53,14 +47,6 @@ module.exports = {
           '50%': { opacity: 0.8 },
           '100%': { transform: 'scale(100%)', opacity: 0 },
         },
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
-        },
       },
       animation: {
         'flash-code': 'flash-code 1s forwards',
@@ -70,8 +56,6 @@ module.exports = {
         'marquee-vertical': 'marquee-vertical 180s linear infinite both',
         'pulse-radar': 'pulse-radar 3s linear infinite',
         'slide-in': 'slideIn 250ms ease-in both',
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
       },
       transitionDelay: {
         1200: '1200ms',
@@ -79,7 +63,4 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('tailwindcss-animate'),
-  ],
-};
+})

@@ -1,11 +1,9 @@
-import { AlertCircle, HelpCircle, RefreshCw } from 'lucide-react'
+import { AlertCircle, ExternalLink, HelpCircle, RefreshCw } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { useParams } from 'common'
-import { DocsButton } from 'components/ui/DocsButton'
 import Panel from 'components/ui/Panel'
-import { useProjectSettingsV2Query } from 'data/config/project-settings-v2-query'
+import type { ProjectApiResponse } from 'data/config/project-api-query'
 import { useCustomDomainDeleteMutation } from 'data/custom-domains/custom-domains-delete-mutation'
 import type { CustomDomainResponse } from 'data/custom-domains/custom-domains-query'
 import { useCustomDomainReverifyMutation } from 'data/custom-domains/custom-domains-reverify-mutation'
@@ -21,14 +19,13 @@ import DNSRecord from './DNSRecord'
 import { DNSTableHeaders } from './DNSTableHeaders'
 
 export type CustomDomainVerifyProps = {
+  projectRef?: string
   customDomain: CustomDomainResponse
+  settings?: ProjectApiResponse
 }
 
-const CustomDomainVerify = ({ customDomain }: CustomDomainVerifyProps) => {
-  const { ref: projectRef } = useParams()
+const CustomDomainVerify = ({ projectRef, customDomain, settings }: CustomDomainVerifyProps) => {
   const [isNotVerifiedYet, setIsNotVerifiedYet] = useState(false)
-
-  const { data: settings } = useProjectSettingsV2Query({ projectRef })
 
   const { mutate: reverifyCustomDomain, isLoading: isReverifyLoading } =
     useCustomDomainReverifyMutation({
@@ -155,7 +152,7 @@ const CustomDomainVerify = ({ customDomain }: CustomDomainVerifyProps) => {
               <DNSRecord
                 type="CNAME"
                 name={customDomain.hostname}
-                value={settings?.app_config?.endpoint ?? 'Loading...'}
+                value={settings?.autoApiService.endpoint ?? 'Loading...'}
               />
             )}
 
@@ -183,13 +180,20 @@ const CustomDomainVerify = ({ customDomain }: CustomDomainVerifyProps) => {
 
       <Panel.Content>
         <div className="flex items-center justify-between">
-          <DocsButton href="https://biobase.studio/docs/guides/platform/custom-domains" />
+          <Button asChild type="default" icon={<ExternalLink />}>
+            <Link
+              href="https://biobase.com/docs/guides/platform/custom-domains"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Documentation
+            </Link>
+          </Button>
           <div className="flex items-center space-x-2">
             <Button
               type="default"
               onClick={onCancelCustomDomain}
-              loading={isDeleting}
-              disabled={isReverifyLoading || isValidating}
+              disabled={isDeleting || isReverifyLoading || isValidating}
               className="self-end"
             >
               Cancel

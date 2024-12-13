@@ -10,10 +10,10 @@ Andrew Valleteau
 Angelico de los Reyes
 Ant Wilson
 Ariuna K
-Artur Zakirov
 Beng Eu
 Bo Lu
 Bobbie Soedirgo
+Bruno Andrade
 Carel de Waal
 Chandana Anumula
 Charis Lam
@@ -32,13 +32,11 @@ Egor Romanov
 Etienne Stalmans
 Fabrizio Fenoglio
 Francesco Sansalvadore
-Greg P
 Greg Richardson
 Guilherme Souza
 Haydn Maley
 Hieu Pham
 Inian P
-Ivan Vasilov
 Jenny Kibiri
 Jess Shears
 Joel Lee
@@ -75,7 +73,6 @@ Rory Wilding
 Sam Rose
 Sreyas Udayavarman
 Stanislav M
-Stephen Morgan
 Steve Chavez
 Stojan Dimitrovski
 Supun Sudaraka Kalidasa
@@ -83,7 +80,6 @@ Terry Sutton
 Thomas E
 Thor Schaeff
 Tom Ashley
-Tom G
 Tyler Hillery
 Tyler Fontaine
 Tyler Shukert
@@ -94,7 +90,7 @@ ____________
 
 JOBS
 
-If you are interested in working with us check out the open roles here: https://biobase.studio/careers
+If you are interested in working with us check out the open roles here: https://biobase.com/careers
 
 ___________
 
@@ -103,7 +99,7 @@ TECHNOLOGIES
 
 Biobase would not be possible without the work of some other amazing open source contributors.
 
-- Postgres - https://www.postgresql.org/
+- Postgres - https://www.postgresql.org/docs/devel/git.html
 - PostgREST - https://github.com/PostgREST
 - Kong - https://github.com/kong/
 - Next.js - https://nextjs.org/

@@ -20,7 +20,6 @@ import {
   Switch,
 } from 'ui'
 import { RealtimeConfig } from '../useRealtimeMessages'
-import { DocsButton } from 'components/ui/DocsButton'
 
 interface ChooseChannelPopoverProps {
   config: RealtimeConfig
@@ -120,7 +119,7 @@ export const ChooseChannelPopover = ({ config, onChangeConfig }: ChooseChannelPo
                             target="_blank"
                             rel="noreferrer"
                             className="underline hover:text-foreground transition"
-                            href="https://biobase.studio/docs/guides/realtime/concepts#channels"
+                            href="https://biobase.com/docs/guides/realtime/concepts#channels"
                           >
                             our docs
                           </a>
@@ -155,11 +154,15 @@ export const ChooseChannelPopover = ({ config, onChangeConfig }: ChooseChannelPo
                     )}
                   />
 
-                  <DocsButton
-                    abbrev={false}
-                    className="w-min"
-                    href="https://biobase.studio/docs/guides/realtime/authorization"
-                  />
+                  <Button asChild type="default" className="w-min" icon={<ExternalLink />}>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://biobase.com/docs/guides/realtime/authorization"
+                    >
+                      Documentation
+                    </a>
+                  </Button>
                 </form>
               </Form_Shadcn_>
             </>

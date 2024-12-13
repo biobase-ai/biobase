@@ -6,7 +6,7 @@ import type { ResponseError } from 'types'
 import { replicaKeys } from './keys'
 
 // [Joshen] Is it possible to import this from the code gen?
-// https://github.com/biobase-ai/infrastructure/blob/develop/api/src/routes/platform/projects/ref/databases-statuses.dto.ts#L7
+// https://github.com/biobase/infrastructure/blob/develop/api/src/routes/platform/projects/ref/databases-statuses.dto.ts#L7
 export enum ReplicaInitializationStatus {
   'InProgress' = 'in_progress',
   'Completed' = 'completed',

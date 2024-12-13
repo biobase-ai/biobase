@@ -21,7 +21,7 @@ import { loader } from '@monaco-editor/react'
 import { TooltipProvider } from '@radix-ui/react-tooltip'
 import * as Sentry from '@sentry/nextjs'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Hydrate, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { ThemeProvider, useThemeSandbox } from 'common'
@@ -31,8 +31,9 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
 import Head from 'next/head'
-import { ErrorInfo, useMemo, useState } from 'react'
+import { ErrorInfo, useEffect, useMemo, useRef, useState } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
+import { toast } from 'sonner'
 
 import MetaFaviconsPagesRouter from 'common/MetaFavicons/pages-router'
 import { AppBannerWrapper, RouteValidationWrapper } from 'components/interfaces/App'
@@ -46,12 +47,14 @@ import FlagProvider from 'components/ui/Flag/FlagProvider'
 import PageTelemetry from 'components/ui/PageTelemetry'
 import { useRootQueryClient } from 'data/query-client'
 import { AuthProvider } from 'lib/auth'
-import { BASE_PATH, IS_PLATFORM } from 'lib/constants'
+import { BASE_PATH, IS_PLATFORM, LOCAL_STORAGE_KEYS } from 'lib/constants'
 import { ProfileProvider } from 'lib/profile'
+import { useAppStateSnapshot } from 'state/app-state'
 import HCaptchaLoadedStore from 'stores/hcaptcha-loaded-store'
 import { AppPropsWithLayout } from 'types'
 import { SonnerToaster } from 'ui'
 import { CommandProvider } from 'ui-patterns/CommandMenu'
+import { ConsentToast } from 'ui-patterns/ConsentToast'
 
 dayjs.extend(customParseFormat)
 dayjs.extend(utc)
@@ -77,14 +80,16 @@ loader.config({
 // the dashboard, all other layout components should not be doing that
 
 function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
+  const snap = useAppStateSnapshot()
   const queryClient = useRootQueryClient()
+  const consentToastId = useRef<string | number>()
 
-  // [Joshen] Some issues with using createBrowserSupabaseClient
+  // [Joshen] Some issues with using createBrowserBiobaseClient
   const [biobase] = useState(() =>
     IS_PLATFORM
       ? createClient(
-          process.env.NEXT_PUBLIC_BIOBASE_URL as string,
-          process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY as string
+          process.env.NEXT_PUBLIC_SUPABASE_URL as string,
+          process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
         )
       : undefined
   )
@@ -105,14 +110,6 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
     [biobase]
   )
 
-  const TelemetryContainer = useMemo(
-    // eslint-disable-next-line react/display-name
-    () => (props: any) => {
-      return IS_PLATFORM ? <PageTelemetry>{props.children}</PageTelemetry> : <>{props.children}</>
-    },
-    []
-  )
-
   const errorBoundaryHandler = (error: Error, info: ErrorInfo) => {
     Sentry.withScope(function (scope) {
       scope.setTag('globalErrorBoundary', true)
@@ -121,6 +118,36 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
 
     console.error(error.stack)
   }
+
+  useEffect(() => {
+    // Check for telemetry consent
+    if (typeof window !== 'undefined') {
+      const onAcceptConsent = () => {
+        snap.setIsOptedInTelemetry(true)
+        if (consentToastId.current) toast.dismiss(consentToastId.current)
+      }
+
+      const onOptOut = () => {
+        snap.setIsOptedInTelemetry(false)
+        if (consentToastId.current) toast.dismiss(consentToastId.current)
+      }
+
+      const hasAcknowledgedConsent = localStorage.getItem(LOCAL_STORAGE_KEYS.TELEMETRY_CONSENT)
+      if (IS_PLATFORM && hasAcknowledgedConsent === null) {
+        setTimeout(() => {
+          consentToastId.current = toast(
+            <ConsentToast onAccept={onAcceptConsent} onOptOut={onOptOut} />,
+            {
+              id: 'consent-toast',
+              position: 'bottom-right',
+              duration: Infinity,
+            }
+          )
+        }, 300)
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useThemeSandbox()
 
@@ -138,7 +165,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
                   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 </Head>
                 <MetaFaviconsPagesRouter applicationName="Biobase Studio" />
-                <TelemetryContainer>
+                <PageTelemetry>
                   <TooltipProvider>
                     <RouteValidationWrapper>
                       <ThemeProvider
@@ -163,7 +190,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
                       </ThemeProvider>
                     </RouteValidationWrapper>
                   </TooltipProvider>
-                </TelemetryContainer>
+                </PageTelemetry>
 
                 {!isTestEnv && <HCaptchaLoadedStore />}
                 {!isTestEnv && <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />}

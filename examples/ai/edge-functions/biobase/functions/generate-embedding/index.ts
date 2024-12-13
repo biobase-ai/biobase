@@ -1,6 +1,6 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
-import { createClient } from "jsr:@supabase/supabase-js@2";
+import { createClient } from "jsr:@supabase/biobase-js@2";
 import { Database, Tables } from "../_shared/database.types.ts";
 
 type EmbeddingsRecord = Tables<"embeddings">;
@@ -13,8 +13,8 @@ interface WebhookPayload {
 }
 
 const biobase = createClient<Database>(
-  Deno.env.get("BIOBASE_URL")!,
-  Deno.env.get("BIOBASE_SERVICE_ROLE_KEY")!,
+  Deno.env.get("SUPABASE_URL")!,
+  Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
 );
 
 const model = new Biobase.ai.Session("gte-small");

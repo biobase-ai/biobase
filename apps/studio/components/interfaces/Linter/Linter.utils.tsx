@@ -14,7 +14,7 @@ export const lintInfoMap: LintInfo[] = [
       `/project/${projectRef}/database/indexes?schema=${metadata?.schema}`,
     linkText: 'Create an index',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0001_unindexed_foreign_keys',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0001_unindexed_foreign_keys',
   },
   {
     name: 'auth_users_exposed',
@@ -23,7 +23,7 @@ export const lintInfoMap: LintInfo[] = [
     link: ({ projectRef }) => `/project/${projectRef}/editor`,
     linkText: 'View table',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0002_auth_users_exposed',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0002_auth_users_exposed',
   },
   {
     name: 'auth_rls_initplan',
@@ -32,7 +32,7 @@ export const lintInfoMap: LintInfo[] = [
     link: ({ projectRef }) => `/project/${projectRef}/auth/policies`,
     linkText: 'View policies',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0003_auth_rls_initplan',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0003_auth_rls_initplan',
   },
   {
     name: 'no_primary_key',
@@ -41,7 +41,7 @@ export const lintInfoMap: LintInfo[] = [
     link: ({ projectRef }) => `/project/${projectRef}/editor`,
     linkText: 'View table',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0004_no_primary_key',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0004_no_primary_key',
   },
   {
     name: 'unused_index',
@@ -51,7 +51,7 @@ export const lintInfoMap: LintInfo[] = [
       `/project/${projectRef}/database/indexes?schema=${metadata?.schema}&table=${metadata?.name}`,
     linkText: 'View index',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0005_unused_index',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0005_unused_index',
   },
   {
     name: 'multiple_permissive_policies',
@@ -61,7 +61,7 @@ export const lintInfoMap: LintInfo[] = [
       `/project/${projectRef}/auth/policies?schema=${metadata?.schema}&search=${metadata?.name}`,
     linkText: 'View policies',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0006_multiple_permissive_policies',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0006_multiple_permissive_policies',
   },
   {
     name: 'policy_exists_rls_disabled',
@@ -71,7 +71,7 @@ export const lintInfoMap: LintInfo[] = [
       `/project/${projectRef}/auth/policies?schema=${metadata?.schema}&search=${metadata?.name}`,
     linkText: 'View policies',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0007_policy_exists_rls_disabled',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0007_policy_exists_rls_disabled',
   },
   {
     name: 'rls_enabled_no_policy',
@@ -81,7 +81,7 @@ export const lintInfoMap: LintInfo[] = [
       `/project/${projectRef}/auth/policies?schema=${metadata?.schema}&search=${metadata?.name}`,
     linkText: 'View table',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0008_rls_enabled_no_policy',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0008_rls_enabled_no_policy',
   },
   {
     name: 'duplicate_index',
@@ -91,17 +91,17 @@ export const lintInfoMap: LintInfo[] = [
       `/project/${projectRef}/database/indexes?schema=${metadata?.schema}&table=${metadata?.name}`,
     linkText: 'View index',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0009_duplicate_index',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0009_duplicate_index',
   },
   {
     name: 'security_definer_view',
     title: 'Security Definer View',
     icon: <Eye className="text-foreground-muted" size={15} strokeWidth={1.5} />,
     link: () =>
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0010_security_definer_view',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0010_security_definer_view',
     linkText: 'View docs',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0010_security_definer_view',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0010_security_definer_view',
   },
   {
     name: 'function_search_path_mutable',
@@ -111,7 +111,7 @@ export const lintInfoMap: LintInfo[] = [
       `/project/${projectRef}/database/functions?schema=${metadata?.schema}&search=${metadata?.name}`,
     linkText: 'View functions',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0011_function_search_path_mutable',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0011_function_search_path_mutable',
   },
   {
     name: 'rls_disabled_in_public',
@@ -121,7 +121,7 @@ export const lintInfoMap: LintInfo[] = [
       `/project/${projectRef}/auth/policies?schema=${metadata?.schema}&search=${metadata?.name}`,
     linkText: 'View policies',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0013_rls_disabled_in_public',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0013_rls_disabled_in_public',
   },
   {
     name: 'extension_in_public',
@@ -131,7 +131,7 @@ export const lintInfoMap: LintInfo[] = [
       `/project/${projectRef}/database/extensions?filter=${metadata?.name}`,
     linkText: 'View extension',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0014_extension_in_public',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0014_extension_in_public',
   },
   {
     name: 'auth_otp_long_expiry',
@@ -139,7 +139,7 @@ export const lintInfoMap: LintInfo[] = [
     icon: <Clock className="text-foreground-muted" size={15} strokeWidth={1} />,
     link: ({ projectRef }) => `/project/${projectRef}/auth/providers`,
     linkText: 'View settings',
-    docsLink: 'https://biobase.studio/docs/guides/platform/going-into-prod#security',
+    docsLink: 'https://biobase.com/docs/guides/platform/going-into-prod#security',
   },
   {
     name: 'auth_otp_short_length',
@@ -147,7 +147,7 @@ export const lintInfoMap: LintInfo[] = [
     icon: <Ruler className="text-foreground-muted" size={15} strokeWidth={1} />,
     link: ({ projectRef }) => `/project/${projectRef}/auth/providers`,
     linkText: 'View settings',
-    docsLink: 'https://biobase.studio/docs/guides/platform/going-into-prod#security',
+    docsLink: 'https://biobase.com/docs/guides/platform/going-into-prod#security',
   },
   {
     name: 'rls_references_user_metadata',
@@ -156,37 +156,37 @@ export const lintInfoMap: LintInfo[] = [
     link: ({ projectRef }) => `/project/${projectRef}/auth/policies`,
     linkText: 'View policies',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?queryGroups=lint&lint=0015_rls_references_user_metadata',
+      'https://biobase.com/docs/guides/database/database-linter?queryGroups=lint&lint=0015_rls_references_user_metadata',
   },
   {
     name: 'materialized_view_in_api',
     title: 'Materialized View in API',
     icon: <Eye className="text-foreground-muted" size={15} strokeWidth={1.5} />,
     link: () =>
-      `https://biobase.studio/docs/guides/database/database-advisors?lint=0016_materialized_view_in_api`,
+      `https://biobase.com/docs/guides/database/database-advisors?lint=0016_materialized_view_in_api`,
     linkText: 'View docs',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-advisors?lint=0016_materialized_view_in_api',
+      'https://biobase.com/docs/guides/database/database-advisors?lint=0016_materialized_view_in_api',
   },
   {
     name: 'foreign_table_in_api',
     title: 'Foreign Table in API',
     icon: <Table2 className="text-foreground-muted" size={15} strokeWidth={1.5} />,
     link: () =>
-      `https://biobase.studio/docs/guides/database/database-linter?lint=0017_foreign_table_in_api`,
+      `https://biobase.com/docs/guides/database/database-linter?lint=0017_foreign_table_in_api`,
     linkText: 'View docs',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-linter?lint=0017_foreign_table_in_api',
+      'https://biobase.com/docs/guides/database/database-linter?lint=0017_foreign_table_in_api',
   },
   {
     name: 'unsupported_reg_types',
     title: 'Unsupported reg types',
     icon: <Table2 className="text-foreground-muted" size={15} strokeWidth={1.5} />,
     link: () =>
-      `https://biobase.studio/docs/guides/database/database-advisors?lint=0018_unsupported_reg_types&queryGroups=lint`,
+      `https://biobase.com/docs/guides/database/database-advisors?lint=0018_unsupported_reg_types&queryGroups=lint`,
     linkText: 'View docs',
     docsLink:
-      'https://biobase.studio/docs/guides/database/database-advisors?lint=0018_unsupported_reg_types&queryGroups=lint',
+      'https://biobase.com/docs/guides/database/database-advisors?lint=0018_unsupported_reg_types&queryGroups=lint',
   },
 ]
 

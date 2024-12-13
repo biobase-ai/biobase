@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AlertDescription_Shadcn_, AlertTitle_Shadcn_, Alert_Shadcn_, Button, Modal } from 'ui'
 
-import { PROTECTED_SCHEMAS } from 'lib/constants/schemas'
+import { EXCLUDED_SCHEMAS } from 'lib/constants/schemas'
 import { AlertCircle } from 'lucide-react'
 
 export const ProtectedSchemaModal = ({
@@ -31,7 +31,7 @@ export const ProtectedSchemaModal = ({
           access through the dashboard.
         </p>
         <div className="flex flex-wrap gap-1">
-          {PROTECTED_SCHEMAS.map((schema) => (
+          {EXCLUDED_SCHEMAS.map((schema) => (
             <code key={schema} className="text-xs">
               {schema}
             </code>

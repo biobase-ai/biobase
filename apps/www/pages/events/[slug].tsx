@@ -49,7 +49,6 @@ type CTA = {
   url: string
   label?: string
   disabled_label?: string
-  disabled?: boolean
   target?: '_blank' | '_self'
 }
 
@@ -170,7 +169,7 @@ const EventPage = ({ event }: InferGetStaticPropsType<typeof getStaticProps>) =>
         hadEndDate ? `DD` : `DD MMM YYYY`
       )}${hadEndDate ? dayjs(event.end_date).tz(event.timezone).format(` - DD MMM`) : ''} | ${capitalize(event.type)}`,
     description: event.meta_description ?? event.description,
-    url: `https://biobase.studio/events/${event.slug}`,
+    url: `https://biobase.com/events/${event.slug}`,
     image: ogImageUrl,
   }
 
@@ -195,7 +194,7 @@ const EventPage = ({ event }: InferGetStaticPropsType<typeof getStaticProps>) =>
     ? location.origin
     : process.env.VERCEL_URL
       ? process.env.VERCEL_URL
-      : 'https://biobase.studio'
+      : 'https://biobase.com'
 
   return (
     <>
@@ -290,9 +289,7 @@ const EventPage = ({ event }: InferGetStaticPropsType<typeof getStaticProps>) =>
                     type="primary"
                     size="medium"
                     className="mt-2"
-                    disabled={
-                      !IS_REGISTRATION_OPEN || event.main_cta?.disabled || event.main_cta?.disabled
-                    }
+                    disabled={!IS_REGISTRATION_OPEN}
                     asChild
                   >
                     <Link
@@ -384,7 +381,7 @@ const EventPage = ({ event }: InferGetStaticPropsType<typeof getStaticProps>) =>
                   type="primary"
                   size="medium"
                   className="mt-2"
-                  disabled={!IS_REGISTRATION_OPEN || event.main_cta?.disabled}
+                  disabled={!IS_REGISTRATION_OPEN}
                   asChild
                 >
                   <Link

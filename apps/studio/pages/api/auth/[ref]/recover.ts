@@ -24,9 +24,9 @@ const handlePost = async (req: NextApiRequest, res: NextApiResponse) => {
   const headers = constructHeaders({
     'Content-Type': 'application/json',
     Accept: 'application/json',
-    Authorization: `Bearer ${process.env.BIOBASE_SERVICE_KEY}`,
+    Authorization: `Bearer ${process.env.SUPABASE_SERVICE_KEY}`,
   })
-  const url = `${process.env.BIOBASE_URL}/auth/v1/recover`
+  const url = `${process.env.SUPABASE_URL}/auth/v1/recover`
   const payload = { email: req.body.email }
   const response = await post(url, payload, { headers })
   return res.status(200).json(response)

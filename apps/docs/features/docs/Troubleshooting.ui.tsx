@@ -2,20 +2,12 @@ import { Wrench } from 'lucide-react'
 import Link from 'next/link'
 import { type PropsWithChildren, useCallback } from 'react'
 
-import {
-  type ITroubleshootingEntry,
-  getArticleSlug,
-  getTroubleshootingUpdatedDates,
-} from './Troubleshooting.utils'
+import { type ITroubleshootingEntry, getArticleSlug } from './Troubleshooting.utils'
 import { TroubleshootingFilter } from './Troubleshooting.ui.client'
 import { formatError, TROUBLESHOOTING_DATA_ATTRIBUTES } from './Troubleshooting.utils.shared'
 import { cn } from 'ui'
 
-export async function TroubleshootingPreview({ entry }: { entry: ITroubleshootingEntry }) {
-  const dateUpdated = entry.data.database_id.startsWith('pseudo-')
-    ? new Date()
-    : (await getTroubleshootingUpdatedDates()).get(entry.data.database_id)
-
+export function TroubleshootingPreview({ entry }: { entry: ITroubleshootingEntry }) {
   const keywords = [...entry.data.topics, ...(entry.data.keywords ?? [])]
   const attributes = {
     [TROUBLESHOOTING_DATA_ATTRIBUTES.QUERY_ATTRIBUTE]:
@@ -34,9 +26,9 @@ export async function TroubleshootingPreview({ entry }: { entry: ITroubleshootin
       {...attributes}
     >
       <div className="flex flex-wrap items-start gap-x-2 gap-y-4 justify-between">
-        <div className="max-w-[60%] flex flex-col gap-2">
+        <div className="w-full flex flex-col gap-2">
           <Link
-            href={`/guides/troubleshooting/${getArticleSlug(entry)}`}
+            href={`/guides/troubleshooting/${getArticleSlug(entry.data)}`}
             className={cn('visited:text-foreground-lighter', 'before:absolute before:inset-0')}
           >
             <h3
@@ -48,15 +40,12 @@ export async function TroubleshootingPreview({ entry }: { entry: ITroubleshootin
           </Link>
           {entry.data.errors?.length > 0 && (
             <span className="text-xs text-foreground-lighter">
-              {entry.data.errors
-                .map(formatError)
-                .filter(Boolean)
-                .map((error, index) => (
-                  <>
-                    <code key={index}>{error}</code>
-                    {index < entry.data.errors.length - 1 ? ', ' : ''}
-                  </>
-                ))}
+              {entry.data.errors.map((error, index) => (
+                <>
+                  <code key={index}>{formatError(error)}</code>
+                  {index < entry.data.errors.length - 1 && ', '}
+                </>
+              ))}
             </span>
           )}
         </div>
@@ -69,13 +58,14 @@ export async function TroubleshootingPreview({ entry }: { entry: ITroubleshootin
             ))}
           </div>
           <div className="basis-l8 flex-shrink-0 flex-grow-0 truncate text-sm text-foreground-lighter">
-            {dateUpdated &&
+            {entry.data.updated_at &&
               (() => {
+                const date = new Date(entry.data.updated_at)
                 const options = { month: 'short', day: 'numeric' } as Intl.DateTimeFormatOptions
-                if (dateUpdated.getFullYear() !== new Date().getFullYear()) {
+                if (date.getFullYear() !== new Date().getFullYear()) {
                   options.year = 'numeric'
                 }
-                return dateUpdated.toLocaleDateString(undefined, options)
+                return date.toLocaleDateString(undefined, options)
               })()}
           </div>
         </div>

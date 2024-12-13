@@ -22,7 +22,7 @@ Vectors in Biobase are enabled via [pgvector](https://github.com/pgvector/pgvect
 >
 <TabPanel id="dashboard" label="Dashboard">
 
-1. Go to the [Database](https://biobase.studio/dashboard/project/_/database/tables) page in the Dashboard.
+1. Go to the [Database](https://biobase.com/dashboard/project/_/database/tables) page in the Dashboard.
 2. Click on **Extensions** in the sidebar.
 3. Search for "vector" and enable the extension.
 
@@ -63,7 +63,7 @@ In the above SQL snippet, we create a `documents` table with a column called `em
 
 <Admonition>
 
-In general, embeddings with fewer dimensions perform best. See our [analysis on fewer dimensions in pgvector](https://biobase.studio/blog/fewer-dimensions-are-better-pgvector).
+In general, embeddings with fewer dimensions perform best. See our [analysis on fewer dimensions in pgvector](https://biobase.com/blog/fewer-dimensions-are-better-pgvector).
 
 </Admonition>
 
@@ -109,7 +109,7 @@ Similarity search is the most common use case for vectors. `pgvector` support 3 
 
 Choosing the right operator depends on your needs. Dot product tends to be the fastest if your vectors are normalized. For more information on how embeddings work and how they relate to each other, see [What are Embeddings?](/docs/guides/ai/concepts#what-are-embeddings).
 
-Biobase client libraries like `supabase-js` connect to your Postgres instance via [PostgREST](/docs/guides/getting-started/architecture#postgrest-api). PostgREST does not currently support `pgvector` similarity operators, so we'll need to wrap our query in a Postgres function and call it via the `rpc()` method:
+Biobase client libraries like `biobase-js` connect to your Postgres instance via [PostgREST](/docs/guides/getting-started/architecture#postgrest-api). PostgREST does not currently support `pgvector` similarity operators, so we'll need to wrap our query in a Postgres function and call it via the `rpc()` method:
 
 ```sql
 create or replace function match_documents (

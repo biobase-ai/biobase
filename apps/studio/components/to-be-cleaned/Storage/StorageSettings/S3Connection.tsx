@@ -12,7 +12,7 @@ import Table from 'components/to-be-cleaned/Table'
 import { FormHeader } from 'components/ui/Forms/FormHeader'
 import NoPermission from 'components/ui/NoPermission'
 import Panel from 'components/ui/Panel'
-import { useProjectSettingsV2Query } from 'data/config/project-settings-v2-query'
+import { useProjectApiQuery } from 'data/config/project-api-query'
 import { useStorageCredentialsQuery } from 'data/storage/s3-access-key-query'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
 import { AlertDescription_Shadcn_, Alert_Shadcn_, Button, WarningIcon } from 'ui'
@@ -33,18 +33,16 @@ export const S3Connection = () => {
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false)
   const [deleteCred, setDeleteCred] = useState<{ id: string; description: string }>()
 
-  const canReadS3Credentials = useCheckPermissions(PermissionAction.STORAGE_ADMIN_READ, '*')
+  const canReadS3Credentials = useCheckPermissions(PermissionAction.STORAGE_ADMIN_WRITE, '*')
 
-  const { data: settings } = useProjectSettingsV2Query({ projectRef })
+  const { data: projectAPI } = useProjectApiQuery({ projectRef: projectRef })
   const { data: storageCreds, ...storageCredsQuery } = useStorageCredentialsQuery(
     { projectRef },
     { enabled: canReadS3Credentials }
   )
 
-  const protocol = settings?.app_config?.protocol ?? 'https'
-  const endpoint = settings?.app_config?.endpoint
   const hasStorageCreds = storageCreds?.data && storageCreds.data.length > 0
-  const s3connectionUrl = getConnectionURL(projectRef ?? '', protocol, endpoint)
+  const s3connectionUrl = getConnectionURL(projectRef ?? '', projectAPI)
 
   return (
     <>
@@ -52,7 +50,7 @@ export const S3Connection = () => {
         <FormHeader
           title="S3 Connection"
           description="Connect to your bucket via the S3 protocol."
-          docsUrl="https://biobase.studio/docs/guides/storage/s3/authentication"
+          docsUrl="https://biobase.com/docs/guides/storage/s3/authentication"
         />
         {projectIsLoading ? (
           <GenericSkeletonLoader />

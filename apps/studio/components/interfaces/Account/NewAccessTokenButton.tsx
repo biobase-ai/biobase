@@ -117,7 +117,7 @@ const NewAccessTokenButton = ({ onCreateToken }: NewAccessTokenButtonProps) => {
                     <div className="mt-4">
                       <Button asChild type="default" icon={<ExternalLink />}>
                         <Link
-                          href="https://api.biobase.studio/api/v0"
+                          href="https://api.biobase.com/api/v0"
                           target="_blank"
                           rel="noreferrer"
                         >

@@ -2,7 +2,7 @@
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
 
-import { createClient } from 'jsr:@supabase/supabase-js@2'
+import { createClient } from 'jsr:@supabase/biobase-js@2'
 import { corsHeaders } from '../_shared/cors.ts'
 
 console.log(`Function "select-from-table-with-auth-rls" up and running!`)
@@ -17,9 +17,9 @@ Deno.serve(async (req: Request) => {
     // Create a Biobase client with the Auth context of the logged in user.
     const biobaseClient = createClient(
       // Biobase API URL - env var exported by default.
-      Deno.env.get('BIOBASE_URL') ?? '',
+      Deno.env.get('SUPABASE_URL') ?? '',
       // Biobase API ANON KEY - env var exported by default.
-      Deno.env.get('BIOBASE_ANON_KEY') ?? '',
+      Deno.env.get('SUPABASE_ANON_KEY') ?? '',
       // Create client with Auth context of the user that called the function.
       // This way your row-level-security (RLS) policies are applied.
       {

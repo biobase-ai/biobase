@@ -1,7 +1,6 @@
 import * as Tooltip from '@radix-ui/react-tooltip'
-import { AlertTriangle, BarChart2 } from 'lucide-react'
+import clsx from 'clsx'
 import Link from 'next/link'
-import { useMemo } from 'react'
 
 import AlertError from 'components/ui/AlertError'
 import Panel from 'components/ui/Panel'
@@ -10,8 +9,9 @@ import SparkBar from 'components/ui/SparkBar'
 import type { OrgSubscription } from 'data/subscriptions/types'
 import type { OrgMetricsUsage, OrgUsageResponse } from 'data/usage/org-usage-query'
 import { USAGE_APPROACHING_THRESHOLD } from 'lib/constants'
+import { useMemo } from 'react'
 import type { ResponseError } from 'types'
-import { Button, cn } from 'ui'
+import { Button } from 'ui'
 import SectionContent from '../SectionContent'
 import { CategoryAttribute } from '../Usage.constants'
 import {
@@ -21,6 +21,7 @@ import {
 } from '../Usage.utils'
 import UsageBarChart from '../UsageBarChart'
 import { ChartMeta } from './UsageSection'
+import { AlertTriangle, BarChart2 } from 'lucide-react'
 
 export interface AttributeUsageProps {
   slug: string
@@ -153,7 +154,7 @@ const AttributeUsage = ({
                     {currentBillingCycleSelected && usageMeta && !usageMeta.unlimited && (
                       <SparkBar
                         type="horizontal"
-                        barClass={cn(
+                        barClass={clsx(
                           usageRatio >= 1
                             ? usageBasedBilling
                               ? 'bg-foreground-light'
@@ -173,7 +174,7 @@ const AttributeUsage = ({
                       {usageMeta && (
                         <div className="flex items-center justify-between border-b py-1">
                           <p className="text-xs text-foreground-light">
-                            Included in {subscription?.plan?.name} Plan
+                            Included in {subscription?.plan?.name.toLowerCase()} plan
                           </p>
                           {usageMeta.unlimited ? (
                             <p className="text-xs">Unlimited</p>

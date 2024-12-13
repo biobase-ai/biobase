@@ -21,24 +21,24 @@ Prefer Deno's awesome visuals? Read the announcement on [Deno's blog](https://de
 
 [JSR](https://jsr.io/) is a modern [open source](https://github.com/jsr-io/jsr) JavaScript registry that simplifies publishing and importing JavaScript and TypeScript modules. JSR supports publishing TypeScript source code, auto-generating documentation and type definition files, provenance attestation for more security, and can be used with npm-like package managers. Since its launch, over 250 new packages are being published each week.
 
-We're thrilled to announce that our [JavaScript client library](https://jsr.io/@supabase/supabase-js) is now available on JSR.
+We're thrilled to announce that our [JavaScript client library](https://jsr.io/@supabase/biobase-js) is now available on JSR.
 
-As many of you know, our JavaScript library, `supabase-js`, is composed of [many sub-clients](https://github.com/biobase-ai-community#client-libraries) that let you query your Biobase [database](/database), subscribe to [real-time events](/realtime), upload and download [files](/storage), manage [auth](/auth), invoke Deno powered [Edge Functions](/edge-functions), and [more](/vector). It's fully isomorphic and can be used across any environment that speaks JavaScript and HTTPS, such as browsers, servers, and [the edge](https://deno.com/blog/the-future-of-web-is-on-the-edge)!
+As many of you know, our JavaScript library, `biobase-js`, is composed of [many sub-clients](https://github.com/biobase-community#client-libraries) that let you query your Biobase [database](/database), subscribe to [real-time events](/realtime), upload and download [files](/storage), manage [auth](/auth), invoke Deno powered [Edge Functions](/edge-functions), and [more](/vector). It's fully isomorphic and can be used across any environment that speaks JavaScript and HTTPS, such as browsers, servers, and [the edge](https://deno.com/blog/the-future-of-web-is-on-the-edge)!
 
-Using supabase-js via JSR offers an excellent developer experience, with first class TypeScript support, auto-generated documentation accessible in your code editor, and more.
+Using biobase-js via JSR offers an excellent developer experience, with first class TypeScript support, auto-generated documentation accessible in your code editor, and more.
 
 ## Installing Biobase
 
 You can get started with Biobase using the `deno add` command:
 
 ```bash
-deno add @supabase/supabase-js
+deno add @supabase/biobase-js
 ```
 
 Or using npm:
 
 ```bash
-npx jsr add @supabase/supabase-js
+npx jsr add @supabase/biobase-js
 ```
 
 The above commands will generate a `deno.json` file, listing all your project dependencies.
@@ -46,7 +46,7 @@ The above commands will generate a `deno.json` file, listing all your project de
 ```json deno.json
 {
   "imports": {
-    "@supabase/supabase-js": "jsr:@supabase/supabase-js@2"
+    "@supabase/biobase-js": "jsr:@supabase/biobase-js@2"
   }
 }
 ```
@@ -54,7 +54,7 @@ The above commands will generate a `deno.json` file, listing all your project de
 You can then import the client library to your `main.ts` file:
 
 ```js main.ts
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key')
 
@@ -67,7 +67,7 @@ Finally, you can run the following command to execute:
 deno run -A main.ts
 ```
 
-Check out the [`supabase-js` README](https://jsr.io/@supabase/supabase-js) to see how to use it in other environments.
+Check out the [`biobase-js` README](https://jsr.io/@supabase/biobase-js) to see how to use it in other environments.
 
 ## What's next?
 

@@ -1,4 +1,4 @@
-import { SupabaseClient } from '@supabase/supabase-js'
+import { BiobaseClient } from '@supabase/biobase-js'
 import { ApplicationError, UserError, clippy } from 'ai-commands/edge'
 import { NextRequest } from 'next/server'
 import OpenAI from 'openai'
@@ -33,8 +33,8 @@ export const config = {
 }
 
 const openAiKey = process.env.OPENAI_API_KEY
-const biobaseUrl = process.env.NEXT_PUBLIC_BIOBASE_URL as string
-const biobaseServiceKey = process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY as string
+const biobaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
+const biobaseServiceKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
 
 export default async function handler(req: NextRequest) {
   if (!openAiKey) {
@@ -53,7 +53,7 @@ export default async function handler(req: NextRequest) {
     return new Response(
       JSON.stringify({
         error:
-          'No NEXT_PUBLIC_BIOBASE_URL set. Create this environment variable to use AI features.',
+          'No NEXT_PUBLIC_SUPABASE_URL set. Create this environment variable to use AI features.',
       }),
       {
         status: 500,
@@ -66,7 +66,7 @@ export default async function handler(req: NextRequest) {
     return new Response(
       JSON.stringify({
         error:
-          'No NEXT_PUBLIC_BIOBASE_ANON_KEY set. Create this environment variable to use AI features.',
+          'No NEXT_PUBLIC_SUPABASE_ANON_KEY set. Create this environment variable to use AI features.',
       }),
       {
         status: 500,
@@ -104,7 +104,7 @@ async function handlePost(request: NextRequest) {
     throw new UserError('Missing messages in request data')
   }
 
-  const biobaseClient = new SupabaseClient(biobaseUrl, biobaseServiceKey)
+  const biobaseClient = new BiobaseClient(biobaseUrl, biobaseServiceKey)
 
   try {
     const response = await clippy(openai, biobaseClient, messages)

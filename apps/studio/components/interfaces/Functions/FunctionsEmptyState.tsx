@@ -1,6 +1,6 @@
-import { ExternalLink } from 'lucide-react'
+import { Code, ExternalLink } from 'lucide-react'
+import Link from 'next/link'
 
-import { DocsButton } from 'components/ui/DocsButton'
 import { Button } from 'ui'
 import TerminalInstructions from './TerminalInstructions'
 
@@ -17,16 +17,24 @@ const FunctionsEmptyState = () => {
             close to your users. They can be used for listening to webhooks or integrating your
             Biobase project with third-parties.
           </p>
-          <div className="flex gap-x-2">
-            <DocsButton href="https://biobase.studio/docs/guides/functions" />
+          <div className="flex gap-2">
             <Button asChild type="default" icon={<ExternalLink />}>
-              <a
+              <Link
+                href="https://biobase.com/docs/guides/functions"
                 target="_blank"
                 rel="noreferrer"
+              >
+                Documentation
+              </Link>
+            </Button>
+            <Button asChild type="default" icon={<Code />}>
+              <Link
                 href="https://github.com/biobase-ai/biobase/tree/master/examples/edge-functions/biobase/functions"
+                target="_blank"
+                rel="noreferrer"
               >
                 Examples
-              </a>
+              </Link>
             </Button>
           </div>
         </div>

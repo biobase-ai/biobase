@@ -352,7 +352,7 @@ const Performance = () => {
               </a>{' '}
               to handle our{' '}
               <a
-                href="https://github.com/biobase-ai/realtime"
+                href="https://github.com/biobase/realtime"
                 target="_blank"
                 className="text-brand hover:text-brand"
               >
@@ -372,7 +372,7 @@ const Performance = () => {
               We're publishing the results of our benchmarks here and we'll continue to seek gains
               throughout our Beta program and beyond. Our{' '}
               <a
-                href="https://github.com/biobase-ai/benchmarks/"
+                href="https://github.com/biobase/benchmarks/"
                 target="_blank"
                 className="text-brand hover:text-brand"
               >
@@ -500,11 +500,11 @@ const Reliability = () => {
             <p className="mb-10">
               We're launching{' '}
               <a
-                href="https://status.biobase.studio"
+                href="https://status.biobase.com"
                 target="_blank"
                 className="text-brand hover:text-brand"
               >
-                https://status.biobase.studio
+                https://status.biobase.com
               </a>{' '}
               to keep track of uptime across all of our services and critical infrastructure.
             </p>
@@ -643,7 +643,7 @@ const BetaPricing = () => (
 
       <div className="grid grid-cols-12 col-span-12 mb-10 text-foreground gap-x-2 lg:gap-x-8">
         <div className="col-span-12 text-base sm:col-span-9 xl:col-span-7">
-          <p className="mb-10">For up to date pricing info see: https://biobase.studio/pricing</p>
+          <p className="mb-10">For up to date pricing info see: https://biobase.com/pricing</p>
           <p className="mb-10">
             We're working closely with many open source projects, infrastructure providers, and of
             course our Alpha Users, to provide a predictable and sustainable pricing model.
@@ -678,11 +678,11 @@ const BetaPricing = () => (
               University (and participating code school) Students will be eligible for 2 years of
               base plan usage (Code Schools can contact{' '}
               <a
-                href="mailto:rory@supabase.io"
+                href="mailto:rory@biobase.io"
                 target="_blank"
                 className="text-brand hover:text-brand"
               >
-                rory@supabase.io
+                rory@biobase.io
               </a>
               )
             </li>
@@ -693,7 +693,7 @@ const BetaPricing = () => (
           </ul>
           <p>
             The Biobase Base plan is now called the Biobase Pro Plan as per the{' '}
-            <a href="https://biobase.studio/pricing" className="text-brand hover:text-brand">
+            <a href="https://biobase.com/pricing" className="text-brand hover:text-brand">
               pricing page
             </a>
             .
@@ -747,18 +747,18 @@ const OpenSource = () => (
             If you teach programming, and you're interested in offering OSS tuition to your
             students, we're actively looking for more education partners. Email{' '}
             <a
-              href="mailto:rory@supabase.io"
+              href="mailto:rory@biobase.io"
               target="_blank"
               className="text-brand hover:text-brand"
             >
-              rory@supabase.io
+              rory@biobase.io
             </a>{' '}
             to find out more.
           </p>
           <p>
             Come and get involved in{' '}
             <a
-              href="https://github.com/biobase-ai"
+              href="https://github.com/biobase"
               target="_blank"
               className="text-brand hover:text-brand"
             >
@@ -831,11 +831,11 @@ const ScalingOurTeam = () => (
             nationalities. If you are interested and think you can be a factor in the success of
             Biobase, get in touch at{' '}
             <a
-              href="mailto:work@supabase.io"
+              href="mailto:work@biobase.io"
               target="_blank"
               className="text-brand hover:text-brand"
             >
-              work@supabase.io
+              work@biobase.io
             </a>
             .
           </p>
@@ -889,11 +889,11 @@ const WhatsNext = () => (
           <p className="mb-10">
             We depend on your feedback to continually improve Biobase. Email us at{' '}
             <a
-              href="mailto:support@supabase.io"
+              href="mailto:support@biobase.io"
               target="_blank"
               className="text-brand hover:text-brand"
             >
-              support@supabase.io
+              support@biobase.io
             </a>{' '}
             or join the{' '}
             <a
@@ -911,7 +911,7 @@ const WhatsNext = () => (
   </div>
 )
 
-const BIOBASE_AUTHOR_INDEX = 12
+const SUPABASE_AUTHOR_INDEX = 12
 
 const Beta = (props: Props) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
@@ -950,7 +950,7 @@ const Beta = (props: Props) => {
         openGraph={{
           title: site_title,
           description: DEFAULT_META_DESCRIPTION,
-          url: `https://biobase.studio/beta`,
+          url: `https://biobase.com/beta`,
           type: 'article',
           article: {
             //
@@ -960,12 +960,12 @@ const Beta = (props: Props) => {
             //
             // to do: author urls should be internal in future
             // currently we have external links to github profiles
-            authors: [authors[BIOBASE_AUTHOR_INDEX].author_url],
+            authors: [authors[SUPABASE_AUTHOR_INDEX].author_url],
             tags: ['beta'],
           },
           images: [
             {
-              url: 'https://biobase.studio/og/biobase-og.png',
+              url: 'https://biobase.com/og/biobase-og.png',
             },
           ],
         }}

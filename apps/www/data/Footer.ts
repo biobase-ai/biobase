@@ -26,19 +26,15 @@ const footerData = [
       },
       {
         text: 'Vector',
-        url: '/modules/vector',
-      },
-      {
-        text: 'Cron',
-        url: '/modules/cron',
+        url: '/vector',
       },
       {
         text: 'Pricing',
         url: '/pricing',
       },
       {
-        text: 'Launch Week',
-        url: '/launch-week',
+        text: 'GA Week',
+        url: '/ga-week',
       },
     ],
   },
@@ -51,7 +47,7 @@ const footerData = [
       },
       {
         text: 'System Status',
-        url: 'https://status.biobase.studio/',
+        url: 'https://status.biobase.com/',
       },
       {
         text: 'Become a Partner',
@@ -60,6 +56,10 @@ const footerData = [
       {
         text: 'Integrations',
         url: '/partners/integrations',
+      },
+      {
+        text: 'Experts',
+        url: '/partners/experts',
       },
       {
         text: 'Brand Assets / Logos',
@@ -79,7 +79,7 @@ const footerData = [
       },
       {
         text: 'HIPAA',
-        url: 'https://forms.biobase.studio/hipaa2',
+        url: 'https://forms.biobase.com/hipaa2',
       },
     ],
   },

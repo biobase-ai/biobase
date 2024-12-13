@@ -41,7 +41,7 @@ const DeleteHookModal = ({ selectedHook, visible, onClose }: DeleteHookModalProp
 
   return (
     <TextConfirmModal
-      variant="destructive"
+      variant={'warning'}
       visible={visible}
       size="medium"
       onCancel={() => onClose()}

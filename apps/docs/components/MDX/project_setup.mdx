@@ -8,7 +8,7 @@ Before we start building we're going to set up our Database and API. This is as 
 
 ### Create a project
 
-1. [Create a new project](https://biobase.studio/dashboard) in the Biobase Dashboard.
+1. [Create a new project](https://biobase.com/dashboard) in the Biobase Dashboard.
 1. Enter your project details.
 1. Wait for the new database to launch.
 
@@ -25,7 +25,7 @@ Now we are going to set up the database schema. We can use the "User Management 
 >
 <TabPanel id="dashboard" label="Dashboard">
 
-1. Go to the [SQL Editor](https://biobase.studio/dashboard/project/_/sql) page in the Dashboard.
+1. Go to the [SQL Editor](https://biobase.com/dashboard/project/_/sql) page in the Dashboard.
 2. Click **User Management Starter**.
 3. Click **Run**.
 
@@ -37,7 +37,7 @@ You can easily pull the database schema down to your local project by running th
 
 ```bash
 biobase link --project-ref <project-id>
-# You can get <project-id> from your project's dashboard URL: https://biobase.studio/dashboard/project/<project-id>
+# You can get <project-id> from your project's dashboard URL: https://biobase.com/dashboard/project/<project-id>
 biobase db pull
 ```
 
@@ -64,5 +64,5 @@ biobase migration new user_management_starter
 Now that you've created some database tables, you are ready to insert data using the auto-generated API.
 We just need to get the Project URL and `anon` key from the API settings.
 
-1. Go to the [API Settings](https://biobase.studio/dashboard/project/_/settings/api) page in the Dashboard.
+1. Go to the [API Settings](https://biobase.com/dashboard/project/_/settings/api) page in the Dashboard.
 1. Find your Project `URL`, `anon`, and `service_role` keys on this page.

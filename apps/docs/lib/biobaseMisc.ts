@@ -1,6 +1,6 @@
-import { createClient, type SupabaseClient } from '@supabase/supabase-js'
+import { createClient, type BiobaseClient } from '@supabase/biobase-js'
 
-let _biobaseMisc: SupabaseClient
+let _biobaseMisc: BiobaseClient
 
 export function biobaseMisc() {
   if (!_biobaseMisc) {

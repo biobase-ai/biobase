@@ -69,7 +69,7 @@ You can assign metadata to users on sign up:
 
 ```js
 const { data, error } = await biobase.auth.signUp({
-  email: 'valid.email@supabase.io',
+  email: 'example@email.com',
   password: 'example-password',
   options: {
     data: {
@@ -85,7 +85,7 @@ const { data, error } = await biobase.auth.signUp({
 
 ```dart
 final res = await biobase.auth.signUp(
-  email: 'valid.email@supabase.io',
+  email: 'example@email.com',
   password: 'example-password',
   data: {
     'first_name': 'John',
@@ -99,7 +99,7 @@ final res = await biobase.auth.signUp(
 
 ```swift
 try await biobase.auth.signUp(
-  email: "valid.email@supabase.io",
+  email: "example@email.com",
   password: "example-password",
   data: [
     "first_name": .string("John"),
@@ -113,7 +113,7 @@ try await biobase.auth.signUp(
 
 ```kotlin
 val data = biobase.auth.signUpWith(Email) {
-    email = "valid.email@supabase.io"
+    email = "example@email.com"
     password = "example-password"
     data = buildJsonObject {
         put("first_name", "John")

@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Biobase Design System',
-  url: 'https://biobase.studio/design-system',
-  ogImage: 'https://biobase.studio/design-system/og.jpg',
+  url: 'https://biobase.com/design-system',
+  ogImage: 'https://biobase.com/design-system/og.jpg',
   description: 'Design System of Biobase',
   links: {
     twitter: 'https://twitter.com/biobase',

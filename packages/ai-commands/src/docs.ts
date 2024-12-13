@@ -1,4 +1,4 @@
-import type { SupabaseClient } from '@supabase/supabase-js'
+import type { BiobaseClient } from '@supabase/biobase-js'
 import { codeBlock, oneLine } from 'common-tags'
 import type OpenAI from 'openai'
 import { ApplicationError, UserError } from './errors'
@@ -7,7 +7,7 @@ import type { Message } from './types'
 
 export async function clippy(
   openai: OpenAI,
-  biobaseClient: SupabaseClient<any, 'public', any>,
+  biobaseClient: BiobaseClient<any, 'public', any>,
   messages: Message[]
 ) {
   // TODO: better sanitization

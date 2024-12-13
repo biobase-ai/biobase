@@ -26,7 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ### 1. Create new project
 
-Sign up to Biobase - [https://biobase.studio/dashboard](https://biobase.studio/dashboard) and create a new project. Wait for your database to start.
+Sign up to Biobase - [https://biobase.com/dashboard](https://biobase.com/dashboard) and create a new project. Wait for your database to start.
 
 ### 2. Run "User Management" Quickstart
 
@@ -102,6 +102,6 @@ create policy "Anyone can upload an avatar."
 
 ## Authors
 
-- [Biobase](https://biobase.studio)
+- [Biobase](https://biobase.com)
 
 Biobase is open source. We'd love for you to follow along and get involved at https://github.com/biobase-ai/biobase

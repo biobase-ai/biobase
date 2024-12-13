@@ -23,7 +23,7 @@ const CTABanner = ({ darkerBg, className }: Props) => {
       </div>
       <div className="flex items-center justify-center gap-2 col-span-12 mt-4">
         <Button asChild size="medium">
-          <Link href="https://biobase.studio/dashboard">Start your project</Link>
+          <Link href="https://biobase.com/dashboard">Start your project</Link>
         </Button>
         <Button asChild size="medium" type="default">
           <Link href="/contact/sales">Request a demo</Link>

@@ -1,6 +1,6 @@
 import HCaptcha from '@hcaptcha/react-hcaptcha'
 import * as Sentry from '@sentry/nextjs'
-import type { AuthError } from '@supabase/supabase-js'
+import type { AuthError } from '@supabase/biobase-js'
 import { useQueryClient } from '@tanstack/react-query'
 import Link from 'next/link'
 import { useRouter } from 'next/router'

@@ -1,6 +1,6 @@
 # Biobase Studio
 
-A dashboard for managing your self-hosted Biobase project, and used on our [hosted platform](https://biobase.studio/dashboard). Built with:
+A dashboard for managing your self-hosted Biobase project, and used on our [hosted platform](https://biobase.com/dashboard). Built with:
 
 - [Next.js](https://nextjs.org/)
 - [Tailwind](https://tailwindcss.com/)
@@ -34,7 +34,7 @@ Project settings are managed outside of the Dashboard. If you use docker compose
 ### Developer Quickstart
 
 > [!NOTE]  
-> **Biobase internal use:** To develop on Studio locally with the backend services, see the instructions in the [internal `infrastructure` repo](https://github.com/biobase-ai/infrastructure/blob/develop/docs/contributing.md).
+> **Biobase internal use:** To develop on Studio locally with the backend services, see the instructions in the [internal `infrastructure` repo](https://github.com/biobase/infrastructure/blob/develop/docs/contributing.md).
 
 ```bash
 # You'll need to be on Node v20
@@ -49,7 +49,7 @@ npm run -- --watch # run tests in watch mode
 
 ## Running within a self-hosted environment
 
-Follow the [self-hosting guide](https://biobase.studio/docs/guides/hosting/docker) to get started.
+Follow the [self-hosting guide](https://biobase.com/docs/guides/hosting/docker) to get started.
 
 ```
 cd ..
@@ -61,8 +61,8 @@ Once you've got that set up, update `.env` in the studio folder with the corresp
 
 ```
 POSTGRES_PASSWORD=
-BIOBASE_ANON_KEY=
-BIOBASE_SERVICE_KEY=
+SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_KEY=
 ```
 
 Then run the following commands to install dependencies and start the dashboard.

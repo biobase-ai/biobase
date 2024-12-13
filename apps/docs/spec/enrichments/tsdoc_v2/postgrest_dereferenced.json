@@ -707,7 +707,7 @@
               "flags": {},
               "comment": {
                 "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                "text": "{@link https://github.com/supabase/supabase-js/issues/92}\n"
+                "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\n"
               },
               "type": {
                 "type": "reference",
@@ -2041,7 +2041,7 @@
           "kindString": "Type parameter",
           "flags": {},
           "comment": {
-            "shortText": "Types for the schema from the [type\ngenerator](https://biobase.studio/docs/reference/javascript/next/typescript-support)\n"
+            "shortText": "Types for the schema from the [type\ngenerator](https://biobase.com/docs/reference/javascript/next/typescript-support)\n"
           },
           "default": {
             "type": "intrinsic",
@@ -2897,7 +2897,7 @@
                               "flags": {},
                               "comment": {
                                 "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                                "text": "{@link https://github.com/supabase/supabase-js/issues/92}\n"
+                                "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\n"
                               },
                               "type": {
                                 "type": "reference",
@@ -4229,7 +4229,7 @@
               "flags": {},
               "comment": {
                 "shortText": "Return `data` as the EXPLAIN plan for the query.",
-                "text": "You need to enable the\n[db_plan_enabled](https://biobase.studio/docs/guides/database/debugging-performance#enabling-explain)\nsetting before using this method.\n"
+                "text": "You need to enable the\n[db_plan_enabled](https://biobase.com/docs/guides/database/debugging-performance#enabling-explain)\nsetting before using this method.\n"
               },
               "parameters": [
                 {
@@ -11061,7 +11061,7 @@
               "flags": {},
               "comment": {
                 "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                "text": "{@link https://github.com/supabase/supabase-js/issues/92}\n"
+                "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\n"
               },
               "type": {
                 "type": "reference",
@@ -13992,7 +13992,7 @@
                               "flags": {},
                               "comment": {
                                 "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                                "text": "{@link https://github.com/supabase/supabase-js/issues/92}\n"
+                                "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\n"
                               },
                               "type": {
                                 "type": "reference",
@@ -14592,7 +14592,7 @@
               "flags": {},
               "comment": {
                 "shortText": "Return `data` as the EXPLAIN plan for the query.",
-                "text": "You need to enable the\n[db_plan_enabled](https://biobase.studio/docs/guides/database/debugging-performance#enabling-explain)\nsetting before using this method.\n"
+                "text": "You need to enable the\n[db_plan_enabled](https://biobase.com/docs/guides/database/debugging-performance#enabling-explain)\nsetting before using this method.\n"
               },
               "parameters": [
                 {
@@ -16543,7 +16543,7 @@
               "flags": {},
               "comment": {
                 "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                "text": "{@link https://github.com/supabase/supabase-js/issues/92}\n"
+                "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\n"
               },
               "type": {
                 "type": "reference",

@@ -28,18 +28,17 @@
 
 ## Getting started
 
-Thank you for your interest in [Biobase](https://biobase.studio) and your willingness to contribute!
+Thank you for your interest in [Biobase](https://biobase.com) and your willingness to contribute!
 
-To ensure a positive and inclusive environment, please read our [code of conduct](https://github.com/biobase-ai/.github/blob/main/CODE_OF_CONDUCT.md). We encourage you to explore the existing [issues](https://github.com/biobase-ai/biobase/issues) to see how you can make a meaningful impact. This document will help you setup your development environment.
+To ensure a positive and inclusive environment, please read our [code of conduct](https://github.com/biobase/.github/blob/main/CODE_OF_CONDUCT.md). We encourage you to explore the existing [issues](https://github.com/biobase-ai/biobase/issues) to see how you can make a meaningful impact. This document will help you setup your development environment.
 
 ### Install dependencies
 
-You will need to install and configure the following dependencies on your machine to build [Biobase](https://biobase.studio):
+You will need to install and configure the following dependencies on your machine to build [Biobase](https://biobase.com):
 
 - [Git](http://git-scm.com/)
 - [Node.js v20.x (LTS)](http://nodejs.org)
 - [npm](https://www.npmjs.com/) version 10.x.x or higher
-- [make](https://www.gnu.org/software/make/) or the equivalent to `build-essentials` for your OS
 - [Docker](https://docs.docker.com/get-docker/) (to run studio locally)
 
 ## Local development
@@ -50,7 +49,7 @@ All of our apps are in this [Turborepo](https://turborepo.org/docs), which make 
 
 ### Fork the repo
 
-To contribute code to [Biobase](https://biobase.studio), you must fork the [Biobase repo](https://github.com/biobase-ai/biobase).
+To contribute code to [Biobase](https://biobase.com), you must fork the [Biobase repo](https://github.com/biobase-ai/biobase).
 
 ### Clone the repo
 
@@ -88,9 +87,9 @@ Then visit, and edit, any of the following sites:
 
 | Site                                                     | Directory      | Scope name | Description                                   | Local development server   |
 | -------------------------------------------------------- | -------------- | ---------- | --------------------------------------------- | -------------------------- |
-| [biobase.studio](https://biobase.studio)                     | `/apps/www`    | www        | The main website                              | http://localhost:3000      |
-| [biobase.studio/dashboard](https://biobase.studio/dashboard) | `/apps/studio` | studio     | Studio dashboard (requires Docker, see below) | http://localhost:8082      |
-| [biobase.studio/docs](https://biobase.studio/docs)           | `/apps/docs`   | docs       | Guides and Reference (Next.js based)          | http://localhost:3001/docs |
+| [biobase.com](https://biobase.com)                     | `/apps/www`    | www        | The main website                              | http://localhost:3000      |
+| [biobase.com/dashboard](https://biobase.com/dashboard) | `/apps/studio` | studio     | Studio dashboard (requires Docker, see below) | http://localhost:8082      |
+| [biobase.com/docs](https://biobase.com/docs)           | `/apps/docs`   | docs       | Guides and Reference (Next.js based)          | http://localhost:3001/docs |
 
 #### Running sites individually
 
@@ -191,14 +190,14 @@ Create a new entry in the [`redirects.js`](https://github.com/biobase-ai/biobase
 
 We support "federating" docs, meaning doc content can come directly from external repos other than [`biobase/biobase`](https://github.com/biobase-ai/biobase).
 
-- It's great for things like client libs who have their own set of docs that we don't want to duplicate on the official Biobase docs (eg. [`biobase/vecs`](https://github.com/biobase-ai/vecs)).
+- It's great for things like client libs who have their own set of docs that we don't want to duplicate on the official Biobase docs (eg. [`biobase/vecs`](https://github.com/biobase/vecs)).
 - No duplication or manual steps required - fetches and generates automatically as part of the docs build pipeline
 - It's flexible - you can "embed" external docs nearly anywhere at any level in Biobase docs, but they will feel native
 - If you are maintaining a repo containing docs that you think could also live in Biobase docs, feel free to create an issue and we can work together to integrate
 
 Federated docs work using Next.js's build pipeline. We use `getStaticProps()` to fetch remote documentation (ie. markdown) at build time which is processed and passed to the respective page within the docs.
 
-See the [Vecs Python source code](https://github.com/biobase-ai/biobase/blob/master/apps/docs/pages/guides/ai/python/%5Bslug%5D.tsx) to see how we do this for [`biobase/vecs`](https://github.com/biobase-ai/vecs). Use this as a starting point for federating other docs.
+See the [Vecs Python source code](https://github.com/biobase-ai/biobase/blob/master/apps/docs/pages/guides/ai/python/%5Bslug%5D.tsx) to see how we do this for [`biobase/vecs`](https://github.com/biobase/vecs). Use this as a starting point for federating other docs.
 
 Some things to consider:
 
@@ -209,7 +208,7 @@ Some things to consider:
 
 ## Community channels
 
-If you get stuck somewhere or have any questions, join our [Discord Community Server](https://discord.biobase.studio/) or the [Github Discussions](https://github.com/biobase-ai/biobase/discussions). We are here to help!
+If you get stuck somewhere or have any questions, join our [Discord Community Server](https://discord.biobase.com/) or the [Github Discussions](https://github.com/biobase-ai/biobase/discussions). We are here to help!
 
 ## Contributors
 

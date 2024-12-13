@@ -18,7 +18,7 @@ Deno.serve(async (req) => {
 
 /* To invoke locally:
 
-  1. Run `biobase start` (see: https://biobase.studio/docs/reference/cli/biobase-start)
+  1. Run `biobase start` (see: https://biobase.com/docs/reference/cli/biobase-start)
   2. Make an HTTP request:
 
   curl -i --location --request POST 'http://127.0.0.1:54321/functions/v1/hello-world' \

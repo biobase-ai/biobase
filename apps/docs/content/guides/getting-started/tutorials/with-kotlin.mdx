@@ -36,8 +36,8 @@ Create or edit the `local.properties` file at the root (same level as `build.gra
 > **Note**: Do not commit this file to your source control, for example, by adding it to your `.gitignore` file!
 
 ```kotlin
-BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
-BIOBASE_URL=YOUR_BIOBASE_URL
+SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+SUPABASE_URL=YOUR_SUPABASE_URL
 ```
 
 #### Read and set value to `BuildConfig`
@@ -56,9 +56,9 @@ defaultConfig {
    // Set value part
    Properties properties = new Properties()
    properties.load(project.rootProject.file("local.properties").newDataInputStream())
-   buildConfigField("String", "BIOBASE_ANON_KEY", "\"${properties.getProperty("BIOBASE_ANON_KEY")}\"")
+   buildConfigField("String", "SUPABASE_ANON_KEY", "\"${properties.getProperty("SUPABASE_ANON_KEY")}\"")
    buildConfigField("String", "SECRET", "\"${properties.getProperty("SECRET")}\"")
-   buildConfigField("String", "BIOBASE_URL", "\"${properties.getProperty("BIOBASE_URL")}\"")
+   buildConfigField("String", "SUPABASE_URL", "\"${properties.getProperty("SUPABASE_URL")}\"")
 }
 ```
 
@@ -67,8 +67,8 @@ defaultConfig {
 Read the value from `BuildConfig`:
 
 ```kotlin
-val url = BuildConfig.BIOBASE_URL
-val apiKey = BuildConfig.BIOBASE_ANON_KEY
+val url = BuildConfig.SUPABASE_URL
+val apiKey = BuildConfig.SUPABASE_ANON_KEY
 ```
 
 ### Set up Biobase dependencies
@@ -95,8 +95,6 @@ plugins {
     ...
 }
 ```
-
-{/* supa-mdx-lint-disable-next-line Rule001HeadingCase */}
 
 ### Set up Hilt for dependency injection
 
@@ -136,8 +134,6 @@ class MainActivity : ComponentActivity() {
 }
 ```
 
-{/* supa-mdx-lint-disable-next-line Rule001HeadingCase */}
-
 ### Provide Biobase instances with Hilt
 
 To make the app easier to test, create a `BiobaseModule.kt` file as follows:
@@ -149,16 +145,16 @@ object BiobaseModule {
 
     @Provides
     @Singleton
-    fun provideSupabaseClient(): SupabaseClient {
-        return createSupabaseClient(
-            biobaseUrl = BuildConfig.BIOBASE_URL,
-            biobaseKey = BuildConfig.BIOBASE_ANON_KEY
+    fun provideBiobaseClient(): BiobaseClient {
+        return createBiobaseClient(
+            biobaseUrl = BuildConfig.SUPABASE_URL,
+            biobaseKey = BuildConfig.SUPABASE_ANON_KEY
         ) {
             install(Postgrest)
             install(Auth) {
                 flowType = FlowType.PKCE
                 scheme = "app"
-                host = "biobase.studio"
+                host = "biobase.com"
             }
             install(Storage)
         }
@@ -166,20 +162,20 @@ object BiobaseModule {
 
     @Provides
     @Singleton
-    fun provideBiobaseDatabase(client: SupabaseClient): Postgrest {
+    fun provideBiobaseDatabase(client: BiobaseClient): Postgrest {
         return client.postgrest
     }
 
     @Provides
     @Singleton
-    fun provideBiobaseAuth(client: SupabaseClient): Auth {
+    fun provideBiobaseAuth(client: BiobaseClient): Auth {
         return client.auth
     }
 
 
     @Provides
     @Singleton
-    fun provideBiobaseStorage(client: SupabaseClient): Storage {
+    fun provideBiobaseStorage(client: BiobaseClient): Storage {
         return client.storage
     }
 
@@ -327,7 +323,7 @@ class ProductRepositoryImpl @Inject constructor(
     // Because I named the bucket as "Product Image" so when it turns to an url, it is "%20"
     // For better approach, you should create your bucket name without space symbol
     private fun buildImageUrl(imageFileName: String) =
-        "${BuildConfig.BIOBASE_URL}/storage/v1/object/public/${imageFileName}".replace(" ", "%20")
+        "${BuildConfig.SUPABASE_URL}/storage/v1/object/public/${imageFileName}".replace(" ", "%20")
 }
 ```
 
@@ -1224,7 +1220,7 @@ In the `MainActivity` you created earlier, show your newly created screens:
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @Inject
-    lateinit var biobaseClient: SupabaseClient
+    lateinit var biobaseClient: BiobaseClient
 
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -1313,7 +1309,7 @@ To handle OAuth and OTP signins, create a new activity to handle the deeplink yo
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
-                    android:host="biobase.studio"
+                    android:host="biobase.com"
                     android:scheme="app" />
             </intent-filter>
         </activity>
@@ -1338,7 +1334,7 @@ Then create the `DeepLinkHandlerActivity`:
 class DeepLinkHandlerActivity : ComponentActivity() {
 
     @Inject
-    lateinit var biobaseClient: SupabaseClient
+    lateinit var biobaseClient: BiobaseClient
 
     private lateinit var callback: (String, String) -> Unit
 

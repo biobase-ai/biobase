@@ -9,29 +9,29 @@ const path = require('path')
 const API_URL = process.env.NEXT_PUBLIC_API_URL
   ? new URL(process.env.NEXT_PUBLIC_API_URL).origin
   : ''
-const BIOBASE_URL = process.env.BIOBASE_URL ? new URL(process.env.BIOBASE_URL).origin : ''
+const SUPABASE_URL = process.env.SUPABASE_URL ? new URL(process.env.SUPABASE_URL).origin : ''
 const GOTRUE_URL = process.env.NEXT_PUBLIC_GOTRUE_URL
   ? new URL(process.env.NEXT_PUBLIC_GOTRUE_URL).origin
   : ''
-const BIOBASE_PROJECTS_URL = 'https://*.biobase.co'
-const BIOBASE_PROJECTS_URL_WS = 'wss://*.biobase.co'
+const SUPABASE_PROJECTS_URL = 'https://*.biobase.co'
+const SUPABASE_PROJECTS_URL_WS = 'wss://*.biobase.co'
 
 // construct the URL for the Websocket Local URLs
-let BIOBASE_LOCAL_PROJECTS_URL_WS = ''
-if (BIOBASE_URL) {
-  const url = new URL(BIOBASE_URL)
+let SUPABASE_LOCAL_PROJECTS_URL_WS = ''
+if (SUPABASE_URL) {
+  const url = new URL(SUPABASE_URL)
   const wsUrl = `${url.hostname}:${url.port}`
-  BIOBASE_LOCAL_PROJECTS_URL_WS = `ws://${wsUrl} wss://${wsUrl}`
+  SUPABASE_LOCAL_PROJECTS_URL_WS = `ws://${wsUrl} wss://${wsUrl}`
 }
 
 // Needed to test docs search in local dev
-const BIOBASE_DOCS_PROJECT_URL = process.env.NEXT_PUBLIC_BIOBASE_URL
-  ? new URL(process.env.NEXT_PUBLIC_BIOBASE_URL).origin
+const SUPABASE_DOCS_PROJECT_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
+  ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).origin
   : ''
 
-const BIOBASE_STAGING_PROJECTS_URL = 'https://*.biobase.red'
-const BIOBASE_STAGING_PROJECTS_URL_WS = 'wss://*.biobase.red'
-const BIOBASE_COM_URL = 'https://biobase.studio'
+const SUPABASE_STAGING_PROJECTS_URL = 'https://*.biobase.red'
+const SUPABASE_STAGING_PROJECTS_URL_WS = 'wss://*.biobase.red'
+const SUPABASE_COM_URL = 'https://biobase.com'
 const CLOUDFLARE_CDN_URL = 'https://cdnjs.cloudflare.com'
 const HCAPTCHA_SUBDOMAINS_URL = 'https://*.hcaptcha.com'
 const HCAPTCHA_ASSET_URL = 'https://newassets.hcaptcha.com'
@@ -41,7 +41,7 @@ const STRIPE_SUBDOMAINS_URL = 'https://*.stripe.com'
 const STRIPE_JS_URL = 'https://js.stripe.com'
 const STRIPE_NETWORK_URL = 'https://*.stripe.network'
 const CLOUDFLARE_URL = 'https://www.cloudflare.com'
-const ONE_ONE_ONE_ONE_URL = 'https://one.one.one.one'
+const ONE_ONE_ONE_ONE_URL = 'https://1.1.1.1'
 const VERCEL_URL = 'https://vercel.com'
 const VERCEL_INSIGHTS_URL = 'https://*.vercel-insights.com'
 const GITHUB_API_URL = 'https://api.github.com'
@@ -53,10 +53,10 @@ const VERCEL_LIVE_URL = 'https://vercel.live'
 const PUSHER_URL = 'https://*.pusher.com'
 const PUSHER_URL_WS = 'wss://*.pusher.com'
 
-const DEFAULT_SRC_URLS = `${API_URL} ${BIOBASE_URL} ${GOTRUE_URL} ${BIOBASE_LOCAL_PROJECTS_URL_WS} ${BIOBASE_PROJECTS_URL} ${BIOBASE_PROJECTS_URL_WS} ${HCAPTCHA_SUBDOMAINS_URL} ${CONFIGCAT_URL} ${STRIPE_SUBDOMAINS_URL} ${STRIPE_NETWORK_URL} ${CLOUDFLARE_URL} ${ONE_ONE_ONE_ONE_URL} ${VERCEL_INSIGHTS_URL} ${GITHUB_API_URL} ${GITHUB_USER_CONTENT_URL}`
+const DEFAULT_SRC_URLS = `${API_URL} ${SUPABASE_URL} ${GOTRUE_URL} ${SUPABASE_LOCAL_PROJECTS_URL_WS} ${SUPABASE_PROJECTS_URL} ${SUPABASE_PROJECTS_URL_WS} ${HCAPTCHA_SUBDOMAINS_URL} ${CONFIGCAT_URL} ${STRIPE_SUBDOMAINS_URL} ${STRIPE_NETWORK_URL} ${CLOUDFLARE_URL} ${ONE_ONE_ONE_ONE_URL} ${VERCEL_INSIGHTS_URL} ${GITHUB_API_URL} ${GITHUB_USER_CONTENT_URL}`
 const SCRIPT_SRC_URLS = `${CLOUDFLARE_CDN_URL} ${HCAPTCHA_JS_URL} ${STRIPE_JS_URL}`
 const FRAME_SRC_URLS = `${HCAPTCHA_ASSET_URL} ${STRIPE_JS_URL}`
-const IMG_SRC_URLS = `${BIOBASE_URL} ${BIOBASE_COM_URL} ${BIOBASE_PROJECTS_URL} ${GITHUB_USER_AVATAR_URL} ${GOOGLE_USER_AVATAR_URL}`
+const IMG_SRC_URLS = `${SUPABASE_URL} ${SUPABASE_COM_URL} ${SUPABASE_PROJECTS_URL} ${GITHUB_USER_AVATAR_URL} ${GOOGLE_USER_AVATAR_URL}`
 const STYLE_SRC_URLS = `${CLOUDFLARE_CDN_URL}`
 const FONT_SRC_URLS = `${CLOUDFLARE_CDN_URL}`
 
@@ -65,21 +65,21 @@ const csp = [
   process.env.NEXT_PUBLIC_ENVIRONMENT === 'local' ||
   process.env.NEXT_PUBLIC_ENVIRONMENT === 'staging'
     ? [
-        `default-src 'self' ${DEFAULT_SRC_URLS} ${BIOBASE_STAGING_PROJECTS_URL} ${BIOBASE_STAGING_PROJECTS_URL_WS} ${VERCEL_LIVE_URL} ${PUSHER_URL_WS} ${BIOBASE_DOCS_PROJECT_URL};`,
-        `script-src 'self' 'unsafe-eval' 'unsafe-inline' ${SCRIPT_SRC_URLS} ${VERCEL_LIVE_URL} ${PUSHER_URL};`,
+        `default-src 'self' ${DEFAULT_SRC_URLS} ${SUPABASE_STAGING_PROJECTS_URL} ${SUPABASE_STAGING_PROJECTS_URL_WS} ${VERCEL_LIVE_URL} ${PUSHER_URL} ${PUSHER_URL_WS} ${SUPABASE_DOCS_PROJECT_URL};`,
+        `script-src 'self' 'unsafe-eval' 'unsafe-inline' ${SCRIPT_SRC_URLS} ${VERCEL_LIVE_URL};`,
         `frame-src 'self' ${FRAME_SRC_URLS} ${VERCEL_LIVE_URL};`,
-        `img-src 'self' blob: data: ${IMG_SRC_URLS} ${BIOBASE_STAGING_PROJECTS_URL} ${VERCEL_URL};`,
+        `img-src 'self' blob: data: ${IMG_SRC_URLS} ${SUPABASE_STAGING_PROJECTS_URL} ${VERCEL_URL};`,
         `style-src 'self' 'unsafe-inline' ${STYLE_SRC_URLS} ${VERCEL_LIVE_URL};`,
         `font-src 'self' ${FONT_SRC_URLS} ${VERCEL_LIVE_URL};`,
         `worker-src 'self' blob: data:;`,
       ]
     : [
-        `default-src 'self' ${DEFAULT_SRC_URLS} ${PUSHER_URL_WS};`,
-        `script-src 'self' 'unsafe-eval' 'unsafe-inline' ${SCRIPT_SRC_URLS} ${VERCEL_LIVE_URL} ${PUSHER_URL};`,
-        `frame-src 'self' ${FRAME_SRC_URLS} ${VERCEL_LIVE_URL};`,
+        `default-src 'self' ${DEFAULT_SRC_URLS};`,
+        `script-src 'self' 'unsafe-eval' 'unsafe-inline' ${SCRIPT_SRC_URLS};`,
+        `frame-src 'self' ${FRAME_SRC_URLS};`,
         `img-src 'self' blob: data: ${IMG_SRC_URLS} ;`,
-        `style-src 'self' 'unsafe-inline' ${STYLE_SRC_URLS} ${VERCEL_LIVE_URL};`,
-        `font-src 'self' ${FONT_SRC_URLS} ${VERCEL_LIVE_URL};`,
+        `style-src 'self' 'unsafe-inline' ${STYLE_SRC_URLS};`,
+        `font-src 'self' ${FONT_SRC_URLS};`,
         `worker-src 'self' blob: data:;`,
       ]),
   `object-src 'none';`,
@@ -106,7 +106,7 @@ const nextConfig = {
     return [
       {
         source: `/.well-known/vercel/flags`,
-        // TODO: Replace this with biobase.studio/.well-known/vercel/flags once this PR is merged.
+        // TODO: Replace this with biobase.com/.well-known/vercel/flags once this PR is merged.
         destination: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : process.env.NEXT_PUBLIC_SITE_URL}${process.env.NEXT_PUBLIC_BASE_PATH}/.well-known/vercel/flags`,
         basePath: false,
       },
@@ -372,12 +372,7 @@ const nextConfig = {
       {
         permanent: true,
         source: '/project/:ref/reports/query-performance',
-        destination: '/project/:ref/advisors/query-performance',
-      },
-      {
-        permanent: true,
-        source: '/project/:ref/database/query-performance',
-        destination: '/project/:ref/advisors/query-performance',
+        destination: '/project/:ref/database/query-performance',
       },
       {
         permanent: true,
@@ -398,46 +393,6 @@ const nextConfig = {
         permanent: true,
         source: '/project/:ref/database/performance-advisor',
         destination: '/project/:ref/advisors/performance',
-      },
-      {
-        permanent: true,
-        source: '/project/:ref/database/webhooks',
-        destination: '/project/:ref/integrations/webhooks/overview',
-      },
-      {
-        permanent: true,
-        source: '/project/:ref/database/wrappers',
-        destination: '/project/:ref/integrations?category=wrapper',
-      },
-      {
-        permanent: true,
-        source: '/project/:ref/database/cron-jobs',
-        destination: '/project/:ref/integrations/cron',
-      },
-      {
-        permanent: true,
-        source: '/project/:ref/api/graphiql',
-        destination: '/project/:ref/integrations/graphiql',
-      },
-      {
-        permanent: true,
-        source: '/project/:ref/settings/vault/secrets',
-        destination: '/project/:ref/integrations/vault/secrets',
-      },
-      {
-        permanent: true,
-        source: '/project/:ref/settings/vault/keys',
-        destination: '/project/:ref/integrations/vault/keys',
-      },
-      {
-        permanent: true,
-        source: '/project/:ref/integrations/cron-jobs',
-        destination: '/project/:ref/integrations/cron',
-      },
-      {
-        permanent: true,
-        source: '/project/:ref/settings/warehouse',
-        destination: '/project/:ref/settings/general',
       },
       ...(process.env.NEXT_PUBLIC_BASE_PATH?.length
         ? [
@@ -543,12 +498,6 @@ const nextConfig = {
         }
       })
 
-    // .md files to be loaded as raw text
-    config.module.rules.push({
-      test: /\.md$/,
-      type: 'asset/source',
-    })
-
     return config
   },
   onDemandEntries: {
@@ -571,36 +520,29 @@ const nextConfig = {
 // ensure that your source maps include changes from all other Webpack plugins
 module.exports =
   process.env.NEXT_PUBLIC_IS_PLATFORM === 'true'
-    ? withSentryConfig(withBundleAnalyzer(nextConfig), {
-        silent: true,
-
-        // For all available options, see:
-        // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
-
-        // Upload a larger set of source maps for prettier stack traces (increases build time)
-        widenClientFileUpload: true,
-
-        // Automatically annotate React components to show their full name in breadcrumbs and session replay
-        reactComponentAnnotation: {
-          enabled: true,
+    ? withSentryConfig(
+        withBundleAnalyzer(nextConfig),
+        {
+          silent: true,
         },
+        {
+          // For all available options, see:
+          // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
 
-        // Route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
-        // This can increase your server load as well as your hosting bill.
-        // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
-        // side errors will fail.
-        tunnelRoute: '/monitoring',
+          // Upload a larger set of source maps for prettier stack traces (increases build time)
+          widenClientFileUpload: true,
 
-        // Hides source maps from generated client bundles
-        hideSourceMaps: true,
+          // Transpiles SDK to be compatible with IE11 (increases bundle size)
+          transpileClientSDK: false,
 
-        // Automatically tree-shake Sentry logger statements to reduce bundle size
-        disableLogger: true,
+          // Routes browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers (increases server load)
+          tunnelRoute: '/monitoring',
 
-        // Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)
-        // See the following for more information:
-        // https://docs.sentry.io/product/crons/
-        // https://vercel.com/docs/cron-jobs
-        automaticVercelMonitors: true,
-      })
+          // Hides source maps from generated client bundles
+          hideSourceMaps: true,
+
+          // Automatically tree-shake Sentry logger statements to reduce bundle size
+          disableLogger: true,
+        }
+      )
     : nextConfig

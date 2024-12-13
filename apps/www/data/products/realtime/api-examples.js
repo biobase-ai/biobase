@@ -4,7 +4,7 @@ export default [
     title: 'Database changes',
     description: '',
     code: `
-  import { createClient } from '@supabase/supabase-js'
+  import { createClient } from '@supabase/biobase-js'
 
   const biobaseClient = createClient('URL', 'ANON')
   const channel = biobaseClient
@@ -32,7 +32,7 @@ export default [
     title: 'Presence',
     description: '',
     code: `
-  import { createClient } from '@supabase/supabase-js'
+  import { createClient } from '@supabase/biobase-js'
 
   const biobaseClient = createClient('URL', 'ANON')
   const channel = biobaseClient.channel('presenceChannel', { configs: { presence: 'id123' } })
@@ -59,7 +59,7 @@ export default [
     title: 'Broadcast',
     description: '',
     code: `
-  import { createClient } from '@supabase/supabase-js'
+  import { createClient } from '@supabase/biobase-js'
 
   const biobaseClient = createClient('URL', 'ANON')
   const channel = biobaseClient.channel('broadcastChannel', { configs: { broadcast: { self: true, ack: true } } })

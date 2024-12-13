@@ -112,34 +112,6 @@ const uiConfig = ui({
     extend: {
       colors: {
         ...kebabToNested(colorExtend),
-        background: 'hsl(var(--color-background) / <alpha-value>)',
-        foreground: 'hsl(var(--color-foreground) / <alpha-value>)',
-        background: {
-          DEFAULT: 'hsl(var(--color-background) / <alpha-value>)',
-          50: 'hsl(var(--color-background-50) / <alpha-value>)',
-          100: 'hsl(var(--color-background-100) / <alpha-value>)',
-          200: 'hsl(var(--color-background-200) / <alpha-value>)',
-          300: 'hsl(var(--color-background-300) / <alpha-value>)',
-          400: 'hsl(var(--color-background-400) / <alpha-value>)',
-          500: 'hsl(var(--color-background-500) / <alpha-value>)',
-          600: 'hsl(var(--color-background-600) / <alpha-value>)',
-          700: 'hsl(var(--color-background-700) / <alpha-value>)',
-          800: 'hsl(var(--color-background-800) / <alpha-value>)',
-          900: 'hsl(var(--color-background-900) / <alpha-value>)',
-        },
-        foreground: {
-          DEFAULT: 'hsl(var(--color-foreground) / <alpha-value>)',
-          50: 'hsl(var(--color-foreground-50) / <alpha-value>)',
-          100: 'hsl(var(--color-foreground-100) / <alpha-value>)',
-          200: 'hsl(var(--color-foreground-200) / <alpha-value>)',
-          300: 'hsl(var(--color-foreground-300) / <alpha-value>)',
-          400: 'hsl(var(--color-foreground-400) / <alpha-value>)',
-          500: 'hsl(var(--color-foreground-500) / <alpha-value>)',
-          600: 'hsl(var(--color-foreground-600) / <alpha-value>)',
-          700: 'hsl(var(--color-foreground-700) / <alpha-value>)',
-          800: 'hsl(var(--color-foreground-800) / <alpha-value>)',
-          900: 'hsl(var(--color-foreground-900) / <alpha-value>)',
-        },
       },
 
       typography: ({ theme }) => ({
@@ -448,9 +420,6 @@ const uiConfig = ui({
     require('@tailwindcss/typography'),
     require('tailwindcss-animate'),
     plugin(motionSafeTransition),
-    function ({ addVariant }) {
-      addVariant('not-disabled', '&:not(:disabled)')
-    },
   ],
 })
 
@@ -548,62 +517,4 @@ function wrapper(tailwindConfig) {
   })
 }
 
-module.exports = wrapper({
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './styles/**/*.{js,ts,jsx,tsx,mdx,scss}',
-    './apps/docs/**/*.{js,ts,jsx,tsx,mdx,scss}',
-    './apps/docs/**/*.{md,mdx}',
-    './apps/docs/**/*.mdx',
-    './apps/docs/**/*.md',
-    './apps/docs/**/*.js',
-    './apps/docs/**/*.jsx',
-    './apps/docs/**/*.ts',
-    './apps/docs/**/*.tsx',
-    './apps/docs/**/*.scss',
-    './apps/docs/**/*.css',
-  ],
-  theme: {
-    extend: {
-      colors: {
-        ...kebabToNested(colorExtend),
-        background: 'hsl(var(--color-background) / <alpha-value>)',
-        foreground: 'hsl(var(--color-foreground) / <alpha-value>)',
-        background: {
-          DEFAULT: 'hsl(var(--color-background) / <alpha-value>)',
-          50: 'hsl(var(--color-background-50) / <alpha-value>)',
-          100: 'hsl(var(--color-background-100) / <alpha-value>)',
-          200: 'hsl(var(--color-background-200) / <alpha-value>)',
-          300: 'hsl(var(--color-background-300) / <alpha-value>)',
-          400: 'hsl(var(--color-background-400) / <alpha-value>)',
-          500: 'hsl(var(--color-background-500) / <alpha-value>)',
-          600: 'hsl(var(--color-background-600) / <alpha-value>)',
-          700: 'hsl(var(--color-background-700) / <alpha-value>)',
-          800: 'hsl(var(--color-background-800) / <alpha-value>)',
-          900: 'hsl(var(--color-background-900) / <alpha-value>)',
-        },
-        foreground: {
-          DEFAULT: 'hsl(var(--color-foreground) / <alpha-value>)',
-          50: 'hsl(var(--color-foreground-50) / <alpha-value>)',
-          100: 'hsl(var(--color-foreground-100) / <alpha-value>)',
-          200: 'hsl(var(--color-foreground-200) / <alpha-value>)',
-          300: 'hsl(var(--color-foreground-300) / <alpha-value>)',
-          400: 'hsl(var(--color-foreground-400) / <alpha-value>)',
-          500: 'hsl(var(--color-foreground-500) / <alpha-value>)',
-          600: 'hsl(var(--color-foreground-600) / <alpha-value>)',
-          700: 'hsl(var(--color-foreground-700) / <alpha-value>)',
-          800: 'hsl(var(--color-foreground-800) / <alpha-value>)',
-          900: 'hsl(var(--color-foreground-900) / <alpha-value>)',
-        },
-      },
-      // ... other theme extensions
-    }
-  },
-  plugins: [
-    // ... existing plugins
-    motionSafeTransition
-  ]
-})
+module.exports = wrapper

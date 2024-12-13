@@ -14,7 +14,7 @@ toc_depth: 3
 launchweek: '11'
 ---
 
-Biobase Auth now supports [anonymous sign-ins](/docs/guides/auth/auth-anonymous), one of our [most-requested features](https://github.com/biobase-ai/auth/issues/68) by the community.
+Biobase Auth now supports [anonymous sign-ins](/docs/guides/auth/auth-anonymous), one of our [most-requested features](https://github.com/biobase/auth/issues/68) by the community.
 
 Anonymous sign-ins can be used to create **temporary users** who haven’t signed up for your application yet. This lowers the friction for new users to try out your product since they don’t have to provide any signup credentials.
 
@@ -49,7 +49,7 @@ For local development, upgrade your Biobase CLI and add the config to the `confi
 enable_anonymous_sign_ins = true
 ```
 
-You can create an anonymous user through the [Javascript](/docs/reference/javascript/auth-signinanonymously), [Flutter](/docs/reference/dart/auth-signinanonymously) or [Swift](/docs/reference/swift/auth-signinanonymously) SDKs today. Here’s how you can create an anonymous user using `supabase-js` .
+You can create an anonymous user through the [Javascript](/docs/reference/javascript/auth-signinanonymously), [Flutter](/docs/reference/dart/auth-signinanonymously) or [Swift](/docs/reference/swift/auth-signinanonymously) SDKs today. Here’s how you can create an anonymous user using `biobase-js` .
 
 {/* prettier-ignore */}
 ```jsx
@@ -216,7 +216,7 @@ delete from auth.users
 where is_anonymous is true and created_at < now() - interval '30 days';
 ```
 
-We are also working on a [linter](https://github.com/biobase-ai/splinter/pull/28) to check your RLS policies and highlight those that allow anonymous users access - stay tuned for updates later this month!
+We are also working on a [linter](https://github.com/biobase/splinter/pull/28) to check your RLS policies and highlight those that allow anonymous users access - stay tuned for updates later this month!
 
 ## Getting started
 

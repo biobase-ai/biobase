@@ -5,8 +5,6 @@ import {
 } from '~/features/docs/GuidesMdx.utils'
 import { GuideTemplate } from '~/features/docs/GuidesMdx.template'
 
-export const dynamicParams = false
-
 type Params = { slug: string[] }
 
 const GuidePage = async ({ params }: { params: Params }) => {

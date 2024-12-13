@@ -1,3087 +1,2169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://biobase.studio/assistant</loc>
+    <loc>https://biobase.com/aup</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/aup</loc>
+    <loc>https://biobase.com/auth</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/auth</loc>
+    <loc>https://biobase.com/beta</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/beta</loc>
+    <loc>https://biobase.com/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog</loc>
+    <loc>https://biobase.com/brand-assets</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/brand-assets</loc>
+    <loc>https://biobase.com/careers</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/careers</loc>
+    <loc>https://biobase.com/changelog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/changelog</loc>
+    <loc>https://biobase.com/company</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/company</loc>
+    <loc>https://biobase.com/customers</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers</loc>
+    <loc>https://biobase.com/database</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/database</loc>
+    <loc>https://biobase.com/edge-functions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/edge-functions</loc>
+    <loc>https://biobase.com/enterprise</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/enterprise</loc>
+    <loc>https://biobase.com/ga-week</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/features</loc>
+    <loc>https://biobase.com/ga</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/ga-week</loc>
+    <loc>https://biobase.com</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/ga</loc>
+    <loc>https://biobase.com/nextjs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio</loc>
+    <loc>https://biobase.com/open-source</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/nextjs</loc>
+    <loc>https://biobase.com/pricing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/open-source</loc>
+    <loc>https://biobase.com/privacy-240522</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/pricing</loc>
+    <loc>https://biobase.com/privacy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/privacy-240804</loc>
+    <loc>https://biobase.com/realtime</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/privacy</loc>
+    <loc>https://biobase.com/security</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/realtime</loc>
+    <loc>https://biobase.com/sla</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/security</loc>
+    <loc>https://biobase.com/storage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/sla</loc>
+    <loc>https://biobase.com/support-policy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/storage</loc>
+    <loc>https://biobase.com/support</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/support-policy</loc>
+    <loc>https://biobase.com/terms</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/support</loc>
+    <loc>https://biobase.com/vector</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/terms</loc>
+    <loc>https://biobase.com/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/vector</loc>
+    <loc>https://biobase.com/contact/sales</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/</loc>
+    <loc>https://biobase.com/events</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/contact/sales</loc>
+    <loc>https://biobase.com/launch-week</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/events</loc>
+    <loc>https://biobase.com/legal/dpa</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week</loc>
+    <loc>https://biobase.com/partners</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/legal/dpa</loc>
+    <loc>https://biobase.com/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/opt-out/[ref]</loc>
+    <loc>https://biobase.com/launch-week/6</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/opt-out</loc>
+    <loc>https://biobase.com/launch-week/7</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/partners</loc>
+    <loc>https://biobase.com/launch-week/8</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/</loc>
+    <loc>https://biobase.com/launch-week/x</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/12</loc>
+    <loc>https://biobase.com/partners/integrations</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/6</loc>
+    <loc>https://biobase.com/partners/experts</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/7</loc>
+    <loc>https://biobase.com/blog/biobase-alpha-april-2020</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/8</loc>
+    <loc>https://biobase.com/blog/biobase-alpha-may-2020</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/x</loc>
+    <loc>https://biobase.com/blog/biobase-steve-chavez</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/partners/integrations</loc>
+    <loc>https://biobase.com/blog/biobase-alpha-june-2020</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-alpha-april-2020</loc>
+    <loc>https://biobase.com/blog/postgresql-templates</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-alpha-may-2020</loc>
+    <loc>https://biobase.com/blog/alpha-launch-postmortem</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-steve-chavez</loc>
+    <loc>https://biobase.com/blog/postgresql-physical-logical-backups</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-alpha-june-2020</loc>
+    <loc>https://biobase.com/blog/continuous-postgresql-backup-walg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgresql-templates</loc>
+    <loc>https://biobase.com/blog/biobase-alpha-july-2020</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/alpha-launch-postmortem</loc>
+    <loc>https://biobase.com/blog/biobase-auth</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgresql-physical-logical-backups</loc>
+    <loc>https://biobase.com/blog/biobase-alpha-august-2020</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/continuous-postgresql-backup-walg</loc>
+    <loc>https://biobase.com/blog/biobase-hacktoberfest-2020</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-alpha-july-2020</loc>
+    <loc>https://biobase.com/blog/biobase-alpha-september-2020</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-auth</loc>
+    <loc>https://biobase.com/blog/improved-dx</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-alpha-august-2020</loc>
+    <loc>https://biobase.com/blog/biobase-alpha-october-2020</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-hacktoberfest-2020</loc>
+    <loc>https://biobase.com/blog/postgresql-views</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-alpha-september-2020</loc>
+    <loc>https://biobase.com/blog/biobase-alpha-november-2020</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/improved-dx</loc>
+    <loc>https://biobase.com/blog/case-study-monitoro</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-alpha-october-2020</loc>
+    <loc>https://biobase.com/blog/case-study-tayfa</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgresql-views</loc>
+    <loc>https://biobase.com/blog/case-study-xendit</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-alpha-november-2020</loc>
+    <loc>https://biobase.com/blog/biobase-striveschool</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/case-study-monitoro</loc>
+    <loc>https://biobase.com/blog/biobase-dashboard-performance</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/case-study-tayfa</loc>
+    <loc>https://biobase.com/blog/biobase-beta-december-2020</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/case-study-xendit</loc>
+    <loc>https://biobase.com/blog/biobase-beta-january-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-striveschool</loc>
+    <loc>https://biobase.com/blog/case-study-roboflow</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-dashboard-performance</loc>
+    <loc>https://biobase.com/blog/cracking-postgres-interview</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-december-2020</loc>
+    <loc>https://biobase.com/blog/biobase-beta-february-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-january-2021</loc>
+    <loc>https://biobase.com/blog/postgres-as-a-cron-server</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/case-study-roboflow</loc>
+    <loc>https://biobase.com/blog/toad-a-link-shortener-with-simple-apis-for-low-coders</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/cracking-postgres-interview</loc>
+    <loc>https://biobase.com/blog/using-biobase-replit</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-february-2021</loc>
+    <loc>https://biobase.com/blog/In-The-Loop</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-as-a-cron-server</loc>
+    <loc>https://biobase.com/blog/angels-of-biobase</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/toad-a-link-shortener-with-simple-apis-for-low-coders</loc>
+    <loc>https://biobase.com/blog/launch-week</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/using-biobase-replit</loc>
+    <loc>https://biobase.com/blog/pricing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/In-The-Loop</loc>
+    <loc>https://biobase.com/blog/biobase-storage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/angels-of-biobase</loc>
+    <loc>https://biobase.com/blog/biobase-cli</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week</loc>
+    <loc>https://biobase.com/blog/biobase-nft-marketplace</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/pricing</loc>
+    <loc>https://biobase.com/blog/biobase-dot-com</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-storage</loc>
+    <loc>https://biobase.com/blog/biobase-pgbouncer</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-cli</loc>
+    <loc>https://biobase.com/blog/biobase-workflows</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-nft-marketplace</loc>
+    <loc>https://biobase.com/blog/biobase-beta-march-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-dot-com</loc>
+    <loc>https://biobase.com/blog/biobase-beta-april-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-pgbouncer</loc>
+    <loc>https://biobase.com/blog/biobase-beta-may-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-workflows</loc>
+    <loc>https://biobase.com/blog/roles-postgres-hooks</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-march-2021</loc>
+    <loc>https://biobase.com/blog/biobase-beta-june-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-april-2021</loc>
+    <loc>https://biobase.com/blog/biobase-launch-week-sql</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-may-2021</loc>
+    <loc>https://biobase.com/blog/epsilon3-self-hosting</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/roles-postgres-hooks</loc>
+    <loc>https://biobase.com/blog/biobase-community-day</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-june-2021</loc>
+    <loc>https://biobase.com/blog/biobase-postgres-13</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-launch-week-sql</loc>
+    <loc>https://biobase.com/blog/spot-flutter-with-postgres</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/epsilon3-self-hosting</loc>
+    <loc>https://biobase.com/blog/storage-beta</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-community-day</loc>
+    <loc>https://biobase.com/blog/mobbin-biobase-200000-users</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-postgres-13</loc>
+    <loc>https://biobase.com/blog/biobase-auth-passwordless-sms-login</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/spot-flutter-with-postgres</loc>
+    <loc>https://biobase.com/blog/biobase-reports-and-metrics</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/storage-beta</loc>
+    <loc>https://biobase.com/blog/1-the-biobase-hackathon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/mobbin-biobase-200000-users</loc>
+    <loc>https://biobase.com/blog/biobase-functions-updates</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-auth-passwordless-sms-login</loc>
+    <loc>https://biobase.com/blog/biobase-swag-store</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-reports-and-metrics</loc>
+    <loc>https://biobase.com/blog/hackathon-winners</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/1-the-biobase-hackathon</loc>
+    <loc>https://biobase.com/blog/biobase-beta-july-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-functions-updates</loc>
+    <loc>https://biobase.com/blog/biobase-beta-august-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-swag-store</loc>
+    <loc>https://biobase.com/blog/biobase-hacktoberfest-hackathon-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/hackathon-winners</loc>
+    <loc>https://biobase.com/blog/biobase-beta-sept-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-july-2021</loc>
+    <loc>https://biobase.com/blog/hacktoberfest-hackathon-winners-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-august-2021</loc>
+    <loc>https://biobase.com/blog/replenysh-time-to-value-in-less-than-24-hours</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-hacktoberfest-hackathon-2021</loc>
+    <loc>https://biobase.com/blog/biobase-series-a</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-sept-2021</loc>
+    <loc>https://biobase.com/blog/biobase-beta-october-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/hacktoberfest-hackathon-winners-2021</loc>
+    <loc>https://biobase.com/blog/biobase-how-we-launch</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/replenysh-time-to-value-in-less-than-24-hours</loc>
+    <loc>https://biobase.com/blog/biobase-launch-week-the-trilogy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-series-a</loc>
+    <loc>https://biobase.com/blog/postgrest-9</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-october-2021</loc>
+    <loc>https://biobase.com/blog/whats-new-in-postgres-14</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-how-we-launch</loc>
+    <loc>https://biobase.com/blog/community-day-lw3</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-launch-week-the-trilogy</loc>
+    <loc>https://biobase.com/blog/biobase-studio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgrest-9</loc>
+    <loc>https://biobase.com/blog/realtime-row-level-security-in-postgresql</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/whats-new-in-postgres-14</loc>
+    <loc>https://biobase.com/blog/biobase-acquires-logflare</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/community-day-lw3</loc>
+    <loc>https://biobase.com/blog/launch-week-three-friday-five-more-things</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-studio</loc>
+    <loc>https://biobase.com/blog/pg-graphql</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/realtime-row-level-security-in-postgresql</loc>
+    <loc>https://biobase.com/blog/biobase-holiday-hackdays-hackathon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-acquires-logflare</loc>
+    <loc>https://biobase.com/blog/beta-november-2021-launch-week-recap</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-three-friday-five-more-things</loc>
+    <loc>https://biobase.com/blog/holiday-hackdays-winners-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/pg-graphql</loc>
+    <loc>https://biobase.com/blog/product-hunt-golden-kitty-awards-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-holiday-hackdays-hackathon</loc>
+    <loc>https://biobase.com/blog/biobase-beta-december-2021</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/beta-november-2021-launch-week-recap</loc>
+    <loc>https://biobase.com/blog/biobase-beta-january-2022</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/holiday-hackdays-winners-2021</loc>
+    <loc>https://biobase.com/blog/postgres-audit</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/product-hunt-golden-kitty-awards-2021</loc>
+    <loc>https://biobase.com/blog/should-i-open-source-my-company</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-december-2021</loc>
+    <loc>https://biobase.com/blog/biobase-launch-week-four</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-january-2022</loc>
+    <loc>https://biobase.com/blog/community-day-lw4</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-audit</loc>
+    <loc>https://biobase.com/blog/graphql-now-available</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/should-i-open-source-my-company</loc>
+    <loc>https://biobase.com/blog/biobase-enterprise</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-launch-week-four</loc>
+    <loc>https://biobase.com/blog/biobase-edge-functions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/community-day-lw4</loc>
+    <loc>https://biobase.com/blog/hackathon-bring-the-func</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/graphql-now-available</loc>
+    <loc>https://biobase.com/blog/biobase-realtime-with-multiplayer-features</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-enterprise</loc>
+    <loc>https://biobase.com/blog/supabrew</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-edge-functions</loc>
+    <loc>https://biobase.com/blog/beta-update-march-2022</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/hackathon-bring-the-func</loc>
+    <loc>https://biobase.com/blog/bring-the-func-hackathon-winners</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-realtime-with-multiplayer-features</loc>
+    <loc>https://biobase.com/blog/partner-gallery-works-with-biobase</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/supabrew</loc>
+    <loc>https://biobase.com/blog/how-biobase-accelerates-development-of-all-pull-together</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/beta-update-march-2022</loc>
+    <loc>https://biobase.com/blog/beta-update-may-2022</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/bring-the-func-hackathon-winners</loc>
+    <loc>https://biobase.com/blog/loading-data-biobase-python</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/partner-gallery-works-with-biobase</loc>
+    <loc>https://biobase.com/blog/partial-postgresql-data-dumps-with-rls</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/how-biobase-accelerates-development-of-all-pull-together</loc>
+    <loc>https://biobase.com/blog/visualizing-biobase-data-using-metabase</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/beta-update-may-2022</loc>
+    <loc>https://biobase.com/blog/flutter-tutorial-building-a-chat-app</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/loading-data-biobase-python</loc>
+    <loc>https://biobase.com/blog/beta-update-june-2022</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/partial-postgresql-data-dumps-with-rls</loc>
+    <loc>https://biobase.com/blog/biobase-auth-helpers-with-sveltekit-support</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/visualizing-biobase-data-using-metabase</loc>
+    <loc>https://biobase.com/blog/seen-by-in-postgresql</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/flutter-tutorial-building-a-chat-app</loc>
+    <loc>https://biobase.com/blog/biobase-flutter-sdk-1-developer-preview</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/beta-update-june-2022</loc>
+    <loc>https://biobase.com/blog/biobase-beta-update-july-2022</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-auth-helpers-with-sveltekit-support</loc>
+    <loc>https://biobase.com/blog/slack-consolidate-slackbot-to-consolidate-messages</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/seen-by-in-postgresql</loc>
+    <loc>https://biobase.com/blog/launch-week-5-hackathon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-flutter-sdk-1-developer-preview</loc>
+    <loc>https://biobase.com/blog/biobase-series-b</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-update-july-2022</loc>
+    <loc>https://biobase.com/blog/biobase-cli-v1-and-admin-api-beta</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/slack-consolidate-slackbot-to-consolidate-messages</loc>
+    <loc>https://biobase.com/blog/biobase-js-v2</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-5-hackathon</loc>
+    <loc>https://biobase.com/blog/biobase-soc2</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-series-b</loc>
+    <loc>https://biobase.com/blog/biobase-realtime-multiplayer-general-availability</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-cli-v1-and-admin-api-beta</loc>
+    <loc>https://biobase.com/blog/launch-week-5-community-day</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/supabase-js-v2</loc>
+    <loc>https://biobase.com/blog/launch-week-5-one-more-thing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-soc2</loc>
+    <loc>https://biobase.com/blog/pg-jsonschema-a-postgres-extension-for-json-validation</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-realtime-multiplayer-general-availability</loc>
+    <loc>https://biobase.com/blog/postgrest-v10</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-5-community-day</loc>
+    <loc>https://biobase.com/blog/biobase-vault</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-5-one-more-thing</loc>
+    <loc>https://biobase.com/blog/building-a-realtime-trello-board-with-biobase-and-angular</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/pg-jsonschema-a-postgres-extension-for-json-validation</loc>
+    <loc>https://biobase.com/blog/launch-week-5-hackathon-winners</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgrest-v10</loc>
+    <loc>https://biobase.com/blog/biobase-beta-update-august-2022</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-vault</loc>
+    <loc>https://biobase.com/blog/choosing-a-postgres-primary-key</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/building-a-realtime-trello-board-with-biobase-and-angular</loc>
+    <loc>https://biobase.com/blog/postgres-wasm</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-5-hackathon-winners</loc>
+    <loc>https://biobase.com/blog/biobase-beta-update-september-2022</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-update-august-2022</loc>
+    <loc>https://biobase.com/blog/postgres-full-text-search-vs-the-rest</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/choosing-a-postgres-primary-key</loc>
+    <loc>https://biobase.com/blog/biobase-js-v2-released</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-wasm</loc>
+    <loc>https://biobase.com/blog/biobase-flutter-sdk-v1-released</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-update-september-2022</loc>
+    <loc>https://biobase.com/blog/postgresql-commitfest</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-full-text-search-vs-the-rest</loc>
+    <loc>https://biobase.com/blog/biobase-beta-update-october-2022</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/supabase-js-v2-released</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/blog/biobase-flutter-sdk-v1-released</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/blog/postgresql-commitfest</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/blog/biobase-beta-update-october-2022</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/blog/authentication-in-ionic-angular</loc>
+    <loc>https://biobase.com/blog/authentication-in-ionic-angular</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
     <loc
-      >https://biobase.studio/blog/fetching-and-caching-biobase-data-in-next-js-server-components</loc
+      >https://biobase.com/blog/fetching-and-caching-biobase-data-in-next-js-server-components</loc
     >
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/flutter-authorization-with-rls</loc>
+    <loc>https://biobase.com/blog/flutter-authorization-with-rls</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/sql-or-nosql-both-with-postgresql</loc>
+    <loc>https://biobase.com/blog/sql-or-nosql-both-with-postgresql</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/the-biobase-content-storm</loc>
+    <loc>https://biobase.com/blog/the-biobase-content-storm</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-november-2022</loc>
+    <loc>https://biobase.com/blog/biobase-beta-november-2022</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-6-hackathon</loc>
+    <loc>https://biobase.com/blog/launch-week-6-hackathon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/who-we-hire</loc>
+    <loc>https://biobase.com/blog/who-we-hire</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-crdt</loc>
+    <loc>https://biobase.com/blog/postgres-crdt</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/new-biobase-docs-built-with-nextjs</loc>
+    <loc>https://biobase.com/blog/new-biobase-docs-built-with-nextjs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/storage-image-resizing-smart-cdn</loc>
+    <loc>https://biobase.com/blog/storage-image-resizing-smart-cdn</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/mfa-auth-via-rls</loc>
+    <loc>https://biobase.com/blog/mfa-auth-via-rls</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-foreign-data-wrappers-rust</loc>
+    <loc>https://biobase.com/blog/postgres-foreign-data-wrappers-rust</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/custom-domain-names</loc>
+    <loc>https://biobase.com/blog/custom-domain-names</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-6-community-day</loc>
+    <loc>https://biobase.com/blog/launch-week-6-community-day</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-6-wrap-up</loc>
+    <loc>https://biobase.com/blog/launch-week-6-wrap-up</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/new-in-postgres-15</loc>
+    <loc>https://biobase.com/blog/new-in-postgres-15</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/pg-graphql-v1</loc>
+    <loc>https://biobase.com/blog/pg-graphql-v1</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-point-in-time-recovery</loc>
+    <loc>https://biobase.com/blog/postgres-point-in-time-recovery</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgrest-11-prerelease</loc>
+    <loc>https://biobase.com/blog/postgrest-11-prerelease</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/vault-now-in-beta</loc>
+    <loc>https://biobase.com/blog/vault-now-in-beta</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-6-hackathon-winners</loc>
+    <loc>https://biobase.com/blog/launch-week-6-hackathon-winners</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-december-2022</loc>
+    <loc>https://biobase.com/blog/biobase-beta-december-2022</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/openai-embeddings-postgres-vector</loc>
+    <loc>https://biobase.com/blog/openai-embeddings-postgres-vector</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/chatgpt-biobase-docs</loc>
+    <loc>https://biobase.com/blog/chatgpt-biobase-docs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-january-2023</loc>
+    <loc>https://biobase.com/blog/biobase-beta-january-2023</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/flutter-real-time-multiplayer-game</loc>
+    <loc>https://biobase.com/blog/flutter-real-time-multiplayer-game</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/case-study-happyteams</loc>
+    <loc>https://biobase.com/blog/case-study-happyteams</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/type-constraints-in-65-lines-of-sql</loc>
+    <loc>https://biobase.com/blog/type-constraints-in-65-lines-of-sql</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/geo-queries-with-postgis-in-ionic-angular</loc>
+    <loc>https://biobase.com/blog/geo-queries-with-postgis-in-ionic-angular</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-update-february-2023</loc>
+    <loc>https://biobase.com/blog/biobase-beta-update-february-2023</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/supaclub</loc>
+    <loc>https://biobase.com/blog/supaclub</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/infinite-scroll-with-nextjs-framer-motion</loc>
+    <loc>https://biobase.com/blog/infinite-scroll-with-nextjs-framer-motion</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/designing-with-ai-midjourney</loc>
+    <loc>https://biobase.com/blog/designing-with-ai-midjourney</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-7-hackathon</loc>
+    <loc>https://biobase.com/blog/launch-week-7-hackathon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-update-march-2023</loc>
+    <loc>https://biobase.com/blog/biobase-beta-update-march-2023</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-logs-self-hosted</loc>
+    <loc>https://biobase.com/blog/biobase-logs-self-hosted</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/edge-runtime-self-hosted-deno-functions</loc>
+    <loc>https://biobase.com/blog/edge-runtime-self-hosted-deno-functions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/storage-v3-resumable-uploads</loc>
+    <loc>https://biobase.com/blog/storage-v3-resumable-uploads</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-auth-sso-pkce</loc>
+    <loc>https://biobase.com/blog/biobase-auth-sso-pkce</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/dbdev</loc>
+    <loc>https://biobase.com/blog/dbdev</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-7-community-highlights</loc>
+    <loc>https://biobase.com/blog/launch-week-7-community-highlights</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/pg-tle</loc>
+    <loc>https://biobase.com/blog/pg-tle</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-studio-2.0</loc>
+    <loc>https://biobase.com/blog/biobase-studio-2.0</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/whats-new-in-pg-graphql-v1-2</loc>
+    <loc>https://biobase.com/blog/whats-new-in-pg-graphql-v1-2</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-7-hackathon-winners</loc>
+    <loc>https://biobase.com/blog/launch-week-7-hackathon-winners</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-pluggable-strorage</loc>
+    <loc>https://biobase.com/blog/postgres-pluggable-strorage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/flutter-multi-factor-authentication</loc>
+    <loc>https://biobase.com/blog/flutter-multi-factor-authentication</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-update-april-2023</loc>
+    <loc>https://biobase.com/blog/biobase-beta-update-april-2023</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/flutter-hackathon</loc>
+    <loc>https://biobase.com/blog/flutter-hackathon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/building-chatgpt-plugins-template</loc>
+    <loc>https://biobase.com/blog/building-chatgpt-plugins-template</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/chatgpt-plugins-support-postgres</loc>
+    <loc>https://biobase.com/blog/chatgpt-plugins-support-postgres</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/flutter-hackathon-winners</loc>
+    <loc>https://biobase.com/blog/flutter-hackathon-winners</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/vecs</loc>
+    <loc>https://biobase.com/blog/vecs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-update-may-2023</loc>
+    <loc>https://biobase.com/blog/biobase-beta-update-may-2023</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/native-mobile-auth</loc>
+    <loc>https://biobase.com/blog/native-mobile-auth</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-beta-update-june-2023</loc>
+    <loc>https://biobase.com/blog/biobase-beta-update-june-2023</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgrest-11-1-release</loc>
+    <loc>https://biobase.com/blog/postgrest-11-1-release</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/pgvector-performance</loc>
+    <loc>https://biobase.com/blog/pgvector-performance</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/flutter-authentication</loc>
+    <loc>https://biobase.com/blog/flutter-authentication</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-lw8-hackathon</loc>
+    <loc>https://biobase.com/blog/biobase-lw8-hackathon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/react-native-storage</loc>
+    <loc>https://biobase.com/blog/react-native-storage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/beta-update-july-2023</loc>
+    <loc>https://biobase.com/blog/beta-update-july-2023</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/fewer-dimensions-are-better-pgvector</loc>
+    <loc>https://biobase.com/blog/fewer-dimensions-are-better-pgvector</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/interactive-constellation-threejs-react-three-fiber</loc>
+    <loc>https://biobase.com/blog/interactive-constellation-threejs-react-three-fiber</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/why-biobase-remote</loc>
+    <loc>https://biobase.com/blog/why-biobase-remote</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/hugging-face-biobase</loc>
+    <loc>https://biobase.com/blog/hugging-face-biobase</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-local-dev</loc>
+    <loc>https://biobase.com/blog/biobase-local-dev</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-studio-3-0</loc>
+    <loc>https://biobase.com/blog/biobase-studio-3-0</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-integrations-marketplace</loc>
+    <loc>https://biobase.com/blog/biobase-integrations-marketplace</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/using-biobase-with-vercel</loc>
+    <loc>https://biobase.com/blog/using-biobase-with-vercel</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-8-community-highlights</loc>
+    <loc>https://biobase.com/blog/launch-week-8-community-highlights</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-soc2-hipaa</loc>
+    <loc>https://biobase.com/blog/biobase-soc2-hipaa</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/supavisor-1-million</loc>
+    <loc>https://biobase.com/blog/supavisor-1-million</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-8-hackathon-winners</loc>
+    <loc>https://biobase.com/blog/launch-week-8-hackathon-winners</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/organization-based-billing</loc>
+    <loc>https://biobase.com/blog/organization-based-billing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/increase-performance-pgvector-hnsw</loc>
+    <loc>https://biobase.com/blog/increase-performance-pgvector-hnsw</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/beta-update-august-2023</loc>
+    <loc>https://biobase.com/blog/beta-update-august-2023</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-dynamic-table-partitioning</loc>
+    <loc>https://biobase.com/blog/postgres-dynamic-table-partitioning</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/beta-update-september-2023</loc>
+    <loc>https://biobase.com/blog/beta-update-september-2023</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/react-native-offline-first-watermelon-db</loc>
+    <loc>https://biobase.com/blog/react-native-offline-first-watermelon-db</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/pgvector-vs-pinecone</loc>
+    <loc>https://biobase.com/blog/pgvector-vs-pinecone</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-is-now-compatible-with-nextjs-14</loc>
+    <loc>https://biobase.com/blog/biobase-is-now-compatible-with-nextjs-14</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/beta-update-october-2023</loc>
+    <loc>https://biobase.com/blog/beta-update-october-2023</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/react-native-authentication</loc>
+    <loc>https://biobase.com/blog/react-native-authentication</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/oauth2-login-python-flask-apps</loc>
+    <loc>https://biobase.com/blog/oauth2-login-python-flask-apps</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/automatic-cli-login</loc>
+    <loc>https://biobase.com/blog/automatic-cli-login</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/beta-update-november-2023</loc>
+    <loc>https://biobase.com/blog/beta-update-november-2023</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/community-meetups-lwx</loc>
+    <loc>https://biobase.com/blog/community-meetups-lwx</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-hackathon-lwx</loc>
+    <loc>https://biobase.com/blog/biobase-hackathon-lwx</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/how-design-works-at-biobase</loc>
+    <loc>https://biobase.com/blog/how-design-works-at-biobase</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-language-server-implementing-parser</loc>
+    <loc>https://biobase.com/blog/postgres-language-server-implementing-parser</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/studio-introducing-assistant</loc>
+    <loc>https://biobase.com/blog/studio-introducing-assistant</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/edge-functions-node-npm</loc>
+    <loc>https://biobase.com/blog/edge-functions-node-npm</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/pg-graphql-postgres-functions</loc>
+    <loc>https://biobase.com/blog/pg-graphql-postgres-functions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgrest-12</loc>
+    <loc>https://biobase.com/blog/postgrest-12</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-branching</loc>
+    <loc>https://biobase.com/blog/biobase-branching</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/supavisor-postgres-connection-pooler</loc>
+    <loc>https://biobase.com/blog/supavisor-postgres-connection-pooler</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-auth-identity-linking-hooks</loc>
+    <loc>https://biobase.com/blog/biobase-auth-identity-linking-hooks</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-wrappers-v02</loc>
+    <loc>https://biobase.com/blog/biobase-wrappers-v02</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/client-libraries-v2</loc>
+    <loc>https://biobase.com/blog/client-libraries-v2</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/introducing-read-replicas</loc>
+    <loc>https://biobase.com/blog/introducing-read-replicas</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-on-fly-by-biobase</loc>
+    <loc>https://biobase.com/blog/postgres-on-fly-by-biobase</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-x-best-launches</loc>
+    <loc>https://biobase.com/blog/launch-week-x-best-launches</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-x-hackathon-winners</loc>
+    <loc>https://biobase.com/blog/launch-week-x-hackathon-winners</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/beta-update-december-2023</loc>
+    <loc>https://biobase.com/blog/beta-update-december-2023</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/elixir-clustering-using-postgres</loc>
+    <loc>https://biobase.com/blog/elixir-clustering-using-postgres</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/react-query-nextjs-app-router-cache-helpers</loc>
+    <loc>https://biobase.com/blog/react-query-nextjs-app-router-cache-helpers</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/ipv6</loc>
+    <loc>https://biobase.com/blog/ipv6</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/what-is-saml-authentication</loc>
+    <loc>https://biobase.com/blog/what-is-saml-authentication</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/laravel-postgres</loc>
+    <loc>https://biobase.com/blog/laravel-postgres</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/how-pg-graphql-works</loc>
+    <loc>https://biobase.com/blog/how-pg-graphql-works</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/flutter-figma-clone</loc>
+    <loc>https://biobase.com/blog/flutter-figma-clone</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/ruby-on-rails-postgres</loc>
+    <loc>https://biobase.com/blog/ruby-on-rails-postgres</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/pgvector-fast-builds</loc>
+    <loc>https://biobase.com/blog/pgvector-fast-builds</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/nosql-mongodb-compatibility-with-ferretdb-and-flydotio</loc>
+    <loc>https://biobase.com/blog/nosql-mongodb-compatibility-with-ferretdb-and-flydotio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/matryoshka-embeddings</loc>
+    <loc>https://biobase.com/blog/matryoshka-embeddings</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/automating-performance-tests</loc>
+    <loc>https://biobase.com/blog/automating-performance-tests</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/content-recommendation-with-flutter</loc>
+    <loc>https://biobase.com/blog/content-recommendation-with-flutter</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgrest-aggregate-functions</loc>
+    <loc>https://biobase.com/blog/postgrest-aggregate-functions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/semantic-image-search-amazon-bedrock</loc>
+    <loc>https://biobase.com/blog/semantic-image-search-amazon-bedrock</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/pg-paper-dump</loc>
+    <loc>https://biobase.com/blog/pg-paper-dump</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-roles-and-privileges</loc>
+    <loc>https://biobase.com/blog/postgres-roles-and-privileges</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-oss-hackathon</loc>
+    <loc>https://biobase.com/blog/biobase-oss-hackathon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/branching-publicly-available</loc>
+    <loc>https://biobase.com/blog/branching-publicly-available</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-acquires-oriole</loc>
+    <loc>https://biobase.com/blog/biobase-acquires-oriole</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-aws-marketplace</loc>
+    <loc>https://biobase.com/blog/biobase-aws-marketplace</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-bootstrap</loc>
+    <loc>https://biobase.com/blog/biobase-bootstrap</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-swift</loc>
+    <loc>https://biobase.com/blog/biobase-swift</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/ai-inference-now-available-in-biobase-edge-functions</loc>
+    <loc>https://biobase.com/blog/ai-inference-now-available-in-biobase-edge-functions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/anonymous-sign-ins</loc>
+    <loc>https://biobase.com/blog/anonymous-sign-ins</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/s3-compatible-storage</loc>
+    <loc>https://biobase.com/blog/s3-compatible-storage</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/ga-week-summary</loc>
+    <loc>https://biobase.com/blog/ga-week-summary</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/security-performance-advisor</loc>
+    <loc>https://biobase.com/blog/security-performance-advisor</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/exploring-support-tooling</loc>
+    <loc>https://biobase.com/blog/exploring-support-tooling</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/nix-postgres</loc>
+    <loc>https://biobase.com/blog/nix-postgres</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-bloat</loc>
+    <loc>https://biobase.com/blog/postgres-bloat</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-oss-hackathon-winners</loc>
+    <loc>https://biobase.com/blog/biobase-oss-hackathon-winners</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/pgvector-0-7-0</loc>
+    <loc>https://biobase.com/blog/pgvector-0-7-0</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/meetup-kahoot-alternative</loc>
+    <loc>https://biobase.com/blog/meetup-kahoot-alternative</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/calcom-platform-starter-kit-nextjs-biobase</loc>
+    <loc>https://biobase.com/blog/calcom-platform-starter-kit-nextjs-biobase</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/self-host-maps-storage-protomaps</loc>
+    <loc>https://biobase.com/blog/self-host-maps-storage-protomaps</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgis-generate-vector-tiles</loc>
+    <loc>https://biobase.com/blog/postgis-generate-vector-tiles</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-realtime-location-sharing-with-maplibre</loc>
+    <loc>https://biobase.com/blog/postgres-realtime-location-sharing-with-maplibre</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/hardening-biobase</loc>
+    <loc>https://biobase.com/blog/hardening-biobase</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/range-columns</loc>
+    <loc>https://biobase.com/blog/range-columns</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/supabase-js-on-jsr</loc>
+    <loc>https://biobase.com/blog/biobase-js-on-jsr</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/github-copilot-extension-for-vs-code</loc>
+    <loc>https://biobase.com/blog/github-copilot-extension-for-vs-code</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-new</loc>
+    <loc>https://biobase.com/blog/postgres-new</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-realtime-broadcast-and-presence-authorization</loc>
+    <loc>https://biobase.com/blog/biobase-realtime-broadcast-and-presence-authorization</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/snaplet-is-now-open-source</loc>
+    <loc>https://biobase.com/blog/snaplet-is-now-open-source</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/third-party-auth-mfa-phone-send-hooks</loc>
+    <loc>https://biobase.com/blog/third-party-auth-mfa-phone-send-hooks</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/log-drains</loc>
+    <loc>https://biobase.com/blog/log-drains</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/launch-week-12-top-10</loc>
+    <loc>https://biobase.com/blog/launch-week-12-top-10</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/pg-graphql-1-5-7</loc>
+    <loc>https://biobase.com/blog/pg-graphql-1-5-7</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/platform-access-control</loc>
+    <loc>https://biobase.com/blog/platform-access-control</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgres-foreign-data-wrappers-with-wasm</loc>
+    <loc>https://biobase.com/blog/postgres-foreign-data-wrappers-with-wasm</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/postgrest-12-2</loc>
+    <loc>https://biobase.com/blog/postgrest-12-2</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/python-support</loc>
+    <loc>https://biobase.com/blog/python-support</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-book-by-david-lorenz</loc>
+    <loc>https://biobase.com/blog/biobase-book-by-david-lorenz</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/vec2pg</loc>
+    <loc>https://biobase.com/blog/vec2pg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/mozilla-llamafile-in-biobase-edge-functions</loc>
+    <loc>https://biobase.com/blog/mozilla-llamafile-in-biobase-edge-functions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-lw12-hackathon</loc>
+    <loc>https://biobase.com/blog/biobase-lw12-hackathon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-vercel-partnership</loc>
+    <loc>https://biobase.com/blog/biobase-vercel-partnership</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/in-browser-semantic-search-pglite</loc>
+    <loc>https://biobase.com/blog/in-browser-semantic-search-pglite</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/flutter-uber-clone</loc>
+    <loc>https://biobase.com/blog/flutter-uber-clone</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/edge-functions-faster-smaller</loc>
+    <loc>https://biobase.com/blog/edge-functions-faster-smaller</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/local-first-expo-legend-state</loc>
+    <loc>https://biobase.com/blog/local-first-expo-legend-state</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/lw12-hackathon-winners</loc>
+    <loc>https://biobase.com/blog/lw12-hackathon-winners</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/offline-first-flutter-apps</loc>
+    <loc>https://biobase.com/customers/berriai</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/mongodb-realm-and-device-sync-alternatives</loc>
+    <loc>https://biobase.com/customers/chatbase</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/database-build-live-share</loc>
+    <loc>https://biobase.com/customers/epsilon3</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-clickhouse-partnership</loc>
+    <loc>https://biobase.com/customers/good-tape</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-dynamic-functions</loc>
+    <loc>https://biobase.com/customers/happyteams</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/orioledb-launch</loc>
+    <loc>https://biobase.com/customers/maergo</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-ai-assistant-v2</loc>
+    <loc>https://biobase.com/customers/markprompt</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/edge-functions-background-tasks-websockets</loc>
+    <loc>https://biobase.com/customers/mendableai</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/biobase-cron</loc>
+    <loc>https://biobase.com/customers/mobbin</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/berriai</loc>
+    <loc>https://biobase.com/customers/next-door-lending</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/chatbase</loc>
+    <loc>https://biobase.com/customers/pebblely</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/epsilon3</loc>
+    <loc>https://biobase.com/customers/quivr</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/good-tape</loc>
+    <loc>https://biobase.com/customers/replenysh</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/happyteams</loc>
+    <loc>https://biobase.com/customers/shotgun</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/humata</loc>
+    <loc>https://biobase.com/customers/tinloof</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/maergo</loc>
+    <loc>https://biobase.com/customers/voypost</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/markprompt</loc>
+    <loc>https://biobase.com/customers/xendit</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/mendableai</loc>
+    <loc>https://biobase.com/events/scale-to-millions-generative-ai-humata</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/mobbin</loc>
+    <loc>https://biobase.com/events/launch-week-12-hackathon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/next-door-lending</loc>
+    <loc>https://biobase.com/alternatives/biobase-vs-auth0</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/pebblely</loc>
+    <loc>https://biobase.com/alternatives/biobase-vs-firebase</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/customers/quivr</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/customers/replenysh</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/customers/shotgun</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/customers/tinloof</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/customers/voypost</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/customers/xendit</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/events/scale-to-millions-generative-ai-humata</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/events/launch-week-12-hackathon</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/events/scale-to-millions-goodtape-auth</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/events/biobase-ai-hackathon-at-y-combinator</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/alternatives/biobase-vs-auth0</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/alternatives/biobase-vs-firebase</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/alternatives/biobase-vs-heroku-postgres</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/appsmith</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/arengu</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/artie</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/atomic_crm</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/auth0</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/authsignal</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/basedash</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/bemi</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/buster</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/clerk</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/cloudflare-workers</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/clutch</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/codesandbox</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/corbado</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/cyberduck</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/deepnote</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/dezbor</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/dhiwise</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/directus</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/doppler</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/draftbit</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/drapcode</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/draxlr</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/dronahq</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/electricsql</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/estuary</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/explo</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/fezto</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/flutterflow</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/forestadmin</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/getstream_io</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/illa</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/infisical</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/insightbase</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/internalio</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/jetadmin</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/keyri</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/kinde</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/litellm</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/loops</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/n8n</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/nextauth</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/nuxt</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/onesignal</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/ory</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/passageidentity</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/pgmustard</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/picket</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/plasmic</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/powersync</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/prisma</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/react-admin</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/readyset</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/refine_dev</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/replibyte</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/replicache</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/resend</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/retool</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/risingwave</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/sequin_io</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/stacksync</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/stormkit</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/streamlit</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/stytch</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/biobase_wrapper_bigquery</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/biobase_wrapper_firebase</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/biobase_wrapper_stripe</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/supertokens</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/tamagui-takeout</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/toddle</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/trevor_io</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/triggerdotdev</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/vercel</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/voltapp</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/weweb</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/windmill</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/yepcode</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/zapier</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/zapp_run</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/partners/integrations/zuplo</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/ai-integrations</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/ai-query-assistance</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/auth-captcha-protection</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/auto-generated-graphql-api</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/auto-generated-rest-api</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/branching</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/cdn</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/cli</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/client-library-flutter</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/client-library-javascript</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/client-library-python</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/client-library-swift</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/custom-domains</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/database-backups</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/database-webhooks</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/deno-edge-functions</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/email-login</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/file-storage</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/fly-postgres</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/foreign-key-selector</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/image-transformations</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/log-drains</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/logs-analytics</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/management-api</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/multi-factor-authentication</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/network-restrictions</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/npm-compatibility</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/passwordless-login-via-magicklink</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/phone-logins</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/policy-templates</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/postgres-database</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/postgres-extensions</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/postgres-roles</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/read-replicas</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/realtime-broadcast-authorization</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/realtime-broadcast</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/realtime-postgres-changes</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/realtime-presence-authorization</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/realtime-presence</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/regional-invocations</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/reports-and-metrics</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/resumable-uploads</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/role-based-access-control</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/row-level-security</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/s3-compatibility</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/security-and-performance-advisor</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/server-side-auth</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/smart-cdn</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/soc-2-compliance</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/social-login</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/sql-editor</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/ssl-enforcement</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/supavisor</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/terraform-provider</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/vault</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/vector-database</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/features/visual-schema-designer</loc>
+    <loc>https://biobase.com/alternatives/biobase-vs-heroku-postgres</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

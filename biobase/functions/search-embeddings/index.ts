@@ -1,12 +1,12 @@
 import 'https://deno.land/x/xhr@0.2.1/mod.ts'
-import { createClient } from 'jsr:@supabase/supabase-js@2'
+import { createClient } from 'jsr:@supabase/biobase-js@2'
 import { Configuration, OpenAIApi } from 'https://esm.sh/openai@3.1.0'
 import { Database } from '../common/database-types.ts'
 import { ApplicationError, UserError } from '../common/errors.ts'
 
 const openAiKey = Deno.env.get('OPENAI_API_KEY')
-const biobaseUrl = Deno.env.get('BIOBASE_URL')
-const biobaseServiceKey = Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')
+const biobaseUrl = Deno.env.get('SUPABASE_URL')
+const biobaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
 
 export const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -25,11 +25,11 @@ Deno.serve(async (req) => {
     }
 
     if (!biobaseUrl) {
-      throw new ApplicationError('Missing environment variable BIOBASE_URL')
+      throw new ApplicationError('Missing environment variable SUPABASE_URL')
     }
 
     if (!biobaseServiceKey) {
-      throw new ApplicationError('Missing environment variable BIOBASE_SERVICE_ROLE_KEY')
+      throw new ApplicationError('Missing environment variable SUPABASE_SERVICE_ROLE_KEY')
     }
 
     const requestData = await req.json()

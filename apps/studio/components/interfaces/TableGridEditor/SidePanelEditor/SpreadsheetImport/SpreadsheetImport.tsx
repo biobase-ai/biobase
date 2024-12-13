@@ -1,6 +1,5 @@
 import type { PostgresTable } from '@supabase/postgres-meta'
 import { debounce, includes, noop } from 'lodash'
-import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
 import { toast } from 'sonner'
@@ -19,6 +18,7 @@ import {
   parseSpreadsheetText,
 } from './SpreadsheetImport.utils'
 import SpreadsheetImportPreview from './SpreadsheetImportPreview'
+import { ExternalLink } from 'lucide-react'
 
 const MAX_CSV_SIZE = 1024 * 1024 * 100 // 100 MB
 
@@ -87,7 +87,7 @@ const SpreadsheetImport = ({
           <p>For bulk data loading, we recommend doing so directly through the database.</p>
           <Button asChild type="default" icon={<ExternalLink />} className="!mt-2">
             <Link
-              href="https://biobase.studio/docs/guides/database/tables#bulk-data-loading"
+              href="https://biobase.com/docs/guides/database/tables#bulk-data-loading"
               target="_blank"
               rel="noreferrer"
             >

@@ -2,9 +2,11 @@ import { useMutation, UseMutationOptions, useQueryClient } from '@tanstack/react
 import { toast } from 'sonner'
 
 import { del, handleError } from 'data/fetchers'
+import { sqlKeys } from 'data/sql/keys'
+import { useFlag } from 'hooks/ui/useFlag'
 import type { ResponseError } from 'types'
 import { authKeys } from './keys'
-import type { User } from './users-infinite-query'
+import type { User } from './users-query'
 
 export type UserDeleteVariables = {
   projectRef: string
@@ -31,6 +33,7 @@ export const useUserDeleteMutation = ({
   'mutationFn'
 > = {}) => {
   const queryClient = useQueryClient()
+  const userManagementV2 = useFlag('userManagementV2')
 
   return useMutation<UserDeleteData, ResponseError, UserDeleteVariables>(
     (vars) => deleteUser(vars),
@@ -38,10 +41,16 @@ export const useUserDeleteMutation = ({
       async onSuccess(data, variables, context) {
         const { projectRef } = variables
 
-        await Promise.all([
-          queryClient.invalidateQueries(authKeys.usersInfinite(projectRef)),
-          queryClient.invalidateQueries(authKeys.usersCount(projectRef)),
-        ])
+        if (userManagementV2) {
+          await Promise.all([
+            queryClient.invalidateQueries(authKeys.usersInfinite(projectRef)),
+            queryClient.invalidateQueries(
+              sqlKeys.query(projectRef, authKeys.usersCount(projectRef))
+            ),
+          ])
+        } else {
+          await queryClient.invalidateQueries(authKeys.users(projectRef))
+        }
 
         await onSuccess?.(data, variables, context)
       },

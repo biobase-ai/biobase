@@ -50,12 +50,14 @@ const OrganizationDropdown = ({ isNewNav = false }: OrganizationDropdownProps) =
     <div className="flex items-center">
       <Popover_Shadcn_ open={open} onOpenChange={setOpen} modal={false}>
         <PopoverTrigger_Shadcn_ asChild>
-          <Button type="text" className="pr-2" iconRight={<ChevronsUpDown />}>
-            <div className="flex items-center space-x-2">
-              <p className={isNewNav ? 'text-sm' : 'text-xs'}>{orgName}</p>
-              {isSuccess && <Badge variant="default">{subscription?.plan.name}</Badge>}
-            </div>
-          </Button>
+          <div className="flex items-center space-x-2 cursor-pointer">
+            <Button type="text" className="pr-2" iconRight={<ChevronsUpDown />}>
+              <div className="flex items-center space-x-2">
+                <p className={isNewNav ? 'text-sm' : 'text-xs'}>{orgName}</p>
+                {isSuccess && <Badge variant="default">{subscription?.plan.name}</Badge>}
+              </div>
+            </Button>
+          </div>
         </PopoverTrigger_Shadcn_>
         <PopoverContent_Shadcn_ className="p-0" side="bottom" align="start">
           <Command_Shadcn_>

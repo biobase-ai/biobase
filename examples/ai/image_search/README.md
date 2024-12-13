@@ -28,7 +28,7 @@ We're implementing two methods in the [`/image_search/main.py` file](/image_sear
 
 ## Run on hosted Biobase project
 
-- Set `DB_CONNECTION` with the connection string from your hosted Biobase Dashboard: https://biobase.studio/dashboard/project/_/settings/database > Connection string > URI
+- Set `DB_CONNECTION` with the connection string from your hosted Biobase Dashboard: https://biobase.com/dashboard/project/_/settings/database > Connection string > URI
 
 ## Attributions
 

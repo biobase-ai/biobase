@@ -1,10 +1,10 @@
 # Flutter native Google auth with Biobase
 
-![Flutter Google authentication with Biobase auth](https://raw.githubusercontent.com/biobase-ai/biobase/master/examples/auth/flutter-native-google-auth/images/login.png)
+![Flutter Google authentication with Biobase auth](https://raw.githubusercontent.com/biobase/biobase/master/examples/auth/flutter-native-google-auth/images/login.png)
 
 A simple Flutter application with native Google login capabilities on iOS and Android using Biobase auth. Upon signing in, the user is presented with a profile screen where their name and profile image from their Google account are displayed.
 
-- Full tutorial article [here](https://biobase.studio/blog/flutter-authentication)
+- Full tutorial article [here](https://biobase.com/blog/flutter-authentication)
 - Full video guide [here](https://www.youtube.com/watch?v=YtvxRgGouwg)
 
 ## Getting Started
@@ -18,8 +18,8 @@ A simple Flutter application with native Google login capabilities on iOS and An
 
 ## Resources
 
-- [Flutter Authorization with RLS article](https://biobase.studio/blog/flutter-authorization-with-rls)
-- [Securing your Flutter apps with Multi-Factor Authentication article](https://biobase.studio/blog/flutter-multi-factor-authentication)
-- [Flutter Tutorial: building a Flutter chat app article](https://biobase.studio/blog/flutter-tutorial-building-a-chat-app)
-- [Biobase docs for Flutter](https://biobase.studio/docs/reference/dart/introduction)
+- [Flutter Authorization with RLS article](https://biobase.com/blog/flutter-authorization-with-rls)
+- [Securing your Flutter apps with Multi-Factor Authentication article](https://biobase.com/blog/flutter-multi-factor-authentication)
+- [Flutter Tutorial: building a Flutter chat app article](https://biobase.com/blog/flutter-tutorial-building-a-chat-app)
+- [Biobase docs for Flutter](https://biobase.com/docs/reference/dart/introduction)
 - [Biobase Flutter YouTube playlist](https://www.youtube.com/watch?v=F2j6Q-4nLEE&list=PL5S4mPUpp4OtkMf5LNDLXdTcAp1niHjoL)

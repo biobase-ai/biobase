@@ -1,4 +1,4 @@
-import createSupabaseIcon from '../createSupabaseIcon';
+import createBiobaseIcon from '../createBiobaseIcon';
 
 /**
  * @component @name ExampleTemplate
@@ -10,7 +10,7 @@ import createSupabaseIcon from '../createSupabaseIcon';
  * @returns {JSX.Element} JSX Element
  *
  */
-const ExampleTemplate = createSupabaseIcon('ExampleTemplate', [
+const ExampleTemplate = createBiobaseIcon('ExampleTemplate', [
   ['path', { d: 'M3.5 13h6', key: 'p1my2r' }],
   ['path', { d: 'm2 16 4.5-9 4.5 9', key: 'ndf0b3' }],
   ['path', { d: 'M18 7v9', key: 'pknjwm' }],

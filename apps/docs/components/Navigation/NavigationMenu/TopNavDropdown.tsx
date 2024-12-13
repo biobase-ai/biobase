@@ -27,7 +27,7 @@ const menu = [
     {
       label: 'Biobase.com',
       icon: 'home',
-      href: 'https://biobase.studio',
+      href: 'https://biobase.com',
       otherProps: {
         target: '_blank',
         rel: 'noreferrer noopener',
@@ -45,7 +45,7 @@ const menu = [
     {
       label: 'Support',
       icon: 'support',
-      href: 'https://biobase.studio/support',
+      href: 'https://biobase.com/support',
       otherProps: {
         target: '_blank',
         rel: 'noreferrer noopener',

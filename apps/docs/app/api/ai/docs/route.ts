@@ -1,4 +1,4 @@
-import { SupabaseClient } from '@supabase/supabase-js'
+import { BiobaseClient } from '@supabase/biobase-js'
 import { ApplicationError, UserError, clippy } from 'ai-commands/edge'
 import { NextRequest, NextResponse } from 'next/server'
 import OpenAI from 'openai'
@@ -6,7 +6,7 @@ import OpenAI from 'openai'
 export const runtime = 'edge'
 /* To avoid OpenAI errors, restrict to the Vercel Edge Function regions that
   overlap with the OpenAI API regions.
-
+  
   Reference for Vercel regions: https://vercel.com/docs/edge-network/regions#region-list
   Reference for OpenAI regions: https://help.openai.com/en/articles/5347006-openai-api-supported-countries-and-territories
   */
@@ -31,8 +31,8 @@ export const preferredRegion = [
 ]
 
 const openAiKey = process.env.OPENAI_API_KEY
-const biobaseUrl = process.env.NEXT_PUBLIC_BIOBASE_URL as string
-const biobaseServiceKey = process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY as string
+const biobaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
+const biobaseServiceKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
 
 export async function POST(req: NextRequest) {
   if (!openAiKey || !biobaseUrl || !biobaseServiceKey) {
@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
   }
 
   const openai = new OpenAI({ apiKey: openAiKey })
-  const biobaseClient = new SupabaseClient(biobaseUrl, biobaseServiceKey)
+  const biobaseClient = new BiobaseClient(biobaseUrl, biobaseServiceKey)
 
   try {
     const { messages } = (await req.json()) as {

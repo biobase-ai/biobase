@@ -1,7 +1,7 @@
-import { LOCAL_STORAGE_KEYS, TelemetryProps } from 'common'
-import { API_URL, IS_PREVIEW, IS_PROD } from 'lib/constants'
-import { NextRouter } from 'next/router'
 import { post } from '~/lib/fetchWrapper'
+import { API_URL, IS_PROD, IS_PREVIEW } from 'lib/constants'
+import { NextRouter } from 'next/router'
+import { LOCAL_STORAGE_KEYS } from 'common'
 
 export interface TelemetryEvent {
   category: string
@@ -10,12 +10,17 @@ export interface TelemetryEvent {
   value?: string
 }
 
+export interface TelemetryProps {
+  screenResolution?: string
+  language: string
+}
+
 const noop = () => {}
 
 // This event is the same as in studio/lib/telemetry.tx
 // but uses different ENV variables for www
 
-const sendEvent = (event: TelemetryEvent, telemetryProps: TelemetryProps, router: NextRouter) => {
+const sendEvent = (event: TelemetryEvent, gaProps: TelemetryProps, router: NextRouter) => {
   const consent =
     typeof window !== 'undefined'
       ? localStorage.getItem(LOCAL_STORAGE_KEYS.TELEMETRY_CONSENT)
@@ -27,30 +32,22 @@ const sendEvent = (event: TelemetryEvent, telemetryProps: TelemetryProps, router
   if (blockEvent) return noop
 
   const { category, action, label, value } = event
-  const title = typeof document !== 'undefined' ? document?.title : ''
-  const referrer = typeof document !== 'undefined' ? document?.referrer : ''
 
-  const { page_url, search, language, viewport_height, viewport_width } = telemetryProps
-
-  return post(
-    `${API_URL}/telemetry/event`,
-    {
-      page_url,
-      action: action,
-      page_title: title,
-      pathname: router.pathname,
-      ph: {
-        search,
-        referrer,
-        language,
-        viewport_height,
-        viewport_width,
-        user_agent: navigator.userAgent,
-      },
-      custom_properties: { category, label, value } as any,
+  return post(`${API_URL}/telemetry/event`, {
+    action: action,
+    category: category,
+    label: label,
+    value: value,
+    page_referrer: document?.referrer,
+    page_title: document?.title,
+    page_location: router.asPath,
+    ga: {
+      screen_resolution: gaProps?.screenResolution,
+      language: gaProps?.language,
     },
-    { headers: { Version: '2' }, credentials: 'include' }
-  )
+  })
 }
 
-export default { sendEvent }
+export default {
+  sendEvent,
+}

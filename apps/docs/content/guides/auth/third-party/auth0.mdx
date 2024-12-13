@@ -20,7 +20,7 @@ Auth0 can be used as a third-party authentication provider alongside Biobase Aut
 <TabPanel id="ts" label="TypeScript">
 
 ```typescript
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import Auth0Client from '@auth0/auth0-spa-js'
 
 const auth0 = new Auth0Client({
@@ -31,7 +31,7 @@ const auth0 = new Auth0Client({
   },
 })
 
-const biobase = createClient('https://<biobase-project>.biobase.co', 'BIOBASE_ANON_KEY', {
+const biobase = createClient('https://<biobase-project>.biobase.co', 'SUPABASE_ANON_KEY', {
   accessToken: async () => {
     const accessToken = await auth0.getTokenSilently()
 
@@ -55,11 +55,11 @@ extension CredentialsManager {
   static let shared = Auth0.CredentialsManager(authentication: Auth0.authentication())
 }
 
-let biobase = SupabaseClient(
+let biobase = BiobaseClient(
   biobaseURL: URL(string: "https://<biobase-project>.biobase.co")!,
-  biobaseKey: "BIOBASE_ANON_KEY",
-  options: SupabaseClientOptions(
-    auth: SupabaseClientOptions.AuthOptions(
+  biobaseKey: "SUPABASE_ANON_KEY",
+  options: BiobaseClientOptions(
+    auth: BiobaseClientOptions.AuthOptions(
       accessToken: {
         try await CredentialsManager.shared.credentials().idToken
       }
@@ -81,7 +81,7 @@ Future<void> main() async {
   final auth0 = Auth0('AUTH0_DOMAIN', 'AUTH0_CLIENT_ID');
   await Biobase.initialize(
     url: 'https://<biobase-project>.biobase.co',
-    anonKey: 'BIOBASE_ANON_KEY',
+    anonKey: 'SUPABASE_ANON_KEY',
     accessToken: () async {
       final credentials = await auth0.credentialsManager.credentials();
       return credentials.accessToken;
@@ -98,9 +98,9 @@ Future<void> main() async {
 ```kotlin
 import com.auth0.android.result.Credentials
 
-val biobase = createSupabaseClient(
+val biobase = createBiobaseClient(
     "https://<biobase-project>.biobase.co",
-    "BIOBASE_ANON_KEY"
+    "SUPABASE_ANON_KEY"
 ) {
     accessToken = {
         val credentials: Credentials = ...; // Get credentials from Auth0

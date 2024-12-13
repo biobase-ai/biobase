@@ -48,7 +48,7 @@ export const IPv4AddonDirectConnectionNotice = () => {
         </p>
         <Button asChild type="default" icon={<ExternalLink />}>
           <a
-            href="https://biobase.studio/docs/guides/database/connecting-to-postgres#connection-pooler"
+            href="https://biobase.com/docs/guides/database/connecting-to-postgres#connection-pooler"
             target="_blank"
             rel="noreferrer"
           >

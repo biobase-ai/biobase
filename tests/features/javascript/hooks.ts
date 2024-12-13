@@ -4,22 +4,22 @@ import { faker } from '@faker-js/faker'
 import {
   AuthResponse,
   createClient,
-  SupabaseClient,
-  SupabaseClientOptions,
+  BiobaseClient,
+  BiobaseClientOptions,
   User,
   UserAttributes,
   UserResponse,
-} from '@supabase/supabase-js'
+} from '@supabase/biobase-js'
 
 import { JasmineAllureReporter, step } from '../../.jest/jest-custom-reporter'
 
 export abstract class Hooks {
   static sql = postgres({
-    host: process.env.BIOBASE_DB_HOST,
-    port: parseInt(process.env.BIOBASE_DB_PORT),
+    host: process.env.SUPABASE_DB_HOST,
+    port: parseInt(process.env.SUPABASE_DB_PORT),
     database: 'postgres',
     username: 'postgres',
-    password: process.env.BIOBASE_DB_PASS,
+    password: process.env.SUPABASE_DB_PASS,
   })
 
   @step('terminate sql connection')
@@ -36,8 +36,8 @@ export abstract class Hooks {
   createSupaClient(
     url: string,
     key: string,
-    options: SupabaseClientOptions<'public'> = {}
-  ): SupabaseClient {
+    options: BiobaseClientOptions<'public'> = {}
+  ): BiobaseClient {
     options.auth = options.auth || {}
     options.auth.persistSession = false
 
@@ -51,7 +51,7 @@ export abstract class Hooks {
     username: string
     id: string
   }> {
-    const biobase = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY_ANON)
+    const biobase = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY_ANON)
 
     const fakeUser = {
       email: faker.internet.exampleEmail(),
@@ -75,7 +75,7 @@ export abstract class Hooks {
   // todo: rework this
   @step((token: string) => `verify with token ${token}`)
   async verify(token: string, email: string): Promise<Response> {
-    return crossFetch(`${process.env.BIOBASE_GOTRUE}/verify`, {
+    return crossFetch(`${process.env.SUPABASE_GOTRUE}/verify`, {
       method: 'POST',
       body: JSON.stringify({
         type: 'signup',
@@ -96,7 +96,7 @@ export abstract class Hooks {
 
   @step('I sign up with a valid email and password')
   async signUp(
-    biobase: SupabaseClient,
+    biobase: BiobaseClient,
     {
       email = faker.internet.exampleEmail(),
       password = faker.internet.password(),
@@ -118,12 +118,12 @@ export abstract class Hooks {
   }
 
   @step('Check if I am being able to log out')
-  async signOut(biobase: SupabaseClient): Promise<{ error: any }> {
+  async signOut(biobase: BiobaseClient): Promise<{ error: any }> {
     return biobase.auth.signOut()
   }
 
   @step('Get user data, if there is a logged in user')
-  getUser(biobase: SupabaseClient) {
+  getUser(biobase: BiobaseClient) {
     return biobase.auth.getUser()
   }
 
@@ -140,7 +140,7 @@ export abstract class Hooks {
 
   @step('I sign up with a valid email and password')
   async signUpByPhone(
-    biobase: SupabaseClient,
+    biobase: BiobaseClient,
     {
       phone = faker.phone.phoneNumber(),
       password = faker.internet.password(),
@@ -162,7 +162,7 @@ export abstract class Hooks {
 
   @step('User inserts profile')
   async insertProfile(
-    biobase: SupabaseClient,
+    biobase: BiobaseClient,
     user: {
       id: string
     },
@@ -180,12 +180,12 @@ export abstract class Hooks {
   }
 
   @step('I can get my profile via postgREST')
-  async getUserProfile(biobase: SupabaseClient): Promise<{ data: any; error: any }> {
+  async getUserProfile(biobase: BiobaseClient): Promise<{ data: any; error: any }> {
     return biobase.from('profiles').select().maybeSingle()
   }
 
   @step('Update user info')
-  async updateUser(biobase: SupabaseClient, attr: UserAttributes): Promise<UserResponse> {
+  async updateUser(biobase: BiobaseClient, attr: UserAttributes): Promise<UserResponse> {
     return biobase.auth.updateUser(attr)
   }
 
@@ -195,7 +195,7 @@ export abstract class Hooks {
     const fakeUser = await this.createUser()
 
     // sign in as user
-    const biobase = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY_ANON)
+    const biobase = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY_ANON)
     const {
       data: { user },
       error: signInError,

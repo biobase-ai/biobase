@@ -2,7 +2,7 @@ export const REFERENCES = {
   javascript: {
     type: 'sdk',
     name: 'JavaScript',
-    library: 'supabase-js',
+    library: 'biobase-js',
     libPath: 'javascript',
     versions: ['v2', 'v1'],
     typeSpec: true,

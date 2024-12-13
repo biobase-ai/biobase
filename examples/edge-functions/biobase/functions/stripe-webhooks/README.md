@@ -1,6 +1,6 @@
 # stripe-webhooks
 
-Also check out our full Stripe Payments examples for [React Native (Expo)](https://github.com/biobase-ai-community/expo-stripe-payments-with-biobase-functions) and [Flutter](https://github.com/biobase-ai-community/flutter-stripe-payments-with-biobase-functions).
+Also check out our full Stripe Payments examples for [React Native (Expo)](https://github.com/biobase-community/expo-stripe-payments-with-biobase-functions) and [Flutter](https://github.com/biobase-community/flutter-stripe-payments-with-biobase-functions).
 
 ## Setup env vars
 

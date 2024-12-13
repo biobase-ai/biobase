@@ -27,10 +27,10 @@ function ProductsCta(props: Props) {
         <h2 className="h2">Ready to start building?</h2>
         <div className="flex gap-2 py-2">
           <Button asChild type="primary" size="small" className="h-full">
-            <Link href="https://biobase.studio/dashboard">Start for free</Link>
+            <Link href="https://biobase.com/dashboard">Start for free</Link>
           </Button>
           <Button asChild type="default" size="small">
-            <Link href="https://forms.biobase.studio/enterprise">Contact Enterprise</Link>
+            <Link href="https://forms.biobase.com/enterprise">Contact Enterprise</Link>
           </Button>
         </div>
       </div>

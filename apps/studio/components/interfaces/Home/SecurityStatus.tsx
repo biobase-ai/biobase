@@ -1,6 +1,6 @@
 import { CheckCircle2, ChevronRight, Loader2 } from 'lucide-react'
 import Link from 'next/link'
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 
 import { useParams } from 'common'
 import { useProjectLintsQuery } from 'data/lint/lint-query'
@@ -81,9 +81,12 @@ export const SecurityStatus = () => {
                 const { label, descriptionShort } = LINT_TABS.find((tab) => tab.id === level) ?? {}
                 return (
                   lints.length > 0 && (
-                    <Fragment key={level}>
+                    <>
                       <Link href={`/project/${ref}/database/security-advisor?preset=${level}`}>
-                        <div className="group flex items-center justify-between w-full px-3 py-3 transition hover:bg-surface-300">
+                        <div
+                          key={level}
+                          className="group flex items-center justify-between w-full px-3 py-3 transition hover:bg-surface-300"
+                        >
                           <div className="flex gap-x-3">
                             <div>
                               <StatusDot level={level} />
@@ -106,7 +109,7 @@ export const SecurityStatus = () => {
                         </div>
                       </Link>
                       <PopoverSeparator_Shadcn_ />
-                    </Fragment>
+                    </>
                   )
                 )
               })}

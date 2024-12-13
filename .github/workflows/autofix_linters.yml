@@ -36,7 +36,7 @@ jobs:
       - name: Commit changes and push to existing branch
         run: |
           git config --global user.name 'github-tidy-bot'
-          git config --global user.email 'github-tidy-bot@supabase.com'
+          git config --global user.email 'github-tidy-bot@biobase.com'
           if [[ `git status --porcelain` ]]; then
             echo "[bot] Changes detected, committing."
 

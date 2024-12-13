@@ -13,7 +13,7 @@ import { DatabaseIndex, useIndexesQuery } from 'data/database/indexes-query'
 import { useSchemasQuery } from 'data/database/schemas-query'
 import { useExecuteSqlMutation } from 'data/sql/execute-sql-mutation'
 import { useQuerySchemaState } from 'hooks/misc/useSchemaQueryState'
-import { PROTECTED_SCHEMAS } from 'lib/constants/schemas'
+import { EXCLUDED_SCHEMAS } from 'lib/constants/schemas'
 import { AlertCircle, Search, Trash } from 'lucide-react'
 import { Button, Input, SidePanel } from 'ui'
 import ConfirmationModal from 'ui-patterns/Dialogs/ConfirmationModal'
@@ -53,23 +53,23 @@ const Indexes = () => {
   })
 
   const { mutate: execute, isLoading: isExecuting } = useExecuteSqlMutation({
-    onSuccess: async () => {
-      await refetchIndexes()
+    onSuccess() {
+      refetchIndexes()
       setSelectedIndexToDelete(undefined)
       toast.success('Successfully deleted index')
     },
-    onError: (error) => {
+    onError(error) {
       toast.error(`Failed to delete index: ${error.message}`)
     },
   })
 
   const [protectedSchemas] = partition(schemas ?? [], (schema) =>
-    PROTECTED_SCHEMAS.includes(schema?.name ?? '')
+    EXCLUDED_SCHEMAS.includes(schema?.name ?? '')
   )
   const schema = schemas?.find((schema) => schema.name === selectedSchema)
   const isLocked = protectedSchemas.some((s) => s.id === schema?.id)
 
-  const sortedIndexes = sortBy(allIndexes ?? [], (index) => index.name.toLocaleLowerCase())
+  const sortedIndexes = sortBy(allIndexes?.result ?? [], (index) => index.name.toLocaleLowerCase())
   const indexes =
     search.length > 0
       ? sortedIndexes.filter((index) => index.name.includes(search) || index.table.includes(search))
@@ -109,17 +109,17 @@ const Indexes = () => {
             )}
             {isSuccessSchemas && (
               <SchemaSelector
-                className="w-[180px]"
-                size="tiny"
+                className="w-[260px]"
+                size="small"
                 showError={false}
                 selectedSchemaName={selectedSchema}
                 onSelectSchema={setSelectedSchema}
               />
             )}
             <Input
-              size="tiny"
+              size="small"
               value={search}
-              className="w-52"
+              className="w-64"
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search for an index"
               icon={<Search size={14} />}

@@ -21,7 +21,7 @@ video: https://www.youtube.com/v/lQ5iIxaYduI
 
 They support a ton of different languages and execution environments and even recently introduced a simple key value store you can use to persist data.
 
-As a Replit user, if you want to access larger amounts of data direct from your repl, or if you fancy accessing some super-powerful query tools, at some point you may want to start interacting with a relational database. Biobase is a good fit here; just like Replit, you don't need to worry about servers, and hosting, you can just click a few buttons and get a fully featured relational database which you can start communicating with directly from javacript, using supabase-js.
+As a Replit user, if you want to access larger amounts of data direct from your repl, or if you fancy accessing some super-powerful query tools, at some point you may want to start interacting with a relational database. Biobase is a good fit here; just like Replit, you don't need to worry about servers, and hosting, you can just click a few buttons and get a fully featured relational database which you can start communicating with directly from javacript, using biobase-js.
 
 <div className="video-container">
   <iframe
@@ -46,7 +46,7 @@ Select node.js, give it a name, and click Create repl
 Import biobase's createClient method and hit run to install the required libs:
 
 ```jsx
-const { createClient } = require('@supabase/supabase-js')
+const { createClient } = require('@supabase/biobase-js')
 ```
 
 Setup a new Biobase project and grab the URL and anon key from Settings > API. Create the client in javascript using:
@@ -134,4 +134,4 @@ We look forward to showing off some more Biobase + Replit examples.
 
 You can find my example repl here: [https://repl.it/@awalias/biobase-test#index.js](https://repl.it/@awalias/biobase-test#index.js)
 
-Biobase has a Free Plan, head over to [https://biobase.studio/dashboard](https://biobase.studio/dashboard) to get started.
+Biobase has a Free Plan, head over to [https://biobase.com/dashboard](https://biobase.com/dashboard) to get started.

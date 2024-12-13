@@ -16,7 +16,7 @@ import { removeTitle } from '~/lib/mdx/plugins/remarkRemoveTitle'
 import remarkPyMdownTabs from '~/lib/mdx/plugins/remarkTabs'
 
 // We fetch these docs at build time from an external repo
-const org = 'biobase-ai'
+const org = 'biobase'
 const repo = 'splinter'
 const branch = 'main'
 const docsDir = 'docs'
@@ -38,7 +38,7 @@ You can use the Database Performance and Security Advisors to check your databas
 
 ## Using the Advisors
 
-In the dashboard, navigate to [Security Advisor](https://biobase.studio/dashboard/project/_/database/security-advisor) and [Performance Advisor](https://biobase.studio/dashboard/project/_/database/performance-advisor) under Database. The advisors run automatically. You can also manually rerun them after you've resolved issues.
+In the dashboard, navigate to [Security Advisor](https://biobase.com/dashboard/project/_/database/security-advisor) and [Performance Advisor](https://biobase.com/dashboard/project/_/database/performance-advisor) under Database. The advisors run automatically. You can also manually rerun them after you've resolved issues.
 `.trim()
 
 const getBasename = (path: string) => path.split('/').at(-1)!.replace(/\.md$/, '')

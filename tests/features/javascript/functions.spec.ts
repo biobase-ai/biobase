@@ -4,7 +4,7 @@ import { Severity } from 'allure-js-commons'
 import { exec, ExecException } from 'child_process'
 import os from 'os'
 
-import { Session, SupabaseClient, User, UserAttributes } from '@supabase/supabase-js'
+import { Session, BiobaseClient, User, UserAttributes } from '@supabase/biobase-js'
 
 import { FEATURE } from '../templates/enums'
 import { description, feature, log, severity, step } from '../../.jest/jest-custom-reporter'
@@ -27,7 +27,7 @@ class Functions extends Hooks {
       )
     })
     const { biobase } = await this.createSignedInSupaClient()
-    const sb = this.createSupaClient(process.env.BIOBASE_URL, process.env.BIOBASE_ANON_KEY)
+    const sb = this.createSupaClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
     const {
       data: { session },
     } = await biobase.auth.getSession()

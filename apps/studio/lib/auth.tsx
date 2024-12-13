@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }: PropsWithChildren<{}>) => {
 
       if (error?.message === GOTRUE_ERRORS.UNVERIFIED_GITHUB_USER) {
         toast.error(
-          'Please verify your email on GitHub first, then reach out to us at support@supabase.io to log into the dashboard'
+          'Please verify your email on GitHub first, then reach out to us at support@biobase.io to log into the dashboard'
         )
       }
     }

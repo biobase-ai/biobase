@@ -8,20 +8,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   Input,
+  Listbox,
   Select,
-  Select_Shadcn_,
-  SelectContent_Shadcn_,
-  SelectGroup_Shadcn_,
-  SelectItem_Shadcn_,
-  SelectTrigger_Shadcn_,
-  SelectValue_Shadcn_,
 } from 'ui'
-import { FormItemLayout } from 'ui-patterns/form/FormItemLayout/FormItemLayout'
 import { DATETIME_TYPES, JSON_TYPES, TEXT_TYPES } from '../SidePanelEditor.constants'
 import { DateTimeInput } from './DateTimeInput'
 import type { EditValue, RowField } from './RowEditor.types'
 import { isValueTruncated } from './RowEditor.utils'
-import { checkDomainOfScale } from 'recharts/types/util/ChartUtils'
 
 export interface InputFieldProps {
   field: RowField
@@ -257,35 +250,41 @@ const InputField = ({
       ...(field.isNullable ? [{ value: 'null', label: 'NULL' }] : []),
     ]
 
-    const defaultValue = field.value === null ? undefined : field.value
+    // Ivan: The value coming in from backend is processed (NULL converted to 'null' string) so that
+    // it's properly selected in the listbox. The issue is with the internal implementation of the
+    // Listbox where the default column value is only considered when field.value is null
+    // (the JS kind). Since we're converting that null into 'null', defaultValue isn't used as it
+    // should. To fix this, we're only setting the defaultValue of the listbox and not setting the
+    // value in the next renders. This makes the ListBox an uncontrolled component but it works.
+    // PS: This is the third time we're fixing this in a month. If you have to fix this again, just
+    // use Input for booleans.
+    const defaultValue = field.value === 'null' ? field.defaultValue : field.value
 
     return (
-      <FormItemLayout
-        isReactForm={false}
+      <Listbox
+        size="small"
         layout="horizontal"
+        name={field.name}
         label={field.name}
         labelOptional={field.format}
-        description={field.comment}
-        className="[&>div:first-child>span]:text-foreground-lighter"
+        descriptionText={field.comment}
+        value={defaultValue === null ? 'null' : defaultValue}
+        onChange={(value: string) => {
+          if (value === 'null') onUpdateField({ [field.name]: null })
+          else onUpdateField({ [field.name]: value })
+        }}
       >
-        <Select_Shadcn_
-          value={defaultValue === null ? 'null' : defaultValue}
-          onValueChange={(value: string) => onUpdateField({ [field.name]: value })}
-        >
-          <SelectTrigger_Shadcn_>
-            <SelectValue_Shadcn_ placeholder="Select a value" />
-          </SelectTrigger_Shadcn_>
-          <SelectContent_Shadcn_>
-            <SelectGroup_Shadcn_>
-              {options.map((option) => (
-                <SelectItem_Shadcn_ key={option.value} value={option.value}>
-                  {option.label}
-                </SelectItem_Shadcn_>
-              ))}
-            </SelectGroup_Shadcn_>
-          </SelectContent_Shadcn_>
-        </Select_Shadcn_>
-      </FormItemLayout>
+        {options.map((option) => (
+          <Listbox.Option
+            id={option.value}
+            key={option.value}
+            label={option.label}
+            value={option.value}
+          >
+            {option.label}
+          </Listbox.Option>
+        ))}
+      </Listbox>
     )
   }
 

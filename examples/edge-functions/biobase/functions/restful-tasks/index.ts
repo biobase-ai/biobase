@@ -2,7 +2,7 @@
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
 
-import { createClient, SupabaseClient } from 'jsr:@supabase/supabase-js@2'
+import { createClient, BiobaseClient } from 'jsr:@supabase/biobase-js@2'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -15,7 +15,7 @@ interface Task {
   status: number
 }
 
-async function getTask(biobaseClient: SupabaseClient, id: string) {
+async function getTask(biobaseClient: BiobaseClient, id: string) {
   const { data: task, error } = await biobaseClient.from('tasks').select('*').eq('id', id)
   if (error) throw error
 
@@ -25,7 +25,7 @@ async function getTask(biobaseClient: SupabaseClient, id: string) {
   })
 }
 
-async function getAllTasks(biobaseClient: SupabaseClient) {
+async function getAllTasks(biobaseClient: BiobaseClient) {
   const { data: tasks, error } = await biobaseClient.from('tasks').select('*')
   if (error) throw error
 
@@ -35,7 +35,7 @@ async function getAllTasks(biobaseClient: SupabaseClient) {
   })
 }
 
-async function deleteTask(biobaseClient: SupabaseClient, id: string) {
+async function deleteTask(biobaseClient: BiobaseClient, id: string) {
   const { error } = await biobaseClient.from('tasks').delete().eq('id', id)
   if (error) throw error
 
@@ -45,7 +45,7 @@ async function deleteTask(biobaseClient: SupabaseClient, id: string) {
   })
 }
 
-async function updateTask(biobaseClient: SupabaseClient, id: string, task: Task) {
+async function updateTask(biobaseClient: BiobaseClient, id: string, task: Task) {
   const { error } = await biobaseClient.from('tasks').update(task).eq('id', id)
   if (error) throw error
 
@@ -55,7 +55,7 @@ async function updateTask(biobaseClient: SupabaseClient, id: string, task: Task)
   })
 }
 
-async function createTask(biobaseClient: SupabaseClient, task: Task) {
+async function createTask(biobaseClient: BiobaseClient, task: Task) {
   const { error } = await biobaseClient.from('tasks').insert(task)
   if (error) throw error
 
@@ -77,9 +77,9 @@ Deno.serve(async (req) => {
     // Create a Biobase client with the Auth context of the logged in user.
     const biobaseClient = createClient(
       // Biobase API URL - env var exported by default.
-      Deno.env.get('BIOBASE_URL') ?? '',
+      Deno.env.get('SUPABASE_URL') ?? '',
       // Biobase API ANON KEY - env var exported by default.
-      Deno.env.get('BIOBASE_ANON_KEY') ?? '',
+      Deno.env.get('SUPABASE_ANON_KEY') ?? '',
       // Create client with Auth context of the user that called the function.
       // This way your row-level-security (RLS) policies are applied.
       {

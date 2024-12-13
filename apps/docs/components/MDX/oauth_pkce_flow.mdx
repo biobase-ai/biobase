@@ -68,7 +68,7 @@ export async function GET(request: Request) {
   const next = searchParams.get('next') ?? '/'
 
   if (code) {
-    const biobase = await createClient()
+    const biobase = createClient()
     const { error } = await biobase.auth.exchangeCodeForSession(code)
     if (!error) {
       const forwardedHost = request.headers.get('x-forwarded-host') // original origin before load balancer
@@ -134,8 +134,8 @@ export const GET: APIRoute = async ({ request, cookies, redirect }) => {
 
   if (code) {
     const biobase = createServerClient(
-      import.meta.env.PUBLIC_BIOBASE_URL,
-      import.meta.env.PUBLIC_BIOBASE_ANON_KEY,
+      import.meta.env.PUBLIC_SUPABASE_URL,
+      import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
       {
         cookies: {
           getAll() {
@@ -180,7 +180,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
   if (code) {
     const cookies = parse(request.headers.get('Cookie') ?? '')
-    const biobase = createServerClient(process.env.BIOBASE_URL!, process.env.BIOBASE_ANON_KEY!, {
+    const biobase = createServerClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!, {
       cookies: {
         getAll() {
           return parseCookieHeader(request.headers.get('Cookie') ?? '')
@@ -218,8 +218,8 @@ app.get("/auth/callback", async function (req, res) {
 
   if (code) {
     const biobase = createServerClient(
-      process.env.BIOBASE_URL,
-      process.env.BIOBASE_ANON_KEY, {
+      process.env.SUPABASE_URL,
+      process.env.SUPABASE_ANON_KEY, {
     cookies: {
       getAll() {
         return parseCookieHeader(context.req.headers.cookie ?? '')

@@ -6,8 +6,6 @@ import { PropsWithChildren, createContext, useContext, useRef } from 'react'
 import type { Dictionary } from 'types'
 import { proxy, useSnapshot } from 'valtio'
 
-export const TABLE_EDITOR_DEFAULT_ROWS_PER_PAGE = 100
-
 type ForeignKeyState = {
   foreignKey: ForeignKey
   row: Dictionary<any>
@@ -65,7 +63,7 @@ export const createTableEditorState = () => {
     setPage: (page: number) => {
       state.page = page
     },
-    rowsPerPage: TABLE_EDITOR_DEFAULT_ROWS_PER_PAGE,
+    rowsPerPage: 100,
     setRowsPerPage: (rowsPerPage: number) => {
       state.rowsPerPage = rowsPerPage
     },

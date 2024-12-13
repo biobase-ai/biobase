@@ -29,7 +29,7 @@ hideToc: true
 
     Replace the version placeholders `$kotlin_version` with the Kotlin version of the project, and  `$biobase_version` and `$ktor_version` with the respective latest versions.
 
-    The latest biobase-kt version can be found [here](https://github.com/biobase-ai-community/biobase-kt/releases) and Ktor version can be found [here](https://ktor.io/docs/welcome.html).
+    The latest biobase-kt version can be found [here](https://github.com/biobase-community/biobase-kt/releases) and Ktor version can be found [here](https://ktor.io/docs/welcome.html).
 
     </StepHikeCompact.Details>
 
@@ -88,7 +88,7 @@ hideToc: true
       ```kotlin
       import ...
 
-      val biobase = createSupabaseClient(
+      val biobase = createBiobaseClient(
           biobaseUrl = "https://xyzcompany.biobase.co",
           biobaseKey = "your_public_anon_key"
         ) {
@@ -106,7 +106,7 @@ hideToc: true
     <StepHikeCompact.Details title="Create a data model for countries">
       Create a serializable data class to represent the data from the database.
 
-      Add the following below the `createSupabaseClient` function in the `MainActivity.kt` file.
+      Add the following below the `createBiobaseClient` function in the `MainActivity.kt` file.
     </StepHikeCompact.Details>
 
     <StepHikeCompact.Code>

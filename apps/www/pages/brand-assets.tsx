@@ -27,10 +27,10 @@ const Index = () => {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.studio/${router.pathname}`,
+          url: `https://biobase.com/${router.pathname}`,
           images: [
             {
-              url: `https://biobase.studio/images/og/biobase-og.png`,
+              url: `https://biobase.com/images/og/biobase-og.png`,
             },
           ],
         }}

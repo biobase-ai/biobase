@@ -11,27 +11,19 @@ import { get } from 'lib/common/fetch'
 import { API_URL } from 'lib/constants'
 
 interface SingleLogHook {
-  data: LogData | undefined
+  logData: LogData | undefined
   error: string | Object | null
   isLoading: boolean
   refresh: () => void
 }
-
-type SingleLogParams = {
-  id?: string
-  projectRef: string
-  queryType?: QueryType
-  paramsToMerge?: Partial<LogsEndpointParams>
-}
-function useSingleLog({
-  projectRef,
-  id,
-  queryType,
-  paramsToMerge,
-}: SingleLogParams): SingleLogHook {
+function useSingleLog(
+  projectRef: string,
+  queryType?: QueryType,
+  paramsToMerge?: Partial<LogsEndpointParams>,
+  id?: string | null
+): SingleLogHook {
   const table = queryType ? LOGS_TABLES[queryType] : undefined
   const sql = id && table ? genSingleLogQuery(table, id) : ''
-
   const params: LogsEndpointParams = { ...paramsToMerge, project: projectRef, sql }
 
   const endpointUrl = `${API_URL}/projects/${projectRef}/analytics/endpoints/logs.all?${genQueryParams(
@@ -49,7 +41,7 @@ function useSingleLog({
     isRefetching,
     refetch,
   } = useQuery(
-    ['projects', projectRef, 'single-log', id, queryType],
+    ['projects', projectRef, 'log', id],
     ({ signal }) => get(endpointUrl, { signal }) as Promise<Logs>,
     {
       enabled,
@@ -60,9 +52,8 @@ function useSingleLog({
   )
 
   let error: null | string | object = rcError ? (rcError as any).message : null
-  const result = data?.result ? data.result[0] : undefined
   return {
-    data: result,
+    logData: data?.result ? data.result[0] : undefined,
     isLoading: (enabled && isLoading) || isRefetching,
     error,
     refresh: () => refetch(),

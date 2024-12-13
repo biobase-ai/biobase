@@ -11,7 +11,6 @@ import {
 import { FormHeader } from 'components/ui/Forms/FormHeader'
 import type { NextPageWithLayout } from 'types'
 import { Button } from 'ui'
-import { DocsButton } from 'components/ui/DocsButton'
 
 const MigrationsPage: NextPageWithLayout = () => {
   return (
@@ -25,10 +24,16 @@ const MigrationsPage: NextPageWithLayout = () => {
           />
         </ScaffoldSectionContent>
         <ScaffoldSectionDetail className="flex items-center justify-end gap-x-2">
-          <DocsButton
-            className="no-underline"
-            href="https://biobase.studio/docs/guides/deployment/database-migrations"
-          />
+          <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              className="no-underline"
+              href="https://biobase.com/docs/guides/getting-started/local-development#database-migrations"
+            >
+              Documentation
+            </a>
+          </Button>
         </ScaffoldSectionDetail>
         <div className="col-span-12 mt-3">
           <Migrations />

@@ -1,6 +1,6 @@
 'use client'
 
-import { useSupabaseClient } from '@supabase/auth-helpers-react'
+import { useBiobaseClient } from '@supabase/auth-helpers-react'
 import { Book, ChevronRight, Github, Hash, Loader2, MessageSquare, Search } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 
@@ -67,7 +67,7 @@ const IconContainer = (
 )
 
 const DocsSearchPage = () => {
-  const biobaseClient = useSupabaseClient()
+  const biobaseClient = useBiobaseClient()
   const {
     searchState: state,
     handleDocsSearch: handleSearch,
@@ -93,7 +93,7 @@ const DocsSearchPage = () => {
           router.push(`/docs${link}`)
           setIsOpen(false)
         } else {
-          window.open(`https://biobase.studio/docs${link}`, '_blank', 'noreferrer,noopener')
+          window.open(`https://biobase.com/docs${link}`, '_blank', 'noreferrer,noopener')
           setIsOpen(false)
         }
         break
@@ -102,7 +102,7 @@ const DocsSearchPage = () => {
           router.push(link)
           setIsOpen(false)
         } else {
-          window.open(`https://biobase.studio${link}`, '_blank', 'noreferrer,noopener')
+          window.open(`https://biobase.com${link}`, '_blank', 'noreferrer,noopener')
           setIsOpen(false)
         }
         break

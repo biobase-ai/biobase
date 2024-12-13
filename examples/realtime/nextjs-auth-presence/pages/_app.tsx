@@ -1,4 +1,4 @@
-import { createBrowserSupabaseClient, Session } from '@supabase/auth-helpers-nextjs'
+import { createBrowserBiobaseClient, Session } from '@supabase/auth-helpers-nextjs'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
@@ -12,7 +12,7 @@ function MyApp({
   initialSession: Session
 }>) {
   const router = useRouter()
-  const [biobaseClient] = useState(() => createBrowserSupabaseClient())
+  const [biobaseClient] = useState(() => createBrowserBiobaseClient())
 
   useEffect(() => {
     const {

@@ -18,14 +18,14 @@ Push notifications are an important part of any mobile app. They allow you to se
 
     Find the example code on [GitHub](https://github.com/biobase-ai/biobase/blob/master/examples/user-management/expo-push-notifications/).
 
-    ## Biobase setup
+    ## Biobase Setup
 
     - [Create a new Biobase project](https://database.new).
     - Link your project: `biobase link --project-ref your-biobase-project-ref`
     - Start biobase locally: `biobase start`
     - Push up the schema: `biobase db push` (schema is defined in [biobase/migrations](https://github.com/biobase-ai/biobase/blob/master/examples/user-management/expo-push-notifications/biobase/migrations/))
 
-    ## Expo setup
+    ## Expo Setup
 
     To utilize Expo's push notification service, you must configure your app by installing a set of libraries, implementing functions to handle notifications, and setting up credentials for Android and iOS. Follow the official [Expo Push Notifications Setup Guide](https://docs.expo.dev/push-notifications/push-notifications-setup/) to get the credentials for Android and iOS. This project uses [Expo's EAS build](https://docs.expo.dev/build/introduction/) service to simplify this part.
 
@@ -53,7 +53,7 @@ Push notifications are an important part of any mobile app. They allow you to se
     1. `biobase secrets set --env-file .env.local`
 
     ```ts biobase/functions/push/index.ts
-    import { createClient } from 'jsr:@supabase/supabase-js@2'
+    import { createClient } from 'jsr:@supabase/biobase-js@2'
 
     console.log('Hello from Functions!')
 
@@ -72,8 +72,8 @@ Push notifications are an important part of any mobile app. They allow you to se
     }
 
     const biobase = createClient(
-      Deno.env.get('BIOBASE_URL')!,
-      Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!
+      Deno.env.get('SUPABASE_URL')!,
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     )
 
     Deno.serve(async (req) => {
@@ -105,7 +105,7 @@ Push notifications are an important part of any mobile app. They allow you to se
 
     ## Create the database webhook
 
-    Navigate to the [Database Webhooks settings](https://biobase.studio/dashboard/project/_/database/hooks) in your Biobase Dashboard.
+    Navigate to the [Database Webhooks settings](https://biobase.com/dashboard/project/_/database/hooks) in your Biobase Dashboard.
 
     1. Enable and create a new hook.
     1. Conditions to fire webhook: Select the `notifications` table and tick the `Insert` event.
@@ -116,7 +116,7 @@ Push notifications are an important part of any mobile app. They allow you to se
 
     ## Send push notification
 
-    1. Navigate to the [table editor](https://biobase.studio/dashboard/project/_/editor) in your Biobase Dashboard.
+    1. Navigate to the [table editor](https://biobase.com/dashboard/project/_/editor) in your Biobase Dashboard.
     1. In your `notifications` table, insert a new row.
     1. Watch the magic happen 🪄
 
@@ -126,7 +126,7 @@ Push notifications are an important part of any mobile app. They allow you to se
  
     This guide will show you how to send push notifications to your app when a new row is inserted into a table using FCM, Biobase Edge Functions, and database web hooks.
 
-    ## Biobase setup
+    ## Biobase Setup
 
     We will create two tables. One to store the user's FCM token and a `notifications` table. The edge function will be triggered when a new row is inserted into the `notifications` table and sends a push notification to the user.
 
@@ -166,7 +166,7 @@ Push notifications are an important part of any mobile app. They allow you to se
     Add the following code to `biobase/functions/push/index.ts`:
 
     ```ts biobase/functions/push/index.ts
-    import { createClient } from 'npm:@supabase/supabase-js@2'
+    import { createClient } from 'npm:@supabase/biobase-js@2'
     import { JWT } from 'npm:google-auth-library@9'
     import serviceAccount from '../service-account.json' with { type: 'json' }
 
@@ -184,8 +184,8 @@ Push notifications are an important part of any mobile app. They allow you to se
     }
 
     const biobase = createClient(
-      Deno.env.get('BIOBASE_URL')!,
-      Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!
+      Deno.env.get('SUPABASE_URL')!,
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     )
 
     Deno.serve(async (req) => {
@@ -258,7 +258,7 @@ Push notifications are an important part of any mobile app. They allow you to se
     }
     ```
 
-    ## FCM setup
+    ## FCM Setup
 
     1. Follow the official [FCM Setup Guide](https://firebase.google.com/docs/cloud-messaging) to set up FCM for your client side application.
     1. Generate a new service account private key from the Firebase console `Project Settings > Service Accounts > Generate new private key`.
@@ -277,7 +277,7 @@ Push notifications are an important part of any mobile app. They allow you to se
 
     ## Create the database webhook
 
-    Navigate to the [Database Webhooks settings](https://biobase.studio/dashboard/project/_/database/hooks) in your Biobase Dashboard.
+    Navigate to the [Database Webhooks settings](https://biobase.com/dashboard/project/_/database/hooks) in your Biobase Dashboard.
 
     1. Enable and create a new hook.
     1. Conditions to fire webhook: Select the `public.notifications` table and tick the `Insert` event.
@@ -288,7 +288,7 @@ Push notifications are an important part of any mobile app. They allow you to se
     ## Send push notification
 
     1. Make sure you have a user with an FCM token in the `profiles` table.
-    1. Navigate to the [table editor](https://biobase.studio/dashboard/project/_/editor) in your Biobase Dashboard.
+    1. Navigate to the [table editor](https://biobase.com/dashboard/project/_/editor) in your Biobase Dashboard.
     1. In your `notifications` table, insert a new row.
     1. Watch the magic happen 🪄
 

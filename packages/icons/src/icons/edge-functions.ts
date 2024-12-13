@@ -1,4 +1,4 @@
-import createSupabaseIcon from '../createSupabaseIcon';
+import createBiobaseIcon from '../createBiobaseIcon';
 
 /**
  * @component @name EdgeFunctions
@@ -10,7 +10,7 @@ import createSupabaseIcon from '../createSupabaseIcon';
  * @returns {JSX.Element} JSX Element
  *
  */
-const EdgeFunctions = createSupabaseIcon('EdgeFunctions', [
+const EdgeFunctions = createBiobaseIcon('EdgeFunctions', [
   [
     'path',
     {

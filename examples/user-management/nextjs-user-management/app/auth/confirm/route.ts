@@ -1,4 +1,4 @@
-import { type EmailOtpType } from '@supabase/supabase-js'
+import { type EmailOtpType } from '@supabase/biobase-js'
 import { type NextRequest, NextResponse } from 'next/server'
 
 import { createClient } from '@/utils/biobase/server'
@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
   redirectTo.searchParams.delete('type')
 
   if (token_hash && type) {
-    const biobase = await createClient()
+    const biobase = createClient()
 
     const { error } = await biobase.auth.verifyOtp({
       type,

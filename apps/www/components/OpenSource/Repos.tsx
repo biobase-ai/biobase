@@ -115,7 +115,7 @@ const Repos = ({ tabs }: Props) => {
           How to contribute
         </Link>
         <Link
-          href="https://github.com/biobase-ai/.github/blob/main/CODE_OF_CONDUCT.md"
+          href="https://github.com/biobase/.github/blob/main/CODE_OF_CONDUCT.md"
           className="text-foreground-lighter hover:underline flex gap-1 items-center"
           target="_blank"
         >

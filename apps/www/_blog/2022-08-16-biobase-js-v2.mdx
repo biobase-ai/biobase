@@ -1,9 +1,9 @@
 ---
-title: 'supabase-js v2'
-description: A look at supabase-js v2, which brings type support and focuses on quality-of-life improvements for developers.
+title: 'biobase-js v2'
+description: A look at biobase-js v2, which brings type support and focuses on quality-of-life improvements for developers.
 author: inian,alaister
-image: lw5-supabase-js/thumb.jpg
-thumb: lw5-supabase-js/thumb.jpg
+image: lw5-biobase-js/thumb.jpg
+thumb: lw5-biobase-js/thumb.jpg
 categories:
   - product
 tags:
@@ -14,30 +14,30 @@ video: https://www.youtube.com/v/iqZlPtl_b-I
 ---
 
 <div className="bg-gray-300 rounded-lg p-6 italic">
-<br /> ⚠️ UPDATED 20/10: supabase-js v2 is fully released 🥳<br />
+<br /> ⚠️ UPDATED 20/10: biobase-js v2 is fully released 🥳<br />
 
-[Check the updated docs](https://biobase.studio/docs/reference/javascript) and [migration guide](https://biobase.studio/docs/reference/javascript/v1/upgrade-guide).
+[Check the updated docs](https://biobase.com/docs/reference/javascript) and [migration guide](https://biobase.com/docs/reference/javascript/v1/upgrade-guide).
 
 </div>
 
-Today we're publishing a release candidate for [supabase-js v2](https://github.com/supabase/supabase-js), which focuses on “quality-of-life” improvements for developers.
+Today we're publishing a release candidate for [biobase-js v2](https://github.com/biobase-ai/biobase-js), which focuses on “quality-of-life” improvements for developers.
 
-Try it out by running `npm i @supabase/supabase-js@rc`
+Try it out by running `npm i @supabase/biobase-js@rc`
 
-Nearly 2 years ago we [released supabase-js v1](https://biobase.studio/blog/improved-dx).
-Since then it has been used in over [17K repositories](https://github.com/supabase/supabase-js/network/dependents?package_id=UGFja2FnZS04MjM3OTUyMDU%3D) and has grown
-to [50K weekly downloads](https://www.npmjs.com/package/@supabase/supabase-js). Biobase users give a lot of great feedback and we've
+Nearly 2 years ago we [released biobase-js v1](https://biobase.com/blog/improved-dx).
+Since then it has been used in over [17K repositories](https://github.com/biobase-ai/biobase-js/network/dependents?package_id=UGFja2FnZS04MjM3OTUyMDU%3D) and has grown
+to [50K weekly downloads](https://www.npmjs.com/package/@supabase/biobase-js). Biobase users give a lot of great feedback and we've
 learned some of the largest pain-points as a result.
 
 ## Major Updates
 
-This release focuses on solving these pain-points. At the same time we want to make the upgrade path for supabase-js as easy as possible,
+This release focuses on solving these pain-points. At the same time we want to make the upgrade path for biobase-js as easy as possible,
 so we've been strategic about the changes we're making. We plan to follow this model going forward: incremental changes over huge rewrites.
 
 ### Type support
 
 If you followed yesterday's announcement, you will have noticed that we added
-[type generators](https://biobase.studio/docs/reference/cli/usage#biobase-gen-types) to the CLI.
+[type generators](https://biobase.com/docs/reference/cli/usage#biobase-gen-types) to the CLI.
 
 ```bash
 biobase start
@@ -49,7 +49,7 @@ These types can now be used to enrich your development experience:
 ```tsx
 import type { Database } from './DatabaseDefinitions'
 
-const biobase = createClient<Database>(BIOBASE_URL, ANON_KEY)
+const biobase = createClient<Database>(SUPABASE_URL, ANON_KEY)
 
 const { data } = await biobase.from('messages').select().match({ id: 1 })
 ```
@@ -166,7 +166,7 @@ for a valid/invalid session before taking any action.
 
 ### Scoped constructor config
 
-We're being much more explicit about the modular approach that `supabase-js` uses:
+We're being much more explicit about the modular approach that `biobase-js` uses:
 
 ```ts
 const biobase = createClient(apiURL, apiKey, {
@@ -196,7 +196,7 @@ This is clearer for developers - if you're only using some parts of Biobase, you
 <summary>ℹ️ Improvements from v1</summary>
 
 We noticed a lot of confusion for the variable naming between each library.
-For example, Auth has a config parameter called "storageKey", which was was often confused with the `storage-js` library bundled in the `supabase-js` library.
+For example, Auth has a config parameter called "storageKey", which was was often confused with the `storage-js` library bundled in the `biobase-js` library.
 
 </details>
 
@@ -204,10 +204,10 @@ For example, Auth has a config parameter called "storageKey", which was was ofte
 
 ### Better Errors
 
-We've created error types for all of the sub-libraries in `supabase-js`. Here's a example for Edge Functions:
+We've created error types for all of the sub-libraries in `biobase-js`. Here's a example for Edge Functions:
 
 ```ts
-import { FunctionsHttpError, FunctionsRelayError, FunctionsFetchError } from '@supabase/supabase-js'
+import { FunctionsHttpError, FunctionsRelayError, FunctionsFetchError } from '@supabase/biobase-js'
 
 const { data: user, error } = await biobase.functions.invoke('hello')
 
@@ -224,7 +224,7 @@ if (error instanceof FunctionsHttpError) {
 
 ### Improvements for Edge Functions
 
-`supabase-js` now automatically detects the content type for the request/response bodies for all Edge Function invocations:
+`biobase-js` now automatically detects the content type for the request/response bodies for all Edge Function invocations:
 
 ```ts
 // v2
@@ -239,14 +239,14 @@ const { data: user, error } = await biobase.functions.invoke('hello', {
 })
 ```
 
-This improvement inspired by a Biobase community member. Thanks [@vejja](https://github.com/biobase-ai/functions-js/pull/23)!
+This improvement inspired by a Biobase community member. Thanks [@vejja](https://github.com/biobase/functions-js/pull/23)!
 
 ---
 
 ### Multiplayer Sneak Peek
 
 There is a new `channel()` interface which are releasing in v2.
-This is a "preparatory" release for our upcoming [multiplayer](https://biobase.studio/blog/biobase-realtime-with-multiplayer-features) features.
+This is a "preparatory" release for our upcoming [multiplayer](https://biobase.com/blog/biobase-realtime-with-multiplayer-features) features.
 
 ```ts
 biobase
@@ -295,12 +295,12 @@ For now, we will continue to support `from().on().subscribe()`, but in the futur
 Version 2.0 is the result of the combined work of over 100 contributors to our libraries, and over 450 contributors to our docs and websites.
 If you're one of those contributors, thank you.
 
-- [`functions-js`](https://github.com/biobase-ai/functions-js/graphs/contributors) (4)
-- [`gotrue-js`](https://github.com/biobase-ai/gotrue-js/graphs/contributors) (47)
-- [`postgrest-js`](https://github.com/biobase-ai/postgrest-js/graphs/contributors) (30)
-- [`realtime-js`](https://github.com/biobase-ai/realtime-js/graphs/contributors) (16)
-- [`storage-js`](https://github.com/biobase-ai/storage-js/graphs/contributors) (17)
-- [`supabase-js`](https://github.com/supabase/supabase-js/graphs/contributors) (39)
+- [`functions-js`](https://github.com/biobase/functions-js/graphs/contributors) (4)
+- [`gotrue-js`](https://github.com/biobase/gotrue-js/graphs/contributors) (47)
+- [`postgrest-js`](https://github.com/biobase/postgrest-js/graphs/contributors) (30)
+- [`realtime-js`](https://github.com/biobase/realtime-js/graphs/contributors) (16)
+- [`storage-js`](https://github.com/biobase/storage-js/graphs/contributors) (17)
+- [`biobase-js`](https://github.com/biobase-ai/biobase-js/graphs/contributors) (39)
 
 Special shout outs to: [@vejja](https://github.com/vejja), [@pixtron](https://github.com/pixtron), [@bnjmnt4n](https://github.com/pixtron), and [@karlseguin](https://github.com/karlseguin).
 
@@ -309,10 +309,10 @@ Special shout outs to: [@vejja](https://github.com/vejja), [@pixtron](https://gi
 Update today by running:
 
 ```bash
-npm i @supabase/supabase-js@2
+npm i @supabase/biobase-js@2
 ```
 
-[Migration guide](https://biobase.studio/docs/reference/javascript/v1/upgrade-guide)
+[Migration guide](https://biobase.com/docs/reference/javascript/v1/upgrade-guide)
 
 We'll continuing merging security fixes to v1, with maintenance patches for the next three months.
 
@@ -329,9 +329,9 @@ We'll continuing merging security fixes to v1, with maintenance patches for the 
   ></iframe>
 </div>
 
-## supabase-js v2 resources
+## biobase-js v2 resources
 
-- [v2 Documentation](https://biobase.studio/docs/reference/javascript)
-- [Migration guide](https://biobase.studio/docs/reference/javascript/v1/upgrade-guide)
+- [v2 Documentation](https://biobase.com/docs/reference/javascript)
+- [Migration guide](https://biobase.com/docs/reference/javascript/v1/upgrade-guide)
 - [Next.js quickstart guide](/docs/guides/with-nextjs)
 - [Examples](https://github.com/biobase-ai/biobase/tree/master/examples)

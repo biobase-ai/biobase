@@ -2,2215 +2,2103 @@
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>Blog - Biobase</title>
-      <link>https://biobase.studio</link>
+      <link>https://biobase.com</link>
       <description>Latest news from Biobase</description>
       <language>en</language>
-      <lastBuildDate>Tue, 10 Dec 2024 00:00:00 -0700</lastBuildDate>
-      <atom:link href="https://biobase.studio/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Mon, 07 Oct 2024 22:00:00 GMT</lastBuildDate>
+      <atom:link href="https://biobase.com/rss.xml" rel="self" type="application/rss+xml"/>
       <item>
-  <guid>https://biobase.studio/blog/durable-workflows-in-postgres-dbos</guid>
-  <title>Running Durable Workflows in Postgres using DBOS</title>
-  <link>https://biobase.studio/blog/durable-workflows-in-postgres-dbos</link>
-  <description>Technical deep dive into the new DBOS integration for Biobase</description>
-  <pubDate>Tue, 10 Dec 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/database-build-v2</guid>
-  <title>database.build v2: Bring-your-own-LLM</title>
-  <link>https://biobase.studio/blog/database-build-v2</link>
-  <description>Use any OpenAI API compatible LLMs in database.build</description>
-  <pubDate>Fri, 06 Dec 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/restore-to-a-new-project</guid>
-  <title>Restore to a New Project</title>
-  <link>https://biobase.studio/blog/restore-to-a-new-project</link>
-  <description>Effortlessly Clone Data into a New Biobase Project</description>
-  <pubDate>Fri, 06 Dec 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/hack-the-base</guid>
-  <title>Hack the Base! with Biobase</title>
-  <link>https://biobase.studio/blog/hack-the-base</link>
-  <description>Play cool games, win cool prizes.</description>
-  <pubDate>Fri, 06 Dec 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/launch-week-13-top-10</guid>
-  <title>Top 10 Launches of Launch Week 13</title>
-  <link>https://biobase.studio/blog/launch-week-13-top-10</link>
-  <description>Highlights from Launch Week 13</description>
-  <pubDate>Fri, 06 Dec 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/biobase-queues</guid>
-  <title>Biobase Queues</title>
-  <link>https://biobase.studio/blog/biobase-queues</link>
-  <description>Durable Message Queues with Guaranteed Delivery in Postgres</description>
-  <pubDate>Thu, 05 Dec 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/high-performance-disks</guid>
-  <title>High Performance Disk</title>
-  <link>https://biobase.studio/blog/high-performance-disks</link>
-  <description>Store up to 60 TB of data with 100x improved durability and 5x more IOPS</description>
-  <pubDate>Thu, 05 Dec 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/biobase-cron</guid>
-  <title>Biobase Cron</title>
-  <link>https://biobase.studio/blog/biobase-cron</link>
-  <description>Schedule Recurring Jobs in Postgres</description>
-  <pubDate>Wed, 04 Dec 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/cli-v2-config-as-code</guid>
-  <title>Biobase CLI v2: Config as Code</title>
-  <link>https://biobase.studio/blog/cli-v2-config-as-code</link>
-  <description>Commit the configuration for all of your Projects and Branches into version control.</description>
-  <pubDate>Wed, 04 Dec 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/edge-functions-background-tasks-websockets</guid>
-  <title>Biobase Edge Functions: Introducing Background Tasks, Ephemeral Storage, and WebSockets</title>
-  <link>https://biobase.studio/blog/edge-functions-background-tasks-websockets</link>
-  <description>Edge functions can be used for workloads outside the request-response lifecycle</description>
-  <pubDate>Tue, 03 Dec 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/biobase-ai-assistant-v2</guid>
-  <title>Biobase AI Assistant v2</title>
-  <link>https://biobase.studio/blog/biobase-ai-assistant-v2</link>
-  <description>An evolution of how we approach AI within the Biobase dashboard</description>
-  <pubDate>Mon, 02 Dec 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/orioledb-launch</guid>
-  <title>OrioleDB Public Alpha</title>
-  <link>https://biobase.studio/blog/orioledb-launch</link>
-  <description>Launching OrioleDB Public Alpha</description>
-  <pubDate>Sun, 01 Dec 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/biobase-dynamic-functions</guid>
-  <title>Executing Dynamic JavaScript Code on Biobase with Edge Functions</title>
-  <link>https://biobase.studio/blog/biobase-dynamic-functions</link>
-  <description>Learn how to execute dynamic JavaScript code on Biobase using Edge Functions.</description>
-  <pubDate>Wed, 13 Nov 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/biobase-clickhouse-partnership</guid>
-  <title>ClickHouse Partnership, improved Postgres Replication, and Disk Management</title>
-  <link>https://biobase.studio/blog/biobase-clickhouse-partnership</link>
-  <description>Improving the developer experience between Postgres and ClickHouse.</description>
-  <pubDate>Wed, 30 Oct 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/database-build-live-share</guid>
-  <title>Live Share: Connect to in-browser PGlite with any Postgres client</title>
-  <link>https://biobase.studio/blog/database-build-live-share</link>
-  <description>Connect any Postgres client to your postgres.new databases.</description>
-  <pubDate>Thu, 10 Oct 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/mongodb-realm-and-device-sync-alternatives</guid>
-  <title>MongoDB Realm &amp; Device Sync Alternatives - Biobase</title>
-  <link>https://biobase.studio/blog/mongodb-realm-and-device-sync-alternatives</link>
-  <description>Learn how Biobase can help you transition from MongoDB Realm and Device Sync.</description>
-  <pubDate>Wed, 09 Oct 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/offline-first-flutter-apps</guid>
+  <guid>https://biobase.com/blog/offline-first-flutter-apps</guid>
   <title>Building offline-first mobile apps with Biobase, Flutter and Brick</title>
-  <link>https://biobase.studio/blog/offline-first-flutter-apps</link>
+  <link>https://biobase.com/blog/offline-first-flutter-apps</link>
   <description>Brick is an all-in-one data manager for Flutter that handles querying and uploading between Biobase and local caches like SQLite. Using Brick, developers can focus on implementing the application without worrying about translating or storing their data.</description>
-  <pubDate>Tue, 08 Oct 2024 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 07 Oct 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/lw12-hackathon-winners</guid>
-  <title>Biobase Launch Week 12 Hackathon Winners</title>
-  <link>https://biobase.studio/blog/lw12-hackathon-winners</link>
-  <description>Announcing the winners of the Biobase Launch Week 12 Hackathon.</description>
-  <pubDate>Mon, 30 Sep 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/local-first-expo-legend-state</guid>
-  <title>Local-first Realtime Apps with Expo and Legend-State</title>
-  <link>https://biobase.studio/blog/local-first-expo-legend-state</link>
-  <description>Build local-first realtime web and mobile apps with Expo, Legend-State, and Biobase.</description>
-  <pubDate>Mon, 23 Sep 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/edge-functions-faster-smaller</guid>
-  <title>Edge Functions are now 2x smaller and boot 3x faster</title>
-  <link>https://biobase.studio/blog/edge-functions-faster-smaller</link>
-  <description>Redeploy your Edge Functions with the CLI v1.192.5 for a peformance boost</description>
-  <pubDate>Thu, 12 Sep 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/flutter-uber-clone</guid>
-  <title>Building an Uber Clone with Flutter and Biobase</title>
-  <link>https://biobase.studio/blog/flutter-uber-clone</link>
-  <description>Learn how to handle real-time geospatial data using Biobase Realtime and Flutter.</description>
-  <pubDate>Thu, 05 Sep 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/in-browser-semantic-search-pglite</guid>
-  <title>In-Browser Semantic AI Search with PGlite and Transformers.js</title>
-  <link>https://biobase.studio/blog/in-browser-semantic-search-pglite</link>
-  <description>Use pgvector in PGlite and combine it with Huggingface Transformers.js for a fully local, in-browser semantic search functionality!</description>
-  <pubDate>Thu, 29 Aug 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/biobase-vercel-partnership</guid>
-  <title>Biobase + Vercel Partnership</title>
-  <link>https://biobase.studio/blog/biobase-vercel-partnership</link>
-  <description>Vercel just added official First-Party Integrations. We&apos;re one of them.</description>
-  <pubDate>Wed, 28 Aug 2024 00:00:00 -0700</pubDate>
-</item>
-<item>
-  <guid>https://biobase.studio/blog/biobase-lw12-hackathon</guid>
+  <guid>https://biobase.com/blog/lw12-hackathon-winners</guid>
   <title>Biobase Launch Week 12 Hackathon</title>
-  <link>https://biobase.studio/blog/biobase-lw12-hackathon</link>
-  <description>Build an Open Source Project over 10 days. 5 prize categories.</description>
-  <pubDate>Mon, 26 Aug 2024 00:00:00 -0700</pubDate>
+  <link>https://biobase.com/blog/lw12-hackathon-winners</link>
+  <description>Announcing the winners of the Biobase Launch Week 12 Hackathon.</description>
+  <pubDate>Sun, 29 Sep 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/mozilla-llamafile-in-biobase-edge-functions</guid>
+  <guid>https://biobase.com/blog/local-first-expo-legend-state</guid>
+  <title>Local-first Realtime Apps with Expo and Legend-State</title>
+  <link>https://biobase.com/blog/local-first-expo-legend-state</link>
+  <description>Build local-first realtime web and mobile apps with Expo, Legend-State, and Biobase.</description>
+  <pubDate>Sun, 22 Sep 2024 22:00:00 GMT</pubDate>
+</item>
+<item>
+  <guid>https://biobase.com/blog/edge-functions-faster-smaller</guid>
+  <title>Edge Functions are now 2x smaller and boot 3x faster</title>
+  <link>https://biobase.com/blog/edge-functions-faster-smaller</link>
+  <description>Redeploy your Edge Functions with the CLI v1.192.5 for a peformance boost</description>
+  <pubDate>Wed, 11 Sep 2024 22:00:00 GMT</pubDate>
+</item>
+<item>
+  <guid>https://biobase.com/blog/flutter-uber-clone</guid>
+  <title>Building an Uber Clone with Flutter and Biobase</title>
+  <link>https://biobase.com/blog/flutter-uber-clone</link>
+  <description>Learn how to handle real-time geospatial data using Biobase Realtime and Flutter.</description>
+  <pubDate>Wed, 04 Sep 2024 22:00:00 GMT</pubDate>
+</item>
+<item>
+  <guid>https://biobase.com/blog/in-browser-semantic-search-pglite</guid>
+  <title>In-Browser Semantic AI Search with PGlite and Transformers.js</title>
+  <link>https://biobase.com/blog/in-browser-semantic-search-pglite</link>
+  <description>Use pgvector in PGlite and combine it with Huggingface Transformers.js for a fully local, in-browser semantic search functionality!</description>
+  <pubDate>Wed, 28 Aug 2024 22:00:00 GMT</pubDate>
+</item>
+<item>
+  <guid>https://biobase.com/blog/biobase-vercel-partnership</guid>
+  <title>Biobase + Vercel Partnership</title>
+  <link>https://biobase.com/blog/biobase-vercel-partnership</link>
+  <description>Vercel just added official First-Party Integrations. We&apos;re one of them.</description>
+  <pubDate>Tue, 27 Aug 2024 22:00:00 GMT</pubDate>
+</item>
+<item>
+  <guid>https://biobase.com/blog/biobase-lw12-hackathon</guid>
+  <title>Biobase Launch Week 12 Hackathon</title>
+  <link>https://biobase.com/blog/biobase-lw12-hackathon</link>
+  <description>Build an Open Source Project over 10 days. 5 prize categories.</description>
+  <pubDate>Sun, 25 Aug 2024 22:00:00 GMT</pubDate>
+</item>
+<item>
+  <guid>https://biobase.com/blog/mozilla-llamafile-in-biobase-edge-functions</guid>
   <title>Mozilla Llamafile in Biobase Edge Functions</title>
-  <link>https://biobase.studio/blog/mozilla-llamafile-in-biobase-edge-functions</link>
+  <link>https://biobase.com/blog/mozilla-llamafile-in-biobase-edge-functions</link>
   <description>Use Mozilla Llamafile OpenAI API compatible server in Biobase Edge Functions.</description>
-  <pubDate>Wed, 21 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 20 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-12-top-10</guid>
+  <guid>https://biobase.com/blog/launch-week-12-top-10</guid>
   <title>Top 10 Launches of Launch Week 12</title>
-  <link>https://biobase.studio/blog/launch-week-12-top-10</link>
+  <link>https://biobase.com/blog/launch-week-12-top-10</link>
   <description>Highlights from Launch Week 12</description>
-  <pubDate>Fri, 16 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/platform-access-control</guid>
+  <guid>https://biobase.com/blog/platform-access-control</guid>
   <title>Introducing New Platform Access Control</title>
-  <link>https://biobase.studio/blog/platform-access-control</link>
+  <link>https://biobase.com/blog/platform-access-control</link>
   <description>Granular permissions for adding users to specific projects in an Biobase organization.</description>
-  <pubDate>Fri, 16 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-foreign-data-wrappers-with-wasm</guid>
+  <guid>https://biobase.com/blog/postgres-foreign-data-wrappers-with-wasm</guid>
   <title>Postgres Foreign Data Wrappers with Wasm</title>
-  <link>https://biobase.studio/blog/postgres-foreign-data-wrappers-with-wasm</link>
+  <link>https://biobase.com/blog/postgres-foreign-data-wrappers-with-wasm</link>
   <description>Build Wasm foreign data wrapper with Wrappers and use it on Biobase</description>
-  <pubDate>Fri, 16 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgrest-12-2</guid>
+  <guid>https://biobase.com/blog/postgrest-12-2</guid>
   <title>PostgREST 12.2: Prometheus metrics</title>
-  <link>https://biobase.studio/blog/postgrest-12-2</link>
+  <link>https://biobase.com/blog/postgrest-12-2</link>
   <description>New features in the latest 12.2 release of PostgREST</description>
-  <pubDate>Fri, 16 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/python-support</guid>
+  <guid>https://biobase.com/blog/python-support</guid>
   <title>Biobase Python</title>
-  <link>https://biobase.studio/blog/python-support</link>
+  <link>https://biobase.com/blog/python-support</link>
   <description>Biobase Python is now officially supported in Biobase.</description>
-  <pubDate>Fri, 16 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-book-by-david-lorenz</guid>
+  <guid>https://biobase.com/blog/biobase-book-by-david-lorenz</guid>
   <title>The Biobase Book by David Lorenz</title>
-  <link>https://biobase.studio/blog/biobase-book-by-david-lorenz</link>
+  <link>https://biobase.com/blog/biobase-book-by-david-lorenz</link>
   <description>Learn Biobase by building a Multi-Tenant platform.</description>
-  <pubDate>Fri, 16 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/vec2pg</guid>
+  <guid>https://biobase.com/blog/vec2pg</guid>
   <title>vec2pg: Migrate to pgvector from Pinecone and Qdrant</title>
-  <link>https://biobase.studio/blog/vec2pg</link>
+  <link>https://biobase.com/blog/vec2pg</link>
   <description>Migrate vector data from vector DBs to Biobase</description>
-  <pubDate>Fri, 16 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/log-drains</guid>
+  <guid>https://biobase.com/blog/log-drains</guid>
   <title>Introducing Log Drains</title>
-  <link>https://biobase.studio/blog/log-drains</link>
+  <link>https://biobase.com/blog/log-drains</link>
   <description>Log Drains for exporting product logs is now available under Public Alpha</description>
-  <pubDate>Thu, 15 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 14 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/pg-graphql-1-5-7</guid>
+  <guid>https://biobase.com/blog/pg-graphql-1-5-7</guid>
   <title>pg_graphql 1.5.7: pagination and multi-tenancy support</title>
-  <link>https://biobase.studio/blog/pg-graphql-1-5-7</link>
+  <link>https://biobase.com/blog/pg-graphql-1-5-7</link>
   <description>Latest features of pg_graphql</description>
-  <pubDate>Thu, 15 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 14 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/snaplet-is-now-open-source</guid>
+  <guid>https://biobase.com/blog/snaplet-is-now-open-source</guid>
   <title>Snaplet is now open source</title>
-  <link>https://biobase.studio/blog/snaplet-is-now-open-source</link>
+  <link>https://biobase.com/blog/snaplet-is-now-open-source</link>
   <description>Snaplet is closing their business and opening their source code</description>
-  <pubDate>Wed, 14 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 13 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/third-party-auth-mfa-phone-send-hooks</guid>
+  <guid>https://biobase.com/blog/third-party-auth-mfa-phone-send-hooks</guid>
   <title>Biobase Auth: Bring-your-own Auth0, Cognito, or Firebase</title>
-  <link>https://biobase.studio/blog/third-party-auth-mfa-phone-send-hooks</link>
+  <link>https://biobase.com/blog/third-party-auth-mfa-phone-send-hooks</link>
   <description>Use Firebase Auth, Auth0 or AWS Cognito (Amplify) with your Biobase project, secure your users with SMS based MFA, and use send hooks.</description>
-  <pubDate>Wed, 14 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 13 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-realtime-broadcast-and-presence-authorization</guid>
+  <guid>https://biobase.com/blog/biobase-realtime-broadcast-and-presence-authorization</guid>
   <title>Biobase Realtime: Broadcast and Presence Authorization</title>
-  <link>https://biobase.studio/blog/biobase-realtime-broadcast-and-presence-authorization</link>
+  <link>https://biobase.com/blog/biobase-realtime-broadcast-and-presence-authorization</link>
   <description>Secure Realtime Broadcast and Presence with Authorization</description>
-  <pubDate>Tue, 13 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 12 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/github-copilot-extension-for-vs-code</guid>
+  <guid>https://biobase.com/blog/github-copilot-extension-for-vs-code</guid>
   <title>Official Biobase extension for VS Code and GitHub Copilot</title>
-  <link>https://biobase.studio/blog/github-copilot-extension-for-vs-code</link>
+  <link>https://biobase.com/blog/github-copilot-extension-for-vs-code</link>
   <description>Today we&apos;re launching a new GitHub Copilot extension for VS Code to make your development with Biobase even more delightful.</description>
-  <pubDate>Mon, 12 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 11 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-new</guid>
+  <guid>https://biobase.com/blog/postgres-new</guid>
   <title>postgres.new: In-browser Postgres with an AI interface</title>
-  <link>https://biobase.studio/blog/postgres-new</link>
+  <link>https://biobase.com/blog/postgres-new</link>
   <description>Introducing postgres.new, the in-browser Postgres sandbox with AI assistance.</description>
-  <pubDate>Mon, 12 Aug 2024 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 11 Aug 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/supabase-js-on-jsr</guid>
+  <guid>https://biobase.com/blog/biobase-js-on-jsr</guid>
   <title>Announcing Biobase on JSR</title>
-  <link>https://biobase.studio/blog/supabase-js-on-jsr</link>
+  <link>https://biobase.com/blog/biobase-js-on-jsr</link>
   <description>Biobase is now available on the open source JavaScript Registry (JSR).</description>
-  <pubDate>Tue, 16 Jul 2024 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 15 Jul 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/hardening-biobase</guid>
+  <guid>https://biobase.com/blog/hardening-biobase</guid>
   <title>Biobase Security Suite</title>
-  <link>https://biobase.studio/blog/hardening-biobase</link>
+  <link>https://biobase.com/blog/hardening-biobase</link>
   <description>Learn how to use range columns in Postgres to simplify time-based queries and add constraints to prevent overlaps.</description>
-  <pubDate>Thu, 11 Jul 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 10 Jul 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/range-columns</guid>
+  <guid>https://biobase.com/blog/range-columns</guid>
   <title>Simplifying Time-Based Queries with Range Columns</title>
-  <link>https://biobase.studio/blog/range-columns</link>
+  <link>https://biobase.com/blog/range-columns</link>
   <description>Learn how to use range columns in Postgres to simplify time-based queries and add constraints to prevent overlaps.</description>
-  <pubDate>Thu, 11 Jul 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 10 Jul 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-realtime-location-sharing-with-maplibre</guid>
+  <guid>https://biobase.com/blog/postgres-realtime-location-sharing-with-maplibre</guid>
   <title>Postgres Realtime location sharing with MapLibre</title>
-  <link>https://biobase.studio/blog/postgres-realtime-location-sharing-with-maplibre</link>
+  <link>https://biobase.com/blog/postgres-realtime-location-sharing-with-maplibre</link>
   <description>Use Biobase Realtime to draw live location data onto the map with MapLibre GL JS.</description>
-  <pubDate>Thu, 04 Jul 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 03 Jul 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgis-generate-vector-tiles</guid>
+  <guid>https://biobase.com/blog/postgis-generate-vector-tiles</guid>
   <title>Generate Vector Tiles with PostGIS</title>
-  <link>https://biobase.studio/blog/postgis-generate-vector-tiles</link>
+  <link>https://biobase.com/blog/postgis-generate-vector-tiles</link>
   <description>Use PostGIS to programmatically generate Mapbox Vector Tiles and render them with MapLibre GL.</description>
-  <pubDate>Wed, 26 Jun 2024 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 25 Jun 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/self-host-maps-storage-protomaps</guid>
+  <guid>https://biobase.com/blog/self-host-maps-storage-protomaps</guid>
   <title>Self-host Maps with Protomaps and Biobase Storage</title>
-  <link>https://biobase.studio/blog/self-host-maps-storage-protomaps</link>
+  <link>https://biobase.com/blog/self-host-maps-storage-protomaps</link>
   <description>Host Protomaps PMTiles on Biobase Storage and render them with MapLibre GL.</description>
-  <pubDate>Wed, 19 Jun 2024 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 18 Jun 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/calcom-platform-starter-kit-nextjs-biobase</guid>
+  <guid>https://biobase.com/blog/calcom-platform-starter-kit-nextjs-biobase</guid>
   <title>Cal.com launches Expert Marketplace built with Next.js and Biobase.</title>
-  <link>https://biobase.studio/blog/calcom-platform-starter-kit-nextjs-biobase</link>
+  <link>https://biobase.com/blog/calcom-platform-starter-kit-nextjs-biobase</link>
   <description>Cal.com and Biobase team up to build an open-source platform starter kit for developers.</description>
-  <pubDate>Tue, 18 Jun 2024 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 17 Jun 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/meetup-kahoot-alternative</guid>
+  <guid>https://biobase.com/blog/meetup-kahoot-alternative</guid>
   <title>The open source Kahoot alternative</title>
-  <link>https://biobase.studio/blog/meetup-kahoot-alternative</link>
+  <link>https://biobase.com/blog/meetup-kahoot-alternative</link>
   <description>How we built a Kahoot alternative for the Biobase community meetups.</description>
-  <pubDate>Thu, 09 May 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 08 May 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/pgvector-0-7-0</guid>
+  <guid>https://biobase.com/blog/pgvector-0-7-0</guid>
   <title>What&apos;s new in pgvector v0.7.0</title>
-  <link>https://biobase.studio/blog/pgvector-0-7-0</link>
+  <link>https://biobase.com/blog/pgvector-0-7-0</link>
   <description>Exploring new features in pgvector v0.7.0</description>
-  <pubDate>Thu, 02 May 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 01 May 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-oss-hackathon-winners</guid>
+  <guid>https://biobase.com/blog/biobase-oss-hackathon-winners</guid>
   <title>Open Source Hackathon 2024 winners</title>
-  <link>https://biobase.studio/blog/biobase-oss-hackathon-winners</link>
+  <link>https://biobase.com/blog/biobase-oss-hackathon-winners</link>
   <description>Announcing the winners of the Open Source Hackathon 2024!</description>
-  <pubDate>Tue, 30 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 29 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-bloat</guid>
+  <guid>https://biobase.com/blog/postgres-bloat</guid>
   <title>Postgres Bloat Minimization</title>
-  <link>https://biobase.studio/blog/postgres-bloat</link>
+  <link>https://biobase.com/blog/postgres-bloat</link>
   <description>Understanding and minimizing Postgres table bloat</description>
-  <pubDate>Fri, 26 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 25 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/exploring-support-tooling</guid>
+  <guid>https://biobase.com/blog/exploring-support-tooling</guid>
   <title>Exploring Support Tooling at Biobase: A Dive into SLA Buddy</title>
-  <link>https://biobase.studio/blog/exploring-support-tooling</link>
+  <link>https://biobase.com/blog/exploring-support-tooling</link>
   <description>In this post, we explore the support tooling at Biobase, and how we use SLA Buddy to monitor our SLAs.</description>
-  <pubDate>Thu, 25 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 24 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/nix-postgres</guid>
+  <guid>https://biobase.com/blog/nix-postgres</guid>
   <title>Packaging Biobase with Nix</title>
-  <link>https://biobase.studio/blog/nix-postgres</link>
+  <link>https://biobase.com/blog/nix-postgres</link>
   <description></description>
-  <pubDate>Thu, 25 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 24 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/s3-compatible-storage</guid>
+  <guid>https://biobase.com/blog/s3-compatible-storage</guid>
   <title>Biobase Storage: now supports the S3 protocol</title>
-  <link>https://biobase.studio/blog/s3-compatible-storage</link>
+  <link>https://biobase.com/blog/s3-compatible-storage</link>
   <description>Biobase Storage is now officially an S3-Compatible Storage Provider.</description>
-  <pubDate>Thu, 18 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 17 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/ga-week-summary</guid>
+  <guid>https://biobase.com/blog/ga-week-summary</guid>
   <title>Top 10 Launches from Biobase GA Week</title>
-  <link>https://biobase.studio/blog/ga-week-summary</link>
+  <link>https://biobase.com/blog/ga-week-summary</link>
   <description>A recap of the most important launches and updates from the week.</description>
-  <pubDate>Thu, 18 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 17 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/security-performance-advisor</guid>
+  <guid>https://biobase.com/blog/security-performance-advisor</guid>
   <title>Biobase Security Advisor &amp; Performance Advisor</title>
-  <link>https://biobase.studio/blog/security-performance-advisor</link>
+  <link>https://biobase.com/blog/security-performance-advisor</link>
   <description>We&apos;re making it easier to build a secure and high-performing application.</description>
-  <pubDate>Thu, 18 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 17 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/anonymous-sign-ins</guid>
+  <guid>https://biobase.com/blog/anonymous-sign-ins</guid>
   <title>Biobase Auth now supports Anonymous Sign-ins</title>
-  <link>https://biobase.studio/blog/anonymous-sign-ins</link>
+  <link>https://biobase.com/blog/anonymous-sign-ins</link>
   <description>Sign in as an anonymous user to authenticate with Biobase</description>
-  <pubDate>Wed, 17 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 16 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/ai-inference-now-available-in-biobase-edge-functions</guid>
+  <guid>https://biobase.com/blog/ai-inference-now-available-in-biobase-edge-functions</guid>
   <title>AI Inference now available in Biobase Edge Functions</title>
-  <link>https://biobase.studio/blog/ai-inference-now-available-in-biobase-edge-functions</link>
+  <link>https://biobase.com/blog/ai-inference-now-available-in-biobase-edge-functions</link>
   <description>Use embeddings and large language models on the edge with Biobase Edge Functions.</description>
-  <pubDate>Tue, 16 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 15 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/branching-publicly-available</guid>
+  <guid>https://biobase.com/blog/branching-publicly-available</guid>
   <title>Branching now Publicly Available</title>
-  <link>https://biobase.studio/blog/branching-publicly-available</link>
+  <link>https://biobase.com/blog/branching-publicly-available</link>
   <description>Biobase Branching is now available on Pro Plan and above.</description>
-  <pubDate>Mon, 15 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 14 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-acquires-oriole</guid>
+  <guid>https://biobase.com/blog/biobase-acquires-oriole</guid>
   <title>Oriole joins Biobase</title>
-  <link>https://biobase.studio/blog/biobase-acquires-oriole</link>
+  <link>https://biobase.com/blog/biobase-acquires-oriole</link>
   <description>The Oriole team are joining Biobase to build a faster storage engine for Postgres.</description>
-  <pubDate>Mon, 15 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 14 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-aws-marketplace</guid>
+  <guid>https://biobase.com/blog/biobase-aws-marketplace</guid>
   <title>Biobase on the AWS Marketplace</title>
-  <link>https://biobase.studio/blog/biobase-aws-marketplace</link>
+  <link>https://biobase.com/blog/biobase-aws-marketplace</link>
   <description>Biobase is now available on the AWS Marketplace, Simplifying Procurement for Enterprise Customers.</description>
-  <pubDate>Mon, 15 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 14 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-bootstrap</guid>
+  <guid>https://biobase.com/blog/biobase-bootstrap</guid>
   <title>Biobase Bootstrap: the fastest way to launch a new project</title>
-  <link>https://biobase.studio/blog/biobase-bootstrap</link>
+  <link>https://biobase.com/blog/biobase-bootstrap</link>
   <description>Launch a new hosted Biobase project directly from the CLI using pre-built applications.</description>
-  <pubDate>Mon, 15 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 14 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-swift</guid>
+  <guid>https://biobase.com/blog/biobase-swift</guid>
   <title>Biobase Swift</title>
-  <link>https://biobase.studio/blog/biobase-swift</link>
+  <link>https://biobase.com/blog/biobase-swift</link>
   <description>Biobase Swift is now officially supported.</description>
-  <pubDate>Mon, 15 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 14 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-oss-hackathon</guid>
+  <guid>https://biobase.com/blog/biobase-oss-hackathon</guid>
   <title>Biobase Open Source Hackathon 2024</title>
-  <link>https://biobase.studio/blog/biobase-oss-hackathon</link>
+  <link>https://biobase.com/blog/biobase-oss-hackathon</link>
   <description>Build an Open Source Project over 10 days. 5 prize categories.</description>
-  <pubDate>Fri, 12 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 11 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-roles-and-privileges</guid>
+  <guid>https://biobase.com/blog/postgres-roles-and-privileges</guid>
   <title>Postgres Roles and Privileges</title>
-  <link>https://biobase.studio/blog/postgres-roles-and-privileges</link>
+  <link>https://biobase.com/blog/postgres-roles-and-privileges</link>
   <description>A guide to Postgres roles and privileges</description>
-  <pubDate>Thu, 11 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 10 Apr 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/pg-paper-dump</guid>
+  <guid>https://biobase.com/blog/pg-paper-dump</guid>
   <title>Announcing Data Preservation Service</title>
-  <link>https://biobase.studio/blog/pg-paper-dump</link>
+  <link>https://biobase.com/blog/pg-paper-dump</link>
   <description>Secure, reliable and timeless backups</description>
-  <pubDate>Mon, 01 Apr 2024 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 31 Mar 2024 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/semantic-image-search-amazon-bedrock</guid>
+  <guid>https://biobase.com/blog/semantic-image-search-amazon-bedrock</guid>
   <title>Implementing semantic image search with Amazon Titan and Biobase Vector</title>
-  <link>https://biobase.studio/blog/semantic-image-search-amazon-bedrock</link>
+  <link>https://biobase.com/blog/semantic-image-search-amazon-bedrock</link>
   <description>Implementing semantic image search with Amazon Titan and Biobase Vector in Python.</description>
-  <pubDate>Tue, 26 Mar 2024 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 25 Mar 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgrest-aggregate-functions</guid>
+  <guid>https://biobase.com/blog/postgrest-aggregate-functions</guid>
   <title>PostgREST Aggregate Functions</title>
-  <link>https://biobase.studio/blog/postgrest-aggregate-functions</link>
+  <link>https://biobase.com/blog/postgrest-aggregate-functions</link>
   <description>Summarize your data by performing calculations across groups of rows in PostgREST</description>
-  <pubDate>Thu, 29 Feb 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 28 Feb 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/content-recommendation-with-flutter</guid>
+  <guid>https://biobase.com/blog/content-recommendation-with-flutter</guid>
   <title>Build a content recommendation app with Flutter and OpenAI</title>
-  <link>https://biobase.studio/blog/content-recommendation-with-flutter</link>
+  <link>https://biobase.com/blog/content-recommendation-with-flutter</link>
   <description>Build a movie-viewing app that recommends another movie based on what the user is viewing using OpenAI, Flutter and Biobase.</description>
-  <pubDate>Mon, 26 Feb 2024 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 25 Feb 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/automating-performance-tests</guid>
+  <guid>https://biobase.com/blog/automating-performance-tests</guid>
   <title>Automating performance tests</title>
-  <link>https://biobase.studio/blog/automating-performance-tests</link>
+  <link>https://biobase.com/blog/automating-performance-tests</link>
   <description>Learn about our story to get to the automated performance testing.</description>
-  <pubDate>Wed, 21 Feb 2024 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 20 Feb 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/matryoshka-embeddings</guid>
+  <guid>https://biobase.com/blog/matryoshka-embeddings</guid>
   <title>Matryoshka embeddings: faster OpenAI vector search using Adaptive Retrieval</title>
-  <link>https://biobase.studio/blog/matryoshka-embeddings</link>
+  <link>https://biobase.com/blog/matryoshka-embeddings</link>
   <description>Use Adaptive Retrieval to improve query performance with OpenAI&apos;s new embedding models</description>
-  <pubDate>Tue, 13 Feb 2024 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 12 Feb 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/nosql-mongodb-compatibility-with-ferretdb-and-flydotio</guid>
+  <guid>https://biobase.com/blog/nosql-mongodb-compatibility-with-ferretdb-and-flydotio</guid>
   <title>NoSQL Postgres: Add MongoDB compatibility to your Biobase projects with FerretDB</title>
-  <link>https://biobase.studio/blog/nosql-mongodb-compatibility-with-ferretdb-and-flydotio</link>
+  <link>https://biobase.com/blog/nosql-mongodb-compatibility-with-ferretdb-and-flydotio</link>
   <description>NoSQL Postgres: Add MongoDB compatibility to your Biobase projects with FerretDB</description>
-  <pubDate>Wed, 31 Jan 2024 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 30 Jan 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/pgvector-fast-builds</guid>
+  <guid>https://biobase.com/blog/pgvector-fast-builds</guid>
   <title>pgvector 0.6.0: 30x faster with parallel index builds</title>
-  <link>https://biobase.studio/blog/pgvector-fast-builds</link>
+  <link>https://biobase.com/blog/pgvector-fast-builds</link>
   <description>pgvector 0.6.0 brings a significant improvement: parallel index builds for HNSW. Building an HNSW index is now up to 30x faster for unlogged tables.</description>
-  <pubDate>Tue, 30 Jan 2024 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 29 Jan 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/ruby-on-rails-postgres</guid>
+  <guid>https://biobase.com/blog/ruby-on-rails-postgres</guid>
   <title>Getting started with Ruby on Rails and Postgres on Biobase</title>
-  <link>https://biobase.studio/blog/ruby-on-rails-postgres</link>
+  <link>https://biobase.com/blog/ruby-on-rails-postgres</link>
   <description>Learn how to create a new Rails app and connect it to a Biobase Postgres database.</description>
-  <pubDate>Mon, 29 Jan 2024 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 28 Jan 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/flutter-figma-clone</guid>
+  <guid>https://biobase.com/blog/flutter-figma-clone</guid>
   <title>Create a Figma Clone app with Flutter and Biobase Realtime</title>
-  <link>https://biobase.studio/blog/flutter-figma-clone</link>
+  <link>https://biobase.com/blog/flutter-figma-clone</link>
   <description>A tutorial on how to build a collaborative design app like Figma using Flutter and Biobase Realtime.</description>
-  <pubDate>Fri, 26 Jan 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 25 Jan 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/how-pg-graphql-works</guid>
+  <guid>https://biobase.com/blog/how-pg-graphql-works</guid>
   <title>How pg_graphql works</title>
-  <link>https://biobase.studio/blog/how-pg-graphql-works</link>
+  <link>https://biobase.com/blog/how-pg-graphql-works</link>
   <description>An insight into the internals of GraphQL in Postgres using pg_graphql, and how you can contribute.</description>
-  <pubDate>Wed, 24 Jan 2024 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 23 Jan 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/laravel-postgres</guid>
+  <guid>https://biobase.com/blog/laravel-postgres</guid>
   <title>Getting started with Laravel and Postgres</title>
-  <link>https://biobase.studio/blog/laravel-postgres</link>
+  <link>https://biobase.com/blog/laravel-postgres</link>
   <description>Learn how to create a new Laravel PHP app and connect it to a Biobase PostgreSQL database.</description>
-  <pubDate>Mon, 22 Jan 2024 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 21 Jan 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/what-is-saml-authentication</guid>
+  <guid>https://biobase.com/blog/what-is-saml-authentication</guid>
   <title>What is SAML? A practical guide to the authentication protocol</title>
-  <link>https://biobase.studio/blog/what-is-saml-authentication</link>
+  <link>https://biobase.com/blog/what-is-saml-authentication</link>
   <description>Learn what is SAML authentication, how it differentiates from SSO, SAML with Postgres, and more.</description>
-  <pubDate>Wed, 17 Jan 2024 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 16 Jan 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/react-query-nextjs-app-router-cache-helpers</guid>
+  <guid>https://biobase.com/blog/react-query-nextjs-app-router-cache-helpers</guid>
   <title>Using React Query with Next.js App Router and Biobase Cache Helpers</title>
-  <link>https://biobase.studio/blog/react-query-nextjs-app-router-cache-helpers</link>
+  <link>https://biobase.com/blog/react-query-nextjs-app-router-cache-helpers</link>
   <description>Learn how to use React Query in Next.js Client &amp; Server Components for data fetching with Biobase.</description>
-  <pubDate>Fri, 12 Jan 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 11 Jan 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/ipv6</guid>
+  <guid>https://biobase.com/blog/ipv6</guid>
   <title>Brace yourself, IPv6 is coming</title>
-  <link>https://biobase.studio/blog/ipv6</link>
+  <link>https://biobase.com/blog/ipv6</link>
   <description>On February 1st 2024, AWS will start charging for IPv4 addresses. This is a big deal for the internet, and we&apos;re here to help you prepare.</description>
-  <pubDate>Fri, 12 Jan 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 11 Jan 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/elixir-clustering-using-postgres</guid>
+  <guid>https://biobase.com/blog/elixir-clustering-using-postgres</guid>
   <title>Elixir clustering using Postgres</title>
-  <link>https://biobase.studio/blog/elixir-clustering-using-postgres</link>
+  <link>https://biobase.com/blog/elixir-clustering-using-postgres</link>
   <description>Learn about our approach to connecting multiple nodes in Elixir using Postgres</description>
-  <pubDate>Tue, 09 Jan 2024 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 08 Jan 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/beta-update-december-2023</guid>
+  <guid>https://biobase.com/blog/beta-update-december-2023</guid>
   <title>Biobase Beta December 2023</title>
-  <link>https://biobase.studio/blog/beta-update-december-2023</link>
+  <link>https://biobase.com/blog/beta-update-december-2023</link>
   <description>A Launch Week X rundown with all the fantastic goodies we shipped</description>
-  <pubDate>Fri, 05 Jan 2024 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 04 Jan 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-x-hackathon-winners</guid>
+  <guid>https://biobase.com/blog/launch-week-x-hackathon-winners</guid>
   <title>Launch Week X Hackathon Winners</title>
-  <link>https://biobase.studio/blog/launch-week-x-hackathon-winners</link>
+  <link>https://biobase.com/blog/launch-week-x-hackathon-winners</link>
   <description>Announcing the winners of the Launch Week X Hackathon!</description>
-  <pubDate>Thu, 04 Jan 2024 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 03 Jan 2024 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-x-best-launches</guid>
+  <guid>https://biobase.com/blog/launch-week-x-best-launches</guid>
   <title>Top 10 Launches of LWX</title>
-  <link>https://biobase.studio/blog/launch-week-x-best-launches</link>
+  <link>https://biobase.com/blog/launch-week-x-best-launches</link>
   <description>Our CEO takes a look at his favorite ships from LWX</description>
-  <pubDate>Tue, 19 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 18 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/client-libraries-v2</guid>
+  <guid>https://biobase.com/blog/client-libraries-v2</guid>
   <title>Biobase Libraries V2: Python, Swift, Kotlin, Flutter, and Typescript</title>
-  <link>https://biobase.studio/blog/client-libraries-v2</link>
+  <link>https://biobase.com/blog/client-libraries-v2</link>
   <description>Swift, Kotlin, C#, and Python are now stable and moving to the v2 API.</description>
-  <pubDate>Fri, 15 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 14 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/introducing-read-replicas</guid>
+  <guid>https://biobase.com/blog/introducing-read-replicas</guid>
   <title>Introducing Read Replicas</title>
-  <link>https://biobase.studio/blog/introducing-read-replicas</link>
+  <link>https://biobase.com/blog/introducing-read-replicas</link>
   <description>We are launching support for Postgres Read Replicas</description>
-  <pubDate>Fri, 15 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 14 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-on-fly-by-biobase</guid>
+  <guid>https://biobase.com/blog/postgres-on-fly-by-biobase</guid>
   <title>Fly Postgres, managed by Biobase</title>
-  <link>https://biobase.studio/blog/postgres-on-fly-by-biobase</link>
+  <link>https://biobase.com/blog/postgres-on-fly-by-biobase</link>
   <description>A managed Postgres offering developed by Biobase and Fly.io</description>
-  <pubDate>Fri, 15 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 14 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-auth-identity-linking-hooks</guid>
+  <guid>https://biobase.com/blog/biobase-auth-identity-linking-hooks</guid>
   <title>Biobase Auth: Identity Linking, Hooks, and HaveIBeenPwned integration</title>
-  <link>https://biobase.studio/blog/biobase-auth-identity-linking-hooks</link>
+  <link>https://biobase.com/blog/biobase-auth-identity-linking-hooks</link>
   <description>Four major Auth features: Identity Linking, Session Control, Leaked Password Protection, and Hooks</description>
-  <pubDate>Thu, 14 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 13 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-wrappers-v02</guid>
+  <guid>https://biobase.com/blog/biobase-wrappers-v02</guid>
   <title>Biobase Wrappers v0.2: Query Pushdown &amp; Remote Subqueries</title>
-  <link>https://biobase.studio/blog/biobase-wrappers-v02</link>
+  <link>https://biobase.com/blog/biobase-wrappers-v02</link>
   <description>Biobase Wrappers v0.2 brings more Wrappers, query pushdown, remote subquery, and more</description>
-  <pubDate>Thu, 14 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 13 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgrest-12</guid>
+  <guid>https://biobase.com/blog/postgrest-12</guid>
   <title>PostgREST 12</title>
-  <link>https://biobase.studio/blog/postgrest-12</link>
+  <link>https://biobase.com/blog/postgrest-12</link>
   <description>PostgREST 12 is out and we take a look at some of the major new features like JWT Caching and Aggregate Functions</description>
-  <pubDate>Wed, 13 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 12 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-branching</guid>
+  <guid>https://biobase.com/blog/biobase-branching</guid>
   <title>Biobase Branching</title>
-  <link>https://biobase.studio/blog/biobase-branching</link>
+  <link>https://biobase.com/blog/biobase-branching</link>
   <description>A Postgres database for every Pull Request.</description>
-  <pubDate>Wed, 13 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 12 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/supavisor-postgres-connection-pooler</guid>
+  <guid>https://biobase.com/blog/supavisor-postgres-connection-pooler</guid>
   <title>Supavisor 1.0: a scalable connection pooler for Postgres</title>
-  <link>https://biobase.studio/blog/supavisor-postgres-connection-pooler</link>
+  <link>https://biobase.com/blog/supavisor-postgres-connection-pooler</link>
   <description>Supavisor is now used across all projects, providing a scalable and cloud-native Postgres connection pooler that can handle millions of connections</description>
-  <pubDate>Wed, 13 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 12 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/edge-functions-node-npm</guid>
+  <guid>https://biobase.com/blog/edge-functions-node-npm</guid>
   <title>Edge Functions: Node and native npm compatibility</title>
-  <link>https://biobase.studio/blog/edge-functions-node-npm</link>
+  <link>https://biobase.com/blog/edge-functions-node-npm</link>
   <description>We&apos;re adding Node and native npm compatibility for Edge Functions.</description>
-  <pubDate>Tue, 12 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 11 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/pg-graphql-postgres-functions</guid>
+  <guid>https://biobase.com/blog/pg-graphql-postgres-functions</guid>
   <title>pg_graphql: Postgres functions now supported</title>
-  <link>https://biobase.studio/blog/pg-graphql-postgres-functions</link>
+  <link>https://biobase.com/blog/pg-graphql-postgres-functions</link>
   <description>pg_graphql now supports the most requested feature: Postgres functions a.k.a. User Defined Functions (UDFs)</description>
-  <pubDate>Tue, 12 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 11 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/studio-introducing-assistant</guid>
+  <guid>https://biobase.com/blog/studio-introducing-assistant</guid>
   <title>Biobase Studio: AI Assistant and User Impersonation</title>
-  <link>https://biobase.studio/blog/studio-introducing-assistant</link>
+  <link>https://biobase.com/blog/studio-introducing-assistant</link>
   <description>We&apos;re introducing the next generation of our AI Assistant and some features that will help get your ideas into code even faster.</description>
-  <pubDate>Mon, 11 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 10 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/how-design-works-at-biobase</guid>
+  <guid>https://biobase.com/blog/how-design-works-at-biobase</guid>
   <title>How design works at Biobase</title>
-  <link>https://biobase.studio/blog/how-design-works-at-biobase</link>
+  <link>https://biobase.com/blog/how-design-works-at-biobase</link>
   <description>The transformative journey of Biobase&apos;s Design team and its unique culture to enhance the output and quality of the entire company.</description>
-  <pubDate>Fri, 08 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 07 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-language-server-implementing-parser</guid>
+  <guid>https://biobase.com/blog/postgres-language-server-implementing-parser</guid>
   <title>Postgres Language Server: implementing the Parser</title>
-  <link>https://biobase.studio/blog/postgres-language-server-implementing-parser</link>
+  <link>https://biobase.com/blog/postgres-language-server-implementing-parser</link>
   <description>A detailed analysis of our iterations to implement a Parser for Postgres</description>
-  <pubDate>Fri, 08 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 07 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/beta-update-november-2023</guid>
+  <guid>https://biobase.com/blog/beta-update-november-2023</guid>
   <title>Biobase Beta November 2023</title>
-  <link>https://biobase.studio/blog/beta-update-november-2023</link>
+  <link>https://biobase.com/blog/beta-update-november-2023</link>
   <description>Launch Week X is coming! But we still have cool updates that we couldn&apos;t fit next week.</description>
-  <pubDate>Tue, 05 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 04 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/community-meetups-lwx</guid>
+  <guid>https://biobase.com/blog/community-meetups-lwx</guid>
   <title>Launch Week X Community Meetups</title>
-  <link>https://biobase.studio/blog/community-meetups-lwx</link>
+  <link>https://biobase.com/blog/community-meetups-lwx</link>
   <description>The Biobase Community Meetups are back, and this time we&apos;ve got more events happening all over the world!</description>
-  <pubDate>Tue, 05 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 04 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-hackathon-lwx</guid>
+  <guid>https://biobase.com/blog/biobase-hackathon-lwx</guid>
   <title>Biobase Launch Week X Hackathon</title>
-  <link>https://biobase.studio/blog/biobase-hackathon-lwx</link>
+  <link>https://biobase.com/blog/biobase-hackathon-lwx</link>
   <description>Build an Open Source Project over 10 days. 5 prize categories.</description>
-  <pubDate>Tue, 05 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 04 Dec 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/automatic-cli-login</guid>
+  <guid>https://biobase.com/blog/automatic-cli-login</guid>
   <title>Automatic CLI login</title>
-  <link>https://biobase.studio/blog/automatic-cli-login</link>
+  <link>https://biobase.com/blog/automatic-cli-login</link>
   <description>Explore the technical implementation and security measures behind CLI&apos;s new automatic login feature.</description>
-  <pubDate>Fri, 01 Dec 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 30 Nov 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/oauth2-login-python-flask-apps</guid>
+  <guid>https://biobase.com/blog/oauth2-login-python-flask-apps</guid>
   <title>GitHub OAuth in your Python Flask app</title>
-  <link>https://biobase.studio/blog/oauth2-login-python-flask-apps</link>
+  <link>https://biobase.com/blog/oauth2-login-python-flask-apps</link>
   <description>A step-by-step guide on building Login with Github into your Python apps.</description>
-  <pubDate>Tue, 21 Nov 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 20 Nov 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/react-native-authentication</guid>
+  <guid>https://biobase.com/blog/react-native-authentication</guid>
   <title>Getting started with React Native authentication</title>
-  <link>https://biobase.studio/blog/react-native-authentication</link>
+  <link>https://biobase.com/blog/react-native-authentication</link>
   <description>Learn how to implement authentication in your React Native applications.</description>
-  <pubDate>Thu, 16 Nov 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 15 Nov 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/beta-update-october-2023</guid>
+  <guid>https://biobase.com/blog/beta-update-october-2023</guid>
   <title>Biobase Beta October 2023</title>
-  <link>https://biobase.studio/blog/beta-update-october-2023</link>
+  <link>https://biobase.com/blog/beta-update-october-2023</link>
   <description>Brand-new features, community content, and (more importantly) the date for our next Launch Week.</description>
-  <pubDate>Mon, 06 Nov 2023 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 05 Nov 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-is-now-compatible-with-nextjs-14</guid>
+  <guid>https://biobase.com/blog/biobase-is-now-compatible-with-nextjs-14</guid>
   <title>Biobase is now compatible with Next.js 14</title>
-  <link>https://biobase.studio/blog/biobase-is-now-compatible-with-nextjs-14</link>
+  <link>https://biobase.com/blog/biobase-is-now-compatible-with-nextjs-14</link>
   <description>The fastest way to build apps with Next.js 14 and Biobase</description>
-  <pubDate>Wed, 01 Nov 2023 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 31 Oct 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/pgvector-vs-pinecone</guid>
+  <guid>https://biobase.com/blog/pgvector-vs-pinecone</guid>
   <title>pgvector vs Pinecone: cost and performance</title>
-  <link>https://biobase.studio/blog/pgvector-vs-pinecone</link>
+  <link>https://biobase.com/blog/pgvector-vs-pinecone</link>
   <description>Direct performance comparison between pgvector and Pinecone.</description>
-  <pubDate>Tue, 10 Oct 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 09 Oct 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/react-native-offline-first-watermelon-db</guid>
+  <guid>https://biobase.com/blog/react-native-offline-first-watermelon-db</guid>
   <title>Offline-first React Native Apps with Expo, WatermelonDB, and Biobase</title>
-  <link>https://biobase.studio/blog/react-native-offline-first-watermelon-db</link>
+  <link>https://biobase.com/blog/react-native-offline-first-watermelon-db</link>
   <description>Store your data locally and sync it with Postgres using WatermelonDB!</description>
-  <pubDate>Sun, 08 Oct 2023 00:00:00 -0700</pubDate>
+  <pubDate>Sat, 07 Oct 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/beta-update-september-2023</guid>
+  <guid>https://biobase.com/blog/beta-update-september-2023</guid>
   <title>Biobase Beta September 2023</title>
-  <link>https://biobase.studio/blog/beta-update-september-2023</link>
+  <link>https://biobase.com/blog/beta-update-september-2023</link>
   <description>September was packed with so many new features and releases that it might have seemed like another Launch Week, but it wasn&apos;t!</description>
-  <pubDate>Wed, 04 Oct 2023 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 03 Oct 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-dynamic-table-partitioning</guid>
+  <guid>https://biobase.com/blog/postgres-dynamic-table-partitioning</guid>
   <title>Dynamic Table Partitioning in Postgres</title>
-  <link>https://biobase.studio/blog/postgres-dynamic-table-partitioning</link>
+  <link>https://biobase.com/blog/postgres-dynamic-table-partitioning</link>
   <description>Learn how to scale large postgres tables in place and increase query performance.</description>
-  <pubDate>Tue, 03 Oct 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 02 Oct 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/beta-update-august-2023</guid>
+  <guid>https://biobase.com/blog/beta-update-august-2023</guid>
   <title>Biobase Beta August 2023</title>
-  <link>https://biobase.studio/blog/beta-update-august-2023</link>
+  <link>https://biobase.com/blog/beta-update-august-2023</link>
   <description>Launch Week 8 review and more things we shipped 🚀</description>
-  <pubDate>Fri, 08 Sep 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 07 Sep 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/increase-performance-pgvector-hnsw</guid>
+  <guid>https://biobase.com/blog/increase-performance-pgvector-hnsw</guid>
   <title>pgvector v0.5.0: Faster semantic search with HNSW indexes</title>
-  <link>https://biobase.studio/blog/increase-performance-pgvector-hnsw</link>
+  <link>https://biobase.com/blog/increase-performance-pgvector-hnsw</link>
   <description>Increase performance in pgvector using HNSW indexes</description>
-  <pubDate>Wed, 06 Sep 2023 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 05 Sep 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/organization-based-billing</guid>
+  <guid>https://biobase.com/blog/organization-based-billing</guid>
   <title>Organization-based Billing, Project Transfers, Team Plan</title>
-  <link>https://biobase.studio/blog/organization-based-billing</link>
+  <link>https://biobase.com/blog/organization-based-billing</link>
   <description>Introducing the new Organization-based Billing</description>
-  <pubDate>Thu, 31 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 30 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-8-hackathon-winners</guid>
+  <guid>https://biobase.com/blog/launch-week-8-hackathon-winners</guid>
   <title>Launch Week 8 Hackathon Winners</title>
-  <link>https://biobase.studio/blog/launch-week-8-hackathon-winners</link>
+  <link>https://biobase.com/blog/launch-week-8-hackathon-winners</link>
   <description>Announcing the winners of the Launch Week 8 Hackathon!</description>
-  <pubDate>Thu, 24 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 23 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-8-community-highlights</guid>
+  <guid>https://biobase.com/blog/launch-week-8-community-highlights</guid>
   <title>Launch Week 8 Community Highlights</title>
-  <link>https://biobase.studio/blog/launch-week-8-community-highlights</link>
+  <link>https://biobase.com/blog/launch-week-8-community-highlights</link>
   <description>Highlights from the community for the past 4 months.</description>
-  <pubDate>Fri, 11 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 10 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-soc2-hipaa</guid>
+  <guid>https://biobase.com/blog/biobase-soc2-hipaa</guid>
   <title>Biobase is now HIPAA and SOC2 Type 2 compliant</title>
-  <link>https://biobase.studio/blog/biobase-soc2-hipaa</link>
+  <link>https://biobase.com/blog/biobase-soc2-hipaa</link>
   <description>This documents our journey from SOC2 Type 1 to SOC2 Type2 and HIPAA compliance. You can start building healthcare apps on Biobase today.</description>
-  <pubDate>Fri, 11 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 10 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/supavisor-1-million</guid>
+  <guid>https://biobase.com/blog/supavisor-1-million</guid>
   <title>Supavisor: Scaling Postgres to 1 Million Connections</title>
-  <link>https://biobase.studio/blog/supavisor-1-million</link>
+  <link>https://biobase.com/blog/supavisor-1-million</link>
   <description>Supavisor is a scalable, cloud-native Postgres connection pooler. We connected a million clients to it to see how it performs.</description>
-  <pubDate>Fri, 11 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 10 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-integrations-marketplace</guid>
+  <guid>https://biobase.com/blog/biobase-integrations-marketplace</guid>
   <title>Biobase Integrations Marketplace</title>
-  <link>https://biobase.studio/blog/biobase-integrations-marketplace</link>
+  <link>https://biobase.com/blog/biobase-integrations-marketplace</link>
   <description>Become a Biobase Integrations Partner: Publish OAuth Apps and Build with Biobase.</description>
-  <pubDate>Thu, 10 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 09 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/using-biobase-with-vercel</guid>
+  <guid>https://biobase.com/blog/using-biobase-with-vercel</guid>
   <title>Vercel Integration and Next.js App Router Support</title>
-  <link>https://biobase.studio/blog/using-biobase-with-vercel</link>
+  <link>https://biobase.com/blog/using-biobase-with-vercel</link>
   <description>Using Biobase with Vercel and Next.js is now a lot easier.</description>
-  <pubDate>Thu, 10 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 09 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-studio-3-0</guid>
+  <guid>https://biobase.com/blog/biobase-studio-3-0</guid>
   <title>Biobase Studio 3.0: AI SQL Editor, Schema Diagrams, and new Wrappers</title>
-  <link>https://biobase.studio/blog/biobase-studio-3-0</link>
+  <link>https://biobase.com/blog/biobase-studio-3-0</link>
   <description>Biobase Studio now comes with an AI assisted SQL Editor, schema diagrams, and much more.</description>
-  <pubDate>Wed, 09 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 08 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-local-dev</guid>
+  <guid>https://biobase.com/blog/biobase-local-dev</guid>
   <title>Biobase Local Dev: migrations, branching, and observability</title>
-  <link>https://biobase.studio/blog/biobase-local-dev</link>
+  <link>https://biobase.com/blog/biobase-local-dev</link>
   <description>New features to streamline the interaction between CLI, code editors, and remote databases.</description>
-  <pubDate>Tue, 08 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 07 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/hugging-face-biobase</guid>
+  <guid>https://biobase.com/blog/hugging-face-biobase</guid>
   <title>Hugging Face is now supported in Biobase</title>
-  <link>https://biobase.studio/blog/hugging-face-biobase</link>
+  <link>https://biobase.com/blog/hugging-face-biobase</link>
   <description>We&apos;ve added support Hugging Face support in our Python Vector Client and Edge Functions.</description>
-  <pubDate>Mon, 07 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 06 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/why-biobase-remote</guid>
+  <guid>https://biobase.com/blog/why-biobase-remote</guid>
   <title>Why we&apos;ll stay remote</title>
-  <link>https://biobase.studio/blog/why-biobase-remote</link>
+  <link>https://biobase.com/blog/why-biobase-remote</link>
   <description>Offices are making a comeback, just not at Biobase.</description>
-  <pubDate>Sat, 05 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Fri, 04 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/interactive-constellation-threejs-react-three-fiber</guid>
+  <guid>https://biobase.com/blog/interactive-constellation-threejs-react-three-fiber</guid>
   <title>Coding the stars - an interactive constellation with Three.js and React Three Fiber</title>
-  <link>https://biobase.studio/blog/interactive-constellation-threejs-react-three-fiber</link>
+  <link>https://biobase.com/blog/interactive-constellation-threejs-react-three-fiber</link>
   <description>How we built a constellation of stars with Three.js and React Three Fiber.</description>
-  <pubDate>Fri, 04 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 03 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/fewer-dimensions-are-better-pgvector</guid>
+  <guid>https://biobase.com/blog/fewer-dimensions-are-better-pgvector</guid>
   <title>pgvector: Fewer dimensions are better</title>
-  <link>https://biobase.studio/blog/fewer-dimensions-are-better-pgvector</link>
+  <link>https://biobase.com/blog/fewer-dimensions-are-better-pgvector</link>
   <description>Increase performance in pgvector by using embedding vectors with fewer dimensions</description>
-  <pubDate>Thu, 03 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 02 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/beta-update-july-2023</guid>
+  <guid>https://biobase.com/blog/beta-update-july-2023</guid>
   <title>Biobase Beta July 2023</title>
-  <link>https://biobase.studio/blog/beta-update-july-2023</link>
+  <link>https://biobase.com/blog/beta-update-july-2023</link>
   <description>Launch Week 8 is coming - but we still shipped some goodies during July</description>
-  <pubDate>Wed, 02 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 01 Aug 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/react-native-storage</guid>
+  <guid>https://biobase.com/blog/react-native-storage</guid>
   <title>React Native file upload with Biobase Storage</title>
-  <link>https://biobase.studio/blog/react-native-storage</link>
+  <link>https://biobase.com/blog/react-native-storage</link>
   <description>Learn how to implement authentication and file upload in a React Native app.</description>
-  <pubDate>Tue, 01 Aug 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 31 Jul 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-lw8-hackathon</guid>
+  <guid>https://biobase.com/blog/biobase-lw8-hackathon</guid>
   <title>Biobase Launch Week 8 Hackathon</title>
-  <link>https://biobase.studio/blog/biobase-lw8-hackathon</link>
+  <link>https://biobase.com/blog/biobase-lw8-hackathon</link>
   <description>Build an Open Source Project over 10 days. 5 prize categories.</description>
-  <pubDate>Tue, 25 Jul 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 24 Jul 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/flutter-authentication</guid>
+  <guid>https://biobase.com/blog/flutter-authentication</guid>
   <title>Getting started with Flutter authentication</title>
-  <link>https://biobase.studio/blog/flutter-authentication</link>
+  <link>https://biobase.com/blog/flutter-authentication</link>
   <description>Learn how authentication on Flutter works through Google sign in with Biobase auth.</description>
-  <pubDate>Tue, 18 Jul 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 17 Jul 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/pgvector-performance</guid>
+  <guid>https://biobase.com/blog/pgvector-performance</guid>
   <title>pgvector 0.4.0 performance</title>
-  <link>https://biobase.studio/blog/pgvector-performance</link>
+  <link>https://biobase.com/blog/pgvector-performance</link>
   <description>There&apos;s been a lot of talk about pgvector performance lately, so we took some datasets and pushed pgvector to the limits to find out its strengths and limitations.</description>
-  <pubDate>Thu, 13 Jul 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 12 Jul 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgrest-11-1-release</guid>
+  <guid>https://biobase.com/blog/postgrest-11-1-release</guid>
   <title>What is new in PostgREST v11.1?</title>
-  <link>https://biobase.studio/blog/postgrest-11-1-release</link>
+  <link>https://biobase.com/blog/postgrest-11-1-release</link>
   <description>Impersonated Role Settings, Configurable Isolation Level, improved Bulk Insert, and more</description>
-  <pubDate>Wed, 12 Jul 2023 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 11 Jul 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-update-june-2023</guid>
+  <guid>https://biobase.com/blog/biobase-beta-update-june-2023</guid>
   <title>Biobase Beta June 2023</title>
-  <link>https://biobase.studio/blog/biobase-beta-update-june-2023</link>
+  <link>https://biobase.com/blog/biobase-beta-update-june-2023</link>
   <description>A plethora of announcements... read till the end to find out when is the new Launch Week</description>
-  <pubDate>Thu, 06 Jul 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 05 Jul 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/native-mobile-auth</guid>
+  <guid>https://biobase.com/blog/native-mobile-auth</guid>
   <title>Native Mobile Auth Support for Google and Apple Sign in</title>
-  <link>https://biobase.studio/blog/native-mobile-auth</link>
+  <link>https://biobase.com/blog/native-mobile-auth</link>
   <description>Biobase auth adds full support for native mobile sign in with Apple and Google.</description>
-  <pubDate>Tue, 27 Jun 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 26 Jun 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-update-may-2023</guid>
+  <guid>https://biobase.com/blog/biobase-beta-update-may-2023</guid>
   <title>Biobase Beta May 2023</title>
-  <link>https://biobase.studio/blog/biobase-beta-update-may-2023</link>
+  <link>https://biobase.com/blog/biobase-beta-update-may-2023</link>
   <description>Learn about the great things we shipped last month. Spoiler alert... lots of AI.</description>
-  <pubDate>Fri, 09 Jun 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 08 Jun 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/flutter-hackathon-winners</guid>
+  <guid>https://biobase.com/blog/flutter-hackathon-winners</guid>
   <title>Flutter Hackathon Winners</title>
-  <link>https://biobase.studio/blog/flutter-hackathon-winners</link>
+  <link>https://biobase.com/blog/flutter-hackathon-winners</link>
   <description>Announcing the winners of the Flutter Hackathon!</description>
-  <pubDate>Mon, 29 May 2023 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 28 May 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/vecs</guid>
+  <guid>https://biobase.com/blog/vecs</guid>
   <title>Biobase Vecs: a vector client for Postgres</title>
-  <link>https://biobase.studio/blog/vecs</link>
+  <link>https://biobase.com/blog/vecs</link>
   <description>Introducing Biobase Vecs, a PostgreSQL vector client</description>
-  <pubDate>Mon, 29 May 2023 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 28 May 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/chatgpt-plugins-support-postgres</guid>
+  <guid>https://biobase.com/blog/chatgpt-plugins-support-postgres</guid>
   <title>ChatGPT plugins now support Postgres &amp; Biobase</title>
-  <link>https://biobase.studio/blog/chatgpt-plugins-support-postgres</link>
+  <link>https://biobase.com/blog/chatgpt-plugins-support-postgres</link>
   <description>Biobase recently contributed to the OpenAI Retrieval Plugin repo with a Postgres and a Biobase implementation to help developers build ChatGPT plugins using pgvector.</description>
-  <pubDate>Thu, 25 May 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 24 May 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/building-chatgpt-plugins-template</guid>
+  <guid>https://biobase.com/blog/building-chatgpt-plugins-template</guid>
   <title>Building ChatGPT Plugins with Biobase Edge Runtime</title>
-  <link>https://biobase.studio/blog/building-chatgpt-plugins-template</link>
+  <link>https://biobase.com/blog/building-chatgpt-plugins-template</link>
   <description>We&apos;re releasing a ChatGPT plugin template written in TypeScript and running on Deno!</description>
-  <pubDate>Mon, 15 May 2023 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 14 May 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/flutter-hackathon</guid>
+  <guid>https://biobase.com/blog/flutter-hackathon</guid>
   <title>Flutter Hackathon</title>
-  <link>https://biobase.studio/blog/flutter-hackathon</link>
+  <link>https://biobase.com/blog/flutter-hackathon</link>
   <description>Build Flutter apps and win limited edition swag.</description>
-  <pubDate>Fri, 12 May 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 11 May 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-update-april-2023</guid>
+  <guid>https://biobase.com/blog/biobase-beta-update-april-2023</guid>
   <title>Biobase Beta April 2023</title>
-  <link>https://biobase.studio/blog/biobase-beta-update-april-2023</link>
+  <link>https://biobase.com/blog/biobase-beta-update-april-2023</link>
   <description>A review of Launch Week 7 and more exciting updates from last month.</description>
-  <pubDate>Tue, 09 May 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 08 May 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/flutter-multi-factor-authentication</guid>
+  <guid>https://biobase.com/blog/flutter-multi-factor-authentication</guid>
   <title>Securing your Flutter apps with Multi-Factor Authentication</title>
-  <link>https://biobase.studio/blog/flutter-multi-factor-authentication</link>
+  <link>https://biobase.com/blog/flutter-multi-factor-authentication</link>
   <description>Build a Flutter app where the user is required to authenticate using Multi-Factor Authentication.</description>
-  <pubDate>Thu, 04 May 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 03 May 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-pluggable-strorage</guid>
+  <guid>https://biobase.com/blog/postgres-pluggable-strorage</guid>
   <title>Next steps for Postgres pluggable storage</title>
-  <link>https://biobase.studio/blog/postgres-pluggable-strorage</link>
+  <link>https://biobase.com/blog/postgres-pluggable-strorage</link>
   <description>Exploring history of Postgres pluggable storage and the possibility of landing it in the Postgres core.</description>
-  <pubDate>Mon, 01 May 2023 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 30 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-7-hackathon-winners</guid>
+  <guid>https://biobase.com/blog/launch-week-7-hackathon-winners</guid>
   <title>Launch Week 7 Hackathon Winners</title>
-  <link>https://biobase.studio/blog/launch-week-7-hackathon-winners</link>
+  <link>https://biobase.com/blog/launch-week-7-hackathon-winners</link>
   <description>Announcing the winners of the Launch Week 7 Hackathon!</description>
-  <pubDate>Mon, 24 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 23 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/whats-new-in-pg-graphql-v1-2</guid>
+  <guid>https://biobase.com/blog/whats-new-in-pg-graphql-v1-2</guid>
   <title>What&apos;s New in pg_graphql v1.2</title>
-  <link>https://biobase.studio/blog/whats-new-in-pg-graphql-v1-2</link>
+  <link>https://biobase.com/blog/whats-new-in-pg-graphql-v1-2</link>
   <description>New Features in the v1.2 release of pg_graphql</description>
-  <pubDate>Fri, 21 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 20 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/dbdev</guid>
+  <guid>https://biobase.com/blog/dbdev</guid>
   <title>dbdev: PostgreSQL Package Manager</title>
-  <link>https://biobase.studio/blog/dbdev</link>
+  <link>https://biobase.com/blog/dbdev</link>
   <description>We&apos;re publicly previewing dbdev, a PostgreSQL package manager.</description>
-  <pubDate>Fri, 14 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 13 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-7-community-highlights</guid>
+  <guid>https://biobase.com/blog/launch-week-7-community-highlights</guid>
   <title>Launch Week 7 Community Highlights</title>
-  <link>https://biobase.studio/blog/launch-week-7-community-highlights</link>
+  <link>https://biobase.com/blog/launch-week-7-community-highlights</link>
   <description>We&apos;re honored to work with, sponsor, and support incredible people and tools. Here is a highlight of the last 3 months.</description>
-  <pubDate>Fri, 14 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 13 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/pg-tle</guid>
+  <guid>https://biobase.com/blog/pg-tle</guid>
   <title>Trusted Language Extensions for Postgres</title>
-  <link>https://biobase.studio/blog/pg-tle</link>
+  <link>https://biobase.com/blog/pg-tle</link>
   <description>We&apos;re collaborating with AWS to bring Trusted Language Extensions to Postgres.</description>
-  <pubDate>Fri, 14 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 13 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-studio-2.0</guid>
+  <guid>https://biobase.com/blog/biobase-studio-2.0</guid>
   <title>Biobase Studio 2.0: help when you need it most</title>
-  <link>https://biobase.studio/blog/biobase-studio-2.0</link>
+  <link>https://biobase.com/blog/biobase-studio-2.0</link>
   <description>Biobase Studio now comes with ChatGPT, and GraphiQL built in, Cascade Deletes, and Foreign Key Selectors, and much more.</description>
-  <pubDate>Fri, 14 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 13 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-auth-sso-pkce</guid>
+  <guid>https://biobase.com/blog/biobase-auth-sso-pkce</guid>
   <title>Biobase Auth: SSO,  Mobile, and Server-side support</title>
-  <link>https://biobase.studio/blog/biobase-auth-sso-pkce</link>
+  <link>https://biobase.com/blog/biobase-auth-sso-pkce</link>
   <description>Supacharging Biobase Auth with Sign in with Apple on iOS, Single-Sign-On support with SAML 2.0, and PKCE for server-side rendering and mobile auth.</description>
-  <pubDate>Thu, 13 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 12 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/storage-v3-resumable-uploads</guid>
+  <guid>https://biobase.com/blog/storage-v3-resumable-uploads</guid>
   <title>Biobase Storage v3: Resumable Uploads with support for 50GB files</title>
-  <link>https://biobase.studio/blog/storage-v3-resumable-uploads</link>
+  <link>https://biobase.com/blog/storage-v3-resumable-uploads</link>
   <description>Storage V3 with lots of new features including resumable uploads, more image transformationsm a Next.js image loader and more.</description>
-  <pubDate>Wed, 12 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 11 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/edge-runtime-self-hosted-deno-functions</guid>
+  <guid>https://biobase.com/blog/edge-runtime-self-hosted-deno-functions</guid>
   <title>Biobase Edge Runtime: Self-hosted Deno Functions</title>
-  <link>https://biobase.studio/blog/edge-runtime-self-hosted-deno-functions</link>
+  <link>https://biobase.com/blog/edge-runtime-self-hosted-deno-functions</link>
   <description>We are open-sourcing Biobase Edge Runtime allowing you to host your Edge Functions anywhere.</description>
-  <pubDate>Tue, 11 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 10 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-logs-self-hosted</guid>
+  <guid>https://biobase.com/blog/biobase-logs-self-hosted</guid>
   <title>Biobase Logs: open source logging server</title>
-  <link>https://biobase.studio/blog/biobase-logs-self-hosted</link>
+  <link>https://biobase.com/blog/biobase-logs-self-hosted</link>
   <description>We&apos;re releasing Biobase Logs for both self-hosted users and CLI development.</description>
-  <pubDate>Mon, 10 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 09 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-update-march-2023</guid>
+  <guid>https://biobase.com/blog/biobase-beta-update-march-2023</guid>
   <title>Biobase Beta March 2023</title>
-  <link>https://biobase.studio/blog/biobase-beta-update-march-2023</link>
+  <link>https://biobase.com/blog/biobase-beta-update-march-2023</link>
   <description>We are in full shipping mode 🛥️… Launch Week 7 can’t come quickly enough!</description>
-  <pubDate>Sat, 08 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Fri, 07 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/designing-with-ai-midjourney</guid>
+  <guid>https://biobase.com/blog/designing-with-ai-midjourney</guid>
   <title>Designing with AI: Generating unique artwork for every user</title>
-  <link>https://biobase.studio/blog/designing-with-ai-midjourney</link>
+  <link>https://biobase.com/blog/designing-with-ai-midjourney</link>
   <description>Using MidJourney to generative artwork and serving ticket images with Edge Functions</description>
-  <pubDate>Fri, 07 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 06 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-7-hackathon</guid>
+  <guid>https://biobase.com/blog/launch-week-7-hackathon</guid>
   <title>The Biobase AI Hackathon</title>
-  <link>https://biobase.studio/blog/launch-week-7-hackathon</link>
+  <link>https://biobase.com/blog/launch-week-7-hackathon</link>
   <description>Build an Open Source Project over 10 days. 5 prize categories.</description>
-  <pubDate>Fri, 07 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 06 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/infinite-scroll-with-nextjs-framer-motion</guid>
+  <guid>https://biobase.com/blog/infinite-scroll-with-nextjs-framer-motion</guid>
   <title>Infinite scroll with Next.js, Framer Motion, and Biobase</title>
-  <link>https://biobase.studio/blog/infinite-scroll-with-nextjs-framer-motion</link>
+  <link>https://biobase.com/blog/infinite-scroll-with-nextjs-framer-motion</link>
   <description>Lazy load and paginate data on scroll with Next.js and a sprinkle of Framer Motion magic ✨</description>
-  <pubDate>Tue, 04 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 03 Apr 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/supaclub</guid>
+  <guid>https://biobase.com/blog/supaclub</guid>
   <title>SupaClub</title>
-  <link>https://biobase.studio/blog/supaclub</link>
+  <link>https://biobase.com/blog/supaclub</link>
   <description>The Worlds First Software Engineering Nightclub.</description>
-  <pubDate>Sat, 01 Apr 2023 00:00:00 -0700</pubDate>
+  <pubDate>Fri, 31 Mar 2023 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-update-february-2023</guid>
+  <guid>https://biobase.com/blog/biobase-beta-update-february-2023</guid>
   <title>Biobase Beta February 2023</title>
-  <link>https://biobase.studio/blog/biobase-beta-update-february-2023</link>
+  <link>https://biobase.com/blog/biobase-beta-update-february-2023</link>
   <description>There is something for everybody this month - AI, Auth, Database, Edge Functions, GraphQL … you name it!</description>
-  <pubDate>Thu, 09 Mar 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 08 Mar 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/geo-queries-with-postgis-in-ionic-angular</guid>
+  <guid>https://biobase.com/blog/geo-queries-with-postgis-in-ionic-angular</guid>
   <title>Geo Queries with PostGIS in Ionic Angular</title>
-  <link>https://biobase.studio/blog/geo-queries-with-postgis-in-ionic-angular</link>
+  <link>https://biobase.com/blog/geo-queries-with-postgis-in-ionic-angular</link>
   <description>Using the PostGIS extension to build a cross-platform application with Ionic Angular.</description>
-  <pubDate>Wed, 01 Mar 2023 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 28 Feb 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/type-constraints-in-65-lines-of-sql</guid>
+  <guid>https://biobase.com/blog/type-constraints-in-65-lines-of-sql</guid>
   <title>Type Constraints in 65 lines of SQL</title>
-  <link>https://biobase.studio/blog/type-constraints-in-65-lines-of-sql</link>
+  <link>https://biobase.com/blog/type-constraints-in-65-lines-of-sql</link>
   <description>Creating validated data types in Postgres</description>
-  <pubDate>Fri, 17 Feb 2023 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 16 Feb 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/case-study-happyteams</guid>
+  <guid>https://biobase.com/blog/case-study-happyteams</guid>
   <title>HappyTeams unlocks better performance and reduces cost with Biobase</title>
-  <link>https://biobase.studio/blog/case-study-happyteams</link>
+  <link>https://biobase.com/blog/case-study-happyteams</link>
   <description>How a bootstrapped startup migrated from Heroku to Biobase in 30 minutes and never looked back</description>
-  <pubDate>Thu, 16 Feb 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 15 Feb 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/flutter-real-time-multiplayer-game</guid>
+  <guid>https://biobase.com/blog/flutter-real-time-multiplayer-game</guid>
   <title>How to build a real-time multiplayer game with Flutter Flame</title>
-  <link>https://biobase.studio/blog/flutter-real-time-multiplayer-game</link>
+  <link>https://biobase.com/blog/flutter-real-time-multiplayer-game</link>
   <description>Build a real-time multiplayer game using Flutter, Flame, and Biobase realtime.</description>
-  <pubDate>Tue, 14 Feb 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 13 Feb 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-january-2023</guid>
+  <guid>https://biobase.com/blog/biobase-beta-january-2023</guid>
   <title>Biobase Beta January 2023</title>
-  <link>https://biobase.studio/blog/biobase-beta-january-2023</link>
+  <link>https://biobase.com/blog/biobase-beta-january-2023</link>
   <description>New Postgres extensions, pg_graphql updates, changes to Edge Functions, and more!</description>
-  <pubDate>Wed, 08 Feb 2023 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 07 Feb 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/chatgpt-biobase-docs</guid>
+  <guid>https://biobase.com/blog/chatgpt-biobase-docs</guid>
   <title>Biobase Clippy: ChatGPT for Biobase Docs</title>
-  <link>https://biobase.studio/blog/chatgpt-biobase-docs</link>
+  <link>https://biobase.com/blog/chatgpt-biobase-docs</link>
   <description>Creating a ChatGPT interface for the Biobase documentation.</description>
-  <pubDate>Tue, 07 Feb 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 06 Feb 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/openai-embeddings-postgres-vector</guid>
+  <guid>https://biobase.com/blog/openai-embeddings-postgres-vector</guid>
   <title>Storing OpenAI embeddings in Postgres with pgvector</title>
-  <link>https://biobase.studio/blog/openai-embeddings-postgres-vector</link>
+  <link>https://biobase.com/blog/openai-embeddings-postgres-vector</link>
   <description>An example of how to build an AI-powered search engine using OpenAI&apos;s embeddings and PostgreSQL.</description>
-  <pubDate>Mon, 06 Feb 2023 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 05 Feb 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-december-2022</guid>
+  <guid>https://biobase.com/blog/biobase-beta-december-2022</guid>
   <title>Biobase Beta December 2022</title>
-  <link>https://biobase.studio/blog/biobase-beta-december-2022</link>
+  <link>https://biobase.com/blog/biobase-beta-december-2022</link>
   <description>This month the Beta Update is a Launch Week 6 Special, where we review the cascade of announcements.</description>
-  <pubDate>Thu, 05 Jan 2023 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 04 Jan 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-6-hackathon-winners</guid>
+  <guid>https://biobase.com/blog/launch-week-6-hackathon-winners</guid>
   <title>Launch Week 6 Hackathon Winners</title>
-  <link>https://biobase.studio/blog/launch-week-6-hackathon-winners</link>
+  <link>https://biobase.com/blog/launch-week-6-hackathon-winners</link>
   <description>Announcing the winners of the Launch Week 6 Hackathon!</description>
-  <pubDate>Tue, 03 Jan 2023 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 02 Jan 2023 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/custom-domain-names</guid>
+  <guid>https://biobase.com/blog/custom-domain-names</guid>
   <title>Custom Domain Names</title>
-  <link>https://biobase.studio/blog/custom-domain-names</link>
+  <link>https://biobase.com/blog/custom-domain-names</link>
   <description>Change your Biobase project&apos;s domain name to your own domain.</description>
-  <pubDate>Fri, 16 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-6-community-day</guid>
+  <guid>https://biobase.com/blog/launch-week-6-community-day</guid>
   <title>Community Day</title>
-  <link>https://biobase.studio/blog/launch-week-6-community-day</link>
+  <link>https://biobase.com/blog/launch-week-6-community-day</link>
   <description>Wrapping up Launch Week 6 with contributors, partners, and friends.</description>
-  <pubDate>Fri, 16 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-6-wrap-up</guid>
+  <guid>https://biobase.com/blog/launch-week-6-wrap-up</guid>
   <title>Launch Week 6: Wrap Up</title>
-  <link>https://biobase.studio/blog/launch-week-6-wrap-up</link>
+  <link>https://biobase.com/blog/launch-week-6-wrap-up</link>
   <description>That&apos;s a wrap on Biobase Launch Week Day 6. Here&apos;s everything we shipped in one long blog post.</description>
-  <pubDate>Fri, 16 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/new-in-postgres-15</guid>
+  <guid>https://biobase.com/blog/new-in-postgres-15</guid>
   <title>What&apos;s new in Postgres 15?</title>
-  <link>https://biobase.studio/blog/new-in-postgres-15</link>
+  <link>https://biobase.com/blog/new-in-postgres-15</link>
   <description>Describes the release of Postgres 15, new features and reasons to use it</description>
-  <pubDate>Fri, 16 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/pg-graphql-v1</guid>
+  <guid>https://biobase.com/blog/pg-graphql-v1</guid>
   <title>pg_graphql v1.0</title>
-  <link>https://biobase.studio/blog/pg-graphql-v1</link>
+  <link>https://biobase.com/blog/pg-graphql-v1</link>
   <description>Announcing the v1.0 release of pg_graphql</description>
-  <pubDate>Fri, 16 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-point-in-time-recovery</guid>
+  <guid>https://biobase.com/blog/postgres-point-in-time-recovery</guid>
   <title>Point in Time Recovery is now available for Pro projects</title>
-  <link>https://biobase.studio/blog/postgres-point-in-time-recovery</link>
+  <link>https://biobase.com/blog/postgres-point-in-time-recovery</link>
   <description>We&apos;re making PITR available for more projects, with a new Dashboard UI that makes it simple to use.</description>
-  <pubDate>Fri, 16 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgrest-11-prerelease</guid>
+  <guid>https://biobase.com/blog/postgrest-11-prerelease</guid>
   <title>PostgREST 11 pre-release</title>
-  <link>https://biobase.studio/blog/postgrest-11-prerelease</link>
+  <link>https://biobase.com/blog/postgrest-11-prerelease</link>
   <description>Describes new features of PostgREST 11 pre-release</description>
-  <pubDate>Fri, 16 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/vault-now-in-beta</guid>
+  <guid>https://biobase.com/blog/vault-now-in-beta</guid>
   <title>Biobase Vault is now in Beta</title>
-  <link>https://biobase.studio/blog/vault-now-in-beta</link>
+  <link>https://biobase.com/blog/vault-now-in-beta</link>
   <description>A Postgres extension to store encrypted secrets and encrypt data.</description>
-  <pubDate>Fri, 16 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 15 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-foreign-data-wrappers-rust</guid>
+  <guid>https://biobase.com/blog/postgres-foreign-data-wrappers-rust</guid>
   <title>Biobase Wrappers, a Postgres FDW framework written in Rust</title>
-  <link>https://biobase.studio/blog/postgres-foreign-data-wrappers-rust</link>
+  <link>https://biobase.com/blog/postgres-foreign-data-wrappers-rust</link>
   <description>A framework for building Postgres Foreign Data Wrappers which connects to Stripe, Firebase, Clickhouse, and more.</description>
-  <pubDate>Thu, 15 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 14 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/mfa-auth-via-rls</guid>
+  <guid>https://biobase.com/blog/mfa-auth-via-rls</guid>
   <title>Multi-factor Authentication via Row Level Security Enforcement</title>
-  <link>https://biobase.studio/blog/mfa-auth-via-rls</link>
+  <link>https://biobase.com/blog/mfa-auth-via-rls</link>
   <description>MFA Auth with enforcement via RLS</description>
-  <pubDate>Wed, 14 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 13 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/storage-image-resizing-smart-cdn</guid>
+  <guid>https://biobase.com/blog/storage-image-resizing-smart-cdn</guid>
   <title>Biobase Storage v2: Image resizing and Smart CDN</title>
-  <link>https://biobase.studio/blog/storage-image-resizing-smart-cdn</link>
+  <link>https://biobase.com/blog/storage-image-resizing-smart-cdn</link>
   <description>We&apos;re introducing new features for Biobase Storage: Image resizing and a Smart CDN.</description>
-  <pubDate>Tue, 13 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 12 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/new-biobase-docs-built-with-nextjs</guid>
+  <guid>https://biobase.com/blog/new-biobase-docs-built-with-nextjs</guid>
   <title>New Biobase Docs, built with Next.js</title>
-  <link>https://biobase.studio/blog/new-biobase-docs-built-with-nextjs</link>
+  <link>https://biobase.com/blog/new-biobase-docs-built-with-nextjs</link>
   <description>We&apos;ve redesigned our Docs and migrated to Next.js</description>
-  <pubDate>Mon, 12 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 11 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-crdt</guid>
+  <guid>https://biobase.com/blog/postgres-crdt</guid>
   <title>pg_crdt - an experimental CRDT extension for Postgres</title>
-  <link>https://biobase.studio/blog/postgres-crdt</link>
+  <link>https://biobase.com/blog/postgres-crdt</link>
   <description>Embedding Yjs and Automerge into Postgres for collaborative applications.</description>
-  <pubDate>Sat, 10 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Fri, 09 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-6-hackathon</guid>
+  <guid>https://biobase.com/blog/launch-week-6-hackathon</guid>
   <title>Launch Week 6 Hackathon</title>
-  <link>https://biobase.studio/blog/launch-week-6-hackathon</link>
+  <link>https://biobase.com/blog/launch-week-6-hackathon</link>
   <description>Build an Open Source Project, Win $1500 and the Biobase Darkmode Keyboard</description>
-  <pubDate>Fri, 09 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 08 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/who-we-hire</guid>
+  <guid>https://biobase.com/blog/who-we-hire</guid>
   <title>Who We Hire at Biobase</title>
-  <link>https://biobase.studio/blog/who-we-hire</link>
+  <link>https://biobase.com/blog/who-we-hire</link>
   <description>Traits we look for to maintain a culture of shipping fast and often</description>
-  <pubDate>Fri, 09 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 08 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-november-2022</guid>
+  <guid>https://biobase.com/blog/biobase-beta-november-2022</guid>
   <title>Biobase Beta November 2022</title>
-  <link>https://biobase.studio/blog/biobase-beta-november-2022</link>
+  <link>https://biobase.com/blog/biobase-beta-november-2022</link>
   <description>We are preparing everything for Launch Week 6, but we still had time to ship some goodies this month!</description>
-  <pubDate>Wed, 07 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 06 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/the-biobase-content-storm</guid>
+  <guid>https://biobase.com/blog/the-biobase-content-storm</guid>
   <title>The Biobase Content Storm</title>
-  <link>https://biobase.studio/blog/the-biobase-content-storm</link>
+  <link>https://biobase.com/blog/the-biobase-content-storm</link>
   <description>We worked with +30 content creators to drop a mountain of content simultaneously.</description>
-  <pubDate>Tue, 06 Dec 2022 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 05 Dec 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/sql-or-nosql-both-with-postgresql</guid>
+  <guid>https://biobase.com/blog/sql-or-nosql-both-with-postgresql</guid>
   <title>SQL or NoSQL? Why not use both (with PostgreSQL)?</title>
-  <link>https://biobase.studio/blog/sql-or-nosql-both-with-postgresql</link>
+  <link>https://biobase.com/blog/sql-or-nosql-both-with-postgresql</link>
   <description>How to turn Postgres into an easy-to-use NoSQL database that retains all the power of SQL</description>
-  <pubDate>Thu, 24 Nov 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 23 Nov 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/flutter-authorization-with-rls</guid>
+  <guid>https://biobase.com/blog/flutter-authorization-with-rls</guid>
   <title>Flutter Authorization with RLS</title>
-  <link>https://biobase.studio/blog/flutter-authorization-with-rls</link>
+  <link>https://biobase.com/blog/flutter-authorization-with-rls</link>
   <description>Learn how you can secure your Flutter app using Biobase Row Level Security.</description>
-  <pubDate>Tue, 22 Nov 2022 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 21 Nov 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/fetching-and-caching-biobase-data-in-next-js-server-components</guid>
+  <guid>https://biobase.com/blog/fetching-and-caching-biobase-data-in-next-js-server-components</guid>
   <title>Fetching and caching Biobase data in Next.js 13 Server Components</title>
-  <link>https://biobase.studio/blog/fetching-and-caching-biobase-data-in-next-js-server-components</link>
+  <link>https://biobase.com/blog/fetching-and-caching-biobase-data-in-next-js-server-components</link>
   <description>Next.js 13 introduces new data fetching and caching methods to enable React Server Components and Suspense.</description>
-  <pubDate>Thu, 17 Nov 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 16 Nov 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/authentication-in-ionic-angular</guid>
+  <guid>https://biobase.com/blog/authentication-in-ionic-angular</guid>
   <title>Authentication in Ionic Angular with Biobase</title>
-  <link>https://biobase.studio/blog/authentication-in-ionic-angular</link>
+  <link>https://biobase.com/blog/authentication-in-ionic-angular</link>
   <description>Learn how to build an Ionic Angular app with authentication, Row Level Security, and Magic Link auth.</description>
-  <pubDate>Tue, 08 Nov 2022 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 07 Nov 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-update-october-2022</guid>
+  <guid>https://biobase.com/blog/biobase-beta-update-october-2022</guid>
   <title>Biobase Beta October 2022</title>
-  <link>https://biobase.studio/blog/biobase-beta-update-october-2022</link>
+  <link>https://biobase.com/blog/biobase-beta-update-october-2022</link>
   <description>New SDKs, quickstarts, Functions tricks, and more. But, more importantly, Launch Week 6️ has a date!</description>
-  <pubDate>Wed, 02 Nov 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 01 Nov 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgresql-commitfest</guid>
+  <guid>https://biobase.com/blog/postgresql-commitfest</guid>
   <title>What is PostgreSQL commitfest and how to contribute</title>
-  <link>https://biobase.studio/blog/postgresql-commitfest</link>
+  <link>https://biobase.com/blog/postgresql-commitfest</link>
   <description>A time-tested method for contributing to the core Postgres code</description>
-  <pubDate>Thu, 27 Oct 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 26 Oct 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-flutter-sdk-v1-released</guid>
+  <guid>https://biobase.com/blog/biobase-flutter-sdk-v1-released</guid>
   <title>biobase-flutter v1 Released</title>
-  <link>https://biobase.studio/blog/biobase-flutter-sdk-v1-released</link>
+  <link>https://biobase.com/blog/biobase-flutter-sdk-v1-released</link>
   <description>We&apos;ve released biobase-flutter v1. More intuitive way of accessing Biobase from your Flutter application.</description>
-  <pubDate>Fri, 21 Oct 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 20 Oct 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/supabase-js-v2-released</guid>
-  <title>supabase-js v2 Released</title>
-  <link>https://biobase.studio/blog/supabase-js-v2-released</link>
-  <description>We&apos;ve released supabase-js v2. Updated examples, quickstarts, and an improved experience.</description>
-  <pubDate>Thu, 20 Oct 2022 00:00:00 -0700</pubDate>
+  <guid>https://biobase.com/blog/biobase-js-v2-released</guid>
+  <title>biobase-js v2 Released</title>
+  <link>https://biobase.com/blog/biobase-js-v2-released</link>
+  <description>We&apos;ve released biobase-js v2. Updated examples, quickstarts, and an improved experience.</description>
+  <pubDate>Wed, 19 Oct 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-full-text-search-vs-the-rest</guid>
+  <guid>https://biobase.com/blog/postgres-full-text-search-vs-the-rest</guid>
   <title>Postgres Full Text Search vs the rest</title>
-  <link>https://biobase.studio/blog/postgres-full-text-search-vs-the-rest</link>
+  <link>https://biobase.com/blog/postgres-full-text-search-vs-the-rest</link>
   <description>Comparing one of the most popular Postgres features against alternatives</description>
-  <pubDate>Fri, 14 Oct 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 13 Oct 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-update-september-2022</guid>
+  <guid>https://biobase.com/blog/biobase-beta-update-september-2022</guid>
   <title>Biobase Beta September 2022</title>
-  <link>https://biobase.studio/blog/biobase-beta-update-september-2022</link>
+  <link>https://biobase.com/blog/biobase-beta-update-september-2022</link>
   <description>We were too focused on clearing out the backlog so we didn&apos;t ship anything new last month... or did we?!</description>
-  <pubDate>Wed, 05 Oct 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 04 Oct 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-wasm</guid>
+  <guid>https://biobase.com/blog/postgres-wasm</guid>
   <title>Postgres WASM by Snaplet and Biobase</title>
-  <link>https://biobase.studio/blog/postgres-wasm</link>
+  <link>https://biobase.com/blog/postgres-wasm</link>
   <description>We&apos;re open sourcing postgres-wasm, a PostgresQL server that runs inside a browser, with our friends at Snaplet.</description>
-  <pubDate>Mon, 03 Oct 2022 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 02 Oct 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/choosing-a-postgres-primary-key</guid>
+  <guid>https://biobase.com/blog/choosing-a-postgres-primary-key</guid>
   <title>Choosing a Postgres Primary Key</title>
-  <link>https://biobase.studio/blog/choosing-a-postgres-primary-key</link>
+  <link>https://biobase.com/blog/choosing-a-postgres-primary-key</link>
   <description>Turns out the question of which identifier to use as a Primary Key is complicated -- we&apos;re going to dive into some of the complexity and inherent trade-offs, and figure things out</description>
-  <pubDate>Thu, 08 Sep 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 07 Sep 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-update-august-2022</guid>
+  <guid>https://biobase.com/blog/biobase-beta-update-august-2022</guid>
   <title>Biobase Beta August 2022</title>
-  <link>https://biobase.studio/blog/biobase-beta-update-august-2022</link>
+  <link>https://biobase.com/blog/biobase-beta-update-august-2022</link>
   <description>Launch Week Special. See everything we shipped, plus winners of the Hackathon and the extended Community Highlights</description>
-  <pubDate>Wed, 07 Sep 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 06 Sep 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-5-hackathon-winners</guid>
+  <guid>https://biobase.com/blog/launch-week-5-hackathon-winners</guid>
   <title>Launch Week 5 Hackathon Winners</title>
-  <link>https://biobase.studio/blog/launch-week-5-hackathon-winners</link>
+  <link>https://biobase.com/blog/launch-week-5-hackathon-winners</link>
   <description>Announcing the winners of the Launch Week 5 Hackathon!</description>
-  <pubDate>Thu, 25 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 24 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/building-a-realtime-trello-board-with-biobase-and-angular</guid>
+  <guid>https://biobase.com/blog/building-a-realtime-trello-board-with-biobase-and-angular</guid>
   <title>Building a Realtime Trello Board with Biobase and Angular</title>
-  <link>https://biobase.studio/blog/building-a-realtime-trello-board-with-biobase-and-angular</link>
+  <link>https://biobase.com/blog/building-a-realtime-trello-board-with-biobase-and-angular</link>
   <description>Go beyond the hello world example with this real world project.</description>
-  <pubDate>Wed, 24 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 23 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-5-community-day</guid>
+  <guid>https://biobase.com/blog/launch-week-5-community-day</guid>
   <title>Community Day</title>
-  <link>https://biobase.studio/blog/launch-week-5-community-day</link>
+  <link>https://biobase.com/blog/launch-week-5-community-day</link>
   <description>Wrapping up Launch Week 5 with contributors, partners, and friends.</description>
-  <pubDate>Fri, 19 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 18 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-5-one-more-thing</guid>
+  <guid>https://biobase.com/blog/launch-week-5-one-more-thing</guid>
   <title>One more thing</title>
-  <link>https://biobase.studio/blog/launch-week-5-one-more-thing</link>
+  <link>https://biobase.com/blog/launch-week-5-one-more-thing</link>
   <description>Let&apos;s be honest, it&apos;s never just one more thing.</description>
-  <pubDate>Fri, 19 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 18 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/pg-jsonschema-a-postgres-extension-for-json-validation</guid>
+  <guid>https://biobase.com/blog/pg-jsonschema-a-postgres-extension-for-json-validation</guid>
   <title>pg_jsonschema: JSON Schema support for Postgres</title>
-  <link>https://biobase.studio/blog/pg-jsonschema-a-postgres-extension-for-json-validation</link>
+  <link>https://biobase.com/blog/pg-jsonschema-a-postgres-extension-for-json-validation</link>
   <description>Today we&apos;re releasing pg_jsonschema, a Postgres extension for JSON validation.</description>
-  <pubDate>Fri, 19 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 18 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgrest-v10</guid>
+  <guid>https://biobase.com/blog/postgrest-v10</guid>
   <title>PostgREST v10: EXPLAIN and Improved Relationship Detection</title>
-  <link>https://biobase.studio/blog/postgrest-v10</link>
-  <description>Today, PostgREST 10 was released. Let&apos;s take a look at some of the new features that go hand in hand with supabase-js v2.</description>
-  <pubDate>Fri, 19 Aug 2022 00:00:00 -0700</pubDate>
+  <link>https://biobase.com/blog/postgrest-v10</link>
+  <description>Today, PostgREST 10 was released. Let&apos;s take a look at some of the new features that go hand in hand with biobase-js v2.</description>
+  <pubDate>Thu, 18 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-vault</guid>
+  <guid>https://biobase.com/blog/biobase-vault</guid>
   <title>Biobase Vault</title>
-  <link>https://biobase.studio/blog/biobase-vault</link>
+  <link>https://biobase.com/blog/biobase-vault</link>
   <description>Today we&apos;re announcing Vault, a Postgres extension for managing secrets and encryption inside your database.</description>
-  <pubDate>Fri, 19 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 18 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-realtime-multiplayer-general-availability</guid>
+  <guid>https://biobase.com/blog/biobase-realtime-multiplayer-general-availability</guid>
   <title>Realtime: Multiplayer Edition</title>
-  <link>https://biobase.studio/blog/biobase-realtime-multiplayer-general-availability</link>
+  <link>https://biobase.com/blog/biobase-realtime-multiplayer-general-availability</link>
   <description>Announcing the general availability of Realtime&apos;s Broadcast and Presence.</description>
-  <pubDate>Thu, 18 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 17 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-soc2</guid>
+  <guid>https://biobase.com/blog/biobase-soc2</guid>
   <title>Biobase is SOC2 compliant</title>
-  <link>https://biobase.studio/blog/biobase-soc2</link>
+  <link>https://biobase.com/blog/biobase-soc2</link>
   <description>Biobase is now SOC2 compliant. Learn how we got here and what it means for our customers.</description>
-  <pubDate>Wed, 17 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 16 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/supabase-js-v2</guid>
-  <title>supabase-js v2</title>
-  <link>https://biobase.studio/blog/supabase-js-v2</link>
-  <description>A look at supabase-js v2, which brings type support and focuses on quality-of-life improvements for developers.</description>
-  <pubDate>Tue, 16 Aug 2022 00:00:00 -0700</pubDate>
+  <guid>https://biobase.com/blog/biobase-js-v2</guid>
+  <title>biobase-js v2</title>
+  <link>https://biobase.com/blog/biobase-js-v2</link>
+  <description>A look at biobase-js v2, which brings type support and focuses on quality-of-life improvements for developers.</description>
+  <pubDate>Mon, 15 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-cli-v1-and-admin-api-beta</guid>
+  <guid>https://biobase.com/blog/biobase-cli-v1-and-admin-api-beta</guid>
   <title>Biobase CLI v1 and Management API Beta</title>
-  <link>https://biobase.studio/blog/biobase-cli-v1-and-admin-api-beta</link>
+  <link>https://biobase.com/blog/biobase-cli-v1-and-admin-api-beta</link>
   <description>We are moving Biobase CLI v1 out of beta, and releasing Management API beta.</description>
-  <pubDate>Mon, 15 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 14 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-series-b</guid>
+  <guid>https://biobase.com/blog/biobase-series-b</guid>
   <title>Biobase Series B</title>
-  <link>https://biobase.studio/blog/biobase-series-b</link>
+  <link>https://biobase.com/blog/biobase-series-b</link>
   <description>Biobase raised $80M in May, bringing our total funding to $116M.</description>
-  <pubDate>Fri, 12 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 11 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-5-hackathon</guid>
+  <guid>https://biobase.com/blog/launch-week-5-hackathon</guid>
   <title>Launch Week 5 Hackathon</title>
-  <link>https://biobase.studio/blog/launch-week-5-hackathon</link>
+  <link>https://biobase.com/blog/launch-week-5-hackathon</link>
   <description>Build to win $1500 - Friday 12th to Monday 21st August 2022</description>
-  <pubDate>Wed, 10 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 09 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/slack-consolidate-slackbot-to-consolidate-messages</guid>
+  <guid>https://biobase.com/blog/slack-consolidate-slackbot-to-consolidate-messages</guid>
   <title>Slack Consolidate: a slackbot built with Python and Biobase</title>
-  <link>https://biobase.studio/blog/slack-consolidate-slackbot-to-consolidate-messages</link>
+  <link>https://biobase.com/blog/slack-consolidate-slackbot-to-consolidate-messages</link>
   <description>A slackbot to consolidate messages from different channels using Biobase, Slack SDK and Python</description>
-  <pubDate>Tue, 09 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 08 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-update-july-2022</guid>
+  <guid>https://biobase.com/blog/biobase-beta-update-july-2022</guid>
   <title>Biobase Beta July 2022</title>
-  <link>https://biobase.studio/blog/biobase-beta-update-july-2022</link>
+  <link>https://biobase.com/blog/biobase-beta-update-july-2022</link>
   <description>Launch Week Golden Tickets, Flutter SDK 1.0 Developer Preview and more...</description>
-  <pubDate>Wed, 03 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 02 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-flutter-sdk-1-developer-preview</guid>
+  <guid>https://biobase.com/blog/biobase-flutter-sdk-1-developer-preview</guid>
   <title>Biobase Flutter SDK 1.0 Developer Preview</title>
-  <link>https://biobase.studio/blog/biobase-flutter-sdk-1-developer-preview</link>
+  <link>https://biobase.com/blog/biobase-flutter-sdk-1-developer-preview</link>
   <description>Biobase Flutter SDK is getting a major update and we need your help making it better.</description>
-  <pubDate>Tue, 02 Aug 2022 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 01 Aug 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/seen-by-in-postgresql</guid>
+  <guid>https://biobase.com/blog/seen-by-in-postgresql</guid>
   <title>Implementing &quot;seen by&quot; functionality with Postgres</title>
-  <link>https://biobase.studio/blog/seen-by-in-postgresql</link>
+  <link>https://biobase.com/blog/seen-by-in-postgresql</link>
   <description>Different approaches for tracking visitor counts with PostgreSQL.</description>
-  <pubDate>Mon, 18 Jul 2022 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 17 Jul 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-auth-helpers-with-sveltekit-support</guid>
+  <guid>https://biobase.com/blog/biobase-auth-helpers-with-sveltekit-support</guid>
   <title>Revamped Auth Helpers for Biobase (with SvelteKit support)</title>
-  <link>https://biobase.studio/blog/biobase-auth-helpers-with-sveltekit-support</link>
+  <link>https://biobase.com/blog/biobase-auth-helpers-with-sveltekit-support</link>
   <description>Biobase Auth Helpers now have improved developer experience, Sveltekit support, and more.</description>
-  <pubDate>Wed, 13 Jul 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 12 Jul 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/beta-update-june-2022</guid>
+  <guid>https://biobase.com/blog/beta-update-june-2022</guid>
   <title>Biobase Beta June 2022</title>
-  <link>https://biobase.studio/blog/beta-update-june-2022</link>
+  <link>https://biobase.com/blog/beta-update-june-2022</link>
   <description>Auth Helpers, Unlimited Free Projects, CLI and more...</description>
-  <pubDate>Wed, 06 Jul 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 05 Jul 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/flutter-tutorial-building-a-chat-app</guid>
+  <guid>https://biobase.com/blog/flutter-tutorial-building-a-chat-app</guid>
   <title>Flutter Tutorial: building a Flutter chat app</title>
-  <link>https://biobase.studio/blog/flutter-tutorial-building-a-chat-app</link>
+  <link>https://biobase.com/blog/flutter-tutorial-building-a-chat-app</link>
   <description>Learn how to build a Flutter chat app with open source and scalable backend (inc. auth, realtime, database, and more).</description>
-  <pubDate>Thu, 30 Jun 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 29 Jun 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/visualizing-biobase-data-using-metabase</guid>
+  <guid>https://biobase.com/blog/visualizing-biobase-data-using-metabase</guid>
   <title>Visualizing Biobase Data using Metabase</title>
-  <link>https://biobase.studio/blog/visualizing-biobase-data-using-metabase</link>
+  <link>https://biobase.com/blog/visualizing-biobase-data-using-metabase</link>
   <description>How to create different kinds of charts out of data stored in Biobase using Metabase.</description>
-  <pubDate>Wed, 29 Jun 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 28 Jun 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/partial-postgresql-data-dumps-with-rls</guid>
+  <guid>https://biobase.com/blog/partial-postgresql-data-dumps-with-rls</guid>
   <title>Partial data dumps using Postgres Row Level Security</title>
-  <link>https://biobase.studio/blog/partial-postgresql-data-dumps-with-rls</link>
+  <link>https://biobase.com/blog/partial-postgresql-data-dumps-with-rls</link>
   <description>Using RLS to create seed files for local PostgreSQL testing.</description>
-  <pubDate>Tue, 28 Jun 2022 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 27 Jun 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/loading-data-biobase-python</guid>
+  <guid>https://biobase.com/blog/loading-data-biobase-python</guid>
   <title>Python data loading with Biobase</title>
-  <link>https://biobase.studio/blog/loading-data-biobase-python</link>
+  <link>https://biobase.com/blog/loading-data-biobase-python</link>
   <description>An example of how to load data into Biobase using biobase-py</description>
-  <pubDate>Fri, 17 Jun 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 16 Jun 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/beta-update-may-2022</guid>
+  <guid>https://biobase.com/blog/beta-update-may-2022</guid>
   <title>Biobase Beta May 2022</title>
-  <link>https://biobase.studio/blog/beta-update-may-2022</link>
+  <link>https://biobase.com/blog/beta-update-may-2022</link>
   <description>Product and community updates including wildcard auth redirects, edge functions with webhooks, and Prometheus endpoints for everybody.</description>
-  <pubDate>Wed, 01 Jun 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 31 May 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/how-biobase-accelerates-development-of-all-pull-together</guid>
+  <guid>https://biobase.com/blog/how-biobase-accelerates-development-of-all-pull-together</guid>
   <title>How Mike Lyndon is using Biobase to accelerate development of AllPullTogether</title>
-  <link>https://biobase.studio/blog/how-biobase-accelerates-development-of-all-pull-together</link>
+  <link>https://biobase.com/blog/how-biobase-accelerates-development-of-all-pull-together</link>
   <description>Mike Lyndon is learning web development as he builds AllPullTogether, and Biobase is helping him accelerate what he can accomplish.</description>
-  <pubDate>Thu, 26 May 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 25 May 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/partner-gallery-works-with-biobase</guid>
+  <guid>https://biobase.com/blog/partner-gallery-works-with-biobase</guid>
   <title>Works With Biobase - announcing our Partner Gallery</title>
-  <link>https://biobase.studio/blog/partner-gallery-works-with-biobase</link>
+  <link>https://biobase.com/blog/partner-gallery-works-with-biobase</link>
   <description>Introducing our Partner Gallery - open source and made with Biobase.</description>
-  <pubDate>Wed, 20 Apr 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 19 Apr 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/bring-the-func-hackathon-winners</guid>
+  <guid>https://biobase.com/blog/bring-the-func-hackathon-winners</guid>
   <title>Bring the Func Hackathon Winners 2022</title>
-  <link>https://biobase.studio/blog/bring-the-func-hackathon-winners</link>
+  <link>https://biobase.com/blog/bring-the-func-hackathon-winners</link>
   <description>Celebrating many amazing OSS Hackathon projects using GraphQL and Edge Functions.</description>
-  <pubDate>Mon, 18 Apr 2022 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 17 Apr 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/beta-update-march-2022</guid>
+  <guid>https://biobase.com/blog/beta-update-march-2022</guid>
   <title>Biobase Beta March 2022</title>
-  <link>https://biobase.studio/blog/beta-update-march-2022</link>
+  <link>https://biobase.com/blog/beta-update-march-2022</link>
   <description>Functions, GraphQL, and much more.</description>
-  <pubDate>Fri, 15 Apr 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 14 Apr 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-realtime-with-multiplayer-features</guid>
+  <guid>https://biobase.com/blog/biobase-realtime-with-multiplayer-features</guid>
   <title>Biobase Realtime, with Multiplayer Features</title>
-  <link>https://biobase.studio/blog/biobase-realtime-with-multiplayer-features</link>
+  <link>https://biobase.com/blog/biobase-realtime-with-multiplayer-features</link>
   <description>Today we&apos;re announced Realtime, with multiplayer features. Realtime enables broadcast, presence, and listening to database changes delivered over WebSockets.</description>
-  <pubDate>Fri, 01 Apr 2022 00:00:00 -0700</pubDate>
+  <pubDate>Fri, 01 Apr 2022 20:30:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/hackathon-bring-the-func</guid>
+  <guid>https://biobase.com/blog/hackathon-bring-the-func</guid>
   <title>Hackathon: Bring the Func(🕺)</title>
-  <link>https://biobase.studio/blog/hackathon-bring-the-func</link>
+  <link>https://biobase.com/blog/hackathon-bring-the-func</link>
   <description>Build open-source projects with our latest features, win limited edition swag and plant a tree!</description>
-  <pubDate>Fri, 01 Apr 2022 00:00:00 -0700</pubDate>
+  <pubDate>Fri, 01 Apr 2022 14:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/supabrew</guid>
+  <guid>https://biobase.com/blog/supabrew</guid>
   <title>Supabrew - Never Code Thirsty</title>
-  <link>https://biobase.studio/blog/supabrew</link>
+  <link>https://biobase.com/blog/supabrew</link>
   <description>A light and refreshing non-alcoholic beer for devs.</description>
-  <pubDate>Fri, 01 Apr 2022 00:00:00 -0700</pubDate>
+  <pubDate>Fri, 01 Apr 2022 09:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-edge-functions</guid>
+  <guid>https://biobase.com/blog/biobase-edge-functions</guid>
   <title>Edge Functions are now available in Biobase</title>
-  <link>https://biobase.studio/blog/biobase-edge-functions</link>
+  <link>https://biobase.com/blog/biobase-edge-functions</link>
   <description>Today we&apos;re launching Edge Functions. Edge Functions let you execute Typescript code close to your users, no matter where they&apos;re located.</description>
-  <pubDate>Thu, 31 Mar 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 30 Mar 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-enterprise</guid>
+  <guid>https://biobase.com/blog/biobase-enterprise</guid>
   <title>Introducing Biobase Enterprise</title>
-  <link>https://biobase.studio/blog/biobase-enterprise</link>
+  <link>https://biobase.com/blog/biobase-enterprise</link>
   <description>Today we are releasing Biobase Enterprise, a suite of features to scale your project.</description>
-  <pubDate>Wed, 30 Mar 2022 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 29 Mar 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/graphql-now-available</guid>
+  <guid>https://biobase.com/blog/graphql-now-available</guid>
   <title>GraphQL is now available in Biobase</title>
-  <link>https://biobase.studio/blog/graphql-now-available</link>
+  <link>https://biobase.com/blog/graphql-now-available</link>
   <description>GraphQL support is now in general availability on the Biobase platform via our open source PostgreSQL extension, pg_graphql.</description>
-  <pubDate>Tue, 29 Mar 2022 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 28 Mar 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/community-day-lw4</guid>
+  <guid>https://biobase.com/blog/community-day-lw4</guid>
   <title>Community Day</title>
-  <link>https://biobase.studio/blog/community-day-lw4</link>
+  <link>https://biobase.com/blog/community-day-lw4</link>
   <description>Kicking off Launch Week 4 with contributors, partners, and friends.</description>
-  <pubDate>Mon, 28 Mar 2022 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 27 Mar 2022 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/should-i-open-source-my-company</guid>
+  <guid>https://biobase.com/blog/should-i-open-source-my-company</guid>
   <title>Should I Open Source my Company?</title>
-  <link>https://biobase.studio/blog/should-i-open-source-my-company</link>
+  <link>https://biobase.com/blog/should-i-open-source-my-company</link>
   <description>The unexpected upsides of building in public</description>
-  <pubDate>Fri, 25 Mar 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 24 Mar 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-launch-week-four</guid>
+  <guid>https://biobase.com/blog/biobase-launch-week-four</guid>
   <title>Biobase Launch Week 4</title>
-  <link>https://biobase.studio/blog/biobase-launch-week-four</link>
+  <link>https://biobase.com/blog/biobase-launch-week-four</link>
   <description>Launch Week 4: One new feature every day for an entire week. Starting Monday 28th March.</description>
-  <pubDate>Fri, 25 Mar 2022 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 24 Mar 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-audit</guid>
+  <guid>https://biobase.com/blog/postgres-audit</guid>
   <title>Postgres Auditing in 150 lines of SQL</title>
-  <link>https://biobase.studio/blog/postgres-audit</link>
+  <link>https://biobase.com/blog/postgres-audit</link>
   <description>PostgreSQL has a robust set of features which we can leverage to create a generic auditing solution in 150 lines of SQL.</description>
-  <pubDate>Tue, 08 Mar 2022 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 07 Mar 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-january-2022</guid>
+  <guid>https://biobase.com/blog/biobase-beta-january-2022</guid>
   <title>Biobase Beta January 2022</title>
-  <link>https://biobase.studio/blog/biobase-beta-january-2022</link>
+  <link>https://biobase.com/blog/biobase-beta-january-2022</link>
   <description>New auth providers, SMS providers, and new videos.</description>
-  <pubDate>Tue, 22 Feb 2022 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 21 Feb 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/product-hunt-golden-kitty-awards-2021</guid>
+  <guid>https://biobase.com/blog/product-hunt-golden-kitty-awards-2021</guid>
   <title>Golden Kitty Awards Ceremony Watch Party with Biobase</title>
-  <link>https://biobase.studio/blog/product-hunt-golden-kitty-awards-2021</link>
+  <link>https://biobase.com/blog/product-hunt-golden-kitty-awards-2021</link>
   <description>Hang out with us while watching the Product Hunt Golden Kitty Awards Ceremony</description>
-  <pubDate>Thu, 20 Jan 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 19 Jan 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-december-2021</guid>
+  <guid>https://biobase.com/blog/biobase-beta-december-2021</guid>
   <title>Biobase Beta December 2021</title>
-  <link>https://biobase.studio/blog/biobase-beta-december-2021</link>
+  <link>https://biobase.com/blog/biobase-beta-december-2021</link>
   <description>New crypto extension, Postgres videos, and a bunch of cool integrations.</description>
-  <pubDate>Thu, 20 Jan 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 19 Jan 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/holiday-hackdays-winners-2021</guid>
+  <guid>https://biobase.com/blog/holiday-hackdays-winners-2021</guid>
   <title>Holiday Hackdays Winners 2021</title>
-  <link>https://biobase.studio/blog/holiday-hackdays-winners-2021</link>
+  <link>https://biobase.com/blog/holiday-hackdays-winners-2021</link>
   <description>Celebrating many amazing projects submitted to our Holiday Hackdays Hackathon.</description>
-  <pubDate>Fri, 17 Dec 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 16 Dec 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/beta-november-2021-launch-week-recap</guid>
+  <guid>https://biobase.com/blog/beta-november-2021-launch-week-recap</guid>
   <title>Biobase Beta November 2021: Launch Week Recap</title>
-  <link>https://biobase.studio/blog/beta-november-2021-launch-week-recap</link>
+  <link>https://biobase.com/blog/beta-november-2021-launch-week-recap</link>
   <description>We wrapped up November with Biobase&apos;s third Launch Week. Here&apos;s all the awesome stuff that got shipped ...</description>
-  <pubDate>Wed, 15 Dec 2021 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 14 Dec 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week-three-friday-five-more-things</guid>
+  <guid>https://biobase.com/blog/launch-week-three-friday-five-more-things</guid>
   <title>Five more things</title>
-  <link>https://biobase.studio/blog/launch-week-three-friday-five-more-things</link>
+  <link>https://biobase.com/blog/launch-week-three-friday-five-more-things</link>
   <description>It&apos;s never just one more thing!</description>
-  <pubDate>Fri, 03 Dec 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 02 Dec 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/pg-graphql</guid>
+  <guid>https://biobase.com/blog/pg-graphql</guid>
   <title>pg_graphql: A GraphQL extension for PostgreSQL</title>
-  <link>https://biobase.studio/blog/pg-graphql</link>
+  <link>https://biobase.com/blog/pg-graphql</link>
   <description>GraphQL support is in development for PostgreSQL + Biobase.</description>
-  <pubDate>Fri, 03 Dec 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 02 Dec 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-holiday-hackdays-hackathon</guid>
+  <guid>https://biobase.com/blog/biobase-holiday-hackdays-hackathon</guid>
   <title>Kicking off the Holiday Hackdays</title>
-  <link>https://biobase.studio/blog/biobase-holiday-hackdays-hackathon</link>
+  <link>https://biobase.com/blog/biobase-holiday-hackdays-hackathon</link>
   <description>Build cool stuff and celebrate open-source software with us during the Holiday Hackdays!</description>
-  <pubDate>Fri, 03 Dec 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 02 Dec 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-acquires-logflare</guid>
+  <guid>https://biobase.com/blog/biobase-acquires-logflare</guid>
   <title>Biobase acquires Logflare</title>
-  <link>https://biobase.studio/blog/biobase-acquires-logflare</link>
+  <link>https://biobase.com/blog/biobase-acquires-logflare</link>
   <description>Today, we&apos;re ecstatic to announce that Logflare is joining Biobase.</description>
-  <pubDate>Thu, 02 Dec 2021 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 01 Dec 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/realtime-row-level-security-in-postgresql</guid>
+  <guid>https://biobase.com/blog/realtime-row-level-security-in-postgresql</guid>
   <title>Realtime Postgres RLS now available on Biobase</title>
-  <link>https://biobase.studio/blog/realtime-row-level-security-in-postgresql</link>
+  <link>https://biobase.com/blog/realtime-row-level-security-in-postgresql</link>
   <description>Realtime database changes are now broadcast to authenticated users, respecting the same PostgreSQL policies that you use for Row Level Security.</description>
-  <pubDate>Wed, 01 Dec 2021 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 30 Nov 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-studio</guid>
+  <guid>https://biobase.com/blog/biobase-studio</guid>
   <title>Biobase Studio</title>
-  <link>https://biobase.studio/blog/biobase-studio</link>
+  <link>https://biobase.com/blog/biobase-studio</link>
   <description>The same Dashboard that you&apos;re using on our Platform is now available for local development and Self-Hosting.</description>
-  <pubDate>Tue, 30 Nov 2021 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 29 Nov 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/community-day-lw3</guid>
+  <guid>https://biobase.com/blog/community-day-lw3</guid>
   <title>Community Day</title>
-  <link>https://biobase.studio/blog/community-day-lw3</link>
+  <link>https://biobase.com/blog/community-day-lw3</link>
   <description>Kicking off launch week by highlighting the communities around Biobase.</description>
-  <pubDate>Mon, 29 Nov 2021 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 28 Nov 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/whats-new-in-postgres-14</guid>
+  <guid>https://biobase.com/blog/whats-new-in-postgres-14</guid>
   <title>New in PostgreSQL 14: What every developer should know</title>
-  <link>https://biobase.studio/blog/whats-new-in-postgres-14</link>
+  <link>https://biobase.com/blog/whats-new-in-postgres-14</link>
   <description>A quick look at some new features and functionality in PostgreSQL 14.</description>
-  <pubDate>Sun, 28 Nov 2021 00:00:00 -0700</pubDate>
+  <pubDate>Sat, 27 Nov 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgrest-9</guid>
+  <guid>https://biobase.com/blog/postgrest-9</guid>
   <title>PostgREST 9</title>
-  <link>https://biobase.studio/blog/postgrest-9</link>
+  <link>https://biobase.com/blog/postgrest-9</link>
   <description>New features and updates in PostgREST version 9.</description>
-  <pubDate>Sat, 27 Nov 2021 00:00:00 -0700</pubDate>
+  <pubDate>Fri, 26 Nov 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-how-we-launch</guid>
+  <guid>https://biobase.com/blog/biobase-how-we-launch</guid>
   <title>How we launch at Biobase</title>
-  <link>https://biobase.studio/blog/biobase-how-we-launch</link>
+  <link>https://biobase.com/blog/biobase-how-we-launch</link>
   <description>The history and methodology of Biobase Launch Week.</description>
-  <pubDate>Fri, 26 Nov 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 25 Nov 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-launch-week-the-trilogy</guid>
+  <guid>https://biobase.com/blog/biobase-launch-week-the-trilogy</guid>
   <title>Biobase Launch Week III: Holiday Special</title>
-  <link>https://biobase.studio/blog/biobase-launch-week-the-trilogy</link>
+  <link>https://biobase.com/blog/biobase-launch-week-the-trilogy</link>
   <description>Tis the season to be shipping.</description>
-  <pubDate>Fri, 26 Nov 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 25 Nov 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-october-2021</guid>
+  <guid>https://biobase.com/blog/biobase-beta-october-2021</guid>
   <title>Biobase Beta October 2021</title>
-  <link>https://biobase.studio/blog/biobase-beta-october-2021</link>
+  <link>https://biobase.com/blog/biobase-beta-october-2021</link>
   <description>Three new Auth providers, multi-schema support, and we&apos;re gearing up for another Launch Week.</description>
-  <pubDate>Sun, 07 Nov 2021 00:00:00 -0700</pubDate>
+  <pubDate>Sat, 06 Nov 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-series-a</guid>
+  <guid>https://biobase.com/blog/biobase-series-a</guid>
   <title>Biobase $30m Series A</title>
-  <link>https://biobase.studio/blog/biobase-series-a</link>
+  <link>https://biobase.com/blog/biobase-series-a</link>
   <description>Biobase just raised $30M, bringing our total funding to $36M.</description>
-  <pubDate>Thu, 28 Oct 2021 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 27 Oct 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/replenysh-time-to-value-in-less-than-24-hours</guid>
+  <guid>https://biobase.com/blog/replenysh-time-to-value-in-less-than-24-hours</guid>
   <title>Replenysh uses Biobase to implement OTP in less than 24-hours</title>
-  <link>https://biobase.studio/blog/replenysh-time-to-value-in-less-than-24-hours</link>
+  <link>https://biobase.com/blog/replenysh-time-to-value-in-less-than-24-hours</link>
   <description>Learn how Replenysh uses Biobase to power the circular economy, redefining how brands interact with their customers and products.</description>
-  <pubDate>Tue, 19 Oct 2021 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 18 Oct 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/hacktoberfest-hackathon-winners-2021</guid>
+  <guid>https://biobase.com/blog/hacktoberfest-hackathon-winners-2021</guid>
   <title>Hacktoberfest Hackathon Winners 2021</title>
-  <link>https://biobase.studio/blog/hacktoberfest-hackathon-winners-2021</link>
+  <link>https://biobase.com/blog/hacktoberfest-hackathon-winners-2021</link>
   <description>Celebrating many amazing projects submitted to our Hacktoberfest Hackathon.</description>
-  <pubDate>Thu, 14 Oct 2021 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 13 Oct 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-sept-2021</guid>
+  <guid>https://biobase.com/blog/biobase-beta-sept-2021</guid>
   <title>Biobase Beta Sept 2021</title>
-  <link>https://biobase.studio/blog/biobase-beta-sept-2021</link>
+  <link>https://biobase.com/blog/biobase-beta-sept-2021</link>
   <description>Hackathon, Aborting request, UI updates, and now Hiring.</description>
-  <pubDate>Mon, 04 Oct 2021 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 03 Oct 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-hacktoberfest-hackathon-2021</guid>
+  <guid>https://biobase.com/blog/biobase-hacktoberfest-hackathon-2021</guid>
   <title>Biobase Hacktoberfest Hackathon 2021</title>
-  <link>https://biobase.studio/blog/biobase-hacktoberfest-hackathon-2021</link>
+  <link>https://biobase.com/blog/biobase-hacktoberfest-hackathon-2021</link>
   <description>We&apos;re running another Biobase Hackathon during Hacktoberfest!</description>
-  <pubDate>Tue, 28 Sep 2021 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 27 Sep 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-august-2021</guid>
+  <guid>https://biobase.com/blog/biobase-beta-august-2021</guid>
   <title>Biobase Beta August 2021</title>
-  <link>https://biobase.studio/blog/biobase-beta-august-2021</link>
+  <link>https://biobase.com/blog/biobase-beta-august-2021</link>
   <description>Fundraising, Realtime Security, custom SMS templates, and deployments in South Korea.</description>
-  <pubDate>Fri, 10 Sep 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 09 Sep 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-july-2021</guid>
+  <guid>https://biobase.com/blog/biobase-beta-july-2021</guid>
   <title>Biobase Beta July 2021</title>
-  <link>https://biobase.studio/blog/biobase-beta-july-2021</link>
+  <link>https://biobase.com/blog/biobase-beta-july-2021</link>
   <description>Discord Logins, Vercel Integration, Full text search, and OAuth guides.</description>
-  <pubDate>Thu, 12 Aug 2021 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 11 Aug 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/hackathon-winners</guid>
+  <guid>https://biobase.com/blog/hackathon-winners</guid>
   <title>Open Source Hackathon Winners</title>
-  <link>https://biobase.studio/blog/hackathon-winners</link>
+  <link>https://biobase.com/blog/hackathon-winners</link>
   <description>Let the medal ceremony begin for the best projects submitted during the Biobase Hackathon.</description>
-  <pubDate>Mon, 09 Aug 2021 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 08 Aug 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/1-the-biobase-hackathon</guid>
+  <guid>https://biobase.com/blog/1-the-biobase-hackathon</guid>
   <title>The Biobase Hackathon</title>
-  <link>https://biobase.studio/blog/1-the-biobase-hackathon</link>
+  <link>https://biobase.com/blog/1-the-biobase-hackathon</link>
   <description>A whole week of Hacking for Fun and Prizes.</description>
-  <pubDate>Fri, 30 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 29 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-functions-updates</guid>
+  <guid>https://biobase.com/blog/biobase-functions-updates</guid>
   <title>Updates for Biobase Functions</title>
-  <link>https://biobase.studio/blog/biobase-functions-updates</link>
+  <link>https://biobase.com/blog/biobase-functions-updates</link>
   <description>The question on everyone&apos;s mind - are we launching Biobase Functions? Well, it&apos;s complicated.</description>
-  <pubDate>Fri, 30 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 29 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-swag-store</guid>
+  <guid>https://biobase.com/blog/biobase-swag-store</guid>
   <title>Biobase Swag Store</title>
-  <link>https://biobase.studio/blog/biobase-swag-store</link>
+  <link>https://biobase.com/blog/biobase-swag-store</link>
   <description>Today we are officially launching the Biobase Swag Store.</description>
-  <pubDate>Fri, 30 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 29 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-reports-and-metrics</guid>
+  <guid>https://biobase.com/blog/biobase-reports-and-metrics</guid>
   <title>Biobase Reports and Metrics</title>
-  <link>https://biobase.studio/blog/biobase-reports-and-metrics</link>
+  <link>https://biobase.com/blog/biobase-reports-and-metrics</link>
   <description>We&apos;re exposing a full set of metrics in your projects, so that you can build better (and faster) products for your users.</description>
-  <pubDate>Thu, 29 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 28 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/mobbin-biobase-200000-users</guid>
+  <guid>https://biobase.com/blog/mobbin-biobase-200000-users</guid>
   <title>Mobbin uses Biobase to authenticate 200,000 users</title>
-  <link>https://biobase.studio/blog/mobbin-biobase-200000-users</link>
+  <link>https://biobase.com/blog/mobbin-biobase-200000-users</link>
   <description>Learn how Mobbin migrated 200,000 users from Firebase for a better authentication experience.</description>
-  <pubDate>Wed, 28 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 27 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-auth-passwordless-sms-login</guid>
+  <guid>https://biobase.com/blog/biobase-auth-passwordless-sms-login</guid>
   <title>Biobase Auth v2: Phone Auth now available</title>
-  <link>https://biobase.studio/blog/biobase-auth-passwordless-sms-login</link>
+  <link>https://biobase.com/blog/biobase-auth-passwordless-sms-login</link>
   <description>Phone Auth is available today on all new and existing Biobase projects.</description>
-  <pubDate>Wed, 28 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 27 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/spot-flutter-with-postgres</guid>
+  <guid>https://biobase.com/blog/spot-flutter-with-postgres</guid>
   <title>Spot: a video sharing app built with Flutter</title>
-  <link>https://biobase.studio/blog/spot-flutter-with-postgres</link>
+  <link>https://biobase.com/blog/spot-flutter-with-postgres</link>
   <description>Spot is a geolocation-based video-sharing app with some social networking features.</description>
-  <pubDate>Tue, 27 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 26 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/storage-beta</guid>
+  <guid>https://biobase.com/blog/storage-beta</guid>
   <title>Biobase Storage now in Beta</title>
-  <link>https://biobase.studio/blog/storage-beta</link>
+  <link>https://biobase.com/blog/storage-beta</link>
   <description>Biobase Storage moves into Beta.</description>
-  <pubDate>Tue, 27 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 26 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/epsilon3-self-hosting</guid>
+  <guid>https://biobase.com/blog/epsilon3-self-hosting</guid>
   <title>Epsilon3 Self-Host Biobase To Revolutionize Space Operations </title>
-  <link>https://biobase.studio/blog/epsilon3-self-hosting</link>
+  <link>https://biobase.com/blog/epsilon3-self-hosting</link>
   <description>Learn how the team at Epsilon3 use Biobase to help teams execute secure and reliable operations in an industry that project spend runs into the billions.</description>
-  <pubDate>Mon, 26 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 25 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-community-day</guid>
+  <guid>https://biobase.com/blog/biobase-community-day</guid>
   <title>Biobase Community Day</title>
-  <link>https://biobase.studio/blog/biobase-community-day</link>
+  <link>https://biobase.com/blog/biobase-community-day</link>
   <description>Community Day</description>
-  <pubDate>Mon, 26 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 25 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-postgres-13</guid>
+  <guid>https://biobase.com/blog/biobase-postgres-13</guid>
   <title>Biobase is now on Postgres 13.3</title>
-  <link>https://biobase.studio/blog/biobase-postgres-13</link>
+  <link>https://biobase.com/blog/biobase-postgres-13</link>
   <description>From today, new Biobase projects will be on a version of Biobase Postgres that runs on Postgres 13.3.</description>
-  <pubDate>Mon, 26 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 25 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-launch-week-sql</guid>
+  <guid>https://biobase.com/blog/biobase-launch-week-sql</guid>
   <title>Biobase Launch Week II: The SQL</title>
-  <link>https://biobase.studio/blog/biobase-launch-week-sql</link>
+  <link>https://biobase.com/blog/biobase-launch-week-sql</link>
   <description>Five days of Biobase. Again.</description>
-  <pubDate>Thu, 22 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 21 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/roles-postgres-hooks</guid>
+  <guid>https://biobase.com/blog/roles-postgres-hooks</guid>
   <title>Protecting reserved roles with PostgreSQL Hooks</title>
-  <link>https://biobase.studio/blog/roles-postgres-hooks</link>
+  <link>https://biobase.com/blog/roles-postgres-hooks</link>
   <description>Using Postgres Hooks to protect functionality in your Postgres database.</description>
-  <pubDate>Fri, 02 Jul 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 01 Jul 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-may-2021</guid>
+  <guid>https://biobase.com/blog/biobase-beta-may-2021</guid>
   <title>Biobase Beta May 2021</title>
-  <link>https://biobase.studio/blog/biobase-beta-may-2021</link>
+  <link>https://biobase.com/blog/biobase-beta-may-2021</link>
   <description>Apple &amp;amp; Twitter Logins, Biobase Grid, Go &amp;amp; Swift Libraries.</description>
-  <pubDate>Wed, 02 Jun 2021 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 01 Jun 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-june-2021</guid>
+  <guid>https://biobase.com/blog/biobase-beta-june-2021</guid>
   <title>Biobase Beta June 2021</title>
-  <link>https://biobase.studio/blog/biobase-beta-june-2021</link>
+  <link>https://biobase.com/blog/biobase-beta-june-2021</link>
   <description>Discord Logins, Vercel Integration, Full text search, and OAuth guides.</description>
-  <pubDate>Wed, 02 Jun 2021 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 01 Jun 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-april-2021</guid>
+  <guid>https://biobase.com/blog/biobase-beta-april-2021</guid>
   <title>Biobase Beta April 2021</title>
-  <link>https://biobase.studio/blog/biobase-beta-april-2021</link>
+  <link>https://biobase.com/blog/biobase-beta-april-2021</link>
   <description>Biobase &quot;gardening&quot; - stability, security, and community support.</description>
-  <pubDate>Wed, 05 May 2021 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 04 May 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-march-2021</guid>
+  <guid>https://biobase.com/blog/biobase-beta-march-2021</guid>
   <title>Biobase Beta March 2021</title>
-  <link>https://biobase.studio/blog/biobase-beta-march-2021</link>
+  <link>https://biobase.com/blog/biobase-beta-march-2021</link>
   <description>Launch week, Storage, Biobase CLI, Connection Pooling, Biobase UI, and Pricing.</description>
-  <pubDate>Tue, 06 Apr 2021 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 05 Apr 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-dot-com</guid>
+  <guid>https://biobase.com/blog/biobase-dot-com</guid>
   <title>Biobase Dot Com</title>
-  <link>https://biobase.studio/blog/biobase-dot-com</link>
+  <link>https://biobase.com/blog/biobase-dot-com</link>
   <description>The Biobase Domain name is changing.</description>
-  <pubDate>Fri, 02 Apr 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 01 Apr 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-pgbouncer</guid>
+  <guid>https://biobase.com/blog/biobase-pgbouncer</guid>
   <title>PgBouncer is now available in Biobase</title>
-  <link>https://biobase.studio/blog/biobase-pgbouncer</link>
+  <link>https://biobase.com/blog/biobase-pgbouncer</link>
   <description>Better support for Serverless and Postgres.</description>
-  <pubDate>Fri, 02 Apr 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 01 Apr 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-workflows</guid>
+  <guid>https://biobase.com/blog/biobase-workflows</guid>
   <title>Workflows are coming to Biobase</title>
-  <link>https://biobase.studio/blog/biobase-workflows</link>
+  <link>https://biobase.com/blog/biobase-workflows</link>
   <description>Functions are great, but you know what&apos;s better?</description>
-  <pubDate>Fri, 02 Apr 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 01 Apr 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-nft-marketplace</guid>
+  <guid>https://biobase.com/blog/biobase-nft-marketplace</guid>
   <title>Biobase Launches NFT Marketplace</title>
-  <link>https://biobase.studio/blog/biobase-nft-marketplace</link>
+  <link>https://biobase.com/blog/biobase-nft-marketplace</link>
   <description>A fully encrypted NFT platform to protect and transact your digital assets</description>
-  <pubDate>Thu, 01 Apr 2021 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 31 Mar 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-cli</guid>
+  <guid>https://biobase.com/blog/biobase-cli</guid>
   <title>Biobase CLI</title>
-  <link>https://biobase.studio/blog/biobase-cli</link>
+  <link>https://biobase.com/blog/biobase-cli</link>
   <description>Local development, database migrations, and self-hosting.</description>
-  <pubDate>Wed, 31 Mar 2021 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 30 Mar 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-storage</guid>
+  <guid>https://biobase.com/blog/biobase-storage</guid>
   <title>Storage is now available in Biobase</title>
-  <link>https://biobase.studio/blog/biobase-storage</link>
+  <link>https://biobase.com/blog/biobase-storage</link>
   <description>Launching Biobase Storage and how you can use it in your apps</description>
-  <pubDate>Tue, 30 Mar 2021 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 29 Mar 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/pricing</guid>
+  <guid>https://biobase.com/blog/pricing</guid>
   <title>Biobase Beta Pricing</title>
-  <link>https://biobase.studio/blog/pricing</link>
+  <link>https://biobase.com/blog/pricing</link>
   <description>Biobase launches Beta pricing structure</description>
-  <pubDate>Mon, 29 Mar 2021 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 28 Mar 2021 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/angels-of-biobase</guid>
+  <guid>https://biobase.com/blog/angels-of-biobase</guid>
   <title>Angels of Biobase</title>
-  <link>https://biobase.studio/blog/angels-of-biobase</link>
+  <link>https://biobase.com/blog/angels-of-biobase</link>
   <description>Meet the investors of Biobase.</description>
-  <pubDate>Thu, 25 Mar 2021 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 24 Mar 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/launch-week</guid>
+  <guid>https://biobase.com/blog/launch-week</guid>
   <title>Launch week</title>
-  <link>https://biobase.studio/blog/launch-week</link>
+  <link>https://biobase.com/blog/launch-week</link>
   <description>Five days of Biobase.</description>
-  <pubDate>Thu, 25 Mar 2021 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 24 Mar 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/In-The-Loop</guid>
+  <guid>https://biobase.com/blog/In-The-Loop</guid>
   <title>Developers stay up to date with intheloop.dev</title>
-  <link>https://biobase.studio/blog/In-The-Loop</link>
+  <link>https://biobase.com/blog/In-The-Loop</link>
   <description>Learn why Kevin is building intheloop.dev with Biobase</description>
-  <pubDate>Mon, 22 Mar 2021 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 21 Mar 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/using-biobase-replit</guid>
+  <guid>https://biobase.com/blog/using-biobase-replit</guid>
   <title>Using Biobase in Replit</title>
-  <link>https://biobase.studio/blog/using-biobase-replit</link>
+  <link>https://biobase.com/blog/using-biobase-replit</link>
   <description>Free hosted relational database from within your node.js repl</description>
-  <pubDate>Thu, 11 Mar 2021 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 10 Mar 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/toad-a-link-shortener-with-simple-apis-for-low-coders</guid>
+  <guid>https://biobase.com/blog/toad-a-link-shortener-with-simple-apis-for-low-coders</guid>
   <title>Toad, a link shortener with simple APIs for low-coders</title>
-  <link>https://biobase.studio/blog/toad-a-link-shortener-with-simple-apis-for-low-coders</link>
+  <link>https://biobase.com/blog/toad-a-link-shortener-with-simple-apis-for-low-coders</link>
   <description>An easy-to-use link shortening tool with simple APIs</description>
-  <pubDate>Mon, 08 Mar 2021 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 07 Mar 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-as-a-cron-server</guid>
+  <guid>https://biobase.com/blog/postgres-as-a-cron-server</guid>
   <title>Postgres as a CRON Server</title>
-  <link>https://biobase.studio/blog/postgres-as-a-cron-server</link>
+  <link>https://biobase.com/blog/postgres-as-a-cron-server</link>
   <description>Running repetitive tasks with your Postgres database.</description>
-  <pubDate>Fri, 05 Mar 2021 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 04 Mar 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-february-2021</guid>
+  <guid>https://biobase.com/blog/biobase-beta-february-2021</guid>
   <title>Biobase Beta February 2021</title>
-  <link>https://biobase.studio/blog/biobase-beta-february-2021</link>
+  <link>https://biobase.com/blog/biobase-beta-february-2021</link>
   <description>One year of building.</description>
-  <pubDate>Tue, 02 Mar 2021 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 01 Mar 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/cracking-postgres-interview</guid>
+  <guid>https://biobase.com/blog/cracking-postgres-interview</guid>
   <title>Cracking PostgreSQL Interview Questions</title>
-  <link>https://biobase.studio/blog/cracking-postgres-interview</link>
+  <link>https://biobase.com/blog/cracking-postgres-interview</link>
   <description>Understand the top PostgreSQL Interview Questions</description>
-  <pubDate>Sat, 27 Feb 2021 00:00:00 -0700</pubDate>
+  <pubDate>Fri, 26 Feb 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/case-study-roboflow</guid>
+  <guid>https://biobase.com/blog/case-study-roboflow</guid>
   <title>Roboflow.com choose Biobase to power Paint.wtf leaderboard</title>
-  <link>https://biobase.studio/blog/case-study-roboflow</link>
+  <link>https://biobase.com/blog/case-study-roboflow</link>
   <description>Learn how Roboflow.com used Biobase to build their Paint.wtf leaderboard</description>
-  <pubDate>Tue, 09 Feb 2021 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 08 Feb 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-january-2021</guid>
+  <guid>https://biobase.com/blog/biobase-beta-january-2021</guid>
   <title>Biobase Beta January 2021</title>
-  <link>https://biobase.studio/blog/biobase-beta-january-2021</link>
+  <link>https://biobase.com/blog/biobase-beta-january-2021</link>
   <description>Eleven months of building.</description>
-  <pubDate>Tue, 02 Feb 2021 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 01 Feb 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-beta-december-2020</guid>
+  <guid>https://biobase.com/blog/biobase-beta-december-2020</guid>
   <title>Biobase Beta December 2020</title>
-  <link>https://biobase.studio/blog/biobase-beta-december-2020</link>
+  <link>https://biobase.com/blog/biobase-beta-december-2020</link>
   <description>Ten months of building.</description>
-  <pubDate>Sat, 02 Jan 2021 00:00:00 -0700</pubDate>
+  <pubDate>Fri, 01 Jan 2021 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-dashboard-performance</guid>
+  <guid>https://biobase.com/blog/biobase-dashboard-performance</guid>
   <title>Making the Biobase Dashboard Supa-fast</title>
-  <link>https://biobase.studio/blog/biobase-dashboard-performance</link>
+  <link>https://biobase.com/blog/biobase-dashboard-performance</link>
   <description>Improving the performance of the Biobase dashboard</description>
-  <pubDate>Sun, 13 Dec 2020 00:00:00 -0700</pubDate>
+  <pubDate>Sat, 12 Dec 2020 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/case-study-monitoro</guid>
+  <guid>https://biobase.com/blog/case-study-monitoro</guid>
   <title>Monitoro Built a Web Crawler Handling Millions of API Requests</title>
-  <link>https://biobase.studio/blog/case-study-monitoro</link>
+  <link>https://biobase.com/blog/case-study-monitoro</link>
   <description>See how Monitoro built an automated scraping platform using Biobase.</description>
-  <pubDate>Wed, 02 Dec 2020 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 01 Dec 2020 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/case-study-tayfa</guid>
+  <guid>https://biobase.com/blog/case-study-tayfa</guid>
   <title>TAYFA Built a No-Code Website Builder in Seven Days</title>
-  <link>https://biobase.studio/blog/case-study-tayfa</link>
+  <link>https://biobase.com/blog/case-study-tayfa</link>
   <description>See how Tayfa went from idea to paying customer in less than 30 days.</description>
-  <pubDate>Wed, 02 Dec 2020 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 01 Dec 2020 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/case-study-xendit</guid>
+  <guid>https://biobase.com/blog/case-study-xendit</guid>
   <title>Xendit Built a Counter-Fraud Watchlist for the Fintech Industry</title>
-  <link>https://biobase.studio/blog/case-study-xendit</link>
+  <link>https://biobase.com/blog/case-study-xendit</link>
   <description>See how Xendit use Biobase to build a full-text search engine.</description>
-  <pubDate>Wed, 02 Dec 2020 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 01 Dec 2020 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-striveschool</guid>
+  <guid>https://biobase.com/blog/biobase-striveschool</guid>
   <title>Biobase Partners With Strive School To Help Teach Open Source</title>
-  <link>https://biobase.studio/blog/biobase-striveschool</link>
+  <link>https://biobase.com/blog/biobase-striveschool</link>
   <description>Biobase Partners With Strive School To Help Teach Open Source To The Next Generation Of Developers</description>
-  <pubDate>Wed, 02 Dec 2020 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 01 Dec 2020 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-alpha-november-2020</guid>
+  <guid>https://biobase.com/blog/biobase-alpha-november-2020</guid>
   <title>Biobase Alpha November 2020</title>
-  <link>https://biobase.studio/blog/biobase-alpha-november-2020</link>
+  <link>https://biobase.com/blog/biobase-alpha-november-2020</link>
   <description>Nine months of building.</description>
-  <pubDate>Tue, 01 Dec 2020 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 30 Nov 2020 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgresql-views</guid>
+  <guid>https://biobase.com/blog/postgresql-views</guid>
   <title>Postgres Views</title>
-  <link>https://biobase.studio/blog/postgresql-views</link>
+  <link>https://biobase.com/blog/postgresql-views</link>
   <description>Creating and using a view in PostgreSQL.</description>
-  <pubDate>Wed, 18 Nov 2020 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 17 Nov 2020 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-alpha-october-2020</guid>
+  <guid>https://biobase.com/blog/biobase-alpha-october-2020</guid>
   <title>Biobase Alpha October 2020</title>
-  <link>https://biobase.studio/blog/biobase-alpha-october-2020</link>
+  <link>https://biobase.com/blog/biobase-alpha-october-2020</link>
   <description>Eight months of building.</description>
-  <pubDate>Mon, 02 Nov 2020 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 01 Nov 2020 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/improved-dx</guid>
+  <guid>https://biobase.com/blog/improved-dx</guid>
   <title>Biobase.js 1.0</title>
-  <link>https://biobase.studio/blog/improved-dx</link>
+  <link>https://biobase.com/blog/improved-dx</link>
   <description>We&apos;re releasing a new version of our Biobase client with some awesome new improvements.</description>
-  <pubDate>Fri, 30 Oct 2020 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 29 Oct 2020 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-alpha-september-2020</guid>
+  <guid>https://biobase.com/blog/biobase-alpha-september-2020</guid>
   <title>Biobase Alpha September 2020</title>
-  <link>https://biobase.studio/blog/biobase-alpha-september-2020</link>
+  <link>https://biobase.com/blog/biobase-alpha-september-2020</link>
   <description>Seven months of building.</description>
-  <pubDate>Sat, 03 Oct 2020 00:00:00 -0700</pubDate>
+  <pubDate>Fri, 02 Oct 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-hacktoberfest-2020</guid>
+  <guid>https://biobase.com/blog/biobase-hacktoberfest-2020</guid>
   <title>Biobase Hacktoberfest 2020</title>
-  <link>https://biobase.studio/blog/biobase-hacktoberfest-2020</link>
+  <link>https://biobase.com/blog/biobase-hacktoberfest-2020</link>
   <description>Join us for a celebration of open source software and learn how to contribute to Biobase.</description>
-  <pubDate>Fri, 11 Sep 2020 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 10 Sep 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-alpha-august-2020</guid>
+  <guid>https://biobase.com/blog/biobase-alpha-august-2020</guid>
   <title>Biobase Alpha August 2020</title>
-  <link>https://biobase.studio/blog/biobase-alpha-august-2020</link>
+  <link>https://biobase.com/blog/biobase-alpha-august-2020</link>
   <description>Six months of building</description>
-  <pubDate>Thu, 03 Sep 2020 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 02 Sep 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-auth</guid>
+  <guid>https://biobase.com/blog/biobase-auth</guid>
   <title>Biobase Auth</title>
-  <link>https://biobase.studio/blog/biobase-auth</link>
+  <link>https://biobase.com/blog/biobase-auth</link>
   <description>Authenticate and authorize your users with Biobase Auth</description>
-  <pubDate>Wed, 05 Aug 2020 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 04 Aug 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/continuous-postgresql-backup-walg</guid>
+  <guid>https://biobase.com/blog/continuous-postgresql-backup-walg</guid>
   <title>Continuous PostgreSQL Backups using WAL-G</title>
-  <link>https://biobase.studio/blog/continuous-postgresql-backup-walg</link>
+  <link>https://biobase.com/blog/continuous-postgresql-backup-walg</link>
   <description>Have you ever wanted to restore your database&apos;s state to a particular moment in time? This post explains how, using WAL-G.</description>
-  <pubDate>Sun, 02 Aug 2020 00:00:00 -0700</pubDate>
+  <pubDate>Sat, 01 Aug 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-alpha-july-2020</guid>
+  <guid>https://biobase.com/blog/biobase-alpha-july-2020</guid>
   <title>Biobase Alpha July 2020</title>
-  <link>https://biobase.studio/blog/biobase-alpha-july-2020</link>
+  <link>https://biobase.com/blog/biobase-alpha-july-2020</link>
   <description>Five months of building</description>
-  <pubDate>Sun, 02 Aug 2020 00:00:00 -0700</pubDate>
+  <pubDate>Sat, 01 Aug 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/alpha-launch-postmortem</guid>
+  <guid>https://biobase.com/blog/alpha-launch-postmortem</guid>
   <title>Alpha Launch Postmortem</title>
-  <link>https://biobase.studio/blog/alpha-launch-postmortem</link>
+  <link>https://biobase.com/blog/alpha-launch-postmortem</link>
   <description>Everything that went wrong with Biobase&apos;s launch</description>
-  <pubDate>Fri, 10 Jul 2020 00:00:00 -0700</pubDate>
+  <pubDate>Thu, 09 Jul 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgresql-templates</guid>
+  <guid>https://biobase.com/blog/postgresql-templates</guid>
   <title>What are PostgreSQL Templates?</title>
-  <link>https://biobase.studio/blog/postgresql-templates</link>
+  <link>https://biobase.com/blog/postgresql-templates</link>
   <description>What are PostgreSQL templates and what are they used for?</description>
-  <pubDate>Thu, 09 Jul 2020 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 08 Jul 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgresql-physical-logical-backups</guid>
+  <guid>https://biobase.com/blog/postgresql-physical-logical-backups</guid>
   <title>Physical vs Logical Backups in PostgreSQL</title>
-  <link>https://biobase.studio/blog/postgresql-physical-logical-backups</link>
+  <link>https://biobase.com/blog/postgresql-physical-logical-backups</link>
   <description>What are physical and logical backups in Postgres?</description>
-  <pubDate>Tue, 07 Jul 2020 00:00:00 -0700</pubDate>
+  <pubDate>Mon, 06 Jul 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-alpha-june-2020</guid>
+  <guid>https://biobase.com/blog/biobase-alpha-june-2020</guid>
   <title>Biobase Alpha June 2020</title>
-  <link>https://biobase.studio/blog/biobase-alpha-june-2020</link>
+  <link>https://biobase.com/blog/biobase-alpha-june-2020</link>
   <description>Four months of building</description>
-  <pubDate>Wed, 01 Jul 2020 00:00:00 -0700</pubDate>
+  <pubDate>Tue, 30 Jun 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-steve-chavez</guid>
+  <guid>https://biobase.com/blog/biobase-steve-chavez</guid>
   <title>Steve Chavez has joined Biobase</title>
-  <link>https://biobase.studio/blog/biobase-steve-chavez</link>
+  <link>https://biobase.com/blog/biobase-steve-chavez</link>
   <description>Steve joins Biobase to help build Auth.</description>
-  <pubDate>Mon, 15 Jun 2020 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 14 Jun 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-alpha-april-2020</guid>
+  <guid>https://biobase.com/blog/biobase-alpha-april-2020</guid>
   <title>Biobase Alpha April 2020</title>
-  <link>https://biobase.studio/blog/biobase-alpha-april-2020</link>
+  <link>https://biobase.com/blog/biobase-alpha-april-2020</link>
   <description>Two months of building</description>
-  <pubDate>Mon, 01 Jun 2020 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 31 May 2020 22:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/biobase-alpha-may-2020</guid>
+  <guid>https://biobase.com/blog/biobase-alpha-may-2020</guid>
   <title>Biobase Alpha May 2020</title>
-  <link>https://biobase.studio/blog/biobase-alpha-may-2020</link>
+  <link>https://biobase.com/blog/biobase-alpha-may-2020</link>
   <description>Three months of building</description>
-  <pubDate>Mon, 01 Jun 2020 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 31 May 2020 22:00:00 GMT</pubDate>
 </item>
 
     </channel>

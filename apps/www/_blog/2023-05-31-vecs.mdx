@@ -14,7 +14,7 @@ date: '2023-05-29'
 toc_depth: 3
 ---
 
-[Vecs](https://github.com/biobase-ai/vecs) is a new Python library for managing embeddings in your Postgres database with the pgvector extension.
+[Vecs](https://github.com/biobase/vecs) is a new Python library for managing embeddings in your Postgres database with the pgvector extension.
 
 It handles:
 
@@ -109,7 +109,7 @@ Which returns:
 [("vec1", 0.000697, {"year": 1973})]
 ```
 
-Since all metadata is stored in a `jsonb` column, there's a [lightweight but flexible DSL](https://biobase-ai.github.io/vecs/concepts_metadata/) wrapped around it for filtering.
+Since all metadata is stored in a `jsonb` column, there's a [lightweight but flexible DSL](https://biobase.github.io/vecs/concepts_metadata/) wrapped around it for filtering.
 
 When you're done, disconnect with:
 
@@ -119,13 +119,13 @@ vx.disconnect()
 
 And 90% of the time, that minimal interface is all you'll need to touch.
 
-For more in-depth information about `vecs`, checkout the [API Quickstart](https://biobase-ai.github.io/vecs/api/),
+For more in-depth information about `vecs`, checkout the [API Quickstart](https://biobase.github.io/vecs/api/),
 [celebrity look-alike demo](https://github.com/biobase-ai/biobase/blob/be1f4ea85e10cc8134e389dcdbe6a092b08612f1/examples/ai/face_similarity.ipynb),
-or [OpenAI integration example](https://biobase-ai.github.io/vecs/integrations_openai/)
+or [OpenAI integration example](https://biobase.github.io/vecs/integrations_openai/)
 
 ## Deploying with Biobase
 
-As usual, if you combine [biobase/vecs](https://github.com/biobase-ai/vecs) with the rest of Biobase, you get more than the sum of the parts.
+As usual, if you combine [biobase/vecs](https://github.com/biobase/vecs) with the rest of Biobase, you get more than the sum of the parts.
 Once you're happy with your vecs collection, you can make it accessible to your front-end through a biobase client library by exposing the collection as a view
 in your public schema.
 
@@ -144,7 +144,7 @@ create view public.docs as
         vecs.docs
 ```
 
-And then access it with the supabase-js client library within your applications:
+And then access it with the biobase-js client library within your applications:
 
 ```js
 const { data, error } = await biobase
@@ -153,7 +153,7 @@ const { data, error } = await biobase
   .eq('url', '/hello-world')
 ```
 
-For more deployment options, including enterprise scalable architecture, check out the [engineering for scale guide](https://biobase.studio/docs/guides/ai/engineering-for-scale#simple-workloads).
+For more deployment options, including enterprise scalable architecture, check out the [engineering for scale guide](https://biobase.com/docs/guides/ai/engineering-for-scale#simple-workloads).
 
 ## Future ideas
 
@@ -193,11 +193,11 @@ await docs.upsert([
 ```
 
 Both possibilities are still up for debate. If you have view on either, feel free to weigh in on the
-[Feature Request: Preprocessing Transform](https://github.com/biobase-ai/vecs/issues/5)
-and [Feature Request: Async Client](https://github.com/biobase-ai/vecs/issues/6) GitHub issues.
+[Feature Request: Preprocessing Transform](https://github.com/biobase/vecs/issues/5)
+and [Feature Request: Async Client](https://github.com/biobase/vecs/issues/6) GitHub issues.
 
 ## More info
 
-- Source code: [github.com/biobase-ai/vecs](https://github.com/biobase-ai/vecs)
-- Vecs Docs: [biobase.github.io/vecs/](https://biobase-ai.github.io/vecs/)
-- Biobase Vector Toolkit: [biobase.studio/docs/guides/ai](/docs/guides/ai)
+- Source code: [github.com/biobase/vecs](https://github.com/biobase/vecs)
+- Vecs Docs: [biobase.github.io/vecs/](https://biobase.github.io/vecs/)
+- Biobase Vector Toolkit: [biobase.com/docs/guides/ai](/docs/guides/ai)

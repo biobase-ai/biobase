@@ -18,8 +18,6 @@ const WHITELIST_ERRORS = [
 ]
 
 export type DbInstanceSize = components['schemas']['DesiredInstanceSize']
-export type ReleaseChannel = components['schemas']['ReleaseChannel']
-export type PostgresEngine = components['schemas']['PostgresEngine']
 
 export type ProjectCreateVariables = {
   name: string
@@ -34,8 +32,6 @@ export type ProjectCreateVariables = {
   dbInstanceSize?: DbInstanceSize
   dataApiExposedSchemas?: string[]
   dataApiUseApiSchema?: boolean
-  postgresEngine?: PostgresEngine
-  releaseChannel?: ReleaseChannel
 }
 
 export async function createProject({
@@ -50,8 +46,6 @@ export async function createProject({
   dbInstanceSize,
   dataApiExposedSchemas,
   dataApiUseApiSchema,
-  postgresEngine,
-  releaseChannel,
 }: ProjectCreateVariables) {
   const body: components['schemas']['CreateProjectBody'] = {
     cloud_provider: cloudProvider,
@@ -67,8 +61,6 @@ export async function createProject({
     desired_instance_size: dbInstanceSize,
     data_api_exposed_schemas: dataApiExposedSchemas,
     data_api_use_api_schema: dataApiUseApiSchema,
-    postgres_engine: postgresEngine,
-    release_channel: releaseChannel,
   }
 
   const { data, error } = await post(`/platform/projects`, {

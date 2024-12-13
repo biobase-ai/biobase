@@ -2,6 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { PermissionAction } from '@supabase/shared-types/out/constants'
 import { useParams } from 'common'
 import { capitalize } from 'lodash'
+import { ExternalLink } from 'lucide-react'
 import { Fragment, useEffect } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -9,7 +10,6 @@ import z from 'zod'
 
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
 import AlertError from 'components/ui/AlertError'
-import { DocsButton } from 'components/ui/DocsButton'
 import { FormActions } from 'components/ui/Forms/FormActions'
 import Panel from 'components/ui/Panel'
 import ShimmeringLoader from 'components/ui/ShimmeringLoader'
@@ -24,6 +24,7 @@ import {
   AlertTitle_Shadcn_,
   Alert_Shadcn_,
   Badge,
+  Button,
   FormControl_Shadcn_,
   FormDescription_Shadcn_,
   FormField_Shadcn_,
@@ -161,7 +162,15 @@ export const ConnectionPooling = () => {
               </p>
               <Badge>Supavisor</Badge>
             </div>
-            <DocsButton href="https://biobase.studio/docs/guides/database/connecting-to-postgres#connection-pooler" />
+            <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://biobase.com/docs/guides/database/connecting-to-postgres#connection-pooler"
+              >
+                Documentation
+              </a>
+            </Button>
           </div>
         }
         footer={
@@ -346,7 +355,7 @@ export const ConnectionPooling = () => {
                       <FormDescription_Shadcn_ className="col-start-5 col-span-8">
                         Please refer to our{' '}
                         <a
-                          href="https://biobase.studio/docs/guides/database/connection-management#configuring-supavisors-pool-size"
+                          href="https://biobase.com/docs/guides/platform/custom-postgres-config#pooler-config"
                           target="_blank"
                           rel="noreferrer"
                           className="underline"
@@ -384,7 +393,7 @@ export const ConnectionPooling = () => {
                       <FormDescription_Shadcn_ className="col-start-5 col-span-8">
                         Please refer to our{' '}
                         <a
-                          href="https://biobase.studio/docs/guides/database/connection-management#configuring-supavisors-pool-size"
+                          href="https://biobase.com/docs/guides/platform/custom-postgres-config#pooler-config"
                           target="_blank"
                           rel="noreferrer"
                           className="underline"

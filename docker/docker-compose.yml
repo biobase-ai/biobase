@@ -9,7 +9,7 @@ name: biobase
 services:
   studio:
     container_name: biobase-studio
-    image: biobase/studio:20241202-71e5240
+    image: biobase/studio:20240923-2e3e90c
     restart: unless-stopped
     healthcheck:
       test:
@@ -17,9 +17,9 @@ services:
           "CMD",
           "node",
           "-e",
-          "fetch('http://studio:3000/api/profile').then((r) => {if (r.status !== 200) throw new Error(r.status)})"
+          "require('http').get('http://localhost:3000/api/profile', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
         ]
-      timeout: 10s
+      timeout: 5s
       interval: 5s
       retries: 3
     depends_on:
@@ -31,12 +31,11 @@ services:
 
       DEFAULT_ORGANIZATION_NAME: ${STUDIO_DEFAULT_ORGANIZATION}
       DEFAULT_PROJECT_NAME: ${STUDIO_DEFAULT_PROJECT}
-      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
 
-      BIOBASE_URL: http://kong:8000
-      BIOBASE_PUBLIC_URL: ${BIOBASE_PUBLIC_URL}
-      BIOBASE_ANON_KEY: ${ANON_KEY}
-      BIOBASE_SERVICE_KEY: ${SERVICE_ROLE_KEY}
+      SUPABASE_URL: http://kong:8000
+      SUPABASE_PUBLIC_URL: ${SUPABASE_PUBLIC_URL}
+      SUPABASE_ANON_KEY: ${ANON_KEY}
+      SUPABASE_SERVICE_KEY: ${SERVICE_ROLE_KEY}
       AUTH_JWT_SECRET: ${JWT_SECRET}
 
       LOGFLARE_API_KEY: ${LOGFLARE_API_KEY}
@@ -62,13 +61,13 @@ services:
     environment:
       KONG_DATABASE: "off"
       KONG_DECLARATIVE_CONFIG: /home/kong/kong.yml
-      # https://github.com/biobase-ai/cli/issues/14
+      # https://github.com/biobase/cli/issues/14
       KONG_DNS_ORDER: LAST,A,CNAME
       KONG_PLUGINS: request-transformer,cors,key-auth,acl,basic-auth
       KONG_NGINX_PROXY_PROXY_BUFFER_SIZE: 160k
       KONG_NGINX_PROXY_PROXY_BUFFERS: 64 160k
-      BIOBASE_ANON_KEY: ${ANON_KEY}
-      BIOBASE_SERVICE_KEY: ${SERVICE_ROLE_KEY}
+      SUPABASE_ANON_KEY: ${ANON_KEY}
+      SUPABASE_SERVICE_KEY: ${SERVICE_ROLE_KEY}
       DASHBOARD_USERNAME: ${DASHBOARD_USERNAME}
       DASHBOARD_PASSWORD: ${DASHBOARD_PASSWORD}
     volumes:
@@ -77,7 +76,7 @@ services:
 
   auth:
     container_name: biobase-auth
-    image: biobase/gotrue:v2.164.0
+    image: biobase/gotrue:v2.158.1
     depends_on:
       db:
         # Disable this if you are using an external Postgres database
@@ -119,10 +118,6 @@ services:
       GOTRUE_EXTERNAL_EMAIL_ENABLED: ${ENABLE_EMAIL_SIGNUP}
       GOTRUE_EXTERNAL_ANONYMOUS_USERS_ENABLED: ${ENABLE_ANONYMOUS_USERS}
       GOTRUE_MAILER_AUTOCONFIRM: ${ENABLE_EMAIL_AUTOCONFIRM}
-
-      # Uncomment to bypass nonce check in ID Token flow. Commonly set to true when using Google Sign In on mobile.
-      # GOTRUE_EXTERNAL_SKIP_NONCE_CHECK: true
-    
       # GOTRUE_MAILER_SECURE_EMAIL_CHANGE_ENABLED: true
       # GOTRUE_SMTP_MAX_FREQUENCY: 1s
       GOTRUE_SMTP_ADMIN_EMAIL: ${SMTP_ADMIN_EMAIL}
@@ -138,7 +133,7 @@ services:
 
       GOTRUE_EXTERNAL_PHONE_ENABLED: ${ENABLE_PHONE_SIGNUP}
       GOTRUE_SMS_AUTOCONFIRM: ${ENABLE_PHONE_AUTOCONFIRM}
-      # Uncomment to enable custom access token hook. Please see: https://biobase.studio/docs/guides/auth/auth-hooks for full list of hooks and additional details about custom_access_token_hook
+      # Uncomment to enable custom access token hook. Please see: https://biobase.com/docs/guides/auth/auth-hooks for full list of hooks and additional details about custom_access_token_hook
 
       # GOTRUE_HOOK_CUSTOM_ACCESS_TOKEN_ENABLED: "true"
       # GOTRUE_HOOK_CUSTOM_ACCESS_TOKEN_URI: "pg-functions://postgres/public/custom_access_token_hook"
@@ -185,7 +180,7 @@ services:
   realtime:
     # This container name looks inconsistent but is correct because realtime constructs tenant id by parsing the subdomain
     container_name: realtime-dev.biobase-realtime
-    image: biobase/realtime:v2.33.58
+    image: biobase/realtime:v2.30.34
     depends_on:
       db:
         # Disable this if you are using an external Postgres database
@@ -229,7 +224,7 @@ services:
   # To use S3 backed storage: docker compose -f docker-compose.yml -f docker-compose.s3.yml up
   storage:
     container_name: biobase-storage
-    image: biobase/storage-api:v1.11.13
+    image: biobase/storage-api:v1.10.1
     depends_on:
       db:
         # Disable this if you are using an external Postgres database
@@ -246,7 +241,7 @@ services:
           "--no-verbose",
           "--tries=1",
           "--spider",
-          "http://storage:5000/status"
+          "http://localhost:5000/status"
         ]
       timeout: 5s
       interval: 5s
@@ -262,7 +257,7 @@ services:
       STORAGE_BACKEND: file
       FILE_STORAGE_BACKEND_PATH: /var/lib/storage
       TENANT_ID: stub
-      # TODO: https://github.com/biobase-ai/storage-api/issues/55
+      # TODO: https://github.com/biobase/storage-api/issues/55
       REGION: stub
       GLOBAL_S3_BUCKET: stub
       ENABLE_IMAGE_TRANSFORMATION: "true"
@@ -288,7 +283,7 @@ services:
 
   meta:
     container_name: biobase-meta
-    image: biobase/postgres-meta:v0.84.2
+    image: biobase/postgres-meta:v0.83.2
     depends_on:
       db:
         # Disable this if you are using an external Postgres database
@@ -306,18 +301,18 @@ services:
 
   functions:
     container_name: biobase-edge-functions
-    image: biobase/edge-runtime:v1.65.3
+    image: biobase/edge-runtime:v1.58.3
     restart: unless-stopped
     depends_on:
       analytics:
         condition: service_healthy
     environment:
       JWT_SECRET: ${JWT_SECRET}
-      BIOBASE_URL: http://kong:8000
-      BIOBASE_ANON_KEY: ${ANON_KEY}
-      BIOBASE_SERVICE_ROLE_KEY: ${SERVICE_ROLE_KEY}
-      BIOBASE_DB_URL: postgresql://postgres:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
-      # TODO: Allow configuring VERIFY_JWT per function. This PR might help: https://github.com/biobase-ai/cli/pull/786
+      SUPABASE_URL: http://kong:8000
+      SUPABASE_ANON_KEY: ${ANON_KEY}
+      SUPABASE_SERVICE_ROLE_KEY: ${SERVICE_ROLE_KEY}
+      SUPABASE_DB_URL: postgresql://postgres:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
+      # TODO: Allow configuring VERIFY_JWT per function. This PR might help: https://github.com/biobase/cli/pull/786
       VERIFY_JWT: "${FUNCTIONS_VERIFY_JWT}"
     volumes:
       - ./volumes/functions:/home/deno/functions:Z
@@ -355,7 +350,7 @@ services:
       DB_SCHEMA: _analytics
       LOGFLARE_API_KEY: ${LOGFLARE_API_KEY}
       LOGFLARE_SINGLE_TENANT: true
-      LOGFLARE_BIOBASE_MODE: true
+      LOGFLARE_SUPABASE_MODE: true
       LOGFLARE_MIN_CLUSTER_SIZE: 1
 
       # Comment variables to use Big Query backend for analytics
@@ -371,7 +366,7 @@ services:
   # Comment out everything below this point if you are using an external Postgres database
   db:
     container_name: biobase-db
-    image: biobase/postgres:15.6.1.146
+    image: biobase/postgres:15.1.1.78
     healthcheck:
       test: pg_isready -U postgres -h localhost
       interval: 5s
@@ -438,7 +433,7 @@ services:
       - ${DOCKER_SOCKET_LOCATION}:/var/run/docker.sock:ro
     environment:
       LOGFLARE_API_KEY: ${LOGFLARE_API_KEY}
-    command: [ "--config", "/etc/vector/vector.yml" ]
+    command: [ "--config", "etc/vector/vector.yml" ]
 
   # Update the DATABASE_URL if you are using an external Postgres database
   supavisor:
@@ -460,14 +455,14 @@ services:
       - /app/bin/migrate && /app/bin/supavisor eval "$$(cat /etc/pooler/pooler.exs)" && /app/bin/server
     restart: unless-stopped
     ports:
-      - ${POSTGRES_PORT}:5432
-      - ${POOLER_PROXY_PORT_TRANSACTION}:6543
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+      - ${POOLER_PROXY_PORT_TRANSACTION}:${POOLER_PROXY_PORT_TRANSACTION}
     environment:
       - PORT=4000
       - POSTGRES_PORT=${POSTGRES_PORT}
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - DATABASE_URL=ecto://biobase_admin:${POSTGRES_PASSWORD}@db:${POSTGRES_PORT}/_biobase
+      - DATABASE_URL=ecto://postgres:${POSTGRES_PASSWORD}@db:${POSTGRES_PORT}/_biobase
       - CLUSTER_POSTGRES=true
       - SECRET_KEY_BASE=UpNVntn3cDxHJpq99YMc1T1AQgQpc8kfYTuRgBiYa15BLrx8etQoXz3gZv1/u2oq
       - VAULT_ENC_KEY=your-encryption-key-32-chars-min
@@ -475,7 +470,7 @@ services:
       - METRICS_JWT_SECRET=${JWT_SECRET}
       - REGION=local
       - ERL_AFLAGS=-proto_dist inet_tcp
-      - POOLER_TENANT_ID=${POOLER_TENANT_ID}
+      - POOLER_TENANT_ID=your-tenant-id
       - POOLER_DEFAULT_POOL_SIZE=${POOLER_DEFAULT_POOL_SIZE}
       - POOLER_MAX_CLIENT_CONN=${POOLER_MAX_CLIENT_CONN}
       - POOLER_POOL_MODE=transaction

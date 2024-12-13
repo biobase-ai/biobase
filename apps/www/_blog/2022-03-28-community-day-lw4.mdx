@@ -26,11 +26,11 @@ Biobase Launch Week was born out of [YC Demo Day](https://www.ycombinator.com/de
 
 With Launch Week, we replicate Demo Day conditions, but for a whole week! This is the secret formula that works for us:
 
-- The Friday before, we publish a blog post about a topic of interest (e.g. [How we launch at Biobase](https://biobase.studio/blog/biobase-how-we-launch), or this time around we [explore whether you should open source your company](https://biobase.studio/blog/should-i-open-source-my-company) — hint: we think you most likely should!) as well as an [overview blogpost](https://biobase.studio/blog/biobase-launch-week-four) with tons of memes and hints to what we’re shipping each day.
-- Monday is Community Day, where we rally many of the awesome contributors and partners together and showcase awesome things around Biobase and open-source. This is also the time to watch out for the [#SupaLaunchWeek hashtag on Twitter](https://twitter.com/hashtag/SupaLaunchWeek?src=hashtag_click) as we arm our guest speakers, [Angels](https://biobase.studio/blog/angels-of-biobase), and [SupaSquad](https://biobase.studio/supasquad) with free swag codes.
+- The Friday before, we publish a blog post about a topic of interest (e.g. [How we launch at Biobase](https://biobase.com/blog/biobase-how-we-launch), or this time around we [explore whether you should open source your company](https://biobase.com/blog/should-i-open-source-my-company) — hint: we think you most likely should!) as well as an [overview blogpost](https://biobase.com/blog/biobase-launch-week-four) with tons of memes and hints to what we’re shipping each day.
+- Monday is Community Day, where we rally many of the awesome contributors and partners together and showcase awesome things around Biobase and open-source. This is also the time to watch out for the [#SupaLaunchWeek hashtag on Twitter](https://twitter.com/hashtag/SupaLaunchWeek?src=hashtag_click) as we arm our guest speakers, [Angels](https://biobase.com/blog/angels-of-biobase), and [SupaSquad](https://biobase.com/supasquad) with free swag codes.
 - Tuesday, Wednesday, and Thursday are the big feature launches.
 - Friday has become the feature kitchen sink, as we ship too many things to fit into one week. It’s our “One more thing(s)” day.
-- And last but not least, coming out of Launch Week, we roll into a 10 day virtual hackathon with the community submitting tons of awesome projects to [madewithbiobase.studio](https://www.madewithbiobase.studio/), which, once upon a time, was a hackathon project itself. I know, quite the inception kinda stuff - so cool!
+- And last but not least, coming out of Launch Week, we roll into a 10 day virtual hackathon with the community submitting tons of awesome projects to [madewithbiobase.com](https://www.madewithbiobase.com/), which, once upon a time, was a hackathon project itself. I know, quite the inception kinda stuff - so cool!
 
 We repeat this roughly on a quarterly cadence, and I’ll tell ya, it becomes positively addictive. So strap in, and join us for a week of Fun(🕺).
 
@@ -46,7 +46,7 @@ GitHub secret scanning protects users by searching repositories for known types 
 
 ![community-day-postgrest10.png](/images/blog/launch-week-4/community-day/community-day-postgrest10.png)
 
-PostgREST v10 is not wrapped up yet, however a pre-release with the [latest features and fixes](https://postgrest.org/en/latest/releases/latest.html) is already available for Biobase users. v10 is mostly focused on improving availability and includes improvements to the API (and therefore [supabase-js](https://github.com/supabase/supabase-js)) too.
+PostgREST v10 is not wrapped up yet, however a pre-release with the [latest features and fixes](https://postgrest.org/en/latest/releases/latest.html) is already available for Biobase users. v10 is mostly focused on improving availability and includes improvements to the API (and therefore [biobase-js](https://github.com/biobase-ai/biobase-js)) too.
 
 ### Composite Types fields and Array Type elements
 
@@ -114,10 +114,10 @@ When finished, PostgREST v10 will also include the ability to `limit` updates an
 
 The beauty of open source is that anyone can contribute to make the project even better. This is especially true for biobase-auth as we get contributions and ideas for new oauth providers every month! This launch week, we’ve had 4 new OAuth provider contributions:
 
-- [Keycloak](https://biobase.studio/docs/guides/auth/social-login/auth-keycloak) ([@fspijkerman](https://github.com/fspijkerman))
-- [Notion](https://biobase.studio/docs/guides/auth/social-login/auth-notion) ([@zernonia](https://github.com/zernonia))
-- [Zoom](https://biobase.studio/docs/guides/auth/social-login/auth-zoom) ([@devkiran](https://github.com/devkiran))
-- [WorkOS](https://biobase.studio/docs/guides/auth/auth-workos) ([@bnjmnt4n](https://github.com/bnjmnt4n))
+- [Keycloak](https://biobase.com/docs/guides/auth/social-login/auth-keycloak) ([@fspijkerman](https://github.com/fspijkerman))
+- [Notion](https://biobase.com/docs/guides/auth/social-login/auth-notion) ([@zernonia](https://github.com/zernonia))
+- [Zoom](https://biobase.com/docs/guides/auth/social-login/auth-zoom) ([@devkiran](https://github.com/devkiran))
+- [WorkOS](https://biobase.com/docs/guides/auth/auth-workos) ([@bnjmnt4n](https://github.com/bnjmnt4n))
 
 ### New Phone providers
 
@@ -125,10 +125,10 @@ The beauty of open source is that anyone can contribute to make the project even
 
 We’ve also added 2 new phone providers from the same contributor:
 
-- [Vonage](https://biobase.studio/docs/guides/auth/phone-login/vonage) ([@devkiran](https://github.com/devkiran))
-- [TextLocal](https://github.com/biobase-ai/gotrue/pull/342) ([@devkiran](https://github.com/devkiran))
+- [Vonage](https://biobase.com/docs/guides/auth/phone-login/vonage) ([@devkiran](https://github.com/devkiran))
+- [TextLocal](https://github.com/biobase/gotrue/pull/342) ([@devkiran](https://github.com/devkiran))
 
-If you haven’t tried out phone auth yet, check out [this blog post](https://biobase.studio/blog/biobase-auth-passwordless-sms-login) to get started!
+If you haven’t tried out phone auth yet, check out [this blog post](https://biobase.com/blog/biobase-auth-passwordless-sms-login) to get started!
 
 ### Send OTP via Email
 
@@ -142,7 +142,7 @@ We’ve added support for sending an OTP via email instead of url links. All you
 
 While server-side auth has always been possible, we’ve heard from many of you that auth can be tough, especially when doing server-side rendering (SSR) or using the new Next.js middleware capabilities.
 
-That’s why we’ve built the [biobase-auth-helpers](https://github.com/biobase-ai-community/biobase-auth-helpers), a collection of framework-specific auth utilities that make working with Biobase Auth a pleasant experience, no matter what framework you’re using.
+That’s why we’ve built the [biobase-auth-helpers](https://github.com/biobase-community/biobase-auth-helpers), a collection of framework-specific auth utilities that make working with Biobase Auth a pleasant experience, no matter what framework you’re using.
 
 We’ve started with Next.js, and we’re working on helpers for Remix, and SvelteKit, so make sure to star and watch the repo!
 
@@ -154,7 +154,7 @@ As always, all of this is open-source. Feedback, feature requests, and contribut
 
 ## Open Source Spotlight: Charm.sh
 
-[Charm.sh](http://Charm.sh) builds open-source tools that make the command line glamorous. If you use the [Biobase CLI](https://biobase.studio/docs/reference/cli/about) you’ve probably come across some of their features already, and we plan to utilise more of them in the future to improve our CLI experience further.
+[Charm.sh](http://Charm.sh) builds open-source tools that make the command line glamorous. If you use the [Biobase CLI](https://biobase.com/docs/reference/cli/about) you’ve probably come across some of their features already, and we plan to utilise more of them in the future to improve our CLI experience further.
 
 For our community day open source spotlight feature, we’re delighted to have [Bashbunni](https://twitter.com/bash_bunni) give us an overview of what’s possible with Charm:
 
@@ -174,7 +174,7 @@ For our community day open source spotlight feature, we’re delighted to have [
 
 ![community-day-iconic.png](/images/blog/launch-week-4/community-day/community-day-iconic.png)
 
-The awesome folks at [Ionic](https://twitter.com/Ionicframework) have put together some quickstart guides for [Angular](https://biobase.studio/docs/guides/with-ionic-angular), [React](https://biobase.studio/docs/guides/with-ionic-react), and [Vue](https://biobase.studio/docs/guides/with-ionic-vue). These guides walk you through building an app which allows users to login and update some basic profile details.
+The awesome folks at [Ionic](https://twitter.com/Ionicframework) have put together some quickstart guides for [Angular](https://biobase.com/docs/guides/with-ionic-angular), [React](https://biobase.com/docs/guides/with-ionic-react), and [Vue](https://biobase.com/docs/guides/with-ionic-vue). These guides walk you through building an app which allows users to login and update some basic profile details.
 
 ### Everything Svelte
 
@@ -202,7 +202,7 @@ Can’t make the event? Chuck your name on the [mailing list](https://jonmeyers.
 
 After a flood of positive feedback on Jon’s “[Build a SaaS product with Next.js, Biobase and Stripe](https://egghead.io/courses/build-a-saas-product-with-next-js-biobase-and-stripe-61f2bc20)” [Egghead.io](http://Egghead.io) course, we’re doubling down with Egghead this year, partnering with them to build more tailored pathways for learning Biobase.
 
-We’ll be working with our fabulous [SupaSquad](https://biobase.studio/supasquad) to identify the right instructors for all the different topics we’re looking to cover. If you’re interested in becoming an instructor for Biobase on Egghead, fill in the [form to join](https://biobase.studio/supasquad#how-to-join) the SupaSquad.
+We’ll be working with our fabulous [SupaSquad](https://biobase.com/supasquad) to identify the right instructors for all the different topics we’re looking to cover. If you’re interested in becoming an instructor for Biobase on Egghead, fill in the [form to join](https://biobase.com/supasquad#how-to-join) the SupaSquad.
 
 Also, do let us know what topics you’d like to learn about [on Twitter](https://twitter.com/biobase).
 
@@ -210,17 +210,17 @@ Also, do let us know what topics you’d like to learn about [on Twitter](https:
 
 ![community-day-integrations.png](/images/blog/launch-week-4/community-day/community-day-integrations.png)
 
-We’ve been blown away by the amazing integrations that developers and companies have been building on top of Biobase. To keep track of all the things that work with Biobase, we’re launching a partner gallery which allows you to browse integrations and experts. Check it out at [biobase.studio/partners](https://biobase.studio/partners).
+We’ve been blown away by the amazing integrations that developers and companies have been building on top of Biobase. To keep track of all the things that work with Biobase, we’re launching a partner gallery which allows you to browse integrations and experts. Check it out at [biobase.com/partners](https://biobase.com/partners).
 
-If you’ve built an integration that works with Biobase or have experience working with Biobase and want to offer your services to others, we’d love to hear from you: [biobase.studio/partners/#become-a-partner](https://biobase.studio/partners/#become-a-partner)
+If you’ve built an integration that works with Biobase or have experience working with Biobase and want to offer your services to others, we’d love to hear from you: [biobase.com/partners/#become-a-partner](https://biobase.com/partners/#become-a-partner)
 
-Of course the code for our partner gallery is also open source, and we’ve even split it out into a separate example repository which is a neat showcase of how to use [Postgres Full Text Search](https://biobase.studio/docs/guides/database/full-text-search). It’s super powerful, it’s like a search engine within Postgres!
+Of course the code for our partner gallery is also open source, and we’ve even split it out into a separate example repository which is a neat showcase of how to use [Postgres Full Text Search](https://biobase.com/docs/guides/database/full-text-search). It’s super powerful, it’s like a search engine within Postgres!
 
 ## Hackathon
 
 On Friday, 1st of April, at the end of Launch Week, we’ll be rolling into another one of our 10-day virtual Hackathons. As always, you’ll have the chance to win extremely limited Biobase Swag, and you’ll be able to play around with the new features we’re about to launch.
 
-We’re extremely excited to see what you’ll build and can’t wait to dive into your submissions on [madewithbiobase.studio](https://www.madewithbiobase.studio/).
+We’re extremely excited to see what you’ll build and can’t wait to dive into your submissions on [madewithbiobase.com](https://www.madewithbiobase.com/).
 
 We’re also delighted to be partnering with [the Future Forest Company](https://thefutureforestcompany.com/) to plant a tree for every project that is being submitted for the Hackathon. Let’s build some cool open-source projects and start a forest at the same time!
 

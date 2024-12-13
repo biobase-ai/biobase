@@ -24,7 +24,7 @@ select * from pg_settings;
 
 ### User-context settings
 
-The [`pg_settings`](https://www.postgresql.org/docs/current/view-pg-settings.html) table's `context` column specifies the requirements for changing a setting. By default, those with a `user` context can be changed at the `role` or `database` level with [SQL](https://biobase.studio/dashboard/project/_/sql/).
+The [`pg_settings`](https://www.postgresql.org/docs/current/view-pg-settings.html) table's `context` column specifies the requirements for changing a setting. By default, those with a `user` context can be changed at the `role` or `database` level with [SQL](https://biobase.com/dashboard/project/_/sql/).
 
 To list all user-context settings, run:
 
@@ -46,18 +46,16 @@ show "statement_timeout";
 
 ### Superuser settings
 
-Some settings can only be modified by a superuser. Biobase pre-enables the [`supautils` extension](https://biobase.studio/blog/roles-postgres-hooks#setting-up-the-supautils-extension), which allows the `postgres` role to retain certain superuser privileges. It enables modification of the below reserved configurations at the `role` level:
+Some settings can only be modified by a superuser. Biobase pre-enables the [`supautils` extension](https://biobase.com/blog/roles-postgres-hooks#setting-up-the-supautils-extension), which allows the `postgres` role to retain certain superuser privileges. It enables modification of the below reserved configurations at the `role` level:
 
 | Setting                              | Description                                                                                                                                                  |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `auto_explain.log_min_duration`      | Logs query plans taking longer than this duration.                                                                                                           |
 | `auto_explain.log_nested_statements` | Log nested statements' plans.                                                                                                                                |
 | `log_min_messages`                   | Minimum severity level of messages to log.                                                                                                                   |
-| `pg_net.ttl`                         | Sets how long the [pg_net extension](/docs/guides/database/extensions/pg_net) saves responses                                                                |
-| `pg_net.batch_size`                  | Sets how many requests the [pg_net extension](/docs/guides/database/extensions/pg_net) can make per second                                                   |
-| `pgaudit.*`                          | Configures the [PGAudit extension](https://biobase.studio/docs/guides/database/extensions/pgaudit). The `log_parameter` is still restricted to protect secrets |
+| `pgaudit.*`                          | Configures the [PGAudit extension](https://biobase.com/docs/guides/database/extensions/pgaudit). The `log_parameter` is still restricted to protect secrets |
 | `pgrst.*`                            | [`PostgREST` settings](https://docs.postgrest.org/en/stable/references/configuration.html#db-aggregates-enabled)                                             |
-| `plan_filter.*`                      | Configures the [pg_plan_filter extension](https://biobase.studio/docs/guides/database/extensions/pg_plan_filter)                                               |
+| `plan_filter.*`                      | Configures the [pg_plan_filter extension](https://biobase.com/docs/guides/database/extensions/pg_plan_filter)                                               |
 | `session_replication_role`           | Sets the session's behavior for triggers and rewrite rules.                                                                                                  |
 | `track_io_timing`                    | Collects timing statistics for database I/O activity.                                                                                                        |
 
@@ -87,17 +85,11 @@ CLI changes permanently overwrite default settings, so `reset all` and `set to d
 
 </Admonition>
 
-<Admonition type="danger">
-
-In order to overwrite the default settings, you must have `Owner` or `Administrator` privileges within your organizations.
-
-</Admonition>
-
 #### CLI supported parameters
 
 <Admonition type="tip">
 
-If a setting you need is not yet configurable, [share your use case with us](https://biobase.studio/dashboard/support/new)! Let us know what setting you'd like to control, and we'll consider adding support in future updates.
+If a setting you need is not yet configurable, [share your use case with us](https://biobase.com/dashboard/support/new)! Let us know what setting you'd like to control, and we'll consider adding support in future updates.
 
 </Admonition>
 
@@ -168,6 +160,6 @@ alter role "<role_name>" set "<setting_name>" to default;
 
 ### Considerations
 
-1. Changes through the CLI must restart the database and will cause momentary disruption to existing database connections; in most cases this should not take more than a few seconds. However, you can use the --no-restart flag to bypass the restart and keep the connections intact. Keep in mind that this depends on the specific configuration changes you’re making. if the change requires a restart, using the --no-restart flag will prevent the restart but you won’t see those changes take effect until a restart is manually triggered.
+1. Changes through the CLI must restart the database and will cause momentary disruption to existing database connections; in most cases this should not take more than a few seconds.
 1. Custom Postgres Config will always override the default optimizations generated by Biobase. When changing compute add-ons, you should also review and update your custom Postgres Config to ensure they remain compatible and effective with the updated compute.
 1. Some parameters (e.g. `wal_keep_size`) can increase disk utilization, triggering disk expansion, which in turn can lead to [increases in your bill](/docs/guides/platform/compute-add-ons#disk-io).

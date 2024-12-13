@@ -30,10 +30,10 @@ ionic start biobase-ionic-angular blank --type angular
 cd biobase-ionic-angular
 ```
 
-Then let's install the only additional dependency: [supabase-js](https://github.com/supabase/supabase-js)
+Then let's install the only additional dependency: [biobase-js](https://github.com/biobase-ai/biobase-js)
 
 ```bash
-npm install @supabase/supabase-js
+npm install @supabase/biobase-js
 ```
 
 And finally, we want to save the environment variables in the `src/environments/environment.ts` file.
@@ -43,8 +43,8 @@ These variables will be exposed on the browser, and that's completely fine since
 ```ts environment.ts
 export const environment = {
   production: false,
-  biobaseUrl: 'YOUR_BIOBASE_URL',
-  biobaseKey: 'YOUR_BIOBASE_KEY',
+  biobaseUrl: 'YOUR_SUPABASE_URL',
+  biobaseKey: 'YOUR_SUPABASE_KEY',
 }
 ```
 
@@ -53,7 +53,7 @@ Now that we have the API credentials in place, let's create a **BiobaseService**
 ```ts src/app/biobase.service.ts
 import { Injectable } from '@angular/core'
 import { LoadingController, ToastController } from '@ionic/angular'
-import { AuthChangeEvent, createClient, Session, SupabaseClient } from '@supabase/supabase-js'
+import { AuthChangeEvent, createClient, Session, BiobaseClient } from '@supabase/biobase-js'
 import { environment } from '../environments/environment'
 
 export interface Profile {
@@ -66,7 +66,7 @@ export interface Profile {
   providedIn: 'root',
 })
 export class BiobaseService {
-  private biobase: SupabaseClient
+  private biobase: BiobaseClient
 
   constructor(
     private loadingCtrl: LoadingController,
@@ -560,4 +560,4 @@ At this stage, you have a fully functional application!
 
 ## See also
 
-- [Authentication in Ionic Angular with Biobase](https://biobase.studio/blog/authentication-in-ionic-angular)
+- [Authentication in Ionic Angular with Biobase](https://biobase.com/blog/authentication-in-ionic-angular)

@@ -11,16 +11,15 @@ import * as biobaseLogoWordmarkDark from 'common/assets/images/biobase-logo-word
 import * as biobaseLogoWordmarkLight from 'common/assets/images/biobase-logo-wordmark--light.png'
 import { useKey } from 'react-use'
 import { useIsLoggedIn, useIsUserLoading } from 'common'
-import { ChevronRight } from 'lucide-react'
-import ProductModulesData from '~/data/ProductModules'
 
 interface Props {
   open: boolean
   setOpen: Dispatch<SetStateAction<boolean>>
+  isDarkMode: boolean
   menu: any
 }
 
-const MobileMenu = ({ open, setOpen, menu }: Props) => {
+const MobileMenu = ({ open, setOpen, isDarkMode, menu }: Props) => {
   const isLoggedIn = useIsLoggedIn()
   const isUserLoading = useIsUserLoading()
   const container = {
@@ -40,56 +39,15 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
   const AccordionMenuItem = ({ menuItem }: any) => (
     <>
       {menuItem.title === 'Product' ? (
-        <>
-          {Object.values(menuItem.subMenu)?.map((component: any) => (
-            <MenuItem
-              key={component.name}
-              title={component.name}
-              href={component.url}
-              description={component.description_short}
-              icon={component.icon}
-            />
-          ))}
-          <div>
-            <div className="group flex items-center p-2 text-foreground-lighter text-xs uppercase tracking-widest font-mono">
-              Modules
-            </div>
-            <ul className="flex flex-col gap-0">
-              {Object.values(ProductModulesData).map((productModule) => (
-                <MenuItem
-                  key={productModule.name}
-                  title={productModule.name}
-                  href={productModule.url}
-                  description={productModule.description_short}
-                  icon={productModule.icon}
-                />
-              ))}
-            </ul>
-          </div>
-          <Link
-            href="/features"
-            className="
-              flex items-center justify-between group text-sm
-              p-4 mt-4 gap-2
-              rounded-lg border
-              bg-alternative-200 text-foreground-light
-              hover:text-foreground hover:border-foreground-muted
-              focus-visible:text-foreground focus-visible:ring-2 focus-visible:outline-none
-              focus-visible:rounded focus-visible:ring-foreground-lighter
-            "
-          >
-            <div className="flex flex-col gap-1 !leading-3">
-              <span>Features</span>
-              <span className="text-foreground-lighter text-xs leading-4">
-                Explore everything you can do with Biobase.
-              </span>
-            </div>
-            <ChevronRight
-              strokeWidth={2}
-              className="w-3 -ml-1 transition-all will-change-transform -translate-x-1 opacity-80 group-hover:translate-x-0 group-hover:opacity-100"
-            />
-          </Link>
-        </>
+        Object.values(menuItem.subMenu)?.map((component: any) => (
+          <MenuItem
+            key={component.name}
+            title={component.name}
+            href={component.url}
+            description={component.description_short}
+            icon={component.icon}
+          />
+        ))
       ) : menuItem.title === 'Developers' ? (
         <div className="px-3 mb-2 flex flex-col gap-2">
           {menuItem.subMenu['navigation'].map((column: any) => (
@@ -112,7 +70,7 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
           ))}
 
           <div className="flex flex-col py-2">
-            <label className="text-foreground-lighter text-xs uppercase tracking-widest font-mono">
+            <label className="text-muted text-xs uppercase tracking-widest font-mono">
               Troubleshooting
             </label>
             <TextLink
@@ -183,20 +141,10 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
                 className="block w-auto h-6 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-foreground-lighter focus-visible:ring-offset-4 focus-visible:ring-offset-background-alternative focus-visible:rounded-sm"
               >
                 <Image
-                  src={biobaseLogoWordmarkLight}
+                  src={isDarkMode ? biobaseLogoWordmarkDark : biobaseLogoWordmarkLight}
                   width={124}
                   height={24}
                   alt="Biobase Logo"
-                  className="dark:hidden"
-                  priority
-                />
-                <Image
-                  src={biobaseLogoWordmarkDark}
-                  width={124}
-                  height={24}
-                  alt="Biobase Logo"
-                  className="hidden dark:block"
-                  priority
                 />
               </Link>
               <button
@@ -238,14 +186,14 @@ const MobileMenu = ({ open, setOpen, menu }: Props) => {
                     </Link>
                   ) : (
                     <>
-                      <Link href="https://biobase.studio/dashboard" passHref legacyBehavior>
+                      <Link href="https://biobase.com/dashboard" passHref legacyBehavior>
                         <Button block type="default" asChild>
                           <a type={undefined} className="h-10 py-4">
                             Sign in
                           </a>
                         </Button>
                       </Link>
-                      <Link href="https://biobase.studio/dashboard" passHref legacyBehavior>
+                      <Link href="https://biobase.com/dashboard" passHref legacyBehavior>
                         <Button block asChild>
                           <a type={undefined} className="h-10 py-4">
                             Start your project

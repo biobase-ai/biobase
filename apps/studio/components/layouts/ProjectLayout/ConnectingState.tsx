@@ -31,7 +31,7 @@ const ConnectingState = ({ project }: ConnectingStateProps) => {
   }, [project])
 
   const testProjectConnection = async () => {
-    const result = await pingPostgrest(project.ref)
+    const result = await pingPostgrest(project.ref, { kpsVersion: project.kpsVersion })
     if (result) {
       clearInterval(checkProjectConnectionIntervalRef.current)
       setProjectPostgrestStatus(queryClient, project.ref, 'ONLINE')
@@ -87,7 +87,7 @@ const ConnectingState = ({ project }: ConnectingStateProps) => {
                 <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
                   <Link
                     href={
-                      'https://biobase.studio/docs/guides/platform/troubleshooting#unable-to-connect-to-your-biobase-project'
+                      'https://biobase.com/docs/guides/platform/troubleshooting#unable-to-connect-to-your-biobase-project'
                     }
                     className="translate-y-[1px]"
                   >

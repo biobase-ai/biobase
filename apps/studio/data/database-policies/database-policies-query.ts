@@ -1,8 +1,6 @@
 import { UseQueryOptions, useQuery } from '@tanstack/react-query'
 
 import { get, handleError } from 'data/fetchers'
-import { useSelectedProject } from 'hooks/misc/useSelectedProject'
-import { PROJECT_STATUS } from 'lib/constants'
 import type { ResponseError } from 'types'
 import { databasePoliciesKeys } from './keys'
 
@@ -14,12 +12,11 @@ export type DatabasePoliciesVariables = {
 
 export async function getDatabasePolicies(
   { projectRef, connectionString, schema }: DatabasePoliciesVariables,
-  signal?: AbortSignal,
-  headersInit?: HeadersInit
+  signal?: AbortSignal
 ) {
   if (!projectRef) throw new Error('projectRef is required')
 
-  let headers = new Headers(headersInit)
+  let headers = new Headers()
   if (connectionString) headers.set('x-connection-encrypted', connectionString)
 
   const { data, error } = await get('/platform/pg-meta/{ref}/policies', {
@@ -48,16 +45,12 @@ export const useDatabasePoliciesQuery = <TData = DatabasePoliciesData>(
     enabled = true,
     ...options
   }: UseQueryOptions<DatabasePoliciesData, DatabasePoliciesError, TData> = {}
-) => {
-  const project = useSelectedProject()
-  const isActive = project?.status === PROJECT_STATUS.ACTIVE_HEALTHY
-
-  return useQuery<DatabasePoliciesData, DatabasePoliciesError, TData>(
+) =>
+  useQuery<DatabasePoliciesData, DatabasePoliciesError, TData>(
     databasePoliciesKeys.list(projectRef, schema),
     ({ signal }) => getDatabasePolicies({ projectRef, connectionString, schema }, signal),
     {
-      enabled: enabled && typeof projectRef !== 'undefined' && isActive,
+      enabled: enabled && typeof projectRef !== 'undefined',
       ...options,
     }
   )
-}

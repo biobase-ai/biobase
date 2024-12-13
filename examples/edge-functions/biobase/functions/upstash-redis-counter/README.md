@@ -14,7 +14,7 @@ cp biobase/.env.local.example biobase/.env.local
 
 ## Run locally
 
-Make sure you have the latest version of the [Biobase CLI installed](https://biobase.studio/docs/guides/cli#installation).
+Make sure you have the latest version of the [Biobase CLI installed](https://biobase.com/docs/guides/cli#installation).
 
 ```bash
 biobase start

@@ -23,7 +23,7 @@ const Enterprise: NextPage = () => (
       openGraph={{
         title: content.metadata.metaTitle,
         description: content.metadata.metaDescription,
-        url: `https://biobase.studio/enterprise`,
+        url: `https://biobase.com/enterprise`,
         images: [
           {
             url: `/images/enterprise/enterprise-og.png`,

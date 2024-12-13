@@ -62,7 +62,7 @@ const DiskSizeConfiguration = ({ disabled = false }: DiskSizeConfigurationProps)
     projectRef: project?.ref,
     connectionString: project?.connectionString,
   })
-  const databaseSizeBytesUsed = data ?? 0
+  const databaseSizeBytesUsed = data?.result[0].db_size ?? 0
 
   return (
     <div id="diskManagement">
@@ -139,7 +139,7 @@ If you upload more than 1.5x the current size of your storage, your database wil
 into read-only mode. If you know how big your database is going to be, you can
 manually increase the size here.
 
-Read more about [disk management](https://biobase.studio/docs/guides/platform/database-size#disk-management) and how to [free up storage space](https://biobase.studio/docs/guides/platform/database-size#vacuum-operations).
+Read more about [disk management](https://biobase.com/docs/guides/platform/database-size#disk-management) and how to [free up storage space](https://biobase.com/docs/guides/platform/database-size#vacuum-operations).
 `}
                           />
                         </AlertDescription_Shadcn_>

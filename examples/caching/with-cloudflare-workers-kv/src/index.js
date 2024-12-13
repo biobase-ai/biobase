@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient } from "@supabase/biobase-js";
 import { Router } from "itty-router";
 import { json, status, withContent } from "itty-router-extras";
 import { readFrom, writeTo } from "./utils/cache";
@@ -19,7 +19,7 @@ router.get("/write-kv", async (request, { ARTICLES }) => {
 
 router.get(
   "/articles",
-  async (request, { BIOBASE_URL, BIOBASE_ANON_KEY, ARTICLES }) => {
+  async (request, { SUPABASE_URL, SUPABASE_ANON_KEY, ARTICLES }) => {
     const cachedArticles = await readFrom(ARTICLES, "/articles");
 
     if (cachedArticles) {
@@ -29,7 +29,7 @@ router.get(
 
     console.log("fetching fresh articles");
 
-    const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY);
+    const biobase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     const { data } = await biobase.from("articles").select("*");
     await writeTo(ARTICLES, "/articles", data);
@@ -39,7 +39,7 @@ router.get(
 
 router.get(
   "/articles/:id",
-  async (request, { BIOBASE_URL, BIOBASE_ANON_KEY, ARTICLES }) => {
+  async (request, { SUPABASE_URL, SUPABASE_ANON_KEY, ARTICLES }) => {
     const { id } = request.params;
     const cachedArticle = await readFrom(ARTICLES, `/articles/${id}`);
 
@@ -50,7 +50,7 @@ router.get(
 
     console.log("fetching fresh article");
 
-    const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY);
+    const biobase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     const { data } = await biobase
       .from("articles")
@@ -67,10 +67,10 @@ router.get(
 router.post(
   "/revalidate",
   withContent,
-  async (request, { BIOBASE_URL, BIOBASE_ANON_KEY, ARTICLES }, context) => {
+  async (request, { SUPABASE_URL, SUPABASE_ANON_KEY, ARTICLES }, context) => {
     const updateCache = async () => {
       const { type, record, old_record } = request.content;
-      const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY);
+      const biobase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
       if (type === "INSERT" || type === "UPDATE") {
         await writeTo(ARTICLES, `/articles/${record.id}`, record);

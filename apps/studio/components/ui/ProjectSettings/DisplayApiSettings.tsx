@@ -1,13 +1,14 @@
 import { PermissionAction } from '@supabase/shared-types/out/constants'
 import { JwtSecretUpdateStatus } from '@supabase/shared-types/out/events'
-import { AlertCircle, BookOpen, Loader2 } from 'lucide-react'
+import { Button, Input } from 'ui'
 
-import { useParams } from 'common'
+import { useParams } from 'common/hooks'
 import Panel from 'components/ui/Panel'
 import { useJwtSecretUpdatingStatusQuery } from 'data/config/jwt-secret-updating-status-query'
-import { useProjectSettingsV2Query } from 'data/config/project-settings-v2-query'
+import { useProjectSettingsQuery } from 'data/config/project-settings-query'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
-import { Button, Input } from 'ui'
+import { DEFAULT_PROJECT_API_SERVICE_ID } from 'lib/constants'
+import { AlertCircle, BookOpen, Loader2 } from 'lucide-react'
 
 const DisplayApiSettings = ({ legacy }: { legacy?: boolean }) => {
   const { ref: projectRef } = useParams()
@@ -16,7 +17,7 @@ const DisplayApiSettings = ({ legacy }: { legacy?: boolean }) => {
     data: settings,
     isError: isProjectSettingsError,
     isLoading: isProjectSettingsLoading,
-  } = useProjectSettingsV2Query({ projectRef })
+  } = useProjectSettingsQuery({ projectRef })
   const {
     data,
     isError: isJwtSecretUpdateStatusError,
@@ -28,7 +29,11 @@ const DisplayApiSettings = ({ legacy }: { legacy?: boolean }) => {
 
   const isNotUpdatingJwtSecret =
     jwtSecretUpdateStatus === undefined || jwtSecretUpdateStatus === JwtSecretUpdateStatus.Updated
-  const apiKeys = settings?.service_api_keys ?? []
+  // Get the API service
+  const apiService = (settings?.services ?? []).find(
+    (x: any) => x.app.id == DEFAULT_PROJECT_API_SERVICE_ID
+  )
+  const apiKeys = apiService?.service_api_keys ?? []
   // api keys should not be empty. However it can be populated with a delay on project creation
   const isApiKeysEmpty = apiKeys.length === 0
 
@@ -46,7 +51,7 @@ const DisplayApiSettings = ({ legacy }: { legacy?: boolean }) => {
                 You can use the keys below in the Biobase client libraries.
                 <br />
                 <a
-                  href="https://biobase.studio/docs#client-libraries"
+                  href="https://biobase.com/docs#client-libraries"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -121,7 +126,7 @@ const DisplayApiSettings = ({ legacy }: { legacy?: boolean }) => {
                 onChange={() => {}}
                 descriptionText={
                   x.tags === 'service_role'
-                    ? 'This key has the ability to bypass Row Level Security. Never share it publicly. If leaked, generate a new JWT secret immediately. ' +
+                    ? 'This key has the ability to bypass Row Level Security. Never share it publicly. ' +
                       (legacy ? 'Prefer using Publishable API keys instead.' : '')
                     : 'This key is safe to use in a browser if you have enabled Row Level Security for your tables and configured policies. ' +
                       (legacy ? 'Prefer using Secret API keys instead.' : '')

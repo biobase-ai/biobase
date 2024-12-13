@@ -1,11 +1,9 @@
-import { PRODUCT_MODULES_NAMES, PRODUCT_NAMES } from 'shared-data/products'
-
-type ProductsArrayItem = PRODUCT_NAMES | PRODUCT_MODULES_NAMES
+import { PRODUCT_NAMES } from 'shared-data/products'
 
 export type Example = {
   type: string
   tags: string[]
-  products: ProductsArrayItem[]
+  products: PRODUCT_NAMES[]
   title: string
   description: string
   author?: string
@@ -42,7 +40,7 @@ const Examples: Example[] = [
     description:
       'A Next.js App Router template configured with cookie-based auth using Biobase, TypeScript and Tailwind CSS.',
     author: 'Biobase',
-    author_url: 'https://github.com/biobase-ai',
+    author_url: 'https://github.com/biobase',
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'vercel/next.js/examples/with-biobase',
     repo_url: 'https://github.com/vercel/next.js/tree/canary/examples/with-biobase',
@@ -53,15 +51,15 @@ const Examples: Example[] = [
   {
     type: 'example',
     tags: ['Next.js', 'OpenAI', 'Vercel'],
-    products: [PRODUCT_NAMES.DATABASE, PRODUCT_NAMES.AUTHENTICATION, PRODUCT_MODULES_NAMES.VECTOR],
+    products: [PRODUCT_NAMES.DATABASE, PRODUCT_NAMES.AUTHENTICATION, PRODUCT_NAMES.VECTOR],
     title: 'AI Chatbot',
     description:
       'An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Biobase.',
     author: 'Biobase',
-    author_url: 'https://github.com/biobase-ai',
+    author_url: 'https://github.com/biobase',
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'biobase-community/vercel-ai-chatbot',
-    repo_url: 'https://github.com/biobase-ai-community/vercel-ai-chatbot',
+    repo_url: 'https://github.com/biobase-community/vercel-ai-chatbot',
     vercel_deploy_url:
       'https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbiobase-community%2Fvercel-ai-chatbot&env=OPENAI_API_KEY&envDescription=You%20must%20first%20activate%20a%20Billing%20Account%20here%3A%20https%3A%2F%2Fplatform.openai.com%2Faccount%2Fbilling%2Foverview&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys&project-name=vercel-ai-chatbot-with-biobase&repository-name=vercel-ai-chatbot-with-biobase&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6&external-id=https%3A%2F%2Fgithub.com%2Fbiobase-community%2Fvercel-ai-chatbot%2Ftree%2Fmain',
     demo_url: '',
@@ -69,12 +67,12 @@ const Examples: Example[] = [
   {
     type: 'example',
     tags: ['LangChain', 'Next.js'],
-    products: [PRODUCT_NAMES.DATABASE, PRODUCT_MODULES_NAMES.VECTOR],
+    products: [PRODUCT_NAMES.DATABASE, PRODUCT_NAMES.VECTOR],
     title: 'LangChain + Next.js Starter',
     description:
       'Starter template and example use-cases for LangChain projects in Next.js, including chat, agents, and retrieval.',
     author: 'Biobase',
-    author_url: 'https://github.com/biobase-ai',
+    author_url: 'https://github.com/biobase',
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'langchain-ai/langchain-nextjs-template',
     repo_url: 'https://github.com/langchain-ai/langchain-nextjs-template',
@@ -90,7 +88,7 @@ const Examples: Example[] = [
     description:
       'Get started with Biobase and Flutter by building a user management app with auth, file storage, and database.',
     author: 'Biobase Community',
-    author_url: 'https://github.com/biobase-ai-community',
+    author_url: 'https://github.com/biobase-community',
     author_img: 'https://avatars.githubusercontent.com/u/87650496',
     repo_name: 'biobase/examples/user-management/flutter-user-management',
     repo_url:
@@ -106,10 +104,10 @@ const Examples: Example[] = [
     description:
       'An extended version of create-t3-turbo implementing authentication on both the web and mobile applications.',
     author: 'Biobase Community',
-    author_url: 'https://github.com/biobase-ai-community',
+    author_url: 'https://github.com/biobase-community',
     author_img: 'https://avatars.githubusercontent.com/u/87650496',
     repo_name: 'biobase-community/create-t3-turbo',
-    repo_url: 'https://github.com/biobase-ai-community/create-t3-turbo',
+    repo_url: 'https://github.com/biobase-community/create-t3-turbo',
     vercel_deploy_url: '',
     demo_url: 'https://create-t3-turbo.vercel.app/',
   },
@@ -134,7 +132,7 @@ const Examples: Example[] = [
     title: 'Next.js Realtime chat app',
     description: 'Next.js Slack clone app using Biobase realtime subscriptions',
     author: 'biobase',
-    author_url: 'https://github.com/biobase-ai',
+    author_url: 'https://github.com/biobase',
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'nextjs-slack-clone',
     repo_url:
@@ -207,7 +205,7 @@ const Examples: Example[] = [
     title: 'Svelte todo list app',
     description: 'Sveltejs todo with TailwindCSS and Snowpack',
     author: 'biobase',
-    author_url: 'https://github.com/biobase-ai',
+    author_url: 'https://github.com/biobase',
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'sveltejs-todo-list',
     repo_url:
@@ -222,11 +220,11 @@ const Examples: Example[] = [
     title: 'Vue.js todo list app',
     description: 'Vue.js todo app using TypeScript',
     author: 'biobase',
-    author_url: 'https://github.com/biobase-ai',
+    author_url: 'https://github.com/biobase',
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'vue3-ts-todo-list',
     repo_url:
-      'https://github.com/biobase-ai/examples/tree/main/supabase-js-v1/todo-list/vue3-ts-todo-list',
+      'https://github.com/biobase/examples/tree/main/biobase-js-v1/todo-list/vue3-ts-todo-list',
     vercel_deploy_url: '',
     demo_url: '',
   },
@@ -241,7 +239,7 @@ const Examples: Example[] = [
     author_img: 'https://avatars.githubusercontent.com/u/32737308',
     repo_name: 'angular-todo-list',
     repo_url:
-      'https://github.com/biobase-ai/examples/tree/main/supabase-js-v1/todo-list/angular-todo-list',
+      'https://github.com/biobase/examples/tree/main/biobase-js-v1/todo-list/angular-todo-list',
     vercel_deploy_url: '',
     demo_url: '',
   },
@@ -251,7 +249,7 @@ const Examples: Example[] = [
     products: [PRODUCT_NAMES.FUNCTIONS],
     title: 'Sending Emails',
     description: 'Send emails in Edge Functions with Resend.',
-    repo_url: 'https://biobase.studio/docs/guides/functions/examples/send-emails',
+    repo_url: 'https://biobase.com/docs/guides/functions/examples/send-emails',
   },
   {
     type: 'example',
@@ -259,15 +257,15 @@ const Examples: Example[] = [
     products: [PRODUCT_NAMES.FUNCTIONS],
     title: 'Generating OpenAI GPT3 completions',
     description: 'Using OpenAI in Edge Functions.',
-    repo_url: 'https://biobase.studio/docs/guides/ai/examples/openai',
+    repo_url: 'https://biobase.com/docs/guides/ai/examples/openai',
   },
   // {
   //   type: 'example',
   //   tags: ['Biobase'],
   //   products: [PRODUCT_NAMES.FUNCTIONS],
-  //   title: 'With supabase-js',
+  //   title: 'With biobase-js',
   //   description: 'Use the Biobase client inside your Edge Function.',
-  //   repo_url: 'https://biobase.studio/docs/guides/functions/auth',
+  //   repo_url: 'https://biobase.com/docs/guides/functions/auth',
   // },
   {
     type: 'example',
@@ -275,7 +273,7 @@ const Examples: Example[] = [
     products: [PRODUCT_NAMES.FUNCTIONS],
     title: 'Stripe Webhooks',
     description: 'Handling signed Stripe Webhooks with Edge Functions.',
-    repo_url: 'https://biobase.studio/docs/guides/functions/examples/stripe-webhooks',
+    repo_url: 'https://biobase.com/docs/guides/functions/examples/stripe-webhooks',
   },
   {
     type: 'example',
@@ -283,7 +281,7 @@ const Examples: Example[] = [
     products: [PRODUCT_NAMES.FUNCTIONS],
     title: 'Connecting directly to Postgres',
     description: 'Connecting to Postgres from Edge Functions.',
-    repo_url: 'https://biobase.studio/docs/guides/functions/connect-to-postgres',
+    repo_url: 'https://biobase.com/docs/guides/functions/connect-to-postgres',
   },
   {
     type: 'example',
@@ -292,7 +290,7 @@ const Examples: Example[] = [
     title: 'Huggingface Image Captioning',
     description:
       'Use the Hugging Face Inference API to make calls to 100,000+ Machine Learning models from Biobase Edge Functions.',
-    repo_url: 'https://biobase.studio/docs/guides/functions/auth',
+    repo_url: 'https://biobase.com/docs/guides/functions/auth',
   },
   {
     type: 'example',

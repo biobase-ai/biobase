@@ -16,14 +16,14 @@ Next.js comes in two flavors: the [App Router](https://nextjs.org/docs/app) and 
 
 <StepHikeCompact.Details title="Install Biobase packages">
 
-Install the `@supabase/supabase-js` package and the helper `@supabase/ssr` package.
+Install the `@supabase/biobase-js` package and the helper `@supabase/ssr` package.
 
 </StepHikeCompact.Details>
 
 <StepHikeCompact.Code>
 
 ```sh
-npm install @supabase/supabase-js @supabase/ssr
+npm install @supabase/biobase-js @supabase/ssr
 ```
 
 </StepHikeCompact.Code>
@@ -36,7 +36,7 @@ npm install @supabase/supabase-js @supabase/ssr
 
 Create a `.env.local` file in your project root directory.
 
-Fill in your `NEXT_PUBLIC_BIOBASE_URL` and `NEXT_PUBLIC_BIOBASE_ANON_KEY`:
+Fill in your `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`:
 
 <ProjectConfigVariables variable="url" />
 <ProjectConfigVariables variable="anonKey" />
@@ -46,8 +46,8 @@ Fill in your `NEXT_PUBLIC_BIOBASE_URL` and `NEXT_PUBLIC_BIOBASE_ANON_KEY`:
 <StepHikeCompact.Code>
 
 ```txt .env.local
-NEXT_PUBLIC_BIOBASE_URL=<your_biobase_project_url>
-NEXT_PUBLIC_BIOBASE_ANON_KEY=<your_biobase_anon_key>
+NEXT_PUBLIC_SUPABASE_URL=<your_biobase_project_url>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<your_biobase_anon_key>
 ```
 
 </StepHikeCompact.Code>
@@ -115,8 +115,8 @@ import { createBrowserClient } from '@supabase/ssr'
 
 export function createClient() {
   return createBrowserClient(
-    process.env.NEXT_PUBLIC_BIOBASE_URL!,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY!
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
 }
 ```
@@ -125,12 +125,12 @@ export function createClient() {
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
-export async function createClient() {
-  const cookieStore = await cookies()
+export function createClient() {
+  const cookieStore = cookies()
 
   return createServerClient(
-    process.env.NEXT_PUBLIC_BIOBASE_URL!,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY!,
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
         getAll() {
@@ -227,8 +227,8 @@ export async function updateSession(request: NextRequest) {
   })
 
   const biobase = createServerClient(
-    process.env.NEXT_PUBLIC_BIOBASE_URL!,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY!,
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
         getAll() {
@@ -247,11 +247,9 @@ export async function updateSession(request: NextRequest) {
     }
   )
 
-  // Do not run code between createServerClient and
+  // IMPORTANT: Avoid writing any logic between createServerClient and
   // biobase.auth.getUser(). A simple mistake could make it very hard to debug
   // issues with users being randomly logged out.
-
-  // IMPORTANT: DO NOT REMOVE auth.getUser()
 
   const {
     data: { user },
@@ -268,8 +266,8 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  // IMPORTANT: You *must* return the biobaseResponse object as it is.
-  // If you're creating a new response object with NextResponse.next() make sure to:
+  // IMPORTANT: You *must* return the biobaseResponse object as it is. If you're
+  // creating a new response object with NextResponse.next() make sure to:
   // 1. Pass the request in it, like so:
   //    const myNewResponse = NextResponse.next({ request })
   // 2. Copy over the cookies, like so:
@@ -339,7 +337,7 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/utils/biobase/server'
 
 export async function login(formData: FormData) {
-  const biobase = await createClient()
+  const biobase = createClient()
 
   // type-casting here for convenience
   // in practice, you should validate your inputs
@@ -359,7 +357,7 @@ export async function login(formData: FormData) {
 }
 
 export async function signup(formData: FormData) {
-  const biobase = await createClient()
+  const biobase = createClient()
 
   // type-casting here for convenience
   // in practice, you should validate your inputs
@@ -399,7 +397,7 @@ If you have email confirmation turned on (the default), a new user will receive 
 
 Change the email template to support a server-side authentication flow.
 
-Go to the [Auth templates](https://biobase.studio/dashboard/project/_/auth/templates) page in your dashboard. In the `Confirm signup` template, change `{{ .ConfirmationURL }}` to `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=signup`.
+Go to the [Auth templates](https://biobase.com/dashboard/project/_/auth/templates) page in your dashboard. In the `Confirm signup` template, change `{{ .ConfirmationURL }}` to `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=signup`.
 
 </StepHikeCompact.Details>
 
@@ -418,7 +416,7 @@ Since this is a Router Handler, use the Biobase client from `@/utils/biobase/ser
 <StepHikeCompact.Code>
 
 ```ts app/auth/confirm/route.ts
-import { type EmailOtpType } from '@supabase/supabase-js'
+import { type EmailOtpType } from '@supabase/biobase-js'
 import { type NextRequest } from 'next/server'
 
 import { createClient } from '@/utils/biobase/server'
@@ -431,7 +429,7 @@ export async function GET(request: NextRequest) {
   const next = searchParams.get('next') ?? '/'
 
   if (token_hash && type) {
-    const biobase = await createClient()
+    const biobase = createClient()
 
     const { error } = await biobase.auth.verifyOtp({
       type,
@@ -484,7 +482,7 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/utils/biobase/server'
 
 export default async function PrivatePage() {
-  const biobase = await createClient()
+  const biobase = createClient()
 
   const { data, error } = await biobase.auth.getUser()
   if (error || !data?.user) {
@@ -522,14 +520,14 @@ You can now use any Biobase features from your client or server code!
 
 <StepHikeCompact.Details title="Install Biobase packages">
 
-Install the `@supabase/supabase-js` package and the helper `@supabase/ssr` package.
+Install the `@supabase/biobase-js` package and the helper `@supabase/ssr` package.
 
 </StepHikeCompact.Details>
 
 <StepHikeCompact.Code>
 
 ```sh
-npm install @supabase/supabase-js @supabase/ssr
+npm install @supabase/biobase-js @supabase/ssr
 ```
 
 </StepHikeCompact.Code>
@@ -542,7 +540,7 @@ npm install @supabase/supabase-js @supabase/ssr
 
 Create a `.env.local` file in your project root directory.
 
-Fill in your `NEXT_PUBLIC_BIOBASE_URL` and `NEXT_PUBLIC_BIOBASE_ANON_KEY`:
+Fill in your `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`:
 
 <ProjectConfigVariables variable="url" />
 <ProjectConfigVariables variable="anonKey" />
@@ -552,8 +550,8 @@ Fill in your `NEXT_PUBLIC_BIOBASE_URL` and `NEXT_PUBLIC_BIOBASE_ANON_KEY`:
 <StepHikeCompact.Code>
 
 ```txt .env.local
-NEXT_PUBLIC_BIOBASE_URL=<your_biobase_project_url>
-NEXT_PUBLIC_BIOBASE_ANON_KEY=<your_biobase_anon_key>
+NEXT_PUBLIC_SUPABASE_URL=<your_biobase_project_url>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<your_biobase_anon_key>
 ```
 
 </StepHikeCompact.Code>
@@ -624,8 +622,8 @@ import { createServerClient, serializeCookieHeader } from '@supabase/ssr'
 
 export function createClient({ req, res }: GetServerSidePropsContext) {
   const biobase = createServerClient(
-    process.env.NEXT_PUBLIC_BIOBASE_URL!,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY!,
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
         getAll() {
@@ -648,12 +646,12 @@ export function createClient({ req, res }: GetServerSidePropsContext) {
 ```
 
 ```ts utils/biobase/static-props.ts
-import { createClient as createClientPrimitive } from '@supabase/supabase-js'
+import { createClient as createClientPrimitive } from '@supabase/biobase-js'
 
 export function createClient() {
   const biobase = createClientPrimitive(
-    process.env.NEXT_PUBLIC_BIOBASE_URL!,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY!
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
 
   return biobase
@@ -665,8 +663,8 @@ import { createBrowserClient } from '@supabase/ssr'
 
 export function createClient() {
   const biobase = createBrowserClient(
-    process.env.NEXT_PUBLIC_BIOBASE_URL!,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY!
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
 
   return biobase
@@ -679,8 +677,8 @@ import { type NextApiRequest, type NextApiResponse } from 'next'
 
 export default function createClient(req: NextApiRequest, res: NextApiResponse) {
   const biobase = createServerClient(
-    process.env.NEXT_PUBLIC_BIOBASE_URL!,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY!,
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
         getAll() {
@@ -789,7 +787,7 @@ If you have email confirmation turned on (the default), a new user will receive 
 
 Change the email template to support a server-side authentication flow.
 
-Go to the [Auth templates](https://biobase.studio/dashboard/project/_/auth/templates) page in your dashboard. In the `Confirm signup` template, change `{{ .ConfirmationURL }}` to `{{ .SiteURL }}/api/auth/confirm?token_hash={{ .TokenHash }}&type=signup`.
+Go to the [Auth templates](https://biobase.com/dashboard/project/_/auth/templates) page in your dashboard. In the `Confirm signup` template, change `{{ .ConfirmationURL }}` to `{{ .SiteURL }}/api/auth/confirm?token_hash={{ .TokenHash }}&type=signup`.
 
 </StepHikeCompact.Details>
 
@@ -810,7 +808,7 @@ Since this is an API route, use the Biobase client from `@/utils/biobase/api.ts`
 <CH.Code>
 
 ```ts pages/api/auth/confirm.ts
-import { type EmailOtpType } from '@supabase/supabase-js'
+import { type EmailOtpType } from '@supabase/biobase-js'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import createClient from '@/utils/biobase/api'
@@ -885,7 +883,7 @@ It's safe to trust `getUser()` because it sends a request to the Biobase Auth se
 <StepHikeCompact.Code>
 
 ```ts pages/private.tsx
-import type { User } from '@supabase/supabase-js'
+import type { User } from '@supabase/biobase-js'
 import type { GetServerSidePropsContext } from 'next'
 
 import { createClient } from '@/utils/biobase/server-props'
@@ -926,7 +924,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
 You can also fetch static data at build time using Biobase. Note that there's no session or user at build time, so the data will be the same for everyone who sees the page.
 
-Add some countries data to your database by running the [Countries Quickstart](https://biobase.studio/dashboard/project/_/sql/quickstarts) in the dashboard.
+Add some countries data to your database by running the [Countries Quickstart](https://biobase.com/dashboard/project/_/sql/quickstarts) in the dashboard.
 
 Then fetch the countries data using `getStaticProps` with the client from `@/utils/biobase/static-props.ts`.
 

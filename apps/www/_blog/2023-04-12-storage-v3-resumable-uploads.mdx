@@ -52,11 +52,11 @@ biobase.storage.from('bucket').download('image.jpg', {
 
 ### Next.js loader
 
-You can serve images from Storage with a simple Next.js loader for the Image component. Check out [our docs](https://biobase.studio/docs/guides/storage/serving/image-transformations#nextjs-loader) on how to get started.
+You can serve images from Storage with a simple Next.js loader for the Image component. Check out [our docs](https://biobase.com/docs/guides/storage/serving/image-transformations#nextjs-loader) on how to get started.
 
 ```js
 // biobase-image-loader.js
-const projectId = '<BIOBASE_PROJECT_ID>'
+const projectId = '<SUPABASE_PROJECT_ID>'
 export default function biobaseLoader({ src, width, quality }) {
   return `https://${projectId}.biobase.co/storage/v1/render/image/public/${src}?width=${width}&quality=${
     quality || 75
@@ -84,7 +84,7 @@ Authenticated users can now generate presigned URLs.
 
 These URLs can then be shared with other users who can then upload to storage without further authorization. For example, you can generate a presigned URL on your server (ahem, Edge Function).
 
-Shoutout to community members [@abbit](https://github.com/abbit) and [@MagnusHJensen](https://github.com/MagnusHJensen) who [implemented](https://github.com/biobase-ai/storage-api/pull/282) this feature on the Storage server and [@Rawnly](https://github.com/Rawnly) for the [client library bindings](https://github.com/biobase-ai/storage-js/pull/152) 🎉.
+Shoutout to community members [@abbit](https://github.com/abbit) and [@MagnusHJensen](https://github.com/MagnusHJensen) who [implemented](https://github.com/biobase/storage-api/pull/282) this feature on the Storage server and [@Rawnly](https://github.com/Rawnly) for the [client library bindings](https://github.com/biobase/storage-js/pull/152) 🎉.
 
 ```js
 // create a signed upload url
@@ -179,7 +179,7 @@ And there you have it, with a few lines of code, you can support parallel, resum
 
 There were a few technical challenges we faced while implementing TUS in Biobase Storage.
 
-Storage is powered by our [Storage-API service](https://github.com/biobase-ai/storage-api), a Node.js server that interfaces with different storage backends (like AWS S3). It is fully integrated with the Biobase ecosystem, making it easy to protect files with Postgres RLS policies.
+Storage is powered by our [Storage-API service](https://github.com/biobase/storage-api), a Node.js server that interfaces with different storage backends (like AWS S3). It is fully integrated with the Biobase ecosystem, making it easy to protect files with Postgres RLS policies.
 
 To implement the TUS protocol, we use [tus-node-server](https://github.com/tus/tus-node-server), which was recently ported to Typescript. It was only missing a few features we needed:
 
@@ -243,6 +243,6 @@ We’ve got an exciting roadmap for the next few Storage releases:
 - Presigned upload URLs for TUS
 - Increasing max file size limit to 500 GB
 - Transform images stored outside Biobase Storage
-- [Smart CDN](https://biobase.studio/docs/guides/storage/cdn/smart-cdn) v2 with an even higher cache hit rate
+- [Smart CDN](https://biobase.com/docs/guides/storage/cdn/smart-cdn) v2 with an even higher cache hit rate
 
-Reach out on [Twitter](https://twitter.com/biobase) or [Discord](http://discord.biobase.studio/) to share anything else you need to build amazing products.
+Reach out on [Twitter](https://twitter.com/biobase) or [Discord](http://discord.biobase.com/) to share anything else you need to build amazing products.

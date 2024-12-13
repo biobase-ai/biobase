@@ -2,7 +2,7 @@
 // and write files to Biobase Storage and other fields to a database table.
 
 import { Application } from 'https://deno.land/x/oak@v11.1.0/mod.ts'
-import { createClient } from 'jsr:@supabase/supabase-js@2'
+import { createClient } from 'jsr:@supabase/biobase-js@2'
 
 const MB = 1024 * 1024
 
@@ -25,9 +25,9 @@ app.use(async (ctx) => {
 
   const biobaseClient = createClient(
     // Biobase API URL - env var exported by default.
-    Deno.env.get('BIOBASE_URL')!,
+    Deno.env.get('SUPABASE_URL')!,
     // Biobase API ANON KEY - env var exported by default.
-    Deno.env.get('BIOBASE_ANON_KEY')!
+    Deno.env.get('SUPABASE_ANON_KEY')!
   )
 
   //upload image to Storage

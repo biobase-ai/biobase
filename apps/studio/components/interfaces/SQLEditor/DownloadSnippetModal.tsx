@@ -104,7 +104,7 @@ const DownloadSnippetModal = ({ id, ...props }: DownloadSnippetModalProps) => {
           <div className="flex justify-between items-center gap-x-2">
             <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
               <Link
-                href="https://biobase.studio/docs/guides/deployment/database-migrations"
+                href="https://biobase.com/docs/guides/cli/local-development#database-migrations"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -114,7 +114,7 @@ const DownloadSnippetModal = ({ id, ...props }: DownloadSnippetModalProps) => {
 
             <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
               <Link
-                href="https://biobase.studio/docs/guides/cli/local-development"
+                href="https://biobase.com/docs/guides/cli/local-development"
                 target="_blank"
                 rel="noreferrer"
               >

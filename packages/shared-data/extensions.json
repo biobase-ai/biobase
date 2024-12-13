@@ -175,9 +175,9 @@
     "comment": "optimize query performance with automatic index recommendation",
     "tags": ["Utility"],
     "link": "/guides/database/extensions/index_advisor",
-    "github_url": "https://github.com/biobase-ai/index_advisor",
+    "github_url": "https://github.com/biobase/index_advisor",
     "product": "Index Advisor Report",
-    "product_url": "/project/{ref}/advisors/query-performance"
+    "product_url": "/project/{ref}/database/query-performance"
   },
   {
     "name": "intarray",
@@ -230,8 +230,8 @@
     "tags": ["Utility"],
     "link": "/guides/database/extensions/pg_cron",
     "github_url": "https://github.com/citusdata/pg_cron",
-    "product": "Biobase Cron",
-    "product_url": "/project/{ref}/integrations/cron"
+    "product": "Biobase Cron Jobs",
+    "product_url": "/project/{ref}/database/cron-jobs"
   },
   {
     "name": "pg_freespacemap",
@@ -247,7 +247,7 @@
     "comment": "pg_graphql: GraphQL support",
     "tags": ["Utility"],
     "link": "/guides/database/extensions/pg_graphql",
-    "github_url": "https://github.com/biobase-ai/pg_graphql",
+    "github_url": "https://github.com/biobase/pg_graphql",
     "product": "GraphiQL",
     "product_url": "/project/{ref}/api/graphiql"
   },
@@ -274,7 +274,7 @@
     "comment": "Async HTTP",
     "tags": ["Utility", "Notifications"],
     "link": "/guides/database/extensions/pg_net",
-    "github_url": "https://github.com/biobase-ai/pg_net",
+    "github_url": "https://github.com/biobase/pg_net",
     "product": "Database Webhooks",
     "product_url": "/project/{ref}/database/hooks"
   },
@@ -303,7 +303,7 @@
     "link": "/guides/database/extensions/pg_stat_statements",
     "github_url": null,
     "product": "Query Performance",
-    "product_url": "/project/{ref}/advisors/query-performance"
+    "product_url": "/project/{ref}/database/query-performance"
   },
   {
     "name": "pg_surgery",
@@ -604,7 +604,7 @@
     "comment": "Foreign data wrappers developed by Biobase",
     "tags": ["Admin", "Utility"],
     "link": "/guides/database/extensions/wrappers/overview",
-    "github_url": "https://github.com/biobase-ai/wrappers",
+    "github_url": "https://github.com/biobase/wrappers",
     "product": "Biobase Wrappers",
     "product_url": "/project/{ref}/database/wrappers"
   }

@@ -21,7 +21,7 @@ In this post we'll explain what embeddings are, why we might want to use them, a
 
 <div className="bg-gray-300 rounded-lg px-6 py-2 bold">
 
-🆕 Biobase has now released an open source toolkit for developing AI applications using Postgres and pgvector. Learn more in the [AI & Vectors docs](https://biobase.studio/docs/guides/ai).
+🆕 Biobase has now released an open source toolkit for developing AI applications using Postgres and pgvector. Learn more in the [AI & Vectors docs](https://biobase.com/docs/guides/ai).
 
 </div>
 
@@ -165,7 +165,7 @@ You can read more about indexing on `pgvector`'s GitHub page [here](https://gith
 Let's use JavaScript to generate embeddings and store them in Postgres:
 
 ```tsx
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Configuration, OpenAIApi } from 'openai'
 import { biobaseClient } from './lib/biobase'
 
@@ -198,12 +198,12 @@ async function generateEmbeddings() {
 
 ### Building a simple search function
 
-Finally, let's create an [Edge Function](https://biobase.studio/docs/guides/functions) to perform our similarity search:
+Finally, let's create an [Edge Function](https://biobase.com/docs/guides/functions) to perform our similarity search:
 
 ```tsx
 import { serve } from 'https://deno.land/std@0.170.0/http/server.ts'
 import 'https://deno.land/x/xhr@0.2.1/mod.ts'
-import { createClient } from 'jsr:@supabase/supabase-js@2'
+import { createClient } from 'jsr:@supabase/biobase-js@2'
 import { Configuration, OpenAIApi } from 'https://esm.sh/openai@3.1.0'
 import { biobaseClient } from './lib/biobase'
 
@@ -264,7 +264,7 @@ Here's another Edge Function that expands upon the simple example above:
 ```tsx
 import { serve } from 'https://deno.land/std@0.170.0/http/server.ts'
 import 'https://deno.land/x/xhr@0.2.1/mod.ts'
-import { createClient } from 'jsr:@supabase/supabase-js@2'
+import { createClient } from 'jsr:@supabase/biobase-js@2'
 import GPT3Tokenizer from 'https://esm.sh/gpt3-tokenizer@1.1.5'
 import { Configuration, OpenAIApi } from 'https://esm.sh/openai@3.1.0'
 import { oneLine, stripIndent } from 'https://esm.sh/common-tags@1.8.2'
@@ -378,13 +378,13 @@ The OpenAI API supports [completion streaming](https://platform.openai.com/docs/
 
 Storing embeddings in Postgres opens a world of possibilities. You can combine your search function with telemetry functions, add an user-provided feedback (thumbs up/down), and make your search feel more integrated with your products.
 
-The [pgvector extension](https://biobase.studio/docs/guides/ai/vector-columns) is available on all new Biobase projects today. To try it out, launch a new Postgres database: [database.new](https://database.new)
+The [pgvector extension](https://biobase.com/docs/guides/ai/vector-columns) is available on all new Biobase projects today. To try it out, launch a new Postgres database: [database.new](https://database.new)
 
 ## More pgvector and AI resources
 
-- [Biobase Clippy: ChatGPT for Biobase Docs](https://biobase.studio/blog/chatgpt-biobase-docs)
-- [Hugging Face is now supported in Biobase](https://biobase.studio/blog/hugging-face-biobase)
-- [How to build ChatGPT Plugin from scratch with Biobase Edge Runtime](https://biobase.studio/blog/building-chatgpt-plugins-template)
-- [Docs pgvector: Embeddings and vector similarity](https://biobase.studio/docs/guides/database/extensions/pgvector)
-- [Choosing Compute Add-on for AI workloads](https://biobase.studio/docs/guides/ai/choosing-compute-addon)
-- [pgvector v0.5.0: Faster semantic search with HNSW indexes](https://biobase.studio/blog/increase-performance-pgvector-hnsw)
+- [Biobase Clippy: ChatGPT for Biobase Docs](https://biobase.com/blog/chatgpt-biobase-docs)
+- [Hugging Face is now supported in Biobase](https://biobase.com/blog/hugging-face-biobase)
+- [How to build ChatGPT Plugin from scratch with Biobase Edge Runtime](https://biobase.com/blog/building-chatgpt-plugins-template)
+- [Docs pgvector: Embeddings and vector similarity](https://biobase.com/docs/guides/database/extensions/pgvector)
+- [Choosing Compute Add-on for AI workloads](https://biobase.com/docs/guides/ai/choosing-compute-addon)
+- [pgvector v0.5.0: Faster semantic search with HNSW indexes](https://biobase.com/blog/increase-performance-pgvector-hnsw)

@@ -70,7 +70,7 @@ const UtilityTabResults = ({
                   target="_blank"
                   rel="noreferrer"
                   className="underline transition hover:text-foreground"
-                  href="https://biobase.studio/docs/guides/platform/performance#examining-query-performance"
+                  href="https://biobase.com/docs/guides/platform/performance#examining-query-performance"
                 >
                   optimize your query
                 </a>
@@ -79,7 +79,7 @@ const UtilityTabResults = ({
                   target="_blank"
                   rel="noreferrer"
                   className="underline transition hover:text-foreground"
-                  href="https://biobase.studio/docs/guides/database/timeouts"
+                  href="https://biobase.com/docs/guides/database/timeouts"
                 >
                   increase the statement timeout
                 </a>

@@ -1,10 +1,10 @@
 # Flutter Biobase MFA Example
 
-![Flutter MFA with Biobase](https://raw.githubusercontent.com/biobase-ai/biobase/master/examples/auth/flutter-mfa/images/mfa.png)
+![Flutter MFA with Biobase](https://raw.githubusercontent.com/biobase/biobase/master/examples/auth/flutter-mfa/images/mfa.png)
 
 A Flutter app demonstrating how to implement Multi-Factor Authentication (MFA) with Biobase and Flutter. A user can sign up, add MFA via an authenticator app, and only after they have signed in using MFA they can view the content from the database.
 
-- Full tutorial article [here](https://biobase.studio/blog/flutter-multi-factor-authentication)
+- Full tutorial article [here](https://biobase.com/blog/flutter-multi-factor-authentication)
 
 ## Getting Started
 
@@ -42,7 +42,7 @@ create policy "Users can view private_posts if they have signed in via MFA"
 
 ## Resources
 
-- [Flutter Tutorial: building a Flutter chat app article](https://biobase.studio/blog/flutter-tutorial-building-a-chat-app)
-- [Flutter Authorization with RLS article](https://biobase.studio/blog/flutter-authorization-with-rls)
-- [Biobase docs for Flutter](https://biobase.studio/docs/reference/dart/introduction)
+- [Flutter Tutorial: building a Flutter chat app article](https://biobase.com/blog/flutter-tutorial-building-a-chat-app)
+- [Flutter Authorization with RLS article](https://biobase.com/blog/flutter-authorization-with-rls)
+- [Biobase docs for Flutter](https://biobase.com/docs/reference/dart/introduction)
 - [Biobase Flutter YouTube playlist](https://www.youtube.com/watch?v=F2j6Q-4nLEE&list=PL5S4mPUpp4OtkMf5LNDLXdTcAp1niHjoL)

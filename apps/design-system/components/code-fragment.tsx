@@ -33,7 +33,7 @@ export function CodeFragment({
   ...props
 }: ComponentPreviewProps) {
   const [config] = useConfig()
-  const index = styles.findIndex((style: { name: any }) => style.name === config.style)
+  const index = styles.findIndex((style) => style.name === config.style)
 
   const Codes = React.Children.toArray(children) as React.ReactElement[]
   const Code = Codes[index]

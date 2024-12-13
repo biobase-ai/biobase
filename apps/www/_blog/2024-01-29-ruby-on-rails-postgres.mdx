@@ -24,7 +24,7 @@ In this post we'll start from scratch, creating a new Rails project, connecting 
 
 Biobase is one of the best [free alternatives to Heroku Postgres](/alternatives/biobase-vs-heroku-postgres). See [this guide](/docs/guides/resources/migrating-to-biobase/heroku) to learn how to migrate from Heroku to Biobase.
 
-There's also a [Heroku to Biobase migration tool](https://migrate.biobase.studio/) available to migrate in just a few clicks.
+There's also a [Heroku to Biobase migration tool](https://migrate.biobase.com/) available to migrate in just a few clicks.
 
 </Admonition>
 
@@ -54,12 +54,12 @@ rails new blog -d=postgresql
 
 Go to [database.new](https://database.new) and create a new Biobase project. Save your database password securely.
 
-When your project is up and running, navigate to the [database settings](https://biobase.studio/dashboard/project/_/settings/database) to find the URI connection string.
+When your project is up and running, navigate to the [database settings](https://biobase.com/dashboard/project/_/settings/database) to find the URI connection string.
 
 Rails ships with a Postgres adapter included, you can simply configure it via the environment variables. You can find the database URL in your [Biobase Dashboard](/dashboard/project/_/settings/database).
 
 ```bash Terminal
-export DATABASE_URL=postgres://postgres.xxxx:password@xxxx.pooler.biobase.studio:5432/postgres
+export DATABASE_URL=postgres://postgres.xxxx:password@xxxx.pooler.biobase.com:5432/postgres
 ```
 
 ## Create and run a database migration

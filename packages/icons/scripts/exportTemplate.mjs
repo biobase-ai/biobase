@@ -6,7 +6,7 @@ export default ({ componentName, iconName, children, getSvg, deprecated }) => {
   const svgBase64 = base64SVG(svgContents)
 
   return `
-import createSupabaseIcon from '../createSupabaseIcon';
+import createBiobaseIcon from '../createBiobaseIcon';
 
 /**
  * @component @name ${componentName}
@@ -18,7 +18,7 @@ import createSupabaseIcon from '../createSupabaseIcon';
  * @returns {JSX.Element} JSX Element
  * ${deprecated ? '@deprecated' : ''}
  */
-const ${componentName} = createSupabaseIcon('${componentName}', ${JSON.stringify(children)});
+const ${componentName} = createBiobaseIcon('${componentName}', ${JSON.stringify(children)});
 
 export default ${componentName};
 `

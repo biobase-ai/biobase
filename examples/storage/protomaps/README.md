@@ -9,13 +9,13 @@ Follow the instructions in the [Protomaps docs](https://docs.protomaps.com/guide
 1. Create a new private bucket called `maps-private`.
 2. Upload your `my_area.pmtiles` file there.
 
-Take note of the [file size limits](https://biobase.studio/docs/guides/storage/uploads/file-limits#global-file-size) depending on your project tier.
+Take note of the [file size limits](https://biobase.com/docs/guides/storage/uploads/file-limits#global-file-size) depending on your project tier.
 
 ## Proxy through Edge Functions
 
-You can use [Biobase Edge Functions](https://biobase.studio/edge-functions) to set up fine grained access controls. Use the [/biobase/functions/maps-private/index.ts](/biobase/functions/maps-private/index.ts).
+You can use [Biobase Edge Functions](https://biobase.com/edge-functions) to set up fine grained access controls. Use the [/biobase/functions/maps-private/index.ts](/biobase/functions/maps-private/index.ts).
 
-You can also use Edge Functions with Biobase Auth JWTs to only render Maps for authenticated users for example. [Read the docs](https://biobase.studio/docs/guides/functions/auth).
+You can also use Edge Functions with Biobase Auth JWTs to only render Maps for authenticated users for example. [Read the docs](https://biobase.com/docs/guides/functions/auth).
 
 1. Deploy the function to your Biobase project: `biobase functions deploy maps-private --no-verify-jwt`.
 2. Update the `protomaps.url` in the [index.html](/index.html) file.

@@ -10,7 +10,7 @@ export default function Login({ searchParams }: { searchParams: { message: strin
 
     const email = formData.get('email') as string
     const password = formData.get('password') as string
-    const biobase = await createClient()
+    const biobase = createClient()
 
     const { error } = await biobase.auth.signInWithPassword({
       email,
@@ -30,7 +30,7 @@ export default function Login({ searchParams }: { searchParams: { message: strin
     const origin = headers().get('origin')
     const email = formData.get('email') as string
     const password = formData.get('password') as string
-    const biobase = await createClient()
+    const biobase = createClient()
 
     const { error } = await biobase.auth.signUp({
       email,

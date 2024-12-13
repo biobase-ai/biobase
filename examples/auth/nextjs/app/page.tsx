@@ -6,7 +6,7 @@ import SignUpUserSteps from "@/components/tutorial/SignUpUserSteps";
 import Header from "@/components/Header";
 
 export default async function Index() {
-  const canInitSupabaseClient = () => {
+  const canInitBiobaseClient = () => {
     // This function is just for the interactive tutorial.
     // Feel free to remove it once you have Biobase connected.
     try {
@@ -17,7 +17,7 @@ export default async function Index() {
     }
   };
 
-  const isBiobaseConnected = canInitSupabaseClient();
+  const isBiobaseConnected = canInitBiobaseClient();
 
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center">
@@ -40,7 +40,7 @@ export default async function Index() {
         <p>
           Powered by{" "}
           <a
-            href="https://biobase.studio/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
+            href="https://biobase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
             target="_blank"
             className="font-bold hover:underline"
             rel="noreferrer"

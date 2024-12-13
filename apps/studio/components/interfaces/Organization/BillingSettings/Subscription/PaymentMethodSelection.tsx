@@ -150,7 +150,6 @@ const PaymentMethodSelection = ({
         visible={showAddNewPaymentMethodModal}
         returnUrl={`${getURL()}/org/${selectedOrganization?.slug}/billing?panel=subscriptionPlan`}
         onCancel={() => setShowAddNewPaymentMethodModal(false)}
-        autoMarkAsDefaultPaymentMethod={true}
         onConfirm={async () => {
           setShowAddNewPaymentMethodModal(false)
           toast.success('Successfully added new payment method')

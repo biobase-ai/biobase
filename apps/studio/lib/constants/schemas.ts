@@ -1,9 +1,7 @@
-import { QUEUES_SCHEMA } from 'data/database-queues/database-queues-toggle-postgrest-mutation'
-
 /**
  * A list of system schemas that users should not interact with
  */
-export const PROTECTED_SCHEMAS = [
+export const EXCLUDED_SCHEMAS = [
   'auth',
   'cron',
   'extensions',
@@ -20,9 +18,8 @@ export const PROTECTED_SCHEMAS = [
   'vault',
   'graphql',
   'graphql_public',
-  QUEUES_SCHEMA,
 ]
 
-export const PROTECTED_SCHEMAS_WITHOUT_EXTENSIONS = PROTECTED_SCHEMAS.filter(
+export const EXCLUDED_SCHEMAS_WITHOUT_EXTENSIONS = EXCLUDED_SCHEMAS.filter(
   (x) => x !== 'extensions'
 )

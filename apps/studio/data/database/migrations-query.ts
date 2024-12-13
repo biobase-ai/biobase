@@ -1,6 +1,5 @@
-import { useQuery, UseQueryOptions } from '@tanstack/react-query'
-import { executeSql, ExecuteSqlError } from '../sql/execute-sql-query'
-import { databaseKeys } from './keys'
+import { UseQueryOptions } from '@tanstack/react-query'
+import { ExecuteSqlData, ExecuteSqlError, useExecuteSqlQuery } from '../sql/execute-sql-query'
 
 export type DatabaseMigration = {
   version: string
@@ -8,7 +7,7 @@ export type DatabaseMigration = {
   statements?: string[]
 }
 
-export const getMigrationsSql = () => {
+export const getMigrationsQuery = () => {
   const sql = /* SQL */ `
     select
       *
@@ -24,44 +23,29 @@ export type MigrationsVariables = {
   connectionString?: string
 }
 
-export async function getMigrations(
-  { projectRef, connectionString }: MigrationsVariables,
-  signal?: AbortSignal
-) {
-  const sql = getMigrationsSql()
-
-  try {
-    const { result } = await executeSql(
-      { projectRef, connectionString, sql, queryKey: ['migrations'] },
-      signal
-    )
-
-    return result as DatabaseMigration[]
-  } catch (error) {
-    if (
-      (error as ExecuteSqlError).message.includes(
-        'relation "biobase_migrations.schema_migrations" does not exist'
-      )
-    ) {
-      return []
-    }
-
-    throw error
-  }
-}
-
-export type MigrationsData = Awaited<ReturnType<typeof getMigrations>>
+export type MigrationsData = { result: DatabaseMigration[] }
 export type MigrationsError = ExecuteSqlError
 
-export const useMigrationsQuery = <TData = MigrationsData>(
+export const useMigrationsQuery = <TData extends MigrationsData = MigrationsData>(
   { projectRef, connectionString }: MigrationsVariables,
-  { enabled = true, ...options }: UseQueryOptions<MigrationsData, MigrationsError, TData> = {}
-) =>
-  useQuery<MigrationsData, MigrationsError, TData>(
-    databaseKeys.migrations(projectRef),
-    ({ signal }) => getMigrations({ projectRef, connectionString }, signal),
+  options: UseQueryOptions<ExecuteSqlData, MigrationsError, TData> = {}
+) => {
+  return useExecuteSqlQuery(
     {
-      enabled: enabled && typeof projectRef !== 'undefined',
-      ...options,
-    }
+      projectRef,
+      connectionString,
+      sql: getMigrationsQuery(),
+      queryKey: ['migrations'],
+      handleError: (error) => {
+        if (
+          error.message.includes('relation "biobase_migrations.schema_migrations" does not exist')
+        ) {
+          return { result: [] }
+        } else {
+          throw error
+        }
+      },
+    },
+    options
   )
+}

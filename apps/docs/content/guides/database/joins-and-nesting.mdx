@@ -89,7 +89,7 @@ const { data, error } = await biobase.from('countries').select(`
 
 ### TypeScript types for joins
 
-`supabase-js` always returns a `data` object (for success), and an `error` object (for unsuccessful requests).
+`biobase-js` always returns a `data` object (for success), and an `error` object (for unsuccessful requests).
 
 These helper types provide the result types from any query, including nested types for database joins.
 
@@ -111,7 +111,7 @@ create table cities (
 We can get the nested `CountriesWithCities` type like this:
 
 ```ts
-import { QueryResult, QueryData, QueryError } from '@supabase/supabase-js'
+import { QueryResult, QueryData, QueryError } from '@supabase/biobase-js'
 
 const countriesWithCitiesQuery = biobase.from('countries').select(`
   id,

@@ -71,8 +71,8 @@ const handleGetAll = async (req: NextApiRequest, res: NextApiResponse) => {
       protocol: PROJECT_ENDPOINT_PROTOCOL,
       endpoint: PROJECT_ENDPOINT,
       restUrl: PROJECT_REST_URL,
-      defaultApiKey: process.env.BIOBASE_ANON_KEY,
-      serviceApiKey: process.env.BIOBASE_SERVICE_KEY,
+      defaultApiKey: process.env.SUPABASE_ANON_KEY,
+      serviceApiKey: process.env.SUPABASE_SERVICE_KEY,
       service_api_keys: [
         {
           api_key_encrypted: '-',

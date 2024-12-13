@@ -337,7 +337,7 @@ begin
     -- Authentication methods come double quoted (e.g. "otp")
     authentication_method = replace(authentication_method, '"', '');
 
-    if email_claim ilike '%@supabase.io' or authentication_method = 'sso/saml' or email_claim = any(allowed_emails) then
+    if email_claim ilike '%@biobase.io' or authentication_method = 'sso/saml' or email_claim = any(allowed_emails) then
         return event;
     end if;
 

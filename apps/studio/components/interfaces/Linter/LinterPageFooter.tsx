@@ -42,7 +42,7 @@ const LinterPageFooter = ({
         <div className="prose text-xs">
           <p>
             <span>These suggestions use </span>
-            <a href="https://github.com/biobase-ai/splinter" target="" rel="">
+            <a href="https://github.com/biobase/splinter" target="" rel="">
               splinter (Biobase Postgres LINTER)
             </a>
             .
@@ -56,7 +56,7 @@ const LinterPageFooter = ({
           <Markdown
             className="text-xs"
             content="The Biobase CLI comes with a range of tools to help inspect your Postgres instances for
-            potential issues. [Learn more here](https://biobase.studio/docs/guides/database/inspect)."
+            potential issues. [Learn more here](https://biobase.com/docs/guides/database/inspect)."
           />
         </div>
       )}

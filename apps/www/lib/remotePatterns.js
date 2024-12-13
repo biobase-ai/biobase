@@ -79,7 +79,7 @@ module.exports = [
   },
   {
     protocol: 'https',
-    hostname: 'biobase.studio',
+    hostname: 'biobase.com',
     port: '',
     pathname: '**',
   },

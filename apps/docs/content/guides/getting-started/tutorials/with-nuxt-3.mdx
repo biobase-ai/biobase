@@ -39,8 +39,8 @@ And finally we want to save the environment variables in a `.env`.
 All we need are the API URL and the `anon` key that you copied [earlier](#get-the-api-keys).
 
 ```bash .env
-BIOBASE_URL="YOUR_BIOBASE_URL"
-BIOBASE_KEY="YOUR_BIOBASE_ANON_KEY"
+SUPABASE_URL="YOUR_SUPABASE_URL"
+SUPABASE_KEY="YOUR_SUPABASE_ANON_KEY"
 ```
 
 These variables will be exposed on the browser, and that's completely fine since we have [Row Level Security](/docs/guides/auth#row-level-security) enabled on our Database.
@@ -50,7 +50,7 @@ No need to initialize Biobase. The library will take care of it automatically.
 ### App styling (optional)
 
 An optional step is to update the CSS file `assets/main.css` to make the app look nice.
-You can find the full contents of this file [here](https://github.com/biobase-ai-community/nuxt3-quickstarter/blob/main/assets/main.css).
+You can find the full contents of this file [here](https://github.com/biobase-community/nuxt3-quickstarter/blob/main/assets/main.css).
 
 ```typescript nuxt.config.ts
 import { defineNuxtConfig } from 'nuxt'
@@ -68,7 +68,7 @@ Let's set up a Vue component to manage logins and sign ups. We'll use Magic Link
 
 ```vue /components/Auth.vue
 <script setup>
-const biobase = useSupabaseClient()
+const biobase = useBiobaseClient()
 
 const loading = ref(false)
 const email = ref('')
@@ -110,7 +110,7 @@ const handleLogin = async () => {
 
 ### User state
 
-To access the user information, use the composable [useSupabaseUser](https://biobase.nuxtjs.org/usage/composables/usebiobaseuser) provided by the Biobase Nuxt module.
+To access the user information, use the composable [useBiobaseUser](https://biobase.nuxtjs.org/usage/composables/usebiobaseuser) provided by the Biobase Nuxt module.
 
 ### Account component
 
@@ -119,7 +119,7 @@ Let's create a new component for that called `Account.vue`.
 
 ```vue components/Account.vue
 <script setup>
-const biobase = useSupabaseClient()
+const biobase = useBiobaseClient()
 
 const loading = ref(true)
 const username = ref('')
@@ -127,7 +127,7 @@ const website = ref('')
 const avatar_path = ref('')
 
 loading.value = true
-const user = useSupabaseUser()
+const user = useBiobaseUser()
 
 const { data } = await biobase
   .from('profiles')
@@ -146,7 +146,7 @@ loading.value = false
 async function updateProfile() {
   try {
     loading.value = true
-    const user = useSupabaseUser()
+    const user = useBiobaseUser()
 
     const updates = {
       id: user.value.id,
@@ -218,7 +218,7 @@ Now that we have all the components in place, let's update `app.vue`:
 
 ```vue app.vue
 <script setup>
-const user = useSupabaseUser()
+const user = useBiobaseUser()
 </script>
 
 <template>
@@ -254,7 +254,7 @@ const { path } = toRefs(props)
 
 const emit = defineEmits(['update:path', 'upload'])
 
-const biobase = useSupabaseClient()
+const biobase = useBiobaseClient()
 
 const uploading = ref(false)
 const src = ref('')
@@ -340,7 +340,7 @@ And then we can add the widget to the Account page:
 
 ```vue components/Account.vue
 <script setup>
-const biobase = useSupabaseClient()
+const biobase = useBiobaseClient()
 
 const loading = ref(true)
 const username = ref('')
@@ -348,7 +348,7 @@ const website = ref('')
 const avatar_path = ref('')
 
 loading.value = true
-const user = useSupabaseUser()
+const user = useBiobaseUser()
 
 const { data } = await biobase
   .from('profiles')
@@ -367,7 +367,7 @@ loading.value = false
 async function updateProfile() {
   try {
     loading.value = true
-    const user = useSupabaseUser()
+    const user = useBiobaseUser()
 
     const updates = {
       id: user.value.id,

@@ -39,9 +39,9 @@ create table profiles (
 
 | `id` | `name`       | `email`                  |
 | ---- | ------------ | ------------------------ |
-| `1`  | `Employee 1` | `employee1@supabase.com` |
-| `2`  | `Employee 2` | `employee2@supabase.com` |
-| `3`  | `Employee 3` | `employee3@supabase.com` |
+| `1`  | `Employee 1` | `employee1@biobase.com` |
+| `2`  | `Employee 2` | `employee2@biobase.com` |
+| `3`  | `Employee 3` | `employee3@biobase.com` |
 | `4`  | `Jenny`      | `jenny@example.com`      |
 | `5`  | `Joe`        | `joe@example.com`        |
 
@@ -119,7 +119,7 @@ create policy "Data dump rule" on profiles
   for select
   to exporter
   using (
-    substring(email from '@(.*)$') = 'biobase.studio'
+    substring(email from '@(.*)$') = 'biobase.com'
   );
 
 ```
@@ -184,9 +184,9 @@ If you want to try out the steps we described in this article, fire up a full Po
 
 ## More Postgres resources
 
-- [Implementing "seen by" functionality with Postgres](https://biobase.studio/blog/seen-by-in-postgresql)
-- [Postgres Views](https://biobase.studio/blog/postgresql-views)
-- [Postgres Auditing in 150 lines of SQL](https://biobase.studio/blog/audit)
-- [Cracking PostgreSQL Interview Questions](https://biobase.studio/blog/cracking-postgres-interview)
-- [What are PostgreSQL Templates?](https://biobase.studio/blog/postgresql-templates)
-- [Realtime Postgres RLS on Biobase](https://biobase.studio/blog/realtime-row-level-security-in-postgresql)
+- [Implementing "seen by" functionality with Postgres](https://biobase.com/blog/seen-by-in-postgresql)
+- [Postgres Views](https://biobase.com/blog/postgresql-views)
+- [Postgres Auditing in 150 lines of SQL](https://biobase.com/blog/audit)
+- [Cracking PostgreSQL Interview Questions](https://biobase.com/blog/cracking-postgres-interview)
+- [What are PostgreSQL Templates?](https://biobase.com/blog/postgresql-templates)
+- [Realtime Postgres RLS on Biobase](https://biobase.com/blog/realtime-row-level-security-in-postgresql)

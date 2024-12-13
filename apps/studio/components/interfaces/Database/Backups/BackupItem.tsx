@@ -7,17 +7,16 @@ import { useBackupDownloadMutation } from 'data/database/backup-download-mutatio
 import type { DatabaseBackup } from 'data/database/backups-query'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
 import { Badge } from 'ui'
-import { useParams } from 'common'
 
 interface BackupItemProps {
   index: number
   isHealthy: boolean
+  projectRef: string
   backup: DatabaseBackup
   onSelectBackup: () => void
 }
 
-const BackupItem = ({ index, isHealthy, backup, onSelectBackup }: BackupItemProps) => {
-  const { ref: projectRef } = useParams()
+const BackupItem = ({ index, isHealthy, backup, projectRef, onSelectBackup }: BackupItemProps) => {
   const canTriggerScheduledBackups = useCheckPermissions(
     PermissionAction.INFRA_EXECUTE,
     'queue_job.restore.prepare'
@@ -63,10 +62,7 @@ const BackupItem = ({ index, isHealthy, backup, onSelectBackup }: BackupItemProp
               icon={<Download />}
               loading={isDownloading}
               disabled={!canTriggerScheduledBackups || isDownloading}
-              onClick={() => {
-                if (!projectRef) return console.error('Project ref is required')
-                downloadBackup({ ref: projectRef, backup })
-              }}
+              onClick={() => downloadBackup({ ref: projectRef, backup })}
               tooltip={{
                 content: {
                   side: 'bottom',

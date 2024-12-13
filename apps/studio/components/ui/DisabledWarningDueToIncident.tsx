@@ -16,8 +16,8 @@ const DisabledWarningDueToIncident = ({ title }: DisabledWarningDueToIncidentPro
         <div className="space-y-3">
           <p className="text-sm leading-normal">
             Our engineers are currently working on a fix. You can follow updates on{' '}
-            <a className="text-brand" href="https://status.biobase.studio/">
-              https://status.biobase.studio/
+            <a className="text-brand" href="https://status.biobase.com/">
+              https://status.biobase.com/
             </a>
           </p>
         </div>

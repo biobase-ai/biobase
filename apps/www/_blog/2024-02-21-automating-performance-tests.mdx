@@ -190,10 +190,10 @@ It may be that this is all you need for now, so I will list everything you would
 
 | Component                                                                                                    | Description                                                  |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ |
-| [k6](https://github.com/biobase-ai/benchmarks/blob/main/examples/realtime/replication/terraform/k6/subs.js)    | Load generator scripts                                       |
-| VM in the cloud [with the following preparation](https://github.com/biobase-ai/benchmarks/tree/main/infra/ami) | Hosts for k6 and Telegraf                                    |
-| Prometheus and [Grafana](https://github.com/biobase-ai/benchmarks/blob/main/examples/realtime/grafana.json)    | Observability stack                                          |
-| [Telegraf](https://github.com/biobase-ai/benchmarks/blob/main/k6/telegraf.conf)                                | Collect metrics from k6 and host and push them to Prometheus |
+| [k6](https://github.com/biobase/benchmarks/blob/main/examples/realtime/replication/terraform/k6/subs.js)    | Load generator scripts                                       |
+| VM in the cloud [with the following preparation](https://github.com/biobase/benchmarks/tree/main/infra/ami) | Hosts for k6 and Telegraf                                    |
+| Prometheus and [Grafana](https://github.com/biobase/benchmarks/blob/main/examples/realtime/grafana.json)    | Observability stack                                          |
+| [Telegraf](https://github.com/biobase/benchmarks/blob/main/k6/telegraf.conf)                                | Collect metrics from k6 and host and push them to Prometheus |
 | [Launches table in Grafana](https://gist.github.com/egor-romanov/df6b61f5b0ac3a6f4afdbb19154a612f)           | To navigate through the history of launches                  |
 
 <div>
@@ -300,7 +300,7 @@ We have run tests for up to 1,000,000 concurrent virtual users for Supavisor and
   />
 </div>
 
-You can find more details about this test in the [Supavisor: Scaling Postgres to 1 Million Connections](https://biobase.studio/blog/supavisor-1-million) post.
+You can find more details about this test in the [Supavisor: Scaling Postgres to 1 Million Connections](https://biobase.com/blog/supavisor-1-million) post.
 
 <div>
   <Img
@@ -322,11 +322,11 @@ If you want to replicate our approach, I am leaving the list of things we use. S
 
 | Component                                                                                                   | Description                             |
 | ----------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| [repo](https://github.com/biobase-ai/benchmarks/tree/main)                                                    | Benchmarks app source code and examples |
+| [repo](https://github.com/biobase/benchmarks/tree/main)                                                    | Benchmarks app source code and examples |
 | [prod instance](https://supabench.fly.dev/#)                                                                | Our benchmarks app instance             |
 | [Terraform documentation](https://developer.hashicorp.com/terraform/docs)                                   | Read about Terraform and how to use it  |
-| [Virtual machine image](https://github.com/biobase-ai/benchmarks/tree/main/infra/ami)                         | Prepare VM for running k6 load scripts  |
-| [Grafana and Prometheus or VictoriaMetrics setup](https://github.com/biobase-ai/benchmarks/tree/main/.docker) | Observability stack setup               |
+| [Virtual machine image](https://github.com/biobase/benchmarks/tree/main/infra/ami)                         | Prepare VM for running k6 load scripts  |
+| [Grafana and Prometheus or VictoriaMetrics setup](https://github.com/biobase/benchmarks/tree/main/.docker) | Observability stack setup               |
 
 ## Conclusion
 
@@ -334,9 +334,9 @@ In this post you learned two approaches for organizing the performance testing p
 
 ## More performance resources
 
-- [Supavisor: Scaling Postgres to 1 Million Connections](https://biobase.studio/blog/supavisor-1-million)
-- [pgvector vs Pinecone: cost and performance](https://biobase.studio/blog/pgvector-vs-pinecone)
-- [Matryoshka embeddings: faster OpenAI vector search using Adaptive Retrieval](https://biobase.studio/blog/matryoshka-embeddings)
-- [Choosing Compute Add-on for AI workloads](https://biobase.studio/docs/guides/ai/choosing-compute-addon)
-- [pgvector 0.6.0: 30x faster with parallel index builds](https://biobase.studio/blog/pgvector-fast-builds)
-- [pgvector: Fewer dimensions are better](https://biobase.studio/blog/fewer-dimensions-are-better-pgvector)
+- [Supavisor: Scaling Postgres to 1 Million Connections](https://biobase.com/blog/supavisor-1-million)
+- [pgvector vs Pinecone: cost and performance](https://biobase.com/blog/pgvector-vs-pinecone)
+- [Matryoshka embeddings: faster OpenAI vector search using Adaptive Retrieval](https://biobase.com/blog/matryoshka-embeddings)
+- [Choosing Compute Add-on for AI workloads](https://biobase.com/docs/guides/ai/choosing-compute-addon)
+- [pgvector 0.6.0: 30x faster with parallel index builds](https://biobase.com/blog/pgvector-fast-builds)
+- [pgvector: Fewer dimensions are better](https://biobase.com/blog/fewer-dimensions-are-better-pgvector)

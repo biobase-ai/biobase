@@ -13,8 +13,8 @@ export const updateSession = async (request: NextRequest) => {
     });
 
     const biobase = createServerClient(
-      process.env.NEXT_PUBLIC_BIOBASE_URL!,
-      process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY!,
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
       {
         cookies: {
           get(name: string) {
@@ -61,7 +61,7 @@ export const updateSession = async (request: NextRequest) => {
     );
 
     // This will refresh session if expired - required for Server Components
-    // https://biobase.studio/docs/guides/auth/server-side/nextjs
+    // https://biobase.com/docs/guides/auth/server-side/nextjs
     await biobase.auth.getUser();
 
     return response;

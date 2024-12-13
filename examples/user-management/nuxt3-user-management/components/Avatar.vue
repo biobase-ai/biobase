@@ -20,7 +20,7 @@ const { path, size } = toRefs(props)
 
 const emit = defineEmits(['update:path', 'upload'])
 
-const biobase = useSupabaseClient()
+const biobase = useBiobaseClient()
 
 const uploading = ref(false)
 const src = ref("")

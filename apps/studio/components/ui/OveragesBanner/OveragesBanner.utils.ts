@@ -5,14 +5,8 @@ export const getResourcesExceededLimitsOrg = (usageMetrics: OrgMetricsUsage[]): 
 
   return usageMetrics
     .filter((usageMetric) => {
-      if (
-        !usageMetric.capped ||
-        !usageMetric.available_in_plan ||
-        usageMetric.unlimited ||
-        usageMetric.metric === 'DISK_IOPS_GP3'
-      ) {
+      if (!usageMetric.capped || !usageMetric.available_in_plan || usageMetric.unlimited)
         return false
-      }
 
       const freeUnits = usageMetric.pricing_free_units || 0
 

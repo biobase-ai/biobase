@@ -1,17 +1,17 @@
 import { PermissionAction } from '@supabase/shared-types/out/constants'
 import { isNull, partition } from 'lodash'
-import { AlertCircle, Search } from 'lucide-react'
+import { AlertCircle, ExternalLink, Search } from 'lucide-react'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import { useParams } from 'common'
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
-import { DocsButton } from 'components/ui/DocsButton'
 import InformationBox from 'components/ui/InformationBox'
 import NoSearchResults from 'components/ui/NoSearchResults'
 import ShimmeringLoader from 'components/ui/ShimmeringLoader'
 import { useDatabaseExtensionsQuery } from 'data/database-extensions/database-extensions-query'
 import { useCheckPermissions, usePermissionsLoaded } from 'hooks/misc/useCheckPermissions'
-import { Input } from 'ui'
+import { Button, Input } from 'ui'
 import ExtensionCard from './ExtensionCard'
 import ExtensionCardSkeleton from './ExtensionCardSkeleton'
 import { HIDDEN_EXTENSIONS, SEARCH_TERMS } from './Extensions.constants'
@@ -55,25 +55,35 @@ const Extensions = () => {
   return (
     <>
       <div className="mb-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2 flex-wrap">
           <Input
-            size="tiny"
+            size="small"
             placeholder="Search for an extension"
             value={filterString}
             onChange={(e) => setFilterString(e.target.value)}
-            className="w-52"
+            className="w-64"
             icon={<Search size={14} />}
           />
-          <DocsButton href="https://biobase.studio/docs/guides/database/extensions" />
+          {isPermissionsLoaded && !canUpdateExtensions ? (
+            <div className="w-[500px]">
+              <InformationBox
+                icon={<AlertCircle className="text-foreground-light" size={18} strokeWidth={2} />}
+                title="You need additional permissions to update database extensions"
+              />
+            </div>
+          ) : (
+            <Button className="ml-auto" asChild type="default" icon={<ExternalLink />}>
+              <Link
+                href="https://biobase.com/docs/guides/database/extensions"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Documentation
+              </Link>
+            </Button>
+          )}
         </div>
       </div>
-
-      {isPermissionsLoaded && !canUpdateExtensions && (
-        <InformationBox
-          icon={<AlertCircle className="text-foreground-light" size={18} strokeWidth={2} />}
-          title="You need additional permissions to update database extensions"
-        />
-      )}
 
       {isLoading ? (
         <div className="my-8 w-full space-y-12">

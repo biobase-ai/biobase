@@ -7,7 +7,7 @@ sitemapPriority: 0.5
 
 <Admonition type="warning">
 
-As of 7th Feb 2024, [this repository](https://github.com/biobase-ai-community/auth-ui) is no longer maintained by the Biobase Team. At the moment, the team does not have capacity to give the expected level of care to this repository. We may revisit Auth UI in the future but regrettably have to leave it on hold for now as we focus on other priorities such as improving the Server-Side Rendering (SSR) package and advanced Auth primitives.
+As of 7th Feb 2024, [this repository](https://github.com/biobase-community/auth-ui) is no longer maintained by the Biobase Team. At the moment, the team does not have capacity to give the expected level of care to this repository. We may revisit Auth UI in the future but regrettably have to leave it on hold for now as we focus on other priorities such as improving the Server-Side Rendering (SSR) package and advanced Auth primitives.
 
 </Admonition>
 
@@ -15,23 +15,23 @@ Auth UI is a pre-built React component for authenticating users.
 It supports custom themes and extensible styles to match your brand and aesthetic.
 
 <video width="99%" muted playsInline controls={true}>
-  <source src="https://biobase.studio/images/blog/lw5-one-more/auth-ui-demo.mp4" type="video/mp4" />
+  <source src="https://biobase.com/images/blog/lw5-one-more/auth-ui-demo.mp4" type="video/mp4" />
 </video>
 
 ## Set up Auth UI
 
-Install the latest version of [supabase-js](/docs/reference/javascript) and the Auth UI package:
+Install the latest version of [biobase-js](/docs/reference/javascript) and the Auth UI package:
 
 ```bash
-npm install @supabase/supabase-js @supabase/auth-ui-react @supabase/auth-ui-shared
+npm install @supabase/biobase-js @supabase/auth-ui-react @supabase/auth-ui-shared
 ```
 
 ### Import the Auth component
 
-Pass `biobaseClient` from `@supabase/supabase-js` as a prop to the component.
+Pass `biobaseClient` from `@supabase/biobase-js` as a prop to the component.
 
 ```js /src/index.js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Auth } from '@supabase/auth-ui-react'
 
 const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API KEY>')
@@ -69,7 +69,7 @@ const App = () => (
 The Auth component also supports login with [official social providers](../../auth#providers).
 
 ```js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 
@@ -130,7 +130,7 @@ The Auth component is currently shipped with the following views:
 - Update password
 - Forgotten password
 
-We are planning on adding more views in the future. Follow along on that [repo](https://github.com/biobase-ai/auth-ui).
+We are planning on adding more views in the future. Follow along on that [repo](https://github.com/biobase/auth-ui).
 
 ## Customization
 
@@ -148,7 +148,7 @@ There are several ways to customize Auth UI:
 Auth UI comes with several themes to customize the appearance. Each predefined theme comes with at least two variations, a `default` variation, and a `dark` variation. You can switch between these themes using the `theme` prop. Import the theme you want to use and pass it to the `appearance.theme` prop.
 
 ```js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 
@@ -177,7 +177,7 @@ Currently there is only one predefined theme available, but we plan to add more.
 Auth UI comes with two theme variations: `default` and `dark`. You can switch between these themes with the `theme` prop.
 
 ```js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 
@@ -200,10 +200,10 @@ If you don't pass a value to `theme` it uses the `"default"` theme. You can pass
 
 ### Override themes
 
-Auth UI themes can be overridden using variable tokens. See the [list of variable tokens](https://github.com/biobase-ai/auth-ui/blob/main/packages/shared/src/theming/Themes.ts).
+Auth UI themes can be overridden using variable tokens. See the [list of variable tokens](https://github.com/biobase/auth-ui/blob/main/packages/shared/src/theming/Themes.ts).
 
 ```js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 
@@ -232,10 +232,10 @@ If you created your own theme, you may not need to override any of them.
 ### Create your own theme [#create-theme]
 
 You can create your own theme by following the same structure within a `appearance.theme` property.
-See the list of [tokens within a theme](https://github.com/biobase-ai/auth-ui/blob/main/packages/shared/src/theming/Themes.ts).
+See the list of [tokens within a theme](https://github.com/biobase/auth-ui/blob/main/packages/shared/src/theming/Themes.ts).
 
 ```js /src/index.js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Auth } from '@supabase/auth-ui-react'
 
 const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API KEY>')
@@ -285,7 +285,7 @@ You can use custom CSS classes for the following elements:
 `"button"`, `"container"`, `"anchor"`, `"divider"`, `"label"`, `"input"`, `"loader"`, `"message"`.
 
 ```js /src/index.js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Auth } from '@supabase/auth-ui-react'
 
 const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API KEY>')
@@ -313,7 +313,7 @@ You can use custom CSS inline styles for the following elements:
 `"button"`, `"container"`, `"anchor"`, `"divider"`, `"label"`, `"input"`, `"loader"`, `"message"`.
 
 ```js /src/index.js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Auth } from '@supabase/auth-ui-react'
 
 const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API KEY>')
@@ -337,7 +337,7 @@ const App = () => (
 You can use custom labels with `localization.variables` like so:
 
 ```js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Auth } from '@supabase/auth-ui-react'
 
 const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API KEY>')
@@ -454,7 +454,7 @@ A full list of the available variables is below:
 
 <Admonition type="caution">
 
-Currently, translating error messages (e.g. "Invalid credentials") is not supported. Check [related issue.](https://github.com/biobase-ai/auth-ui/issues/86)
+Currently, translating error messages (e.g. "Invalid credentials") is not supported. Check [related issue.](https://github.com/biobase/auth-ui/issues/86)
 
 </Admonition>
 
@@ -463,7 +463,7 @@ Currently, translating error messages (e.g. "Invalid credentials") is not suppor
 You can hide links by setting the `showLinks` prop to `false`
 
 ```js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Auth } from '@supabase/auth-ui-react'
 
 const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API KEY>')
@@ -478,7 +478,7 @@ Setting `showLinks` to `false` will hide the following links:
 - Send a magic link email
 - Forgot your password?
 
-### Sign in and sign up views
+### Sign in and Sign up views
 
 Add `sign_in` or `sign_up` views with the `view` prop:
 

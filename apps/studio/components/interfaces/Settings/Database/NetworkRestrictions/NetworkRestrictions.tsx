@@ -1,11 +1,10 @@
 import { PermissionAction } from '@supabase/shared-types/out/constants'
-import { AlertCircle, ChevronDown, Globe, Lock } from 'lucide-react'
+import { AlertCircle, ChevronDown, ExternalLink, Globe, Lock } from 'lucide-react'
 import { useState } from 'react'
 
 import { useParams } from 'common'
 import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectContext'
 import { ButtonTooltip } from 'components/ui/ButtonTooltip'
-import { DocsButton } from 'components/ui/DocsButton'
 import { FormHeader } from 'components/ui/Forms/FormHeader'
 import { FormPanel } from 'components/ui/Forms/FormPanel'
 import Panel from 'components/ui/Panel'
@@ -56,9 +55,7 @@ const DisallowAllAccessButton = ({ disabled, onClick }: AccessButtonProps) => (
     tooltip={{
       content: {
         side: 'bottom',
-        text: disabled
-          ? 'You need additional permissions to update network restrictions'
-          : undefined,
+        text: 'You need additional permissions to update network restrictions',
       },
     }}
   >
@@ -98,14 +95,21 @@ const NetworkRestrictions = () => {
   return (
     <>
       <section id="network-restrictions">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between">
           <FormHeader
-            className="mb-0"
             title="Network Restrictions"
             description="Allow specific IP ranges to have access to your database."
           />
-          <div className="flex items-center gap-x-2">
-            <DocsButton href="https://biobase.studio/docs/guides/platform/network-restrictions" />
+          <div className="flex items-center space-x-2 mb-6">
+            <Button asChild type="default" icon={<ExternalLink />}>
+              <a
+                href="https://biobase.com/docs/guides/platform/network-restrictions"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Documentation
+              </a>
+            </Button>
             {!canUpdateNetworkRestrictions ? (
               <ButtonTooltip
                 disabled

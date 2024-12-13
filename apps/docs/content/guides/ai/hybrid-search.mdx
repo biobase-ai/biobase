@@ -166,11 +166,11 @@ from
 In practice, you will likely be calling this from the [Biobase client](/docs/reference/javascript/introduction) or through a custom backend layer. Here is a quick example of how you might call this from an [Edge Function](/docs/guides/functions) using JavaScript:
 
 ```tsx
-import { createClient } from 'jsr:@supabase/supabase-js@2'
+import { createClient } from 'jsr:@supabase/biobase-js@2'
 import OpenAI from 'npm:openai'
 
-const biobaseUrl = Deno.env.get('BIOBASE_URL')!
-const biobaseServiceRoleKey = Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!
+const biobaseUrl = Deno.env.get('SUPABASE_URL')!
+const biobaseServiceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
 const openaiApiKey = Deno.env.get('OPENAI_API_KEY')!
 
 Deno.serve(async (req) => {

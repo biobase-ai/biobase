@@ -200,14 +200,14 @@ const CreateBucketModal = ({ visible, onClose }: CreateBucketModalProps) => {
                           {IS_PLATFORM && (
                             <div className="col-span-12">
                               <p className="text-foreground-light text-sm">
-                                Note: Individual bucket uploads will still be capped at the{' '}
+                                Note: The{' '}
                                 <Link
                                   href={`/project/${ref}/settings/storage`}
-                                  className="font-bold underline"
+                                  className="text-brand opacity-80 hover:opacity-100 transition"
                                 >
                                   global upload limit
                                 </Link>{' '}
-                                of {formattedGlobalUploadLimit}
+                                takes precedence over this value ({formattedGlobalUploadLimit})
                               </p>
                             </div>
                           )}

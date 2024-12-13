@@ -1,12 +1,12 @@
 import AwesomeDebouncePromise from 'awesome-debounce-promise'
-import { compact } from 'lodash'
-
 import type { Filter } from 'components/grid/types'
-import { Entity, isTableLike } from 'data/table-editor/table-editor-types'
+import { compact } from 'lodash'
+import type { Dictionary } from 'types'
 import { FilterOperatorOptions } from './components/header/filter/Filter.constants'
 import { STORAGE_KEY_PREFIX } from './constants'
 import { InitialStateType } from './store/reducers'
 import type { Sort, BiobaseGridProps, SupaColumn, SupaTable } from './types'
+
 /**
  * Ensure that if editable is false, we should remove all editing actions
  * to prevent rare-case bugs with the UI
@@ -62,16 +62,22 @@ export function formatFilterURLParams(filter?: string[]): Filter[] {
   ) as Filter[]
 }
 
-export function parseSupaTable(table: Entity): SupaTable {
-  const columns = table.columns
-  const primaryKeys = isTableLike(table) ? table.primary_keys : []
-  const relationships = isTableLike(table) ? table.relationships : []
+export function parseSupaTable(
+  data: {
+    table: Dictionary<any>
+    columns: Dictionary<any>[]
+    primaryKeys: Dictionary<any>[]
+    relationships: Dictionary<any>[]
+  },
+  encryptedColumns: string[] = []
+): SupaTable {
+  const { table, columns, primaryKeys, relationships } = data
 
   const supaColumns: SupaColumn[] = columns.map((column) => {
     const temp = {
       position: column.ordinal_position,
       name: column.name,
-      defaultValue: column.default_value as string | null | undefined,
+      defaultValue: column.default_value,
       dataType: column.data_type,
       format: column.format,
       isPrimaryKey: false,
@@ -79,14 +85,14 @@ export function parseSupaTable(table: Entity): SupaTable {
       isGeneratable: column.identity_generation == 'BY DEFAULT',
       isNullable: column.is_nullable,
       isUpdatable: column.is_updatable,
+      isEncrypted: encryptedColumns.includes(column.name),
       enum: column.enums,
       comment: column.comment,
       foreignKey: {
-        targetTableSchema: null as string | null,
-        targetTableName: null as string | null,
-        targetColumnName: null as string | null,
-        deletionAction: undefined as string | undefined,
-        updateAction: undefined as string | undefined,
+        targetTableSchema: null,
+        targetTableName: null,
+        targetColumnName: null,
+        deletionAction: undefined,
       },
     }
     const primaryKey = primaryKeys.find((pk) => pk.name == column.name)
@@ -104,7 +110,6 @@ export function parseSupaTable(table: Entity): SupaTable {
       temp.foreignKey.targetTableName = relationship.target_table_name
       temp.foreignKey.targetColumnName = relationship.target_column_name
       temp.foreignKey.deletionAction = relationship.deletion_action
-      temp.foreignKey.updateAction = relationship.update_action
     }
     return temp
   })
@@ -115,7 +120,7 @@ export function parseSupaTable(table: Entity): SupaTable {
     comment: table.comment,
     schema: table.schema,
     columns: supaColumns,
-    estimateRowCount: isTableLike(table) ? table.live_rows_estimate : 0,
+    estimateRowCount: table.live_rows_estimate,
   }
 }
 

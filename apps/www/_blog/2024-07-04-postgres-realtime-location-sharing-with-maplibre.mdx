@@ -45,15 +45,15 @@ You can find the production ready code for the Telegram Bot Biobase Edge Functio
 
 ```ts /biobase/functions/telegram-bot/index.ts
 import { Bot, webhookCallback } from 'https://deno.land/x/grammy@v1.20.3/mod.ts'
-import { createClient } from 'jsr:@supabase/supabase-js@2.39.7'
+import { createClient } from 'jsr:@supabase/biobase-js@2.39.7'
 import { Database } from '../_shared/database.types.ts'
 
 const token = Deno.env.get('BOT_TOKEN')
 if (!token) throw new Error('BOT_TOKEN is unset')
 
 const biobase = createClient<Database>(
-  Deno.env.get('BIOBASE_URL')!,
-  Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!
+  Deno.env.get('SUPABASE_URL')!,
+  Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
 )
 
 const bot = new Bot(token)

@@ -77,7 +77,7 @@ While the app is installing, you should see:
 Thanks for trying out Redwood!
 ```
 
-Then let's install the only additional dependency [supabase-js](https://github.com/supabase/supabase-js) by running the `setup auth` command:
+Then let's install the only additional dependency [biobase-js](https://github.com/biobase-ai/biobase-js) by running the `setup auth` command:
 
 ```bash
 yarn redwood setup auth biobase
@@ -98,17 +98,17 @@ Say, **yes** and it will setup the Biobase client in your app and also provide h
   ✔ Installing packages...
   ✔ One more thing...
 
-  You will need to add your Biobase URL (BIOBASE_URL), public API KEY,
-  and JWT SECRET (BIOBASE_KEY, and BIOBASE_JWT_SECRET) to your .env file.
+  You will need to add your Biobase URL (SUPABASE_URL), public API KEY,
+  and JWT SECRET (SUPABASE_KEY, and SUPABASE_JWT_SECRET) to your .env file.
 ```
 
 Next, we want to save the environment variables in a `.env`.
 We need the `API URL` as well as the `anon` and `jwt_secret` keys that you copied [earlier](#get-the-api-keys).
 
 ```bash .env
-BIOBASE_URL=YOUR_BIOBASE_URL
-BIOBASE_KEY=YOUR_BIOBASE_ANON_KEY
-BIOBASE_JWT_SECRET=YOUR_BIOBASE_JWT_SECRET
+SUPABASE_URL=YOUR_SUPABASE_URL
+SUPABASE_KEY=YOUR_SUPABASE_ANON_KEY
+SUPABASE_JWT_SECRET=YOUR_SUPABASE_JWT_SECRET
 ```
 
 And finally, you will also need to save **just** the `web side` environment variables to the `redwood.toml`.
@@ -118,7 +118,7 @@ And finally, you will also need to save **just** the `web side` environment vari
   title = "Biobase Redwood Tutorial"
   port = 8910
   apiProxyPath = "/.redwood/functions"
-  includeEnvironmentVariables = ["BIOBASE_URL", "BIOBASE_KEY"]
+  includeEnvironmentVariables = ["SUPABASE_URL", "SUPABASE_KEY"]
 [api]
   port = 8911
 [browser]
@@ -134,11 +134,11 @@ You'll see these being used to configure your Biobase client in `web/src/App.js`
 ```js web/src/App.js
 // ... Redwood imports
 import { AuthProvider } from '@redwoodjs/auth'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 // ...
 
-const biobase = createClient(process.env.BIOBASE_URL, process.env.BIOBASE_KEY)
+const biobase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY)
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
@@ -158,7 +158,7 @@ export default App
 ### App styling (optional)
 
 An optional step is to update the CSS file `web/src/index.css` to make the app look nice.
-You can find the full contents of this file [here](https://raw.githubusercontent.com/biobase-ai/biobase/master/examples/user-management/react-user-management/src/index.css).
+You can find the full contents of this file [here](https://raw.githubusercontent.com/biobase/biobase/master/examples/user-management/react-user-management/src/index.css).
 
 ### Start RedwoodJS and your first page
 

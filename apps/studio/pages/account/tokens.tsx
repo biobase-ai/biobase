@@ -10,9 +10,8 @@ import AccountLayout from 'components/layouts/AccountLayout/AccountLayout'
 import { FormHeader } from 'components/ui/Forms/FormHeader'
 import { NewAccessToken } from 'data/access-tokens/access-tokens-create-mutation'
 import type { NextPageWithLayout } from 'types'
-import { Button } from 'ui'
+import { Alert, Button } from 'ui'
 import { ExternalLink } from 'lucide-react'
-import { Admonition } from 'ui-patterns'
 
 const UserAccessTokens: NextPageWithLayout = () => {
   const [newToken, setNewToken] = useState<NewAccessToken | undefined>()
@@ -30,7 +29,7 @@ const UserAccessTokens: NextPageWithLayout = () => {
           <div className="flex items-center space-x-2">
             <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
               <Link
-                href="https://biobase.studio/docs/reference/api/introduction"
+                href="https://biobase.com/docs/reference/api/introduction"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -39,7 +38,7 @@ const UserAccessTokens: NextPageWithLayout = () => {
             </Button>
             <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
               <Link
-                href="https://biobase.studio/docs/reference/cli/start"
+                href="https://biobase.com/docs/reference/cli/start"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -51,10 +50,11 @@ const UserAccessTokens: NextPageWithLayout = () => {
         </div>
       </div>
       <div className="flex items-center justify-between">
-        <Admonition
-          type="warning"
-          title="Personal access tokens can be used to control your whole account and use features added in the future. Be careful when sharing them!"
+        <Alert
+          withIcon
           className="mb-6 w-full"
+          variant="warning"
+          title="Personal access tokens can be used to control your whole account and use features added in the future. Be careful when sharing them!"
         />
       </div>
       <div className="space-y-4">

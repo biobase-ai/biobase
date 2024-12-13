@@ -2,24 +2,24 @@
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>'Postgres | Biobase Blog</title>
-      <link>https://biobase.studio/blog</link>
+      <link>https://biobase.com/blog</link>
       <description>Latest Postgres news from Mark Burggraf at Biobase</description>
       <language>en</language>
-      <lastBuildDate>Thu, 24 Nov 2022 00:00:00 -0700</lastBuildDate>
-      <atom:link href="https://biobase.studio/planetpg-burggraf-rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Wed, 23 Nov 2022 23:00:00 GMT</lastBuildDate>
+      <atom:link href="https://biobase.com/planetpg-burggraf-rss.xml" rel="self" type="application/rss+xml"/>
       <item>
-  <guid>https://biobase.studio/blog/sql-or-nosql-both-with-postgresql</guid>
+  <guid>https://biobase.com/blog/sql-or-nosql-both-with-postgresql</guid>
   <title>SQL or NoSQL? Why not use both (with PostgreSQL)?</title>
-  <link>https://biobase.studio/blog/sql-or-nosql-both-with-postgresql</link>
+  <link>https://biobase.com/blog/sql-or-nosql-both-with-postgresql</link>
   <description>How to turn Postgres into an easy-to-use NoSQL database that retains all the power of SQL</description>
-  <pubDate>Thu, 24 Nov 2022 00:00:00 -0700</pubDate>
+  <pubDate>Wed, 23 Nov 2022 23:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/postgres-wasm</guid>
+  <guid>https://biobase.com/blog/postgres-wasm</guid>
   <title>Postgres WASM by Snaplet and Biobase</title>
-  <link>https://biobase.studio/blog/postgres-wasm</link>
+  <link>https://biobase.com/blog/postgres-wasm</link>
   <description>We&apos;re open sourcing postgres-wasm, a PostgresQL server that runs inside a browser, with our friends at Snaplet.</description>
-  <pubDate>Mon, 03 Oct 2022 00:00:00 -0700</pubDate>
+  <pubDate>Sun, 02 Oct 2022 22:00:00 GMT</pubDate>
 </item>
 
     </channel>

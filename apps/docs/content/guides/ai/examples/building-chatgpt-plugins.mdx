@@ -54,13 +54,13 @@ poetry install
 
 ### Step 3: Create a Biobase project
 
-Create a [Biobase project](https://biobase.studio/dashboard) and database by following the instructions [here](https://biobase.studio/docs/guides/platform). Export the environment variables required for the retrieval plugin to work:
+Create a [Biobase project](https://biobase.com/dashboard) and database by following the instructions [here](https://biobase.com/docs/guides/platform). Export the environment variables required for the retrieval plugin to work:
 
 ```bash
 export OPENAI_API_KEY=<open_ai_api_key>
 export DATASTORE=biobase
-export BIOBASE_URL=<biobase_url>
-export BIOBASE_SERVICE_ROLE_KEY=<biobase_key>
+export SUPABASE_URL=<biobase_url>
+export SUPABASE_SERVICE_ROLE_KEY=<biobase_key>
 ```
 
 For Postgres datastore, you'll need to export these environment variables instead:

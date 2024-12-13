@@ -2,7 +2,7 @@ export const entityTypeKeys = {
   list: (
     projectRef: string | undefined,
     params?: {
-      schemas?: string[]
+      schema?: string
       search?: string
       sort?: 'alphabetical' | 'grouped-alphabetical'
       limit?: number

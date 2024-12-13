@@ -8,7 +8,7 @@ sitemapPriority: 0.5
 
 <Admonition type="caution">
 
-The `auth-helpers` are now deprecated. Use `@supabase/ssr` to set up Auth for your Next.js app. See the [Next.js Server-Side Auth guide](/docs/guides/auth/server-side/nextjs) to learn how.
+The `auth-helpers` package has been replaced with the `@supabase/ssr` package. We recommend setting up Auth for your Next.js app with `@supabase/ssr` instead. See the [Next.js Server-Side Auth guide](/docs/guides/auth/server-side/nextjs) to learn how.
 
 </Admonition>
 
@@ -20,13 +20,13 @@ The `auth-helpers` are now deprecated. Use `@supabase/ssr` to set up Auth for yo
   size="medium"
   className="text-foreground-light border-b mt-8 pb-2"
   >
-
+  
   <AccordionItem
         header="See legacy docs"
         id="legacy-docs"
       >
 
-The [Next.js Auth Helpers package](https://github.com/biobase-ai/auth-helpers) configures Biobase Auth to store the user's `session` in a `cookie`, rather than `localStorage`. This makes it available across the client and server of the App Router - [Client Components](/docs/guides/auth/auth-helpers/nextjs#client-components), [Server Components](/docs/guides/auth/auth-helpers/nextjs#server-components), [Server Actions](/docs/guides/auth/auth-helpers/nextjs#server-actions), [Route Handlers](/docs/guides/auth/auth-helpers/nextjs#route-handlers) and [Middleware](/docs/guides/auth/auth-helpers/nextjs#middleware). The `session` is automatically sent along with any requests to Biobase.
+The [Next.js Auth Helpers package](https://github.com/biobase/auth-helpers) configures Biobase Auth to store the user's `session` in a `cookie`, rather than `localStorage`. This makes it available across the client and server of the App Router - [Client Components](/docs/guides/auth/auth-helpers/nextjs#client-components), [Server Components](/docs/guides/auth/auth-helpers/nextjs#server-components), [Server Actions](/docs/guides/auth/auth-helpers/nextjs#server-actions), [Route Handlers](/docs/guides/auth/auth-helpers/nextjs#route-handlers) and [Middleware](/docs/guides/auth/auth-helpers/nextjs#middleware). The `session` is automatically sent along with any requests to Biobase.
 
 <div className="video-container">
   <iframe
@@ -46,16 +46,16 @@ If you are using the `pages` directory, check out [Auth Helpers in Next.js Pages
 ## Install Next.js Auth helpers library
 
 ```sh Terminal
-npm install @supabase/auth-helpers-nextjs @supabase/supabase-js
+npm install @supabase/auth-helpers-nextjs @supabase/biobase-js
 ```
 
 ## Declare environment variables
 
-Retrieve your project's URL and anon key from your [API settings](https://biobase.studio/dashboard/project/_/settings/api), and create a `.env.local` file with the following environment variables:
+Retrieve your project's URL and anon key from your [API settings](https://biobase.com/dashboard/project/_/settings/api), and create a `.env.local` file with the following environment variables:
 
 ```bash .env.local
-NEXT_PUBLIC_BIOBASE_URL=your-biobase-url
-NEXT_PUBLIC_BIOBASE_ANON_KEY=your-biobase-anon-key
+NEXT_PUBLIC_SUPABASE_URL=your-biobase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-biobase-anon-key
 ```
 
 ## Managing session with middleware
@@ -218,7 +218,7 @@ export async function GET(request: NextRequest) {
   const code = requestUrl.searchParams.get('code')
 
   if (code) {
-    const cookieStore = await cookies()
+    const cookieStore = cookies()
     const biobase = createRouteHandlerClient<Database>({ cookies: () => cookieStore })
     await biobase.auth.exchangeCodeForSession(code)
   }
@@ -248,7 +248,7 @@ TypeScript types can be [generated with the Biobase CLI](/docs/reference/javascr
   ></iframe>
 </div>
 
-Authentication can be initiated [client](/docs/guides/auth/auth-helpers/nextjs#client-side) or [server-side](/docs/guides/auth/auth-helpers/nextjs#server-side). All of the [supabase-js authentication strategies](/docs/reference/javascript/auth-api) are supported with the Auth Helpers client.
+Authentication can be initiated [client](/docs/guides/auth/auth-helpers/nextjs#client-side) or [server-side](/docs/guides/auth/auth-helpers/nextjs#server-side). All of the [biobase-js authentication strategies](/docs/reference/javascript/auth-api) are supported with the Auth Helpers client.
 
 <Admonition type="note">
 
@@ -1153,7 +1153,7 @@ TypeScript types can be [generated with the Biobase CLI](/docs/reference/javascr
 
 ### Static routes
 
-Server Components and Route Handlers are static by default - data is fetched once at build time and the value is cached. Since the request to Biobase now happens at build time, there is no user, session or cookie to pass along with the request to Biobase. Therefore, the `createClient` function from `supabase-js` can be used to fetch data for static routes.
+Server Components and Route Handlers are static by default - data is fetched once at build time and the value is cached. Since the request to Biobase now happens at build time, there is no user, session or cookie to pass along with the request to Biobase. Therefore, the `createClient` function from `biobase-js` can be used to fetch data for static routes.
 
 #### Server components
 
@@ -1167,12 +1167,12 @@ Server Components and Route Handlers are static by default - data is fetched onc
 <TabPanel id="js" label="JavaScript">
 
 ```jsx app/page.jsx
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 export default async function Page() {
   const biobase = createClient(
-    process.env.NEXT_PUBLIC_BIOBASE_URL,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   )
 
   const { data } = await biobase.from('todos').select()
@@ -1185,14 +1185,14 @@ export default async function Page() {
 <TabPanel id="ts" label="TypeScript">
 
 ```tsx app/page.tsx
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 import type { Database } from '@/lib/database.types'
 
 export default async function Page() {
   const biobase = createClient<Database>(
-    process.env.NEXT_PUBLIC_BIOBASE_URL!,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY!
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
 
   const { data } = await biobase.from('todos').select()
@@ -1221,15 +1221,15 @@ TypeScript types can be [generated with the Biobase CLI](/docs/reference/javascr
 <TabPanel id="js" label="JavaScript">
 
 ```jsx app/api/todos/route.js
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { NextResponse } from 'next/server'
 
 export async function POST(request) {
   const { title } = await request.json()
 
   const biobase = createClient(
-    process.env.NEXT_PUBLIC_BIOBASE_URL,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   )
 
   const { data } = await biobase.from('todos').insert({ title }).select()
@@ -1242,7 +1242,7 @@ export async function POST(request) {
 <TabPanel id="ts" label="TypeScript">
 
 ```tsx app/api/todos/route.ts
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { NextResponse } from 'next/server'
 
 import type { Database } from '@/lib/database.types'
@@ -1251,8 +1251,8 @@ export async function POST(request: Request) {
   const { title } = await request.json()
 
   const biobase = createClient<Database>(
-    process.env.NEXT_PUBLIC_BIOBASE_URL!,
-    process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY!
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
 
   const { data } = await biobase.from('todos').insert({ title }).select()
@@ -1294,7 +1294,7 @@ For authentication methods that have a `redirectTo` or `emailRedirectTo`, this m
 
 ```jsx
 biobase.auth.signUp({
-  email: 'valid.email@supabase.io',
+  email: 'jon@example.com',
   password: 'sup3rs3cur3',
   options: {
     emailRedirectTo: 'http://localhost:3000/auth/callback',
@@ -1304,12 +1304,12 @@ biobase.auth.signUp({
 
 #### Deprecated functions
 
-With v0.7.x of the Next.js Auth Helpers a new naming convention has been implemented for createClient functions. The `createMiddlewareSupabaseClient`, `createBrowserSupabaseClient`, `createServerComponentSupabaseClient` and `createRouteHandlerSupabaseClient` functions have been marked as deprecated, and will be removed in a future version of the Auth Helpers.
+With v0.7.x of the Next.js Auth Helpers a new naming convention has been implemented for createClient functions. The `createMiddlewareBiobaseClient`, `createBrowserBiobaseClient`, `createServerComponentBiobaseClient` and `createRouteHandlerBiobaseClient` functions have been marked as deprecated, and will be removed in a future version of the Auth Helpers.
 
-- `createMiddlewareSupabaseClient` has been replaced with `createMiddlewareClient`
-- `createBrowserSupabaseClient` has been replaced with `createClientComponentClient`
-- `createServerComponentSupabaseClient` has been replaced with `createServerComponentClient`
-- `createRouteHandlerSupabaseClient` has been replaced with `createRouteHandlerClient`
+- `createMiddlewareBiobaseClient` has been replaced with `createMiddlewareClient`
+- `createBrowserBiobaseClient` has been replaced with `createClientComponentClient`
+- `createServerComponentBiobaseClient` has been replaced with `createServerComponentClient`
+- `createRouteHandlerBiobaseClient` has been replaced with `createRouteHandlerClient`
 
 #### `createClientComponentClient` returns singleton
 

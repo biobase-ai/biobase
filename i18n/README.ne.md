@@ -7,7 +7,7 @@
 
 # सुपाबेस
 
-[सुपाबेस](https://biobase.studio) एक खुल्ला स्रोत फायरबेस विकल्प हो। हामीले यसमा उद्यम-ग्रेडका खुल्ला स्रोत उपकरणहरू प्रयोग गरेर फायरबेसका सुविधाहरू निर्माण गर्दैछौं।
+[सुपाबेस](https://biobase.com) एक खुल्ला स्रोत फायरबेस विकल्प हो। हामीले यसमा उद्यम-ग्रेडका खुल्ला स्रोत उपकरणहरू प्रयोग गरेर फायरबेसका सुविधाहरू निर्माण गर्दैछौं।
 
 - [x] होस्ट गरिएको Postgres डाटाबेस
 - [x] रियलटाइम सदस्यताहरू
@@ -17,28 +17,28 @@
 - [x] भण्डारण
 - [x] प्रकार्यहरू
 
-![Biobase Dashboard](https://raw.githubusercontent.com/biobase-ai/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
+![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## कागजात
 
-पूर्ण कागजातको लागि [biobase.studio/docs](https://biobase.studio/docs) मा जानुहोस्
+पूर्ण कागजातको लागि [biobase.com/docs](https://biobase.com/docs) मा जानुहोस्
 
 ## समुदाय र समर्थन सहयोग
 
 - [सामुदायिक फोरम](https://github.com/biobase-ai/biobase/discussions)। सर्वोत्कृष्ट: निर्माणको साथ मद्दत, डाटाबेसको उत्तम अभ्यासहरूको बारेमा छलफलको लागि।
 - [गिटहब मुद्दाहरू](https://github.com/biobase-ai/biobase/issues)। सर्वोत्कृष्ट: प्रयोग गर्दा फेला परेका बग र त्रुटिहरूको लागि।
-- [ई-मेल समर्थन](https://biobase.studio/docs/support#business-support)। सर्वोत्कृष्ट: तपाईंको डाटाबेस वा पूर्वाधारको समस्याहरूको लागि।
+- [ई-मेल समर्थन](https://biobase.com/docs/support#business-support)। सर्वोत्कृष्ट: तपाईंको डाटाबेस वा पूर्वाधारको समस्याहरूको लागि।
 
 ## स्थिति
 
 - [x] अल्फा: हामी ग्राहकहरु को एक सानो समूह संग सुपाबेस परीक्षण गर्दैछौं।
-- [x] सार्वजनिक अल्फा: सबैले [biobase.studio/dashboard](https://biobase.studio/dashboard) मा साइनअप गर्न सक्दछन्। तर तपाईं केहि अवरोधहरू प्राप्त गर्न सक्नुहुन्छ।
+- [x] सार्वजनिक अल्फा: सबैले [biobase.com/dashboard](https://biobase.com/dashboard) मा साइनअप गर्न सक्दछन्। तर तपाईं केहि अवरोधहरू प्राप्त गर्न सक्नुहुन्छ।
 - [x] सार्वजनिक बीटा: अधिकतर गैर-उद्यम प्रयोगका मामलाहरुका लागि पर्याप्त स्थिर।
 - [ ] सार्वजनिक: उत्पादन प्रयोगको लागि तयार।
 
 हामी हाल सार्वजनिक बिटामा छौं। प्रमुख अद्यावधिकहरूको सूचना प्राप्त गर्न यस रेपोको "रिलिजहरू"मा हेर्नुहोस्।
 
-<kbd><img src="https://raw.githubusercontent.com/biobase-ai/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="यो रिपोलाई हेरौ"/></kbd>
+<kbd><img src="https://raw.githubusercontent.com/biobase/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="यो रिपोलाई हेरौ"/></kbd>
 
 ---
 
@@ -48,15 +48,15 @@
 
 **वर्तमान योजना**
 
-सुपाबेस एक [होस्ट गरिएको प्लेटफर्म](https://biobase.studio/dashboard) हो। तपाई आफै साइन अप गर्न सक्नुहुन्छ र कुनै स्थापना बिना सुपाबेस प्रयोग गर्न सक्नुहुन्छ। हामी अझै स्थानीय विकासको अनुभव सिर्जना गर्दैछौं। यो प्लेटफर्म स्थिरताको साथ हाम्रो मूल फोकस हो।
+सुपाबेस एक [होस्ट गरिएको प्लेटफर्म](https://biobase.com/dashboard) हो। तपाई आफै साइन अप गर्न सक्नुहुन्छ र कुनै स्थापना बिना सुपाबेस प्रयोग गर्न सक्नुहुन्छ। हामी अझै स्थानीय विकासको अनुभव सिर्जना गर्दैछौं। यो प्लेटफर्म स्थिरताको साथ हाम्रो मूल फोकस हो।
 
 ![आर्किटेक्चर](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) एक वस्तु-रिलेशनल डाटाबेस प्रणाली हो जसले ३० बर्ष भन्दा बढी सक्रिय विकासको साथ विश्वसनीयता, सुविधा मजबूती र प्रदर्शनको बलियो प्रतिष्ठा कमाएको छ।
-- [Realtime](https://github.com/biobase-ai/realtime) एक Elixer सर्भर हो जसले तपाइँलाई वेबसकेटहरू प्रयोग गरेर PostgreSQL इन्सर्टहरू, अपडेटहरु, र डिलीटहरु सुन्न अनुमति दिन्छ। सुपाबेसले पोष्टग्रेसको भित्र निर्मित प्रतिकृति कार्यक्षमता सुन्दछ, प्रतिकृति बाइट स्ट्रिमलाई JSON मा रूपान्तरण गर्दछ, र त्यसपछि JSON लाई वेबसकेटमा प्रसारण गर्दछ।।
+- [Realtime](https://github.com/biobase/realtime) एक Elixer सर्भर हो जसले तपाइँलाई वेबसकेटहरू प्रयोग गरेर PostgreSQL इन्सर्टहरू, अपडेटहरु, र डिलीटहरु सुन्न अनुमति दिन्छ। सुपाबेसले पोष्टग्रेसको भित्र निर्मित प्रतिकृति कार्यक्षमता सुन्दछ, प्रतिकृति बाइट स्ट्रिमलाई JSON मा रूपान्तरण गर्दछ, र त्यसपछि JSON लाई वेबसकेटमा प्रसारण गर्दछ।।
 - [PostgREST](http://postgrest.org/) एक वेब सर्वर हो जसले तपाईको PostgreSQL डाटाबेसलाई सीधा एक RESTful एपीआई मा बदल्छ।
-- [Storage](https://github.com/biobase-ai/storage-api) ले अनुमतिहरू प्रबन्ध गर्न पोष्टग्रेस प्रयोग गरेर S3 मा भण्डारित फाइलहरू प्रबन्ध गर्नका लागि RESTful ईन्टरफेस प्रदान गर्दछ।
-- [postgres-meta](https://github.com/biobase-ai/postgres-meta) तपाईंको Postgres प्रबन्धको लागि RESTful एपीआई हो जसले तपाईंलाई टेबुलहरू प्राप्त गर्न, भूमिकाहरू थप्न र प्रश्नहरू चलाउन र अधिकको लागि अनुमति दिन्छ।
+- [Storage](https://github.com/biobase/storage-api) ले अनुमतिहरू प्रबन्ध गर्न पोष्टग्रेस प्रयोग गरेर S3 मा भण्डारित फाइलहरू प्रबन्ध गर्नका लागि RESTful ईन्टरफेस प्रदान गर्दछ।
+- [postgres-meta](https://github.com/biobase/postgres-meta) तपाईंको Postgres प्रबन्धको लागि RESTful एपीआई हो जसले तपाईंलाई टेबुलहरू प्राप्त गर्न, भूमिकाहरू थप्न र प्रश्नहरू चलाउन र अधिकको लागि अनुमति दिन्छ।
 - [GoTrue](https://github.com/netlify/gotrue) प्रयोगकर्ताहरू प्रबन्ध गर्न र JWT टोकनहरू जारी गर्नका लागि एक JWT आधारित एपीआई हो।
 - [Kong](https://github.com/Kong/kong) एक क्लाउड नेटिभ एपीआई गेटवे हो।
 
@@ -66,15 +66,15 @@
 
 - **`biobase-{lang}`**: लाइब्रेरी संयोजन र संवर्धन थप गर्दछ।
   - `postgrest-{lang}`: ग्राहक पुस्तकालय [PostgREST](https://github.com/postgrest/postgrest) को साथ काम गर्न
-  - `realtime-{lang}`: ग्राहक पुस्तकालय [Realtime](https://github.com/biobase-ai/realtime) को साथ काम गर्न
+  - `realtime-{lang}`: ग्राहक पुस्तकालय [Realtime](https://github.com/biobase/realtime) को साथ काम गर्न
   - `gotrue-{lang}`: ग्राहक पुस्तकालय [GoTrue](https://github.com/netlify/gotrue) को साथ काम गर्न
 
 | Repo                  | आधिकारिक                                         | समुदाय                                                                                                                                                                                                                     |
 | --------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`biobase-{lang}`** | [`JS`](https://github.com/supabase/supabase-js)  | [`C#`](https://github.com/biobase-ai/biobase-csharp) \| [`Flutter`](https://github.com/biobase-ai/biobase-flutter) \| [`Python`](https://github.com/biobase-ai/biobase-py) \| `Rust`                                          |
-| `postgrest-{lang}`    | [`JS`](https://github.com/biobase-ai/postgrest-js) | [`C#`](https://github.com/biobase-ai/postgrest-csharp) \| [`Dart`](https://github.com/biobase-ai/postgrest-dart) \| [`Python`](https://github.com/biobase-ai/postgrest-py) \| [`Rust`](https://github.com/biobase-ai/postgrest-rs) |
-| `realtime-{lang}`     | [`JS`](https://github.com/biobase-ai/realtime-js)  | [`C#`](https://github.com/biobase-ai/realtime-csharp) \| [`Dart`](https://github.com/biobase-ai/realtime-dart) \| [`Python`](https://github.com/biobase-ai/realtime-py) \| `Rust`                                                |
-| `gotrue-{lang}`       | [`JS`](https://github.com/biobase-ai/gotrue-js)    | [`C#`](https://github.com/biobase-ai/gotrue-csharp) \| [`Dart`](https://github.com/biobase-ai/gotrue-dart) \| [`Python`](https://github.com/biobase-ai/gotrue-py) \| `Rust`                                                      |
+| **`biobase-{lang}`** | [`JS`](https://github.com/biobase-ai/biobase-js)  | [`C#`](https://github.com/biobase-ai/biobase-csharp) \| [`Flutter`](https://github.com/biobase-ai/biobase-flutter) \| [`Python`](https://github.com/biobase-ai/biobase-py) \| `Rust`                                          |
+| `postgrest-{lang}`    | [`JS`](https://github.com/biobase/postgrest-js) | [`C#`](https://github.com/biobase/postgrest-csharp) \| [`Dart`](https://github.com/biobase/postgrest-dart) \| [`Python`](https://github.com/biobase/postgrest-py) \| [`Rust`](https://github.com/biobase/postgrest-rs) |
+| `realtime-{lang}`     | [`JS`](https://github.com/biobase/realtime-js)  | [`C#`](https://github.com/biobase/realtime-csharp) \| [`Dart`](https://github.com/biobase/realtime-dart) \| [`Python`](https://github.com/biobase/realtime-py) \| `Rust`                                                |
+| `gotrue-{lang}`       | [`JS`](https://github.com/biobase/gotrue-js)    | [`C#`](https://github.com/biobase/gotrue-csharp) \| [`Dart`](https://github.com/biobase/gotrue-dart) \| [`Python`](https://github.com/biobase/gotrue-py) \| `Rust`                                                      |
 
 <!--- Remove this list if you're traslating to another language, it's hard to keep updated across multiple files-->
 <!--- Keep only the link to the list of translation files-->

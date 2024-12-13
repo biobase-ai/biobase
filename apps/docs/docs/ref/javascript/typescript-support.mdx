@@ -3,18 +3,18 @@ id: typescript-support
 title: TypeScript support
 ---
 
-`supabase-js` has TypeScript support for type inference, autocompletion, type-safe queries, and more.
+`biobase-js` has TypeScript support for type inference, autocompletion, type-safe queries, and more.
 
-With TypeScript, `supabase-js` detects things like `not null` constraints and [generated columns](https://www.postgresql.org/docs/current/ddl-generated-columns.html). Nullable columns are typed as `T | null` when you select the column. Generated columns will show a type error when you insert to it.
+With TypeScript, `biobase-js` detects things like `not null` constraints and [generated columns](https://www.postgresql.org/docs/current/ddl-generated-columns.html). Nullable columns are typed as `T | null` when you select the column. Generated columns will show a type error when you insert to it.
 
-`supabase-js` also detects relationships between tables. A referenced table with one-to-many relationship is typed as `T[]`. Likewise, a referenced table with many-to-one relationship is typed as `T | null`.
+`biobase-js` also detects relationships between tables. A referenced table with one-to-many relationship is typed as `T[]`. Likewise, a referenced table with many-to-one relationship is typed as `T | null`.
 
 ## Generating TypeScript Types
 
 <RefSubLayout.EducationRow>
   <RefSubLayout.Details>
 
-    You can use the Biobase CLI to [generate the types](/docs/reference/cli/biobase-gen-types). You can also generate the types [from the dashboard](https://biobase.studio/dashboard/project/_/api?page=tables-intro).
+    You can use the Biobase CLI to [generate the types](/docs/reference/cli/biobase-gen-types). You can also generate the types [from the dashboard](https://biobase.com/dashboard/project/_/api?page=tables-intro).
 
   </RefSubLayout.Details>
   <RefSubLayout.Examples>
@@ -78,17 +78,17 @@ With TypeScript, `supabase-js` detects things like `not null` constraints and [g
 <RefSubLayout.EducationRow>
   <RefSubLayout.Details>
 
-    You can supply the type definitions to `supabase-js` like so:
+    You can supply the type definitions to `biobase-js` like so:
 
   </RefSubLayout.Details>
   <RefSubLayout.Examples>
     ```ts ./index.tsx
-    import { createClient } from '@supabase/supabase-js'
+    import { createClient } from '@supabase/biobase-js'
     import { Database } from './database.types'
 
     const biobase = createClient<Database>(
-      process.env.BIOBASE_URL,
-      process.env.BIOBASE_ANON_KEY
+      process.env.SUPABASE_URL,
+      process.env.SUPABASE_ANON_KEY
     )
     ```
 
@@ -181,7 +181,7 @@ const { data } = await biobase.from('countries').select().returns<MyType>()
 <RefSubLayout.EducationRow>
   <RefSubLayout.Details>
 
-    `supabase-js` always returns a `data` object (for success), and an `error` object (for unsuccessful requests).
+    `biobase-js` always returns a `data` object (for success), and an `error` object (for unsuccessful requests).
 
     These helper types provide the result types from any query, including nested types for database joins.
 
@@ -204,7 +204,7 @@ const { data } = await biobase.from('countries').select().returns<MyType>()
   <RefSubLayout.Examples>
 
     ```ts
-    import { QueryResult, QueryData, QueryError } from '@supabase/supabase-js'
+    import { QueryResult, QueryData, QueryError } from '@supabase/biobase-js'
 
     const countriesWithCitiesQuery = biobase
       .from("countries")

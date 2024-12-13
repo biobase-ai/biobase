@@ -1,10 +1,8 @@
 import { PermissionAction } from '@supabase/shared-types/out/constants'
-import { Key } from 'lucide-react'
 
-import { useParams } from 'common'
 import type { showApiKey } from 'components/interfaces/Docs/Docs.types'
-import { getAPIKeys, useProjectSettingsV2Query } from 'data/config/project-settings-v2-query'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
+import { Key } from 'lucide-react'
 import {
   Button,
   DropdownMenu,
@@ -13,29 +11,29 @@ import {
   DropdownMenuTrigger,
 } from 'ui'
 
-const DEFAULT_KEY = { name: 'hide', key: 'BIOBASE_KEY' }
+const DEFAULT_KEY = { name: 'hide', key: 'SUPABASE_KEY' }
 
 interface LangSelectorProps {
   selectedLang: string
-  showApiKey: showApiKey
   setSelectedLang: (selectedLang: string) => void
+  showApiKey: showApiKey
   setShowApiKey: (showApiKey: showApiKey) => void
+  apiKey: string | undefined
+  autoApiService: any
 }
 
 const LangSelector = ({
   selectedLang,
-  showApiKey,
   setSelectedLang,
+  showApiKey,
   setShowApiKey,
+  apiKey,
+  autoApiService,
 }: LangSelectorProps) => {
-  const { ref: projectRef } = useParams()
   const canReadServiceKey = useCheckPermissions(
     PermissionAction.READ,
     'service_api_keys.service_role_key'
   )
-
-  const { data: settings } = useProjectSettingsV2Query({ projectRef })
-  const { anonKey: anonApiKey, serviceKey: serviceApiKey } = getAPIKeys(settings)
 
   return (
     <div className="p-1 w-1/2 ml-auto">
@@ -77,12 +75,12 @@ const LangSelector = ({
                   <DropdownMenuItem key="hide" onClick={() => setShowApiKey(DEFAULT_KEY)}>
                     hide
                   </DropdownMenuItem>
-                  {anonApiKey && (
+                  {apiKey && (
                     <DropdownMenuItem
                       key="anon"
                       onClick={() =>
                         setShowApiKey({
-                          key: anonApiKey.api_key ?? '-',
+                          key: apiKey,
                           name: 'anon (public)',
                         })
                       }
@@ -95,7 +93,7 @@ const LangSelector = ({
                       key="service"
                       onClick={() =>
                         setShowApiKey({
-                          key: serviceApiKey?.api_key ?? '-',
+                          key: autoApiService.serviceApiKey,
                           name: 'service_role (secret)',
                         })
                       }

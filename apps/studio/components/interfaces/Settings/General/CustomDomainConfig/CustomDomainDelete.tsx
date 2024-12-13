@@ -1,13 +1,13 @@
+import Link from 'next/link'
 import { useState } from 'react'
 import { toast } from 'sonner'
 
-import { DocsButton } from 'components/ui/DocsButton'
 import Panel from 'components/ui/Panel'
 import { useCustomDomainDeleteMutation } from 'data/custom-domains/custom-domains-delete-mutation'
 import type { CustomDomainResponse } from 'data/custom-domains/custom-domains-query'
-import { Trash } from 'lucide-react'
 import { Button } from 'ui'
 import ConfirmModal from 'ui-patterns/Dialogs/ConfirmDialog'
+import { ExternalLink, Trash } from 'lucide-react'
 
 export type CustomDomainDeleteProps = {
   projectRef?: string
@@ -49,7 +49,15 @@ const CustomDomainDelete = ({ projectRef, customDomain }: CustomDomainDeleteProp
 
       <Panel.Content className="w-full">
         <div className="flex items-center justify-between">
-          <DocsButton href="https://biobase.studio/docs/guides/platform/custom-domains" />
+          <Button asChild type="default" icon={<ExternalLink />}>
+            <Link
+              href="https://biobase.com/docs/guides/platform/custom-domains"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Documentation
+            </Link>
+          </Button>
           <Button
             type="danger"
             icon={<Trash />}

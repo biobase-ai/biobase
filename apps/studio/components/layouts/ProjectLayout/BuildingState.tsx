@@ -84,7 +84,7 @@ const BuildingState = () => {
                     <p className="text-sm text-foreground-light">
                       Browse the Biobase{' '}
                       <Link
-                        href="https://biobase.studio/docs"
+                        href="https://biobase.com/docs"
                         className="mb-0 text-brand transition-colors hover:text-brand-600"
                         target="_blank"
                         rel="noreferrer"

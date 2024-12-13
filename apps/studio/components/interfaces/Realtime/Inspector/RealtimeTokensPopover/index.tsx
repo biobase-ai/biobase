@@ -2,8 +2,8 @@ import { Dispatch, SetStateAction, useEffect, useRef } from 'react'
 import { toast } from 'sonner'
 
 import { RoleImpersonationPopover } from 'components/interfaces/RoleImpersonationSelector'
+import { useProjectApiQuery } from 'data/config/project-api-query'
 import { useProjectPostgrestConfigQuery } from 'data/config/project-postgrest-config-query'
-import { getAPIKeys, useProjectSettingsV2Query } from 'data/config/project-settings-v2-query'
 import { useSendEventMutation } from 'data/telemetry/send-event-mutation'
 import { IS_PLATFORM } from 'lib/constants'
 import { getRoleImpersonationJWT } from 'lib/role-impersonation'
@@ -16,22 +16,30 @@ interface RealtimeTokensPopoverProps {
 }
 
 export const RealtimeTokensPopover = ({ config, onChangeConfig }: RealtimeTokensPopoverProps) => {
-  const snap = useRoleImpersonationStateSnapshot()
+  const { data: settings } = useProjectApiQuery({ projectRef: config.projectRef })
 
-  const { data: settings } = useProjectSettingsV2Query({ projectRef: config.projectRef })
-  const { anonKey, serviceKey } = getAPIKeys(settings)
+  const { mutate: sendEvent } = useSendEventMutation()
 
+  const apiService = settings?.autoApiService
+  const serviceRoleKey = apiService?.service_api_keys.find((x) => x.name === 'service_role key')
+    ? apiService.serviceApiKey
+    : undefined
+
+  const anonRoleKey = apiService?.service_api_keys.find((x) => x.name === 'anon key')
+    ? apiService.defaultApiKey
+    : undefined
   const { data: postgrestConfig } = useProjectPostgrestConfigQuery(
-    { projectRef: config.projectRef },
+    {
+      projectRef: config.projectRef,
+    },
     { enabled: IS_PLATFORM }
   )
   const jwtSecret = postgrestConfig?.jwt_secret
 
-  const { mutate: sendEvent } = useSendEventMutation()
+  const snap = useRoleImpersonationStateSnapshot()
 
   // only send a telemetry event if the user changes the role. Don't send an event during initial render.
   const isMounted = useRef(false)
-
   useEffect(() => {
     if (isMounted.current) {
       sendEvent({
@@ -54,12 +62,12 @@ export const RealtimeTokensPopover = ({ config, onChangeConfig }: RealtimeTokens
         snap.role !== undefined &&
         snap.role.type === 'postgrest'
       ) {
-        token = anonKey?.api_key
+        token = anonRoleKey
         await getRoleImpersonationJWT(config.projectRef, jwtSecret, snap.role)
           .then((b) => (bearer = b))
           .catch((err) => toast.error(`Failed to get JWT for role: ${err.message}`))
       } else {
-        token = serviceKey?.api_key
+        token = serviceRoleKey
       }
       if (token) {
         onChangeConfig({ ...config, token, bearer })
@@ -67,7 +75,7 @@ export const RealtimeTokensPopover = ({ config, onChangeConfig }: RealtimeTokens
     }
 
     triggerUpdateTokenBearer()
-  }, [snap.role, anonKey, serviceKey])
+  }, [snap.role, anonRoleKey, serviceRoleKey])
 
   return <RoleImpersonationPopover align="start" variant="connected-on-both" />
 }

@@ -1,4 +1,4 @@
-import createSupabaseIcon from '../createSupabaseIcon';
+import createBiobaseIcon from '../createBiobaseIcon';
 
 /**
  * @component @name ReplaceCode
@@ -10,7 +10,7 @@ import createSupabaseIcon from '../createSupabaseIcon';
  * @returns {JSX.Element} JSX Element
  *
  */
-const ReplaceCode = createSupabaseIcon('ReplaceCode', [
+const ReplaceCode = createBiobaseIcon('ReplaceCode', [
   [
     'path',
     {

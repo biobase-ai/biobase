@@ -11,11 +11,11 @@ The Management API allows you to manage your projects programmatically.
 ## Authentication
 
 All API requests require a Biobase Personal token to be included in the Authorization header: `Authorization: Bearer <biobase_personal_token>`.
-To generate or manage your API token, visit your [account](https://biobase.studio/dashboard/account/tokens) page.
+To generate or manage your API token, visit your [account](https://biobase.com/dashboard/account/tokens) page.
 Your API tokens carry the same privileges as your user account, so be sure to keep it secret.
 
 ```bash
-$ curl https://api.biobase.studio/v1/projects \
+$ curl https://api.biobase.com/v1/projects \
 -H "Authorization: Bearer sbp_bdd0••••••••••••••••••••••••••••••••4f23"
 ```
 
@@ -28,10 +28,10 @@ The rate limit for Management API is 60 requests per one minute per user, and ap
 If you exceed this limit, all Management API calls for the next minute will be blocked, resulting in a HTTP 429 response.
 
 The Management API is subject to our fair-use policy.
-All resources created via the API are subject to the pricing detailed on our [Pricing](https://biobase.studio/pricing) pages.
+All resources created via the API are subject to the pricing detailed on our [Pricing](https://biobase.com/pricing) pages.
 
 ## Additional links
 
-- [OpenAPI Docs](https://api.biobase.studio/api/v1)
-- [OpenAPI Spec](https://api.biobase.studio/api/v1-json)
+- [OpenAPI Docs](https://api.biobase.com/api/v1)
+- [OpenAPI Spec](https://api.biobase.com/api/v1-json)
 - Reporting bugs and issues: [github.com/biobase-ai/biobase](https://github.com/biobase-ai/biobase)

@@ -55,7 +55,7 @@ export default function OptInToOpenAIToggle({ className }: OptInToOpenAITogglePr
           <p>
             For more information about how we use personal information, please see our{' '}
             <Link
-              href="https://biobase.studio/privacy"
+              href="https://biobase.com/privacy"
               target="_blank"
               rel="noreferrer"
               className="text-brand border-b border-brand"

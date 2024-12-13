@@ -35,10 +35,10 @@ function Blog(props: any) {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.studio/${router.pathname}`,
+          url: `https://biobase.com/${router.pathname}`,
           images: [
             {
-              url: `https://biobase.studio/images/og/biobase-og.png`,
+              url: `https://biobase.com/images/og/biobase-og.png`,
             },
           ],
         }}
@@ -46,7 +46,7 @@ function Blog(props: any) {
           {
             rel: 'alternate',
             type: 'application/rss+xml',
-            href: `https://biobase.studio/rss.xml`,
+            href: `https://biobase.com/rss.xml`,
           },
         ]}
       />

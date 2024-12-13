@@ -5,7 +5,6 @@
   "types": "./index.tsx",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf node_modules",
     "gen:types": "biobase gen types typescript --local >| ./database-types.ts",
     "typecheck_CURRENTLY_IGNORED": "tsc --noEmit"
   },
@@ -25,7 +24,7 @@
     "typescript": "~5.5.0"
   },
   "peerDependencies": {
-    "@supabase/supabase-js": "*",
+    "@supabase/biobase-js": "*",
     "@supabase/auth-js": "^2.63.0",
     "next": "*",
     "react": "*",

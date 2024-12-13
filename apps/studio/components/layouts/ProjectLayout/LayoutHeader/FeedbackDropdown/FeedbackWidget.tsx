@@ -274,7 +274,7 @@ const FeedbackWidget = ({
             </span>
           </Link>{' '}
           or{' '}
-          <a href="https://biobase.studio/docs" target="_blank" rel="noreferrer">
+          <a href="https://biobase.com/docs" target="_blank" rel="noreferrer">
             <span className="cursor-pointer text-brand transition-colors hover:text-brand-600">
               browse our docs
             </span>

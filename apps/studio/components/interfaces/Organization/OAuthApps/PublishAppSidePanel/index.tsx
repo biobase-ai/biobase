@@ -1,10 +1,9 @@
 import type { OAuthScope } from '@supabase/shared-types/out/constants'
-import { Edit, Upload } from 'lucide-react'
+import Link from 'next/link'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { toast } from 'sonner'
 
 import { useParams } from 'common'
-import { DocsButton } from 'components/ui/DocsButton'
 import {
   OAuthAppCreateResponse,
   useOAuthAppCreateMutation,
@@ -24,10 +23,12 @@ import {
   Input,
   Modal,
   SidePanel,
+  Upload,
   cn,
 } from 'ui'
 import AuthorizeRequesterDetails from '../AuthorizeRequesterDetails'
 import { ScopesPanel } from './Scopes'
+import { Edit, ExternalLink } from 'lucide-react'
 
 export interface PublishAppSidePanelProps {
   visible: boolean
@@ -336,7 +337,15 @@ const PublishAppSidePanel = ({
                             of its projects.
                           </span>
                         </div>
-                        <DocsButton href="https://biobase.studio/docs/guides/platform/oauth-apps/oauth-scopes" />
+                        <Button asChild type="default" icon={<ExternalLink />}>
+                          <Link
+                            href="https://biobase.com/docs/guides/platform/oauth-apps/oauth-scopes"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Documentation
+                          </Link>
+                        </Button>
                       </div>
 
                       <ScopesPanel scopes={scopes} setScopes={setScopes} />

@@ -29,15 +29,12 @@ export const USAGE_APPROACHING_THRESHOLD = 0.75
 
 export const LOCAL_STORAGE_KEYS = {
   RECENTLY_VISITED_ORGANIZATION: 'biobase-organization',
-
-  AI_ASSISTANT_STATE: 'biobase-ai-assistant-state',
+  TELEMETRY_CONSENT: 'biobase-consent',
 
   UI_PREVIEW_NAVIGATION_LAYOUT: 'biobase-ui-preview-nav-layout',
   UI_PREVIEW_API_SIDE_PANEL: 'biobase-ui-api-side-panel',
   UI_PREVIEW_CLS: 'biobase-ui-cls',
   UI_ONBOARDING_NEW_PAGE_SHOWN: 'biobase-ui-onboarding-new-page-shown',
-
-  SQL_SCRATCH_PAD_BANNER_ACKNOWLEDGED: 'biobase-sql-scratch-pad-banner-acknowledged',
 
   DASHBOARD_HISTORY: (ref: string) => `dashboard-history-${ref}`,
 

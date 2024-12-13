@@ -4,13 +4,15 @@ import { PropsWithChildren, useEffect } from 'react'
 
 import PartnerIcon from 'components/ui/PartnerIcon'
 import { useOrganizationsQuery } from 'data/organizations/organizations-query'
-import { useSendResetMutation } from 'data/telemetry/send-reset-mutation'
 import { useSelectedOrganization } from 'hooks/misc/useSelectedOrganization'
 import { withAuth } from 'hooks/misc/withAuth'
+import { useFlag } from 'hooks/ui/useFlag'
 import { useSignOut } from 'lib/auth'
 import { IS_PLATFORM } from 'lib/constants'
+import SettingsLayout from '../SettingsLayout/SettingsLayout'
 import type { SidebarSection } from './AccountLayout.types'
 import WithSidebar from './WithSidebar'
+import { useSendResetMutation } from 'data/telemetry/send-reset-mutation'
 
 export interface AccountLayoutProps {
   title: string
@@ -25,11 +27,13 @@ const AccountLayout = ({ children, title, breadcrumbs }: PropsWithChildren<Accou
   const { data: organizations } = useOrganizationsQuery()
   const selectedOrganization = useSelectedOrganization()
 
+  const navLayoutV2 = useFlag('navigationLayoutV2')
+  const enablePostHogTelemetry = useFlag('enablePosthogChanges')
   const { mutateAsync: sendReset } = useSendResetMutation()
 
   const signOut = useSignOut()
   const onClickLogout = async () => {
-    await sendReset()
+    if (enablePostHogTelemetry) await sendReset()
     await signOut()
     await router.push('/sign-in')
   }
@@ -115,13 +119,13 @@ const AccountLayout = ({ children, title, breadcrumbs }: PropsWithChildren<Accou
         {
           key: 'ext-guides',
           label: 'Guides',
-          href: 'https://biobase.studio/docs',
+          href: 'https://biobase.com/docs',
           isExternal: true,
         },
         {
           key: 'ext-guides',
           label: 'API Reference',
-          href: 'https://biobase.studio/docs/guides/api',
+          href: 'https://biobase.com/docs/guides/api',
           isExternal: true,
         },
       ],
@@ -143,6 +147,10 @@ const AccountLayout = ({ children, title, breadcrumbs }: PropsWithChildren<Accou
       : []),
   ]
 
+  if (navLayoutV2) {
+    return <SettingsLayout>{children}</SettingsLayout>
+  }
+
   return (
     <>
       <Head>
@@ -150,7 +158,12 @@ const AccountLayout = ({ children, title, breadcrumbs }: PropsWithChildren<Accou
         <meta name="description" content="Biobase Studio" />
       </Head>
       <div className="h-screen min-h-[0px] basis-0 flex-1">
-        <WithSidebar title={title} breadcrumbs={breadcrumbs} sections={sectionsWithHeaders}>
+        <WithSidebar
+          hideSidebar={navLayoutV2}
+          title={title}
+          breadcrumbs={breadcrumbs}
+          sections={sectionsWithHeaders}
+        >
           {children}
         </WithSidebar>
       </div>

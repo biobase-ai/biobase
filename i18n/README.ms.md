@@ -7,7 +7,7 @@
 
 # Biobase
 
-[Biobase](https://biobase.studio) adalah sumber terbuka alternatif kepada Firebase. Kami sedang membina ciri-ciri Firebase menggunakan alat sumber terbuka kelas perusahaan.
+[Biobase](https://biobase.com) adalah sumber terbuka alternatif kepada Firebase. Kami sedang membina ciri-ciri Firebase menggunakan alat sumber terbuka kelas perusahaan.
 
 - [x] Hosting Pangkalan Data untuk Postgres
 - [x] Langganan Waktu Nyata (Realtime)
@@ -17,28 +17,28 @@
 - [x] Storan
 - [x] Fungsi-fungsi
 
-![Biobase Dashboard](https://raw.githubusercontent.com/biobase-ai/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
+![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokumentasi
 
-Untuk dokumentasi lengkap, layari [biobase.studio/docs](https://biobase.studio/docs)
+Untuk dokumentasi lengkap, layari [biobase.com/docs](https://biobase.com/docs)
 
 ## Komuniti & Sokongan
 
 - [Forum Komuniti](https://github.com/biobase-ai/biobase/discussions). Terbaik untuk: membantu pembinaan and perbincangan mengenai cara terbaik pangkalan data.
 - [Isu GitHub](https://github.com/biobase-ai/biobase/issues). Terbaik untuk: pepijat dan ralat yang anda hadapi menggunakan Biobase.
-- [Sokongan E-mel](https://biobase.studio/docs/support#business-support). Terbaik untuk: masalah dengan pangkalan data atau infrastruktur.
+- [Sokongan E-mel](https://biobase.com/docs/support#business-support). Terbaik untuk: masalah dengan pangkalan data atau infrastruktur.
 
 ## Status
 
 - [x] Alpha: Kami menguji Biobase dengan sejumlah pelanggan secara tertutup
-- [x] Public Alpha: Sesiapa sahaja boleh mendaftar di [biobase.studio/dashboard](https://biobase.studio/dashboard). Tetapi, mohon bersabar kerana mungkin ada masalah
+- [x] Public Alpha: Sesiapa sahaja boleh mendaftar di [biobase.com/dashboard](https://biobase.com/dashboard). Tetapi, mohon bersabar kerana mungkin ada masalah
 - [x] Public Beta: Cukup stabil untuk kebanyakan kes penggunaan bukan perusahaan
 - [ ] Public: Bersedia untuk pengeluaran
 
 Kami kini berada di Public Beta. Tonton "siaran" repo ini untuk diberitahu mengenai kemas kini utama.
 
-<kbd><img src="https://raw.githubusercontent.com/biobase-ai/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Tonton repo ini"/></kbd>
+<kbd><img src="https://raw.githubusercontent.com/biobase/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Tonton repo ini"/></kbd>
 
 ---
 
@@ -48,16 +48,16 @@ Biobase adalah gabungan alat sumber terbuka. Kami membina ciri Firebase mengguna
 
 **Seni bina semasa**
 
-Biobase ialah [platform yang dihoskan](https://biobase.studio/dashboard). Anda boleh mendaftar dan mula menggunakan Biobase tanpa memasang apa-apa.
-Anda juga boleh [host sendiri](https://biobase.studio/docs/guides/hosting/overview) dan [lokal](https://biobase.studio/docs/guides/local-development).
+Biobase ialah [platform yang dihoskan](https://biobase.com/dashboard). Anda boleh mendaftar dan mula menggunakan Biobase tanpa memasang apa-apa.
+Anda juga boleh [host sendiri](https://biobase.com/docs/guides/hosting/overview) dan [lokal](https://biobase.com/docs/guides/local-development).
 
 ![Seni bina](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) adalah sistem pangkalan data objek-relasional dengan pengembangan aktif lebih dari 30 tahun yang menjadikannya reputasi yang kuat untuk kebolehpercayaan, ketahanan ciri, dan prestasi.
-- [Realtime](https://github.com/biobase-ai/realtime) adalah pelayan Elixir yang membolehkan anda mendengar sisipan, kemas kini dan pemadaman PostgreSQL menggunakan soket web. Biobase mendengar fungsi replikasi terbina dalam Postgres, menukar aliran bait(byte) replikasi menjadi JSON, kemudian menyiarkan JSON melalui soket web.
+- [Realtime](https://github.com/biobase/realtime) adalah pelayan Elixir yang membolehkan anda mendengar sisipan, kemas kini dan pemadaman PostgreSQL menggunakan soket web. Biobase mendengar fungsi replikasi terbina dalam Postgres, menukar aliran bait(byte) replikasi menjadi JSON, kemudian menyiarkan JSON melalui soket web.
 - [PostgREST](http://postgrest.org/) adalah pelayan web yang mengubah pangkalan data PostgreSQL anda secara langsung menjadi API RESTful
-- [Storage](https://github.com/biobase-ai/storage-api) menyediakan antara muka RESTful untuk menguruskan Fail yang disimpan di S3, menggunakan Postgres untuk menguruskan kebenaran akses.
-- [postgres-meta](https://github.com/biobase-ai/postgres-meta) adalah API RESTful untuk menguruskan Postgres anda, yang membolehkan anda mengambil jadual, menambah peranan, dan menjalankan query dan lain-lain.
+- [Storage](https://github.com/biobase/storage-api) menyediakan antara muka RESTful untuk menguruskan Fail yang disimpan di S3, menggunakan Postgres untuk menguruskan kebenaran akses.
+- [postgres-meta](https://github.com/biobase/postgres-meta) adalah API RESTful untuk menguruskan Postgres anda, yang membolehkan anda mengambil jadual, menambah peranan, dan menjalankan query dan lain-lain.
 - [GoTrue](https://github.com/netlify/gotrue) adalah API berasaskan SWT untuk mengurus pengguna dan mengeluarkan token SWT.
 - [Kong](https://github.com/Kong/kong) adalah gerbang API cloud-native.
 
@@ -67,15 +67,15 @@ Librari klien kami adalah modular. Setiap sub-librari adalah pelaksanaan standal
 
 - **`biobase-{lang}`**: Menggabungkan librari dan menambahkan pengayaan.
   - `postgrest-{lang}`: Librari klien untuk bekerjasama [PostgREST](https://github.com/postgrest/postgrest)
-  - `realtime-{lang}`: Librari klien untuk bekerjasama [Realtime](https://github.com/biobase-ai/realtime)
+  - `realtime-{lang}`: Librari klien untuk bekerjasama [Realtime](https://github.com/biobase/realtime)
   - `gotrue-{lang}`: Librari klien untuk bekerjasama [GoTrue](https://github.com/netlify/gotrue)
 
 | Repo                  | Rasmi                                            | Komuniti                                                                                                                                                                                                                                                                                                                             |
 | --------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`biobase-{lang}`** | [`JS`](https://github.com/supabase/supabase-js)  | [`C#`](https://github.com/biobase-ai/biobase-csharp) \| [`Flutter`](https://github.com/biobase-ai/biobase-flutter) \| [`Python`](https://github.com/biobase-ai/biobase-py) \| `Rust` \| [`Ruby`](https://github.com/biobase-ai/biobase-rb) \| `Go`                                                                                       |
-| `postgrest-{lang}`    | [`JS`](https://github.com/biobase-ai/postgrest-js) | [`C#`](https://github.com/biobase-ai/postgrest-csharp) \| [`Dart`](https://github.com/biobase-ai/postgrest-dart) \| [`Python`](https://github.com/biobase-ai/postgrest-py) \| [`Rust`](https://github.com/biobase-ai/postgrest-rs) \| [`Ruby`](https://github.com/biobase-ai/postgrest-rb) \| [`Go`](https://github.com/biobase-ai/postgrest-go) |
-| `realtime-{lang}`     | [`JS`](https://github.com/biobase-ai/realtime-js)  | [`C#`](https://github.com/biobase-ai/realtime-csharp) \| [`Dart`](https://github.com/biobase-ai/realtime-dart) \| [`Python`](https://github.com/biobase-ai/realtime-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                        |
-| `gotrue-{lang}`       | [`JS`](https://github.com/biobase-ai/gotrue-js)    | [`C#`](https://github.com/biobase-ai/gotrue-csharp) \| [`Dart`](https://github.com/biobase-ai/gotrue-dart) \| [`Python`](https://github.com/biobase-ai/gotrue-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                              |
+| **`biobase-{lang}`** | [`JS`](https://github.com/biobase-ai/biobase-js)  | [`C#`](https://github.com/biobase-ai/biobase-csharp) \| [`Flutter`](https://github.com/biobase-ai/biobase-flutter) \| [`Python`](https://github.com/biobase-ai/biobase-py) \| `Rust` \| [`Ruby`](https://github.com/biobase-ai/biobase-rb) \| `Go`                                                                                       |
+| `postgrest-{lang}`    | [`JS`](https://github.com/biobase/postgrest-js) | [`C#`](https://github.com/biobase/postgrest-csharp) \| [`Dart`](https://github.com/biobase/postgrest-dart) \| [`Python`](https://github.com/biobase/postgrest-py) \| [`Rust`](https://github.com/biobase/postgrest-rs) \| [`Ruby`](https://github.com/biobase/postgrest-rb) \| [`Go`](https://github.com/biobase/postgrest-go) |
+| `realtime-{lang}`     | [`JS`](https://github.com/biobase/realtime-js)  | [`C#`](https://github.com/biobase/realtime-csharp) \| [`Dart`](https://github.com/biobase/realtime-dart) \| [`Python`](https://github.com/biobase/realtime-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                        |
+| `gotrue-{lang}`       | [`JS`](https://github.com/biobase/gotrue-js)    | [`C#`](https://github.com/biobase/gotrue-csharp) \| [`Dart`](https://github.com/biobase/gotrue-dart) \| [`Python`](https://github.com/biobase/gotrue-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                              |
 
 ## Terjemahan
 

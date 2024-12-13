@@ -1,35 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": [
-    "../../tsconfig.json",
-    "./tsconfig.json"
-  ],
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "target": "es2020",
+    "target": "es6",
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "strict": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-      "@/registry/*": ["./registry/*"],
-      "@config/*": ["../../packages/config/*"],
-      "@ui/*": ["../../packages/ui/*"],
-      "@common/*": ["../../packages/common/*"]
-    }
+    "isolatedModules": false
   },
-  "include": [
-    ".contentlayer/generated", 
-    "scripts/**/*.ts", 
-    "registry/**/*.ts",
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    ".next"
-  ]
+  "include": [".contentlayer/generated", "scripts/**/*.ts"],
+  "exclude": ["node_modules"]
 }

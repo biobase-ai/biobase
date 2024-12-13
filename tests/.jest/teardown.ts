@@ -1,9 +1,9 @@
-import { createClient, User, UserResponse } from '@supabase/supabase-js'
+import { createClient, User, UserResponse } from '@supabase/biobase-js'
 
 const removeAllUsers = async () => {
   const sb = createClient(
-    process.env.BIOBASE_URL as string,
-    process.env.BIOBASE_KEY_ADMIN as string
+    process.env.SUPABASE_URL as string,
+    process.env.SUPABASE_KEY_ADMIN as string
   )
 
   const {

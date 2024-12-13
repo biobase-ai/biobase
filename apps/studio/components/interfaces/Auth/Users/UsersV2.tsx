@@ -123,8 +123,9 @@ export const UsersV2 = () => {
     providers: selectedProviders,
   })
 
-  const totalUsers = countData ?? 0
-  const users = useMemo(() => data?.pages.flatMap((page) => page.result) ?? [], [data?.pages])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const totalUsers = useMemo(() => countData?.result[0].count ?? 0, [countData?.result[0].count])
+  const users = useMemo(() => data?.pages.flatMap((page) => page.result), [data?.pages])
 
   const handleScroll = (event: UIEvent<HTMLDivElement>) => {
     if (isLoading || !isAtBottom(event)) return
@@ -187,7 +188,7 @@ export const UsersV2 = () => {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isSuccess, isRefetching, isSuccessStorage, isErrorStorage, errorStorage, users])
+  }, [isSuccess, isRefetching, isSuccessStorage, isErrorStorage, errorStorage])
 
   return (
     <div className="h-full flex flex-col">
@@ -307,7 +308,7 @@ export const UsersV2 = () => {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button icon={sortOrder === 'desc' ? <ArrowDown /> : <ArrowUp />}>
-                Sorted by {sortColumn.replaceAll('_', ' ')}
+                Sorted by {sortColumn.replace('_', ' ')}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-44" align="start">
@@ -317,17 +318,6 @@ export const UsersV2 = () => {
                   <DropdownMenuSubContent>
                     <DropdownMenuRadioItem value="created_at:asc">Ascending</DropdownMenuRadioItem>
                     <DropdownMenuRadioItem value="created_at:desc">
-                      Descending
-                    </DropdownMenuRadioItem>
-                  </DropdownMenuSubContent>
-                </DropdownMenuSub>
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger>Sort by last sign in at</DropdownMenuSubTrigger>
-                  <DropdownMenuSubContent>
-                    <DropdownMenuRadioItem value="last_sign_in_at:asc">
-                      Ascending
-                    </DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="last_sign_in_at:desc">
                       Descending
                     </DropdownMenuRadioItem>
                   </DropdownMenuSubContent>
@@ -362,7 +352,7 @@ export const UsersV2 = () => {
           >
             Refresh
           </Button>
-          <AddUserDropdown />
+          <AddUserDropdown projectKpsVersion={project?.kpsVersion} />
         </div>
       </div>
       <LoadingLine loading={isLoading || isRefetching || isFetchingNextPage} />

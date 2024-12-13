@@ -1,4 +1,4 @@
-import type { AuthMFAUnenrollResponse, MFAUnenrollParams } from '@supabase/supabase-js'
+import type { AuthMFAUnenrollResponse, MFAUnenrollParams } from '@supabase/biobase-js'
 import { useMutation, UseMutationOptions, useQueryClient } from '@tanstack/react-query'
 import { auth } from 'lib/gotrue'
 import { toast } from 'sonner'

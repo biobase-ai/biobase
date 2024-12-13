@@ -8,10 +8,6 @@ type WarehouseAccessTokenCreateVariables = {
   ref: string
   description: string
 }
-
-/**
- * This will be deprecated or rewritten in favor of the new project API keys
- */
 async function createWarehouseAccessToken({
   ref,
   description,

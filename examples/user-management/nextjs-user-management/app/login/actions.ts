@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/utils/biobase/server'
 
 export async function login(formData: FormData) {
-  const biobase = await createClient()
+  const biobase = createClient()
 
   // type-casting here for convenience
   // in practice, you should validate your inputs
@@ -26,7 +26,7 @@ export async function login(formData: FormData) {
 }
 
 export async function signup(formData: FormData) {
-  const biobase = await createClient()
+  const biobase = createClient()
 
   // type-casting here for convenience
   // in practice, you should validate your inputs

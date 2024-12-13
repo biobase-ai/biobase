@@ -38,7 +38,7 @@ The database webhook handler to send push notifications is located in [biobase/f
 
 ## Create the database webhook
 
-Navigate to the [Database Webhooks settings](https://biobase.studio/dashboard/project/_/database/hooks) in your Biobase Dashboard.
+Navigate to the [Database Webhooks settings](https://biobase.com/dashboard/project/_/database/hooks) in your Biobase Dashboard.
 
 1. Enable and create a new hook.
 1. Conditions to fire webhook: Select the `notifications` table and tick the `Insert` event. 
@@ -49,6 +49,6 @@ Navigate to the [Database Webhooks settings](https://biobase.studio/dashboard/pr
 
 ## Send push notification
 
-1. Navigate to the [table editor](https://biobase.studio/dashboard/project/_/editor) in your Biobase Dashboard.
+1. Navigate to the [table editor](https://biobase.com/dashboard/project/_/editor) in your Biobase Dashboard.
 1. In your `notifications` table, insert a new row.
 1. Watch the magic happen 🪄

@@ -3,10 +3,10 @@
 This is a full-stack Slack clone example using:
 
 - Frontend:
-  - [Next.js](https://github.com/vercel/next.js) - a React framework for production.
-  - [Biobase.js](https://biobase.studio/docs/library/getting-started) for user management and realtime data syncing.
+  - Next.js.
+  - [Biobase.js](https://biobase.com/docs/library/getting-started) for user management and realtime data syncing.
 - Backend:
-  - [biobase.studio/dashboard](https://biobase.studio/dashboard/): hosted Postgres database with restful API for usage with Biobase.js.
+  - [biobase.com/dashboard](https://biobase.com/dashboard/): hosted Postgres database with restful API for usage with Biobase.js.
 
 ## Demo
 
@@ -14,17 +14,11 @@ This is a full-stack Slack clone example using:
 
 ![Demo animation gif](./public/slack-clone-demo.gif)
 
-## Deploy with Vercel
-
-The Vercel deployment will guide you through creating a Biobase account and project. After installation of the Biobase integration, all relevant environment variables will be set up so that the project is usable immediately after deployment 🚀
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbiobase%2Fbiobase%2Ftree%2Fmaster%2Fexamples%2Fslack-clone%2Fnextjs-slack-clone&project-name=biobase-nextjs-slack-clone&repository-name=biobase-nextjs-slack-clone&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6&external-id=https%3A%2F%2Fgithub.com%2Fbiobase%2Fbiobase%2Ftree%2Fmaster%2Fexamples%2Fslack-clone%2Fnextjs-slack-clone)
-
-## Build from scratch
+## Deploy your own
 
 ### 1. Create new project
 
-Sign up to Biobase - [https://biobase.studio/dashboard](https://biobase.studio/dashboard) and create a new project. Wait for your database to start.
+Sign up to Biobase - [https://biobase.com/dashboard](https://biobase.com/dashboard) and create a new project. Wait for your database to start.
 
 ### 2. Run "Slack Clone" Quickstart
 
@@ -42,49 +36,62 @@ The `anon` key is your client-side API key. It allows "anonymous access" to your
 
 **_NOTE_**: The `service_role` key has full access to your data, bypassing any security policies. These keys have to be kept secret and are meant to be used in server environments and never on a client or browser.
 
+### 4. Deploy the Next.js client
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fbiobase%2Fbiobase%2Ftree%2Fmaster%2Fexamples%2Fslack-clone%2Fnextjs-slack-clone&env=NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY&envDescription=Find%20the%20Biobase%20URL%20and%20key%20in%20the%20your%20auto-generated%20docs%20at%20biobase.com/dashboard&project-name=biobase-slack-clone&repo-name=biobase-slack-clone)
+
+Here, we recommend forking this repo so you can deploy through Vercel by clicking the button above. When you click the button, replace the repo URL with your fork's URL.
+
+You will be asked for a `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Use the API URL and `anon` key from [step 3](#3-get-the-url-and-key).
+
+### 5. Change authentication settings if necessary
+
+![Change auth settings](https://user-images.githubusercontent.com/1811651/101840012-39be3800-3af8-11eb-8c32-73f2fae6299e.png)
+
+On [biobase.com/dashboard](https://biobase.com/dashboard), you can go to Authentication -> Settings to change your auth settings for your project if necessary. Here, you can change the site URL, which is used for determining where to redirect users after they confirm their email addresses or attempt to use a magic link to log in.
+
+Here, you can also enable external oauth providers, such as Google and GitHub.
+
+## How to use
+
+### Using this repo
+
+Simply clone this repo locally and proceed to the next section.
+
+### Required configuration
+
+Copy the `.env.example` file into a file named `.env.local` in the root directory of the example:
+
+```bash
+cp .env.example .env.local
+```
+
+Set your Biobase details from [step 3](#3-get-the-url-and-key) above:
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=<replace-with-your-API-url>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<replace-with-your-anon-key>
+```
+
+### Change authentication settings if necessary
+
+Follow [Step #5](#5-change-authentication-settings-if-necessary) above if you want to change the auth settings.
+
+### Run the development server
+
+Now install the dependencies and start the development server.
+
+```bash
+npm install
+npm run dev
+# or
+yarn
+yarn dev
+```
+
+Visit http://localhost:3000 and start chatting! Open a channel across two browser tabs to see everything getting updated in realtime 🥳
+
 ## Biobase details
-
-### Using a Remote Biobase Project
-
-1. Create or select a project on [Biobase Dashboard](https://biobase.studio/dashboard).
-2. Copy and fill the dotenv template `cp .env.production.example .env.production`
-3. Link the local project and merge the local configuration with the remote one:
-
-```bash
-BIOBASE_ENV=production npx biobase@latest link --project-ref <your-project-ref>
-```
-
-3. Sync the configuration:
-
-```bash
-BIOBASE_ENV=production npx biobase@latest config push
-```
-
-4. Sync the database schema:
-
-```bash
-BIOBASE_ENV=production npx biobase@latest db push
-```
-
-## Vercel Preview with Branching
-
-Biobase integrates seamlessly with Vercel's preview branches, giving each branch a dedicated Biobase project. This setup allows testing database migrations or service configurations safely before applying them to production.
-
-### Steps
-
-1. Ensure the Vercel project is linked to a Git repository.
-2. Configure the "Preview" environment variables in Vercel:
-
-   - `NEXT_PUBLIC_BIOBASE_URL`
-   - `NEXT_PUBLIC_BIOBASE_ANON_KEY`
-
-3. Create a new branch, make changes (e.g., update `max_frequency`), and push the branch to Git.
-   - Open a pull request to trigger Vercel + Biobase integration.
-   - Upon successful deployment, the preview environment reflects the changes.
-
-![Preview Checks](https://github.com/user-attachments/assets/db688cc2-60fd-4463-bbed-e8ecc11b1a39)
-
----
 
 ### Role-based access control (RBAC)
 
@@ -108,10 +115,10 @@ When a user logs in, they are issued a JWT with the role `authenticated` and the
 We can use these details to provide fine-grained control over what each user can and cannot do.
 
 - For the full schema refer to [full-schema.sql](./full-schema.sql).
-- For documentation on Role-based Access Control, refer to the [docs](https://biobase.studio/docs/guides/auth/custom-claims-and-role-based-access-control-rbac).
+- For documentation on Role-based Access Control, refer to the [docs](https://biobase.com/docs/guides/auth/custom-claims-and-role-based-access-control-rbac).
 
 ## Authors
 
-- [Biobase](https://biobase.studio)
+- [Biobase](https://biobase.com)
 
 Biobase is open source, we'd love for you to follow along and get involved at https://github.com/biobase-ai/biobase

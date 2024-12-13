@@ -38,7 +38,7 @@ serve(async (_req) => {
     code: `import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
 import * as postgres from "https://deno.land/x/postgres@v0.14.2/mod.ts";
 
-const databaseUrl = Deno.env.get("BIOBASE_DB_URL") ?? "";
+const databaseUrl = Deno.env.get("SUPABASE_DB_URL") ?? "";
 const pool = new postgres.Pool(databaseUrl, 3, true);
 const connection = await pool.connect();
 
@@ -56,12 +56,12 @@ serve(async (req: Request) => {
     description: `Read and write to any of your buckets, while also respecting storage auth policies.`,
     size: 'large',
     code: `import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
-import { createClient } from "jsr:@supabase/supabase-js@2";
+import { createClient } from "jsr:@supabase/biobase-js@2";
 
 serve(async (req) => {
-  const BIOBASE_URL = Deno.env.get("BIOBASE_URL") ?? "";
-  const SERVICE_KEY = Deno.env.get("BIOBASE_SERVICE_ROLE_KEY") ?? "";
-  const biobase = createClient(BIOBASE_URL, SERVICE_KEY);
+  const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
+  const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
+  const biobase = createClient(SUPABASE_URL, SERVICE_KEY);
   if (req.headers.get("Authorization") === "super-secret-key") {
     const { data } = await biobase.storage
       .from("newbucket")
@@ -78,12 +78,12 @@ serve(async (req) => {
     description: `Read, Write, Update, Insert anything on the database`,
     size: 'large',
     code: `import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
-import { createClient } from "jsr:@supabase/supabase-js@2";
+import { createClient } from "jsr:@supabase/biobase-js@2";
 
 serve(async () => {
-  const BIOBASE_URL = Deno.env.get("BIOBASE_URL") ?? "";
-  const SERVICE_KEY = Deno.env.get("BIOBASE_SERVICE_ROLE_KEY") ?? "";
-  const biobase = createClient(BIOBASE_URL, SERVICE_KEY);
+  const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
+  const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
+  const biobase = createClient(SUPABASE_URL, SERVICE_KEY);
   const { data } = await biobase.from("todos").select();
   return new Response(JSON.stringify(data), {
     status: 200,

@@ -6,7 +6,6 @@ import { useForceDeepDark } from '~/lib/theme.utils'
 type Props = {
   hideHeader?: boolean
   hideFooter?: boolean
-  stickyNavbar?: boolean
   className?: string
   footerClassName?: string
   children: React.ReactNode
@@ -16,7 +15,6 @@ const DefaultLayout = (props: Props) => {
   const {
     hideHeader = false,
     hideFooter = false,
-    stickyNavbar = true,
     className = '',
     footerClassName = '',
     children,
@@ -26,7 +24,7 @@ const DefaultLayout = (props: Props) => {
 
   return (
     <>
-      <Nav hideNavbar={hideHeader} stickyNavbar={stickyNavbar} />
+      <Nav hideNavbar={hideHeader} />
       <main className={cn('relative min-h-screen', className)}>{children}</main>
       <Footer className={footerClassName} hideFooter={hideFooter} />
     </>

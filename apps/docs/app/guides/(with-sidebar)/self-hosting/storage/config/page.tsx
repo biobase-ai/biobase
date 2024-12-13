@@ -21,7 +21,7 @@ const StorageConfigPage = async () => {
     <GuideTemplate
       meta={meta}
       editLink={newEditLink(
-        'biobase/biobase/blob/master/apps/docs/app/guides/(with-sidebar)/self-hosting/storage/config/page.tsx'
+        'biobase/biobase/blob/master/apps/docs/pages/guides/self-hosting/storage/config.tsx'
       )}
     >
       <MDXRemoteBase source={descriptionMdx} />

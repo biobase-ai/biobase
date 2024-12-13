@@ -156,7 +156,7 @@ const ServiceStatus = () => {
           {
             name: 'Edge Functions',
             error: undefined,
-            docsUrl: 'https://biobase.studio/docs/guides/functions/troubleshooting',
+            docsUrl: 'https://biobase.com/docs/guides/functions/troubleshooting',
             isLoading,
             isSuccess: edgeFunctionsStatus?.healthy,
             logsUrl: '/logs/edge-functions-logs',

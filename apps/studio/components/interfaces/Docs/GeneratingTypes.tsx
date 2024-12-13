@@ -1,14 +1,12 @@
-import { Download } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 import { toast } from 'sonner'
-
+import { useProjectPostgrestConfigQuery } from 'data/config/project-postgrest-config-query'
 import { useParams } from 'common'
 import CodeSnippet from 'components/interfaces/Docs/CodeSnippet'
-import { DocsButton } from 'components/ui/DocsButton'
-import { useProjectPostgrestConfigQuery } from 'data/config/project-postgrest-config-query'
 import { generateTypes } from 'data/projects/project-type-generation-query'
 import { Button } from 'ui'
+import { ExternalLink, Download } from 'lucide-react'
 
 interface Props {
   selectedLang: 'bash' | 'js'
@@ -43,7 +41,15 @@ export default function GeneratingTypes({ selectedLang }: Props) {
     <>
       <h2 className="doc-heading flex items-center justify-between">
         <span>Generating types</span>
-        <DocsButton href="https://biobase.studio/docs/guides/database/api/generating-types" />
+        <Button asChild type="default" icon={<ExternalLink />}>
+          <Link
+            href="https://biobase.com/docs/guides/database/api/generating-types"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Documentation
+          </Link>
+        </Button>
       </h2>
       <div className="doc-section">
         <article className="code-column text-foreground">
@@ -53,7 +59,7 @@ export default function GeneratingTypes({ selectedLang }: Props) {
           </p>
           <p>
             You can generate types from your database either through the{' '}
-            <Link href="https://biobase.studio/docs/guides/database/api/generating-types">
+            <Link href="https://biobase.com/docs/guides/database/api/generating-types">
               Biobase CLI
             </Link>
             , or by downloading the types file via the button on the right and importing it in your

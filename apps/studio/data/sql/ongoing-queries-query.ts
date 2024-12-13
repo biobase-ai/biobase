@@ -1,6 +1,5 @@
-import { useQuery, UseQueryOptions } from '@tanstack/react-query'
-import { executeSql, ExecuteSqlError } from '../sql/execute-sql-query'
-import { sqlKeys } from './keys'
+import { UseQueryOptions } from '@tanstack/react-query'
+import { ExecuteSqlData, ExecuteSqlError, useExecuteSqlQuery } from '../sql/execute-sql-query'
 
 type OngoingQuery = {
   pid: number
@@ -8,7 +7,7 @@ type OngoingQuery = {
   query_start: string
 }
 
-export const getOngoingQueriesSql = () => {
+export const getOngoingQueries = () => {
   const sql = /* SQL */ `
 select pid, query, query_start from pg_stat_activity where state = 'active' and datname = 'postgres';
 `.trim()
@@ -21,35 +20,27 @@ export type OngoingQueriesVariables = {
   connectionString?: string
 }
 
-export async function getOngoingQueries(
-  { projectRef, connectionString }: OngoingQueriesVariables,
-  signal?: AbortSignal
-) {
-  const sql = getOngoingQueriesSql().trim()
-
-  const { result } = await executeSql(
-    { projectRef, connectionString, sql, queryKey: ['ongoing-queries'] },
-    signal
-  )
-
-  return (result ?? []).filter((x: OngoingQuery) => !x.query.startsWith(sql)) as OngoingQuery[]
-}
-
-export type OngoingQueriesData = Awaited<ReturnType<typeof getOngoingQueries>>
+export type OngoingQueriesData = OngoingQuery[]
 export type OngoingQueriesError = ExecuteSqlError
 
-export const useOngoingQueriesQuery = <TData = OngoingQueriesData>(
+export const useOngoingQueriesQuery = <TData extends OngoingQueriesData = OngoingQueriesData>(
   { projectRef, connectionString }: OngoingQueriesVariables,
-  {
-    enabled = true,
-    ...options
-  }: UseQueryOptions<OngoingQueriesData, OngoingQueriesError, TData> = {}
-) =>
-  useQuery<OngoingQueriesData, OngoingQueriesError, TData>(
-    sqlKeys.ongoingQueries(projectRef),
-    ({ signal }) => getOngoingQueries({ projectRef, connectionString }, signal),
+  options: UseQueryOptions<ExecuteSqlData, OngoingQueriesError, TData> = {}
+) => {
+  return useExecuteSqlQuery(
     {
-      enabled: enabled && typeof projectRef !== 'undefined',
+      projectRef,
+      connectionString,
+      sql: getOngoingQueries(),
+      queryKey: ['ongoing-queries'],
+    },
+    {
       ...options,
+      select(data) {
+        return (data?.result ?? []).filter(
+          (x: OngoingQuery) => !x.query.startsWith(getOngoingQueries())
+        )
+      },
     }
   )
+}

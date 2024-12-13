@@ -7,7 +7,6 @@ export type Database = {
         Row: {
           contact_email: string
           created_at: string | null
-          start_at: string | null
           document: string | null
           id: number
           updated_at: string | null
@@ -15,7 +14,6 @@ export type Database = {
         Insert: {
           contact_email: string
           created_at?: string | null
-          start_at?: string | null
           document?: string | null
           id?: number
           updated_at?: string | null
@@ -23,7 +21,6 @@ export type Database = {
         Update: {
           contact_email?: string
           created_at?: string | null
-          start_at?: string | null
           document?: string | null
           id?: number
           updated_at?: string | null
@@ -99,8 +96,6 @@ export type Database = {
           link: string | null
           location: string | null
           is_live: boolean
-          city?: string
-          timezone?: string
         }
         Insert: {
           id?: number
@@ -110,8 +105,6 @@ export type Database = {
           link?: string | null
           location?: string | null
           is_live?: boolean
-          city?: string
-          timezone?: string
         }
         Update: {
           id?: number
@@ -121,8 +114,6 @@ export type Database = {
           link?: string | null
           location?: string | null
           is_live?: boolean
-          city?: string
-          timezone?: string
         }
         Relationships: []
       }

@@ -8,8 +8,8 @@ Future<void> main() async {
   await dotenv.load();
 
   await Biobase.initialize(
-    url: dotenv.env['BIOBASE_URL']!,
-    anonKey: dotenv.env['BIOBASE_ANON_KEY']!,
+    url: dotenv.env['SUPABASE_URL']!,
+    anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
   );
   runApp(const MyApp());
 }

@@ -1,6 +1,6 @@
 # Biobase Specs
 
-These spec files are used to generate the [reference documentation](https://biobase.studio/docs/reference/cli/introduction).
+These spec files are used to generate the [reference documentation](https://biobase.com/docs/reference/cli/introduction).
 
 ## Preparation
 

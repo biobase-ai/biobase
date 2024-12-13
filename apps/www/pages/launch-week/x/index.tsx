@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
-import { Session } from '@supabase/supabase-js'
+import { Session } from '@supabase/biobase-js'
 import { SITE_ORIGIN, SITE_URL } from '~/lib/constants'
 import biobase from '~/lib/biobaseMisc'
 

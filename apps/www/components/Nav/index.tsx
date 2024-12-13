@@ -1,11 +1,10 @@
-import { useTheme } from 'next-themes'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import { useTheme } from 'next-themes'
 import { useWindowSize } from 'react-use'
 
-import { useIsLoggedIn, useIsUserLoading } from 'common'
-import { Announcement, Button, buttonVariants, cn } from 'ui'
+import { Button, buttonVariants, cn } from 'ui'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,35 +13,36 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from 'ui/src/components/shadcn/ui/navigation-menu'
-import LW13CountdownBanner from 'ui/src/layout/banners/LW13CountdownBanner/LW13CountdownBanner'
-
+import { useIsLoggedIn, useIsUserLoading } from 'common'
 import ScrollProgress from '~/components/ScrollProgress'
-import { getMenu } from '~/data/nav'
 import GitHubButton from './GitHubButton'
 import HamburgerButton from './HamburgerMenu'
-import MenuItem from './MenuItem'
 import MobileMenu from './MobileMenu'
+import MenuItem from './MenuItem'
 import RightClickBrandLogo from './RightClickBrandLogo'
+import { allBlogPosts } from 'contentlayer/generated'
+import { getMenu } from '~/data/nav'
+import { sortDates } from '~/lib/helpers'
 
 interface Props {
   hideNavbar: boolean
-  stickyNavbar?: boolean
 }
 
-const Nav = ({ hideNavbar, stickyNavbar = true }: Props) => {
+const Nav = (props: Props) => {
   const { resolvedTheme } = useTheme()
   const router = useRouter()
   const { width } = useWindowSize()
   const [open, setOpen] = useState(false)
   const isLoggedIn = useIsLoggedIn()
   const isUserLoading = useIsUserLoading()
-  const menu = getMenu()
+  const latestBlogPosts = allBlogPosts.sort(sortDates).slice(0, 2)
+  const menu = getMenu(latestBlogPosts)
 
   const isHomePage = router.pathname === '/'
   const isLaunchWeekPage = router.pathname.includes('/launch-week')
   const isLaunchWeekXPage = router.pathname === '/launch-week/x'
   const isGAWeekSection = router.pathname.startsWith('/ga-week')
-  const disableStickyNav = isLaunchWeekXPage || isGAWeekSection || isLaunchWeekPage || !stickyNavbar
+  const hasStickySubnav = isLaunchWeekXPage || isGAWeekSection || isLaunchWeekPage
   const showLaunchWeekNavMode = (isLaunchWeekPage || isGAWeekSection) && !open
 
   React.useEffect(() => {
@@ -59,7 +59,7 @@ const Nav = ({ hideNavbar, stickyNavbar = true }: Props) => {
     if (width >= 1024) setOpen(false)
   }, [width])
 
-  if (hideNavbar) {
+  if (props.hideNavbar) {
     return null
   }
 
@@ -67,8 +67,11 @@ const Nav = ({ hideNavbar, stickyNavbar = true }: Props) => {
 
   return (
     <>
+      {/* <Announcement>
+        Uncomment to show announcement banner
+      </Announcement> */}
       <div
-        className={cn('sticky top-0 z-40 transform', disableStickyNav && 'relative')}
+        className={cn('sticky top-0 z-40 transform', hasStickySubnav && 'relative')}
         style={{ transform: 'translate3d(0,0,999px)' }}
       >
         <div
@@ -137,10 +140,10 @@ const Nav = ({ hideNavbar, stickyNavbar = true }: Props) => {
                     ) : (
                       <>
                         <Button type="default" className="hidden lg:block" asChild>
-                          <Link href="https://biobase.studio/dashboard">Sign in</Link>
+                          <Link href="https://biobase.com/dashboard">Sign in</Link>
                         </Button>
                         <Button className="hidden lg:block" asChild>
-                          <Link href="https://biobase.studio/dashboard">Start your project</Link>
+                          <Link href="https://biobase.com/dashboard">Start your project</Link>
                         </Button>
                       </>
                     )}
@@ -153,7 +156,7 @@ const Nav = ({ hideNavbar, stickyNavbar = true }: Props) => {
               showLaunchWeekNavMode={showLaunchWeekNavMode}
             />
           </div>
-          <MobileMenu open={open} setOpen={setOpen} menu={menu} />
+          <MobileMenu open={open} setOpen={setOpen} isDarkMode={showDarkLogo} menu={menu} />
         </nav>
 
         <ScrollProgress />

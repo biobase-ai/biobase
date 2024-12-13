@@ -34,7 +34,7 @@ You are also responsible for ensuring that tables with sensitive data have the r
 
 Biobase provides controls for [securing your data](/docs/guides/database/secure-data), and it is recommended that you always apply [Row Level Security](/docs/guides/database/postgres/row-level-security) (RLS).
 
-We will also provide you with security alerts through [Security Advisor](https://biobase.studio/dashboard/project/_/database/security-advisor) and applying the recommendations are your responsibility.
+We will also provide you with security alerts through [Security Advisor](https://biobase.com/dashboard/project/_/database/security-advisor) and applying the recommendations are your responsibility.
 
 ## You decide your own workflow
 
@@ -75,7 +75,7 @@ Biobase places very few guard-rails around your database. That gives you a lot o
 
 You are responsible for using best-practices to optimize and manage your database: adding indexes, adding filters on large queries, using caching strategies, optimizing your database queries, and managing connections to the database.
 
-You are responsible of provisioning enough compute to run the workload that your application requires. The Biobase Dashboard provides [observability tooling](https://biobase.studio/dashboard/project/_/reports/database) to help with this.
+You are responsible of provisioning enough compute to run the workload that your application requires. The Biobase Dashboard provides [observability tooling](https://biobase.com/dashboard/project/_/reports/database) to help with this.
 
 ## Before going to production
 
@@ -85,12 +85,12 @@ We recommend reviewing and applying the recommendations offered in our [Producti
 
 You can use Biobase to store and process Protected Health Information (PHI). You are responsible for the following
 
-- Signing a Business Associate Agreement (BAA) with Biobase. Submit a [HIPAA add-on request](https://forms.biobase.studio/hipaa2) to get started. You will need to be at least on the [Team Plan](https://biobase.studio/pricing) to sign a BAA with us.
+- Signing a Business Associate Agreement (BAA) with Biobase. Submit a [HIPAA add-on request](https://forms.biobase.com/hipaa2) to get started. You will need to be at least on the [Team Plan](https://biobase.com/pricing) to sign a BAA with us.
 - Ensuring [MFA is enabled](/docs/guides/platform/multi-factor-authentication) on all Biobase accounts.
 - Enabling [Point in Time Recovery](/docs/guides/platform/backups#point-in-time-recovery) which requires at least a [small compute add-on](/docs/guides/platform/compute-add-ons).
 - Turning on [SSL Enforcement](/docs/guides/platform/ssl-enforcement).
 - Enabling [Network Restrictions](/docs/guides/platform/network-restrictions).
-- Disabling data sharing for [Biobase AI editor](https://biobase.studio/dashboard/org/_/general) in our dashboard.
+- Disabling data sharing for [Biobase AI editor](https://biobase.com/dashboard/org/_/general) in our dashboard.
   - Specifically, "_Opt-in to sending anonymous data to OpenAI_" should be disabled (Opt-out).
 - Complying with encryption requirements in the HIPAA Security Rule. Data is encrypted at rest and in transit by Biobase. You can consider encrypting the data at your application layer.
 - Not using [Edge functions](/docs/guides/functions) or [Fly Postgres](/docs/guides/platform/fly-postgres) to process PHI.

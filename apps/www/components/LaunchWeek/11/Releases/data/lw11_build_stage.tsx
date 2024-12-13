@@ -29,7 +29,7 @@ export const days: AdventDay[] = [
     is_shipped: true,
     links: [
       {
-        url: 'https://github.com/biobase-ai/index_advisor',
+        url: 'https://github.com/biobase/index_advisor',
         label: 'Learn more',
         target: '_blank',
       },

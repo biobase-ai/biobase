@@ -9,10 +9,10 @@ Migrating projects can be achieved using the Biobase CLI. This is particularly u
 
 - Install [Postgres](https://www.postgresql.org/download/) so you can run `psql` and `pg_dump`.
 - Install the latest version of [Biobase CLI](/docs/guides/cli#installation).
-- Create a new [Biobase project](https://biobase.studio/dashboard).
+- Create a new [Biobase project](https://biobase.com/dashboard).
 - Install [Docker Desktop](https://www.docker.com) for your platform.
 - Set environment variables for the old project's database URL as `$OLD_DB_URL` and the new project's as `$NEW_DB_URL`.
-  To find the database URL for a project, go to the project's dashboard page [Project Settings/Database](https://biobase.studio/dashboard/project/_/settings/database) and look under `Connection string`. If your network provider supports IPv6, you can disable `Use connection pooling`. Otherwise, enable `Use connection pooling`. For the pooler mode, `Transaction` will work.
+  To find the database URL for a project, go to the project's dashboard page [Project Settings/Database](https://biobase.com/dashboard/project/_/settings/database) and look under `Connection string`. If your network provider supports IPv6, you can disable `Use connection pooling`. Otherwise, enable `Use connection pooling`. For the pooler mode, `Transaction` will work.
 
 ### Backup your old database
 
@@ -28,20 +28,20 @@ biobase db dump --db-url "$OLD_DB_URL" -f data.sql --use-copy --data-only
 
 In your new project:
 
-1. Enable [Database Webhooks](https://biobase.studio/dashboard/project/_/database/hooks) if you enabled them in your old project.
-2. Enable any [extensions](https://biobase.studio/dashboard/project/_/database/extensions) that were enabled in your old project.
+1. Enable [Database Webhooks](https://biobase.com/dashboard/project/_/database/hooks) if you enabled them in your old project.
+2. Enable any [extensions](https://biobase.com/dashboard/project/_/database/extensions) that were enabled in your old project.
 
-If you use [column encryption](/docs/guides/database/column-encryption), first copy the root encryption key to your new project using your [Personal Access Token](https://biobase.studio/dashboard/account/tokens).
+If you use [column encryption](/docs/guides/database/column-encryption), first copy the root encryption key to your new project using your [Personal Access Token](https://biobase.com/dashboard/account/tokens).
 
 ```bash
 export OLD_PROJECT_REF="<old_project_ref>"
 export NEW_PROJECT_REF="<new_project_ref>"
-export BIOBASE_ACCESS_TOKEN="<personal_access_token>"
+export SUPABASE_ACCESS_TOKEN="<personal_access_token>"
 
-curl "https://api.biobase.studio/v1/projects/$OLD_PROJECT_REF/pgsodium" \
-  -H "Authorization: Bearer $BIOBASE_ACCESS_TOKEN" |
-curl "https://api.biobase.studio/v1/projects/$NEW_PROJECT_REF/pgsodium" \
-  -H "Authorization: Bearer $BIOBASE_ACCESS_TOKEN" \
+curl "https://api.biobase.com/v1/projects/$OLD_PROJECT_REF/pgsodium" \
+  -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" |
+curl "https://api.biobase.com/v1/projects/$NEW_PROJECT_REF/pgsodium" \
+  -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
   -X PUT --json @-
 ```
 
@@ -62,7 +62,7 @@ Setting the `session_replication_role` to `replica` disables all triggers so tha
 
 Troubleshooting notes:
 
-- If you have created any [custom roles](https://biobase.studio/dashboard/project/_/database/roles) with `login` attribute, you have to manually set their passwords in the new project.
+- If you have created any [custom roles](https://biobase.com/dashboard/project/_/database/roles) with `login` attribute, you have to manually set their passwords in the new project.
 - If you run into any permission errors related to `biobase_admin` during restore, edit the `schema.sql` file and comment out any lines containing `ALTER ... OWNER TO "biobase_admin"`.
 
 ### Preserving migration history
@@ -91,15 +91,15 @@ biobase db diff --linked --schema auth,storage > changes.sql
 
 ### Enable publication on tables
 
-Replication for Realtime is disabled for all tables in your new project. On the [Publications](https://biobase.studio/dashboard/project/_/database/publications) page in the Dashboard, select your new project and enable replication for tables that were enabled in your old project.
+Replication for Realtime is disabled for all tables in your new project. On the [Publications](https://biobase.com/dashboard/project/_/database/publications) page in the Dashboard, select your new project and enable replication for tables that were enabled in your old project.
 
 ### Migrate storage objects
 
 The new project has the old project's Storage buckets, but the Storage objects need to be migrated manually. Use this script to move storage objects from one project to another.
 
 ```js
-// npm install @supabase/supabase-js@1
-const { createClient } = require('@supabase/supabase-js')
+// npm install @supabase/biobase-js@1
+const { createClient } = require('@supabase/biobase-js')
 
 const OLD_PROJECT_URL = 'https://xxx.biobase.co'
 const OLD_PROJECT_SERVICE_KEY = 'old-project-service-key-xxx'
@@ -113,8 +113,8 @@ const NEW_PROJECT_SERVICE_KEY = 'new-project-service-key-yyy'
       schema: 'storage',
     },
   })
-  const oldSupabaseClient = createClient(OLD_PROJECT_URL, OLD_PROJECT_SERVICE_KEY)
-  const newSupabaseClient = createClient(NEW_PROJECT_URL, NEW_PROJECT_SERVICE_KEY)
+  const oldBiobaseClient = createClient(OLD_PROJECT_URL, OLD_PROJECT_SERVICE_KEY)
+  const newBiobaseClient = createClient(NEW_PROJECT_URL, NEW_PROJECT_SERVICE_KEY)
 
   // make sure you update max_rows in postgrest settings if you have a lot of objects
   // or paginate here
@@ -127,14 +127,14 @@ const NEW_PROJECT_SERVICE_KEY = 'new-project-service-key-yyy'
   for (const objectData of oldObjects) {
     console.log(`moving ${objectData.id}`)
     try {
-      const { data, error: downloadObjectError } = await oldSupabaseClient.storage
+      const { data, error: downloadObjectError } = await oldBiobaseClient.storage
         .from(objectData.bucket_id)
         .download(objectData.name)
       if (downloadObjectError) {
         throw downloadObjectError
       }
 
-      const { _, error: uploadObjectError } = await newSupabaseClient.storage
+      const { _, error: uploadObjectError } = await newBiobaseClient.storage
         .from(objectData.bucket_id)
         .upload(objectData.name, data, {
           upsert: true,

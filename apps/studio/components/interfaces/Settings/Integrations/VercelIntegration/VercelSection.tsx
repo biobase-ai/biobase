@@ -4,12 +4,12 @@ import { useCallback, useMemo } from 'react'
 import { toast } from 'sonner'
 
 import { PermissionAction } from '@supabase/shared-types/out/constants'
-import { IntegrationConnectionItem } from 'components/interfaces/Integrations/VercelGithub/IntegrationConnection'
+import { IntegrationConnectionItem } from 'components/interfaces/Integrations/IntegrationConnection'
 import {
   EmptyIntegrationConnection,
   IntegrationConnectionHeader,
   IntegrationInstallation,
-} from 'components/interfaces/Integrations/VercelGithub/IntegrationPanels'
+} from 'components/interfaces/Integrations/IntegrationPanels'
 import { Markdown } from 'components/interfaces/Markdown'
 import {
   ScaffoldContainer,
@@ -31,18 +31,15 @@ import { useSelectedProject } from 'hooks/misc/useSelectedProject'
 import { pluralize } from 'lib/helpers'
 import { getIntegrationConfigurationUrl } from 'lib/integration-utils'
 import { useSidePanelsStateSnapshot } from 'state/side-panels'
-import { Alert_Shadcn_, AlertTitle_Shadcn_, Button, cn } from 'ui'
+import { Button, cn } from 'ui'
 import { IntegrationImageHandler } from '../IntegrationsSettings'
 import VercelIntegrationConnectionForm from './VercelIntegrationConnectionForm'
-import PartnerManagedResource from 'components/ui/PartnerManagedResource'
-import PartnerIcon from 'components/ui/PartnerIcon'
 
 const VercelSection = ({ isProjectScoped }: { isProjectScoped: boolean }) => {
   const project = useSelectedProject()
   const org = useSelectedOrganization()
   const { data } = useOrgIntegrationsQuery({ orgSlug: org?.slug })
   const sidePanelsStateSnapshot = useSidePanelsStateSnapshot()
-  const isBranch = project?.parent_project_ref !== undefined
 
   const canReadVercelConnection = useCheckPermissions(
     PermissionAction.READ,
@@ -56,6 +53,8 @@ const VercelSection = ({ isProjectScoped }: { isProjectScoped: boolean }) => {
     PermissionAction.UPDATE,
     'integrations.vercel_connections'
   )
+
+  const isBranch = project?.parent_project_ref !== undefined
 
   const { mutate: deleteVercelConnection } = useIntegrationsVercelInstalledConnectionDeleteMutation(
     {
@@ -166,18 +165,6 @@ You can change the scope of the access for Biobase by configuring
         <ScaffoldSectionContent>
           {!canReadVercelConnection ? (
             <NoPermission resourceText="view this organization's Vercel connections" />
-          ) : org?.managed_by === 'vercel-marketplace' ? (
-            <Alert_Shadcn_ className="flex flex-col items-center gap-y-2 border-0 rounded-none">
-              <PartnerIcon
-                organization={{ managed_by: 'vercel-marketplace' }}
-                showTooltip={false}
-                size="large"
-              />
-
-              <AlertTitle_Shadcn_ className="text-sm">
-                Vercel Integration is not available for Vercel Marketplace managed projects.
-              </AlertTitle_Shadcn_>
-            </Alert_Shadcn_>
           ) : (
             <>
               <Markdown content={VercelContentSectionTop} />
@@ -200,7 +187,7 @@ You can change the scope of the access for Biobase by configuring
                           >
                             <IntegrationConnectionItem
                               connection={connection}
-                              disabled={isBranch || !canUpdateVercelConnection}
+                              disabled={!canUpdateVercelConnection}
                               type={'Vercel' as IntegrationName}
                               onDeleteConnection={onDeleteVercelConnection}
                               className={cn(isProjectScoped && '!rounded-b-none !mb-0')}
@@ -211,7 +198,7 @@ You can change the scope of the access for Biobase by configuring
                                   <VercelIntegrationConnectionForm
                                     connection={connection}
                                     integration={vercelIntegration}
-                                    disabled={isBranch || !canUpdateVercelConnection}
+                                    disabled={!canUpdateVercelConnection}
                                   />
                                 </div>
                               </div>
@@ -229,7 +216,7 @@ You can change the scope of the access for Biobase by configuring
                   )}
                   <EmptyIntegrationConnection
                     orgSlug={org?.slug}
-                    disabled={isBranch || !canCreateVercelConnection}
+                    disabled={!canCreateVercelConnection}
                     onClick={() => onAddVercelConnection(vercelIntegration.id)}
                   >
                     Add new project connection

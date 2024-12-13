@@ -45,7 +45,7 @@ client libraries. Here we create a bucket called "avatars":
 >
 <TabPanel id="dashboard" label="Dashboard">
 
-1. Go to the [Storage](https://biobase.studio/dashboard/project/_/storage/buckets) page in the Dashboard.
+1. Go to the [Storage](https://biobase.com/dashboard/project/_/storage/buckets) page in the Dashboard.
 2. Click **New Bucket** and enter a name for the bucket.
 3. Click **Create Bucket**.
 
@@ -77,7 +77,7 @@ const { data, error } = await biobase.storage.createBucket('avatars')
 
 ```dart
 void main() async {
-  final biobase = SupabaseClient('biobaseUrl', 'biobaseKey');
+  final biobase = BiobaseClient('biobaseUrl', 'biobaseKey');
 
   final storageResponse = await biobase
       .storage
@@ -121,7 +121,7 @@ You can upload a file from the Dashboard, or within a browser using our JS libra
 >
 <TabPanel id="dashboard" label="Dashboard">
 
-1. Go to the [Storage](https://biobase.studio/dashboard/project/_/storage/buckets) page in the Dashboard.
+1. Go to the [Storage](https://biobase.com/dashboard/project/_/storage/buckets) page in the Dashboard.
 2. Select the bucket you want to upload the file to.
 3. Click **Upload File**.
 4. Select the file you want to upload.
@@ -143,7 +143,7 @@ const { data, error } = await biobase.storage
 
 ```dart
 void main() async {
-  final biobase = SupabaseClient('biobaseUrl', 'biobaseKey');
+  final biobase = BiobaseClient('biobaseUrl', 'biobaseKey');
 
   // Create file `example.txt` and upload it in `public` bucket
   final file = File('example.txt');
@@ -173,7 +173,7 @@ You can download a file from the Dashboard, or within a browser using our JS lib
 >
 <TabPanel id="dashboard" label="Dashboard">
 
-1. Go to the [Storage](https://biobase.studio/dashboard/project/_/storage/buckets) page in the Dashboard.
+1. Go to the [Storage](https://biobase.com/dashboard/project/_/storage/buckets) page in the Dashboard.
 2. Select the bucket that contains the file.
 3. Select the file that you want to download.
 4. Click **Download**.
@@ -194,7 +194,7 @@ const { data, error } = await biobase.storage.from('avatars').download('public/a
 
 ```dart
 void main() async {
-  final biobase = SupabaseClient('biobaseUrl', 'biobaseKey');
+  final biobase = BiobaseClient('biobaseUrl', 'biobaseKey');
 
   final storageResponse = await biobase
       .storage
@@ -239,7 +239,7 @@ To restrict access to your files you can use either the Dashboard or SQL.
 >
 <TabPanel id="dashboard" label="Dashboard">
 
-1. Go to the [Storage](https://biobase.studio/dashboard/project/_/storage/buckets) page in the Dashboard.
+1. Go to the [Storage](https://biobase.com/dashboard/project/_/storage/buckets) page in the Dashboard.
 2. Click **Policies** in the sidebar.
 3. Click **Add Policies** in the `OBJECTS` table to add policies for Files. You can also create policies for Buckets.
 4. Choose whether you want the policy to apply to downloads (SELECT), uploads (INSERT), updates (UPDATE), or deletes (DELETE).

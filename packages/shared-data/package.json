@@ -4,9 +4,7 @@
   "description": "Data shared between Biobase apps",
   "main": "./index.ts",
   "types": "./index.ts",
-  "scripts": {
-    "clean": "rimraf node_modules"
-  },
+  "scripts": {},
   "author": "",
   "license": "MIT"
 }

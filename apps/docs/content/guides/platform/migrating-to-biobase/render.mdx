@@ -26,10 +26,10 @@ Example:
 
 ## Retrieve your Biobase connection string [#retrieve-biobase-connection-string]
 
-1. If you're new to Biobase, [create a project](https://biobase.studio/dashboard).
-   Make a note of your password, you will need this later. If you forget it, you can [reset it here](https://biobase.studio/dashboard/project/_/settings/database).
+1. If you're new to Biobase, [create a project](https://biobase.com/dashboard).
+   Make a note of your password, you will need this later. If you forget it, you can [reset it here](https://biobase.com/dashboard/project/_/settings/database).
 
-1. Go to the [Database settings](https://biobase.studio/dashboard/project/_/settings/database) for your project in the Biobase Dashboard.
+1. Go to the [Database settings](https://biobase.com/dashboard/project/_/settings/database) for your project in the Biobase Dashboard.
 1. Under **Connection string**, make sure `Use connection pooling` is enabled. Copy the URI and replace the password placeholder with your database password.
 
 ## Migrate the database
@@ -45,7 +45,7 @@ The fastest way to migrate your database is with the Biobase migration tool on [
 >
 <TabPanel id="colab" label="Migrate using Colab">
 
-1. Set the environment variables (`PSQL_COMMAND`, `BIOBASE_HOST`, `BIOBASE_PASSWORD`) in the Colab notebook.
+1. Set the environment variables (`PSQL_COMMAND`, `SUPABASE_HOST`, `SUPABASE_PASSWORD`) in the Colab notebook.
 1. Run the first two steps in [the notebook](https://colab.research.google.com/github/mansueli/Supa-Migrate/blob/main/Migrate_Postgres_Biobase.ipynb) in order. The first sets the variables and the second installs PSQL and the migration script.
 1. Run the third step to start the migration. This will take a few minutes.
 
@@ -86,4 +86,4 @@ Run `pg_dump --help` for a full list of options.
 
 ## Enterprise
 
-[Contact us](https://forms.biobase.studio/enterprise) if you need more help migrating your project.
+[Contact us](https://forms.biobase.com/enterprise) if you need more help migrating your project.

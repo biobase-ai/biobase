@@ -25,13 +25,11 @@ export async function get(url: string, options?: RequestInit) {
 }
 
 export async function post(url: string, data: DataProps, options?: RequestInit) {
-  const { headers: optionHeaders, ...otherOptions } = options || {}
   const accessToken = await getAccessToken()
 
   let headers = new Headers({
     'Content-Type': 'application/json',
     Accept: 'application/json',
-    ...optionHeaders,
   })
 
   if (accessToken) {
@@ -41,9 +39,8 @@ export async function post(url: string, data: DataProps, options?: RequestInit) 
   return fetch(url, {
     method: 'POST',
     headers,
-    credentials: 'include',
     referrerPolicy: 'no-referrer-when-downgrade',
     body: JSON.stringify(data),
-    ...otherOptions,
+    ...options,
   })
 }

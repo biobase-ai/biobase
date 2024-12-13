@@ -30,11 +30,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      BIOBASE_ACCESS_TOKEN: YOUR_BIOBASE_ACCESS_TOKEN
-      PROJECT_ID: YOUR_BIOBASE_PROJECT_ID
+      SUPABASE_ACCESS_TOKEN: YOUR_SUPABASE_ACCESS_TOKEN
+      PROJECT_ID: YOUR_SUPABASE_PROJECT_ID
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - uses: biobase/setup-cli@v1
         with:
@@ -43,7 +43,7 @@ jobs:
       - run: biobase functions deploy --project-ref $PROJECT_ID
 ```
 
-Since Biobase CLI [v1.62.0](https://github.com/biobase-ai/cli/releases/tag/v1.62.0) you can deploy all functions with a single command.
+Since Biobase CLI [v1.62.0](https://github.com/biobase/cli/releases/tag/v1.62.0) you can deploy all functions with a single command.
 
 Individual function configuration like [JWT verification](/docs/guides/cli/config#functions.function_name.verify_jwt) and [import map location](/docs/guides/cli/config#functions.function_name.import_map) can be set via the `config.toml` file.
 

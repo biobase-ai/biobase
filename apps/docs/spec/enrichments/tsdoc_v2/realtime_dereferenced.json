@@ -7808,7 +7808,7 @@
               "kindString": "Call signature",
               "flags": {},
               "comment": {
-                "shortText": "The following is placed here to display on biobase.studio/docs/reference/javascript/subscribe."
+                "shortText": "The following is placed here to display on biobase.com/docs/reference/javascript/subscribe."
               },
               "parameters": [
                 {
@@ -14157,7 +14157,7 @@
                               "kindString": "Call signature",
                               "flags": {},
                               "comment": {
-                                "shortText": "The following is placed here to display on biobase.studio/docs/reference/javascript/subscribe."
+                                "shortText": "The following is placed here to display on biobase.com/docs/reference/javascript/subscribe."
                               },
                               "parameters": [
                                 {
@@ -22407,7 +22407,7 @@
                               "kindString": "Call signature",
                               "flags": {},
                               "comment": {
-                                "shortText": "The following is placed here to display on biobase.studio/docs/reference/javascript/subscribe."
+                                "shortText": "The following is placed here to display on biobase.com/docs/reference/javascript/subscribe."
                               },
                               "parameters": [
                                 {
@@ -30655,7 +30655,7 @@
                       "kindString": "Call signature",
                       "flags": {},
                       "comment": {
-                        "shortText": "The following is placed here to display on biobase.studio/docs/reference/javascript/subscribe."
+                        "shortText": "The following is placed here to display on biobase.com/docs/reference/javascript/subscribe."
                       },
                       "parameters": [
                         {

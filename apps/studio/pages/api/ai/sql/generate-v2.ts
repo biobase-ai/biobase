@@ -1,7 +1,5 @@
 import { StreamingTextResponse } from 'ai'
-import { chatRlsPolicy, chatSql } from 'ai-commands/edge'
-import { SupportedAssistantEntities } from 'components/ui/AIAssistantPanel/AIAssistant.types'
-import { DatabasePoliciesData } from 'data/database-policies/database-policies-query'
+import { chatSql } from 'ai-commands/edge'
 import { NextRequest } from 'next/server'
 import OpenAI from 'openai'
 
@@ -69,29 +67,16 @@ async function handlePost(request: NextRequest) {
   const openai = new OpenAI({ apiKey: openAiKey })
 
   const body = await (request.json() as Promise<{
-    context?: SupportedAssistantEntities
     messages: { content: string; role: 'user' | 'assistant' }[]
     existingSql?: string
     entityDefinitions: string[]
-    existingPolicies?: DatabasePoliciesData
   }>)
 
-  const { messages, existingSql, entityDefinitions, context, existingPolicies } = body
+  const { messages, existingSql, entityDefinitions } = body
 
   try {
-    if (context === 'rls-policies') {
-      const stream = await chatRlsPolicy(
-        openai,
-        messages,
-        entityDefinitions,
-        existingPolicies ?? [],
-        existingSql
-      )
-      return new StreamingTextResponse(stream)
-    } else {
-      const stream = await chatSql(openai, messages, existingSql, entityDefinitions, context)
-      return new StreamingTextResponse(stream)
-    }
+    const stream = await chatSql(openai, messages, existingSql, entityDefinitions)
+    return new StreamingTextResponse(stream)
   } catch (error) {
     if (error instanceof Error) {
       console.error(`AI SQL generation-v2 failed: ${error.message}`)
@@ -99,9 +84,14 @@ async function handlePost(request: NextRequest) {
       console.error(`AI SQL generation-v2 failed: ${error}`)
     }
 
-    return new Response(JSON.stringify({ error: 'There was an error processing your request' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    })
+    return new Response(
+      JSON.stringify({
+        error: 'There was an error processing your request',
+      }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    )
   }
 }

@@ -53,13 +53,13 @@ const HelpPopover = () => {
         <div className="mb-5 space-y-4 px-5">
           <h5 className="text-foreground">Need help with your project?</h5>
           <p className="text-sm text-foreground-lighter">
-            For issues with your project hosted on biobase.studio, or other inquiries about our hosted
+            For issues with your project hosted on biobase.com, or other inquiries about our hosted
             services.
           </p>
           <div className="space-x-1">
             <Button asChild type="default" icon={<Wrench />}>
               <Link
-                href="https://biobase.studio/docs/guides/platform/troubleshooting"
+                href="https://biobase.com/docs/guides/platform/troubleshooting"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -67,12 +67,12 @@ const HelpPopover = () => {
               </Link>
             </Button>
             <Button asChild type="text" size="tiny" icon={<BookOpen />}>
-              <Link href="https://biobase.studio/docs/" target="_blank" rel="noreferrer">
+              <Link href="https://biobase.com/docs/" target="_blank" rel="noreferrer">
                 Docs
               </Link>
             </Button>
             <Button asChild type="text" size="tiny" icon={<Activity />}>
-              <Link href="https://status.biobase.studio/" target="_blank" rel="noreferrer">
+              <Link href="https://status.biobase.com/" target="_blank" rel="noreferrer">
                 Biobase Status
               </Link>
             </Button>
@@ -103,7 +103,7 @@ const HelpPopover = () => {
               style={{ background: '#404EED' }}
             >
               <a
-                href="https://discord.biobase.studio"
+                href="https://discord.biobase.com"
                 target="_blank"
                 rel="noreferrer"
                 className="dark block cursor-pointer"

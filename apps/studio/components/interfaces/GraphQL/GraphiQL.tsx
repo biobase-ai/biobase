@@ -32,13 +32,14 @@ import {
 } from '@graphiql/react'
 import { Fetcher } from '@graphiql/toolkit'
 import { PermissionAction } from '@supabase/shared-types/out/constants'
-import { AlertTriangle, XIcon } from 'lucide-react'
+import clsx from 'clsx'
 import { MouseEventHandler, useCallback, useEffect, useState } from 'react'
 
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
 import { useLocalStorage } from 'hooks/misc/useLocalStorage'
 import { LOCAL_STORAGE_KEYS } from 'lib/constants'
-import { AlertDescription_Shadcn_, AlertTitle_Shadcn_, Alert_Shadcn_, Button, cn } from 'ui'
+import { AlertTriangle, XIcon } from 'lucide-react'
+import { AlertDescription_Shadcn_, AlertTitle_Shadcn_, Alert_Shadcn_, Button } from 'ui'
 import { RoleImpersonationSelector } from '../RoleImpersonationSelector'
 import styles from './graphiql.module.css'
 
@@ -198,15 +199,15 @@ const GraphiQLInterface = ({ theme }: GraphiQLInterfaceProps) => {
 
   return (
     <Tooltip.Provider>
-      <div className={cn('graphiql-container', styles.graphiqlContainer)}>
+      <div className={clsx('graphiql-container', styles.graphiqlContainer)}>
         <div className="graphiql-main">
           <div
             ref={pluginResize.firstRef}
             style={{ minWidth: '750px' }}
-            className={cn('graphiql-sessions', styles.graphiqlSessions)}
+            className={clsx('graphiql-sessions', styles.graphiqlSessions)}
           >
             <div
-              className={cn(
+              className={clsx(
                 'graphiql-session-header',
                 !hasSingleTab && styles.graphiqlSessionHeader
               )}
@@ -255,12 +256,12 @@ const GraphiQLInterface = ({ theme }: GraphiQLInterfaceProps) => {
             <div
               role="tabpanel"
               id="graphiql-session"
-              className={cn('graphiql-session', styles.graphiqlSession)}
+              className={clsx('graphiql-session', styles.graphiqlSession)}
               aria-labelledby={`graphiql-session-tab-${editorContext.activeTabIndex}`}
             >
               <div ref={editorResize.firstRef}>
                 <div
-                  className={cn(
+                  className={clsx(
                     'graphiql-editors',
                     styles.graphiqlEditors,
                     hasSingleTab && 'full-height'
@@ -268,7 +269,7 @@ const GraphiQLInterface = ({ theme }: GraphiQLInterfaceProps) => {
                 >
                   <div ref={editorToolsResize.firstRef}>
                     <section
-                      className={cn('graphiql-query-editor text-sm', styles.graphiqlQueryEditor)}
+                      className={clsx('graphiql-query-editor text-sm', styles.graphiqlQueryEditor)}
                       aria-label="Query Editor"
                     >
                       <QueryEditor onClickReference={onClickReference} />
@@ -366,7 +367,7 @@ const GraphiQLInterface = ({ theme }: GraphiQLInterfaceProps) => {
 
                       {canReadJWTSecret && (
                         <div
-                          className={cn(
+                          className={clsx(
                             'graphiql-editor px-1',
                             activeSecondaryEditor !== 'role-impersonation' && 'hidden'
                           )}
@@ -380,13 +381,13 @@ const GraphiQLInterface = ({ theme }: GraphiQLInterfaceProps) => {
               </div>
 
               <div
-                className={cn('graphiql-horizontal-drag-bar', styles.graphiqlHorizontalDragBar)}
+                className={clsx('graphiql-horizontal-drag-bar', styles.graphiqlHorizontalDragBar)}
                 ref={editorResize.dragBarRef}
               />
 
               <div ref={editorResize.secondRef}>
                 <div
-                  className={cn(
+                  className={clsx(
                     'graphiql-response text-sm relative',
                     hasSingleTab
                       ? styles.graphiqlResponseSingleTab
@@ -439,7 +440,7 @@ const GraphiQLInterface = ({ theme }: GraphiQLInterfaceProps) => {
             <div className="graphiql-plugin">{PluginContent ? <PluginContent /> : null}</div>
           </div>
         </div>
-        <div className={cn('graphiql-sidebar', styles.graphiqlSidebar)}>
+        <div className={clsx('graphiql-sidebar', styles.graphiqlSidebar)}>
           <div className="graphiql-sidebar-section">
             {pluginContext?.plugins.map((plugin, index) => {
               const isVisible = plugin === pluginContext.visiblePlugin

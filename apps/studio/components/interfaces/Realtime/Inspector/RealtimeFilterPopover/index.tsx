@@ -176,7 +176,7 @@ export const RealtimeFilterPopover = ({ config, onChangeConfig }: RealtimeFilter
                     className="underline"
                     target="_blank"
                     rel="noreferrer"
-                    href="https://biobase.studio/docs/guides/realtime/postgres-changes#available-filters"
+                    href="https://biobase.com/docs/guides/realtime/postgres-changes#available-filters"
                   >
                     our docs
                   </Link>

@@ -29,7 +29,7 @@ const RefSectionHandler = (props: RefSectionHandlerProps) => {
 
   const [slug] = router.query.slug
 
-  // When user lands on a url like http://biobase.studio/docs/reference/javascript/sign-up
+  // When user lands on a url like http://biobase.com/docs/reference/javascript/sign-up
   // find the #sign-up element and scroll to that
   useEffect(() => {
     document.getElementById(slug)?.scrollIntoView()
@@ -72,13 +72,13 @@ const RefSectionHandler = (props: RefSectionHandlerProps) => {
       <Head>
         <title>{fullTitle}</title>
         <meta name="description" content={section?.title ?? pageTitle} />
-        <meta property="og:image" content={`https://biobase.studio/docs/img/biobase-og-image.png`} />
+        <meta property="og:image" content={`https://biobase.com/docs/img/biobase-og-image.png`} />
         <meta
           name="twitter:image"
-          content={`https://biobase.studio/docs/img/biobase-og-image.png`}
+          content={`https://biobase.com/docs/img/biobase-og-image.png`}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="canonical" href={`https://biobase.studio${router.basePath}${path}`} />
+        <link rel="canonical" href={`https://biobase.com${router.basePath}${path}`} />
       </Head>
       <TopNavSkeleton>
         <SidebarSkeleton menuId={props.menuId}>

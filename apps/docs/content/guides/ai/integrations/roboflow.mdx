@@ -81,8 +81,8 @@ To save results in Biobase, add the following code to your script:
 import os
 from biobase import create_client, Client
 
-url: str = os.environ.get("BIOBASE_URL")
-key: str = os.environ.get("BIOBASE_KEY")
+url: str = os.environ.get("SUPABASE_URL")
+key: str = os.environ.get("SUPABASE_KEY")
 biobase: Client = create_client(url, key)
 
 result = biobase.table('predictions') \

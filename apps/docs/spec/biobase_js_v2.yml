@@ -1,7 +1,7 @@
 openref: 0.1
 
 info:
-  id: reference/supabase-js
+  id: reference/biobase-js
   title: Biobase Javascript Client
   description: |
 
@@ -17,7 +17,7 @@ info:
 functions:
   - id: initializing
     title: 'Initializing'
-    $ref: '@supabase/supabase-js.index.SupabaseClient.constructor'
+    $ref: '@supabase/biobase-js.index.BiobaseClient.constructor'
     description: |
       You can initialize a new Biobase client using the `createClient()` method.
 
@@ -29,7 +29,7 @@ functions:
         name: Creating a client
         code: |
           ```js
-          import { createClient } from '@supabase/supabase-js'
+          import { createClient } from '@supabase/biobase-js'
 
           // Create a single biobase client for interacting with your database
           const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key')
@@ -38,7 +38,7 @@ functions:
         name: With a custom domain
         code: |
           ```js
-          import { createClient } from '@supabase/supabase-js'
+          import { createClient } from '@supabase/biobase-js'
 
           // Use a custom domain as the biobase URL
           const biobase = createClient('https://my-custom-domain.com', 'public-anon-key')
@@ -47,7 +47,7 @@ functions:
         name: With additional parameters
         code: |
           ```js
-          import { createClient } from '@supabase/supabase-js'
+          import { createClient } from '@supabase/biobase-js'
 
           const options = {
             db: {
@@ -68,7 +68,7 @@ functions:
         name: With custom schemas
         code: |
           ```js
-          import { createClient } from '@supabase/supabase-js'
+          import { createClient } from '@supabase/biobase-js'
 
           const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key', {
             // Provide a custom schema. Defaults to "public".
@@ -84,14 +84,14 @@ functions:
         name: Custom fetch implementation
         code: |
           ```js
-          import { createClient } from '@supabase/supabase-js'
+          import { createClient } from '@supabase/biobase-js'
 
           const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key', {
             global: { fetch: fetch.bind(globalThis) }
           })
           ```
         description: |
-          `supabase-js` uses the [`cross-fetch`](https://www.npmjs.com/package/cross-fetch) library to make HTTP requests,
+          `biobase-js` uses the [`cross-fetch`](https://www.npmjs.com/package/cross-fetch) library to make HTTP requests,
           but an alternative `fetch` implementation can be provided as an option.
           This is most useful in environments where `cross-fetch` is not compatible (for instance Cloudflare Workers).
       - id: react-native-options-async-storage
@@ -99,7 +99,7 @@ functions:
         code: |
           ```js
           import 'react-native-url-polyfill/auto'
-          import { createClient } from '@supabase/supabase-js'
+          import { createClient } from '@supabase/biobase-js'
           import AsyncStorage from "@react-native-async-storage/async-storage";
 
           const biobase = createClient("https://xyzcompany.biobase.co", "public-anon-key", {
@@ -118,7 +118,7 @@ functions:
         code: |
           ```js
           import 'react-native-url-polyfill/auto'
-          import { createClient } from '@supabase/supabase-js'
+          import { createClient } from '@supabase/biobase-js'
           import AsyncStorage from '@react-native-async-storage/async-storage';
           import * as SecureStore from 'expo-secure-store';
           import * as aesjs from 'aes-js';
@@ -195,7 +195,7 @@ functions:
 
         > No storage option exists to persist the session, which may result in unexpected behavior when using auth. If you want to set `persistSession` to true, please provide a storage option or you may set `persistSession` to false to disable this warning.
 
-        This warning message can be safely ignored if you're not using auth on the server-side. If you are using auth and you want to set `persistSession` to true, you will need to provide a custom storage implementation that follows [this interface](https://github.com/biobase-ai/gotrue-js/blob/master/src/lib/types.ts#L1027).
+        This warning message can be safely ignored if you're not using auth on the server-side. If you are using auth and you want to set `persistSession` to true, you will need to provide a custom storage implementation that follows [this interface](https://github.com/biobase/gotrue-js/blob/master/src/lib/types.ts#L1027).
       - Any email links and one-time passwords (OTPs) sent have a default expiry of 24 hours. We have the following [rate limits](/docs/guides/platform/going-into-prod#auth-rate-limits) in place to guard against brute force attacks.
       - The expiry of an access token can be set in the "JWT expiry limit" field in [your project's auth settings](/dashboard/project/_/settings/auth). A refresh token never expires and can only be used once.
 
@@ -205,7 +205,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          import { createClient } from '@supabase/supabase-js'
+          import { createClient } from '@supabase/biobase-js'
 
           const biobase = createClient(biobase_url, anon_key)
           ```
@@ -214,7 +214,7 @@ functions:
         isSpotlight: false
         code: |
           ```js
-          import { createClient } from '@supabase/supabase-js'
+          import { createClient } from '@supabase/biobase-js'
 
           const biobase = createClient(biobase_url, anon_key, {
             auth: {
@@ -2431,7 +2431,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          import { createClient } from '@supabase/supabase-js'
+          import { createClient } from '@supabase/biobase-js'
 
           const biobase = createClient(biobase_url, service_role_key, {
             auth: {
@@ -6682,7 +6682,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          import { FunctionsHttpError, FunctionsRelayError, FunctionsFetchError } from "@supabase/supabase-js";
+          import { FunctionsHttpError, FunctionsRelayError, FunctionsFetchError } from "@supabase/biobase-js";
 
           const { data, error } = await biobase.functions.invoke('hello', {
             headers: {
@@ -6703,7 +6703,7 @@ functions:
       - id: passing-custom-headers
         name: Passing custom headers
         description: |
-          You can pass custom headers to your function. Note: supabase-js automatically passes the `Authorization` header with the signed in user's JWT.
+          You can pass custom headers to your function. Note: biobase-js automatically passes the `Authorization` header with the signed in user's JWT.
         isSpotlight: true
         code: |
           ```js
@@ -6751,7 +6751,7 @@ functions:
         isSpotlight: true
         code: |
           ```js
-          import { createClient, FunctionRegion } from '@supabase/supabase-js'
+          import { createClient, FunctionRegion } from '@supabase/biobase-js'
 
           const { data, error } = await biobase.functions.invoke('hello', {
             body: { foo: 'bar' },
@@ -6990,7 +6990,7 @@ functions:
           ```
   - id: get-channels
     title: getChannels()
-    $ref: '@supabase/supabase-js.index.SupabaseClient.getChannels'
+    $ref: '@supabase/biobase-js.index.BiobaseClient.getChannels'
     examples:
       - id: get-all-channels
         name: Get all channels
@@ -7002,7 +7002,7 @@ functions:
 
   - id: remove-channel
     title: removeChannel()
-    $ref: '@supabase/supabase-js.index.SupabaseClient.removeChannel'
+    $ref: '@supabase/biobase-js.index.BiobaseClient.removeChannel'
     notes: |
       - Removing a channel is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Biobase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
     examples:
@@ -7016,7 +7016,7 @@ functions:
 
   - id: remove-all-channels
     title: removeAllChannels()
-    $ref: '@supabase/supabase-js.index.SupabaseClient.removeAllChannels'
+    $ref: '@supabase/biobase-js.index.BiobaseClient.removeAllChannels'
     notes: |
       - Removing channels is a great way to maintain the performance of your project's Realtime service as well as your database if you're listening to Postgres changes. Biobase will automatically handle cleanup 30 seconds after a client is disconnected, but unused channels may cause degradation as more clients are simultaneously subscribed.
     examples:
@@ -7537,7 +7537,7 @@ functions:
     title: from.getPublicUrl()
     $ref: '@supabase/storage-js.packages/StorageFileApi.default.getPublicUrl'
     notes: |
-      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/javascript/storage-updatebucket) or by going to Storage on [biobase.studio/dashboard](https://biobase.studio/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
+      - The bucket needs to be set to public, either via [updateBucket()](/docs/reference/javascript/storage-updatebucket) or by going to Storage on [biobase.com/dashboard](https://biobase.com/dashboard), clicking the overflow menu on a bucket and choosing "Make public"
       - RLS policy permissions required:
         - `buckets` table permissions: none
         - `objects` table permissions: none

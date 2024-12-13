@@ -1,12 +1,12 @@
 // app/posts/posts.jsx
 'use client'
 
-import useSupabaseBrowser from '@/utils/biobase-browser'
+import useBiobaseBrowser from '@/utils/biobase-browser'
 import { getCountryById } from '@/queries/get-country-by-id'
-import { useQuery } from '@supabase-cache-helpers/postgrest-react-query'
+import { useQuery } from '@biobase-cache-helpers/postgrest-react-query'
 
 export default function Country({ id }: { id: number }) {
-  const biobase = useSupabaseBrowser()
+  const biobase = useBiobaseBrowser()
   // This useQuery could just as well happen in some deeper
   // child to <Posts>, data will be available immediately either way
   const { data: country } = useQuery(getCountryById(biobase, id))

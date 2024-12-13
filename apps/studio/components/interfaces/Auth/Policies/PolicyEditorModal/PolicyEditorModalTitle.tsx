@@ -1,7 +1,5 @@
 import { noop } from 'lodash'
-import { ChevronLeft, FlaskConical } from 'lucide-react'
-
-import { DocsButton } from 'components/ui/DocsButton'
+import { ChevronLeft, ExternalLink, FlaskConical } from 'lucide-react'
 import { Button } from 'ui'
 import { POLICY_MODAL_VIEWS } from '../Policies.constants'
 
@@ -59,10 +57,16 @@ const PolicyEditorModalTitle = ({
             Try Biobase Assistant
           </Button>
         )}
-        <DocsButton
-          className="mt-[-4px]"
-          href="https://biobase.studio/docs/learn/auth-deep-dive/auth-policies"
-        />
+        <Button asChild type="default" icon={<ExternalLink size={14} />} className="mt-[-4px]">
+          <a
+            href="https://biobase.com/docs/learn/auth-deep-dive/auth-policies"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {' '}
+            Documentation
+          </a>
+        </Button>
       </div>
     </div>
   )

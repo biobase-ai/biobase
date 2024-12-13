@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { toast } from 'sonner'
 import { AlertDescription_Shadcn_, AlertTitle_Shadcn_, Alert_Shadcn_, Button } from 'ui'
 
-import OrganizationPicker from 'components/interfaces/Integrations/Vercel/OrganizationPicker'
+import OrganizationPicker from 'components/interfaces/Integrations/OrganizationPicker'
 import { Markdown } from 'components/interfaces/Markdown'
 import { getHasInstalledObject } from 'components/layouts/IntegrationsLayout/Integrations.utils'
 import VercelIntegrationWindowLayout from 'components/layouts/IntegrationsLayout/VercelIntegrationWindowLayout'
@@ -224,7 +224,7 @@ const VercelIntegration: NextPageWithLayout = () => {
                 <AlertDescription_Shadcn_ className="prose">
                   You will need to create a Biobase Organization before you can install the Vercel
                   Integration. You can create a new organization{' '}
-                  <Link href="https://biobase.studio/dashboard/new" target="_blank">
+                  <Link href="https://biobase.com/dashboard/new" target="_blank">
                     here
                   </Link>
                   .

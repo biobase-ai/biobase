@@ -2,7 +2,7 @@ import { params, suite, test, timeout } from '@testdeck/jest'
 import { faker } from '@faker-js/faker'
 import { Severity } from 'allure-js-commons'
 
-import { RealtimeChannel } from '@supabase/supabase-js'
+import { RealtimeChannel } from '@supabase/biobase-js'
 
 import { FEATURE } from '../templates/enums'
 import { description, feature, log, severity, step } from '../../.jest/jest-custom-reporter'

@@ -1,6 +1,6 @@
 'use client'
 
-import { handleResetTelemetry, LOCAL_STORAGE_KEYS } from 'common'
+import { LOCAL_STORAGE_KEYS } from 'common'
 import Link from 'next/link'
 import { PropsWithChildren, useEffect, useState } from 'react'
 import { Modal, Toggle } from 'ui'
@@ -28,10 +28,6 @@ export const PrivacySettings = ({
   const handleCancel = () => {
     setTelemetryValue(hasAccepted)
     setIsOpen(false)
-  }
-
-  const handleOptOutTelemetry = async () => {
-    handleResetTelemetry(process.env.NEXT_PUBLIC_API_URL!)
   }
 
   return (
@@ -68,7 +64,7 @@ export const PrivacySettings = ({
                 <>
                   These cookies are necessary for Biobase to function.{' '}
                   <Link
-                    href="https://biobase.studio/privacy#8-cookies-and-similar-technologies-used-on-our-european-services"
+                    href="https://biobase.com/privacy#8-cookies-and-similar-technologies-used-on-our-european-services"
                     className="underline"
                   >
                     Learn more
@@ -81,26 +77,15 @@ export const PrivacySettings = ({
           <Modal.Content>
             <Toggle
               checked={telemetryValue}
-              onChange={() => {
-                if (telemetryValue) {
-                  // [Joshen] Will be toggle off, so trigger reset event
-                  handleOptOutTelemetry()
-                }
-                setTelemetryValue((prev) => !prev)
-              }}
+              onChange={() => setTelemetryValue((prev) => !prev)}
               label="Telemetry"
               descriptionText={
                 <>
                   By opting in to sending telemetry data, Biobase can improve the overall user
                   experience.{' '}
-                  <a
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="underline"
-                    href="https://biobase.studio/privacy#8-cookies-and-similar-technologies-used-on-our-european-services"
-                  >
+                  <Link href="https://biobase.com/privacy" className="underline">
                     Learn more
-                  </a>
+                  </Link>
                 </>
               }
             />

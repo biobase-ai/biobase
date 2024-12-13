@@ -22,16 +22,16 @@ After developing your project and deciding it's Production Ready, you should run
 - Enable [Network Restrictions](/docs/guides/platform/network-restrictions) for your database.
 - Ensure that your Biobase Account is protected with multi-factor authentication (MFA).
   - If using a GitHub signin, [enable 2FA on GitHub](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication). Since your GitHub account gives you administrative rights to your Biobase org, you should protect it with a strong password and 2FA using a U2F key or a TOTP app.
-  - If using email+password signin, set up [MFA for your Biobase account](https://biobase.studio/docs/guides/platform/multi-factor-authentication#enable-mfa).
-- Consider [adding multiple owners on your Biobase org](https://biobase.studio/dashboard/org/_/team). This ensures that if one of the owners is unreachable or loses access to their account, you still have Owner access to your org.
-- Ensure email confirmations are [enabled](https://biobase.studio/dashboard/project/_/auth/providers) in the `Settings > Auth` page.
-- Ensure that you've [set the expiry](https://biobase.studio/dashboard/project/_/auth/providers) for one-time passwords (OTPs) to a reasonable value that you are comfortable with. We recommend setting this to 3600 seconds (1 hour) or lower.
+  - If using email+password signin, set up [MFA for your Biobase account](https://biobase.com/docs/guides/platform/multi-factor-authentication#enable-mfa).
+- Consider [adding multiple owners on your Biobase org](https://biobase.com/dashboard/org/_/team). This ensures that if one of the owners is unreachable or loses access to their account, you still have Owner access to your org.
+- Ensure email confirmations are [enabled](https://biobase.com/dashboard/project/_/auth/providers) in the `Settings > Auth` page.
+- Ensure that you've [set the expiry](https://biobase.com/dashboard/project/_/auth/providers) for one-time passwords (OTPs) to a reasonable value that you are comfortable with. We recommend setting this to 3600 seconds (1 hour) or lower.
 - Increase the length of the OTP if you need a higher level of entropy.
-- If your application requires a higher level of security, consider setting up [multi-factor authentication](https://biobase.studio/docs/guides/auth/auth-mfa) (MFA) for your users.
+- If your application requires a higher level of security, consider setting up [multi-factor authentication](https://biobase.com/docs/guides/auth/auth-mfa) (MFA) for your users.
 - Use a custom SMTP server for auth emails so that your users can see that the mails are coming from a trusted domain (preferably the same domain that your app is hosted on). Grab SMTP credentials from any major email provider such as SendGrid, AWS SES, etc.
 - Think hard about how _you_ would abuse your service as an attacker, and mitigate.
 - Review these [common cybersecurity threats](https://auth0.com/docs/security/prevent-threats).
-- Check and review issues in your database using [Security Advisor](https://biobase.studio/dashboard/project/_/database/security-advisor).
+- Check and review issues in your database using [Security Advisor](https://biobase.com/dashboard/project/_/database/security-advisor).
 
 ## Performance
 
@@ -40,10 +40,10 @@ After developing your project and deciding it's Production Ready, you should run
   - `pg_stat_statements` can help you [identify hot or slow queries](https://www.virtual-dba.com/blog/postgresql-performance-identifying-hot-and-slow-queries/).
 - Perform load testing (preferably on a staging env)
   - Tools like [k6](https://k6.io/) can simulate traffic from many different users.
-- Upgrade your database if you require more resources. If you need anything beyond what is listed, contact enterprise@supabase.io.
-- If you are expecting a surge in traffic (for a big launch) and are on a Team or Enterprise Plan, [contact support](https://biobase.studio/dashboard/support/new) with more details about your launch and we'll help keep an eye on your project.
-- If you expect your database size to be > 4 GB, [enable](https://biobase.studio/dashboard/project/_/settings/addons?panel=pitr) the Point in Time Recovery (PITR) addon. Daily backups can take up resources from your database when the backup is in progress. PITR is more resource efficient, since only the changes to the database are backed up.
-- Check and review issues in your database using [Performance Advisor](https://biobase.studio/dashboard/project/_/database/performance-advisor).
+- Upgrade your database if you require more resources. If you need anything beyond what is listed, contact enterprise@biobase.io.
+- If you are expecting a surge in traffic (for a big launch) and are on a Team or Enterprise Plan, [contact support](https://biobase.com/dashboard/support/new) with more details about your launch and we'll help keep an eye on your project.
+- If you expect your database size to be > 4 GB, [enable](https://biobase.com/dashboard/project/_/settings/addons?panel=pitr) the Point in Time Recovery (PITR) addon. Daily backups can take up resources from your database when the backup is in progress. PITR is more resource efficient, since only the changes to the database are backed up.
+- Check and review issues in your database using [Performance Advisor](https://biobase.com/dashboard/project/_/database/performance-advisor).
 
 ## Availability
 
@@ -60,7 +60,7 @@ After developing your project and deciding it's Production Ready, you should run
 - Biobase Projects use disks that offer 99.8-99.9% durability by default.
   - Use Read Replicas if you require availability resilience to a disk failure event
   - Use PITR if you require durability resilience to a disk failure event
-- Upgrading to the Biobase Pro Plan will give you [access to our support team](https://biobase.studio/dashboard/support/new).
+- Upgrading to the Biobase Pro Plan will give you [access to our support team](https://biobase.com/dashboard/support/new).
 
 ## Rate limiting, resource allocation, & abuse prevention
 
@@ -86,7 +86,7 @@ After developing your project and deciding it's Production Ready, you should run
 ### Realtime quotas
 
 - Review the [Realtime quotas](/docs/guides/realtime/quotas).
-- If you need quotas increased you can always [contact support](https://biobase.studio/dashboard/support/new).
+- If you need quotas increased you can always [contact support](https://biobase.com/dashboard/support/new).
 
 ### Abuse prevention
 

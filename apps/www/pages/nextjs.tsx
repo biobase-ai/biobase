@@ -25,10 +25,10 @@ function Nextjs() {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.studio/nextjs`,
+          url: `https://biobase.com/nextjs`,
           images: [
             {
-              url: `https://biobase.studio${basePath}/images/product/database/database-og.jpg`,
+              url: `https://biobase.com${basePath}/images/product/database/database-og.jpg`,
             },
           ],
         }}

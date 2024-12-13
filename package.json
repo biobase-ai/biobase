@@ -1,26 +1,31 @@
 {
   "name": "biobase",
-  "description": "The Biobase Studio Platform and CLI.",
-  "version": "0.0.1",
-  "author": "Biobase.AI, Inc.",
+  "description": "The open source Firebase alternative.",
+  "version": "0.0.0",
+  "author": "Biobase, Inc.",
   "license": "Apache-2.0",
   "private": true,
   "workspaces": [
     "apps/*",
+    "apps/docs/spec/parser",
     "tests",
     "playwright-tests",
     "packages/*"
   ],
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "prepare": "pnpm run build",
-    "clean": "pnpm -r exec rm -rf node_modules dist .next",
-    "dev": "pnpm --parallel --filter \"./apps/**\" dev",
-    "build": "pnpm --parallel --filter \"./apps/**\" build",
-    "test": "pnpm --parallel test",
-    "lint": "pnpm --parallel lint",
-    "format": "pnpm prettier --write .",
-    "typecheck": "pnpm --parallel typecheck",
+    "build": "turbo run build",
+    "build:studio": "turbo run build --filter=studio",
+    "build:design-system": "turbo run build --filter=design-system",
+    "dev": "turbo run dev --parallel",
+    "dev:reference": "turbo run dev --filter=reference --parallel",
+    "dev:studio": "turbo run dev --filter=studio --parallel",
+    "dev:docs": "turbo run dev --filter=docs --parallel",
+    "dev:www": "turbo run dev --filter=www --parallel",
+    "dev:design-system": "turbo run dev --filter=design-system --parallel",
+    "lint": "turbo run lint",
+    "typecheck": "turbo --continue typecheck",
+    "test:prettier": "prettier -c 'apps/**/*.{js,jsx,ts,tsx,css,md,mdx,json}'",
+    "format": "prettier --write \"apps/**/*.{js,jsx,ts,tsx,css,md,mdx,json}\" \"packages/pg-meta/**/*.ts\"",
     "docker:dev": "cd docker && docker compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml up --renew-anon-volumes",
     "docker:up": "cd docker && docker compose up",
     "docker:down": "cd docker && docker compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml down --remove-orphans",
@@ -37,32 +42,12 @@
     "api:codegen": "cd packages/api-types && npm run codegen"
   },
   "devDependencies": {
-    "@radix-ui/react-aspect-ratio": "^1.1.0",
-    "@radix-ui/react-avatar": "^1.1.1",
-    "@radix-ui/react-checkbox": "^1.1.2",
-    "@radix-ui/react-hover-card": "^1.1.2",
-    "@radix-ui/react-label": "^2.1.0",
-    "@radix-ui/react-menubar": "^1.1.2",
-    "@radix-ui/react-navigation-menu": "^1.2.1",
-    "@radix-ui/react-progress": "^1.1.0",
-    "@radix-ui/react-radio-group": "^1.2.1",
-    "@radix-ui/react-scroll-area": "^1.2.1",
-    "@radix-ui/react-slider": "^1.2.1",
-    "@radix-ui/react-switch": "^1.1.1",
-    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
-    "input-otp": "^1.4.1",
-    "postcss": "^8.4.49",
     "prettier": "^4.0.0-alpha.8",
     "prettier-plugin-sql-cst": "^0.11.0",
-    "react-day-picker": "^9.4.3",
-    "react-resizable-panels": "^2.1.7",
-    "rimraf": "^6.0.0",
-    "sass": "^1.82.0",
-    "supabase": "^1.151.1",
-    "tailwindcss": "^3.4.16",
-    "turbo": "2.0.4",
-    "vaul": "^1.1.1"
+    "sass": "^1.72.0",
+    "biobase": "^1.151.1",
+    "turbo": "2.0.4"
   },
   "repository": {
     "type": "git",
@@ -70,7 +55,7 @@
   },
   "engines": {
     "npm": "^10.0.0",
-    "node": ">= 20"
+    "node": "^20.0.0"
   },
   "keywords": [
     "postgres",
@@ -80,8 +65,5 @@
     "database",
     "auth"
   ],
-  "packageManager": "pnpm@8.15.1",
-  "dependencies": {
-    "tsx": "^4.19.2"
-  }
+  "packageManager": "npm@10.7.0"
 }

@@ -9,7 +9,7 @@ hideToc: true
 
   <StepHikeCompact.Step step={1}>
     <StepHikeCompact.Details title="Setup your new Biobase Project">
-      [Create a new project](https://biobase.studio/dashboard) in the Biobase Dashboard.
+      [Create a new project](https://biobase.com/dashboard) in the Biobase Dashboard.
 
       <Admonition type="important">
 
@@ -27,11 +27,11 @@ hideToc: true
   <StepHikeCompact.Step step={2}>
     <StepHikeCompact.Details title="Gather Database Connection Strings">
 
-    Go to the [database settings page](https://biobase.studio/dashboard/project/_/settings/database). In this quickstart, we are going to connect via the connection pooler. If your network supports IPv6, you can connect to the database directly without using the connection pooler.
+    Go to the [database settings page](https://biobase.com/dashboard/project/_/settings/database). In this quickstart, we are going to connect via the connection pooler. If your network supports IPv6, you can connect to the database directly without using the connection pooler.
 
     We will use the pooler both in `Transaction` and `Session` mode. `Transaction` mode is used for application queries and `Session` mode is used for running migrations with Prisma.
 
-    To do this, set the connection mode to `Transaction` in the [database settings page](https://biobase.studio/dashboard/project/_/settings/database) and copy the connection string and append `?pgbouncer=true&&connection_limit=1`. `pgbouncer=true` disables Prisma from generating prepared statements. This is required since our connection pooler does not support prepared statements in transaction mode yet. The `connection_limit=1` parameter is only required if you are using Prisma from a serverless environment. This is the Transaction mode connection string.
+    To do this, set the connection mode to `Transaction` in the [database settings page](https://biobase.com/dashboard/project/_/settings/database) and copy the connection string and append `?pgbouncer=true&&connection_limit=1`. `pgbouncer=true` disables Prisma from generating prepared statements. This is required since our connection pooler does not support prepared statements in transaction mode yet. The `connection_limit=1` parameter is only required if you are using Prisma from a serverless environment. This is the Transaction mode connection string.
 
     To get the Session mode connection pooler string, change the port of the connection string from the dashboard to 5432.
 
@@ -99,10 +99,10 @@ hideToc: true
     <StepHikeCompact.Code>
       ```bash .env
       # Transaction mode connection string used for migrations
-      DATABASE_URL="postgres://postgres.[project-ref]:[db-password]@xxx.pooler.biobase.studio:6543/postgres?pgbouncer=true&connection_limit=1"
+      DATABASE_URL="postgres://postgres.[project-ref]:[db-password]@xxx.pooler.biobase.com:6543/postgres?pgbouncer=true&connection_limit=1"
 
       # Session mode connection string — used by Prisma Client
-      DIRECT_URL="postgres://postgres.[project-ref]:[db-password]@xxx.pooler.biobase.studio:5432/postgres"
+      DIRECT_URL="postgres://postgres.[project-ref]:[db-password]@xxx.pooler.biobase.com:5432/postgres"
       ```
     </StepHikeCompact.Code>
 
@@ -116,7 +116,7 @@ hideToc: true
     </StepHikeCompact.Details>
 
     <StepHikeCompact.Code>
-      ```prisma api/db/schema.prisma
+      ```prisma api/prisma/schema.prisma
       datasource db {
         provider  = "postgresql"
         url       = env("DATABASE_URL")

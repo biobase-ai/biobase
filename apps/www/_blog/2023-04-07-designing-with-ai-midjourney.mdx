@@ -59,7 +59,7 @@ And voila, we had a baseline for generating variations:
 
 The final visual that you see everywhere won us over because of its vibrant swirls. While each swirl looks slightly different, a consistent style is still maintained throughout.
 
-Fortunately, we didn't require full-width images for each ticket. Upscaled MidJourney images sufficed. Nevertheless, we had to recreate the main visual on the landing page in vectors to use it effectively. You can view it in full glory at [https://biobase.studio/launch-week/7](https://biobase.studio/launch-week/7).
+Fortunately, we didn't require full-width images for each ticket. Upscaled MidJourney images sufficed. Nevertheless, we had to recreate the main visual on the landing page in vectors to use it effectively. You can view it in full glory at [https://biobase.com/launch-week/7](https://biobase.com/launch-week/7).
 
 ![Screenshot 2023-04-06 at 09.47.47.png](/images/blog/launch-week-7/designing-with-ai-midjourney/launch-week-7-ticket-home.png)
 
@@ -69,7 +69,7 @@ An important aspect of Launch Week tickets is their shareability. Each Launch We
 
 When you share your unique ticket URL, the image shown on the social preview is called an Open Graph image (or OG image for short).
 
-These images are generated for each unique URL and ticket. This requires a bit of magic, which in our case means using a [Biobase Edge Function](https://biobase.studio/docs/guides/functions) together with [Biobase Storage](https://biobase.studio/docs/guides/storage) for smart caching.
+These images are generated for each unique URL and ticket. This requires a bit of magic, which in our case means using a [Biobase Edge Function](https://biobase.com/docs/guides/functions) together with [Biobase Storage](https://biobase.com/docs/guides/storage) for smart caching.
 
 ### Biobase Edge Function 🤝 Biobase Storage
 
@@ -93,7 +93,7 @@ if (userAgent?.toLocaleLowerCase().includes('twitter')) {
 }
 ```
 
-We want to be as efficient as possible because generating a png file in an edge function is an expensive operation. We generate each ticket only once and then save it to Biobase Storage (which has a [smart CDN cache built in](https://biobase.studio/blog/storage-image-resizing-smart-cdn#smart-cdn-deep-dive)).
+We want to be as efficient as possible because generating a png file in an edge function is an expensive operation. We generate each ticket only once and then save it to Biobase Storage (which has a [smart CDN cache built in](https://biobase.com/blog/storage-image-resizing-smart-cdn#smart-cdn-deep-dive)).
 
 So in the first step we check if we can fetch the user’s image from storage:
 
@@ -106,9 +106,9 @@ storageResponse = await fetch(
 
 If we can’t find the image in storage, then we kick off the ticket generation pipeline, using Vercel’s awesome [open-source satori library](https://github.com/vercel/satori) transforms HTML & CSS into svgs!
 
-Each image includes the user’s GitHub details. We use [`supabase-js`](https://biobase.studio/docs/reference/javascript/installing) for authentication: users log in with their GitHub account and we store their username in a table in Postgres.
+Each image includes the user’s GitHub details. We use [`biobase-js`](https://biobase.com/docs/reference/javascript/installing) for authentication: users log in with their GitHub account and we store their username in a table in Postgres.
 
-Since this table includes email addresses, we secure it using [RLS](https://biobase.studio/docs/guides/auth/row-level-security) to ensure each user can only view their own data. At the same time, we want these tickets to be publicly shareable, and that’s where [Postgres Views](https://biobase.studio/blog/postgresql-views) come in handy.
+Since this table includes email addresses, we secure it using [RLS](https://biobase.com/docs/guides/auth/row-level-security) to ensure each user can only view their own data. At the same time, we want these tickets to be publicly shareable, and that’s where [Postgres Views](https://biobase.com/blog/postgresql-views) come in handy.
 
 By creating a view, we can selectively publicize parts of our table and also compute some additional values on the fly:
 
@@ -168,7 +168,7 @@ const golden = data?.golden ?? false
 
 You can now probably guess why our edge function was tracking requests from the Twitter and LinkedIn bots! That’s exactly the condition used to turn your ticket golden. How cool is that, with the power of Postgres, we can do all of this within the Database, absolutely mind-blowing. Also, we can easily track a referral count. Relational DBs for the win!
 
-With our public view in place, we can now easily retrieve the relevant ticket details needed to generate the image, via `supabase-js`:
+With our public view in place, we can now easily retrieve the relevant ticket details needed to generate the image, via `biobase-js`:
 
 The ticket image itself is just a layering of some background images, your GitHub profile picture, and some text elements, et voila you’ve got yourself a unique ticket image!
 
@@ -198,7 +198,7 @@ The ticket image itself is just a layering of some background images, your GitHu
 </figure>
 </div>
 
-Once generated, we can conveniently upload the image to Biobase Storage using `supabase-js`. This ensures fast response times as well as efficient resource usage.
+Once generated, we can conveniently upload the image to Biobase Storage using `biobase-js`. This ensures fast response times as well as efficient resource usage.
 
 ```jsx
 const type = golden ? 'golden' : 'regular'
@@ -231,7 +231,7 @@ case
 end as golden
 ```
 
-As folks are sharing their tickets on socials to earn their gold status, we also want to give them realtime feedback on their progress. Luckily we also have a feature for that, [Biobase Realtime](https://biobase.studio/realtime).
+As folks are sharing their tickets on socials to earn their gold status, we also want to give them realtime feedback on their progress. Luckily we also have a feature for that, [Biobase Realtime](https://biobase.com/realtime).
 
 Something that would have been a headache in the past is just a couple of lines of client-side JavaScript:
 
@@ -264,9 +264,9 @@ Interested to know how this fits within your Next.js application? Find the code 
 
 ## Displaying the images
 
-We have some images, so how can we now display them somewhere? [@Francesco Sansalvadore](https://twitter.com/frnk_snslvdr) saw one of our team members trying to “swipe” on the tickets slider component on the [launch week page](https://biobase.studio/launch-week/7/tickets) and he thought, why not feature all the fantastic people who generated tickets on a single page?
+We have some images, so how can we now display them somewhere? [@Francesco Sansalvadore](https://twitter.com/frnk_snslvdr) saw one of our team members trying to “swipe” on the tickets slider component on the [launch week page](https://biobase.com/launch-week/7/tickets) and he thought, why not feature all the fantastic people who generated tickets on a single page?
 
-We built a [ticket wall](https://biobase.studio/launch-week/7/tickets) that you can scroll endlessly. We approached it with an infinite scroll technique, lazy-loading a few tickets at a time.
+We built a [ticket wall](https://biobase.com/launch-week/7/tickets) that you can scroll endlessly. We approached it with an infinite scroll technique, lazy-loading a few tickets at a time.
 
 ![launch week 7 ticket wall](/images/blog/launch-week-7/designing-with-ai-midjourney/launch-week-7-ticket-wall.png)
 
@@ -285,7 +285,7 @@ Up for grabs are:
 
 ## More Biobase AI reading
 
-- [Biobase storing OpenAI embeddings in Postgres with pgvector](https://biobase.studio/blog/openai-embeddings-postgres-vector)
-- [Biobase Docs Search](http://biobase.studio/docs)
+- [Biobase storing OpenAI embeddings in Postgres with pgvector](https://biobase.com/blog/openai-embeddings-postgres-vector)
+- [Biobase Docs Search](http://biobase.com/docs)
 - [Streaming Data in Edge Functions](https://www.youtube.com/watch?v=9N66JBRLNYU)
-- [Next.js OpenAI Doc Search template](https://github.com/biobase-ai-community/nextjs-openai-doc-search)
+- [Next.js OpenAI Doc Search template](https://github.com/biobase-community/nextjs-openai-doc-search)

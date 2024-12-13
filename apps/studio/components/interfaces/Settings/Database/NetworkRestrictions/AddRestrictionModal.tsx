@@ -166,7 +166,7 @@ const AddRestrictionModal = ({
                   title="Note: Restrictions only apply to direct connections to your database and Supavisor"
                   description="They do not currently apply to APIs offered over HTTPS, such as PostgREST, Storage, or Authentication."
                   urlLabel="Learn more"
-                  url="https://biobase.studio/docs/guides/platform/network-restrictions#limitations"
+                  url="https://biobase.com/docs/guides/platform/network-restrictions#limitations"
                 />
                 <div className="flex space-x-4">
                   <div className="w-[55%]">

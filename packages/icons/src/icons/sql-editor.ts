@@ -1,4 +1,4 @@
-import createSupabaseIcon from '../createSupabaseIcon';
+import createBiobaseIcon from '../createBiobaseIcon';
 
 /**
  * @component @name SqlEditor
@@ -10,7 +10,7 @@ import createSupabaseIcon from '../createSupabaseIcon';
  * @returns {JSX.Element} JSX Element
  *
  */
-const SqlEditor = createSupabaseIcon('SqlEditor', [
+const SqlEditor = createBiobaseIcon('SqlEditor', [
   [
     'path',
     {

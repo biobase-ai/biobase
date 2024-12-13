@@ -21,7 +21,7 @@ export const plans: PricingInformation[] = [
     name: 'Free',
     nameBadge: '',
     costUnit: '/ month',
-    href: 'https://biobase.studio/dashboard/new?plan=free',
+    href: 'https://biobase.com/dashboard/new?plan=free',
     priceLabel: '',
     priceMonthly: 0,
     description: 'Perfect for passion projects & simple websites.',
@@ -66,7 +66,7 @@ export const plans: PricingInformation[] = [
     name: 'Pro',
     nameBadge: 'Most Popular',
     costUnit: '/ month',
-    href: 'https://biobase.studio/dashboard/new?plan=pro',
+    href: 'https://biobase.com/dashboard/new?plan=pro',
     priceLabel: 'From',
     warning: '$10 in compute credits included',
     priceMonthly: 25,
@@ -103,7 +103,7 @@ export const plans: PricingInformation[] = [
     name: 'Team',
     nameBadge: '',
     costUnit: '/ month',
-    href: 'https://biobase.studio/dashboard/new?plan=team',
+    href: 'https://biobase.com/dashboard/new?plan=team',
     priceLabel: 'From',
     warning: '$10 in compute credits included',
     priceMonthly: 599,
@@ -128,7 +128,7 @@ export const plans: PricingInformation[] = [
   {
     id: 'tier_enterprise',
     name: 'Enterprise',
-    href: 'https://forms.biobase.studio/enterprise',
+    href: 'https://forms.biobase.com/enterprise',
     description: 'For large-scale applications running Internet scale workloads.',
     features: [
       {

@@ -11,7 +11,7 @@ import { useContentQuery } from 'data/content/content-query'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
 import { useIsFeatureEnabled } from 'hooks/misc/useIsFeatureEnabled'
 import { useFlag } from 'hooks/ui/useFlag'
-import { ArrowUpRight, ChevronRight, DatabaseIcon, FilePlus, Plus } from 'lucide-react'
+import { ArrowUpRight, ChevronRight, FilePlus, Plus } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
@@ -30,7 +30,6 @@ import {
   Separator,
 } from 'ui'
 import {
-  InnerSideBarEmptyPanel,
   InnerSideBarFilters,
   InnerSideBarFilterSearchInput,
   InnerSideMenuItem,
@@ -164,12 +163,6 @@ export function LogsSidebarMenuV2() {
       url: `/project/${ref}/logs/edge-functions-logs`,
       items: [],
     },
-    {
-      name: 'Cron',
-      key: 'pg_cron',
-      url: `/project/${ref}/logs/pgcron-logs`,
-      items: [],
-    },
   ]
 
   const filteredLogs = BASE_COLLECTIONS.filter((collection) => {
@@ -242,6 +235,14 @@ export function LogsSidebarMenuV2() {
         >
           Templates
         </InnerSideMenuItem>
+        <InnerSideMenuItem
+          title="Settings"
+          isActive={isActive(`/project/${ref}/settings/warehouse`)}
+          href={`/project/${ref}/settings/warehouse`}
+        >
+          Settings
+          <ArrowUpRight strokeWidth={1} className="h-4 w-4" />
+        </InnerSideMenuItem>
       </div>
       <Separator className="my-4" />
 
@@ -275,16 +276,14 @@ export function LogsSidebarMenuV2() {
           </div>
         )}
         {savedQueries.length === 0 && (
-          <InnerSideBarEmptyPanel
-            className="mx-4"
-            title="No queries created yet"
-            description="Create and save your queries to use them in the explorer"
-            actions={
-              <Button asChild type="default">
-                <Link href={`/project/${ref}/logs/explorer`}>Create query</Link>
-              </Button>
-            }
-          />
+          <div className="mx-4">
+            <Alert_Shadcn_ className="p-3">
+              <AlertTitle_Shadcn_ className="text-xs">No queries created yet</AlertTitle_Shadcn_>
+              <AlertDescription_Shadcn_ className="text-xs">
+                You can create and save queries from the "Create query" button in the top left.
+              </AlertDescription_Shadcn_>
+            </Alert_Shadcn_>
+          </div>
         )}
         {savedQueries.map((query) => (
           <SavedQueriesItem item={query} key={query.id} />

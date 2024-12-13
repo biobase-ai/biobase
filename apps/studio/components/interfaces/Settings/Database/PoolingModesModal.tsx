@@ -1,8 +1,7 @@
-import { AlertTriangleIcon } from 'lucide-react'
+import { AlertTriangleIcon, ExternalLink } from 'lucide-react'
 
 import { useParams } from 'common'
 import { Markdown } from 'components/interfaces/Markdown'
-import { DocsButton } from 'components/ui/DocsButton'
 import { usePoolingConfigurationQuery } from 'data/database/pooling-configuration-query'
 import { useDatabaseSelectorStateSnapshot } from 'state/database-selector'
 import { useDatabaseSettingsStateSnapshot } from 'state/database-settings'
@@ -42,7 +41,15 @@ export const PoolingModesModal = () => {
           <DialogTitle>
             <div className="w-full flex items-center justify-between">
               <p className="max-w-2xl">Which pooling mode should I use?</p>
-              <DocsButton href="https://biobase.studio/docs/guides/database/connecting-to-postgres#how-connection-pooling-works" />
+              <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
+                <a
+                  href="https://biobase.com/docs/guides/database/connecting-to-postgres#how-connection-pooling-works"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Documentation
+                </a>
+              </Button>
             </div>
           </DialogTitle>
           <DialogDescription className="max-w-2xl">

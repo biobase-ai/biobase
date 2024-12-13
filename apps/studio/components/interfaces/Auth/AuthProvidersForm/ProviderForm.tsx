@@ -1,19 +1,18 @@
 import { PermissionAction } from '@supabase/shared-types/out/constants'
+import { useParams } from 'common'
 import { Check, ChevronUp, ExternalLink } from 'lucide-react'
-import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { toast } from 'sonner'
 
-import { useParams } from 'common'
 import { ButtonTooltip } from 'components/ui/ButtonTooltip'
-import { DocsButton } from 'components/ui/DocsButton'
 import type { components } from 'data/api'
 import { useAuthConfigUpdateMutation } from 'data/auth/auth-config-update-mutation'
-import { useProjectSettingsV2Query } from 'data/config/project-settings-v2-query'
+import { useProjectApiQuery } from 'data/config/project-api-query'
 import { useCustomDomainsQuery } from 'data/custom-domains/custom-domains-query'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
 import { BASE_PATH } from 'lib/constants'
+import Link from 'next/link'
 import {
   Alert,
   Alert_Shadcn_,
@@ -28,7 +27,6 @@ import {
 import { ProviderCollapsibleClasses } from './AuthProvidersForm.constants'
 import type { Provider } from './AuthProvidersForm.types'
 import FormField from './FormField'
-import { Markdown } from 'components/interfaces/Markdown'
 
 export interface ProviderFormProps {
   config: components['schemas']['GoTrueConfigResponse']
@@ -79,7 +77,7 @@ const ProviderForm = ({ config, provider }: ProviderFormProps) => {
               below. Developers using this provider should move over to the new provider. Please
               refer to our{' '}
               <a
-                href="https://biobase.studio/docs/guides/auth/social-login/auth-slack"
+                href="https://biobase.com/docs/guides/auth/social-login/auth-slack"
                 className="underline"
                 target="_blank"
               >
@@ -111,10 +109,8 @@ const ProviderForm = ({ config, provider }: ProviderFormProps) => {
     }
   }
 
-  const { data: settings } = useProjectSettingsV2Query({ projectRef })
-  const protocol = settings?.app_config?.protocol ?? 'https'
-  const endpoint = settings?.app_config?.endpoint
-  const apiUrl = `${protocol}://${endpoint}`
+  const { data: settings } = useProjectApiQuery({ projectRef })
+  const apiUrl = `${settings?.autoApiService.protocol}://${settings?.autoApiService.endpoint}`
 
   const { data: customDomainData } = useCustomDomainsQuery({ projectRef })
 
@@ -282,16 +278,19 @@ const ProviderForm = ({ config, provider }: ProviderFormProps) => {
                             : `${apiUrl}/auth/v1/callback`
                         }
                         descriptionText={
-                          <Markdown
-                            content={provider.misc.helper}
-                            className="text-foreground-lighter"
-                          />
+                          <ReactMarkdown unwrapDisallowed disallowedElements={['p']}>
+                            {provider.misc.helper}
+                          </ReactMarkdown>
                         }
                       />
                     </>
                   )}
                   <div className="flex items-center justify-between">
-                    <DocsButton href={provider.link} />
+                    <Button asChild type="default" icon={<ExternalLink strokeWidth={1.5} />}>
+                      <Link href={provider.link} target="_blank" rel="noreferrer">
+                        Documentation
+                      </Link>
+                    </Button>
                     <div className="flex items-center gap-x-3">
                       <Button
                         type="default"

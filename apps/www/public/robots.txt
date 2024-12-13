@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://biobase.studio/sitemap.xml
+Sitemap: https://biobase.com/sitemap.xml

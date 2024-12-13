@@ -35,8 +35,6 @@ export type OrganizationBillingSubscriptionPreviewResponse = {
       | 'INIT_FAILED'
       | 'REMOVED'
       | 'RESTORING'
-      | 'RESTARTING'
-      | 'RESIZING'
       | 'UPGRADING'
     instance_size: string
     name: string

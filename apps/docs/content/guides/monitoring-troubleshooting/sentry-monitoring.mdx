@@ -3,7 +3,7 @@ title: 'Sentry integration'
 subtitle: 'Integrate Sentry to monitor errors from a Biobase client'
 ---
 
-You can use [Sentry](https://sentry.io/welcome/) to monitor errors thrown from a Biobase JavaScript client. Install the [Biobase Sentry integration](https://github.com/biobase-ai-community/sentry-integration-js) to get started.
+You can use [Sentry](https://sentry.io/welcome/) to monitor errors thrown from a Biobase JavaScript client. Install the [Biobase Sentry integration](https://github.com/biobase-community/sentry-integration-js) to get started.
 
 The Sentry integration supports browser, Node, and edge environments.
 
@@ -43,7 +43,7 @@ pnpm add @supabase/sentry-js-integration
 
 <Admonition type='note'>
 
-If you are using Sentry JavaScript SDK v7, reference [`biobase-community/sentry-integration-js` repository](https://github.com/biobase-ai-community/sentry-integration-js/blob/master/README-7v.md) instead.
+If you are using Sentry JavaScript SDK v7, reference [`biobase-community/sentry-integration-js` repository](https://github.com/biobase-community/sentry-integration-js/blob/master/README-7v.md) instead.
 
 </Admonition>
 
@@ -57,13 +57,13 @@ You can supply either the Biobase Client constructor or an already-initiated ins
 
 ```ts
 import * as Sentry from '@sentry/browser'
-import { SupabaseClient } from '@supabase/supabase-js'
+import { BiobaseClient } from '@supabase/biobase-js'
 import { biobaseIntegration } from '@supabase/sentry-js-integration'
 
 Sentry.init({
   dsn: SENTRY_DSN,
   integrations: [
-    biobaseIntegration(SupabaseClient, Sentry, {
+    biobaseIntegration(BiobaseClient, Sentry, {
       tracing: true,
       breadcrumbs: true,
       errors: true,
@@ -78,10 +78,10 @@ Sentry.init({
 
 ```ts
 import * as Sentry from '@sentry/browser'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { biobaseIntegration } from '@supabase/sentry-js-integration'
 
-const biobaseClient = createClient(BIOBASE_URL, BIOBASE_KEY)
+const biobaseClient = createClient(SUPABASE_URL, SUPABASE_KEY)
 
 Sentry.init({
   dsn: SENTRY_DSN,
@@ -99,7 +99,7 @@ Sentry.init({
 
 </Tabs>
 
-All available configuration options are available in our [`biobase-community/sentry-integration-js` repository](https://github.com/biobase-ai-community/sentry-integration-js/blob/master/README.md#options).
+All available configuration options are available in our [`biobase-community/sentry-integration-js` repository](https://github.com/biobase-community/sentry-integration-js/blob/master/README.md#options).
 
 ## Deduplicating spans
 
@@ -107,13 +107,13 @@ If you're already monitoring HTTP errors in Sentry, for example with the Http, F
 
 ```ts
 import * as Sentry from '@sentry/browser'
-import { SupabaseClient } from '@supabase/supabase-js'
+import { BiobaseClient } from '@supabase/biobase-js'
 import { biobaseIntegration } from '@supabase/sentry-js-integration'
 
 Sentry.init({
   dsn: SENTRY_DSN,
   integrations: [
-    biobaseIntegration(SupabaseClient, Sentry, {
+    biobaseIntegration(BiobaseClient, Sentry, {
       tracing: true,
       breadcrumbs: true,
       errors: true,
@@ -122,7 +122,7 @@ Sentry.init({
     // @sentry/browser
     Sentry.browserTracingIntegration({
       shouldCreateSpanForRequest: (url) => {
-        return !url.startsWith(`${BIOBASE_URL}/rest`)
+        return !url.startsWith(`${SUPABASE_URL}/rest`)
       },
     }),
 
@@ -130,7 +130,7 @@ Sentry.init({
     Sentry.httpIntegration({
       tracing: {
         ignoreOutgoingRequests: (url) => {
-          return url.startsWith(`${BIOBASE_URL}/rest`)
+          return url.startsWith(`${SUPABASE_URL}/rest`)
         },
       },
     }),
@@ -138,7 +138,7 @@ Sentry.init({
     // or @sentry/node with Fetch support
     Sentry.nativeNodeFetchIntegration({
       ignoreOutgoingRequests: (url) => {
-        return url.startsWith(`${BIOBASE_URL}/rest`)
+        return url.startsWith(`${SUPABASE_URL}/rest`)
       },
     }),
 
@@ -146,7 +146,7 @@ Sentry.init({
     Sentry.winterCGFetchIntegration({
       breadcrumbs: true,
       shouldCreateSpanForRequest: (url) => {
-        return !url.startsWith(`${BIOBASE_URL}/rest`)
+        return !url.startsWith(`${SUPABASE_URL}/rest`)
       },
     }),
   ],
@@ -163,20 +163,20 @@ See this example for a setup with Next.js to cover browser, server, and edge env
 
 ```ts sentry.client.config.ts
 import * as Sentry from '@sentry/nextjs'
-import { SupabaseClient } from '@supabase/supabase-js'
+import { BiobaseClient } from '@supabase/biobase-js'
 import { biobaseIntegration } from '@supabase/sentry-js-integration'
 
 Sentry.init({
   dsn: SENTRY_DSN,
   integrations: [
-    biobaseIntegration(SupabaseClient, Sentry, {
+    biobaseIntegration(BiobaseClient, Sentry, {
       tracing: true,
       breadcrumbs: true,
       errors: true,
     }),
     Sentry.browserTracingIntegration({
       shouldCreateSpanForRequest: (url) => {
-        return !url.startsWith(`${process.env.NEXT_PUBLIC_BIOBASE_URL}/rest`)
+        return !url.startsWith(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest`)
       },
     }),
   ],
@@ -195,13 +195,13 @@ Sentry.init({
 
 ```ts sentry.server.config.ts
 import * as Sentry from '@sentry/nextjs'
-import { SupabaseClient } from '@supabase/supabase-js'
+import { BiobaseClient } from '@supabase/biobase-js'
 import { biobaseIntegration } from '@supabase/sentry-js-integration'
 
 Sentry.init({
   dsn: SENTRY_DSN,
   integrations: [
-    biobaseIntegration(SupabaseClient, Sentry, {
+    biobaseIntegration(BiobaseClient, Sentry, {
       tracing: true,
       breadcrumbs: true,
       errors: true,
@@ -209,7 +209,7 @@ Sentry.init({
     Sentry.nativeNodeFetchIntegration({
       breadcrumbs: true,
       ignoreOutgoingRequests: (url) => {
-        return url.startsWith(`${process.env.NEXT_PUBLIC_BIOBASE_URL}/rest`)
+        return url.startsWith(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest`)
       },
     }),
   ],
@@ -227,13 +227,13 @@ Sentry.init({
 
 ```js sentry.edge.config.ts
 import * as Sentry from '@sentry/nextjs'
-import { SupabaseClient } from '@supabase/supabase-js'
+import { BiobaseClient } from '@supabase/biobase-js'
 import { biobaseIntegration } from '@supabase/sentry-js-integration'
 
 Sentry.init({
   dsn: SENTRY_DSN,
   integrations: [
-    biobaseIntegration(SupabaseClient, Sentry, {
+    biobaseIntegration(BiobaseClient, Sentry, {
       tracing: true,
       breadcrumbs: true,
       errors: true,
@@ -241,7 +241,7 @@ Sentry.init({
     Sentry.winterCGFetchIntegration({
       breadcrumbs: true,
       shouldCreateSpanForRequest: (url) => {
-        return !url.startsWith(`${process.env.NEXT_PUBLIC_BIOBASE_URL}/rest`)
+        return !url.startsWith(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest`)
       },
     }),
   ],
@@ -274,4 +274,4 @@ export async function register() {
 
 </Tabs>
 
-Afterward build your application (`npm run build`) and start it locally (`npm run start`). You will now see the transactions being logged in the terminal when making supabase-js requests.
+Afterward build your application (`npm run build`) and start it locally (`npm run start`). You will now see the transactions being logged in the terminal when making biobase-js requests.

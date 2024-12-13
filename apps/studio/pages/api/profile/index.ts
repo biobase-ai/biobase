@@ -21,7 +21,7 @@ const handleGetAll = async (req: NextApiRequest, res: NextApiResponse) => {
   // Platform specific endpoint
   const response = {
     id: 1,
-    primary_email: 'johndoe@supabase.io',
+    primary_email: 'johndoe@biobase.io',
     username: 'johndoe',
     first_name: 'John',
     last_name: 'Doe',
@@ -30,7 +30,7 @@ const handleGetAll = async (req: NextApiRequest, res: NextApiResponse) => {
         id: 1,
         name: process.env.DEFAULT_ORGANIZATION_NAME || 'Default Organization',
         slug: 'default-org-slug',
-        billing_email: 'billing@supabase.co',
+        billing_email: 'billing@biobase.co',
         projects: [{ ...DEFAULT_PROJECT, connectionString: '' }],
       },
     ],

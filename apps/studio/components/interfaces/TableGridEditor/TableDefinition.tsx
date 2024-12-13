@@ -10,56 +10,59 @@ import { useProjectContext } from 'components/layouts/ProjectLayout/ProjectConte
 import { GenericSkeletonLoader } from 'components/ui/ShimmeringLoader'
 import { useTableDefinitionQuery } from 'data/database/table-definition-query'
 import { useViewDefinitionQuery } from 'data/database/view-definition-query'
-import {
-  Entity,
-  isMaterializedView,
-  isTableLike,
-  isView,
-  isViewLike,
-} from 'data/table-editor/table-editor-types'
+import { ENTITY_TYPE } from 'data/entity-types/entity-type-constants'
+import useEntityType from 'hooks/misc/useEntityType'
 import { timeout } from 'lib/helpers'
 import { Button } from 'ui'
 
 export interface TableDefinitionProps {
-  entity?: Entity
+  id?: number
 }
 
-const TableDefinition = ({ entity }: TableDefinitionProps) => {
+const TableDefinition = ({ id }: TableDefinitionProps) => {
   const { ref } = useParams()
   const editorRef = useRef(null)
   const monacoRef = useRef(null)
   const { resolvedTheme } = useTheme()
+  const entityType = useEntityType(id)
   const { project } = useProjectContext()
 
   const viewResult = useViewDefinitionQuery(
     {
-      id: entity?.id,
+      schema: entityType?.schema,
+      name: entityType?.name,
       projectRef: project?.ref,
       connectionString: project?.connectionString,
     },
     {
-      enabled: isViewLike(entity),
+      enabled:
+        entityType?.type === ENTITY_TYPE.VIEW || entityType?.type === ENTITY_TYPE.MATERIALIZED_VIEW,
     }
   )
 
   const tableResult = useTableDefinitionQuery(
     {
-      id: entity?.id,
+      schema: entityType?.schema,
+      name: entityType?.name,
       projectRef: project?.ref,
       connectionString: project?.connectionString,
     },
     {
-      enabled: isTableLike(entity),
+      enabled: entityType?.type === ENTITY_TYPE.TABLE,
     }
   )
 
-  const { data: definition, isLoading } = isViewLike(entity) ? viewResult : tableResult
+  const { data: definition, isLoading } =
+    entityType?.type === ENTITY_TYPE.VIEW || entityType?.type === ENTITY_TYPE.MATERIALIZED_VIEW
+      ? viewResult
+      : tableResult
 
-  const prepend = isView(entity)
-    ? `create view ${entity.schema}.${entity.name} as\n`
-    : isMaterializedView(entity)
-      ? `create materialized view ${entity.schema}.${entity.name} as\n`
-      : ''
+  const prepend =
+    entityType?.type === ENTITY_TYPE.VIEW
+      ? `create view ${entityType.schema}.${entityType.name} as\n`
+      : entityType?.type === ENTITY_TYPE.MATERIALIZED_VIEW
+        ? `create materialized view ${entityType.schema}.${entityType.name} as\n`
+        : ''
 
   const formatDefinition = (value: string) => {
     try {

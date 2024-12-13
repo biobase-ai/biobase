@@ -29,13 +29,13 @@ export enum PRODUCT_SHORTNAMES {
 export const SAMPLE_TICKET_NUMBER = 1234
 export const SITE_URL =
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
-    ? 'https://biobase.studio/launch-week'
+    ? 'https://biobase.com/launch-week'
     : process.env.NEXT_PUBLIC_VERCEL_URL
       ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/launch-week`
       : 'http://localhost:3000/launch-week'
 export const LW_URL =
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
-    ? 'https://biobase.studio/launch-week'
+    ? 'https://biobase.com/launch-week'
     : process.env.NEXT_PUBLIC_VERCEL_URL
       ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/launch-week`
       : 'http://localhost:3000/launch-week'
@@ -53,12 +53,9 @@ export const LW12_DATE = 'August 12-16 / 7am PT'
 export const LW12_LAUNCH_DATE = '2024-08-12T07:00:00.000-07:00'
 export const LW12_LAUNCH_DATE_END = '2024-08-18T23:59:59.000-07:00'
 export const LW12_TITLE = 'Launch Week 12'
-export const LW13_DATE = '2 — 6 December / 7am PT'
-export const LW13_LAUNCH_DATE = '2024-12-02T07:00:00.000-07:00'
-export const LW13_LAUNCH_DATE_END = '2024-12-16T23:59:59.000-07:00'
-export const LW13_TITLE = 'Launch Week 13'
 export const TWEET_TEXT =
-  'Launch Week 13 is just around the corner at @supabase. \nClaim your ticket and stay tuned for all the announcements! \n#launchweek'
-export const TWEET_TEXT_PLATINUM = `Just conquered a platinum @supabase Launch Week 13 ticket. Share twice to get one! \n#launchweek`
-export const TWEET_TEXT_SECRET = `Found the secret golden ticket for @supabase's Launch Week 13. \nCan you find it? \n#launchweek`
+  'Launch Week 12 is almost here with @biobase. Get your ticket! #launchweek'
+export const TWEET_TEXT_GOLDEN = `Launch Week 12 is almost here with @biobase. Get your ticket! #launchweek`
+export const TWEET_TEXT_PLATINUM = `Just got a platinum @biobase LW12 ticket. Share twice to get one! #launchweek`
+export const TWEET_TEXT_SECRET = `Just found a secret @biobase LW12 ticket. Claim a ticket and guess the word to find one! #launchweek`
 export const SITE_NAME = 'Biobase'

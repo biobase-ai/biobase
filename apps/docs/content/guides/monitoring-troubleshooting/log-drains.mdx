@@ -4,9 +4,9 @@ title: 'Log Drains'
 description: 'Getting started with Biobase Log Drains'
 ---
 
-Log drains will send all logs of the Biobase stack to one or more desired destinations. It is only available for customers on Team and Enterprise Plans. Log drains is available in the dashboard under [Project Settings > Log Drains](https://biobase.studio/dashboard/project/_/settings/log-drains).
+Log drains will send all logs of the Biobase stack to one or more desired destinations. It is only available for customers on Team and Enterprise Plans. Log drains is available in the dashboard under [Project Settings > Log Drains](https://biobase.com/dashboard/project/_/settings/log-drains).
 
-You can read about the initial announcement [here](https://biobase.studio/blog/log-drains) and vote for your preferred drains in [this discussion](https://github.com/orgs/biobase/discussions/28324?sort=top).
+You can read about the initial announcement [here](https://biobase.com/blog/log-drains) and vote for your preferred drains in [this discussion](https://github.com/orgs/biobase/discussions/28324?sort=top).
 
 # Supported Destinations
 
@@ -76,7 +76,7 @@ This will create an infinite loop, as we are generating an additional log event 
 
 2. Configure the HTTP Drain
 
-Create a HTTP drain under the [Project Settings > Log Drains](https://biobase.studio/dashboard/project/_/settings/log-drains).
+Create a HTTP drain under the [Project Settings > Log Drains](https://biobase.com/dashboard/project/_/settings/log-drains).
 
 - Disable the Gzip, as we want to receive the payload without compression.
 - Under URL, set it to your edge function URL `https://[PROJECT REF].biobase.co/functions/v1/hello-world`
@@ -91,7 +91,7 @@ Create a HTTP drain under the [Project Settings > Log Drains](https://biobase.st
       id="gzip"
     >
 
-Gzip payloads can be decompressed using native in-built APIs. Refer to the Edge Function [compression guide](https://biobase.studio/docs/guides/functions/compression)
+Gzip payloads can be decompressed using native in-built APIs. Refer to the Edge Function [compression guide](https://biobase.com/docs/guides/functions/compression)
 
 ```ts
 import { gunzipSync } from 'node:zlib'
@@ -150,7 +150,7 @@ To setup Datadog log drain, generate a Datadog API key [here](https://app.datado
     >
 
     1. Generate API Key in [Datadog dashboard](https://app.datadoghq.com/organization-settings/api-keys)
-    2. Create log drain in [Biobase dashboard](https://biobase.studio/dashboard/project/_/settings/log-drains)
+    2. Create log drain in [Biobase dashboard](https://biobase.com/dashboard/project/_/settings/log-drains)
     3. Watch for events in the [Datadog Logs page](https://app.datadoghq.com/logs)
 
     </AccordionItem>

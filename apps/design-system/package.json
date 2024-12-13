@@ -10,7 +10,6 @@
     "start": "next start",
     "lint": "next lint",
     "content:build": "contentlayer2 build",
-    "clean": "rimraf node_modules .next .turbo",
     "typecheck": "contentlayer2 build && tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
@@ -34,7 +33,7 @@
     "react-wrap-balancer": "^1.1.0",
     "recharts": "^2.12.7",
     "rehype-autolink-headings": "^7.1.0",
-    "rehype-pretty-code": "^0.14.0",
+    "rehype-pretty-code": "^0.6.0",
     "rehype-slug": "^6.0.0",
     "remark": "^14.0.3",
     "remark-code-import": "^1.2.0",

@@ -28,7 +28,6 @@ async function generate() {
     '!pages/404.tsx',
     '.next/server/pages/partners/integrations/*.html',
     '.next/server/pages/partners/experts/*.html',
-    '.next/server/pages/features/*.html',
   ])
 
   const blogUrl = 'blog'
@@ -63,7 +62,6 @@ async function generate() {
             if (route === '/case-studies/[slug]') return null
             if (route === '/customers/[slug]') return null
             if (route === '/events/[slug]') return null
-            if (route === '/features/[slug]') return null
             if (route === '/blog/categories/[category]') return null
             if (route === '/partners/experts/[slug]') return null
             if (route === '/partners/integrations/[slug]') return null
@@ -112,7 +110,7 @@ async function generate() {
 
             return `
               <url>
-                  <loc>${`https://biobase.studio${route}`}</loc>
+                  <loc>${`https://biobase.com${route}`}</loc>
                   <changefreq>weekly</changefreq>
                   <priority>0.5</priority>
               </url>
@@ -135,10 +133,10 @@ async function generate() {
   const sitemapRouter = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://biobase.studio/sitemap_www.xml</loc>
+    <loc>https://biobase.com/sitemap_www.xml</loc>
   </sitemap>
   <sitemap>
-    <loc>https://biobase.studio/docs/sitemap.xml</loc>
+    <loc>https://biobase.com/docs/sitemap.xml</loc>
   </sitemap>
 </sitemapindex>
 `

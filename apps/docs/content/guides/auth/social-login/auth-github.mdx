@@ -11,8 +11,8 @@ To enable GitHub Auth for your project, you need to set up a GitHub OAuth applic
 Setting up GitHub logins for your application consists of 3 parts:
 
 - Create and configure a GitHub OAuth App on [GitHub](https://github.com)
-- Add your GitHub OAuth keys to your [Biobase Project](https://biobase.studio/dashboard)
-- Add the login code to your [Biobase JS Client App](https://github.com/supabase/supabase-js)
+- Add your GitHub OAuth keys to your [Biobase Project](https://biobase.com/dashboard)
+- Add the login code to your [Biobase JS Client App](https://github.com/biobase-ai/biobase-js)
 
 ## Find your callback URL
 
@@ -78,20 +78,6 @@ Future<void> signInWithGithub() async {
 ```
 
 </TabPanel>
-<TabPanel id="swift" label="Swift">
-
-When your user signs in, call [signInWithWithOAuth](/docs/reference/swift/auth-signinwithoauth) with `.github` as the `Provider`:
-
-```swift
-func signInWithGithub() async throws {
-  try await biobase.auth.signInWithOAuth(
-    provider: .github,
-    redirectTo: URL(string: "my-custom-scheme://my-app-host")
-  )
-}
-```
-
-</TabPanel>
 <TabPanel id="kotlin" label="Kotlin">
 
 When your user signs in, call [signInWith(Provider)](/docs/reference/kotlin/auth-signinwithoauth) with `Github` as the `Provider`:
@@ -151,6 +137,6 @@ suspend fun signOut() {
 
 ## Resources
 
-- [Biobase - Get started for free](https://biobase.studio)
-- [Biobase JS Client](https://github.com/supabase/supabase-js)
+- [Biobase - Get started for free](https://biobase.com)
+- [Biobase JS Client](https://github.com/biobase-ai/biobase-js)
 - [GitHub Developer Settings](https://github.com/settings/developers)

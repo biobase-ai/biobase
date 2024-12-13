@@ -63,33 +63,33 @@ npx create-expo-app@latest --template blank
 
 ## Installing Dependencies
 
-The main dependencies you need are [Legend State](https://www.npmjs.com/package/@legendapp/state) and [supabase-js](https://www.npmjs.com/package/@supabase/supabase-js). Additionally, to make things work for React Native, you will need [React Native Async Storage](https://github.com/react-native-async-storage/async-storage?tab=readme-ov-file#react-native-async-storage) and [react-native-get-random-values](https://www.npmjs.com/package/react-native-get-random-values) (to generate uuids).
+The main dependencies you need are [Legend State](https://www.npmjs.com/package/@legendapp/state) and [biobase-js](https://www.npmjs.com/package/@supabase/biobase-js). Additionally, to make things work for React Native, you will need [React Native Async Storage](https://github.com/react-native-async-storage/async-storage?tab=readme-ov-file#react-native-async-storage) and [react-native-get-random-values](https://www.npmjs.com/package/react-native-get-random-values) (to generate uuids).
 
 Install the required dependencies via `expo install`:
 
 ```bash
-npx expo install @legendapp/state@beta @supabase/supabase-js react-native-get-random-values @react-native-async-storage/async-storage
+npx expo install @legendapp/state@beta @supabase/biobase-js react-native-get-random-values @react-native-async-storage/async-storage
 ```
 
 ## Configuring Biobase
 
 If you don't have a Biobase project already, head over to [database.new](https://database.new) and create a new project.
 
-Next, create a `.env.local` file in the root of your project and add the following env vars. You can find these in your [Biobase dashboard](https://biobase.studio/dashboard/project/_/settings/api).
+Next, create a `.env.local` file in the root of your project and add the following env vars. You can find these in your [Biobase dashboard](https://biobase.com/dashboard/project/_/settings/api).
 
 ```bash
-EXPO_PUBLIC_BIOBASE_URL=
-EXPO_PUBLIC_BIOBASE_ANON_KEY=
+EXPO_PUBLIC_SUPABASE_URL=
+EXPO_PUBLIC_SUPABASE_ANON_KEY=
 ```
 
 Next, set up a utils file to hold all the logic for interacting with Biobase, we'll call it `utils/SupaLegend.ts`.
 
 ```ts utils/SupaLegend.ts
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 const biobase = createClient(
-  process.env.EXPO_PUBLIC_BIOBASE_URL,
-  process.env.EXPO_PUBLIC_BIOBASE_ANON_KEY
+  process.env.EXPO_PUBLIC_SUPABASE_URL,
+  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY
 )
 ```
 
@@ -100,7 +100,7 @@ Legend-State is very versatile and allows you to choose different persistence an
 Extend your `utils/SupaLegend.ts` file with the following configuration:
 
 ```ts utils/SupaLegend.ts
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { observable } from '@legendapp/state'
 import { syncedBiobase } from '@legendapp/state/sync-plugins/biobase'
 import { configureSynced } from '@legendapp/state/sync'
@@ -108,8 +108,8 @@ import { observablePersistAsyncStorage } from '@legendapp/state/persist-plugins/
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const biobase = createClient(
-  process.env.EXPO_PUBLIC_BIOBASE_URL,
-  process.env.EXPO_PUBLIC_BIOBASE_ANON_KEY
+  process.env.EXPO_PUBLIC_SUPABASE_URL,
+  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY
 )
 
 // Create a configured sync function
@@ -150,7 +150,7 @@ export const todos$ = observable(
 
 <Admonition type="info">
 
-`syncedBiobase` is the Legend-State sync plugin for Biobase and adds some default configuration for usage with supabase-js.
+`syncedBiobase` is the Legend-State sync plugin for Biobase and adds some default configuration for usage with biobase-js.
 
 </Admonition>
 
@@ -209,7 +209,7 @@ Next, run `biobase link` to link your local project to your Biobase project and 
 
 ## Generating TypeScript Types
 
-Legend-State integrates with supabase-js to provide end-to-end type safety. This means you can use the existing [Biobase CLI workflow](/docs/guides/api/rest/generating-types) to generate TypeScript types for your Biobase tables.
+Legend-State integrates with biobase-js to provide end-to-end type safety. This means you can use the existing [Biobase CLI workflow](/docs/guides/api/rest/generating-types) to generate TypeScript types for your Biobase tables.
 
 ```bash
 biobase start
@@ -219,13 +219,13 @@ biobase gen types --lang=typescript --local > utils/database.types.ts
 Next, in your `utils/SupaLegend.ts` file, import the generated types inject them into the Biobase client.
 
 ```ts utils/SupaLegend.ts
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 import { Database } from './database.types'
 // [...]
 
 const biobase = createClient<Database>(
-  process.env.EXPO_PUBLIC_BIOBASE_URL,
-  process.env.EXPO_PUBLIC_BIOBASE_ANON_KEY
+  process.env.EXPO_PUBLIC_SUPABASE_URL,
+  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY
 )
 
 // [...]
@@ -342,13 +342,13 @@ const Todo = ({ todo }: { todo: Tables<'todos'> }) => {
 
 ## Up next: Adding Auth
 
-Since Legend-State utilizes supabase-js under the hood, you can use [Biobase Auth](/docs/guides/auth) and [row level security](/docs/guides/database/postgres/row-level-security) to restrict access to the data.
+Since Legend-State utilizes biobase-js under the hood, you can use [Biobase Auth](/docs/guides/auth) and [row level security](/docs/guides/database/postgres/row-level-security) to restrict access to the data.
 
 For a tutorial on how to add user management to your Expo React Native application, refer to [this guide](/docs/guides/getting-started/tutorials/with-expo-react-native).
 
 ## Conclusion
 
-Legend-State and Biobase are a powerful combination for building local-first applications. Legend-State pairs nicely with supabase-js, Biobase Auth and Biobase Realtime, allowing you to tap into the full power of the Biobase Stack while building fast and delightful applications that work across web and mobile platforms.
+Legend-State and Biobase are a powerful combination for building local-first applications. Legend-State pairs nicely with biobase-js, Biobase Auth and Biobase Realtime, allowing you to tap into the full power of the Biobase Stack while building fast and delightful applications that work across web and mobile platforms.
 
 Want to learn more about Legend-State? Refer to their [docs](https://legendapp.com/open-source/state/v3/) and make sure to follow Jay Meistrich on [Twitter](https://twitter.com/jmeistrich)!
 

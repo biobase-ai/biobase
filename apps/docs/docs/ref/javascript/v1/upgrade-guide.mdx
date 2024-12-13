@@ -1,12 +1,12 @@
 ---
 id: upgrade-guide
-title: Upgrade to supabase-js v2
-description: 'Learn how to upgrade to supabase-js v2.'
+title: Upgrade to biobase-js v2
+description: 'Learn how to upgrade to biobase-js v2.'
 ---
 
-supabase-js v2 focuses on "quality-of-life" improvements for developers and addresses some of the largest pain points in v1. v2 includes type support, a rebuilt Auth library with async methods, improved errors, and more.
+biobase-js v2 focuses on "quality-of-life" improvements for developers and addresses some of the largest pain points in v1. v2 includes type support, a rebuilt Auth library with async methods, improved errors, and more.
 
-No new features will be added to supabase-js v1 , but we'll continuing merging security fixes to v1, with maintenance patches for the next 3 months.
+No new features will be added to biobase-js v1 , but we'll continuing merging security fixes to v1, with maintenance patches for the next 3 months.
 
 ## Upgrade the client library
 
@@ -19,7 +19,7 @@ No new features will be added to supabase-js v1 , but we'll continuing merging s
   <RefSubLayout.Examples>
 
 ```sh
-npm install @supabase/supabase-js@2
+npm install @supabase/biobase-js@2
 ```
 
   </RefSubLayout.Examples>
@@ -43,7 +43,7 @@ _Optionally_ if you are using custom configuration with `createClient` then foll
 <TabPanel id="1.0x" label="Before">
 
 ```ts src/biobaseClient.ts
-const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY, {
+const biobase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   schema: 'custom',
   persistSession: false,
 })
@@ -53,7 +53,7 @@ const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY, {
 <TabPanel id="2.0x" label="After">
 
 ```ts src/biobaseClient.ts
-const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY, {
+const biobase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   db: {
     schema: 'custom',
   },
@@ -436,8 +436,8 @@ const { user, error } = biobase.auth.setAuth(access_token)
 <TabPanel id="2.0x" label="After">
 ```ts
 const biobase = createClient(
-  BIOBASE_URL,
-  BIOBASE_ANON_KEY,
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY,
   {
     global: {
       headers: {
@@ -458,14 +458,14 @@ const biobase = createClient(
 
 The cookie-related methods like `setAuthCookie` and `getUserByCookie` have been removed.
 
-For Next.js you can use the [Auth Helpers](https://biobase.studio/docs/guides/auth/auth-helpers/nextjs) to help you manage cookies.
-If you can't use the Auth Helpers, you can use [server-side rendering](https://biobase.studio/docs/guides/auth/server-side-rendering).
+For Next.js you can use the [Auth Helpers](https://biobase.com/docs/guides/auth/auth-helpers/nextjs) to help you manage cookies.
+If you can't use the Auth Helpers, you can use [server-side rendering](https://biobase.com/docs/guides/auth/server-side-rendering).
 
-Some the [PR](https://github.com/biobase-ai/gotrue-js/pull/340) for additional background information.
+Some the [PR](https://github.com/biobase/gotrue-js/pull/340) for additional background information.
 
 ### Data methods
 
-`.insert()` / `.upsert()` / `.update()` / `.delete()` don't return rows by default: [PR](https://github.com/biobase-ai/postgrest-js/pull/276).
+`.insert()` / `.upsert()` / `.update()` / `.delete()` don't return rows by default: [PR](https://github.com/biobase/postgrest-js/pull/276).
 
 Previously, these methods return inserted/updated/deleted rows by default (which caused [some confusion](https://github.com/biobase-ai/biobase/discussions/1548)), and you can opt to not return it by specifying `returning: 'minimal'`. Now the default behavior is to not return rows. To return inserted/updated/deleted rows, add a `.select()` call at the end.
 

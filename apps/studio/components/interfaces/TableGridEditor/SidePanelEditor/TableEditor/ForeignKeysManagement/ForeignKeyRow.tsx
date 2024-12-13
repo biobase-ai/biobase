@@ -1,10 +1,11 @@
-import { ArrowRight } from 'lucide-react'
+import clsx from 'clsx'
+import { useParams } from 'common'
 import Link from 'next/link'
 import SVG from 'react-inlinesvg'
-
-import { useParams } from 'common'
-import { BASE_PATH } from 'lib/constants'
 import { Badge, Button, cn } from 'ui'
+import { ArrowRight } from 'lucide-react'
+
+import { BASE_PATH } from 'lib/constants'
 import type { ForeignKey } from '../../ForeignKeySelector/ForeignKeySelector.types'
 
 interface ForeignKeyProps {
@@ -32,7 +33,7 @@ export const ForeignKeyRow = ({
 
   return (
     <div
-      className={cn(
+      className={clsx(
         layout === 'horizontal' ? 'items-center justify-between gap-x-2' : 'flex-col gap-y-3',
         'flex border border-strong px-4 py-4',
         'border-b-0 last:border-b first:rounded-t-md last:rounded-b-md'
@@ -77,9 +78,8 @@ export const ForeignKeyRow = ({
               }
             >
               <Link
-                target="_blank"
-                rel="norefererer"
                 href={`/project/${ref}/editor/${foreignKey.tableId}`}
+                onClick={() => closePanel()}
               >
                 {foreignKey.schema}.{foreignKey.table}
               </Link>

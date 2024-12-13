@@ -136,9 +136,7 @@ const ReportsMenu = () => {
               tooltip={{
                 content: {
                   side: 'bottom',
-                  text: !canCreateCustomReport
-                    ? 'You need additional permissions to create custom reports'
-                    : undefined,
+                  text: 'You need additional permissions to create custom reports',
                 },
               }}
             >

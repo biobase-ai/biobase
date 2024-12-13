@@ -12,6 +12,7 @@ import {
   useThirdPartyAuthIntegrationsQuery,
 } from 'data/third-party-auth/integrations-query'
 import { useCheckPermissions } from 'hooks/misc/useCheckPermissions'
+import { useFlag } from 'hooks/ui/useFlag'
 import { cn } from 'ui'
 import ConfirmationModal from 'ui-patterns/Dialogs/ConfirmationModal'
 import { AddIntegrationDropdown } from './AddIntegrationDropdown'
@@ -26,6 +27,7 @@ import {
 } from './ThirdPartyAuthForm.utils'
 
 export const ThirdPartyAuthForm = () => {
+  const thirdPartyAuthEnabled = useFlag('thirdPartyAuth')
   const { ref: projectRef } = useParams()
   const {
     data: integrationsData,
@@ -42,6 +44,10 @@ export const ThirdPartyAuthForm = () => {
 
   const { mutateAsync: deleteIntegration } = useDeleteThirdPartyAuthIntegrationMutation()
   const canUpdateConfig = useCheckPermissions(PermissionAction.UPDATE, 'custom_config_gotrue')
+
+  if (!thirdPartyAuthEnabled) {
+    return null
+  }
 
   if (isError) {
     return (
@@ -63,7 +69,7 @@ export const ThirdPartyAuthForm = () => {
             <AddIntegrationDropdown onSelectIntegrationType={setSelectedIntegration} />
           ) : null
         }
-        docsUrl="https://biobase.studio/docs/guides/auth/third-party/overview"
+        docsUrl="https://biobase.com/docs/guides/auth/third-party/overview"
       />
       <div className="prose text-sm mb-6 max-w-full">
         <span>

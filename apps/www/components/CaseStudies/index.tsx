@@ -32,7 +32,6 @@ const CaseStudies = () => {
               hideAuthor: true,
               url: caseStudy.url.replace('/blog/', ''),
               path: caseStudy.path,
-              date: '',
             }}
           />
         ))}

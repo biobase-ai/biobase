@@ -17,7 +17,7 @@ In this guide we'll learn how to quickly build an OAuth2.0 integration into a si
 
 ## Prerequisites
 
-This article assumes you are familiar with creating an application in Flask. It also assumes that you have read the Biobase documentation and are familiar the with concept of [Authentication](https://biobase.studio/docs/guides/auth).
+This article assumes you are familiar with creating an application in Flask. It also assumes that you have read the Biobase documentation and are familiar the with concept of [Authentication](https://biobase.com/docs/guides/auth).
 
 We'll use the following tools:
 
@@ -69,8 +69,8 @@ from werkzeug.local import LocalProxy
 from biobase.client import Client, ClientOptions
 from flask_storage import FlaskSessionStorage
 
-url = os.environ.get("BIOBASE_URL", "")
-key = os.environ.get("BIOBASE_KEY", "")
+url = os.environ.get("SUPABASE_URL", "")
+key = os.environ.get("SUPABASE_KEY", "")
 
 def get_biobase() -> Client:
     if "biobase" not in g:
@@ -93,7 +93,7 @@ Let's focus on the `get_biobase` function. Here we are checking if we have an in
 
 Biobase Auth supports Sign in with GitHub on the web, native Android applications, and Chrome extensions.
 
-For detailed set up and implementation instructions please refer to the [docs](https://biobase.studio/docs/guides/auth/social-login/auth-github).
+For detailed set up and implementation instructions please refer to the [docs](https://biobase.com/docs/guides/auth/social-login/auth-github).
 
 ## Create sign-in route
 
@@ -139,6 +139,6 @@ In this post we explained how to setup a flask session storage to work with the 
 
 ## More Resources
 
-- [biobase-py reference docs](https://biobase.studio/docs/reference/python/installing)
-- [biobase-py GitHub repo](https://github.com/biobase-ai-community/biobase-py)
-- [Deep Dive series on auth concepts in Biobase](https://biobase.studio/docs/learn/auth-deep-dive/auth-deep-dive-jwts)
+- [biobase-py reference docs](https://biobase.com/docs/reference/python/installing)
+- [biobase-py GitHub repo](https://github.com/biobase-community/biobase-py)
+- [Deep Dive series on auth concepts in Biobase](https://biobase.com/docs/learn/auth-deep-dive/auth-deep-dive-jwts)

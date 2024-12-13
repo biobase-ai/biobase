@@ -74,7 +74,7 @@ Be careful when using this flag, as it will allow anyone to invoke your Edge Fun
 
 ## Invoking remote functions
 
-You can now invoke your Edge Function using the project's `ANON_KEY`, which can be found in the [API settings](https://biobase.studio/dashboard/project/_/settings/api) of the Biobase Dashboard.
+You can now invoke your Edge Function using the project's `ANON_KEY`, which can be found in the [API settings](https://biobase.com/dashboard/project/_/settings/api) of the Biobase Dashboard.
 
 <CH.Code>
 
@@ -86,7 +86,7 @@ curl --request POST 'https://<project_id>.biobase.co/functions/v1/hello-world' \
 ```
 
 ```js JavaScript
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/biobase-js'
 
 // Create a single biobase client for interacting with your database
 const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key')

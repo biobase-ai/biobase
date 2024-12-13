@@ -15,7 +15,7 @@ export function EmailRateLimitsAlert() {
         You're using the built-in email service. The service has rate limits and it's not meant to
         be used for production apps. Check the{' '}
         <a
-          href="https://biobase.studio/docs/guides/platform/going-into-prod#auth-rate-limits"
+          href="https://biobase.com/docs/guides/platform/going-into-prod#auth-rate-limits"
           className="underline"
           target="_blank"
         >

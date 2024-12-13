@@ -134,7 +134,7 @@ const ColumnManagement = ({
           <div className="flex items-center gap-x-2">
             <Button asChild type="default" icon={<ExternalLink size={12} strokeWidth={2} />}>
               <a
-                href="https://biobase.studio/docs/guides/database/tables#data-types"
+                href="https://biobase.com/docs/guides/database/tables#data-types"
                 target="_blank"
                 rel="noreferrer"
               >

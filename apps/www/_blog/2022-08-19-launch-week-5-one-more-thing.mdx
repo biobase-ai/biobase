@@ -36,10 +36,10 @@ Vault is not available on the Biobase Platform yet. This release is intended to 
   <source src="/images/blog/lw5-one-more/auth-ui-demo.mp4" type="video/mp4" />
 </video>
 
-Auth UI was previously released as a single `<Auth/>` component in the [`@supabase/ui`](http://github.com/biobase-ai/ui) library.
+Auth UI was previously released as a single `<Auth/>` component in the [`@supabase/ui`](http://github.com/biobase/ui) library.
 We recognized it was one of the most popular aspects of the library and developers were installing the library to use the Auth component alone.
 
-From today, you can install it [from its own NPM package](https://github.com/biobase-ai-community/auth-ui):
+From today, you can install it [from its own NPM package](https://github.com/biobase-community/auth-ui):
 
 ```bash
 npm install @supabase/auth-ui-react
@@ -74,7 +74,7 @@ There's a tooltip in the header of the members table, which elaborates on the in
 
 ![JSON schema validation](/images/blog/lw5-one-more/lw5-jsonschema.png)
 
-We've released [`pg_jsonschema`](https://github.com/biobase-ai/pg_jsonschema), a new Postgres extension for the Biobase Platform.
+We've released [`pg_jsonschema`](https://github.com/biobase/pg_jsonschema), a new Postgres extension for the Biobase Platform.
 
 `pg_jsonschema` adds support for [JSON Schema](https://json-schema.org/) validation for `json` and `jsonb` data types, built with Rust.
 You can read the blog post, which explains some of the scenarios where this is useful.
@@ -90,7 +90,7 @@ You can read the blog post, which explains some of the scenarios where this is u
 We've released a new version of `pg_graphql`, our GraphQL extension for Postgres.
 This release adds support for `json` / `jsonb` types, the `in` filter, and introspection for much larger schemas (10x larger than before). We've fixed a few bugs too.
 
-You can read the [release notes](https://github.com/biobase-ai/pg_graphql/releases/tag/v0.4.0) and [documentation](https://biobase-ai.github.io/pg_graphql/), and start using `pg_graphql` on Biobase today.
+You can read the [release notes](https://github.com/biobase/pg_graphql/releases/tag/v0.4.0) and [documentation](https://biobase.github.io/pg_graphql/), and start using `pg_graphql` on Biobase today.
 
 [Read more](/blog/graphql-now-available).
 

@@ -1,3 +1,4 @@
+import { useParams } from 'common'
 import { Home, User } from 'icons'
 import { isUndefined } from 'lodash'
 import { Command, FileText, FlaskConical, Search, Settings } from 'lucide-react'
@@ -6,12 +7,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-import { useParams } from 'common'
 import { useIsAPIDocsSidePanelEnabled } from 'components/interfaces/App/FeaturePreview/FeaturePreviewContext'
-import { useProjectLintsQuery } from 'data/lint/lint-query'
-import { ProjectIndexPageLink } from 'data/prefetchers/project.$ref'
 import { useIsFeatureEnabled } from 'hooks/misc/useIsFeatureEnabled'
-import { useLocalStorageQuery } from 'hooks/misc/useLocalStorage'
 import { useFlag } from 'hooks/ui/useFlag'
 import { useSignOut } from 'lib/auth'
 import { IS_PLATFORM, LOCAL_STORAGE_KEYS } from 'lib/constants'
@@ -19,7 +16,6 @@ import { detectOS } from 'lib/helpers'
 import { useProfile } from 'lib/profile'
 import { useAppStateSnapshot } from 'state/app-state'
 import {
-  AiIconAnimation,
   Button,
   DropdownMenu,
   DropdownMenuContent,
@@ -30,20 +26,13 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-  HoverCardContent_Shadcn_,
-  HoverCardTrigger_Shadcn_,
-  HoverCard_Shadcn_,
   Separator,
   Theme,
-  TooltipContent_Shadcn_,
-  TooltipTrigger_Shadcn_,
-  Tooltip_Shadcn_,
   cn,
   singleThemes,
 } from 'ui'
 import { useSetCommandMenuOpen } from 'ui-patterns/CommandMenu'
 import { useProjectContext } from '../ProjectContext'
-import { CommandOption } from './CommandOption'
 import {
   generateOtherRoutes,
   generateProductRoutes,
@@ -52,6 +41,9 @@ import {
 } from './NavigationBar.utils'
 import { NavigationIconButton } from './NavigationIconButton'
 import NavigationIconLink from './NavigationIconLink'
+import { useProjectLintsQuery } from 'data/lint/lint-query'
+import { useLocalStorageQuery } from 'hooks/misc/useLocalStorage'
+import { Tooltip_Shadcn_, TooltipContent_Shadcn_, TooltipTrigger_Shadcn_ } from 'ui'
 
 export const ICON_SIZE = 20
 export const ICON_STROKE_WIDTH = 1.5
@@ -68,6 +60,7 @@ const NavigationBar = () => {
 
   const signOut = useSignOut()
 
+  const navLayoutV2 = useFlag('navigationLayoutV2')
   const isNewAPIDocsEnabled = useIsAPIDocsSidePanelEnabled()
   const [userDropdownOpen, setUserDropdownOpenState] = useState(false)
 
@@ -115,43 +108,36 @@ const NavigationBar = () => {
     )
   }
 
-  const CommandButton = (
-    <HoverCard_Shadcn_ openDelay={10}>
-      <HoverCardTrigger_Shadcn_ asChild>
-        <NavigationIconButton
-          size="tiny"
-          type="text"
-          icon={<Command size={ICON_SIZE} strokeWidth={ICON_STROKE_WIDTH} />}
+  const SearchButton = (
+    <NavigationIconButton
+      size="tiny"
+      onClick={() => {
+        setCommandMenuOpen(true)
+        snap.setNavigationPanelOpen(false)
+      }}
+      type="text"
+      icon={<Search size={ICON_SIZE} strokeWidth={ICON_STROKE_WIDTH} />}
+      rightText={
+        <div
+          className={cn(
+            'flex items-center gap-1',
+            'h-6 py-1.5 px-2 leading-none',
+            'bg-surface-100 text-foreground-lighter',
+            'border border-default rounded-md',
+            'shadow-xs shadow-background-surface-100'
+          )}
         >
-          Commands
-        </NavigationIconButton>
-      </HoverCardTrigger_Shadcn_>
-      <HoverCardContent_Shadcn_ side="right" className="w-48 p-1 flex flex-col gap-y-1">
-        <CommandOption
-          icon={
-            <div className="px-1">
-              <Search size={16} />
-            </div>
-          }
-          label="Search"
-          shortcut="K"
-          onClick={() => {
-            setCommandMenuOpen(true)
-            snap.setNavigationPanelOpen(false)
-          }}
-        />
-        <CommandOption
-          icon={
-            <AiIconAnimation className="scale-75 [&>div>div]:border-black dark:[&>div>div]:border-white" />
-          }
-          label="Assistant"
-          shortcut="I"
-          onClick={() => {
-            snap.setAiAssistantPanel({ open: !snap.aiAssistantPanel.open })
-          }}
-        />
-      </HoverCardContent_Shadcn_>
-    </HoverCard_Shadcn_>
+          {os === 'macos' || true ? ( // todo: issue with `os` and hydration fail
+            <Command size={11.5} strokeWidth={1.5} />
+          ) : (
+            <p className="text-xs">CTRL</p>
+          )}
+          <p className="text-xs">K</p>
+        </div>
+      }
+    >
+      Search
+    </NavigationIconButton>
   )
 
   const UserAccountButton = (
@@ -211,17 +197,19 @@ const NavigationBar = () => {
         }}
       >
         <ul className="flex flex-col gap-y-1 justify-start px-2 relative">
-          <Link
-            href={IS_PLATFORM ? '/projects' : `/project/${projectRef}`}
-            className="mx-2 flex items-center h-[40px]"
-            onClick={onCloseNavigationIconLink}
-          >
-            <img
-              alt="Biobase"
-              src={`${router.basePath}/img/biobase-logo.svg`}
-              className="absolute h-[40px] w-6 cursor-pointer rounded"
-            />
-          </Link>
+          {(!navLayoutV2 || !IS_PLATFORM) && (
+            <Link
+              href={IS_PLATFORM ? '/projects' : `/project/${projectRef}`}
+              className="mx-2 flex items-center h-[40px]"
+              onClick={onCloseNavigationIconLink}
+            >
+              <img
+                alt="Biobase"
+                src={`${router.basePath}/img/biobase-logo.svg`}
+                className="absolute h-[40px] w-6 cursor-pointer rounded"
+              />
+            </Link>
+          )}
           <NavigationIconLink
             isActive={isUndefined(activeRoute) && !isUndefined(router.query.ref)}
             route={{
@@ -229,7 +217,6 @@ const NavigationBar = () => {
               label: 'Home',
               icon: <Home size={ICON_SIZE} strokeWidth={ICON_STROKE_WIDTH} />,
               link: `/project/${projectRef}`,
-              linkElement: <ProjectIndexPageLink projectRef={projectRef} />,
             }}
             onClick={onCloseNavigationIconLink}
           />
@@ -325,13 +312,13 @@ const NavigationBar = () => {
             <>
               {!allowNavPanelToExpand && (
                 <Tooltip_Shadcn_>
-                  <TooltipTrigger_Shadcn_ asChild>{CommandButton}</TooltipTrigger_Shadcn_>
+                  <TooltipTrigger_Shadcn_ asChild>{SearchButton}</TooltipTrigger_Shadcn_>
                   <TooltipContent_Shadcn_ side="right">
-                    <span>Commands</span>
+                    <span>Search</span>
                   </TooltipContent_Shadcn_>
                 </Tooltip_Shadcn_>
               )}
-              {allowNavPanelToExpand && CommandButton}
+              {allowNavPanelToExpand && SearchButton}
             </>
           )}
 

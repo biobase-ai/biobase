@@ -9,21 +9,15 @@ export const generateAdvisorsMenu = (project?: Project): ProductMenuGroup[] => {
       title: 'Advisors',
       items: [
         {
-          name: 'Security Advisor',
+          name: 'Security',
           key: 'security',
           url: `/project/${ref}/advisors/security`,
           items: [],
         },
         {
-          name: 'Performance Advisor',
+          name: 'Performance',
           key: 'performance',
           url: `/project/${ref}/advisors/performance`,
-          items: [],
-        },
-        {
-          name: 'Query Performance',
-          key: 'query-performance',
-          url: `/project/${ref}/advisors/query-performance`,
           items: [],
         },
       ],

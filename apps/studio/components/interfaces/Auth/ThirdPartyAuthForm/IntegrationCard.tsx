@@ -31,7 +31,7 @@ export const getIntegrationTypeDescription = (type: INTEGRATION_TYPES) => {
           users. You can read more in the{' '}
           <a
             className="hover:decoration-brand underline hover:text-foreground transition"
-            href="https://biobase.studio/docs/guides/auth"
+            href="https://biobase.com/docs/guides/auth"
           >
             documentation
           </a>
@@ -46,7 +46,7 @@ export const getIntegrationTypeDescription = (type: INTEGRATION_TYPES) => {
           read more in the{' '}
           <a
             className="hover:decoration-brand underline hover:text-foreground transition"
-            href="https://biobase.studio/docs/guides/auth"
+            href="https://biobase.com/docs/guides/auth"
           >
             documentation
           </a>
@@ -60,7 +60,7 @@ export const getIntegrationTypeDescription = (type: INTEGRATION_TYPES) => {
           can read more in the{' '}
           <a
             className="hover:decoration-brand underline hover:text-foreground transition"
-            href="https://biobase.studio/docs/guides/auth/third-party/aws-cognito"
+            href="https://biobase.com/docs/guides/auth/third-party/aws-cognito"
           >
             documentation
           </a>

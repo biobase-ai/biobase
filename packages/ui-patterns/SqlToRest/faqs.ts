@@ -29,11 +29,11 @@ export const faqs: Faq[] = [
     `,
   },
   {
-    id: 'what-is-supabase-js',
+    id: 'what-is-biobase-js',
     condition: (result) => result.language === 'js',
     question: 'What library is this?',
     answer: stripIndent`
-      This snippet uses [\`supabase-js\`](https://github.com/supabase/supabase-js), a JavaScript/TypeScript client that provides a convenient SDK wrapper around your project's API.
+      This snippet uses [\`biobase-js\`](https://github.com/biobase-ai/biobase-js), a JavaScript/TypeScript client that provides a convenient SDK wrapper around your project's API.
 
       See [Installing](/docs/reference/javascript/installing) to get started.
     `,
@@ -211,7 +211,7 @@ export const faqs: Faq[] = [
     `,
   },
   {
-    id: 'why-range-supabase-js',
+    id: 'why-range-biobase-js',
     condition: (result) =>
       // Show this if viewing the JS code and there is both a limit and offset
       result.language === 'js' &&
@@ -219,7 +219,7 @@ export const faqs: Faq[] = [
       result.statement.limit.offset !== undefined,
     question: 'Why `range()` instead of `limit()` and `offset()`?',
     answer: stripIndent`
-      [\`supabase-js\`](https://github.com/supabase/supabase-js) supports \`limit()\` but not \`offset()\`.
+      [\`biobase-js\`](https://github.com/biobase-ai/biobase-js) supports \`limit()\` but not \`offset()\`.
 
       \`range()\` allows us to accomplish the equivalent logic.
     `,

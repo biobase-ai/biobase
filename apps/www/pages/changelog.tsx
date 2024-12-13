@@ -43,7 +43,7 @@ export type DiscussionsResponse = {
 
 /**
  * [Terry]
- * this page powers biobase.studio/changelog
+ * this page powers biobase.com/changelog
  * this page used to just be a feed of the releases endpoint
  * (https://api.github.com/repos/biobase/biobase/releases) (rest api)
  * but is now a blend of that legacy relases and the new Changelog category of the Discussions
@@ -249,7 +249,7 @@ function ChangelogPage({ changelog, pageInfo, restPage }: ChangelogPageProps) {
         openGraph={{
           title: TITLE,
           description: DESCRIPTION,
-          url: `https://biobase.studio/changelog`,
+          url: `https://biobase.com/changelog`,
           type: 'article',
         }}
       />

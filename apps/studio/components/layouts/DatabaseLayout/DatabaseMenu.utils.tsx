@@ -9,21 +9,16 @@ export const generateDatabaseMenu = (
     pgNetExtensionExists: boolean
     pitrEnabled: boolean
     columnLevelPrivileges: boolean
+    cronUiEnabled: boolean
   }
 ): ProductMenuGroup[] => {
   const ref = project?.ref ?? 'default'
-  const { pgNetExtensionExists, pitrEnabled, columnLevelPrivileges } = flags || {}
+  const { pgNetExtensionExists, pitrEnabled, columnLevelPrivileges, cronUiEnabled } = flags || {}
 
   return [
     {
       title: 'Database Management',
       items: [
-        {
-          name: 'Schema Visualizer',
-          key: 'schemas',
-          url: `/project/${ref}/database/schemas`,
-          items: [],
-        },
         { name: 'Tables', key: 'tables', url: `/project/${ref}/database/tables`, items: [] },
         {
           name: 'Functions',
@@ -104,16 +99,15 @@ export const generateDatabaseMenu = (
             ]
           : []),
         {
-          name: 'Migrations',
-          key: 'migrations',
-          url: `/project/${ref}/database/migrations`,
+          name: 'Wrappers',
+          key: 'wrappers',
+          url: `/project/${ref}/database/wrappers`,
           items: [],
         },
         {
-          name: 'Wrappers',
-          key: 'wrappers',
-          url: `/project/${ref}/integrations?category=wrapper`,
-          rightIcon: <ArrowUpRight strokeWidth={1} className="h-4 w-4" />,
+          name: 'Migrations',
+          key: 'migrations',
+          url: `/project/${ref}/database/migrations`,
           items: [],
         },
         ...(!!pgNetExtensionExists
@@ -121,8 +115,17 @@ export const generateDatabaseMenu = (
               {
                 name: 'Webhooks',
                 key: 'hooks',
-                url: `/project/${ref}/integrations/webhooks/overview`,
-                rightIcon: <ArrowUpRight strokeWidth={1} className="h-4 w-4" />,
+                url: `/project/${ref}/database/hooks`,
+                items: [],
+              },
+            ]
+          : []),
+        ...(!!cronUiEnabled
+          ? [
+              {
+                name: 'Cron Jobs',
+                key: 'cron-jobs',
+                url: `/project/${ref}/database/cron-jobs`,
                 items: [],
               },
             ]
@@ -132,6 +135,18 @@ export const generateDatabaseMenu = (
     {
       title: 'Tools',
       items: [
+        {
+          name: 'Schema Visualizer',
+          key: 'schemas',
+          url: `/project/${ref}/database/schemas`,
+          items: [],
+        },
+        {
+          name: 'Query Performance',
+          key: 'query-performance',
+          url: `/project/${ref}/database/query-performance`,
+          items: [],
+        },
         {
           name: 'Security Advisor',
           key: 'security-advisor',
@@ -143,13 +158,6 @@ export const generateDatabaseMenu = (
           name: 'Performance Advisor',
           key: 'performance-advisor',
           url: `/project/${ref}/advisors/performance`,
-          rightIcon: <ArrowUpRight strokeWidth={1} className="h-4 w-4" />,
-          items: [],
-        },
-        {
-          name: 'Query Performance',
-          key: 'query-performance',
-          url: `/project/${ref}/advisors/query-performance`,
           rightIcon: <ArrowUpRight strokeWidth={1} className="h-4 w-4" />,
           items: [],
         },

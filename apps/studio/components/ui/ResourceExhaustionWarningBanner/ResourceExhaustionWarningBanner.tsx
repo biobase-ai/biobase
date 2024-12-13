@@ -78,8 +78,8 @@ const ResourceExhaustionWarningBanner = () => {
   const correctionUrlVariants = {
     undefined: undefined,
     null: '/project/[ref]/settings/[infra-path]',
-    disk_space: '/project/[ref]/settings/compute-and-disk',
-    read_only: '/project/[ref]/settings/compute-and-disk',
+    disk_space: '/project/[ref]/settings/database',
+    read_only: '/project/[ref]/settings/database',
     auth_email_rate_limit: '/project/[ref]/settings/auth',
     auth_restricted_email_sending: '/project/[ref]/settings/auth',
     default: (metric: string) => `/project/[ref]/settings/[infra-path]#${metric}`,
@@ -114,7 +114,7 @@ const ResourceExhaustionWarningBanner = () => {
   const onUsageOrInfraAndNotInReadOnlyMode =
     isUsageOrInfraPage && !activeWarnings.includes('is_readonly_mode_enabled')
   const onDatabaseSettingsAndInReadOnlyMode =
-    router.pathname.endsWith('settings/compute-and-disk') &&
+    router.pathname.endsWith('settings/database') &&
     activeWarnings.includes('is_readonly_mode_enabled')
 
   // these take precedence over each other, so there's only one active warning to check
@@ -149,9 +149,7 @@ const ResourceExhaustionWarningBanner = () => {
     onUsageOrInfraAndNotInReadOnlyMode ||
     onDatabaseSettingsAndInReadOnlyMode ||
     !isVisible ||
-    (router.pathname.includes('/auth/') &&
-      !!projectResourceWarnings?.auth_restricted_email_sending &&
-      bannerAcknowledged)
+    bannerAcknowledged
   ) {
     return null
   }

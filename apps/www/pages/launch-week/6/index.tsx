@@ -8,7 +8,7 @@ import _days from '~/components/LaunchWeek/6/lw6_days.json'
 import DefaultLayout from '~/components/Layouts/Default'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 
-import { createClient, SupabaseClient } from '@supabase/supabase-js'
+import { createClient, BiobaseClient } from '@supabase/biobase-js'
 import classNames from 'classnames'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
@@ -40,7 +40,7 @@ export default function launchweek() {
   const description = 'Biobase Launch Week 6 | 12-18 Dec 2022'
   const liveDay = null
 
-  const [biobase, setBiobase] = useState<SupabaseClient | null>(null)
+  const [biobase, setBiobase] = useState<BiobaseClient | null>(null)
 
   const [creators, setCreators] = useState<any>([])
   const [activeCreator, setActiveCreator] = useState<any>(null)
@@ -152,7 +152,7 @@ export default function launchweek() {
         openGraph={{
           title: title,
           description: description,
-          url: `https://biobase.studio/launch-week`,
+          url: `https://biobase.com/launch-week`,
           images: [
             {
               url: `${SITE_ORIGIN}/images/launchweek/launch-week-6.jpg`,
@@ -792,7 +792,7 @@ export default function launchweek() {
                           <span className="text-white text-center">pg_crdt</span>
                         </div>
                         <SectionButtons
-                          docs="https://github.com/biobase-ai/pg_crdt"
+                          docs="https://github.com/biobase/pg_crdt"
                           blog="/blog/postgres-crdt"
                         />
                       </div>
@@ -886,7 +886,7 @@ export default function launchweek() {
               Biobase and you can win $1500 in GitHub sponsorships and a coveted Biobase Darkmode
               Keyboard! For more info check the{' '}
               <a
-                href="https://biobase.studio/blog/launch-week-6-hackathon"
+                href="https://biobase.com/blog/launch-week-6-hackathon"
                 target="_blank"
                 rel="nooper noreferrer"
                 className="text-brand"
@@ -921,7 +921,7 @@ export default function launchweek() {
                   </p>
                   <div></div>
                   <a
-                    href="https://discord.biobase.studio/"
+                    href="https://discord.biobase.com/"
                     rel="noopener noreferrer"
                     className="text-brand flex items-center"
                     target="_blank"
@@ -936,10 +936,10 @@ export default function launchweek() {
                   Submit your project through{' '}
                   <a
                     className="text-brand"
-                    href="https://www.madewithbiobase.studio/launch-week-6"
+                    href="https://www.madewithbiobase.com/launch-week-6"
                     target="_blank"
                   >
-                    madewithbiobase.studio
+                    madewithbiobase.com
                   </a>
                   . All submissions must be open source and publically available. Submissions close
                   Monday 19th Dec 00:01 AM PT.

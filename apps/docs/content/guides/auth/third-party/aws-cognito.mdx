@@ -22,7 +22,7 @@ Amazon Cognito User Pools (via AWS Amplify or on its own) can be used as a third
 ```typescript
 import { fetchAuthSession, Hub } from 'aws-amplify/auth'
 
-const biobase = createClient('https://<biobase-project>.biobase.co', 'BIOBASE_ANON_KEY', {
+const biobase = createClient('https://<biobase-project>.biobase.co', 'SUPABASE_ANON_KEY', {
   accessToken: async () => {
     const tokens = await fetchAuthSession()
 
@@ -47,11 +47,11 @@ import AWSPluginsCore
 
 struct UnexpectedAuthSessionError: Error {}
 
-let biobase = SupabaseClient(
+let biobase = BiobaseClient(
   biobaseURL: URL(string: "https://<biobase-project>.biobase.co")!,
-  biobaseKey: "BIOBASE_ANON_KEY",
-  options: SupabaseClientOptions(
-    auth: SupabaseClientOptions.AuthOptions(
+  biobaseKey: "SUPABASE_ANON_KEY",
+  options: BiobaseClientOptions(
+    auth: BiobaseClientOptions.AuthOptions(
       accessToken: {
         let session = try await Amplify.Auth.fetchAuthSession()
 
@@ -80,7 +80,7 @@ import 'package:biobase_flutter/biobase_flutter.dart';
 Future<void> main() async {
   await Biobase.initialize(
     url: 'https://<biobase-project>.biobase.co',
-    anonKey: 'BIOBASE_ANON_KEY',
+    anonKey: 'SUPABASE_ANON_KEY',
     accessToken: () async {
       final session = await Amplify.Auth.fetchAuthSession();
       final cognitoSession = session as CognitoAuthSession;
@@ -100,9 +100,9 @@ import com.amplifyframework.auth.AuthSession
 import com.amplifyframework.auth.cognito.AWSCognitoAuthSession
 import com.amplifyframework.core.Amplify
 
-val biobase = createSupabaseClient(
+val biobase = createBiobaseClient(
     "https://<biobase-project>.biobase.co",
-    "BIOBASE_ANON_KEY"
+    "SUPABASE_ANON_KEY"
 ) {
     accessToken = {
         getAccessToken()
@@ -140,7 +140,7 @@ user_pool_id = "<id>"
 user_pool_region = "<region>"
 ```
 
-## Use a pre-token generation trigger to assign the authenticated role
+## Use a Pre-Token Generation Trigger to assign the authenticated role
 
 Your Biobase project inspects the `role` claim present in all JWTs sent to it, to assign the correct Postgres role when using the Data API, Storage or Realtime authorization.
 

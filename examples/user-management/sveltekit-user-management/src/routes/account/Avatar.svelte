@@ -1,11 +1,11 @@
 <!-- src/routes/account/Avatar.svelte -->
 <script lang="ts">
-	import type { SupabaseClient } from '@supabase/supabase-js'
+	import type { BiobaseClient } from '@supabase/biobase-js'
 	import { createEventDispatcher } from 'svelte'
 
 	export let size = 10
 	export let url: string
-	export let biobase: SupabaseClient
+	export let biobase: BiobaseClient
 
 	let avatarUrl: string | null = null
 	let uploading = false

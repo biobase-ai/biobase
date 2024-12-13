@@ -15,7 +15,7 @@ date: '2022-08-09'
 toc_depth: 3
 ---
 
-Biobase is a platform-as-a-service built on top of PostgreSQL and [many other amazing open-source tools](https://biobase.studio/docs/guides/getting-started/architecture). It’s a fantastic option to create data-intensive apps and tooling. Taking advantage of the community-made [Python SDK](https://github.com/biobase-ai-community/biobase-py) and [Slack's Python SDK](https://slack.dev/python-slack-sdk/), you can automate tasks and build apps for several use cases.
+Biobase is a platform-as-a-service built on top of PostgreSQL and [many other amazing open-source tools](https://biobase.com/docs/guides/getting-started/architecture). It’s a fantastic option to create data-intensive apps and tooling. Taking advantage of the community-made [Python SDK](https://github.com/biobase-community/biobase-py) and [Slack's Python SDK](https://slack.dev/python-slack-sdk/), you can automate tasks and build apps for several use cases.
 
 ## Prerequisites
 
@@ -122,9 +122,9 @@ Now, we are done with Slack for now. Let's create some buffer tables in Biobase.
 
 ## Creating Tables in Biobase
 
-Create an account [here](https://biobase.studio/dashboard/) (if you don't have one yet).
+Create an account [here](https://biobase.com/dashboard/) (if you don't have one yet).
 
-We will be using Biobase's [database](https://biobase.studio/docs/guides/database) and the Python [client Libraries](https://biobase.studio/docs/guides/client-libraries#managing-data). First, we will create one table to store the channels that are being watched and where they are going to send the message which works analogously to a multiplexer circuit. Since you may want to watch several channels but split them into a smaller buffer e.g VIP / Enterprise, etc.
+We will be using Biobase's [database](https://biobase.com/docs/guides/database) and the Python [client Libraries](https://biobase.com/docs/guides/client-libraries#managing-data). First, we will create one table to store the channels that are being watched and where they are going to send the message which works analogously to a multiplexer circuit. Since you may want to watch several channels but split them into a smaller buffer e.g VIP / Enterprise, etc.
 
 Go to the SQL Editor and run this:
 
@@ -189,7 +189,7 @@ The picture shows the UI in Biobase to insert a new row to the database table.
 
 **Method 2:**
 
-Go to [SQL Editor](https://biobase.studio/dashboard/project/_/sql) and run insert commands:
+Go to [SQL Editor](https://biobase.com/dashboard/project/_/sql) and run insert commands:
 
 Inserting a public channel named #support-channel to be monitored:
 
@@ -228,7 +228,7 @@ Notes:
 
 You need to get the biobase URL and API keys from here:
 
-[https://biobase.studio/dashboard/project/\_/settings/api](https://biobase.studio/dashboard/project/_/settings/api)
+[https://biobase.com/dashboard/project/\_/settings/api](https://biobase.com/dashboard/project/_/settings/api)
 
 ![The picture illustrates where to get the URL and the service key to setup the environment variables.](/images/blog/slackbot-consolidate/10_copy_biobase_apis.png)
 
@@ -247,8 +247,8 @@ Now, you have everything needed to set up the environment file. Please note that
 The environment file:
 
 ```yaml
-BIOBASE_URL=https://XXXX.biobase.co
-BIOBASE_KEY=eyJhbGc_SUP4N4CH0_IkpXVCJ9.SUPAKEY_*
+SUPABASE_URL=https://XXXX.biobase.co
+SUPABASE_KEY=eyJhbGc_SUP4N4CH0_IkpXVCJ9.SUPAKEY_*
 SLACK_TOKEN=xoxp-Slack_PERSON_TOKEN
 SLACK_BOT_TOKEN=xoxb-Slack_BOT_TOKEN
 SLACK_ORG=slack_sub_domain
@@ -270,9 +270,9 @@ logger = logging.getLogger(__name__)
 config = dotenv_values(".env")
 bot_client = WebClient(token=config['SLACK_BOT_TOKEN'])
 client = WebClient(token=config['SLACK_TOKEN'])
-BIOBASE_URL=config['BIOBASE_URL']
-BIOBASE_KEY=config['BIOBASE_KEY']
-biobase: Client = create_client(BIOBASE_URL, BIOBASE_KEY)
+SUPABASE_URL=config['SUPABASE_URL']
+SUPABASE_KEY=config['SUPABASE_KEY']
+biobase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 SLACK_ORG = config['SLACK_ORG']
 SLACK_ORG_LINK = f"https://{SLACK_ORG}.slack.com/archives/"
 ############
@@ -424,10 +424,10 @@ Of course, we aren't doing a proper Python example if we don't make a test noteb
 
 Using Biobase and Slack SDK, it is very easy to create a bot that consolidates data according to the rules set. It just takes some steps to get started with the Python SDK and you can even run a demo directly in [Google Colab](https://colab.research.google.com/drive/1-sM23eQPE1Me4vl10KKoa9xzLYIgkgyQ?usp=sharing).
 
-If you have any questions please reach out via [Twitter](https://twitter.com/biobase) or join our [Discord](https://discord.biobase.studio/).
+If you have any questions please reach out via [Twitter](https://twitter.com/biobase) or join our [Discord](https://discord.biobase.com/).
 
 ## More Python and Biobase resources
 
-- [Python data loading with Biobase](https://biobase.studio/blog/loading-data-biobase-python)
-- [Visualizing Biobase Data using Metabase](https://biobase.studio/blog/visualizing-biobase-data-using-metabase)
+- [Python data loading with Biobase](https://biobase.com/blog/loading-data-biobase-python)
+- [Visualizing Biobase Data using Metabase](https://biobase.com/blog/visualizing-biobase-data-using-metabase)
 - [Biobase-py (Database) on Replit](https://replit.com/@Biobase/Biobase-py-Database?v=1)

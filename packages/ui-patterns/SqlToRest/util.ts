@@ -12,7 +12,7 @@ export type HttpResult = BaseResult &
 
 export type BiobaseJsResult = BaseResult &
   BiobaseJsQuery & {
-    type: 'supabase-js'
+    type: 'biobase-js'
     language: 'js'
   }
 

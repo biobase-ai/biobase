@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import { PRODUCT_NAMES } from 'shared-data/products'
 import Examples from '~/data/Examples'
-import solutions from '~/data/MainProducts'
+import solutions from '~/data/Solutions'
 
 const FunctionsHero = dynamic(() => import('~/components/Products/Functions/FunctionsHero'))
 const RealtimeLogs = dynamic(() => import('~/components/Products/Functions/RealtimeLogs'))
@@ -44,7 +44,7 @@ export default (isMobile?: boolean) => ({
     image: <FunctionsHero />,
     ctas: [
       {
-        label: 'Create a free account',
+        label: 'Launch a free database',
         href: '/dashboard',
         type: 'primary' as any,
       },
@@ -211,7 +211,7 @@ export default (isMobile?: boolean) => ({
           <>
             The open source{' '}
             <Link
-              href="https://github.com/biobase-ai/edge-runtime/"
+              href="https://github.com/biobase/edge-runtime/"
               className="underline hover:text-foreground-light transition-colors"
             >
               Edge runtime
@@ -237,7 +237,7 @@ export default (isMobile?: boolean) => ({
           <>
             Use the{' '}
             <Link
-              href="https://biobase.studio/docs/guides/functions/cicd-workflow"
+              href="https://biobase.com/docs/guides/functions/cicd-workflow"
               className="underline hover:text-foreground-light transition-colors"
             >
               Biobase CLI with Github actions
@@ -265,7 +265,7 @@ export default (isMobile?: boolean) => ({
           <>
             Edge functions run globally or can be{' '}
             <Link
-              href="https://biobase.studio/docs/guides/functions/regional-invocation"
+              href="https://biobase.com/docs/guides/functions/regional-invocation"
               className="underline hover:text-foreground-light transition-colors"
             >
               pinned to your database's proximity
@@ -322,7 +322,7 @@ export default (isMobile?: boolean) => ({
       {
         label: 'Connect to your database',
         paragraph:
-          'Connect to your Postgres database from an Edge Function by using the supabase-js client',
+          'Connect to your Postgres database from an Edge Function by using the biobase-js client',
         panel: <ConnectToDBPanel />,
       },
       {
@@ -337,7 +337,7 @@ export default (isMobile?: boolean) => ({
           <>
             Edge Functions are designed to work seamlessly with{' '}
             <Link
-              href="https://biobase.studio/docs/guides/functions/auth"
+              href="https://biobase.com/docs/guides/functions/auth"
               className="underline hover:text-foreground-light transition-colors"
             >
               Biobase Auth
@@ -352,7 +352,7 @@ export default (isMobile?: boolean) => ({
           <>
             Edge Functions are designed to work seamlessly with{' '}
             <Link
-              href="https://biobase.studio/docs/guides/functions/storage-caching"
+              href="https://biobase.com/docs/guides/functions/storage-caching"
               className="underline hover:text-foreground-light transition-colors"
             >
               Biobase Storage
