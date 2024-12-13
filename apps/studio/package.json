@@ -49,7 +49,7 @@
     "@vercel/flags": "^2.6.0",
     "@vitejs/plugin-react": "^4.2.1",
     "@zip.js/zip.js": "^2.7.29",
-    "ai": "^4.0.16",
+    "ai": "3.1.1",
     "ai-commands": "*",
     "awesome-debounce-promise": "^2.1.0",
     "clsx": "^1.2.1",
