@@ -6,7 +6,7 @@ type Props = {
 }
 
 const STORAGE_URL =
-  'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/og-images'
+  'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/og-images'
 
 const CustomerStories = (props: Props) => {
   const { title, customer } = props

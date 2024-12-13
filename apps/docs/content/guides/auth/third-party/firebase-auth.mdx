@@ -31,7 +31,7 @@ Creating a client for the Web is as easy as passing the `accessToken` async func
 ```typescript
 import { createClient } from '@supabase/supabase-js'
 
-const biobase = createClient('https://<biobase-project>.biobase.co', 'BIOBASE_ANON_KEY', {
+const biobase = createClient('https://<biobase-project>.supabase.co', 'BIOBASE_ANON_KEY', {
   accessToken: async () => {
     ;(await firebase.auth().currentUser?.getIdToken(/* forceRefresh */ false)) ?? null
   },
@@ -51,7 +51,7 @@ import FirebaseAuth
 struct MissingFirebaseTokenError: Error {}
 
 let biobase = SupabaseClient(
-  biobaseURL: URL(string: "https://<biobase-project>.biobase.co")!,
+  biobaseURL: URL(string: "https://<biobase-project>.supabase.co")!,
   biobaseKey: "BIOBASE_ANON_KEY",
   options: SupabaseClientOptions(
     auth: SupabaseClientOptions.AuthOptions(
@@ -78,7 +78,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 val biobase = createSupabaseClient(
-    "https://<biobase-project>.biobase.co",
+    "https://<biobase-project>.supabase.co",
     "BIOBASE_ANON_KEY"
 ) {
     accessToken = {
@@ -98,7 +98,7 @@ import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.auth
 
 val biobase = createSupabaseClient(
-    "https://<biobase-project>.biobase.co",
+    "https://<biobase-project>.supabase.co",
     "BIOBASE_ANON_KEY"
 ) {
     accessToken = {
@@ -153,7 +153,7 @@ create policy "Restrict access to Biobase Auth and Firebase Auth for project ID 
   as restrictive
   to authenticated
   using (
-    (auth.jwt()->>'iss' = 'https://<project-ref>.biobase.co/auth/v1')
+    (auth.jwt()->>'iss' = 'https://<project-ref>.supabase.co/auth/v1')
     or
     (
         auth.jwt()->>'iss' = 'https://securetoken.google.com/<firebase-project-id>'
@@ -172,7 +172,7 @@ create function public.is_biobase_or_firebase_project_jwt()
   stable
   returns null on null input
   return (
-    (auth.jwt()->>'iss' = 'https://<project-ref>.biobase.co/auth/v1')
+    (auth.jwt()->>'iss' = 'https://<project-ref>.supabase.co/auth/v1')
     or
     (
         auth.jwt()->>'iss' = concat('https://securetoken.google.com/<firebase-project-id>')

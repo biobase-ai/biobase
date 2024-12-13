@@ -31,7 +31,7 @@ export function getConnectionURL(projectRef: string, projectAPI?: ProjectApiResp
 
   const projUrl = projectAPI
     ? `${projectAPI.autoApiService.protocol}://${projectAPI.autoApiService.endpoint}`
-    : `https://${projectRef}.biobase.co`
+    : `https://${projectRef}.supabase.co`
 
   const url = new URL(projUrl)
   url.pathname = '/storage/v1/s3'

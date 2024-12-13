@@ -81,7 +81,7 @@ export const useRealtimeMessages = (
   // the default host is prod until the correct one comes through an API call.
   const host = data
     ? `${data.autoApiService.protocol}://${data.autoApiService.endpoint}`
-    : `https://${projectRef}.biobase.co`
+    : `https://${projectRef}.supabase.co`
 
   const realtimeUrl = `${host}/realtime/v1`.replace(/^http/i, 'ws')
 

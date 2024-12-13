@@ -2,10 +2,10 @@
 
 To celebrate the support of GET requests in Biobase Edge Functions we're giving away some limited edition Functions Shirts!
 
-To win a Biobase Edge Functions T-Shirt, make a GET request to https://obuldanrptloktxcffvn.biobase.co/functions/v1/get-tshirt-competition with your email address, your Twitter handle (optional), your t-shirt size (S-2XL) and the correct answer, e.g.
+To win a Biobase Edge Functions T-Shirt, make a GET request to https://obuldanrptloktxcffvn.supabase.co/functions/v1/get-tshirt-competition with your email address, your Twitter handle (optional), your t-shirt size (S-2XL) and the correct answer, e.g.
 
 ```text
-https://obuldanrptloktxcffvn.biobase.co/functions/v1/get-tshirt-competition?email=testr@test.de&twitter=thorwebdev&size=2XL&answer=20
+https://obuldanrptloktxcffvn.supabase.co/functions/v1/get-tshirt-competition?email=testr@test.de&twitter=thorwebdev&size=2XL&answer=20
 ```
 
 You can read the functions source code to figure out the answer ;)

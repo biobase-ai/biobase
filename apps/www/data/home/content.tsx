@@ -63,7 +63,7 @@ export default {
               title: 'Biobase dashboard table editor',
               sources: [
                 {
-                  src: `https://xguihxuzqibwxjnimxev.biobase.co/storage/v1/object/public/videos/marketing/website/biobase-table-editor${isDark ? '' : '-light'}`,
+                  src: `https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/videos/marketing/website/biobase-table-editor${isDark ? '' : '-light'}`,
                   type: 'video/mp4',
                 },
               ],
@@ -96,7 +96,7 @@ export default {
               title: 'Biobase dashboard SQL editor',
               sources: [
                 {
-                  src: `https://xguihxuzqibwxjnimxev.biobase.co/storage/v1/object/public/videos/marketing/website/biobase-sql-editor${isDark ? '' : '-light'}`,
+                  src: `https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/videos/marketing/website/biobase-sql-editor${isDark ? '' : '-light'}`,
                   type: 'video/mp4',
                 },
               ],
@@ -128,7 +128,7 @@ export default {
               title: 'Biobase dashboard Row Level Security',
               sources: [
                 {
-                  src: `https://xguihxuzqibwxjnimxev.biobase.co/storage/v1/object/public/videos/marketing/website/biobase-rls${isDark ? '' : '-light'}`,
+                  src: `https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/videos/marketing/website/biobase-rls${isDark ? '' : '-light'}`,
                   type: 'video/mp4',
                 },
               ],

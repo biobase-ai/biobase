@@ -5004,7 +5004,7 @@ export interface components {
       DATABASE_POOLER_URL: string
       /**
        * @description PSQL connection string
-       * @example postgresql://postgres:dbpass@db.abcdefghijklmnop.biobase.co:5432/postgres
+       * @example postgresql://postgres:dbpass@db.abcdefghijklmnop.supabase.co:5432/postgres
        */
       DATABASE_URL: string
     }

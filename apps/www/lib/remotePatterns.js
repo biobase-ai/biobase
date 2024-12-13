@@ -55,13 +55,13 @@ module.exports = [
   },
   {
     protocol: 'https',
-    hostname: 'obuldanrptloktxcffvn.biobase.co',
+    hostname: 'obuldanrptloktxcffvn.supabase.co',
     port: '',
     pathname: '**',
   },
   {
     protocol: 'https',
-    hostname: 'xguihxuzqibwxjnimxev.biobase.co',
+    hostname: 'xguihxuzqibwxjnimxev.supabase.co',
     port: '',
     pathname: '**',
   },

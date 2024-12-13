@@ -7,7 +7,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
-const STORAGE_URL = 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/lwx'
+const STORAGE_URL = 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/lwx'
 
 // Load custom font
 const FONT_URL = `${STORAGE_URL}/font/CircularStd-Book.otf`
@@ -309,7 +309,7 @@ export async function handler(req: Request) {
     if (storageError) throw new Error(`storageError: ${storageError.message}`)
 
     // Generate og image
-    fetch('https://obuldanrptloktxcffvn.biobase.co/functions/v1/lwx-ticket-og', {
+    fetch('https://obuldanrptloktxcffvn.supabase.co/functions/v1/lwx-ticket-og', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

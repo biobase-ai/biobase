@@ -49,7 +49,7 @@ $$);
 or over HTTP:
 
 ```bash
-curl -X POST https://<PROJECT_REF>.biobase.co/graphql/v1 \
+curl -X POST https://<PROJECT_REF>.supabase.co/graphql/v1 \
     -H 'apiKey: <API_KEY>'\
     -H 'Content-Type: application/json' \
     --data-raw '
@@ -232,7 +232,7 @@ To enable GraphQL in your Biobase instance, enable `pg_graphql` from the [dashbo
 
 <video width="99%" autoPlay muted playsInline controls={true}>
   <source
-    src="https://xguihxuzqibwxjnimxev.biobase.co/storage/v1/object/public/videos/marketing/blog/launch-week-4/api-enable-graphql.mp4"
+    src="https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/videos/marketing/blog/launch-week-4/api-enable-graphql.mp4"
     type="video/mp4"
   />
 </video>
@@ -245,7 +245,7 @@ create extension pg_graphql;
 
 And we're done!
 
-The GraphQL endpoint is available at: `https://<project_ref>.biobase.co/graphql/v1`
+The GraphQL endpoint is available at: `https://<project_ref>.supabase.co/graphql/v1`
 
 ## Example app: Build a HN clone with Postgres and GraphQL
 

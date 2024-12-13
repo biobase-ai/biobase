@@ -4,7 +4,7 @@ Generate Open Graph images with Deno and Biobase Edge Functions and cache the ge
 
 - Docs: https://deno.land/x/og_edge@0.0.2
 - Examples: https://vercel.com/docs/concepts/functions/edge-functions/og-image-examples
-- Demo: https://obuldanrptloktxcffvn.biobase.co/functions/v1/lw12-ticket-og?username=thorwebdev
+- Demo: https://obuldanrptloktxcffvn.supabase.co/functions/v1/lw12-ticket-og?username=thorwebdev
 
 ## Run locally
 

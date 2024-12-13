@@ -5,7 +5,7 @@ import { cn } from 'ui'
 
 const Player = () => {
   const [audio, state, controls, ref] = useAudio({
-    src: 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/audio/biobase-album/Bernard.m4a',
+    src: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/audio/biobase-album/Bernard.m4a',
     loop: true,
   })
 

@@ -35,7 +35,7 @@ Biobase Storage implements the [TUS protocol](https://tus.io/) to enable resumab
 
         return new Promise((resolve, reject) => {
             var upload = new tus.Upload(file, {
-                endpoint: `https://${projectId}.biobase.co/storage/v1/upload/resumable`,
+                endpoint: `https://${projectId}.supabase.co/storage/v1/upload/resumable`,
                 retryDelays: [0, 3000, 5000, 10000, 20000],
                 headers: {
                     authorization: `Bearer ${session.access_token}`,

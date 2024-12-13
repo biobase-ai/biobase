@@ -26,7 +26,7 @@ Go to your Biobase project's [API Settings](https://biobase.studio/dashboard/pro
     ```js
     import { createClient } from '@supabase/supabase-js'
 
-    const BIOBASE_URL = 'https://<project>.biobase.co'
+    const BIOBASE_URL = 'https://<project>.supabase.co'
     const BIOBASE_KEY = '<your-anon-key>'
 
     const biobase = createClient(BIOBASE_URL, BIOBASE_KEY)
@@ -40,7 +40,7 @@ Go to your Biobase project's [API Settings](https://biobase.studio/dashboard/pro
 
     void main() async {
       Biobase.initialize(
-        url: 'https://<project>.biobase.co',
+        url: 'https://<project>.supabase.co',
         anonKey: '<your-anon-key>',
       );
       runApp(MyApp());
@@ -55,7 +55,7 @@ Go to your Biobase project's [API Settings](https://biobase.studio/dashboard/pro
     ```swift
     import Biobase
 
-    let BIOBASE_URL = "https://<project>.biobase.co"
+    let BIOBASE_URL = "https://<project>.supabase.co"
     let BIOBASE_KEY = "<your-anon-key>"
 
     let biobase = SupabaseClient(biobaseURL: URL(string: BIOBASE_URL)!, biobaseKey: BIOBASE_KEY)
@@ -65,7 +65,7 @@ Go to your Biobase project's [API Settings](https://biobase.studio/dashboard/pro
   <TabPanel id="kotlin" label="Kotlin">
 
     ```kotlin
-    val biobaseUrl = "https://<project>.biobase.co"
+    val biobaseUrl = "https://<project>.supabase.co"
     val biobaseKey = "<your-anon-key>"
     val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
         install(Realtime)
@@ -78,7 +78,7 @@ Go to your Biobase project's [API Settings](https://biobase.studio/dashboard/pro
     ```python
     from biobase import create_client
 
-    URL = "https://<project>.biobase.co"
+    URL = "https://<project>.supabase.co"
     KEY = "<your-anon-key>"
     biobase = create_client(URL, KEY)
     ```

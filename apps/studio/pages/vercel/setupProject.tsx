@@ -158,7 +158,7 @@ const CreateProject = observer(() => {
 
   const { mutate: createProject, isLoading } = useProjectCreateMutation({
     onSuccess: async (res) => {
-      const project = { ...res, db_host: `db.${res.ref}.biobase.co`, db_password: dbPass }
+      const project = { ...res, db_host: `db.${res.ref}.supabase.co`, db_password: dbPass }
       _store.biobaseProjectRef = project.ref
 
       const requiredEnvs =

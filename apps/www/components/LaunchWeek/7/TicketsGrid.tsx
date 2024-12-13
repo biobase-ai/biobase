@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default function TicketsGrid({ loadedUsers, isLoading, pageCount, offset }: Props) {
-  const STORAGE_URL = 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/lw7'
+  const STORAGE_URL = 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/lw7'
   const BUCKET_FOLDER_VERSION = 'v3'
   const getOgUrl = (username: string, isGold: boolean) =>
     `${STORAGE_URL}/tickets/gallery/${

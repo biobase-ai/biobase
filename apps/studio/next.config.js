@@ -13,8 +13,8 @@ const BIOBASE_URL = process.env.BIOBASE_URL ? new URL(process.env.BIOBASE_URL).o
 const GOTRUE_URL = process.env.NEXT_PUBLIC_GOTRUE_URL
   ? new URL(process.env.NEXT_PUBLIC_GOTRUE_URL).origin
   : ''
-const BIOBASE_PROJECTS_URL = 'https://*.biobase.co'
-const BIOBASE_PROJECTS_URL_WS = 'wss://*.biobase.co'
+const BIOBASE_PROJECTS_URL = 'https://*.supabase.co'
+const BIOBASE_PROJECTS_URL_WS = 'wss://*.supabase.co'
 
 // construct the URL for the Websocket Local URLs
 let BIOBASE_LOCAL_PROJECTS_URL_WS = ''

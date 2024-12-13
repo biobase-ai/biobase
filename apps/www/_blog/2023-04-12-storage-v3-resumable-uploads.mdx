@@ -58,7 +58,7 @@ You can serve images from Storage with a simple Next.js loader for the Image com
 // biobase-image-loader.js
 const projectId = '<BIOBASE_PROJECT_ID>'
 export default function biobaseLoader({ src, width, quality }) {
-  return `https://${projectId}.biobase.co/storage/v1/render/image/public/${src}?width=${width}&quality=${
+  return `https://${projectId}.supabase.co/storage/v1/render/image/public/${src}?width=${width}&quality=${
     quality || 75
   }`
 }
@@ -135,7 +135,7 @@ const token = 'anon-key'
 const projectId = 'your-project-ref'
 const bucketName = 'avatars'
 const folderName = 'foldername'
-const biobaseUploadURL = `https://${projectId}.biobase.co/storage/v1/upload/resumable`
+const biobaseUploadURL = `https://${projectId}.supabase.co/storage/v1/upload/resumable`
 
 var uppy = new Uppy()
   .use(Dashboard, {

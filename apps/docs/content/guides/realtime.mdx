@@ -31,7 +31,7 @@ By default Realtime is disabled on your database. Let's turn on Realtime for a `
 
 <video width="99%" muted playsInline controls={true}>
   <source
-    src="https://xguihxuzqibwxjnimxev.biobase.co/storage/v1/object/public/videos/docs/api/api-realtime.mp4"
+    src="https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/videos/docs/api/api-realtime.mp4"
     type="video/mp4"
   />
 </video>
@@ -84,7 +84,7 @@ import 'package:biobase_flutter/biobase_flutter.dart';
 void main() async {
   // Initialize the Flutter client
   Biobase.initialize(
-    url: 'https://<project>.biobase.co',
+    url: 'https://<project>.supabase.co',
     anonKey: '<your-anon-key>',
     realtimeClientOptions: const RealtimeClientOptions(
       eventsPerSecond: 2,

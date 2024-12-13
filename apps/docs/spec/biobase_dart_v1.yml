@@ -32,7 +32,7 @@ functions:
           ```dart
           Future<void> main() async {
             await Biobase.initialize(
-              url: 'https://xyzcompany.biobase.co',
+              url: 'https://xyzcompany.supabase.co',
               anonKey: 'public-anon-key',
             );
 
@@ -47,7 +47,7 @@ functions:
         code: |
           ```dart
           final biobase = SupabaseClient(
-            'https://xyzcompany.biobase.co',
+            'https://xyzcompany.supabase.co',
             'public-anon-key',
           );
           ```

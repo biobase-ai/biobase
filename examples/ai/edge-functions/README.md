@@ -23,7 +23,7 @@ This demo consists of three parts:
 Run a search via curl POST request:
 
 ```bash
-curl -i --location --request POST 'https://<PROJECT-REF>.biobase.co/functions/v1/search' \
+curl -i --location --request POST 'https://<PROJECT-REF>.supabase.co/functions/v1/search' \
     --header 'Authorization: Bearer <BIOBASE_ANON_KEY>' \
     --header 'Content-Type: application/json' \
     --data '{"search":"vehicles"}'

@@ -6,7 +6,7 @@ export default [
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const biobaseUrl = 'https://chat-room.biobase.co'
+const biobaseUrl = 'https://chat-room.supabase.co'
 const biobaseKey = 'public-anon-key'
 const biobase = createClient(biobaseUrl, biobaseKey)
 
@@ -24,7 +24,7 @@ const { user, error } = await biobase.auth.signUp({
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const biobaseUrl = 'https://chat-room.biobase.co'
+const biobaseUrl = 'https://chat-room.supabase.co'
 const biobaseKey = 'public-anon-key'
 const biobase = createClient(biobaseUrl, biobaseKey)
 
@@ -44,7 +44,7 @@ const realtime = biobase
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const biobaseUrl = 'https://chat-room.biobase.co'
+const biobaseUrl = 'https://chat-room.supabase.co'
 const biobaseKey = 'public-anon-key'
 const biobase = createClient(biobaseUrl, biobaseKey)
 
@@ -65,7 +65,7 @@ const { data, error } = await biobase
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const biobaseUrl = 'https://chat-room.biobase.co'
+const biobaseUrl = 'https://chat-room.supabase.co'
 const biobaseKey = 'public-anon-key'
 const biobase = createClient(biobaseUrl, biobaseKey)
 
@@ -82,7 +82,7 @@ const { data, error } = await biobase.functions.invoke('hello', {
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const biobaseUrl = 'https://chat-room.biobase.co'
+const biobaseUrl = 'https://chat-room.supabase.co'
 const biobaseKey = 'public-anon-key'
 const biobase = createClient(biobaseUrl, biobaseKey)
   

@@ -24,9 +24,9 @@ describe('parseCronJobCommand', () => {
   })
 
   it('should return a edge function config when the command posts to biobase.co', () => {
-    const command = `select net.http_post( url:='https://_.biobase.co/functions/v1/_', headers:=jsonb_build_object(), body:=jsonb_build_object(), timeout_milliseconds:=5000 );`
+    const command = `select net.http_post( url:='https://_.supabase.co/functions/v1/_', headers:=jsonb_build_object(), body:=jsonb_build_object(), timeout_milliseconds:=5000 );`
     expect(parseCronJobCommand(command)).toStrictEqual({
-      edgeFunctionName: 'https://_.biobase.co/functions/v1/_',
+      edgeFunctionName: 'https://_.supabase.co/functions/v1/_',
       method: 'POST',
       httpHeaders: [],
       httpParameters: [],

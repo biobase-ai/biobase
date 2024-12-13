@@ -82,7 +82,7 @@ const Index = () => {
             <div className="shadow-small grid grid-cols-12 rounded-lg border border-default">
               <div className="relative col-span-12 h-60 w-full overflow-auto rounded-lg lg:col-span-5 flex items-center justify-center">
                 <Image
-                  src="https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/biobase-brand-assets/connect-biobase/connect-biobase-dark.svg"
+                  src="https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/biobase-brand-assets/connect-biobase/connect-biobase-dark.svg"
                   alt="Connect Biobase Button"
                   width={154}
                   height={31}
@@ -107,7 +107,7 @@ const Index = () => {
                     </p>
                     <form
                       method="get"
-                      action={`https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/biobase-brand-assets/connect-biobase/connect-biobase.zip`}
+                      action={`https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/biobase-brand-assets/connect-biobase/connect-biobase.zip`}
                     >
                       <Button htmlType="submit" type="default" iconRight={<Download />}>
                         Download button kit

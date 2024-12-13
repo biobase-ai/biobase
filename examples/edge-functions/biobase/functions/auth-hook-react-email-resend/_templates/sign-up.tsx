@@ -154,7 +154,7 @@ export const SignUpEmail = ({
 SignUpEmail.PreviewProps = {
   username: 'dshukertjr',
   token: '123456',
-  biobase_url: 'https://123.biobase.co',
+  biobase_url: 'https://123.supabase.co',
   email_action_type: 'confirm',
   redirect_to: 'https://dshukertjr.dev',
   token_hash: '123456',

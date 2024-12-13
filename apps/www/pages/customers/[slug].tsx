@@ -79,7 +79,7 @@ function CaseStudyPage(props: any) {
   } = props.blog
 
   const ogImageUrl = encodeURI(
-    `${process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:54321' : 'https://obuldanrptloktxcffvn.biobase.co'}/functions/v1/og-images?site=customers&customer=${slug}&title=${meta_title ?? title}`
+    `${process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:54321' : 'https://obuldanrptloktxcffvn.supabase.co'}/functions/v1/og-images?site=customers&customer=${slug}&title=${meta_title ?? title}`
   )
 
   const meta = {

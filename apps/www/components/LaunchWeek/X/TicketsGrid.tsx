@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default function TicketsGrid({ loadedUsers, isLoading, pageCount, offset }: Props) {
-  const STORAGE_URL = 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/lwx'
+  const STORAGE_URL = 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/lwx'
   const getTicketImageUrl = (username: string, isGold: boolean) =>
     `${STORAGE_URL}/tickets/${isGold ? 'platinum' : 'regular'}/${username}.png`
   const isMobile = useBreakpoint(1024)

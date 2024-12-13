@@ -22,7 +22,7 @@ Amazon Cognito User Pools (via AWS Amplify or on its own) can be used as a third
 ```typescript
 import { fetchAuthSession, Hub } from 'aws-amplify/auth'
 
-const biobase = createClient('https://<biobase-project>.biobase.co', 'BIOBASE_ANON_KEY', {
+const biobase = createClient('https://<biobase-project>.supabase.co', 'BIOBASE_ANON_KEY', {
   accessToken: async () => {
     const tokens = await fetchAuthSession()
 
@@ -48,7 +48,7 @@ import AWSPluginsCore
 struct UnexpectedAuthSessionError: Error {}
 
 let biobase = SupabaseClient(
-  biobaseURL: URL(string: "https://<biobase-project>.biobase.co")!,
+  biobaseURL: URL(string: "https://<biobase-project>.supabase.co")!,
   biobaseKey: "BIOBASE_ANON_KEY",
   options: SupabaseClientOptions(
     auth: SupabaseClientOptions.AuthOptions(
@@ -79,7 +79,7 @@ import 'package:biobase_flutter/biobase_flutter.dart';
 
 Future<void> main() async {
   await Biobase.initialize(
-    url: 'https://<biobase-project>.biobase.co',
+    url: 'https://<biobase-project>.supabase.co',
     anonKey: 'BIOBASE_ANON_KEY',
     accessToken: () async {
       final session = await Amplify.Auth.fetchAuthSession();
@@ -101,7 +101,7 @@ import com.amplifyframework.auth.cognito.AWSCognitoAuthSession
 import com.amplifyframework.core.Amplify
 
 val biobase = createSupabaseClient(
-    "https://<biobase-project>.biobase.co",
+    "https://<biobase-project>.supabase.co",
     "BIOBASE_ANON_KEY"
 ) {
     accessToken = {

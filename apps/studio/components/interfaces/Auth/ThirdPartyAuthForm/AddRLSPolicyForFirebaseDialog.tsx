@@ -26,7 +26,7 @@ export const AddRLSPolicyForFirebaseDialog = ({
   as restrictive 
   to authenticated using (
   (
-    auth.jwt()->>'iss' = 'https://${projectRef}.biobase.co/auth/v1'
+    auth.jwt()->>'iss' = 'https://${projectRef}.supabase.co/auth/v1'
   )
   or (
     auth.jwt()->>'iss' = 'https://securetoken.google.com/${firebaseProjectId}'

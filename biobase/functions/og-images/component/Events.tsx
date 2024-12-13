@@ -8,7 +8,7 @@ type Props = {
   title: string
 }
 
-const STORAGE_URL = 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public'
+const STORAGE_URL = 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public'
 
 const CustomerStories = (props: Props) => {
   const { title, description, duration, eventType, date } = props

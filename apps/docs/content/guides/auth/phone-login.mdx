@@ -77,7 +77,7 @@ response = biobase.auth.sign_in_with_otp({
 <TabPanel id="http" label="HTTP">
 
 ```bash
-curl -X POST 'https://cvwawazfelidkloqmbma.biobase.co/auth/v1/otp' \
+curl -X POST 'https://cvwawazfelidkloqmbma.supabase.co/auth/v1/otp' \
 -H "apikey: BIOBASE_KEY" \
 -H "Content-Type: application/json" \
 -d '{
@@ -159,7 +159,7 @@ response = biobase.auth.verify_otp({
 <TabPanel id="http" label="HTTP">
 
 ```bash
-curl -X POST 'https://<PROJECT_REF>.biobase.co/auth/v1/verify' \
+curl -X POST 'https://<PROJECT_REF>.supabase.co/auth/v1/verify' \
 -H "apikey: <BIOBASE_KEY>" \
 -H "Content-Type: application/json" \
 -d '{

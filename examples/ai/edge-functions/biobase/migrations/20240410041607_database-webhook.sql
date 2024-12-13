@@ -7,7 +7,7 @@
 -- OR
 -- UPDATE OF content ON public.embeddings FOR EACH ROW
 -- EXECUTE FUNCTION biobase_functions.http_request (
---   'https://<PROJECT-REF>.biobase.co/functions/v1/generate-embedding',
+--   'https://<PROJECT-REF>.supabase.co/functions/v1/generate-embedding',
 --   'POST',
 --   '{"Content-type":"application/json","Authorization":"Bearer <BIOBASE_ANON_KEY>"}',
 --   '{}',

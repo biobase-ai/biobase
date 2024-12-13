@@ -14,7 +14,7 @@ export function TicketBrick({ user }: Props) {
   const golden = user.shared_on_linkedin && user.shared_on_twitter
 
   // reg_bg_57.png
-  const baseImagePath = `https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/lw7/tickets_bg/`
+  const baseImagePath = `https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/lw7/tickets_bg/`
 
   const randomNumber = Math.floor(Math.random() * 200) + 1
   const goldRandomNumber = Math.floor(Math.random() * 56) + 1

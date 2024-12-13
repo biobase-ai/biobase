@@ -90,7 +90,7 @@ parameters:
     required: true
     default: 'IPv4'
     description: |
-      Connect to database via either IPv4 or IPv6. Disregarded if database host is an IP address (e.g. '127.0.0.1') and recommended if database host is a name (e.g. 'db.abcd.biobase.co') to prevent potential non-existent domain (NXDOMAIN) errors.
+      Connect to database via either IPv4 or IPv6. Disregarded if database host is an IP address (e.g. '127.0.0.1') and recommended if database host is a name (e.g. 'db.abcd.supabase.co') to prevent potential non-existent domain (NXDOMAIN) errors.
 
   - id: 'REPLICATION_MODE' # {string} A unique identifier for this param.
     title: 'REPLICATION_MODE' # {string} Any name.
@@ -99,7 +99,7 @@ parameters:
     required: true
     default: 'RLS'
     description: |
-      Connect to database via either IPv4 or IPv6. Disregarded if database host is an IP address (e.g. '127.0.0.1') and recommended if database host is a name (e.g. 'db.abcd.biobase.co') to prevent potential non-existent domain (NXDOMAIN) errors.
+      Connect to database via either IPv4 or IPv6. Disregarded if database host is an IP address (e.g. '127.0.0.1') and recommended if database host is a name (e.g. 'db.abcd.supabase.co') to prevent potential non-existent domain (NXDOMAIN) errors.
 
   - id: 'SLOT_NAME' # {string} A unique identifier for this param.
     title: 'SLOT_NAME' # {string} Any name.

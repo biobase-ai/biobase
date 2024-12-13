@@ -14,7 +14,7 @@ interface Props {
 }
 
 export function TicketBrickWallSlider({ users, reverse, speed = 50000, animate }: Props) {
-  const STORAGE_URL = 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/lw8'
+  const STORAGE_URL = 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/lw8'
   const BUCKET_FOLDER_VERSION = 'v1'
   const getOgUrl = (username: string, isGold: boolean) =>
     `${STORAGE_URL}/tickets/${

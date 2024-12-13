@@ -68,7 +68,7 @@ hideToc: true
         import { createClient } from "@supabase/supabase-js";
         import { createResource, For } from "solid-js";
 
-        const biobase = createClient('https://<project>.biobase.co', '<your-anon-key>');
+        const biobase = createClient('https://<project>.supabase.co', '<your-anon-key>');
 
         async function getCountries() {
           const { data } = await biobase.from("countries").select();

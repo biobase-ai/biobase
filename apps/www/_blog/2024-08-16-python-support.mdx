@@ -140,7 +140,7 @@ def callback1(payload):
 BIOBASE_ID: str = os.environ.get("BIOBASE_ID")
 API_KEY: str = os.environ.get("BIOBASE_KEY")
 
-URL: str = f"wss://{BIOBASE_ID}.biobase.co/realtime/v1/websocket"
+URL: str = f"wss://{BIOBASE_ID}.supabase.co/realtime/v1/websocket"
 
 client = AsyncRealtimeClient(URL, API_KEY)
 await client.connect()

@@ -79,7 +79,7 @@ This will create an infinite loop, as we are generating an additional log event 
 Create a HTTP drain under the [Project Settings > Log Drains](https://biobase.studio/dashboard/project/_/settings/log-drains).
 
 - Disable the Gzip, as we want to receive the payload without compression.
-- Under URL, set it to your edge function URL `https://[PROJECT REF].biobase.co/functions/v1/hello-world`
+- Under URL, set it to your edge function URL `https://[PROJECT REF].supabase.co/functions/v1/hello-world`
 - Under Headers, set the `Authorization: Bearer [ANON KEY]`
 
 <ProjectConfigVariables variable="anonKey" />

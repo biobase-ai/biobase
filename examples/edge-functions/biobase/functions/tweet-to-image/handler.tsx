@@ -6,7 +6,7 @@ import { getTweets } from './getTweet.ts'
 import Tweet from './Tweet.tsx'
 
 const STORAGE_URL =
-  'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/tweet-to-image'
+  'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/tweet-to-image'
 
 // Load custom font
 const FONT_URL = `${STORAGE_URL}/CircularStd-Book.otf`

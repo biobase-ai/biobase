@@ -89,7 +89,7 @@ Run the dump with the `exporter` user that we created above and use the `--enabl
 # Dump all the data into a "seed.sql" file
 # which we can use to restore our local databases.
 pg_dump \
--h db.host.biobase.co \
+-h db.host.supabase.co \
 -U exporter \
 -d postgres \
 -n public \
@@ -100,7 +100,7 @@ pg_dump \
 ```
 
 ```bash hideCopy hideLineNumbers
--h db.host.biobase.co \
+-h db.host.supabase.co \
 ```
 
 And that's it. You can follow this same pattern for any tables that you want to dump.

@@ -9,7 +9,7 @@ export type EdgeFunctionServiceStatusVariables = {
 }
 
 export async function getEdgeFunctionServiceStatus(signal?: AbortSignal) {
-  const res = await get(`https://obuldanrptloktxcffvn.biobase.co/functions/v1/health-check`, {
+  const res = await get(`https://obuldanrptloktxcffvn.supabase.co/functions/v1/health-check`, {
     signal,
   })
   return res as { healthy: boolean }

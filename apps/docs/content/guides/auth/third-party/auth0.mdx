@@ -31,7 +31,7 @@ const auth0 = new Auth0Client({
   },
 })
 
-const biobase = createClient('https://<biobase-project>.biobase.co', 'BIOBASE_ANON_KEY', {
+const biobase = createClient('https://<biobase-project>.supabase.co', 'BIOBASE_ANON_KEY', {
   accessToken: async () => {
     const accessToken = await auth0.getTokenSilently()
 
@@ -56,7 +56,7 @@ extension CredentialsManager {
 }
 
 let biobase = SupabaseClient(
-  biobaseURL: URL(string: "https://<biobase-project>.biobase.co")!,
+  biobaseURL: URL(string: "https://<biobase-project>.supabase.co")!,
   biobaseKey: "BIOBASE_ANON_KEY",
   options: SupabaseClientOptions(
     auth: SupabaseClientOptions.AuthOptions(
@@ -80,7 +80,7 @@ import 'package:biobase_flutter/biobase_flutter.dart';
 Future<void> main() async {
   final auth0 = Auth0('AUTH0_DOMAIN', 'AUTH0_CLIENT_ID');
   await Biobase.initialize(
-    url: 'https://<biobase-project>.biobase.co',
+    url: 'https://<biobase-project>.supabase.co',
     anonKey: 'BIOBASE_ANON_KEY',
     accessToken: () async {
       final credentials = await auth0.credentialsManager.credentials();
@@ -99,7 +99,7 @@ Future<void> main() async {
 import com.auth0.android.result.Credentials
 
 val biobase = createSupabaseClient(
-    "https://<biobase-project>.biobase.co",
+    "https://<biobase-project>.supabase.co",
     "BIOBASE_ANON_KEY"
 ) {
     accessToken = {

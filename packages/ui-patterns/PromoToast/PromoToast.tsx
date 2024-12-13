@@ -11,9 +11,9 @@ import { useTheme } from 'next-themes'
 import announcement from 'ui/src/layout/banners/data/Announcement.json'
 
 const LW12BGDark =
-  'https://xguihxuzqibwxjnimxev.biobase.co/storage/v1/object/public/images/launch-week/lw12/assets/bg-dark.svg?t=2024-07-26T09%3A59%3A25.373Z'
+  'https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/images/launch-week/lw12/assets/bg-dark.svg?t=2024-07-26T09%3A59%3A25.373Z'
 const LW12BGLight =
-  'https://xguihxuzqibwxjnimxev.biobase.co/storage/v1/object/public/images/launch-week/lw12/assets/bg-light.svg?t=2024-07-26T09%3A59%3A25.373Z'
+  'https://xguihxuzqibwxjnimxev.supabase.co/storage/v1/object/public/images/launch-week/lw12/assets/bg-light.svg?t=2024-07-26T09%3A59%3A25.373Z'
 
 const PromoToast = () => {
   const [visible, setVisible] = useState(false)

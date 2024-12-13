@@ -32,7 +32,7 @@ functions:
           import { createClient } from '@supabase/supabase-js'
 
           // Create a single biobase client for interacting with your database
-          const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key')
+          const biobase = createClient('https://xyzcompany.supabase.co', 'public-anon-key')
           ```
       - id: with-custom-domain
         name: With a custom domain
@@ -62,7 +62,7 @@ functions:
               headers: { 'x-my-custom-header': 'my-app-name' },
             },
           }
-          const biobase = createClient("https://xyzcompany.biobase.co", "public-anon-key", options)
+          const biobase = createClient("https://xyzcompany.supabase.co", "public-anon-key", options)
           ```
       - id: api-schemas
         name: With custom schemas
@@ -70,7 +70,7 @@ functions:
           ```js
           import { createClient } from '@supabase/supabase-js'
 
-          const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key', {
+          const biobase = createClient('https://xyzcompany.supabase.co', 'public-anon-key', {
             // Provide a custom schema. Defaults to "public".
             db: { schema: 'other_schema' }
           })
@@ -86,7 +86,7 @@ functions:
           ```js
           import { createClient } from '@supabase/supabase-js'
 
-          const biobase = createClient('https://xyzcompany.biobase.co', 'public-anon-key', {
+          const biobase = createClient('https://xyzcompany.supabase.co', 'public-anon-key', {
             global: { fetch: fetch.bind(globalThis) }
           })
           ```
@@ -102,7 +102,7 @@ functions:
           import { createClient } from '@supabase/supabase-js'
           import AsyncStorage from "@react-native-async-storage/async-storage";
 
-          const biobase = createClient("https://xyzcompany.biobase.co", "public-anon-key", {
+          const biobase = createClient("https://xyzcompany.supabase.co", "public-anon-key", {
             auth: {
               storage: AsyncStorage,
               autoRefreshToken: true,
@@ -170,7 +170,7 @@ functions:
             }
           }
 
-          const biobase = createClient("https://xyzcompany.biobase.co", "public-anon-key", {
+          const biobase = createClient("https://xyzcompany.supabase.co", "public-anon-key", {
             auth: {
               storage: new LargeSecureStore(),
               autoRefreshToken: true,
@@ -7399,7 +7399,7 @@ functions:
           ```json
           {
             "data": {
-              "signedUrl": "https://example.biobase.co/storage/v1/object/sign/avatars/folder/avatar1.png?token=<TOKEN>"
+              "signedUrl": "https://example.supabase.co/storage/v1/object/sign/avatars/folder/avatar1.png?token=<TOKEN>"
             },
             "error": null
           }
@@ -7459,13 +7459,13 @@ functions:
                 "error": null,
                 "path": "folder/avatar1.png",
                 "signedURL": "/object/sign/avatars/folder/avatar1.png?token=<TOKEN>",
-                "signedUrl": "https://example.biobase.co/storage/v1/object/sign/avatars/folder/avatar1.png?token=<TOKEN>"
+                "signedUrl": "https://example.supabase.co/storage/v1/object/sign/avatars/folder/avatar1.png?token=<TOKEN>"
               },
               {
                 "error": null,
                 "path": "folder/avatar2.png",
                 "signedURL": "/object/sign/avatars/folder/avatar2.png?token=<TOKEN>",
-                "signedUrl": "https://example.biobase.co/storage/v1/object/sign/avatars/folder/avatar2.png?token=<TOKEN>"
+                "signedUrl": "https://example.supabase.co/storage/v1/object/sign/avatars/folder/avatar2.png?token=<TOKEN>"
               }
             ],
             "error": null
@@ -7495,7 +7495,7 @@ functions:
           ```json
           {
             "data": {
-              "signedUrl": "https://example.biobase.co/storage/v1/object/upload/sign/avatars/folder/cat.jpg?token=<TOKEN>",
+              "signedUrl": "https://example.supabase.co/storage/v1/object/upload/sign/avatars/folder/cat.jpg?token=<TOKEN>",
               "path": "folder/cat.jpg",
               "token": "<TOKEN>"
             },
@@ -7557,7 +7557,7 @@ functions:
           ```json
           {
             "data": {
-              "publicUrl": "https://example.biobase.co/storage/v1/object/public/public-bucket/folder/avatar1.png"
+              "publicUrl": "https://example.supabase.co/storage/v1/object/public/public-bucket/folder/avatar1.png"
             }
           }
           ```

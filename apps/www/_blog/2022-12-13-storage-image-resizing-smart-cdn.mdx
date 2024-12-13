@@ -73,7 +73,7 @@ biobase.storage.from('bucket').download('image.jpg', {
 Or you can make a direct request to the Storage API (see `width` and `height` params):
 
 ```bash
-GET https://project_id.biobase.co/storage/v1/render/image/public/bucket/image.jpg?width=500&height=600
+GET https://project_id.supabase.co/storage/v1/render/image/public/bucket/image.jpg?width=500&height=600
 ```
 
 If you've never used a resizing service before, you might be interested to learn that there are various approaches. Some services require you to resize your images “server side” before you can download them in the browser. Other services allow you to resize directly from the client. We opted for this client-based approach. It feels more developer friendly.

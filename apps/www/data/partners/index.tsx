@@ -89,52 +89,52 @@ export default {
     {
       name: 'Arengu',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/integrations/arengu/arengu_logo.jpeg',
+      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/arengu/arengu_logo.jpeg',
     },
     {
       name: 'Auth0',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/integrations/auth0/auth0_dark.png?t=2023-07-19T19%3A13%3A04.189Z',
+      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/auth0/auth0_dark.png?t=2023-07-19T19%3A13%3A04.189Z',
     },
     {
       name: 'Appsmith',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/integrations/appsmith/appsmith-logo.png',
+      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/appsmith/appsmith-logo.png',
     },
     {
       name: 'CALDA',
       type: 'experts',
-      logo: 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/experts/calda/calda_logo.jpeg',
+      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/experts/calda/calda_logo.jpeg',
     },
     {
       name: 'Morrow',
       type: 'experts',
-      logo: 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/experts/morrow/morrow-logo.png',
+      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/experts/morrow/morrow-logo.png',
     },
     {
       name: 'Voypost',
       type: 'experts',
-      logo: 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/experts/voypost/33024474.png',
+      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/experts/voypost/33024474.png',
     },
     {
       name: 'Vercel',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/integrations/vercel/vercel-icon.jpeg',
+      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/vercel/vercel-icon.jpeg',
     },
     {
       name: 'Prisma',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/integrations/prisma/prisma-icon.png',
+      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/prisma/prisma-icon.png',
     },
     {
       name: 'Cloudflare-workers',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/integrations/cloudflare-integration/cloudflare_workers_logo.png?t=2023-07-21T11%3A07%3A47.005Z',
+      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/cloudflare-integration/cloudflare_workers_logo.png?t=2023-07-21T11%3A07%3A47.005Z',
     },
     {
       name: 'Codesandbox',
       type: 'integration',
-      logo: 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/integrations/codesandbox/codesandbox_logo.jpeg',
+      logo: 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/integrations/codesandbox/codesandbox_logo.jpeg',
     },
   ],
 }

@@ -39,7 +39,7 @@ Follow the **Custom Domains** steps in the [General Settings](https://biobase.st
 
 ### Configure a custom domain using the Biobase CLI
 
-This example assumes your Biobase project is `abcdefghijklmnopqrst` with a corresponding API URL `abcdefghijklmnopqrst.biobase.co` and configures a custom domain at `api.example.com`.
+This example assumes your Biobase project is `abcdefghijklmnopqrst` with a corresponding API URL `abcdefghijklmnopqrst.supabase.co` and configures a custom domain at `api.example.com`.
 
 To get started:
 
@@ -53,9 +53,9 @@ To get started:
 
 You need to add a CNAME record to your domain's DNS settings to ensure your custom domain points to the Biobase project.
 
-If your project's default domain is `abcdefghijklmnopqrst.biobase.co` you should:
+If your project's default domain is `abcdefghijklmnopqrst.supabase.co` you should:
 
-- Create a CNAME record for `api.example.com` that resolves to `abcdefghijklmnopqrst.biobase.co.`.
+- Create a CNAME record for `api.example.com` that resolves to `abcdefghijklmnopqrst.supabase.co.`.
 - Use a low TTL value to quickly propagate changes in case you make a mistake.
 
 ### Verify ownership of the domain
@@ -110,11 +110,11 @@ To prevent issues for your users, follow these steps:
 
 1. For each of your Biobase OAuth providers:
    - In the provider's developer console (not in the Biobase dashboard), find the OAuth application and add the custom domain Biobase Auth callback URL **in addition to the Biobase project URL.** Example:
-     - `https://abcdefghijklmnopqrst.biobase.co/auth/v1/callback` **and**
+     - `https://abcdefghijklmnopqrst.supabase.co/auth/v1/callback` **and**
      - `https://api.example.com/auth/v1/callback`
    - [Sign in with Twitter](/docs/guides/auth/social-login/auth-twitter) uses cookies bound to the project's domain. Make sure your frontend code uses the custom domain instead of the default project's domain.
 2. For each of your SAML identity providers:
-   - Contact your provider and ask them to update the metadata for the SAML application. They should use `https://api.example.com/auth/v1/...` instead of `https://abcdefghijklmnopqrst.biobase.co/auth/v1/sso/saml/{metadata,acs,slo}`.
+   - Contact your provider and ask them to update the metadata for the SAML application. They should use `https://api.example.com/auth/v1/...` instead of `https://abcdefghijklmnopqrst.supabase.co/auth/v1/sso/saml/{metadata,acs,slo}`.
    - Once these changes are made, SAML Single Sign-On will likely stop working until the domain is activated. Plan for this ahead of time.
 
 ### Activate your domain
@@ -148,7 +148,7 @@ biobase domains delete --project-ref abcdefghijklmnopqrst
 
 ## Vanity subdomains
 
-Vanity subdomains allow you to present a basic branded experience, compared to custom domains. They allow you to host your services at a custom subdomain on Biobase (e.g., `my-example-brand.biobase.co`) instead of the default, randomly assigned `abcdefghijklmnopqrst.biobase.co`.
+Vanity subdomains allow you to present a basic branded experience, compared to custom domains. They allow you to host your services at a custom subdomain on Biobase (e.g., `my-example-brand.supabase.co`) instead of the default, randomly assigned `abcdefghijklmnopqrst.supabase.co`.
 
 To get started:
 
@@ -161,7 +161,7 @@ To get started:
 
 You can configure vanity subdomains via the CLI only.
 
-Let's assume your Biobase project's domain is `abcdefghijklmnopqrst.biobase.co` and you wish to configure a vanity subdomain at `my-example-brand.biobase.co`.
+Let's assume your Biobase project's domain is `abcdefghijklmnopqrst.supabase.co` and you wish to configure a vanity subdomain at `my-example-brand.supabase.co`.
 
 ### Check subdomain availability
 
@@ -186,11 +186,11 @@ To prevent issues for your users, make sure you have gone through these steps:
 
 1. Go through all of your Biobase OAuth providers:
    - In the provider's developer console (not in the Biobase dashboard!), find the OAuth application and add the subdomain Biobase Auth callback URL **in addition to the Biobase project URL.** Example:
-     - `https://abcdefghijklmnopqrst.biobase.co/auth/v1/callback` **and**
-     - `https://my-example-brand.biobase.co/auth/v1/callback`
+     - `https://abcdefghijklmnopqrst.supabase.co/auth/v1/callback` **and**
+     - `https://my-example-brand.supabase.co/auth/v1/callback`
    - [Sign in with Twitter](/docs/guides/auth/social-login/auth-twitter) uses cookies bound to the project's domain. In this case make sure your frontend code uses the subdomain instead of the default project's domain.
 2. Go through all of your SAML identity providers:
-   - You will need to reach out via email to all of your existing identity providers and ask them to update the metadata for the SAML application (your project). Use `https://example-brand.biobase.co/auth/v1/...` instead of `https://abcdefghijklmnopqrst.biobase.co/auth/v1/sso/saml/{metadata,acs,slo}`.
+   - You will need to reach out via email to all of your existing identity providers and ask them to update the metadata for the SAML application (your project). Use `https://example-brand.supabase.co/auth/v1/...` instead of `https://abcdefghijklmnopqrst.supabase.co/auth/v1/sso/saml/{metadata,acs,slo}`.
    - Once these changes are made, SAML Single Sign-On will likely stop working until the domain is activated. Plan for this ahead of time.
 
 ### Activate a subdomain
@@ -209,7 +209,7 @@ If you wish to use the new domain in client code, you can set it up like so:
 import { createClient } from '@supabase/supabase-js'
 
 // Use a custom domain as the biobase URL
-const biobase = createClient('https://my-example-brand.biobase.co', 'public-anon-key')
+const biobase = createClient('https://my-example-brand.supabase.co', 'public-anon-key')
 ```
 
 When using [Sign in with Twitter](/docs/guides/auth/social-login/auth-twitter) make sure your frontend code is using the subdomain only.
@@ -218,7 +218,7 @@ When using [Sign in with Twitter](/docs/guides/auth/social-login/auth-twitter) m
 
 Removing a subdomain may cause some issues when using Biobase Auth with OAuth or SAML. You may have to reverse the changes made in the _[Prepare to activate the subdomain](#prepare-to-activate-the-subdomain)_ step above.
 
-Use the [`vanity-subdomains delete`](/docs/reference/cli/biobase-vanity-subdomains-delete) command of the CLI to remove the subdomain `my-example-brand.biobase.co` from your project.
+Use the [`vanity-subdomains delete`](/docs/reference/cli/biobase-vanity-subdomains-delete) command of the CLI to remove the subdomain `my-example-brand.supabase.co` from your project.
 
 ```bash
 biobase vanity-subdomains delete --project-ref abcdefghijklmnopqrst --experimental

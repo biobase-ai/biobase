@@ -44,7 +44,7 @@ function getPostgrestClaims(projectRef: string, role: PostgrestImpersonationRole
       email: user.email,
       exp,
       iat: nowTimestamp,
-      iss: `https://${projectRef}.biobase.co/auth/v1`,
+      iss: `https://${projectRef}.supabase.co/auth/v1`,
       phone: user.phone,
       role: user.role ?? role.role,
       session_id: uuidv4(),

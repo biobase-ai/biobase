@@ -84,7 +84,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.biobase.co",
+              biobaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(GoTrue)
@@ -97,7 +97,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.biobase.co",
+              biobaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(GoTrue) {
@@ -154,7 +154,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.biobase.co",
+              biobaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(Postgrest) {
@@ -176,7 +176,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.biobase.co",
+              biobaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(Storage) {
@@ -203,7 +203,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.biobase.co",
+              biobaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(Realtime) {
@@ -230,7 +230,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.biobase.co",
+              biobaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(Functions) {
@@ -247,7 +247,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.biobase.co",
+              biobaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(GraphQL) {
@@ -2086,7 +2086,7 @@ functions:
         isSpotlight: true
         code: |
           ```kotlin
-          val biobase = createSupabaseClient(biobaseURL = "https://xyzcompany.biobase.co'", biobaseKey = "public-anon-key") { ... }
+          val biobase = createSupabaseClient(biobaseURL = "https://xyzcompany.supabase.co'", biobaseKey = "public-anon-key") { ... }
           val gotrue = biobase.gotrue
           ```
   - id: sign-up
@@ -2757,7 +2757,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://id.biobase.co",
+              biobaseUrl = "https://id.supabase.co",
               biobaseKey = "biobaseKey"
           ) {
               install(GoTrue) {

@@ -18,7 +18,7 @@ export const createUserExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const biobaseUrl = 'https://chat-room.biobase.co'
+  const biobaseUrl = 'https://chat-room.supabase.co'
   const biobaseKey = 'public-anon-key'
   const biobase = createClient(biobaseUrl, biobaseKey)
   
@@ -40,7 +40,7 @@ export const subscribeExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const biobaseUrl = 'https://chat-room.biobase.co'
+  const biobaseUrl = 'https://chat-room.supabase.co'
   const biobaseKey = 'public-anon-key'
   const biobase = createClient(biobaseUrl, biobaseKey)
   
@@ -64,7 +64,7 @@ export const readExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const biobaseUrl = 'https://chat-room.biobase.co'
+  const biobaseUrl = 'https://chat-room.supabase.co'
   const biobaseKey = 'public-anon-key'
   const biobase = createClient(biobaseUrl, biobaseKey)
   
@@ -89,7 +89,7 @@ export const createExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const biobaseUrl = 'https://chat-room.biobase.co'
+  const biobaseUrl = 'https://chat-room.supabase.co'
   const biobaseKey = 'public-anon-key'
   const biobase = createClient(biobaseUrl, biobaseKey)
   
@@ -110,7 +110,7 @@ export const updateExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const biobaseUrl = 'https://chat-room.biobase.co'
+  const biobaseUrl = 'https://chat-room.supabase.co'
   const biobaseKey = 'public-anon-key'
   const biobase = createClient(biobaseUrl, biobaseKey)
   
@@ -140,7 +140,7 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const biobaseUrl = 'https://chat-room.biobase.co'
+//   const biobaseUrl = 'https://chat-room.supabase.co'
 //   const biobaseKey = 'public-anon-key'
 //   const biobase = createClient(biobaseUrl, biobaseKey)
 
@@ -156,7 +156,7 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const biobaseUrl = 'https://chat-room.biobase.co'
+//   const biobaseUrl = 'https://chat-room.supabase.co'
 //   const biobaseKey = 'public-anon-key'
 //   const biobase = createClient(biobaseUrl, biobaseKey)
 
@@ -173,7 +173,7 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const biobaseUrl = 'https://chat-room.biobase.co'
+//   const biobaseUrl = 'https://chat-room.supabase.co'
 //   const biobaseKey = 'public-anon-key'
 //   const biobase = createClient(biobaseUrl, biobaseKey)
 
@@ -186,7 +186,7 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const biobaseUrl = 'https://chat-room.biobase.co'
+//   const biobaseUrl = 'https://chat-room.supabase.co'
 //   const biobaseKey = 'public-anon-key'
 //   const biobase = createClient(biobaseUrl, biobaseKey)
 
@@ -225,7 +225,7 @@ export const updateExample: ExampleProps = {
 
 //   <script>
 //     // Initialize
-//     const biobaseUrl = 'https://chat-room.biobase.co'
+//     const biobaseUrl = 'https://chat-room.supabase.co'
 //     const biobaseKey = 'public-anon-key'
 //     const biobase = Biobase.createClient(biobaseUrl, biobaseKey)
 

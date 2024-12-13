@@ -3,7 +3,7 @@ import { ImageResponse } from 'https://deno.land/x/og_edge@0.0.4/mod.ts'
 import { createClient } from 'jsr:@supabase/supabase-js@2'
 import { corsHeaders } from '../_shared/cors.ts'
 
-const STORAGE_URL = 'https://obuldanrptloktxcffvn.biobase.co/storage/v1/object/public/images/lw6'
+const STORAGE_URL = 'https://obuldanrptloktxcffvn.supabase.co/storage/v1/object/public/images/lw6'
 const BACKGROUND_IMAGE_STD = `${STORAGE_URL}/lw6_ticket_regular.png`
 const BACKGROUND_IMAGE_GOLDEN = `${STORAGE_URL}/lw6_ticket_gold.png`
 const SUPA_CHECKMARK = `${STORAGE_URL}/supaverified.png`

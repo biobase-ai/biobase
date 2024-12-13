@@ -89,7 +89,7 @@ functions:
           ```dart
           Future<void> main() async {
             await Biobase.initialize(
-              url: 'https://xyzcompany.biobase.co',
+              url: 'https://xyzcompany.supabase.co',
               anonKey: 'public-anon-key',
             );
 
@@ -104,7 +104,7 @@ functions:
         code: |
           ```dart
           final biobase = SupabaseClient(
-            'https://xyzcompany.biobase.co',
+            'https://xyzcompany.supabase.co',
             'public-anon-key',
           );
           ```
@@ -4245,7 +4245,7 @@ functions:
           ```
         response: |
           ```json
-          'https://example.biobase.co/storage/v1/object/sign/avatars/folder/avatar1.png?token=<TOKEN>''
+          'https://example.supabase.co/storage/v1/object/sign/avatars/folder/avatar1.png?token=<TOKEN>''
           ```
 
   - id: from-get-public-url
@@ -4301,7 +4301,7 @@ functions:
           ```
         response: |
           ```json
-          'https://example.biobase.co/storage/v1/object/public/public-bucket/folder/avatar1.png'
+          'https://example.supabase.co/storage/v1/object/public/public-bucket/folder/avatar1.png'
           ```
       - id: returns-the-url-for-an-asset-in-a-public-bucket-with-transform
         name: With transform
@@ -4321,7 +4321,7 @@ functions:
           ```
         response: |
           ```json
-          'https://example.biobase.co/storage/v1/object/public/public-bucket/folder/avatar1.png'
+          'https://example.supabase.co/storage/v1/object/public/public-bucket/folder/avatar1.png'
           ```
 
   - id: from-download
