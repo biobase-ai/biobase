@@ -54,8 +54,8 @@
     "url": "git+https://github.com/biobase-ai/biobase.git"
   },
   "engines": {
-    "npm": ">=10.2.4",
-    "node": ">=20.11.1"
+    "npm": "^10.0.0",
+    "node": "20.x"
   },
   "keywords": [
     "postgres",
@@ -69,21 +69,10 @@
   "dependencies": {
     "ai": "4.0.16",
     "rehype-pretty-code": "0.14.0",
-    "vercel": "28.18.5"
+    "vercel": "^32.3.0"
   },
   "volta": {
     "node": "20.11.1",
     "npm": "10.2.4"
-  },
-  "resolutions": {
-    "path-to-regexp": "^6.2.3",
-    "undici": "^5.28.4",
-    "debug": "^4.3.1",
-    "semver": "^7.5.2",
-    "tar": "^6.2.1",
-    "lodash.template": "^4.5.0"
-  },
-  "overrides": {
-    "esbuild": "^0.23.1"
   }
 }
