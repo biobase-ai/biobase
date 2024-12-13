@@ -39,15 +39,15 @@
     },
     {
       "source": "/www/:path*",
-      "destination": "https://biobase.stuodio/:path*"
+      "destination": "https://biobase.studio/:path*"
     },
     {
       "source": "/studio/:path*",
-      "destination": "https://studio.biobase.stuodio/:path*"
+      "destination": "https://studio.biobase.studio/:path*"
     },
     {
       "source": "/design/:path*",
-      "destination": "https://design.biobase.stuodio/:path*"
+      "destination": "https://design.biobase.studio/:path*"
     }
   ]
 }
