@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
 import { Session } from '@supabase/supabase-js'
 import { SITE_ORIGIN } from '~/lib/constants'
-import biobase from '~/lib/biobaseMisc'
+import biobase from '~/lib/biobase'
 
 import DefaultLayout from '~/components/Layouts/Default'
 import { TicketState, ConfDataContext, UserData } from '~/components/LaunchWeek/hooks/use-conf-data'
@@ -44,7 +44,7 @@ export default function GAWeekIndex() {
   const [ticketState, setTicketState] = useState<TicketState>('loading')
 
   useEffect(() => {
-    if (biobase) {
+    if (typeof window !== 'undefined' && biobase) {
       biobase.auth.getSession().then(({ data: { session } }) => setSession(session))
       const {
         data: { subscription },
@@ -52,9 +52,11 @@ export default function GAWeekIndex() {
         setSession(session)
       })
 
-      return () => subscription.unsubscribe()
+      return () => {
+        subscription.unsubscribe()
+      }
     }
-  }, [biobase])
+  }, [])
 
   useEffect(() => {
     if (session?.user) {
