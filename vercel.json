@@ -2,10 +2,5 @@
   "version": 2,
   "framework": "nextjs",
   "buildCommand": false,
-  "installCommand": false,
-  "functions": {
-    "api/**/*": {
-      "runtime": "nodejs20.x"
-    }
-  }
+  "installCommand": false
 }

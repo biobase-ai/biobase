@@ -1,8 +1,8 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "buildCommand": "cd ../.. && npm install --no-audit --legacy-peer-deps && npm run build",
-  "installCommand": "cd ../.. && npm install --no-audit --legacy-peer-deps",
+  "buildCommand": "cd ../.. && npm install && npx turbo run build --filter=studio...",
+  "installCommand": "cd ../.. && npm install",
   "outputDirectory": ".next",
   "functions": {
     "api/**/*": {
@@ -39,15 +39,15 @@
     },
     {
       "source": "/www/:path*",
-      "destination": "https://biobase.com/:path*"
+      "destination": "https://biobase.stuodio/:path*"
     },
     {
       "source": "/docs/:path*",
-      "destination": "https://docs.biobase.com/:path*"
+      "destination": "https://docs.biobase.stuodio/:path*"
     },
     {
       "source": "/design/:path*",
-      "destination": "https://design.biobase.com/:path*"
+      "destination": "https://design.biobase.stuodio/:path*"
     }
   ]
 }
