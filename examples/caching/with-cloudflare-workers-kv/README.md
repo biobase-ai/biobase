@@ -52,7 +52,7 @@ npx wrangler dev
 ## Resources
 
 - [Cloudflare waitUntil docs](https://developers.cloudflare.com/workers/runtime-apis/scheduled-event/)
-- [Biobase.js docs](https://github.com/biobase-ai/biobase-js)
+- [Biobase.js docs](https://github.com/biobase-ai/supabase-js)
 - [Wrangler CLI docs](https://developers.cloudflare.com/workers/wrangler/commands/)
 - [KV Storage docs](https://developers.cloudflare.com/workers/runtime-apis/kv/)
 - [Thunder Client VS Code extension](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)

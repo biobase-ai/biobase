@@ -45,7 +45,7 @@ describe('prod smoke test: crawler pages return correct data', () => {
 
     const firstPara = $('h1').next().text()
     expect(/JavaScript library/.test(firstPara)).toBe(true)
-    expect(/biobase-js/.test(firstPara)).toBe(true)
+    expect(/supabase-js/.test(firstPara)).toBe(true)
   })
 
   it('function pages', async () => {

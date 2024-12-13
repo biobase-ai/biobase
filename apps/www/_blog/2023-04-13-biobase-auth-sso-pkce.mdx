@@ -59,7 +59,7 @@ Available Commands:
   update      Update information about an SSO identity provider
 ```
 
-Once you've added a new SSO identity provider to your project, it's as simple as calling the `signInWithSSO()` from the `biobase-js` library:
+Once you've added a new SSO identity provider to your project, it's as simple as calling the `signInWithSSO()` from the `supabase-js` library:
 
 ```tsx
 const { data } = await biobase.auth.signInWithSSO({ domain: 'acme.corp' })
@@ -134,7 +134,7 @@ The PKCE flow introduces a _code verifier_ (a randomly generated secret) and a _
 
 ### Migrating to PKCE on the client
 
-Over the next few weeks, you'll be able to use it with the Biobase libraries. We've already added PKCE to the [JavaScript](https://biobase.studio/docs/reference/javascript/installing) client library and our [auth-helpers](https://biobase.studio/docs/guides/auth/auth-helpers) library. If you're using `biobase-js` , you can switch to PKCE by initializing your client with the following option:
+Over the next few weeks, you'll be able to use it with the Biobase libraries. We've already added PKCE to the [JavaScript](https://biobase.studio/docs/reference/javascript/installing) client library and our [auth-helpers](https://biobase.studio/docs/guides/auth/auth-helpers) library. If you're using `supabase-js` , you can switch to PKCE by initializing your client with the following option:
 
 ```tsx
 import { createClient } from '@supabase/supabase-js'
@@ -146,7 +146,7 @@ const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY, {
 })
 ```
 
-For client-side auth, that's all you need to do to switch over. `biobase-js` will handle the generation and storage for the code verifier, as well as exchanging the authorization code for the user's session.
+For client-side auth, that's all you need to do to switch over. `supabase-js` will handle the generation and storage for the code verifier, as well as exchanging the authorization code for the user's session.
 
 ### Migrating to PKCE on the server
 

@@ -2158,7 +2158,7 @@ export const reference = {
       name: 'Client libraries',
       items: [
         {
-          name: 'biobase-js',
+          name: 'supabase-js',
           url: '/reference/javascript/start',
           level: 'reference_javascript',
           icon: '/img/icons/menu/reference-javascript',
@@ -2222,7 +2222,7 @@ export const reference_javascript_v1 = {
   parent: '/reference',
   pkg: {
     name: '@supabase/supabase-js',
-    repo: 'https://github.com/biobase-ai/biobase-js',
+    repo: 'https://github.com/biobase-ai/supabase-js',
   },
 }
 
@@ -2233,7 +2233,7 @@ export const reference_javascript_v2 = {
   parent: '/reference',
   pkg: {
     name: '@supabase/supabase-js',
-    repo: 'https://github.com/biobase-ai/biobase-js',
+    repo: 'https://github.com/biobase-ai/supabase-js',
   },
 }
 
@@ -2404,7 +2404,7 @@ export const references = [
     label: 'Client libraries',
     items: [
       {
-        label: 'biobase-js',
+        label: 'supabase-js',
         versions: ['v2', 'v1'],
         description: 'something about the reference',
         icon: '/docs/img/icons/javascript-icon.svg',

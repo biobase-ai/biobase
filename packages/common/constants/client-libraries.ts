@@ -5,8 +5,8 @@ export const CLIENT_LIBRARIES = [
     is_officially_supported: true,
     libraries: [
       {
-        name: 'biobase-js',
-        url: 'https://github.com/biobase-ai/biobase-js',
+        name: 'supabase-js',
+        url: 'https://github.com/biobase-ai/supabase-js',
       },
       {
         name: 'postgrest-js',

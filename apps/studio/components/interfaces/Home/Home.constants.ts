@@ -4,7 +4,7 @@ export const CLIENT_LIBRARIES = [
     officialSupport: true,
     releaseState: undefined,
     docsUrl: 'https://biobase.studio/docs/reference/javascript/installing',
-    gitUrl: 'https://github.com/biobase-ai/biobase-js',
+    gitUrl: 'https://github.com/biobase-ai/supabase-js',
   },
   {
     language: 'Flutter',

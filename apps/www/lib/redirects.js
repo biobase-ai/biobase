@@ -1319,7 +1319,7 @@ module.exports = [
     destination: '/docs/guides/platform/migrating-and-upgrading-projects',
   },
 
-  // biobase-js v1 to v2 redirects
+  // supabase-js v1 to v2 redirects
   // v1: /auth-update
   // v2: /auth-updateuser
   {

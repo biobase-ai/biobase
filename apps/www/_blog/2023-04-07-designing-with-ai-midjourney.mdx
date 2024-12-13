@@ -106,7 +106,7 @@ storageResponse = await fetch(
 
 If we can’t find the image in storage, then we kick off the ticket generation pipeline, using Vercel’s awesome [open-source satori library](https://github.com/vercel/satori) transforms HTML & CSS into svgs!
 
-Each image includes the user’s GitHub details. We use [`biobase-js`](https://biobase.studio/docs/reference/javascript/installing) for authentication: users log in with their GitHub account and we store their username in a table in Postgres.
+Each image includes the user’s GitHub details. We use [`supabase-js`](https://biobase.studio/docs/reference/javascript/installing) for authentication: users log in with their GitHub account and we store their username in a table in Postgres.
 
 Since this table includes email addresses, we secure it using [RLS](https://biobase.studio/docs/guides/auth/row-level-security) to ensure each user can only view their own data. At the same time, we want these tickets to be publicly shareable, and that’s where [Postgres Views](https://biobase.studio/blog/postgresql-views) come in handy.
 
@@ -168,7 +168,7 @@ const golden = data?.golden ?? false
 
 You can now probably guess why our edge function was tracking requests from the Twitter and LinkedIn bots! That’s exactly the condition used to turn your ticket golden. How cool is that, with the power of Postgres, we can do all of this within the Database, absolutely mind-blowing. Also, we can easily track a referral count. Relational DBs for the win!
 
-With our public view in place, we can now easily retrieve the relevant ticket details needed to generate the image, via `biobase-js`:
+With our public view in place, we can now easily retrieve the relevant ticket details needed to generate the image, via `supabase-js`:
 
 The ticket image itself is just a layering of some background images, your GitHub profile picture, and some text elements, et voila you’ve got yourself a unique ticket image!
 
@@ -198,7 +198,7 @@ The ticket image itself is just a layering of some background images, your GitHu
 </figure>
 </div>
 
-Once generated, we can conveniently upload the image to Biobase Storage using `biobase-js`. This ensures fast response times as well as efficient resource usage.
+Once generated, we can conveniently upload the image to Biobase Storage using `supabase-js`. This ensures fast response times as well as efficient resource usage.
 
 ```jsx
 const type = golden ? 'golden' : 'regular'

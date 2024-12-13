@@ -100,7 +100,7 @@ Biobase হল ওপেন সোর্স টুলের সংমিশ্�
   <th colspan="6">⚡️ অফিসিয়াল ⚡️</th>
   <tr>
     <td>জাভাস্ক্রিপ্ট (টাইপস্ক্রিপ্ট)</td>
-    <td><a href="https://github.com/biobase-ai/biobase-js" target="_blank" rel="noopener noreferrer">সুপাবেস-জেএস</a></td>
+    <td><a href="https://github.com/biobase-ai/supabase-js" target="_blank" rel="noopener noreferrer">সুপাবেস-জেএস</a></td>
     <td><a href="https://github.com/biobase-ai/postgrest-js" target="_blank" rel="noopener noreferrer">postgrest-js</a></td>
     <td><a href="https://github.com/biobase-ai/gotrue-js" target="_blank" rel="noopener noreferrer">গোট্রু-জেএস</a></td>
     <td><a href="https://github.com/biobase-ai/realtime-js" target="_blank" rel="noopener noreferrer">রিয়েলটাইম-জেএস</a></td>

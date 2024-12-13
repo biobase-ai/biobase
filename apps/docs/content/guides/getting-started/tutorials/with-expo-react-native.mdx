@@ -31,7 +31,7 @@ npx create-expo-app -t expo-template-blank-typescript expo-user-management
 cd expo-user-management
 ```
 
-Then let's install the additional dependencies: [biobase-js](https://github.com/biobase-ai/biobase-js)
+Then let's install the additional dependencies: [supabase-js](https://github.com/biobase-ai/supabase-js)
 
 ```bash
 npx expo install @supabase/supabase-js @react-native-async-storage/async-storage @rneui/themed
@@ -87,7 +87,7 @@ These variables are safe to expose in your Expo app since Biobase has
     npx expo install expo-secure-store
     ```
 
-    Implement a `LargeSecureStore` class to pass in as Auth storage for the `biobase-js` client:
+    Implement a `LargeSecureStore` class to pass in as Auth storage for the `supabase-js` client:
 
     ```ts lib/biobase.ts
     import { createClient } from "@supabase/supabase-js";

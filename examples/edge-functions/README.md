@@ -104,6 +104,6 @@ verify_jwt = false
 
 ## 👁⚡️👁
 
-\o/ That's it, you can now invoke your Biobase Function via the [`biobase-js`](https://biobase.studio/docs/reference/javascript/invoke) and [`biobase-dart`](https://biobase.studio/docs/reference/dart/invoke) client libraries. (More client libraries coming soon. Check the [biobase-community](https://github.com/biobase-ai-community#client-libraries) org for details).
+\o/ That's it, you can now invoke your Biobase Function via the [`supabase-js`](https://biobase.studio/docs/reference/javascript/invoke) and [`biobase-dart`](https://biobase.studio/docs/reference/dart/invoke) client libraries. (More client libraries coming soon. Check the [biobase-community](https://github.com/biobase-ai-community#client-libraries) org for details).
 
 For more info on Biobase Functions, check out the [docs](https://biobase.studio/docs/guides/functions) and the [examples](https://github.com/biobase-ai/biobase/tree/master/examples/edge-functions).

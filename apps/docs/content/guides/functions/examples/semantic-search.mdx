@@ -96,7 +96,7 @@ $$;
 
 ## Query vectors in Biobase Edge Functions
 
-You can use `biobase-js` to first generate the embedding for the search term and then invoke the Postgres function to find the relevant results from your stored embeddings, right from your [Biobase Edge Function](https://github.com/biobase-ai/biobase/blob/master/examples/ai/edge-functions/biobase/functions/search/index.ts):
+You can use `supabase-js` to first generate the embedding for the search term and then invoke the Postgres function to find the relevant results from your stored embeddings, right from your [Biobase Edge Function](https://github.com/biobase-ai/biobase/blob/master/examples/ai/edge-functions/biobase/functions/search/index.ts):
 
 ```tsx
 const model = new Biobase.ai.Session('gte-small')

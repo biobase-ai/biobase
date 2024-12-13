@@ -1,7 +1,7 @@
 openref: 0.1
 
 info:
-  id: reference/biobase-js
+  id: reference/supabase-js
   title: Biobase Javascript Client
   description: |
 
@@ -91,7 +91,7 @@ functions:
           })
           ```
         description: |
-          `biobase-js` uses the [`cross-fetch`](https://www.npmjs.com/package/cross-fetch) library to make HTTP requests,
+          `supabase-js` uses the [`cross-fetch`](https://www.npmjs.com/package/cross-fetch) library to make HTTP requests,
           but an alternative `fetch` implementation can be provided as an option.
           This is most useful in environments where `cross-fetch` is not compatible (for instance Cloudflare Workers).
       - id: react-native-options-async-storage
@@ -6703,7 +6703,7 @@ functions:
       - id: passing-custom-headers
         name: Passing custom headers
         description: |
-          You can pass custom headers to your function. Note: biobase-js automatically passes the `Authorization` header with the signed in user's JWT.
+          You can pass custom headers to your function. Note: supabase-js automatically passes the `Authorization` header with the signed in user's JWT.
         isSpotlight: true
         code: |
           ```js

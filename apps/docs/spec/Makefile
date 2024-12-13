@@ -29,7 +29,7 @@ download.storage.v1:
 
 # No longer updated
 # download.tsdoc.v1:
-# 	curl -sS https://biobase.github.io/biobase-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/biobase.json
+# 	curl -sS https://biobase.github.io/supabase-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/biobase.json
 # 	curl -sS https://biobase.github.io/gotrue-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/gotrue.json
 # 	curl -sS https://biobase.github.io/postgrest-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/postgrest.json
 # 	curl -sS https://biobase.github.io/realtime-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/realtime.json
@@ -37,7 +37,7 @@ download.storage.v1:
 # 	curl -sS https://biobase.github.io/functions-js/v1/spec.json > $(REPO_DIR)/enrichments/tsdoc_v1/functions.json
 
 download.tsdoc.v2:
-	curl -sS https://biobase.github.io/biobase-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/biobase.json
+	curl -sS https://biobase.github.io/supabase-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/biobase.json
 	curl -sS https://biobase.github.io/auth-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/gotrue.json
 	curl -sS https://biobase.github.io/postgrest-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/postgrest.json
 	curl -sS https://biobase.github.io/realtime-js/v2/spec.json > $(REPO_DIR)/enrichments/tsdoc_v2/realtime.json

@@ -179,8 +179,8 @@ create table package_version(
 -- Insert some valid records
 insert into package_version( package_name, package_semver )
 values
-    ('biobase-js', (2, 2, 3, null, null)),
-    ('biobase-js', (2, 0, 0, array['rc', '1'], null)
+    ('supabase-js', (2, 2, 3, null, null)),
+    ('supabase-js', (2, 0, 0, array['rc', '1'], null)
 );
 
 -- Attempt to insert an invalid record (major is null)
@@ -207,8 +207,8 @@ from
 /*
 id | package_name |    package_semver
 -------------------------------------
- 1 | biobase-js  |         (2,2,3,,)
- 2 | biobase-js  | (2,0,0,"{rc,1}",)
+ 1 | supabase-js  |         (2,2,3,,)
+ 2 | supabase-js  | (2,0,0,"{rc,1}",)
 */
 ```
 
@@ -249,8 +249,8 @@ from
 /*
 id | package_name |   ver
 ------------------------------
- 1 | biobase-js  |      2.2.3
- 2 | biobase-js  | 2.0.0-rc.1
+ 1 | supabase-js  |      2.2.3
+ 2 | supabase-js  | 2.0.0-rc.1
 */
 ```
 

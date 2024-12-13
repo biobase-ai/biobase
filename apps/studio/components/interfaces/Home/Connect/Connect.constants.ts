@@ -19,8 +19,8 @@ export const FRAMEWORKS: ConnectionType[] = [
         icon: '',
         children: [
           {
-            key: 'biobasejs',
-            label: 'biobase-js',
+            key: 'supabasejs',
+            label: 'supabase-js',
             icon: 'biobase',
             children: [],
           },
@@ -32,7 +32,7 @@ export const FRAMEWORKS: ConnectionType[] = [
         icon: '',
         children: [
           {
-            key: 'biobasejs',
+            key: 'supabasejs',
             label: 'Biobase-js',
             children: [],
             icon: 'biobase',
@@ -49,7 +49,7 @@ export const FRAMEWORKS: ConnectionType[] = [
       'https://biobase.studio/docs/guides/auth/server-side/creating-a-client?framework=remix&environment=remix-loader',
     children: [
       {
-        key: 'biobasejs',
+        key: 'supabasejs',
         label: 'Biobase-js',
         children: [],
         icon: 'biobase',
@@ -68,8 +68,8 @@ export const FRAMEWORKS: ConnectionType[] = [
         icon: 'react',
         children: [
           {
-            key: 'biobasejs',
-            label: 'biobase-js',
+            key: 'supabasejs',
+            label: 'supabase-js',
             icon: 'biobase',
             children: [],
           },
@@ -81,7 +81,7 @@ export const FRAMEWORKS: ConnectionType[] = [
         icon: 'vite',
         children: [
           {
-            key: 'biobasejs',
+            key: 'supabasejs',
             label: 'Biobase-js',
             children: [],
             icon: 'biobase',
@@ -97,7 +97,7 @@ export const FRAMEWORKS: ConnectionType[] = [
     guideLink: 'https://biobase.studio/docs/guides/getting-started/quickstarts/nuxtjs',
     children: [
       {
-        key: 'biobasejs',
+        key: 'supabasejs',
         label: 'Biobase-js',
         children: [],
         icon: 'biobase',
@@ -111,7 +111,7 @@ export const FRAMEWORKS: ConnectionType[] = [
     guideLink: 'https://biobase.studio/docs/guides/getting-started/quickstarts/vue',
     children: [
       {
-        key: 'biobasejs',
+        key: 'supabasejs',
         label: 'Biobase-js',
         children: [],
         icon: 'biobase',
@@ -126,7 +126,7 @@ export const FRAMEWORKS: ConnectionType[] = [
     guideLink: 'https://biobase.studio/docs/guides/getting-started/quickstarts/sveltekit',
     children: [
       {
-        key: 'biobasejs',
+        key: 'supabasejs',
         label: 'Biobase-js',
         children: [],
         icon: 'biobase',
@@ -140,7 +140,7 @@ export const FRAMEWORKS: ConnectionType[] = [
     guideLink: 'https://biobase.studio/docs/guides/getting-started/quickstarts/solidjs',
     children: [
       {
-        key: 'biobasejs',
+        key: 'supabasejs',
         label: 'Biobase-js',
         children: [],
         icon: 'biobase',
@@ -154,7 +154,7 @@ export const FRAMEWORKS: ConnectionType[] = [
     guideLink: 'https://docs.astro.build/en/guides/backend/biobase/',
     children: [
       {
-        key: 'biobasejs',
+        key: 'supabasejs',
         label: 'Biobase-js',
         children: [],
         icon: 'biobase',
@@ -168,7 +168,7 @@ export const FRAMEWORKS: ConnectionType[] = [
     guideLink: 'https://biobase.studio/docs/guides/getting-started/quickstarts/refine',
     children: [
       {
-        key: 'biobasejs',
+        key: 'supabasejs',
         label: 'Biobase-js',
         children: [],
         icon: 'biobase',
@@ -185,7 +185,7 @@ export const MOBILES: ConnectionType[] = [
     guideLink: 'https://biobase.studio/docs/guides/getting-started/tutorials/with-expo-react-native',
     children: [
       {
-        key: 'biobasejs',
+        key: 'supabasejs',
         label: 'Biobase-js',
         children: [],
         icon: 'biobase',
@@ -213,7 +213,7 @@ export const MOBILES: ConnectionType[] = [
     guideLink: 'https://biobase.studio/docs/guides/getting-started/tutorials/with-ionic-react',
     children: [
       {
-        key: 'biobasejs',
+        key: 'supabasejs',
         label: 'Biobase-js',
         children: [],
         icon: 'biobase',
@@ -255,7 +255,7 @@ export const MOBILES: ConnectionType[] = [
     guideLink: 'https://biobase.studio/docs/guides/getting-started/tutorials/with-ionic-angular',
     children: [
       {
-        key: 'biobasejs',
+        key: 'supabasejs',
         label: 'Biobase-js',
         children: [],
         icon: 'biobase',

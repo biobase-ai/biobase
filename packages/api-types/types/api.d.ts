@@ -2201,7 +2201,7 @@ export interface paths {
   '/v1/projects/{ref}/types/typescript': {
     /**
      * Generate TypeScript types
-     * @description Returns the TypeScript types of your schema for use with biobase-js.
+     * @description Returns the TypeScript types of your schema for use with supabase-js.
      */
     get: operations['v1-generate-typescript-types']
   }
@@ -16116,7 +16116,7 @@ export interface operations {
   }
   /**
    * Generate TypeScript types
-   * @description Returns the TypeScript types of your schema for use with biobase-js.
+   * @description Returns the TypeScript types of your schema for use with supabase-js.
    */
   'v1-generate-typescript-types': {
     parameters: {

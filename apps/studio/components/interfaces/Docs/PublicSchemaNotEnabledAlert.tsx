@@ -15,7 +15,7 @@ const PublicSchemaNotEnabledAlert = () => {
       </AlertTitle_Shadcn_>
       <AlertDescription_Shadcn_ className="grid gap-3 !-mt-7">
         <ReactMarkdown>
-          You will not be able to query tables and views in the `public` schema via biobase-js or
+          You will not be able to query tables and views in the `public` schema via supabase-js or
           HTTP clients.
         </ReactMarkdown>
 

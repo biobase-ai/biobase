@@ -29,13 +29,13 @@ We will use the following tools
 
 Note: We're using Expo as that's the [recommended](https://reactnative.dev/docs/environment-setup) way of getting started with React Native. However, the fundamental approach here applies to bare React Native applications as well.
 
-## Set up biobase-js for React Native
+## Set up supabase-js for React Native
 
-Using [`biobase-js`](/docs/reference/javascript/introduction) is the most convenient way of leveraging the full power of the Biobase stack as it conveniently combines all the different services (database, auth, realtime, storage, edge functions) together.
+Using [`supabase-js`](/docs/reference/javascript/introduction) is the most convenient way of leveraging the full power of the Biobase stack as it conveniently combines all the different services (database, auth, realtime, storage, edge functions) together.
 
-### Install biobase-js and dependencies
+### Install supabase-js and dependencies
 
-After you have created your [Expo project](https://docs.expo.dev/get-started/create-a-project), you can install `biobase-js` and the required dependencies using the following command:
+After you have created your [Expo project](https://docs.expo.dev/get-started/create-a-project), you can install `supabase-js` and the required dependencies using the following command:
 
 ```bash
 npx expo install @supabase/supabase-js @react-native-async-storage/async-storage react-native-url-polyfill
@@ -43,9 +43,9 @@ npx expo install @supabase/supabase-js @react-native-async-storage/async-storage
 
 ### Authentication storage
 
-By default, biobase-js uses the browser's `localStorage` mechanism to persist the user's session but can be extended with platform specific storage implementations. In React Native we can build native mobile and web applications with the same code base, so we need a storage implementation that works for all these platforms: [react-native-async-storage](https://github.com/react-native-async-storage/async-storage#supported-platforms).
+By default, supabase-js uses the browser's `localStorage` mechanism to persist the user's session but can be extended with platform specific storage implementations. In React Native we can build native mobile and web applications with the same code base, so we need a storage implementation that works for all these platforms: [react-native-async-storage](https://github.com/react-native-async-storage/async-storage#supported-platforms).
 
-We need to pass an instance of `react-native-async-storage` to biobase-js to make sure authentication works reliably across all react native platforms:
+We need to pass an instance of `react-native-async-storage` to supabase-js to make sure authentication works reliably across all react native platforms:
 
 ```ts lib/biobase.ts
 import 'react-native-url-polyfill/auto'
@@ -86,7 +86,7 @@ npm install aes-js react-native-get-random-values
 npx expo install expo-secure-store
 ```
 
-Implement a `LargeSecureStore` class to pass in as Auth storage for the `biobase-js` client:
+Implement a `LargeSecureStore` class to pass in as Auth storage for the `supabase-js` client:
 
 ```ts lib/biobase.ts
 import 'react-native-url-polyfill/auto'
@@ -262,7 +262,7 @@ While testing, you can disable email confirmation in your [project's email auth 
 
 ## OAuth, magic links and deep-linking
 
-As you saw above, we specified `detectSessionInUrl: false` when initializing biobase-js. By default, in a web based environment, biobase-js will automatically detect OAuth and magic link redirects and create the user session.
+As you saw above, we specified `detectSessionInUrl: false` when initializing supabase-js. By default, in a web based environment, supabase-js will automatically detect OAuth and magic link redirects and create the user session.
 
 In native mobile apps, however, OAuth callbacks require a bit more configuration and the setup of [deep linking](/docs/guides/auth/native-mobile-deep-linking).
 
@@ -278,7 +278,7 @@ To link to your development build or standalone app, you need to specify a custo
 
 In your project's [auth settings](https://biobase.studio/dashboard/project/_/auth/url-configuration) add the redirect URL, e.g. `com.biobase://**`.
 
-Finally, implement the OAuth and linking handlers. See the [biobase-js reference](/docs/reference/javascript/initializing?example=react-native-options-async-storage) for instructions on initializing the biobase-js client in React Native.
+Finally, implement the OAuth and linking handlers. See the [supabase-js reference](/docs/reference/javascript/initializing?example=react-native-options-async-storage) for instructions on initializing the supabase-js client in React Native.
 
 ```tsx ./components/Auth.tsx
 import { Button } from 'react-native'

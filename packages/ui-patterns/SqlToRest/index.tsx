@@ -19,14 +19,14 @@ import {
   ParsingError,
   RenderError,
   Statement,
-  BiobaseJsQuery,
+  SupabaseJsQuery,
   UnimplementedError,
   UnsupportedError,
   formatCurl,
   formatHttp,
   processSql,
   renderHttp,
-  renderBiobaseJs,
+  renderSupabaseJs,
 } from '@supabase/sql-to-rest'
 import { CodeBlock, Collapsible, Tabs, cn } from 'ui'
 import { Alert } from 'ui/src/components/shadcn/ui/alert'
@@ -63,13 +63,13 @@ export default function SqlToRest({
   const [currentLanguage, setCurrentLanguage] = useState('curl')
 
   const [httpRequest, setHttpRequest] = useState<HttpRequest>()
-  const [jsQuery, setJsQuery] = useState<BiobaseJsQuery>()
+  const [jsQuery, setJsQuery] = useState<SupabaseJsQuery>()
 
   const [parsingError, setParsingError] = useState<ParsingError>()
   const [unimplementedError, setUnimplementedError] = useState<UnimplementedError>()
   const [unsupportedError, setUnsupportedError] = useState<UnsupportedError>()
   const [httpRenderError, setHttpRenderError] = useState<RenderError>()
-  const [biobaseJsRenderError, setBiobaseJsRenderError] = useState<RenderError>()
+  const [supabaseJsRenderError, setSupabaseJsRenderError] = useState<RenderError>()
 
   const [isBaseUrlDialogOpen, setIsBaseUrlDialogOpen] = useState(false)
   const [baseUrl, setBaseUrl] = useState(defaultBaseUrl)
@@ -147,7 +147,7 @@ export default function SqlToRest({
         }
 
         const result: ResultBundle = {
-          type: 'biobase-js',
+          type: 'supabase-js',
           language: currentLanguage,
           statement,
           ...jsQuery,
@@ -187,7 +187,7 @@ export default function SqlToRest({
         }
 
         const result: ResultBundle = {
-          type: 'biobase-js',
+          type: 'supabase-js',
           language: currentLanguage,
           statement,
           ...jsQuery,
@@ -206,13 +206,13 @@ export default function SqlToRest({
     try {
       const statement = await processSql(sql)
       const httpRequest = await renderHttp(statement)
-      const jsQuery = await renderBiobaseJs(statement)
+      const jsQuery = await renderSupabaseJs(statement)
 
       setParsingError(undefined)
       setUnimplementedError(undefined)
       setUnsupportedError(undefined)
       setHttpRenderError(undefined)
-      setBiobaseJsRenderError(undefined)
+      setSupabaseJsRenderError(undefined)
 
       setStatement(statement)
       setHttpRequest(httpRequest)
@@ -222,7 +222,7 @@ export default function SqlToRest({
       setUnimplementedError(undefined)
       setUnsupportedError(undefined)
       setHttpRenderError(undefined)
-      setBiobaseJsRenderError(undefined)
+      setSupabaseJsRenderError(undefined)
 
       if (error instanceof ParsingError) {
         setParsingError(error)
@@ -233,8 +233,8 @@ export default function SqlToRest({
       } else if (error instanceof RenderError) {
         if (error.renderer === 'http') {
           setHttpRenderError(error)
-        } else if (error.renderer === 'biobase-js') {
-          setBiobaseJsRenderError(error)
+        } else if (error.renderer === 'supabase-js') {
+          setSupabaseJsRenderError(error)
         } else {
           console.error(error)
         }
@@ -384,15 +384,15 @@ export default function SqlToRest({
             </CodeBlock>
           </Tabs.Panel>
           <Tabs.Panel id="js" label="JavaScript" className="flex flex-col gap-4">
-            {biobaseJsRenderError && (
-              <Alert className="text-red-900">{biobaseJsRenderError.message}</Alert>
+            {supabaseJsRenderError && (
+              <Alert className="text-red-900">{supabaseJsRenderError.message}</Alert>
             )}
             <CodeBlock
               language="js"
               hideLineNumbers
               className={cn(
                 'self-stretch overflow-y-hidden',
-                biobaseJsRenderError ? 'opacity-25 pointer-events-none' : ''
+                supabaseJsRenderError ? 'opacity-25 pointer-events-none' : ''
               )}
               renderer={codeBlockRenderer}
             >
@@ -404,7 +404,7 @@ export default function SqlToRest({
           className={cn(
             'flex flex-col gap-4',
             ((currentLanguage === 'http' || currentLanguage === 'curl') && httpRenderError) ||
-              (currentLanguage === 'js' && biobaseJsRenderError)
+              (currentLanguage === 'js' && supabaseJsRenderError)
               ? 'opacity-25 pointer-events-none'
               : ''
           )}

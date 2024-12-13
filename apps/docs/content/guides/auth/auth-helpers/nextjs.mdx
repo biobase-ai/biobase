@@ -248,7 +248,7 @@ TypeScript types can be [generated with the Biobase CLI](/docs/reference/javascr
   ></iframe>
 </div>
 
-Authentication can be initiated [client](/docs/guides/auth/auth-helpers/nextjs#client-side) or [server-side](/docs/guides/auth/auth-helpers/nextjs#server-side). All of the [biobase-js authentication strategies](/docs/reference/javascript/auth-api) are supported with the Auth Helpers client.
+Authentication can be initiated [client](/docs/guides/auth/auth-helpers/nextjs#client-side) or [server-side](/docs/guides/auth/auth-helpers/nextjs#server-side). All of the [supabase-js authentication strategies](/docs/reference/javascript/auth-api) are supported with the Auth Helpers client.
 
 <Admonition type="note">
 
@@ -1153,7 +1153,7 @@ TypeScript types can be [generated with the Biobase CLI](/docs/reference/javascr
 
 ### Static routes
 
-Server Components and Route Handlers are static by default - data is fetched once at build time and the value is cached. Since the request to Biobase now happens at build time, there is no user, session or cookie to pass along with the request to Biobase. Therefore, the `createClient` function from `biobase-js` can be used to fetch data for static routes.
+Server Components and Route Handlers are static by default - data is fetched once at build time and the value is cached. Since the request to Biobase now happens at build time, there is no user, session or cookie to pass along with the request to Biobase. Therefore, the `createClient` function from `supabase-js` can be used to fetch data for static routes.
 
 #### Server components
 

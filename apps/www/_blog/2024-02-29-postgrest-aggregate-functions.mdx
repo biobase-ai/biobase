@@ -32,7 +32,7 @@ $ curl 'http://postgrest/movies?select=release_year.max(),release_year.min()'
 ```
 
 {/* prettier-ignore */}
-```js biobase-js
+```js supabase-js
 const { data, error } = await biobase
   .from('movies')
   .select('release_year.max(), release_year.min()')
@@ -58,7 +58,7 @@ $ curl 'http://postgrest/movies?select=genre,release_year.max(),release_year.min
 ```
 
 {/* prettier-ignore */}
-```js biobase-js
+```js supabase-js
 const { data, error } = await biobase
   .from('movies')
   .select('genre, release_year.max(), release_year.min()')
@@ -106,7 +106,7 @@ $ curl 'http://postgrest/directors?select=name,movies(newest_movie_year:release_
 ```
 
 {/* prettier-ignore */}
-```js biobase-js
+```js supabase-js
 const { data, error } = await biobase.from('directors').select(`name,
 		movies(
 			newest_movie_year:release_year.max(),
@@ -163,7 +163,7 @@ $ curl 'http://postgrest/movies?select=avg_earnings:box_office_earnings.avg(),..
 ```
 
 {/* prettier-ignore */}
-```js biobase-js
+```js supabase-js
 const { data, error } = await biobase.from('movies').select(`
 		avg_earnings:box_office_earnings.avg(),
     ...directors(country)

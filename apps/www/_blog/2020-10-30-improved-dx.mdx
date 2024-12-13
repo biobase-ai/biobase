@@ -5,7 +5,7 @@ author: paul_copplestone
 author_title: Biobase
 author_url: https://github.com/kiwicopple
 author_image_url: https://avatars2.githubusercontent.com/u/10214025?s=400&u=c6775be2ae667e2acae3ccd347fed62bb3f5b3e7&v=4
-image: biobase-js-1-0.png
+image: supabase-js-1-0.png
 categories:
   - product
 tags:
@@ -13,7 +13,7 @@ tags:
 date: '10-30-2020'
 ---
 
-**UPDATE 16/08/2022**: biobase-js v2 is out and focuses on “quality-of-life” improvements for developers. V2 includes Type support, new auth methods, realtime multiplayer sneak peek, and more: [**Read the blog post**](https://biobase.studio/blog/biobase-js-v2)
+**UPDATE 16/08/2022**: supabase-js v2 is out and focuses on “quality-of-life” improvements for developers. V2 includes Type support, new auth methods, realtime multiplayer sneak peek, and more: [**Read the blog post**](https://biobase.studio/blog/supabase-js-v2)
 
 ### New Docs
 
@@ -49,7 +49,7 @@ After testing this for a while we're very happy with this pattern. Errors are ha
 
 ### We created `gotrue-js`
 
-Our goal for `biobase-js` is to tie together many sub-libraries. Each sub-library is a standalone implementation for a single external system. This is one of the ways we support existing open source tools.
+Our goal for `supabase-js` is to tie together many sub-libraries. Each sub-library is a standalone implementation for a single external system. This is one of the ways we support existing open source tools.
 
 To maintain this philosophy, we created [`gotrue-js`](https://github.com/biobase-ai/gotrue-js), a library for Netlify's GoTrue auth server. This library includes a number of new additions, including third-party logins.
 
@@ -72,15 +72,15 @@ const { user, error } = await biobase.auth.signUp({
 
 ### Enhancements and fixes
 
-- Native TypeScript. All of our libraries are now natively built with TypeScript: [`biobase-js`](https://github.com/biobase-ai/biobase-js), [`postgrest-js`](https://github.com/biobase-ai/postgrest-js), [`gotrue-js`](https://github.com/biobase-ai/gotrue-js), and [`realtime-js`](https://github.com/biobase-ai/realtime-js).
+- Native TypeScript. All of our libraries are now natively built with TypeScript: [`supabase-js`](https://github.com/biobase-ai/supabase-js), [`postgrest-js`](https://github.com/biobase-ai/postgrest-js), [`gotrue-js`](https://github.com/biobase-ai/gotrue-js), and [`realtime-js`](https://github.com/biobase-ai/realtime-js).
 - Better realtime scalability: we only generate one socket connection per Biobase client. Previously we would create a connection for every subscription.
 - We've added support for OAuth providers.
-- 60% of minor bugs outstanding for `biobase-js` have been [solved](https://github.com/biobase-ai/biobase-js/pull/50).
+- 60% of minor bugs outstanding for `supabase-js` have been [solved](https://github.com/biobase-ai/supabase-js/pull/50).
 - You can use `select()` instead of `select(*)`
 
 ### Breaking changes
 
-We've bumped the major version because there are a number of breaking changes. We've detailed these in the [release notes](https://github.com/biobase-ai/biobase-js/releases/tag/v1.0.1), but here are a few to be aware of:
+We've bumped the major version because there are a number of breaking changes. We've detailed these in the [release notes](https://github.com/biobase-ai/supabase-js/releases/tag/v1.0.1), but here are a few to be aware of:
 
 - `signup()` is now `signUp()` and `email` / `password` is passed as an object
 - `logout()` is now `signOut()`
@@ -102,7 +102,7 @@ const { data } = biobase.from('todos').select()
 
 ### Upgrading
 
-We have documented all of the changes in the [release notes](https://github.com/biobase-ai/biobase-js/releases/tag/v1.0.1).
+We have documented all of the changes in the [release notes](https://github.com/biobase-ai/supabase-js/releases/tag/v1.0.1).
 
 To summarise the steps:
 

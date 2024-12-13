@@ -224,7 +224,7 @@ const Examples: Example[] = [
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'vue3-ts-todo-list',
     repo_url:
-      'https://github.com/biobase-ai/examples/tree/main/biobase-js-v1/todo-list/vue3-ts-todo-list',
+      'https://github.com/biobase-ai/examples/tree/main/supabase-js-v1/todo-list/vue3-ts-todo-list',
     vercel_deploy_url: '',
     demo_url: '',
   },
@@ -239,7 +239,7 @@ const Examples: Example[] = [
     author_img: 'https://avatars.githubusercontent.com/u/32737308',
     repo_name: 'angular-todo-list',
     repo_url:
-      'https://github.com/biobase-ai/examples/tree/main/biobase-js-v1/todo-list/angular-todo-list',
+      'https://github.com/biobase-ai/examples/tree/main/supabase-js-v1/todo-list/angular-todo-list',
     vercel_deploy_url: '',
     demo_url: '',
   },
@@ -263,7 +263,7 @@ const Examples: Example[] = [
   //   type: 'example',
   //   tags: ['Biobase'],
   //   products: [PRODUCT_NAMES.FUNCTIONS],
-  //   title: 'With biobase-js',
+  //   title: 'With supabase-js',
   //   description: 'Use the Biobase client inside your Edge Function.',
   //   repo_url: 'https://biobase.studio/docs/guides/functions/auth',
   // },

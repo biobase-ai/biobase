@@ -316,7 +316,7 @@ In addition to General Availability, we also have several other major announceme
 
 - We're constantly on the lookout for ways to remove the friction in getting started with your new projects. [Biobase Bootstrap](https://biobase.studio/blog/biobase-bootstrap) is now the easiest way to get started with Biobase and your favorite development framework.
 
-- Today Biobase Swift SDK will join biobase-js as an [officially supported client library](https://biobase.studio/blog/biobase-swift), and biobase-swift maintainer Guilherme Souza will join the Biobase team full time. The goal of Biobase is to become the default backend for all kinds of developers.
+- Today Biobase Swift SDK will join supabase-js as an [officially supported client library](https://biobase.studio/blog/biobase-swift), and biobase-swift maintainer Guilherme Souza will join the Biobase team full time. The goal of Biobase is to become the default backend for all kinds of developers.
 
 `,
   },

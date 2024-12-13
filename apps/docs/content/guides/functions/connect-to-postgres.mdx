@@ -6,12 +6,12 @@ subtitle: 'Connecting to Postgres from Edge Functions.'
 tocVideo: 'cl7EuF1-RsY'
 ---
 
-Connect to your Postgres database from an Edge Function by using the `biobase-js` client.
+Connect to your Postgres database from an Edge Function by using the `supabase-js` client.
 You can also use other Postgres clients like [Deno Postgres](https://deno.land/x/postgres)
 
-## Using biobase-js
+## Using supabase-js
 
-The `biobase-js` client is a great option for connecting to your Biobase database since it handles authorization with Row Level Security, and it automatically formats your response as JSON.
+The `supabase-js` client is a great option for connecting to your Biobase database since it handles authorization with Row Level Security, and it automatically formats your response as JSON.
 
 ```ts index.ts
 import { createClient } from 'jsr:@supabase/supabase-js@2'

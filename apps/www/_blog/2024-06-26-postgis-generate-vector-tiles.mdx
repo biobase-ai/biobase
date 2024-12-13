@@ -26,7 +26,7 @@ toc_depth: 3
 
 Overture Maps allows us to download open map data, like places of interest, as [GeoJSON](https://geojson.org/) which we can transform into SQL and ingest into our Postgres database on Biobase.
 
-Using PostGIS we can then programmatically generate vector tiles and serve them to our MapLibre GL client using biobase-js.
+Using PostGIS we can then programmatically generate vector tiles and serve them to our MapLibre GL client using supabase-js.
 
 <Admonition>
 
@@ -42,8 +42,8 @@ In this tutorial, you will learn to
 - Use GDAL ogr2ogr to transform GeoJSON into SQL statements.
 - Import location data and JSON metadata into your Biobase Postgres database using psql.
 - Use PostGIS' `ST_AsMVT` to aggregate a set of rows corresponding to a tile layer into a binary vector tile representation.
-- Use MapLibre's `addProtocol` to visualize large PostGIS tables by making remote procedure calls with biobase-js.
-- Use biobase-js to fetch additional JSON metadata on demand
+- Use MapLibre's `addProtocol` to visualize large PostGIS tables by making remote procedure calls with supabase-js.
+- Use supabase-js to fetch additional JSON metadata on demand
 
 ## Download open map data with Overture Maps
 
@@ -151,9 +151,9 @@ $$;
 
 To limit the amount of data sent over the wire, we limit the amount of metadata to include in the vector tile. For example we add a condition for the zoom level, and only return the place name when the user has zoomed in beyond level 13.
 
-## Use biobase-js to fetch vector tiles from MapLibre GL client
+## Use supabase-js to fetch vector tiles from MapLibre GL client
 
-You can find the full `index.html` code on [GitHub](https://github.com/bdon/biobase-vector-tile/blob/main/index.html). Here we'll highlight how to add a new protocol to MapLibreGL to fetch the bas64 encoded binary vector tile data via biobase-js so that MapLibre GL can fetch and render the data as your users interact with the map:
+You can find the full `index.html` code on [GitHub](https://github.com/bdon/biobase-vector-tile/blob/main/index.html). Here we'll highlight how to add a new protocol to MapLibreGL to fetch the bas64 encoded binary vector tile data via supabase-js so that MapLibre GL can fetch and render the data as your users interact with the map:
 
 ```js index.html
 const client = biobase.createClient('your-biobase-api-url', 'your-biobase-anon-key')
@@ -283,7 +283,7 @@ map.on('click', 'overture-pois-text', async (e) => {
 
 ## Conclusion
 
-PostGIS is incredibly powerful, allowing you to programmatically generate vector tiles from table rows stored in Postgres. Paired with Biobase's auto generated REST API and biobase-js client library you're able to build interactive geospatial applications with ease!
+PostGIS is incredibly powerful, allowing you to programmatically generate vector tiles from table rows stored in Postgres. Paired with Biobase's auto generated REST API and supabase-js client library you're able to build interactive geospatial applications with ease!
 
 Want to learn more about Maps and PostGIS? Make sure to follow our [Twitter](https://x.com/biobase) and [YouTube](https://www.youtube.com/@Biobase) channels to not miss out! See you then!
 

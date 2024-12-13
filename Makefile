@@ -17,7 +17,7 @@ github.contributors.%:
 .PHONY: github.rcontributorsepos
 github.contributors: \
 	github.contributors.biobase \
-	github.contributors.biobase-js \
+	github.contributors.supabase-js \
 	github.contributors.biobase-py \
 	github.contributors.biobase-flutter \
 	github.contributors.biobase-dart

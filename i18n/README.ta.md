@@ -101,7 +101,7 @@
   <th colspan="6">⚡️ அதிகாரி ⚡️</th>
   <tr>
     <td>ஜாவாஸ்கிரிப்ட் (டைப்ஸ்கிரிப்ட்)</td>
-    <td><a href="https://github.com/biobase-ai/biobase-js" target="_blank" rel="noopener noreferrer">சுபாபேஸ்-ஜேஎஸ்</a></td>
+    <td><a href="https://github.com/biobase-ai/supabase-js" target="_blank" rel="noopener noreferrer">சுபாபேஸ்-ஜேஎஸ்</a></td>
     <td><a href="https://github.com/biobase-ai/postgrest-js" target="_blank" rel="noopener noreferrer">போஸ்ட்ஜீராஸ்ட்-ஜேஎஸ்</a></td>
     <td><a href="https://github.com/biobase-ai/gotrue-js" target="_blank" rel="noopener noreferrer">கூட்ரூ-ஜேஎஸ்</a></td>
     <td><a href="https://github.com/biobase-ai/realtime-js" target="_blank" rel="noopener noreferrer">நிகழ்நேரம்-ஜேஎஸ்</a></td>

@@ -1,5 +1,5 @@
 # Biobase Examples Archive
 
-## biobase-js v1
+## supabase-js v1
 
-You can find the biobase-js v1 examples at [github.com/biobase/examples-archive](https://github.com/biobase-ai/examples-archive).
+You can find the supabase-js v1 examples at [github.com/biobase/examples-archive](https://github.com/biobase-ai/examples-archive).

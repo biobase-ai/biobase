@@ -13,7 +13,7 @@
     "realtime": 0,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-10-25",
@@ -29,7 +29,7 @@
     "realtime": 33,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-10-26",
@@ -45,7 +45,7 @@
     "realtime": 41,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-10-27",
@@ -61,7 +61,7 @@
     "realtime": 46,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-10-28",
@@ -77,7 +77,7 @@
     "realtime": 51,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-10-29",
@@ -93,7 +93,7 @@
     "realtime": 52,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-10-30",
@@ -109,7 +109,7 @@
     "realtime": 53,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-10-31",
@@ -125,7 +125,7 @@
     "realtime": 54,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-11-03",
@@ -141,7 +141,7 @@
     "realtime": 55,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-11-09",
@@ -157,7 +157,7 @@
     "realtime": 58,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-11-10",
@@ -173,7 +173,7 @@
     "realtime": 59,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-11-11",
@@ -189,7 +189,7 @@
     "realtime": 60,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-11-21",
@@ -205,7 +205,7 @@
     "realtime": 61,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-11-23",
@@ -221,7 +221,7 @@
     "realtime": 62,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-12-10",
@@ -237,7 +237,7 @@
     "realtime": 63,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-12-13",
@@ -253,7 +253,7 @@
     "realtime": 64,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-12-17",
@@ -269,7 +269,7 @@
     "realtime": 157,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-12-18",
@@ -285,7 +285,7 @@
     "realtime": 171,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-12-19",
@@ -301,7 +301,7 @@
     "realtime": 174,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-12-20",
@@ -317,7 +317,7 @@
     "realtime": 177,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-12-21",
@@ -333,7 +333,7 @@
     "realtime": 179,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-12-23",
@@ -349,7 +349,7 @@
     "realtime": 180,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2019-12-29",
@@ -365,7 +365,7 @@
     "realtime": 181,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-07",
@@ -381,7 +381,7 @@
     "realtime": 182,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-11",
@@ -397,7 +397,7 @@
     "realtime": 183,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-14",
@@ -413,7 +413,7 @@
     "realtime": 184,
     "realtime-js": 0,
     "biobase": 1,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-15",
@@ -429,7 +429,7 @@
     "realtime": 184,
     "realtime-js": 0,
     "biobase": 2,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-16",
@@ -445,7 +445,7 @@
     "realtime": 193,
     "realtime-js": 0,
     "biobase": 16,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-17",
@@ -461,7 +461,7 @@
     "realtime": 194,
     "realtime-js": 0,
     "biobase": 17,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-18",
@@ -477,7 +477,7 @@
     "realtime": 195,
     "realtime-js": 0,
     "biobase": 19,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-19",
@@ -493,7 +493,7 @@
     "realtime": 195,
     "realtime-js": 0,
     "biobase": 20,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-20",
@@ -509,7 +509,7 @@
     "realtime": 196,
     "realtime-js": 0,
     "biobase": 21,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-21",
@@ -525,7 +525,7 @@
     "realtime": 201,
     "realtime-js": 0,
     "biobase": 28,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-22",
@@ -541,7 +541,7 @@
     "realtime": 272,
     "realtime-js": 0,
     "biobase": 45,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-23",
@@ -557,7 +557,7 @@
     "realtime": 301,
     "realtime-js": 0,
     "biobase": 55,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-24",
@@ -573,7 +573,7 @@
     "realtime": 321,
     "realtime-js": 0,
     "biobase": 57,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-25",
@@ -589,7 +589,7 @@
     "realtime": 325,
     "realtime-js": 0,
     "biobase": 59,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-26",
@@ -605,7 +605,7 @@
     "realtime": 328,
     "realtime-js": 0,
     "biobase": 59,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-27",
@@ -621,7 +621,7 @@
     "realtime": 331,
     "realtime-js": 0,
     "biobase": 60,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-28",
@@ -637,7 +637,7 @@
     "realtime": 334,
     "realtime-js": 0,
     "biobase": 62,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-29",
@@ -653,7 +653,7 @@
     "realtime": 342,
     "realtime-js": 0,
     "biobase": 62,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-30",
@@ -669,7 +669,7 @@
     "realtime": 346,
     "realtime-js": 0,
     "biobase": 63,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-01-31",
@@ -685,7 +685,7 @@
     "realtime": 350,
     "realtime-js": 0,
     "biobase": 65,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-01",
@@ -701,7 +701,7 @@
     "realtime": 351,
     "realtime-js": 0,
     "biobase": 67,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-02",
@@ -717,7 +717,7 @@
     "realtime": 353,
     "realtime-js": 0,
     "biobase": 70,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-03",
@@ -733,7 +733,7 @@
     "realtime": 354,
     "realtime-js": 0,
     "biobase": 72,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-04",
@@ -749,7 +749,7 @@
     "realtime": 354,
     "realtime-js": 0,
     "biobase": 72,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-05",
@@ -765,7 +765,7 @@
     "realtime": 354,
     "realtime-js": 0,
     "biobase": 73,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-10",
@@ -781,7 +781,7 @@
     "realtime": 354,
     "realtime-js": 0,
     "biobase": 73,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-11",
@@ -797,7 +797,7 @@
     "realtime": 355,
     "realtime-js": 0,
     "biobase": 73,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-14",
@@ -813,7 +813,7 @@
     "realtime": 356,
     "realtime-js": 0,
     "biobase": 73,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-16",
@@ -829,7 +829,7 @@
     "realtime": 357,
     "realtime-js": 0,
     "biobase": 73,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-19",
@@ -845,7 +845,7 @@
     "realtime": 364,
     "realtime-js": 0,
     "biobase": 73,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-20",
@@ -861,7 +861,7 @@
     "realtime": 365,
     "realtime-js": 0,
     "biobase": 73,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-21",
@@ -877,7 +877,7 @@
     "realtime": 366,
     "realtime-js": 0,
     "biobase": 73,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-22",
@@ -893,7 +893,7 @@
     "realtime": 366,
     "realtime-js": 0,
     "biobase": 73,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-23",
@@ -909,7 +909,7 @@
     "realtime": 367,
     "realtime-js": 0,
     "biobase": 73,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-24",
@@ -925,7 +925,7 @@
     "realtime": 368,
     "realtime-js": 0,
     "biobase": 74,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-25",
@@ -941,7 +941,7 @@
     "realtime": 369,
     "realtime-js": 0,
     "biobase": 74,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-26",
@@ -957,7 +957,7 @@
     "realtime": 370,
     "realtime-js": 0,
     "biobase": 75,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-27",
@@ -973,7 +973,7 @@
     "realtime": 371,
     "realtime-js": 0,
     "biobase": 75,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-28",
@@ -989,7 +989,7 @@
     "realtime": 371,
     "realtime-js": 0,
     "biobase": 75,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-02-29",
@@ -1005,7 +1005,7 @@
     "realtime": 371,
     "realtime-js": 0,
     "biobase": 76,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-02",
@@ -1021,7 +1021,7 @@
     "realtime": 372,
     "realtime-js": 0,
     "biobase": 76,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-06",
@@ -1037,7 +1037,7 @@
     "realtime": 373,
     "realtime-js": 0,
     "biobase": 77,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-07",
@@ -1053,7 +1053,7 @@
     "realtime": 374,
     "realtime-js": 0,
     "biobase": 77,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-08",
@@ -1069,7 +1069,7 @@
     "realtime": 374,
     "realtime-js": 0,
     "biobase": 77,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-09",
@@ -1085,7 +1085,7 @@
     "realtime": 374,
     "realtime-js": 0,
     "biobase": 78,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-10",
@@ -1101,7 +1101,7 @@
     "realtime": 375,
     "realtime-js": 0,
     "biobase": 78,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-11",
@@ -1117,7 +1117,7 @@
     "realtime": 376,
     "realtime-js": 0,
     "biobase": 80,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-12",
@@ -1133,7 +1133,7 @@
     "realtime": 376,
     "realtime-js": 0,
     "biobase": 81,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-13",
@@ -1149,7 +1149,7 @@
     "realtime": 376,
     "realtime-js": 0,
     "biobase": 81,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-14",
@@ -1165,7 +1165,7 @@
     "realtime": 377,
     "realtime-js": 0,
     "biobase": 81,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-15",
@@ -1181,7 +1181,7 @@
     "realtime": 377,
     "realtime-js": 0,
     "biobase": 81,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-19",
@@ -1197,7 +1197,7 @@
     "realtime": 379,
     "realtime-js": 0,
     "biobase": 82,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-21",
@@ -1213,7 +1213,7 @@
     "realtime": 379,
     "realtime-js": 0,
     "biobase": 83,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-22",
@@ -1229,7 +1229,7 @@
     "realtime": 382,
     "realtime-js": 0,
     "biobase": 83,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-24",
@@ -1245,7 +1245,7 @@
     "realtime": 383,
     "realtime-js": 0,
     "biobase": 83,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-25",
@@ -1261,7 +1261,7 @@
     "realtime": 384,
     "realtime-js": 0,
     "biobase": 83,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-26",
@@ -1277,7 +1277,7 @@
     "realtime": 385,
     "realtime-js": 0,
     "biobase": 84,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-27",
@@ -1293,7 +1293,7 @@
     "realtime": 386,
     "realtime-js": 0,
     "biobase": 84,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-29",
@@ -1309,7 +1309,7 @@
     "realtime": 386,
     "realtime-js": 0,
     "biobase": 85,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-30",
@@ -1325,7 +1325,7 @@
     "realtime": 387,
     "realtime-js": 0,
     "biobase": 85,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-03-31",
@@ -1341,7 +1341,7 @@
     "realtime": 387,
     "realtime-js": 0,
     "biobase": 86,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-01",
@@ -1357,7 +1357,7 @@
     "realtime": 388,
     "realtime-js": 0,
     "biobase": 86,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-04",
@@ -1373,7 +1373,7 @@
     "realtime": 389,
     "realtime-js": 0,
     "biobase": 100,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-05",
@@ -1389,7 +1389,7 @@
     "realtime": 391,
     "realtime-js": 0,
     "biobase": 109,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-06",
@@ -1405,7 +1405,7 @@
     "realtime": 392,
     "realtime-js": 0,
     "biobase": 109,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-08",
@@ -1421,7 +1421,7 @@
     "realtime": 392,
     "realtime-js": 0,
     "biobase": 110,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-10",
@@ -1437,7 +1437,7 @@
     "realtime": 393,
     "realtime-js": 0,
     "biobase": 111,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-11",
@@ -1453,7 +1453,7 @@
     "realtime": 393,
     "realtime-js": 0,
     "biobase": 111,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-12",
@@ -1469,7 +1469,7 @@
     "realtime": 393,
     "realtime-js": 0,
     "biobase": 111,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-15",
@@ -1485,7 +1485,7 @@
     "realtime": 396,
     "realtime-js": 0,
     "biobase": 141,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-16",
@@ -1501,7 +1501,7 @@
     "realtime": 398,
     "realtime-js": 0,
     "biobase": 148,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-18",
@@ -1517,7 +1517,7 @@
     "realtime": 398,
     "realtime-js": 0,
     "biobase": 149,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-19",
@@ -1533,7 +1533,7 @@
     "realtime": 399,
     "realtime-js": 0,
     "biobase": 149,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-21",
@@ -1549,7 +1549,7 @@
     "realtime": 399,
     "realtime-js": 0,
     "biobase": 149,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-22",
@@ -1565,7 +1565,7 @@
     "realtime": 400,
     "realtime-js": 0,
     "biobase": 149,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-23",
@@ -1581,7 +1581,7 @@
     "realtime": 400,
     "realtime-js": 0,
     "biobase": 149,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-24",
@@ -1597,7 +1597,7 @@
     "realtime": 400,
     "realtime-js": 0,
     "biobase": 149,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-25",
@@ -1613,7 +1613,7 @@
     "realtime": 400,
     "realtime-js": 0,
     "biobase": 149,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-27",
@@ -1629,7 +1629,7 @@
     "realtime": 400,
     "realtime-js": 0,
     "biobase": 150,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-28",
@@ -1645,7 +1645,7 @@
     "realtime": 401,
     "realtime-js": 0,
     "biobase": 151,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-29",
@@ -1661,7 +1661,7 @@
     "realtime": 419,
     "realtime-js": 0,
     "biobase": 151,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-04-30",
@@ -1677,7 +1677,7 @@
     "realtime": 420,
     "realtime-js": 0,
     "biobase": 156,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-01",
@@ -1693,7 +1693,7 @@
     "realtime": 488,
     "realtime-js": 0,
     "biobase": 158,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-02",
@@ -1709,7 +1709,7 @@
     "realtime": 515,
     "realtime-js": 0,
     "biobase": 165,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-03",
@@ -1725,7 +1725,7 @@
     "realtime": 525,
     "realtime-js": 0,
     "biobase": 167,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-04",
@@ -1741,7 +1741,7 @@
     "realtime": 534,
     "realtime-js": 0,
     "biobase": 167,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-05",
@@ -1757,7 +1757,7 @@
     "realtime": 542,
     "realtime-js": 0,
     "biobase": 168,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-06",
@@ -1773,7 +1773,7 @@
     "realtime": 544,
     "realtime-js": 0,
     "biobase": 168,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-07",
@@ -1789,7 +1789,7 @@
     "realtime": 547,
     "realtime-js": 0,
     "biobase": 171,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-08",
@@ -1805,7 +1805,7 @@
     "realtime": 548,
     "realtime-js": 0,
     "biobase": 178,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-09",
@@ -1821,7 +1821,7 @@
     "realtime": 550,
     "realtime-js": 0,
     "biobase": 181,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-10",
@@ -1837,7 +1837,7 @@
     "realtime": 551,
     "realtime-js": 0,
     "biobase": 183,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-11",
@@ -1853,7 +1853,7 @@
     "realtime": 552,
     "realtime-js": 0,
     "biobase": 189,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-12",
@@ -1869,7 +1869,7 @@
     "realtime": 554,
     "realtime-js": 0,
     "biobase": 192,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-13",
@@ -1885,7 +1885,7 @@
     "realtime": 555,
     "realtime-js": 0,
     "biobase": 193,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-14",
@@ -1901,7 +1901,7 @@
     "realtime": 556,
     "realtime-js": 0,
     "biobase": 193,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-15",
@@ -1917,7 +1917,7 @@
     "realtime": 556,
     "realtime-js": 0,
     "biobase": 194,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-16",
@@ -1933,7 +1933,7 @@
     "realtime": 556,
     "realtime-js": 0,
     "biobase": 195,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-17",
@@ -1949,7 +1949,7 @@
     "realtime": 556,
     "realtime-js": 1,
     "biobase": 197,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-18",
@@ -1965,7 +1965,7 @@
     "realtime": 556,
     "realtime-js": 1,
     "biobase": 199,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-19",
@@ -1981,7 +1981,7 @@
     "realtime": 558,
     "realtime-js": 1,
     "biobase": 200,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-20",
@@ -1997,7 +1997,7 @@
     "realtime": 558,
     "realtime-js": 1,
     "biobase": 200,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-21",
@@ -2013,7 +2013,7 @@
     "realtime": 559,
     "realtime-js": 1,
     "biobase": 201,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-23",
@@ -2029,7 +2029,7 @@
     "realtime": 561,
     "realtime-js": 1,
     "biobase": 202,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-24",
@@ -2045,7 +2045,7 @@
     "realtime": 562,
     "realtime-js": 1,
     "biobase": 204,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-25",
@@ -2061,7 +2061,7 @@
     "realtime": 563,
     "realtime-js": 1,
     "biobase": 204,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-26",
@@ -2077,7 +2077,7 @@
     "realtime": 563,
     "realtime-js": 1,
     "biobase": 204,
-    "biobase-js": 0
+    "supabase-js": 0
   },
   {
     "name": "2020-05-27",
@@ -2093,7 +2093,7 @@
     "realtime": 725,
     "realtime-js": 1,
     "biobase": 734,
-    "biobase-js": 2
+    "supabase-js": 2
   },
   {
     "name": "2020-05-28",
@@ -2109,7 +2109,7 @@
     "realtime": 791,
     "realtime-js": 3,
     "biobase": 1027,
-    "biobase-js": 3
+    "supabase-js": 3
   },
   {
     "name": "2020-05-29",
@@ -2125,7 +2125,7 @@
     "realtime": 822,
     "realtime-js": 3,
     "biobase": 1166,
-    "biobase-js": 3
+    "supabase-js": 3
   },
   {
     "name": "2020-05-30",
@@ -2141,7 +2141,7 @@
     "realtime": 834,
     "realtime-js": 3,
     "biobase": 1217,
-    "biobase-js": 3
+    "supabase-js": 3
   },
   {
     "name": "2020-05-31",
@@ -2157,7 +2157,7 @@
     "realtime": 859,
     "realtime-js": 3,
     "biobase": 1262,
-    "biobase-js": 3
+    "supabase-js": 3
   },
   {
     "name": "2020-06-01",
@@ -2173,7 +2173,7 @@
     "realtime": 915,
     "realtime-js": 3,
     "biobase": 1321,
-    "biobase-js": 5
+    "supabase-js": 5
   },
   {
     "name": "2020-06-02",
@@ -2189,7 +2189,7 @@
     "realtime": 1084,
     "realtime-js": 3,
     "biobase": 1375,
-    "biobase-js": 5
+    "supabase-js": 5
   },
   {
     "name": "2020-06-03",
@@ -2205,7 +2205,7 @@
     "realtime": 1255,
     "realtime-js": 3,
     "biobase": 1429,
-    "biobase-js": 5
+    "supabase-js": 5
   },
   {
     "name": "2020-06-04",
@@ -2221,7 +2221,7 @@
     "realtime": 1357,
     "realtime-js": 4,
     "biobase": 1490,
-    "biobase-js": 6
+    "supabase-js": 6
   },
   {
     "name": "2020-06-05",
@@ -2237,7 +2237,7 @@
     "realtime": 1388,
     "realtime-js": 4,
     "biobase": 1528,
-    "biobase-js": 6
+    "supabase-js": 6
   },
   {
     "name": "2020-06-06",
@@ -2253,7 +2253,7 @@
     "realtime": 1399,
     "realtime-js": 4,
     "biobase": 1542,
-    "biobase-js": 6
+    "supabase-js": 6
   },
   {
     "name": "2020-06-07",
@@ -2269,7 +2269,7 @@
     "realtime": 1404,
     "realtime-js": 5,
     "biobase": 1553,
-    "biobase-js": 6
+    "supabase-js": 6
   },
   {
     "name": "2020-06-08",
@@ -2285,7 +2285,7 @@
     "realtime": 1419,
     "realtime-js": 5,
     "biobase": 1588,
-    "biobase-js": 6
+    "supabase-js": 6
   },
   {
     "name": "2020-06-09",
@@ -2301,7 +2301,7 @@
     "realtime": 1431,
     "realtime-js": 5,
     "biobase": 1604,
-    "biobase-js": 6
+    "supabase-js": 6
   },
   {
     "name": "2020-06-10",
@@ -2317,7 +2317,7 @@
     "realtime": 1444,
     "realtime-js": 5,
     "biobase": 1616,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-11",
@@ -2333,7 +2333,7 @@
     "realtime": 1445,
     "realtime-js": 5,
     "biobase": 1631,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-12",
@@ -2349,7 +2349,7 @@
     "realtime": 1451,
     "realtime-js": 5,
     "biobase": 1637,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-13",
@@ -2365,7 +2365,7 @@
     "realtime": 1453,
     "realtime-js": 5,
     "biobase": 1643,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-14",
@@ -2381,7 +2381,7 @@
     "realtime": 1459,
     "realtime-js": 5,
     "biobase": 1651,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-15",
@@ -2397,7 +2397,7 @@
     "realtime": 1467,
     "realtime-js": 5,
     "biobase": 1660,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-16",
@@ -2413,7 +2413,7 @@
     "realtime": 1472,
     "realtime-js": 5,
     "biobase": 1663,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-17",
@@ -2429,7 +2429,7 @@
     "realtime": 1475,
     "realtime-js": 5,
     "biobase": 1668,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-18",
@@ -2445,7 +2445,7 @@
     "realtime": 1476,
     "realtime-js": 5,
     "biobase": 1678,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-19",
@@ -2461,7 +2461,7 @@
     "realtime": 1479,
     "realtime-js": 5,
     "biobase": 1682,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-20",
@@ -2477,7 +2477,7 @@
     "realtime": 1480,
     "realtime-js": 5,
     "biobase": 1688,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-21",
@@ -2493,7 +2493,7 @@
     "realtime": 1482,
     "realtime-js": 5,
     "biobase": 1697,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-22",
@@ -2509,7 +2509,7 @@
     "realtime": 1488,
     "realtime-js": 5,
     "biobase": 1703,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-23",
@@ -2525,7 +2525,7 @@
     "realtime": 1491,
     "realtime-js": 5,
     "biobase": 1713,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-24",
@@ -2541,7 +2541,7 @@
     "realtime": 1494,
     "realtime-js": 5,
     "biobase": 1718,
-    "biobase-js": 7
+    "supabase-js": 7
   },
   {
     "name": "2020-06-25",
@@ -2557,6 +2557,6 @@
     "realtime": 1496,
     "realtime-js": 5,
     "biobase": 1724,
-    "biobase-js": 7
+    "supabase-js": 7
   }
 ]

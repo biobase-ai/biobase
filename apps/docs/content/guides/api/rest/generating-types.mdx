@@ -89,7 +89,7 @@ export interface Database {
 
 ## Using TypeScript type definitions
 
-You can supply the type definitions to `biobase-js` like so:
+You can supply the type definitions to `supabase-js` like so:
 
 ```ts ./index.tsx
 import { createClient } from '@supabase/supabase-js'
@@ -163,7 +163,7 @@ let movie: Tables<'movies'>
 
 ### Response types for complex queries
 
-`biobase-js` always returns a `data` object (for success), and an `error` object (for unsuccessful requests).
+`supabase-js` always returns a `data` object (for success), and an `error` object (for unsuccessful requests).
 
 These helper types provide the result types from any query, including nested types for database joins.
 

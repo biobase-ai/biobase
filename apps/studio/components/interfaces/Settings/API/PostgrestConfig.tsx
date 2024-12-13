@@ -339,7 +339,7 @@ export const PostgrestConfig = () => {
                                     <>
                                       <p>
                                         You will not be able to query tables and views in the{' '}
-                                        <code>public</code> schema via biobase-js or HTTP clients.
+                                        <code>public</code> schema via supabase-js or HTTP clients.
                                       </p>
                                       {isGraphqlExtensionEnabled && (
                                         <>

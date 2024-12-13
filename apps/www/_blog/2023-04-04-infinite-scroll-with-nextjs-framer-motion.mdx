@@ -41,7 +41,7 @@ First things first, let's install the dependencies we'll need.
 npm install @supabase/supabase-js lodash framer-motion
 ```
 
-Set up the biobase-js client and fetch the first 20 tickets through `getServerSideProps` so we don't start with an empty screen.
+Set up the supabase-js client and fetch the first 20 tickets through `getServerSideProps` so we don't start with an empty screen.
 
 We'll assume our table in the db is called `my_tickets_table`.
 
@@ -135,7 +135,7 @@ return <div ref={containerRef}>{/* List of loaded tickets */}</div>
 
 ## Step 3. Load tickets based on the offset
 
-Now we can load more tickets based on the current offset. We'll use the [range](https://biobase.studio/docs/reference/javascript/range) method from the biobase-js library to easily work with the pagination logic.
+Now we can load more tickets based on the current offset. We'll use the [range](https://biobase.studio/docs/reference/javascript/range) method from the supabase-js library to easily work with the pagination logic.
 
 ```jsx
 export default function TicketsPage() {

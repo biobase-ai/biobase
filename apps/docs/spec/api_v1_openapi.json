@@ -1114,7 +1114,7 @@
       "get": {
         "operationId": "v1-generate-typescript-types",
         "summary": "Generate TypeScript types",
-        "description": "Returns the TypeScript types of your schema for use with biobase-js.",
+        "description": "Returns the TypeScript types of your schema for use with supabase-js.",
         "parameters": [
           {
             "name": "included_schemas",

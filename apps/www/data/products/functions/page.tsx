@@ -322,7 +322,7 @@ export default (isMobile?: boolean) => ({
       {
         label: 'Connect to your database',
         paragraph:
-          'Connect to your Postgres database from an Edge Function by using the biobase-js client',
+          'Connect to your Postgres database from an Edge Function by using the supabase-js client',
         panel: <ConnectToDBPanel />,
       },
       {

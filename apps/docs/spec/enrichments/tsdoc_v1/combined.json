@@ -19853,7 +19853,7 @@
                                       },
                                       "comment": {
                                         "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                                        "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\n"
+                                        "text": "{@link https://github.com/biobase-ai/supabase-js/issues/92}\n"
                                       },
                                       "parameters": [
                                         {
@@ -24792,7 +24792,7 @@
                       },
                       "comment": {
                         "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                        "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\n"
+                        "text": "{@link https://github.com/biobase-ai/supabase-js/issues/92}\n"
                       },
                       "parameters": [
                         {
@@ -26973,7 +26973,7 @@
                       },
                       "comment": {
                         "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                        "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\n"
+                        "text": "{@link https://github.com/biobase-ai/supabase-js/issues/92}\n"
                       },
                       "parameters": [
                         {
@@ -28629,7 +28629,7 @@
                       },
                       "comment": {
                         "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                        "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\n"
+                        "text": "{@link https://github.com/biobase-ai/supabase-js/issues/92}\n"
                       },
                       "parameters": [
                         {
@@ -29505,7 +29505,7 @@
                                       },
                                       "comment": {
                                         "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                                        "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\n"
+                                        "text": "{@link https://github.com/biobase-ai/supabase-js/issues/92}\n"
                                       },
                                       "parameters": [
                                         {
@@ -31252,7 +31252,7 @@
                       },
                       "comment": {
                         "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                        "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\n"
+                        "text": "{@link https://github.com/biobase-ai/supabase-js/issues/92}\n"
                       },
                       "parameters": [
                         {
@@ -32234,7 +32234,7 @@
                       },
                       "comment": {
                         "shortText": "If there's an error with the query, throwOnError will reject the promise by\nthrowing the error instead of returning it as part of a successful response.",
-                        "text": "{@link https://github.com/biobase-ai/biobase-js/issues/92}\n"
+                        "text": "{@link https://github.com/biobase-ai/supabase-js/issues/92}\n"
                       },
                       "parameters": [
                         {
@@ -32349,7 +32349,7 @@
               "flags": {},
               "comment": {
                 "shortText": "Response format",
-                "text": "{@link https://github.com/biobase-ai/biobase-js/issues/32}\n"
+                "text": "{@link https://github.com/biobase-ai/supabase-js/issues/32}\n"
               },
               "children": [
                 {

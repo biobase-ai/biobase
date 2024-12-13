@@ -1,4 +1,4 @@
-import type { HttpRequest, Statement, BiobaseJsQuery } from '@supabase/sql-to-rest'
+import type { HttpRequest, Statement, SupabaseJsQuery } from '@supabase/sql-to-rest'
 
 export type BaseResult = {
   statement: Statement
@@ -10,10 +10,10 @@ export type HttpResult = BaseResult &
     language: 'http' | 'curl'
   }
 
-export type BiobaseJsResult = BaseResult &
-  BiobaseJsQuery & {
-    type: 'biobase-js'
+export type SupabaseJsResult = BaseResult &
+  SupabaseJsQuery & {
+    type: 'supabase-js'
     language: 'js'
   }
 
-export type ResultBundle = HttpResult | BiobaseJsResult
+export type ResultBundle = HttpResult | SupabaseJsResult

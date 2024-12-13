@@ -8,7 +8,7 @@ const Nav = [
       { name: 'TypeScript support', url: '/reference/javascript/typescript-support', items: [] },
       { name: 'Release Notes', url: '/reference/javascript/release-notes', items: [] },
       {
-        name: 'Upgrading to biobase-js v2',
+        name: 'Upgrading to supabase-js v2',
         url: '/reference/javascript/upgrade-guide',
         items: [],
       },

@@ -13,7 +13,7 @@ image: 2024-01-12-react-query/react-query-nextjs-biobase.png
 thumb: 2024-01-12-react-query/react-query-nextjs-biobase.png
 ---
 
-[TanStack Query](https://tanstack.com/query/latest), also known as React Query, is an open source state management library for React which handles caching, background updates and stale data out of the box with zero-configuration, which makes it an ideal tool to pair with [biobase-js](/docs/reference/javascript/introduction) and our auto-generated [REST API](/docs/guides/api)!
+[TanStack Query](https://tanstack.com/query/latest), also known as React Query, is an open source state management library for React which handles caching, background updates and stale data out of the box with zero-configuration, which makes it an ideal tool to pair with [supabase-js](/docs/reference/javascript/introduction) and our auto-generated [REST API](/docs/guides/api)!
 
 If you prefer video guides, we've got a three-part video series for you!
 
@@ -136,9 +136,9 @@ biobase gen types typescript --linked --schema=public > utils/database.types.ts
 
 These generated types will allow us to get typed data returned from React Query.
 
-### Creating biobase-js clients for client and server components
+### Creating supabase-js clients for client and server components
 
-To help you utilize the full power of biobase-js, including [Biobase Auth](/auth) and [Row Level Security (RLS)](/docs/guides/auth/row-level-security) policies, we provide the [Biobase SSR helper library](/docs/guides/auth/server-side/creating-a-client) that allows you to conveniently create both browser Biobase clients for client components and server Biobase clients for server components.
+To help you utilize the full power of supabase-js, including [Biobase Auth](/auth) and [Row Level Security (RLS)](/docs/guides/auth/row-level-security) policies, we provide the [Biobase SSR helper library](/docs/guides/auth/server-side/creating-a-client) that allows you to conveniently create both browser Biobase clients for client components and server Biobase clients for server components.
 
 Further reading: [detailed documentation for Biobase SSR in Next.js](/docs/guides/auth/server-side/creating-a-client?framework=nextjs)
 
@@ -211,7 +211,7 @@ Now we've got everything in place to get started fetching and caching data with 
 
 React Query manages query caching based on [query keys](https://tanstack.com/query/v4/docs/react/guides/query-keys). Needing to manage query keys is somewhat burdensome, luckily this is where the [Biobase Cache Helpers](https://github.com/psteinroe/biobase-cache-helpers) come into play.
 
-Initially built during the [Launch Week 5 Hackathon](/blog/launch-week-5-hackathon-winners#best-overall-project) by [Philipp Steinrötter](https://twitter.com/psteinroe), it has become a full blown open source project that automatically generates cache keys from your biobase-js queries, amongst [many other awesome features](https://github.com/psteinroe/biobase-cache-helpers?tab=readme-ov-file#features)!
+Initially built during the [Launch Week 5 Hackathon](/blog/launch-week-5-hackathon-winners#best-overall-project) by [Philipp Steinrötter](https://twitter.com/psteinroe), it has become a full blown open source project that automatically generates cache keys from your supabase-js queries, amongst [many other awesome features](https://github.com/psteinroe/biobase-cache-helpers?tab=readme-ov-file#features)!
 
 ### Write reusable queries
 
@@ -235,7 +235,7 @@ export function getCountryById(client: TypedSupabaseClient, countryId: number) {
 }
 ```
 
-This is a simple query function that takes in either the browser or the server Biobase client and the id of a country, and returns a biobase-js query.
+This is a simple query function that takes in either the browser or the server Biobase client and the id of a country, and returns a supabase-js query.
 
 ### Fetch data server side
 
