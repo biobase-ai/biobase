@@ -49,5 +49,8 @@
       "source": "/design/:path*",
       "destination": "https://design.biobase.studio/:path*"
     }
+  ],
+  "domains": [
+    "docs.biobase.studio"
   ]
 }

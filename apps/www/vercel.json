@@ -49,5 +49,22 @@
       "source": "/design/:path*",
       "destination": "https://design.biobase.studio/:path*"
     }
+  ],
+  "domains": [
+    "biobase.studio",
+    "www.biobase.studio"
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.biobase.studio"
+        }
+      ],
+      "destination": "https://biobase.studio",
+      "permanent": true
+    }
   ]
 }
