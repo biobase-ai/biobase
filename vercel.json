@@ -2,5 +2,11 @@
   "version": 2,
   "framework": "nextjs",
   "buildCommand": false,
-  "installCommand": false
+  "installCommand": false,
+  "ignoreCommand": "npx turbo-ignore",
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
 }
