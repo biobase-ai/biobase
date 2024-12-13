@@ -54,8 +54,8 @@
     "url": "git+https://github.com/biobase-ai/biobase.git"
   },
   "engines": {
-    "npm": "^10.0.0",
-    "node": "20.x"
+    "npm": "10.2.4",
+    "node": "20.11.1"
   },
   "keywords": [
     "postgres",

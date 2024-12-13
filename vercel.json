@@ -5,7 +5,8 @@
   "installCommand": false,
   "functions": {
     "api/**/*": {
-      "runtime": "nodejs20.x"
+      "runtime": "nodejs20.x",
+      "nodeVersion": "20.11.1"
     }
   },
   "workspaces": [
