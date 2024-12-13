@@ -5,7 +5,7 @@
   "installCommand": "cd ../.. && npm install",
   "outputDirectory": ".next",
   "functions": {
-    "api/**/*": {
+    "pages/api/**/*": {
       "runtime": "@vercel/node@3.0.0",
       "memory": 1024,
       "maxDuration": 10
