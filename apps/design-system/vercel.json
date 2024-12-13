@@ -50,9 +50,6 @@
       "destination": "https://studio.biobase.studio/:path*"
     }
   ],
-  "domains": [
-    "design.biobase.studio"
-  ],
   "build": {
     "env": {
       "NEXT_TELEMETRY_DISABLED": "1",
