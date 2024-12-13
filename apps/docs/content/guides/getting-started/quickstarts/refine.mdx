@@ -73,9 +73,9 @@ hideToc: true
   </StepHikeCompact.Step>
 
 <StepHikeCompact.Step step={5}>
-    <StepHikeCompact.Details title="Update `biobaseClient`">
+    <StepHikeCompact.Details title="Update `supabaseClient`">
 
-      You now have to update the `biobaseClient` with the `BIOBASE_URL` and `BIOBASE_KEY` of your Biobase API. The `biobaseClient` is used in auth provider and data provider methods that allow the refine app to connect to your Biobase backend.
+      You now have to update the `supabaseClient` with the `BIOBASE_URL` and `BIOBASE_KEY` of your Biobase API. The `supabaseClient` is used in auth provider and data provider methods that allow the refine app to connect to your Biobase backend.
 
     <ProjectConfigVariables variable="url" />
     <ProjectConfigVariables variable="anonKey" />
@@ -84,13 +84,13 @@ hideToc: true
 
     <StepHikeCompact.Code>
 
-      ```ts src/utility/biobaseClient.ts
+      ```ts src/utility/supabaseClient.ts
       import { createClient } from "@refinedev/biobase";
 
       const BIOBASE_URL = YOUR_BIOBASE_URL;
       const BIOBASE_KEY = YOUR_BIOBASE_KEY
 
-      export const biobaseClient = createClient(BIOBASE_URL, BIOBASE_KEY, {
+      export const supabaseClient = createClient(BIOBASE_URL, BIOBASE_KEY, {
         db: {
           schema: "public",
         },
@@ -162,7 +162,7 @@ hideToc: true
 
       import "./App.css";
       import authProvider from "./authProvider";
-      import { biobaseClient } from "./utility";
+      import { supabaseClient } from "./utility";
       import { CountriesCreate, CountriesEdit, CountriesList, CountriesShow } from "./pages/countries";
 
       function App() {
@@ -170,8 +170,8 @@ hideToc: true
           <BrowserRouter>
             <RefineKbarProvider>
               <Refine
-                dataProvider={dataProvider(biobaseClient)}
-                liveProvider={liveProvider(biobaseClient)}
+                dataProvider={dataProvider(supabaseClient)}
+                liveProvider={liveProvider(supabaseClient)}
                 authProvider={authProvider}
                 routerProvider={routerBindings}
                 options={{

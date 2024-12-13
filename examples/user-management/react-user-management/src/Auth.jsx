@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 
 export default function Auth() {
   const [loading, setLoading] = useState(false)

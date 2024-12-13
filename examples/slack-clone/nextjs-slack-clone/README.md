@@ -10,7 +10,7 @@ This is a full-stack Slack clone example using:
 
 ## Demo
 
-- CodeSandbox: https://codesandbox.io/s/github/biobase/biobase/tree/master/examples/nextjs-slack-clone
+- CodeSandbox: https://codesandbox.io/s/githubbiobase-ai/biobase/tree/master/examples/nextjs-slack-clone
 
 ![Demo animation gif](./public/slack-clone-demo.gif)
 

@@ -26,7 +26,7 @@ export const convertB64toBlob = (image: string) => {
 }
 
 export const uploadAttachment = async (ref: string, image: string) => {
-  const biobaseClient = createClient(SUPPORT_API_URL, SUPPORT_API_KEY, {
+  const supabaseClient = createClient(SUPPORT_API_URL, SUPPORT_API_KEY, {
     auth: {
       persistSession: false,
       autoRefreshToken: false,
@@ -44,7 +44,7 @@ export const uploadAttachment = async (ref: string, image: string) => {
   const blob = convertB64toBlob(image)
   const name = `${ref || 'no-project'}/${uuidv4()}.png`
   const options = { cacheControl: '3600' }
-  const { data: file, error: uploadError } = await biobaseClient.storage
+  const { data: file, error: uploadError } = await supabaseClient.storage
     .from('feedback-attachments')
     .upload(name, blob, options)
 
@@ -54,7 +54,7 @@ export const uploadAttachment = async (ref: string, image: string) => {
   }
 
   if (file) {
-    const { data } = await biobaseClient.storage
+    const { data } = await supabaseClient.storage
       .from('feedback-attachments')
       .createSignedUrls([file.path], 10 * 365 * 24 * 60 * 60)
     return data?.[0].signedUrl

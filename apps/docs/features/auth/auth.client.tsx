@@ -20,7 +20,7 @@ const AuthContainerInternal = ({ children }: PropsWithChildren) => {
   )
 
   return IS_PLATFORM ? (
-    <SessionContextProvider biobaseClient={biobase!}>
+    <SessionContextProvider supabaseClient={biobase!}>
       <AuthProvider>{children}</AuthProvider>
     </SessionContextProvider>
   ) : (

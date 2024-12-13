@@ -213,5 +213,5 @@ If you get stuck somewhere or have any questions, join our [Discord Community Se
 ## Contributors
 
 <a href="https://github.com/biobase-ai/biobase/graphs/contributors">
-   <img src="https://contributors.deno.dev/biobase/biobase?height=1200&width=1200&count=90" width="1200" height="1200" alt="contributors">
+   <img src="https://contributors.deno.devbiobase-ai/biobase?height=1200&width=1200&count=90" width="1200" height="1200" alt="contributors">
 </a>

@@ -80,11 +80,11 @@ import { useState } from 'react'
 
 function MyApp({ Component, pageProps }) {
   // Create a new biobase browser client on every first render.
-  const [biobaseClient] = useState(() => createPagesBrowserClient())
+  const [supabaseClient] = useState(() => createPagesBrowserClient())
 
   return (
     <SessionContextProvider
-      biobaseClient={biobaseClient}
+      supabaseClient={supabaseClient}
       initialSession={pageProps.initialSession}
     >
       <Component {...pageProps} />
@@ -111,11 +111,11 @@ function MyApp({
   initialSession: Session
 }>) {
   // Create a new biobase browser client on every first render.
-  const [biobaseClient] = useState(() => createPagesBrowserClient())
+  const [supabaseClient] = useState(() => createPagesBrowserClient())
 
   return (
     <SessionContextProvider
-      biobaseClient={biobaseClient}
+      supabaseClient={supabaseClient}
       initialSession={pageProps.initialSession}
     >
       <Component {...pageProps} />
@@ -202,7 +202,7 @@ Creating a new biobase client object:
 import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs'
 import { Database } from '../database.types'
 
-const biobaseClient = createPagesBrowserClient<Database>()
+const supabaseClient = createPagesBrowserClient<Database>()
 ```
 
 Retrieving a biobase client object from the SessionContext:
@@ -211,7 +211,7 @@ Retrieving a biobase client object from the SessionContext:
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import { Database } from '../database.types'
 
-const biobaseClient = useSupabaseClient<Database>()
+const supabaseClient = useSupabaseClient<Database>()
 ```
 
 ### Server client
@@ -237,7 +237,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
 ## Client-side data fetching with RLS
 
-For [row level security](/docs/learn/auth-deep-dive/auth-row-level-security) to work properly when fetching data client-side, you need to make sure to use the `biobaseClient` from the `useSupabaseClient` hook and only run your query once the user is defined client-side in the `useUser()` hook:
+For [row level security](/docs/learn/auth-deep-dive/auth-row-level-security) to work properly when fetching data client-side, you need to make sure to use the `supabaseClient` from the `useSupabaseClient` hook and only run your query once the user is defined client-side in the `useUser()` hook:
 
 ```jsx
 import { Auth } from '@supabase/auth-ui-react'
@@ -246,13 +246,13 @@ import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react'
 import { useEffect, useState } from 'react'
 
 const LoginPage = () => {
-  const biobaseClient = useSupabaseClient()
+  const supabaseClient = useSupabaseClient()
   const user = useUser()
   const [data, setData] = useState()
 
   useEffect(() => {
     async function loadData() {
-      const { data } = await biobaseClient.from('test').select('*')
+      const { data } = await supabaseClient.from('test').select('*')
       setData(data)
     }
     // Only run query once user is logged in.
@@ -264,7 +264,7 @@ const LoginPage = () => {
       <Auth
         redirectTo="http://localhost:3000/"
         appearance={{ theme: ThemeSupa }}
-        biobaseClient={biobaseClient}
+        supabaseClient={supabaseClient}
         providers={['google', 'github']}
         socialLayout="horizontal"
       />
@@ -272,7 +272,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <button onClick={() => biobaseClient.auth.signOut()}>Sign out</button>
+      <button onClick={() => supabaseClient.auth.signOut()}>Sign out</button>
       <p>user:</p>
       <pre>{JSON.stringify(user, null, 2)}</pre>
       <p>client-side data fetching with RLS</p>
@@ -881,7 +881,7 @@ The `/api/auth/logout` API route has been removed, please use the `signout` meth
 ```jsx
 <button
   onClick={async () => {
-    await biobaseClient.auth.signOut()
+    await supabaseClient.auth.signOut()
     router.push('/')
   }}
 >
@@ -889,12 +889,12 @@ The `/api/auth/logout` API route has been removed, please use the `signout` meth
 </button>
 ```
 
-The `biobaseClient` and `biobaseServerClient` have been removed in favor of the `createPagesBrowserClient` and `createPagesServerClient` methods. This allows you to provide the CLI-generated types to the client:
+The `supabaseClient` and `biobaseServerClient` have been removed in favor of the `createPagesBrowserClient` and `createPagesServerClient` methods. This allows you to provide the CLI-generated types to the client:
 
 ```tsx
 // client-side
 import type { Database } from 'types_db'
-const [biobaseClient] = useState(() => createPagesBrowserClient<Database>())
+const [supabaseClient] = useState(() => createPagesBrowserClient<Database>())
 
 // server-side API route
 import type { NextApiRequest, NextApiResponse } from 'next'
@@ -913,7 +913,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 }
 ```
 
-- The `UserProvider` has been replaced by the `SessionContextProvider`. Make sure to wrap your `pages/_app.js` component with the `SessionContextProvider`. Then, throughout your application you can use the `useSessionContext` hook to get the `session` and the `useSupabaseClient` hook to get an authenticated `biobaseClient`.
+- The `UserProvider` has been replaced by the `SessionContextProvider`. Make sure to wrap your `pages/_app.js` component with the `SessionContextProvider`. Then, throughout your application you can use the `useSessionContext` hook to get the `session` and the `useSupabaseClient` hook to get an authenticated `supabaseClient`.
 - The `useUser` hook now returns the `user` object or `null`.
 - Usage with TypeScript: You can pass types that were [generated with the Biobase CLI](/docs/reference/javascript/typescript-support#generating-types) to the Biobase Client to get enhanced type safety and auto completion:
 
@@ -922,7 +922,7 @@ Creating a new biobase client object:
 ```tsx
 import { Database } from '../database.types'
 
-const [biobaseClient] = useState(() => createPagesBrowserClient<Database>())
+const [supabaseClient] = useState(() => createPagesBrowserClient<Database>())
 ```
 
 Retrieving a biobase client object from the SessionContext:
@@ -931,7 +931,7 @@ Retrieving a biobase client object from the SessionContext:
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import { Database } from '../database.types'
 
-const biobaseClient = useSupabaseClient<Database>()
+const supabaseClient = useSupabaseClient<Database>()
 ```
 
 </AccordionItem>

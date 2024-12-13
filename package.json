@@ -15,6 +15,8 @@
   "scripts": {
     "build": "turbo run build",
     "build:studio": "turbo run build --filter=studio",
+    "build:docs": "turbo run build --filter=docs",
+    "build:www": "turbo run build --filter=www",
     "build:design-system": "turbo run build --filter=design-system",
     "dev": "turbo run dev --parallel",
     "dev:reference": "turbo run dev --filter=reference --parallel",

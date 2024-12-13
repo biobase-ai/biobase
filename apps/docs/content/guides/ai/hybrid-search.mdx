@@ -169,8 +169,8 @@ In practice, you will likely be calling this from the [Biobase client](/docs/ref
 import { createClient } from 'jsr:@supabase/supabase-js@2'
 import OpenAI from 'npm:openai'
 
-const biobaseUrl = Deno.env.get('BIOBASE_URL')!
-const biobaseServiceRoleKey = Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!
+const supabaseUrl = Deno.env.get('BIOBASE_URL')!
+const biobaseServiceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
 const openaiApiKey = Deno.env.get('OPENAI_API_KEY')!
 
 Deno.serve(async (req) => {
@@ -191,7 +191,7 @@ Deno.serve(async (req) => {
 
   // Instantiate the Biobase client
   // (replace service role key with user's JWT if using Biobase auth and RLS)
-  const biobase = createClient(biobaseUrl, biobaseServiceRoleKey)
+  const biobase = createClient(supabaseUrl, biobaseServiceRoleKey)
 
   // Call hybrid_search Postgres function via RPC
   const { data: documents } = await biobase.rpc('hybrid_search', {

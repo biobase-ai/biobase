@@ -1,11 +1,11 @@
 import { AuthBindings } from "@refinedev/core";
 
-import { biobaseClient } from "./utility";
+import { supabaseClient } from "./utility";
 
 const authProvider: AuthBindings = {
   login: async ({ email }) => {
     try {
-      const { error } = await biobaseClient.auth.signInWithOtp({ email });
+      const { error } = await supabaseClient.auth.signInWithOtp({ email });
 
       if (!error) {
         alert("Check your email for the login link!");
@@ -24,7 +24,7 @@ const authProvider: AuthBindings = {
     }
   },
   logout: async () => {
-    const { error } = await biobaseClient.auth.signOut();
+    const { error } = await supabaseClient.auth.signOut();
 
     if (error) {
       return {
@@ -44,7 +44,7 @@ const authProvider: AuthBindings = {
   },
   check: async () => {
     try {
-      const { data } = await biobaseClient.auth.getSession();
+      const { data } = await supabaseClient.auth.getSession();
       const { session } = data;
 
       if (!session) {
@@ -75,7 +75,7 @@ const authProvider: AuthBindings = {
     };
   },
   getIdentity: async () => {
-    const { data } = await biobaseClient.auth.getUser();
+    const { data } = await supabaseClient.auth.getUser();
 
     if (data?.user) {
       return {

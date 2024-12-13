@@ -9,7 +9,7 @@ exports[`TS type spec parsing > matches snapshot 1`] = `
         "name": "@supabase/supabase-js.index.SupabaseClient.constructor",
         "params": [
           {
-            "name": "biobaseUrl",
+            "name": "supabaseUrl",
             "type": {
               "type": "intrinsic",
               "name": "string"

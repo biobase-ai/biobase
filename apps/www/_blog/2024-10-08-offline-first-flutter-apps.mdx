@@ -142,7 +142,7 @@ class Repository extends OfflineFirstWithBiobaseRepository {
     );
 
     await Biobase.initialize(
-      url: biobaseUrl,
+      url: supabaseUrl,
       anonKey: biobaseAnonKey,
       httpClient: client,
     );

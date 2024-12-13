@@ -1,5 +1,5 @@
 import { Component, createEffect, createSignal, JSX } from 'solid-js'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 
 interface Props {
 	size: number

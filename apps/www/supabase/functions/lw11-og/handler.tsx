@@ -127,17 +127,17 @@ export async function handler(req: Request) {
       regular: {
         OG: `${STORAGE_URL}/assets/backgrounds/platinum/${BG_NUMBER}.png`,
         BG: `${STORAGE_URL}/assets/shape/v2/lw11_ticket_regular.png?t=1`,
-        LOGO: `${STORAGE_URL}/assets/biobase/biobase-logo-icon.png`,
+        LOGO: `${STORAGE_URL}/assetsbiobase-ai/biobase-logo-icon.png`,
       },
       platinum: {
         OG: `${STORAGE_URL}/assets/backgrounds/regular/${BG_NUMBER}.png`,
         BG: `${STORAGE_URL}/assets/shape/v2/lw11_ticket_platinum.png?t=1`,
-        LOGO: `${STORAGE_URL}/assets/biobase/biobase-logo-icon.png`,
+        LOGO: `${STORAGE_URL}/assetsbiobase-ai/biobase-logo-icon.png`,
       },
       secret: {
         OG: `${STORAGE_URL}/assets/backgrounds/secret/${BG_NUMBER}.png`,
         BG: `${STORAGE_URL}/assets/shape/v2/lw11_ticket_purple.png?t=1`,
-        LOGO: `${STORAGE_URL}/assets/biobase/biobase-logo-icon.png`,
+        LOGO: `${STORAGE_URL}/assetsbiobase-ai/biobase-logo-icon.png`,
       },
     }
 

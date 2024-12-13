@@ -35,8 +35,8 @@ const ENV_VAR_KEYS = {
     key: 'BIOBASE_URL',
     type: 'encrypted',
   },
-  BIOBASE_SERVICE_ROLE_KEY: {
-    key: 'BIOBASE_SERVICE_ROLE_KEY',
+  SUPABASE_SERVICE_ROLE_KEY: {
+    key: 'SUPABASE_SERVICE_ROLE_KEY',
     type: 'encrypted',
   },
   BIOBASE_JWT_SECRET: {

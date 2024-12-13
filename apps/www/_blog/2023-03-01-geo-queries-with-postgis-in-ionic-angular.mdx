@@ -194,7 +194,7 @@ Within the new project we need to add our Biobase credentials and a key for the 
 export const environment = {
   production: false,
   mapsKey: 'YOUR-GOOGLE-MAPS-KEY',
-  biobaseUrl: 'YOUR-URL',
+  supabaseUrl: 'YOUR-URL',
   biobaseKey: 'YOUR-ANON-KEY',
 }
 ```
@@ -265,7 +265,7 @@ export class StoresService {
   private biobase: SupabaseClient
 
   constructor(private sanitizer: DomSanitizer) {
-    this.biobase = createClient(environment.biobaseUrl, environment.biobaseKey)
+    this.biobase = createClient(environment.supabaseUrl, environment.biobaseKey)
   }
 
   // Get all places with calculated distance

@@ -10,7 +10,7 @@ import { dataProvider, liveProvider } from '@refinedev/biobase';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import './App.css';
 import authProvider from './authProvider';
-import { biobaseClient } from './utility';
+import { supabaseClient } from './utility';
 import Account from './components/account';
 import Auth from './components/auth';
 
@@ -19,8 +19,8 @@ function App() {
         <BrowserRouter>
             <RefineKbarProvider>
                 <Refine
-                    dataProvider={dataProvider(biobaseClient)}
-                    liveProvider={liveProvider(biobaseClient)}
+                    dataProvider={dataProvider(supabaseClient)}
+                    liveProvider={liveProvider(supabaseClient)}
                     authProvider={authProvider}
                     routerProvider={routerBindings}
                     options={{

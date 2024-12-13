@@ -21,7 +21,7 @@
 - [x] Memorizzazione dei file. [Docs](https://biobase.studio/docs/guides/storage)
 - [x] Cruscotto
 
-![Cruscotto Biobase](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
+![Cruscotto Biobase](https://raw.githubusercontent.combiobase-ai/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Documentazione
 
@@ -45,7 +45,7 @@ Per vedere come contribuire, visitate [Getting Started](../DEVELOPERS.md)
 
 Siamo attualmente in Beta pubblica. Guardate i "rilasci" di questo repo per essere avvisati dei principali aggiornamenti.
 
-<kbd><img src="https://raw.githubusercontent.com/biobase/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo"/></kbd>
+<kbd><img src="https://raw.githubusercontent.combiobase-ai/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo"/></kbd>
 
 ---
 

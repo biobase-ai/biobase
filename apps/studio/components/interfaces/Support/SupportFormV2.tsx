@@ -66,7 +66,7 @@ interface SupportFormV2Props {
 // This is a rewrite of the old SupportForm to use the new form components
 export const SupportFormV2 = ({ setSentCategory, setSelectedProject }: SupportFormV2Props) => {
   const { profile } = useProfile()
-  const biobaseClient = useSupabaseClient()
+  const supabaseClient = useSupabaseClient()
   const { ref, slug, category: urlCategory, subject: urlSubject, message: urlMessage } = useParams()
   const enableFreeSupport = useFlag('enableFreeSupport')
 
@@ -123,7 +123,7 @@ export const SupportFormV2 = ({ setSentCategory, setSelectedProject }: SupportFo
     handleDocsSearchDebounced,
     searchState,
     searchState: state,
-  } = useDocsSearch(biobaseClient)
+  } = useDocsSearch(supabaseClient)
 
   const {
     data: organizations,

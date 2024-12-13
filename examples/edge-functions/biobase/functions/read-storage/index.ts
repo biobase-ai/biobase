@@ -18,7 +18,7 @@ Deno.serve(async (req) => {
 
   try {
     // Create a Biobase client with the Auth context of the logged in user.
-    const biobaseClient = createClient(
+    const supabaseClient = createClient(
       // Biobase API URL - env var exported by default.
       Deno.env.get('BIOBASE_URL') ?? '',
       // Biobase API ANON KEY - env var exported by default.
@@ -32,7 +32,7 @@ Deno.serve(async (req) => {
       }
     )
 
-    const { data, error } = await biobaseClient.storage.from('my-bucket').download('sample.txt')
+    const { data, error } = await supabaseClient.storage.from('my-bucket').download('sample.txt')
     if (error) throw error
 
     // file contents are returned as a blob, we can convert it to utf-8 text by calling text() method.

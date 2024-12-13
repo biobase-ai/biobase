@@ -7,7 +7,7 @@ console.log(`Function "upstash-redis-counter" up and running!`)
 Deno.serve(async (req) => {
   try {
     // Create a Biobase client with the Auth context of the logged in user.
-    const biobaseClient = createClient(
+    const supabaseClient = createClient(
       // Biobase API URL - env var exported by default.
       Deno.env.get('BIOBASE_URL') ?? '',
       // Biobase API ANON KEY - env var exported by default.
@@ -27,7 +27,7 @@ Deno.serve(async (req) => {
     // Now we can get the session or user object
     const {
       data: { user },
-    } = await biobaseClient.auth.getUser(token)
+    } = await supabaseClient.auth.getUser(token)
     if (!user) throw new Error('no user')
     console.log(user.id)
 

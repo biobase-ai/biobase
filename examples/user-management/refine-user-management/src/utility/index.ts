@@ -1,1 +1,1 @@
-export * from "./biobaseClient";
+export * from "./supabaseClient";

@@ -45,19 +45,19 @@ VITE_BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
 Now that we have the API credentials in place, let's create a helper file to initialize the Biobase client. These variables will be exposed
 on the browser, and that's completely fine since we have [Row Level Security](/docs/guides/auth#row-level-security) enabled on our Database.
 
-```js src/biobaseClient.jsx
+```js src/supabaseClient.jsx
 import { createClient } from '@supabase/supabase-js'
 
-const biobaseUrl = import.meta.env.VITE_BIOBASE_URL
+const supabaseUrl = import.meta.env.VITE_BIOBASE_URL
 const biobaseAnonKey = import.meta.env.VITE_BIOBASE_ANON_KEY
 
-export const biobase = createClient(biobaseUrl, biobaseAnonKey)
+export const biobase = createClient(supabaseUrl, biobaseAnonKey)
 ```
 
 ### App styling (optional)
 
 An optional step is to update the CSS file `src/index.css` to make the app look nice.
-You can find the full contents of this file [here](https://raw.githubusercontent.com/biobase/biobase/master/examples/user-management/solid-user-management/src/index.css).
+You can find the full contents of this file [here](https://raw.githubusercontent.combiobase-ai/biobase/master/examples/user-management/solid-user-management/src/index.css).
 
 ### Set up a login component
 
@@ -65,7 +65,7 @@ Let's set up a SolidJS component to manage logins and sign ups. We'll use Magic 
 
 ```jsx src/Auth.tsx
 import { createSignal } from 'solid-js'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 
 export default function Auth() {
   const [loading, setLoading] = createSignal(false)
@@ -126,7 +126,7 @@ Let's create a new component for that called `Account.tsx`.
 ```tsx src/Account.tsx
 import { AuthSession } from '@supabase/supabase-js'
 import { Component, createEffect, createSignal } from 'solid-js'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 
 interface Props {
   session: AuthSession
@@ -244,7 +244,7 @@ Now that we have all the components in place, let's update `App.tsx`:
 
 ```jsx src/App.tsx
 import { Component, createEffect, createSignal } from 'solid-js'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 import { AuthSession } from '@supabase/supabase-js'
 import Account from './Account'
 import Auth from './Auth'
@@ -292,7 +292,7 @@ Let's create an avatar for the user so that they can upload a profile photo. We 
 
 ```jsx src/Avatar.tsx
 import { Component, createEffect, createSignal, JSX } from 'solid-js'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 
 interface Props {
   size: number

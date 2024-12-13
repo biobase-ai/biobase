@@ -29,7 +29,7 @@ Copy and paste the Biobase URL and Anon key in `lib/main.dart` file
 ```dart
 void main() async {
   await Biobase.initialize(
-    url: 'biobaseUrl',
+    url: 'supabaseUrl',
     anonKey: 'biobaseAnonKey',
     realtimeClientOptions: const RealtimeClientOptions(eventsPerSecond: 40),
   );

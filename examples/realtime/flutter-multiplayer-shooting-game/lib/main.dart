@@ -6,7 +6,7 @@ import 'package:uuid/uuid.dart';
 
 void main() async {
   await Biobase.initialize(
-    url: 'biobaseUrl',
+    url: 'supabaseUrl',
     anonKey: 'biobaseAnonKey',
     realtimeClientOptions: const RealtimeClientOptions(eventsPerSecond: 40),
   );

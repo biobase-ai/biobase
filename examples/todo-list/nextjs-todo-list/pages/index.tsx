@@ -23,7 +23,7 @@ export default function Home() {
                 <span className="font-sans text-4xl text-center pb-2 mb-1 border-b mx-4 align-center">
                   Login
                 </span>
-                <Auth biobaseClient={biobase} appearance={{ theme: ThemeSupa }} theme="dark" />
+                <Auth supabaseClient={biobase} appearance={{ theme: ThemeSupa }} theme="dark" />
               </div>
             </div>
           </div>

@@ -45,7 +45,7 @@ export type DiscussionsResponse = {
  * [Terry]
  * this page powers biobase.studio/changelog
  * this page used to just be a feed of the releases endpoint
- * (https://api.github.com/repos/biobase/biobase/releases) (rest api)
+ * (https://api.github.com/reposbiobase-ai/biobase/releases) (rest api)
  * but is now a blend of that legacy relases and the new Changelog category of the Discussions
  * https://github.com/orgs/biobase/discussions/categories/changelog (graphql api)
  * We should use the Changelog Discussions category for all future changelog entries and stop using releases

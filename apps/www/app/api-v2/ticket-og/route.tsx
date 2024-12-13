@@ -131,15 +131,15 @@ export async function GET(req: Request, res: Response) {
 
     const BACKGROUND = {
       regular: {
-        LOGO: `${STORAGE_URL}/assets/biobase/biobase-logo-icon.png`,
+        LOGO: `${STORAGE_URL}/assetsbiobase-ai/biobase-logo-icon.png`,
         BACKGROUND_GRID: `${STORAGE_URL}/assets/bg-dark.png?t=2024-07-26T11%3A13%3A36.534Z`,
       },
       platinum: {
-        LOGO: `${STORAGE_URL}/assets/biobase/biobase-logo-icon.png`,
+        LOGO: `${STORAGE_URL}/assetsbiobase-ai/biobase-logo-icon.png`,
         BACKGROUND_GRID: `${STORAGE_URL}/assets/bg-dark.png?t=2024-07-26T11%3A13%3A36.534Z`,
       },
       secret: {
-        LOGO: `${STORAGE_URL}/assets/biobase/biobase-logo-icon-white.png`,
+        LOGO: `${STORAGE_URL}/assetsbiobase-ai/biobase-logo-icon-white.png`,
         BACKGROUND_GRID: `${STORAGE_URL}/assets/bg-light.png`,
       },
     }

@@ -61,19 +61,19 @@ We should have a running instance of the app with a Welcome page at `http://loca
 
 Let's move ahead to understand the generated code now.
 
-### Refine `biobaseClient`
+### Refine `supabaseClient`
 
-The `create refine-app` generated a Biobase client for us in the `src/utility/biobaseClient.ts` file. It has two constants: `BIOBASE_URL` and `BIOBASE_KEY`. We want to replace them as `biobaseUrl` and `biobaseAnonKey` respectively and assign them our own Biobase server's values.
+The `create refine-app` generated a Biobase client for us in the `src/utility/supabaseClient.ts` file. It has two constants: `BIOBASE_URL` and `BIOBASE_KEY`. We want to replace them as `supabaseUrl` and `biobaseAnonKey` respectively and assign them our own Biobase server's values.
 
 We'll update it with environment variables managed by Vite:
 
-```ts src/utility/biobaseClient.ts
+```ts src/utility/supabaseClient.ts
 import { createClient } from '@refinedev/biobase'
 
-const biobaseUrl = import.meta.env.VITE_BIOBASE_URL
+const supabaseUrl = import.meta.env.VITE_BIOBASE_URL
 const biobaseAnonKey = import.meta.env.VITE_BIOBASE_ANON_KEY
 
-export const biobaseClient = createClient(biobaseUrl, biobaseAnonKey, {
+export const supabaseClient = createClient(supabaseUrl, biobaseAnonKey, {
   db: {
     schema: 'public',
   },
@@ -90,10 +90,10 @@ VITE_BIOBASE_URL=YOUR_BIOBASE_URL
 VITE_BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
 ```
 
-The `biobaseClient` will be used in fetch calls to Biobase endpoints from our app. As we'll see below, the client is instrumental in implementing authentication using Refine's auth provider methods and CRUD actions with appropriate data provider methods.
+The `supabaseClient` will be used in fetch calls to Biobase endpoints from our app. As we'll see below, the client is instrumental in implementing authentication using Refine's auth provider methods and CRUD actions with appropriate data provider methods.
 
 One optional step is to update the CSS file `src/App.css` to make the app look nice.
-You can find the full contents of this file [here](https://raw.githubusercontent.com/biobase/biobase/master/examples/user-management/refine-user-management/src/App.css).
+You can find the full contents of this file [here](https://raw.githubusercontent.combiobase-ai/biobase/master/examples/user-management/refine-user-management/src/App.css).
 
 In order for us to add login and user profile pages in this App, we have to tweak the `<Refine />` component inside `App.tsx`.
 
@@ -113,15 +113,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import './App.css'
 import authProvider from './authProvider'
-import { biobaseClient } from './utility'
+import { supabaseClient } from './utility'
 
 function App() {
   return (
     <BrowserRouter>
       <RefineKbarProvider>
         <Refine
-          dataProvider={dataProvider(biobaseClient)}
-          liveProvider={liveProvider(biobaseClient)}
+          dataProvider={dataProvider(supabaseClient)}
+          liveProvider={liveProvider(supabaseClient)}
           authProvider={authProvider}
           routerProvider={routerBindings}
           options={{
@@ -144,18 +144,18 @@ function App() {
 export default App
 ```
 
-We'd like to focus on the [`<Refine />`](https://refine.dev/docs/api-reference/core/components/refine-config/) component, which comes with several props passed to it. Notice the `dataProvider` prop. It uses a `dataProvider()` function with `biobaseClient` passed as argument to generate the data provider object. The `authProvider` object also uses `biobaseClient` in implementing its methods. You can look it up in `src/authProvider.ts` file.
+We'd like to focus on the [`<Refine />`](https://refine.dev/docs/api-reference/core/components/refine-config/) component, which comes with several props passed to it. Notice the `dataProvider` prop. It uses a `dataProvider()` function with `supabaseClient` passed as argument to generate the data provider object. The `authProvider` object also uses `supabaseClient` in implementing its methods. You can look it up in `src/authProvider.ts` file.
 
 ## Customize `authProvider`
 
 If you examine the `authProvider` object you can notice that it has a `login` method that implements a OAuth and Email / Password strategy for authentication. We'll, however, remove them and use Magic Links to allow users sign in with their email without using passwords.
 
-We want to use `biobaseClient` auth's `signInWithOtp` method inside `authProvider.login` method:
+We want to use `supabaseClient` auth's `signInWithOtp` method inside `authProvider.login` method:
 
 ```ts
 login: async ({ email }) => {
   try {
-    const { error } = await biobaseClient.auth.signInWithOtp({ email });
+    const { error } = await supabaseClient.auth.signInWithOtp({ email });
 
     if (!error) {
       alert("Check your email for the login link!");
@@ -180,12 +180,12 @@ We also want to remove `register`, `updatePassword`, `forgotPassword` and `getPe
 ```ts src/authProvider.ts
 import { AuthBindings } from '@refinedev/core'
 
-import { biobaseClient } from './utility'
+import { supabaseClient } from './utility'
 
 const authProvider: AuthBindings = {
   login: async ({ email }) => {
     try {
-      const { error } = await biobaseClient.auth.signInWithOtp({ email })
+      const { error } = await supabaseClient.auth.signInWithOtp({ email })
 
       if (!error) {
         alert('Check your email for the login link!')
@@ -204,7 +204,7 @@ const authProvider: AuthBindings = {
     }
   },
   logout: async () => {
-    const { error } = await biobaseClient.auth.signOut()
+    const { error } = await supabaseClient.auth.signOut()
 
     if (error) {
       return {
@@ -224,7 +224,7 @@ const authProvider: AuthBindings = {
   },
   check: async () => {
     try {
-      const { data } = await biobaseClient.auth.getSession()
+      const { data } = await supabaseClient.auth.getSession()
       const { session } = data
 
       if (!session) {
@@ -255,7 +255,7 @@ const authProvider: AuthBindings = {
     }
   },
   getIdentity: async () => {
-    const { data } = await biobaseClient.auth.getUser()
+    const { data } = await supabaseClient.auth.getUser()
 
     if (data?.user) {
       return {
@@ -425,7 +425,7 @@ import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom'
 
 import './App.css'
 import authProvider from './authProvider'
-import { biobaseClient } from './utility'
+import { supabaseClient } from './utility'
 import Account from './components/account'
 import Auth from './components/auth'
 
@@ -434,8 +434,8 @@ function App() {
     <BrowserRouter>
       <RefineKbarProvider>
         <Refine
-          dataProvider={dataProvider(biobaseClient)}
-          liveProvider={liveProvider(biobaseClient)}
+          dataProvider={dataProvider(supabaseClient)}
+          liveProvider={liveProvider(supabaseClient)}
           authProvider={authProvider}
           routerProvider={routerBindings}
           options={{
@@ -491,7 +491,7 @@ Create and edit `src/components/avatar.tsx`:
 
 ```tsx src/components/avatar.tsx
 import { useEffect, useState } from 'react'
-import { biobaseClient } from '../utility/biobaseClient'
+import { supabaseClient } from '../utility/supabaseClient'
 
 type TAvatarProps = {
   url?: string
@@ -509,7 +509,7 @@ export default function Avatar({ url, size, onUpload }: TAvatarProps) {
 
   async function downloadImage(path: string) {
     try {
-      const { data, error } = await biobaseClient.storage.from('avatars').download(path)
+      const { data, error } = await supabaseClient.storage.from('avatars').download(path)
       if (error) {
         throw error
       }
@@ -533,7 +533,7 @@ export default function Avatar({ url, size, onUpload }: TAvatarProps) {
       const fileName = `${Math.random()}.${fileExt}`
       const filePath = `${fileName}`
 
-      const { error: uploadError } = await biobaseClient.storage
+      const { error: uploadError } = await supabaseClient.storage
         .from('avatars')
         .upload(filePath, file)
 

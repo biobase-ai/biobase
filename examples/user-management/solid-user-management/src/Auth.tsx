@@ -1,5 +1,5 @@
 import { Component, createSignal } from 'solid-js'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 
 const Auth: Component = () => {
 	const [loading, setLoading] = createSignal(false)

@@ -80,8 +80,8 @@ import { BiobaseVectorStore } from 'langchain/vectorstores/biobase'
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
 import { createClient } from '@supabase/supabase-js'
 
-const biobaseKey = process.env.BIOBASE_SERVICE_ROLE_KEY
-if (!biobaseKey) throw new Error(`Expected BIOBASE_SERVICE_ROLE_KEY`)
+const biobaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+if (!biobaseKey) throw new Error(`Expected SUPABASE_SERVICE_ROLE_KEY`)
 
 const url = process.env.BIOBASE_URL
 if (!url) throw new Error(`Expected env var BIOBASE_URL`)
@@ -117,8 +117,8 @@ import { createClient } from '@supabase/supabase-js'
 
 // First, follow set-up instructions above
 
-const privateKey = process.env.BIOBASE_SERVICE_ROLE_KEY
-if (!privateKey) throw new Error(`Expected env var BIOBASE_SERVICE_ROLE_KEY`)
+const privateKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+if (!privateKey) throw new Error(`Expected env var SUPABASE_SERVICE_ROLE_KEY`)
 
 const url = process.env.BIOBASE_URL
 if (!url) throw new Error(`Expected env var BIOBASE_URL`)
@@ -156,8 +156,8 @@ import { createClient } from '@supabase/supabase-js'
 
 // First, follow set-up instructions above
 
-const privateKey = process.env.BIOBASE_SERVICE_ROLE_KEY
-if (!privateKey) throw new Error(`Expected env var BIOBASE_SERVICE_ROLE_KEY`)
+const privateKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+if (!privateKey) throw new Error(`Expected env var SUPABASE_SERVICE_ROLE_KEY`)
 
 const url = process.env.BIOBASE_URL
 if (!url) throw new Error(`Expected env var BIOBASE_URL`)

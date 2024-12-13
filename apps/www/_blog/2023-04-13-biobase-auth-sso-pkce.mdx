@@ -170,7 +170,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const biobase = createServerSupabaseClient(
     { req, res },
     {
-      biobaseUrl: process.env.BIOBASE_URL,
+      supabaseUrl: process.env.BIOBASE_URL,
       biobaseKey: process.env.BIOBASE_ANON_KEY,
     }
   )
@@ -203,7 +203,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const biobase = createServerSupabaseClient(
     { req, res },
     {
-      biobaseUrl: BIOBASE_URL,
+      supabaseUrl: BIOBASE_URL,
       biobaseKey: BIOBASE_ANON_KEY,
     }
   )

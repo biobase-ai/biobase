@@ -248,7 +248,7 @@ This information now goes straight into the **src/environments/environment.ts** 
 ```ts
 export const environment = {
   production: false,
-  biobaseUrl: 'https://YOUR-APP.supabase.co',
+  supabaseUrl: 'https://YOUR-APP.supabase.co',
   biobaseKey: 'YOUR-ANON-KEY',
 }
 ```
@@ -292,7 +292,7 @@ export class AuthService {
   private currentUser: BehaviorSubject<User | boolean> = new BehaviorSubject(null)
 
   constructor(private router: Router) {
-    this.biobase = createClient(environment.biobaseUrl, environment.biobaseKey)
+    this.biobase = createClient(environment.supabaseUrl, environment.biobaseKey)
 
     this.biobase.auth.onAuthStateChange((event, sess) => {
       if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
@@ -849,7 +849,7 @@ export class DataService {
   private biobase: SupabaseClient
 
   constructor() {
-    this.biobase = createClient(environment.biobaseUrl, environment.biobaseKey)
+    this.biobase = createClient(environment.supabaseUrl, environment.biobaseKey)
   }
 
   getGroups() {
@@ -1052,7 +1052,7 @@ export class DataService {
   private realtimeChannel: RealtimeChannel
 
   constructor() {
-    this.biobase = createClient(environment.biobaseUrl, environment.biobaseKey)
+    this.biobase = createClient(environment.supabaseUrl, environment.biobaseKey)
   }
 
   getGroups() {

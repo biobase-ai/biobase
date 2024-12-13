@@ -252,7 +252,7 @@ By default, [KotlinX Serialization](https://github.com/Kotlin/kotlinx.serializat
             </TabPanel>
         </Tabs>
         ```kotlin
-        val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
+        val biobase = createSupabaseClient(supabaseUrl, biobaseKey) {
             //Already the default serializer, but you can provide a custom Json instance (optional):
             defaultSerializer = KotlinXSerializer(Json {
                 //apply your custom config
@@ -303,7 +303,7 @@ By default, [KotlinX Serialization](https://github.com/Kotlin/kotlinx.serializat
             </TabPanel>
         </Tabs>
         ```kotlin
-        val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
+        val biobase = createSupabaseClient(supabaseUrl, biobaseKey) {
             defaultSerializer = MoshiSerializer()
         }
         ```
@@ -352,7 +352,7 @@ By default, [KotlinX Serialization](https://github.com/Kotlin/kotlinx.serializat
             </TabPanel>
         </Tabs>
         ```kotlin
-        val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
+        val biobase = createSupabaseClient(supabaseUrl, biobaseKey) {
             defaultSerializer = JacksonSerializer()
         }
         ```
@@ -383,7 +383,7 @@ By default, [KotlinX Serialization](https://github.com/Kotlin/kotlinx.serializat
         ```
 
         ```kotlin
-        val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
+        val biobase = createSupabaseClient(supabaseUrl, biobaseKey) {
             defaultSerializer = CustomSerializer()
         }
         ```

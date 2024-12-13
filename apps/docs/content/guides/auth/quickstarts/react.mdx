@@ -101,7 +101,7 @@ hideToc: true
           }, [])
 
           if (!session) {
-            return (<Auth biobaseClient={biobase} appearance={{ theme: ThemeSupa }} />)
+            return (<Auth supabaseClient={biobase} appearance={{ theme: ThemeSupa }} />)
           }
           else {
             return (<div>Logged in!</div>)

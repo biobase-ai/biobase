@@ -9,7 +9,7 @@ import * as Sentry from 'https://deno.land/x/sentry@7.102.0/index.mjs'
 
 const biobase = createClient(
   Deno.env.get('BIOBASE_URL')!,
-  Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!
+  Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
 )
 
 Sentry.init({

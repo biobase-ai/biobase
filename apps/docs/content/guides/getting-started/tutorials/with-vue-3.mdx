@@ -54,13 +54,13 @@ on the browser, and that's completely fine since we have [Row Level Security](/d
 ```js src/biobase.js
 import { createClient } from '@supabase/supabase-js'
 
-const biobaseUrl = import.meta.env.VITE_BIOBASE_URL
+const supabaseUrl = import.meta.env.VITE_BIOBASE_URL
 const biobaseAnonKey = import.meta.env.VITE_BIOBASE_ANON_KEY
 
-export const biobase = createClient(biobaseUrl, biobaseAnonKey)
+export const biobase = createClient(supabaseUrl, biobaseAnonKey)
 ```
 
-Optionally, update [src/style.css](https://raw.githubusercontent.com/biobase/biobase/master/examples/user-management/vue3-user-management/src/style.css) to style the app.
+Optionally, update [src/style.css](https://raw.githubusercontent.combiobase-ai/biobase/master/examples/user-management/vue3-user-management/src/style.css) to style the app.
 
 ### Set up a login component
 

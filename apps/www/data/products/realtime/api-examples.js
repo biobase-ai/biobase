@@ -6,8 +6,8 @@ export default [
     code: `
   import { createClient } from '@supabase/supabase-js'
 
-  const biobaseClient = createClient('URL', 'ANON')
-  const channel = biobaseClient
+  const supabaseClient = createClient('URL', 'ANON')
+  const channel = supabaseClient
     .channel('postgresChangesChannel')
     .on('postgres_changes', {
       event: 'INSERT',
@@ -34,8 +34,8 @@ export default [
     code: `
   import { createClient } from '@supabase/supabase-js'
 
-  const biobaseClient = createClient('URL', 'ANON')
-  const channel = biobaseClient.channel('presenceChannel', { configs: { presence: 'id123' } })
+  const supabaseClient = createClient('URL', 'ANON')
+  const channel = supabaseClient.channel('presenceChannel', { configs: { presence: 'id123' } })
 
   channel
     .on('presence', { event: 'sync' }, () => console.log(channel.presenceState()))
@@ -61,8 +61,8 @@ export default [
     code: `
   import { createClient } from '@supabase/supabase-js'
 
-  const biobaseClient = createClient('URL', 'ANON')
-  const channel = biobaseClient.channel('broadcastChannel', { configs: { broadcast: { self: true, ack: true } } })
+  const supabaseClient = createClient('URL', 'ANON')
+  const channel = supabaseClient.channel('broadcastChannel', { configs: { broadcast: { self: true, ack: true } } })
 
   channel
     .on('broadcast', { event: 'pos' }, payload => console.log(payload))

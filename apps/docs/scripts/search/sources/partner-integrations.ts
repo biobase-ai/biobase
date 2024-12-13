@@ -9,15 +9,27 @@ type PartnerData = {
   overview: string // The Markdown content for indexing
 }
 
-let biobaseClient: SupabaseClient
+let supabaseClient: SupabaseClient
 function getSupabaseClient() {
-  if (!biobaseClient) {
-    biobaseClient = createClient(
-      process.env.NEXT_PUBLIC_MISC_USE_URL!,
-      process.env.NEXT_PUBLIC_MISC_USE_ANON_KEY!
+  if (!supabaseClient) {
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
+      throw new Error('Missing env.NEXT_PUBLIC_SUPABASE_URL')
+    }
+    if (!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      throw new Error('Missing env.NEXT_PUBLIC_SUPABASE_ANON_KEY')
+    }
+
+    supabaseClient = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+      {
+        auth: {
+          persistSession: false,
+        },
+      }
     )
-    return biobaseClient
   }
+  return supabaseClient
 }
 
 export async function fetchPartners() {

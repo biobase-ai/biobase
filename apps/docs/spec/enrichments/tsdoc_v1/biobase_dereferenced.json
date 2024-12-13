@@ -79,7 +79,7 @@
                   "parameters": [
                     {
                       "id": 114,
-                      "name": "biobaseUrl",
+                      "name": "supabaseUrl",
                       "kind": 32768,
                       "kindString": "Parameter",
                       "flags": {},
@@ -828,7 +828,7 @@
             },
             {
               "id": 137,
-              "name": "biobaseUrl",
+              "name": "supabaseUrl",
               "kind": 1024,
               "kindString": "Property",
               "flags": {
@@ -2340,7 +2340,7 @@
               "parameters": [
                 {
                   "id": 108,
-                  "name": "biobaseUrl",
+                  "name": "supabaseUrl",
                   "kind": 32768,
                   "kindString": "Parameter",
                   "flags": {},

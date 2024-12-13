@@ -304,7 +304,7 @@ const defaultVercelEnvs = [
     type: 'encrypted',
   },
   {
-    key: 'BIOBASE_SERVICE_ROLE_KEY',
+    key: 'SUPABASE_SERVICE_ROLE_KEY',
     alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
     type: 'encrypted',
   },

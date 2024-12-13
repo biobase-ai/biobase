@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 import Auth from './Auth'
 import Account from './Account'
 

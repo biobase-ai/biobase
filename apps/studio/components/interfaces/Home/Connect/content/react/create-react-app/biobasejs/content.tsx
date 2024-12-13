@@ -31,10 +31,10 @@ REACT_APP_BIOBASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
           {`
 import { createClient } from "@supabase/supabase-js";
 
-const biobaseUrl = process.env.REACT_APP_BIOBASE_URL;
+const supabaseUrl = process.env.REACT_APP_BIOBASE_URL;
 const biobaseKey = process.env.REACT_APP_BIOBASE_ANON_KEY;
 
-export const biobase = createClient(biobaseUrl, biobaseKey);
+export const biobase = createClient(supabaseUrl, biobaseKey);
         `}
         </SimpleCodeBlock>
       </ConnectTabContent>

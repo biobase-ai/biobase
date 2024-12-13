@@ -16,15 +16,15 @@ const generateInitSnippet = (endpoint: string) => ({
   js: `
 import { createClient } from '@supabase/supabase-js'
 
-const biobaseUrl = '${endpoint}'
+const supabaseUrl = '${endpoint}'
 const biobaseKey = process.env.BIOBASE_KEY
-const biobase = createClient(biobaseUrl, biobaseKey)`,
+const biobase = createClient(supabaseUrl, biobaseKey)`,
   dart: `
-const biobaseUrl = '${endpoint}';
+const supabaseUrl = '${endpoint}';
 const biobaseKey = String.fromEnvironment('BIOBASE_KEY');
 
 Future<void> main() async {
-  await Biobase.initialize(url: biobaseUrl, anonKey: biobaseKey);
+  await Biobase.initialize(url: supabaseUrl, anonKey: biobaseKey);
   runApp(MyApp());
 }`,
 })

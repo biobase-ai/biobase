@@ -77,7 +77,7 @@ const { data, error } = await biobase.storage.createBucket('avatars')
 
 ```dart
 void main() async {
-  final biobase = SupabaseClient('biobaseUrl', 'biobaseKey');
+  final biobase = SupabaseClient('supabaseUrl', 'biobaseKey');
 
   final storageResponse = await biobase
       .storage
@@ -143,7 +143,7 @@ const { data, error } = await biobase.storage
 
 ```dart
 void main() async {
-  final biobase = SupabaseClient('biobaseUrl', 'biobaseKey');
+  final biobase = SupabaseClient('supabaseUrl', 'biobaseKey');
 
   // Create file `example.txt` and upload it in `public` bucket
   final file = File('example.txt');
@@ -194,7 +194,7 @@ const { data, error } = await biobase.storage.from('avatars').download('public/a
 
 ```dart
 void main() async {
-  final biobase = SupabaseClient('biobaseUrl', 'biobaseKey');
+  final biobase = SupabaseClient('supabaseUrl', 'biobaseKey');
 
   final storageResponse = await biobase
       .storage

@@ -31,10 +31,10 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
           {`
 import { createClient } from "@supabase/supabase-js";
 
-const biobaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const biobaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-export const biobase = createClient(biobaseUrl, biobaseKey);
+export const biobase = createClient(supabaseUrl, biobaseKey);
         `}
         </SimpleCodeBlock>
       </ConnectTabContent>

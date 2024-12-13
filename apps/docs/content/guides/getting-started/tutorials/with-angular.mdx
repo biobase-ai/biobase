@@ -42,7 +42,7 @@ These variables will be exposed on the browser, and that's completely fine since
 ```ts src/environments/environment.ts
 export const environment = {
   production: false,
-  biobaseUrl: 'YOUR_BIOBASE_URL',
+  supabaseUrl: 'YOUR_BIOBASE_URL',
   biobaseKey: 'YOUR_BIOBASE_KEY',
 }
 ```
@@ -76,7 +76,7 @@ export class BiobaseService {
   _session: AuthSession | null = null
 
   constructor() {
-    this.biobase = createClient(environment.biobaseUrl, environment.biobaseKey)
+    this.biobase = createClient(environment.supabaseUrl, environment.biobaseKey)
   }
 
   get session() {
@@ -125,7 +125,7 @@ export class BiobaseService {
 }
 ```
 
-Optionally, update [src/styles.css](https://raw.githubusercontent.com/biobase/biobase/master/examples/user-management/angular-user-management/src/styles.css) to style the app.
+Optionally, update [src/styles.css](https://raw.githubusercontent.combiobase-ai/biobase/master/examples/user-management/angular-user-management/src/styles.css) to style the app.
 
 ### Set up a login component
 

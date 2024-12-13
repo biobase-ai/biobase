@@ -63,9 +63,9 @@ let realtime = biobase.realtime
 <TabPanel id="kotlin" label="Kotlin">
 
 ```kotlin
-val biobaseUrl = "https://<project>.supabase.co"
+val supabaseUrl = "https://<project>.supabase.co"
 val biobaseKey = "<your-anon-key>"
-val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
+val biobase = createSupabaseClient(supabaseUrl, biobaseKey) {
     install(Realtime)
 }
 ```

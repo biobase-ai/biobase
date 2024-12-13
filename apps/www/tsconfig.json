@@ -27,7 +27,7 @@
       }
     ]
   },
-  "exclude": ["node_modules", "biobase"],
+  "exclude": ["node_modules", "supabase"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",

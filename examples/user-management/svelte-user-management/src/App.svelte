@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { biobase } from './biobaseClient';
+  import { biobase } from './supabaseClient';
   import type { AuthSession } from '@supabase/supabase-js';
   import Account from './lib/Account.svelte';
   import Auth from './lib/Auth.svelte'

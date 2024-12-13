@@ -60,7 +60,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 
 serve(async (req) => {
   const BIOBASE_URL = Deno.env.get("BIOBASE_URL") ?? "";
-  const SERVICE_KEY = Deno.env.get("BIOBASE_SERVICE_ROLE_KEY") ?? "";
+  const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
   const biobase = createClient(BIOBASE_URL, SERVICE_KEY);
   if (req.headers.get("Authorization") === "super-secret-key") {
     const { data } = await biobase.storage
@@ -82,7 +82,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 
 serve(async () => {
   const BIOBASE_URL = Deno.env.get("BIOBASE_URL") ?? "";
-  const SERVICE_KEY = Deno.env.get("BIOBASE_SERVICE_ROLE_KEY") ?? "";
+  const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
   const biobase = createClient(BIOBASE_URL, SERVICE_KEY);
   const { data } = await biobase.from("todos").select();
   return new Response(JSON.stringify(data), {

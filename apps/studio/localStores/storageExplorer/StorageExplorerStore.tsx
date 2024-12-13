@@ -99,7 +99,7 @@ class StorageExplorerStore {
   private serviceKey: string = ''
 
   /* Biobase client, will get initialized immediately after constructing the instance */
-  biobaseClient: SupabaseClient<any, 'public', any> = null as any as SupabaseClient<
+  supabaseClient: SupabaseClient<any, 'public', any> = null as any as SupabaseClient<
     any,
     'public',
     any
@@ -119,7 +119,7 @@ class StorageExplorerStore {
   } = {}
 
   constructor() {
-    makeAutoObservable(this, { biobaseClient: false })
+    makeAutoObservable(this, { supabaseClient: false })
 
     // ignore when in a non-browser environment
     if (typeof window !== 'undefined') {
@@ -146,7 +146,7 @@ class StorageExplorerStore {
     serviceEndpoint: string,
     protocol: string
   ) => {
-    this.biobaseClient = createClient(
+    this.supabaseClient = createClient(
       `${IS_PLATFORM ? 'https' : protocol}://${serviceEndpoint}`,
       serviceKey,
       {
@@ -333,7 +333,7 @@ class StorageExplorerStore {
     const formattedPathToEmptyPlaceholderFile =
       pathToFolder.length > 0 ? `${pathToFolder}/${emptyPlaceholderFile}` : emptyPlaceholderFile
 
-    await this.biobaseClient.storage
+    await this.supabaseClient.storage
       .from(this.selectedBucket.name)
       .upload(formattedPathToEmptyPlaceholderFile, new File([], EMPTY_FOLDER_PLACEHOLDER_FILE_NAME))
 
@@ -1515,7 +1515,7 @@ class StorageExplorerStore {
 
       if (data.length === 0) {
         const prefixToPlaceholder = `${parentFolderPrefix}/${EMPTY_FOLDER_PLACEHOLDER_FILE_NAME}`
-        await this.biobaseClient.storage
+        await this.supabaseClient.storage
           .from(this.selectedBucket.name)
           .upload(prefixToPlaceholder, new File([], EMPTY_FOLDER_PLACEHOLDER_FILE_NAME))
       }

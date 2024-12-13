@@ -13,7 +13,7 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
     <ConnectTabs>
       <ConnectTabTriggers>
         <ConnectTabTrigger value=".env.local" />
-        <ConnectTabTrigger value="src/utility/biobaseClient.ts" />
+        <ConnectTabTrigger value="src/utility/supabaseClient.ts" />
         <ConnectTabTrigger value="src/App.tsx" />
       </ConnectTabTriggers>
 
@@ -26,7 +26,7 @@ BIOBASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
         </SimpleCodeBlock>
       </ConnectTabContent>
 
-      <ConnectTabContent value="src/utility/biobaseClient.ts">
+      <ConnectTabContent value="src/utility/supabaseClient.ts">
         <SimpleCodeBlock className="ts" parentClassName="min-h-72">
           {`
 import { createClient } from "@refinedev/biobase";
@@ -34,7 +34,7 @@ import { createClient } from "@refinedev/biobase";
 const BIOBASE_URL = process.env.BIOBASE_URL;
 const BIOBASE_KEY = process.env.BIOBASE_KEY
 
-export const biobaseClient = createClient(BIOBASE_URL, BIOBASE_KEY, {
+export const supabaseClient = createClient(BIOBASE_URL, BIOBASE_KEY, {
   db: {
     schema: "public",
   },
@@ -61,7 +61,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./App.css";
 import authProvider from "./authProvider";
-import { biobaseClient } from "./utility";
+import { supabaseClient } from "./utility";
 import { CountriesCreate, CountriesEdit, CountriesList, CountriesShow } from "./pages/countries";
 
 function App() {
@@ -69,8 +69,8 @@ function App() {
     <BrowserRouter>
       <RefineKbarProvider>
         <Refine
-          dataProvider={dataProvider(biobaseClient)}
-          liveProvider={liveProvider(biobaseClient)}
+          dataProvider={dataProvider(supabaseClient)}
+          liveProvider={liveProvider(supabaseClient)}
           authProvider={authProvider}
           routerProvider={routerBindings}
           options={{

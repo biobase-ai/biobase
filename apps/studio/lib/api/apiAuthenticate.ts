@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { readOnly } from './biobaseClient'
+import { readOnly } from './supabaseClient'
 import type { SupaResponse, User } from 'types'
 import { getAuth0Id, getAuthUser, getIdentity } from 'lib/gotrue'
 

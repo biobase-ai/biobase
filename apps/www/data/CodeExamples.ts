@@ -18,9 +18,9 @@ export const createUserExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const biobaseUrl = 'https://chat-room.supabase.co'
+  const supabaseUrl = 'https://chat-room.supabase.co'
   const biobaseKey = 'public-anon-key'
-  const biobase = createClient(biobaseUrl, biobaseKey)
+  const biobase = createClient(supabaseUrl, biobaseKey)
   
   // Create a new user
   const { user, error } = await biobase.auth.signUp({
@@ -40,9 +40,9 @@ export const subscribeExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const biobaseUrl = 'https://chat-room.supabase.co'
+  const supabaseUrl = 'https://chat-room.supabase.co'
   const biobaseKey = 'public-anon-key'
-  const biobase = createClient(biobaseUrl, biobaseKey)
+  const biobase = createClient(supabaseUrl, biobaseKey)
   
   // Get notified of all new chat messages
   const realtime = biobase
@@ -64,9 +64,9 @@ export const readExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const biobaseUrl = 'https://chat-room.supabase.co'
+  const supabaseUrl = 'https://chat-room.supabase.co'
   const biobaseKey = 'public-anon-key'
-  const biobase = createClient(biobaseUrl, biobaseKey)
+  const biobase = createClient(supabaseUrl, biobaseKey)
   
   // Get public rooms and their messages
   const publicRooms = await biobase
@@ -89,9 +89,9 @@ export const createExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const biobaseUrl = 'https://chat-room.supabase.co'
+  const supabaseUrl = 'https://chat-room.supabase.co'
   const biobaseKey = 'public-anon-key'
-  const biobase = createClient(biobaseUrl, biobaseKey)
+  const biobase = createClient(supabaseUrl, biobaseKey)
   
   // Create a new chat room
   const newRoom = await biobase
@@ -110,9 +110,9 @@ export const updateExample: ExampleProps = {
   import { createClient } from '@supabase/supabase-js'
   
   // Initialize 
-  const biobaseUrl = 'https://chat-room.supabase.co'
+  const supabaseUrl = 'https://chat-room.supabase.co'
   const biobaseKey = 'public-anon-key'
-  const biobase = createClient(biobaseUrl, biobaseKey)
+  const biobase = createClient(supabaseUrl, biobaseKey)
   
   // Update multiple users
   const updatedUsers = await biobase
@@ -140,9 +140,9 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const biobaseUrl = 'https://chat-room.supabase.co'
+//   const supabaseUrl = 'https://chat-room.supabase.co'
 //   const biobaseKey = 'public-anon-key'
-//   const biobase = createClient(biobaseUrl, biobaseKey)
+//   const biobase = createClient(supabaseUrl, biobaseKey)
 
 //   // Get notified of all new chat messages
 //   const realtime = biobase
@@ -156,9 +156,9 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const biobaseUrl = 'https://chat-room.supabase.co'
+//   const supabaseUrl = 'https://chat-room.supabase.co'
 //   const biobaseKey = 'public-anon-key'
-//   const biobase = createClient(biobaseUrl, biobaseKey)
+//   const biobase = createClient(supabaseUrl, biobaseKey)
 
 //   // Get public rooms and their messages
 //   const publicRooms = await biobase
@@ -173,9 +173,9 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const biobaseUrl = 'https://chat-room.supabase.co'
+//   const supabaseUrl = 'https://chat-room.supabase.co'
 //   const biobaseKey = 'public-anon-key'
-//   const biobase = createClient(biobaseUrl, biobaseKey)
+//   const biobase = createClient(supabaseUrl, biobaseKey)
 
 //   // Create a new chat room
 //   const newRoom = await biobase
@@ -186,9 +186,9 @@ export const updateExample: ExampleProps = {
 //   import { createClient } from '@supabase/supabase-js'
 
 //   // Initialize
-//   const biobaseUrl = 'https://chat-room.supabase.co'
+//   const supabaseUrl = 'https://chat-room.supabase.co'
 //   const biobaseKey = 'public-anon-key'
-//   const biobase = createClient(biobaseUrl, biobaseKey)
+//   const biobase = createClient(supabaseUrl, biobaseKey)
 
 //   // Update multiple users
 //   const updatedUsers = await biobase
@@ -225,9 +225,9 @@ export const updateExample: ExampleProps = {
 
 //   <script>
 //     // Initialize
-//     const biobaseUrl = 'https://chat-room.supabase.co'
+//     const supabaseUrl = 'https://chat-room.supabase.co'
 //     const biobaseKey = 'public-anon-key'
-//     const biobase = Biobase.createClient(biobaseUrl, biobaseKey)
+//     const biobase = Biobase.createClient(supabaseUrl, biobaseKey)
 
 //     // Get public rooms and their messages
 //     biobase

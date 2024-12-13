@@ -53,7 +53,7 @@ hideToc: true
   <StepHikeCompact.Step step={4}>
     <StepHikeCompact.Details title="Create the Biobase client">
 
-    Create a `/src/lib` directory in your SvelteKit app, create a file called `biobaseClient.js` and add the following code to initialize the Biobase client with your project URL and public API (anon) key:
+    Create a `/src/lib` directory in your SvelteKit app, create a file called `supabaseClient.js` and add the following code to initialize the Biobase client with your project URL and public API (anon) key:
 
     <ProjectConfigVariables variable="url" />
     <ProjectConfigVariables variable="anonKey" />
@@ -62,7 +62,7 @@ hideToc: true
 
     <StepHikeCompact.Code>
 
-      ```js src/lib/biobaseClient.js
+      ```js src/lib/supabaseClient.js
         import { createClient } from '@supabase/supabase-js'
 
         export const biobase = createClient('https://<project>.supabase.co', '<your-anon-key>')
@@ -84,7 +84,7 @@ hideToc: true
 
 
       ```js src/routes/+page.server.js
-        import { biobase } from "$lib/biobaseClient";
+        import { biobase } from "$lib/supabaseClient";
 
         export async function load() {
           const { data } = await biobase.from("countries").select();

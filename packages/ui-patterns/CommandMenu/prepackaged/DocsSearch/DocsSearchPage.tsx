@@ -67,13 +67,13 @@ const IconContainer = (
 )
 
 const DocsSearchPage = () => {
-  const biobaseClient = useSupabaseClient()
+  const supabaseClient = useSupabaseClient()
   const {
     searchState: state,
     handleDocsSearch: handleSearch,
     handleDocsSearchDebounced: debouncedSearch,
     resetSearch,
-  } = useDocsSearch(biobaseClient)
+  } = useDocsSearch(supabaseClient)
   const setIsOpen = useSetCommandMenuOpen()
   const setQuery = useSetQuery()
   const query = useQuery()

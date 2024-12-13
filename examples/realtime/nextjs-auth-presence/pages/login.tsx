@@ -4,7 +4,7 @@ import type { NextPage } from 'next'
 import styles from '../styles/Home.module.css'
 
 const LoginPage: NextPage = () => {
-  const biobaseClient = useSupabaseClient()
+  const supabaseClient = useSupabaseClient()
   const user = useUser()
 
   if (!user) {
@@ -13,7 +13,7 @@ const LoginPage: NextPage = () => {
         <Auth
           redirectTo="http://localhost:3000/"
           appearance={{ theme: ThemeSupa }}
-          biobaseClient={biobaseClient}
+          supabaseClient={supabaseClient}
         />
       </main>
     )
@@ -21,7 +21,7 @@ const LoginPage: NextPage = () => {
 
   return (
     <>
-      <button onClick={() => biobaseClient.auth.signOut()}>Sign out</button>
+      <button onClick={() => supabaseClient.auth.signOut()}>Sign out</button>
       <p>user:</p>
       <pre>{JSON.stringify(user, null, 2)}</pre>
     </>

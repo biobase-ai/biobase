@@ -22,7 +22,7 @@ Deno.serve(async (req) => {
     // Biobase API URL - env var exported by default when deployed.
     Deno.env.get('BIOBASE_URL') ?? '',
     // Biobase API SERVICE ROLE KEY - env var exported by default when deployed.
-    Deno.env.get('BIOBASE_SERVICE_ROLE_KEY') ?? ''
+    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
   )
 
   // Construct image url from storage

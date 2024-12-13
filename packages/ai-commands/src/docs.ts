@@ -7,7 +7,7 @@ import type { Message } from './types'
 
 export async function clippy(
   openai: OpenAI,
-  biobaseClient: SupabaseClient<any, 'public', any>,
+  supabaseClient: SupabaseClient<any, 'public', any>,
   messages: Message[]
 ) {
   // TODO: better sanitization
@@ -55,7 +55,7 @@ export async function clippy(
 
   const [{ embedding }] = embeddingResponse.data
 
-  const { error: matchError, data: pageSections } = await biobaseClient
+  const { error: matchError, data: pageSections } = await supabaseClient
     .rpc('match_page_sections_v2', {
       embedding,
       match_threshold: 0.78,

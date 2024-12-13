@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import { Auth } from '@supabase/auth-ui-react'
-import { biobase } from './utils/biobaseClient'
+import { biobase } from './utils/supabaseClient'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Auth.UserContextProvider biobaseClient={biobase}>
+    <Auth.UserContextProvider supabaseClient={biobase}>
       <App />
     </Auth.UserContextProvider>
   </React.StrictMode>,

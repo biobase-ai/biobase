@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { biobase } from "../biobaseClient";
+  import { biobase } from "../supabaseClient";
 
   let loading = false
   let email = ''

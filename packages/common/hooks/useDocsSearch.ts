@@ -188,7 +188,7 @@ function reducer(state: SearchState, action: Action): SearchState {
   }
 }
 
-const useDocsSearch = (biobaseClient: SupabaseClient) => {
+const useDocsSearch = (supabaseClient: SupabaseClient) => {
   const [state, dispatch] = useReducer(reducer, { status: 'initial', key: 0 })
   const key = useRef(0)
 
@@ -200,7 +200,7 @@ const useDocsSearch = (biobaseClient: SupabaseClient) => {
 
       let sourcesLoaded = 0
 
-      biobaseClient
+      supabaseClient
         .rpc('docs_search_fts', { query: query.trim() })
         .then(({ data, error }: { data: any; error: any }) => {
           sourcesLoaded += 1
@@ -248,7 +248,7 @@ const useDocsSearch = (biobaseClient: SupabaseClient) => {
           })
         })
     },
-    [biobaseClient]
+    [supabaseClient]
   )
 
   const debouncedSearch = useMemo(() => debounce(handleSearch, 150), [handleSearch])

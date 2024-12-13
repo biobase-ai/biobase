@@ -59,14 +59,14 @@ Deno.serve(async (req) => {
     console.log(parsedData);
     const image = parsedData.images[0];
 
-    const biobaseClient = createClient(
+    const supabaseClient = createClient(
       // Biobase API URL - env var exported by default.
       Deno.env.get("BIOBASE_URL")!,
       // Biobase API ANON KEY - env var exported by default.
-      Deno.env.get("BIOBASE_SERVICE_ROLE_KEY")!,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
     );
 
-    const { data: upload, error: uploadError } = await biobaseClient.storage
+    const { data: upload, error: uploadError } = await supabaseClient.storage
       .from("images")
       .upload(`${$metadata.requestId ?? ""}.png`, decode(image), {
         contentType: "image/png",
@@ -76,7 +76,7 @@ Deno.serve(async (req) => {
     if (!upload) {
       return Response.json(uploadError);
     }
-    const { data } = biobaseClient
+    const { data } = supabaseClient
       .storage
       .from("images")
       .getPublicUrl(upload.path!);

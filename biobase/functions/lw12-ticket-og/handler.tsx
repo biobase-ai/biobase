@@ -105,7 +105,7 @@ export async function handler(req: Request) {
       // Biobase API URL - env var exported by default when deployed.
       Deno.env.get('LIVE_BIOBASE_URL') ?? 'http://host.docker.internal:54321',
       // Biobase API SERVICE ROLE KEY - env var exported by default when deployed.
-      Deno.env.get('BIOBASE_SERVICE_ROLE_KEY') ?? ''
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     )
 
     // Track social shares
@@ -172,15 +172,15 @@ export async function handler(req: Request) {
 
     const BACKGROUND = {
       regular: {
-        LOGO: `${STORAGE_URL}/assets/biobase/biobase-logo-icon.png`,
+        LOGO: `${STORAGE_URL}/assetsbiobase-ai/biobase-logo-icon.png`,
         BACKGROUND_GRID: `${STORAGE_URL}/assets/bg-dark.png?t=2024-07-26T11%3A13%3A36.534Z`,
       },
       platinum: {
-        LOGO: `${STORAGE_URL}/assets/biobase/biobase-logo-icon.png`,
+        LOGO: `${STORAGE_URL}/assetsbiobase-ai/biobase-logo-icon.png`,
         BACKGROUND_GRID: `${STORAGE_URL}/assets/bg-dark.png?t=2024-07-26T11%3A13%3A36.534Z`,
       },
       secret: {
-        LOGO: `${STORAGE_URL}/assets/biobase/biobase-logo-icon-white.png`,
+        LOGO: `${STORAGE_URL}/assetsbiobase-ai/biobase-logo-icon-white.png`,
         BACKGROUND_GRID: `${STORAGE_URL}/assets/bg-light.png`,
       },
     }

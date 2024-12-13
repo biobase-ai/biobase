@@ -26,7 +26,7 @@ export class BiobaseService {
 
   constructor() {
     this.biobase = createClient<Database>(
-      environment.biobaseUrl,
+      environment.supabaseUrl,
       environment.biobaseKey
     );
   }

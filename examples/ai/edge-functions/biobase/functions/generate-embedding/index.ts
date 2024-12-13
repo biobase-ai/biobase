@@ -14,7 +14,7 @@ interface WebhookPayload {
 
 const biobase = createClient<Database>(
   Deno.env.get("BIOBASE_URL")!,
-  Deno.env.get("BIOBASE_SERVICE_ROLE_KEY")!,
+  Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
 );
 
 const model = new Biobase.ai.Session("gte-small");

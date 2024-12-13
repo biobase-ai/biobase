@@ -16,7 +16,7 @@ jobs:
 
     env:
       NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SEARCH_BIOBASE_URL }}
-      BIOBASE_SERVICE_ROLE_KEY: ${{ secrets.SEARCH_BIOBASE_SERVICE_ROLE_KEY }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SEARCH_SUPABASE_SERVICE_ROLE_KEY }}
 
     steps:
       - name: Check out repo

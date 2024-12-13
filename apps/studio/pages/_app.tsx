@@ -100,7 +100,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
     // eslint-disable-next-line react/display-name
     () => (props: any) => {
       return IS_PLATFORM ? (
-        <SessionContextProvider biobaseClient={biobase as any}>
+        <SessionContextProvider supabaseClient={biobase as any}>
           <AuthProvider>{props.children}</AuthProvider>
         </SessionContextProvider>
       ) : (

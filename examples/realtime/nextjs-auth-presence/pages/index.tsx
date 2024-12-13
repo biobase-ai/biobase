@@ -5,14 +5,14 @@ import type { GetServerSidePropsContext, NextPage } from 'next'
 import { useEffect, useState } from 'react'
 
 const HomePage: NextPage = () => {
-  const biobaseClient = useSupabaseClient()
+  const supabaseClient = useSupabaseClient()
   const this_user = useUser()
   const [userState, setUserState] = useState<RealtimePresenceState>({})
 
   useEffect(() => {
     console.log('user: ', this_user)
 
-    const channel = biobaseClient.channel('online-users', {
+    const channel = supabaseClient.channel('online-users', {
       config: {
         presence: {
           key: this_user?.email ? this_user?.email : 'Unknown',
@@ -43,7 +43,7 @@ const HomePage: NextPage = () => {
   }, [])
   return (
     <>
-      <button onClick={() => biobaseClient.auth.signOut()}>Sign out</button>
+      <button onClick={() => supabaseClient.auth.signOut()}>Sign out</button>
 
       <p> List of Currently Logged in Users: </p>
       {Object.keys(userState).map((key) => (

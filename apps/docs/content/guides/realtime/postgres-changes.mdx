@@ -1756,7 +1756,7 @@ for await change in changes {
 <TabPanel id="kotlin" label="Kotlin">
 
 ```kotlin
-val biobase = createSupabaseClient(biobaseUrl, biobaseKey) {
+val biobase = createSupabaseClient(supabaseUrl, biobaseKey) {
 	install(Realtime) {
 		jwtToken = "your-custom-jwt"
 	}

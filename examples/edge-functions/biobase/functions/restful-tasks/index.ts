@@ -15,8 +15,8 @@ interface Task {
   status: number
 }
 
-async function getTask(biobaseClient: SupabaseClient, id: string) {
-  const { data: task, error } = await biobaseClient.from('tasks').select('*').eq('id', id)
+async function getTask(supabaseClient: SupabaseClient, id: string) {
+  const { data: task, error } = await supabaseClient.from('tasks').select('*').eq('id', id)
   if (error) throw error
 
   return new Response(JSON.stringify({ task }), {
@@ -25,8 +25,8 @@ async function getTask(biobaseClient: SupabaseClient, id: string) {
   })
 }
 
-async function getAllTasks(biobaseClient: SupabaseClient) {
-  const { data: tasks, error } = await biobaseClient.from('tasks').select('*')
+async function getAllTasks(supabaseClient: SupabaseClient) {
+  const { data: tasks, error } = await supabaseClient.from('tasks').select('*')
   if (error) throw error
 
   return new Response(JSON.stringify({ tasks }), {
@@ -35,8 +35,8 @@ async function getAllTasks(biobaseClient: SupabaseClient) {
   })
 }
 
-async function deleteTask(biobaseClient: SupabaseClient, id: string) {
-  const { error } = await biobaseClient.from('tasks').delete().eq('id', id)
+async function deleteTask(supabaseClient: SupabaseClient, id: string) {
+  const { error } = await supabaseClient.from('tasks').delete().eq('id', id)
   if (error) throw error
 
   return new Response(JSON.stringify({}), {
@@ -45,8 +45,8 @@ async function deleteTask(biobaseClient: SupabaseClient, id: string) {
   })
 }
 
-async function updateTask(biobaseClient: SupabaseClient, id: string, task: Task) {
-  const { error } = await biobaseClient.from('tasks').update(task).eq('id', id)
+async function updateTask(supabaseClient: SupabaseClient, id: string, task: Task) {
+  const { error } = await supabaseClient.from('tasks').update(task).eq('id', id)
   if (error) throw error
 
   return new Response(JSON.stringify({ task }), {
@@ -55,8 +55,8 @@ async function updateTask(biobaseClient: SupabaseClient, id: string, task: Task)
   })
 }
 
-async function createTask(biobaseClient: SupabaseClient, task: Task) {
-  const { error } = await biobaseClient.from('tasks').insert(task)
+async function createTask(supabaseClient: SupabaseClient, task: Task) {
+  const { error } = await supabaseClient.from('tasks').insert(task)
   if (error) throw error
 
   return new Response(JSON.stringify({ task }), {
@@ -75,7 +75,7 @@ Deno.serve(async (req) => {
 
   try {
     // Create a Biobase client with the Auth context of the logged in user.
-    const biobaseClient = createClient(
+    const supabaseClient = createClient(
       // Biobase API URL - env var exported by default.
       Deno.env.get('BIOBASE_URL') ?? '',
       // Biobase API ANON KEY - env var exported by default.
@@ -103,17 +103,17 @@ Deno.serve(async (req) => {
     // call relevant method based on method and id
     switch (true) {
       case id && method === 'GET':
-        return getTask(biobaseClient, id as string)
+        return getTask(supabaseClient, id as string)
       case id && method === 'PUT':
-        return updateTask(biobaseClient, id as string, task)
+        return updateTask(supabaseClient, id as string, task)
       case id && method === 'DELETE':
-        return deleteTask(biobaseClient, id as string)
+        return deleteTask(supabaseClient, id as string)
       case method === 'POST':
-        return createTask(biobaseClient, task)
+        return createTask(supabaseClient, task)
       case method === 'GET':
-        return getAllTasks(biobaseClient)
+        return getAllTasks(supabaseClient)
       default:
-        return getAllTasks(biobaseClient)
+        return getAllTasks(supabaseClient)
     }
   } catch (error) {
     console.error(error)

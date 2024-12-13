@@ -10,7 +10,7 @@ export const uploadAttachment = async (
   image: File,
   getUrl: boolean = true
 ) => {
-  const biobaseClient = createClient(SUPPORT_API_URL, SUPPORT_API_KEY, {
+  const supabaseClient = createClient(SUPPORT_API_URL, SUPPORT_API_KEY, {
     auth: {
       persistSession: false,
       autoRefreshToken: false,
@@ -27,7 +27,7 @@ export const uploadAttachment = async (
 
   const options = { cacheControl: '3600' }
 
-  const { data: file, error } = await biobaseClient.storage
+  const { data: file, error } = await supabaseClient.storage
     .from(bucket)
     .upload(fileName, image, options)
 
@@ -37,7 +37,7 @@ export const uploadAttachment = async (
   }
 
   if (file && getUrl) {
-    const { data } = await biobaseClient.storage.from(bucket).getPublicUrl(file.path)
+    const { data } = await supabaseClient.storage.from(bucket).getPublicUrl(file.path)
     return data?.publicUrl
   }
 

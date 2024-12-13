@@ -6,8 +6,8 @@ import { Database } from '../common/database-types.ts'
 import { ApplicationError, UserError } from '../common/errors.ts'
 
 const openAiKey = Deno.env.get('OPENAI_API_KEY')
-const biobaseUrl = Deno.env.get('BIOBASE_URL')
-const biobaseServiceKey = Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')
+const supabaseUrl = Deno.env.get('BIOBASE_URL')
+const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
 
 export const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -25,12 +25,12 @@ serve(async (req) => {
       throw new ApplicationError('Missing environment variable OPENAI_API_KEY')
     }
 
-    if (!biobaseUrl) {
+    if (!supabaseUrl) {
       throw new ApplicationError('Missing environment variable BIOBASE_URL')
     }
 
-    if (!biobaseServiceKey) {
-      throw new ApplicationError('Missing environment variable BIOBASE_SERVICE_ROLE_KEY')
+    if (!supabaseServiceKey) {
+      throw new ApplicationError('Missing environment variable SUPABASE_SERVICE_ROLE_KEY')
     }
 
     const requestData = await req.json()
@@ -50,7 +50,7 @@ serve(async (req) => {
 
     const sanitizedQuery = query.trim()
 
-    const biobaseClient = createClient<Database>(biobaseUrl, biobaseServiceKey)
+    const supabaseClient = createClient<Database>(supabaseUrl, supabaseServiceKey)
 
     const configuration = new Configuration({ apiKey: openAiKey })
     const openai = new OpenAIApi(configuration)
@@ -77,7 +77,7 @@ serve(async (req) => {
     }
 
     const [{ embedding }] = embeddingResponse.data.data
-    const { error: matchError, data: pageSections } = await biobaseClient
+    const { error: matchError, data: pageSections } = await supabaseClient
       .rpc('match_page_sections_v2', {
         embedding,
         match_threshold: 0.78,
@@ -94,7 +94,7 @@ serve(async (req) => {
       .map<number>(({ page_id }) => page_id)
       .filter((value, index, array) => array.indexOf(value) === index)
 
-    const { error: fetchPagesError, data: pages } = await biobaseClient
+    const { error: fetchPagesError, data: pages } = await supabaseClient
       .from('page')
       .select('id, type, path, meta')
       .in('id', uniquePageIds)

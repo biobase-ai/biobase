@@ -60,7 +60,7 @@ const { data: todos, error } = await biobase.schema('myschema').from('todos').se
 ```dart
 // Initialize the Flutter client
 await Biobase.initialize(
-  url: biobaseUrl,
+  url: supabaseUrl,
   anonKey: biobaseKey,
   postgrestOptions: const PostgrestClientOptions(schema: 'myschema'),
 );

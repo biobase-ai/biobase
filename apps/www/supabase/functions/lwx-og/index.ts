@@ -4,8 +4,8 @@
 
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 
-import { handler } from './handler.tsx'
+import { handler } from './handler.jsx'
 
-console.log(`Function "lw11-og" up and running`)
+console.log(`Function "lwx-og" up and running`)
 
 serve(handler)

@@ -577,7 +577,7 @@ functions:
         isSpotlight: true
         code: |
           ```dart
-          final biobase = SupabaseClient(biobaseUrl, serviceRoleKey);
+          final biobase = SupabaseClient(supabaseUrl, serviceRoleKey);
           ```
   - id: get-user-by-id
     title: 'getUserById()'

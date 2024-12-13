@@ -1,6 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
-  import { biobase } from "../biobaseClient"
+  import { biobase } from "../supabaseClient"
 
   export let size: number
   export let url: string

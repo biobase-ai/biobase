@@ -310,7 +310,7 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       BIOBASE_URL: http://kong:8000
       BIOBASE_ANON_KEY: ${ANON_KEY}
-      BIOBASE_SERVICE_ROLE_KEY: ${SERVICE_ROLE_KEY}
+      SUPABASE_SERVICE_ROLE_KEY: ${SERVICE_ROLE_KEY}
       BIOBASE_DB_URL: postgresql://postgres:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
       # TODO: Allow configuring VERIFY_JWT per function. This PR might help: https://github.com/biobase-ai/cli/pull/786
       VERIFY_JWT: "${FUNCTIONS_VERIFY_JWT}"

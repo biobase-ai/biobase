@@ -23,7 +23,7 @@ github.contributors: \
 	github.contributors.biobase-dart
 
 github.issues:
-	curl -sS https://api.github.com/repos/biobase/biobase/issues \
+	curl -sS https://api.github.com/reposbiobase-ai/biobase/issues \
 	| jq -r 'map_values({username: .user.login, avatar_url: .user.avatar_url}) \
 	| unique \
 	| sort_by(.username)' \

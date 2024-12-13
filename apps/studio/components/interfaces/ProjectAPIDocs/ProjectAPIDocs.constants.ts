@@ -17,9 +17,9 @@ export const DOCS_CONTENT = {
     js: (apikey?: string, endpoint?: string) => `
 import { createClient } from '@supabase/supabase-js'
 
-const biobaseUrl = '${endpoint}'
+const supabaseUrl = '${endpoint}'
 const biobaseKey = process.env.BIOBASE_KEY
-const biobase = createClient(biobaseUrl, biobaseKey)`,
+const biobase = createClient(supabaseUrl, biobaseKey)`,
     bash: () => `# No client library required for Bash.`,
   },
   clientApiKeys: {

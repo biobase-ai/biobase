@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 
 export default function Avatar({ url, size, onUpload }) {
   const [avatarUrl, setAvatarUrl] = useState(null)

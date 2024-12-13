@@ -50,10 +50,10 @@ on the browser, and that's completely fine since we have [Row Level Security](/d
 ```js src/biobase.ts"
 import { createClient } from '@supabase/supabase-js';
 
-const biobaseUrl = process.env.VUE_APP_BIOBASE_URL as string;
+const supabaseUrl = process.env.VUE_APP_BIOBASE_URL as string;
 const biobaseAnonKey = process.env.VUE_APP_BIOBASE_ANON_KEY as string;
 
-export const biobase = createClient(biobaseUrl, biobaseAnonKey);
+export const biobase = createClient(supabaseUrl, biobaseAnonKey);
 ```
 
 ### Set up a login route

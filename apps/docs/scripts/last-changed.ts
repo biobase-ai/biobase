@@ -47,7 +47,7 @@ type SectionWithChecksum = Omit<Section, 'heading'> &
 
 const REQUIRED_ENV_VARS = {
   BIOBASE_URL: 'NEXT_PUBLIC_SUPABASE_URL',
-  SERVICE_ROLE_KEY: 'BIOBASE_SERVICE_ROLE_KEY',
+  SERVICE_ROLE_KEY: 'SUPABASE_SERVICE_ROLE_KEY',
 } as const
 
 async function main() {

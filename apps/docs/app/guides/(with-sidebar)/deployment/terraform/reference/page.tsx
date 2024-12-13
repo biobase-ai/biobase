@@ -376,14 +376,14 @@ const TerraformReferencePage = async () => {
       . Resources are infrastructure objects, such as a Biobase project, that you can declaratively
       configure. Data sources are sources of information about your Biobase instances.
       <ProviderSettings
-        schema={schema.provider_schemas['registry.terraform.io/biobase/biobase'].provider}
+        schema={schema.provider_schemas['registry.terraform.iobiobase-ai/biobase'].provider}
       />
       <Resources
-        schema={schema.provider_schemas['registry.terraform.io/biobase/biobase'].resource_schemas}
+        schema={schema.provider_schemas['registry.terraform.iobiobase-ai/biobase'].resource_schemas}
       />
       <DataSources
         schema={
-          schema.provider_schemas['registry.terraform.io/biobase/biobase'].data_source_schemas
+          schema.provider_schemas['registry.terraform.iobiobase-ai/biobase'].data_source_schemas
         }
       />
     </GuideTemplate>

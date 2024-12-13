@@ -33,8 +33,8 @@ export const config = {
 }
 
 const openAiKey = process.env.OPENAI_API_KEY
-const biobaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
-const biobaseServiceKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
+const supabaseServiceKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
 
 export default async function handler(req: NextRequest) {
   if (!openAiKey) {
@@ -49,7 +49,7 @@ export default async function handler(req: NextRequest) {
     )
   }
 
-  if (!biobaseUrl) {
+  if (!supabaseUrl) {
     return new Response(
       JSON.stringify({
         error:
@@ -62,7 +62,7 @@ export default async function handler(req: NextRequest) {
     )
   }
 
-  if (!biobaseServiceKey) {
+  if (!supabaseServiceKey) {
     return new Response(
       JSON.stringify({
         error:
@@ -104,10 +104,10 @@ async function handlePost(request: NextRequest) {
     throw new UserError('Missing messages in request data')
   }
 
-  const biobaseClient = new SupabaseClient(biobaseUrl, biobaseServiceKey)
+  const supabaseClient = new SupabaseClient(supabaseUrl, supabaseServiceKey)
 
   try {
-    const response = await clippy(openai, biobaseClient, messages)
+    const response = await clippy(openai, supabaseClient, messages)
 
     // Proxy the streamed SSE response from OpenAI
     return new Response(response.body, {

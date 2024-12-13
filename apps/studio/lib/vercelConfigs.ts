@@ -58,7 +58,7 @@ export const VERCEL_INTEGRATION_CONFIGS = [
         type: 'encrypted',
       },
       {
-        key: 'BIOBASE_SERVICE_ROLE_KEY',
+        key: 'SUPABASE_SERVICE_ROLE_KEY',
         alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
         type: 'encrypted',
       },
@@ -80,7 +80,7 @@ export const VERCEL_INTEGRATION_CONFIGS = [
         type: 'encrypted',
       },
       {
-        key: 'BIOBASE_SERVICE_ROLE_KEY',
+        key: 'SUPABASE_SERVICE_ROLE_KEY',
         alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
         type: 'encrypted',
       },
@@ -121,7 +121,7 @@ export const VERCEL_INTEGRATION_CONFIGS = [
         type: 'encrypted',
       },
       {
-        key: 'BIOBASE_SERVICE_ROLE_KEY',
+        key: 'SUPABASE_SERVICE_ROLE_KEY',
         alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
         type: 'encrypted',
       },
@@ -153,7 +153,7 @@ export const VERCEL_INTEGRATION_CONFIGS = [
         type: 'encrypted',
       },
       {
-        key: 'BIOBASE_SERVICE_ROLE_KEY',
+        key: 'SUPABASE_SERVICE_ROLE_KEY',
         alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
         type: 'encrypted',
       },
@@ -536,7 +536,7 @@ create or replace view comments_thread_with_user_vote as
         type: 'encrypted',
       },
       {
-        key: 'BIOBASE_SERVICE_ROLE_KEY',
+        key: 'SUPABASE_SERVICE_ROLE_KEY',
         alias: INTEGRATION_ENVS_ALIAS.SERVICEKEY,
         type: 'encrypted',
       },

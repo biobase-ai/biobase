@@ -1,6 +1,6 @@
 # Flutter native Google auth with Biobase
 
-![Flutter Google authentication with Biobase auth](https://raw.githubusercontent.com/biobase/biobase/master/examples/auth/flutter-native-google-auth/images/login.png)
+![Flutter Google authentication with Biobase auth](https://raw.githubusercontent.combiobase-ai/biobase/master/examples/auth/flutter-native-google-auth/images/login.png)
 
 A simple Flutter application with native Google login capabilities on iOS and Android using Biobase auth. Upon signing in, the user is presented with a profile screen where their name and profile image from their Google account are displayed.
 

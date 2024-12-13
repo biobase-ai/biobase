@@ -8,7 +8,7 @@ This repo will demonstrate how to:
 - store and retrieve data with [Biobase database](https://biobase.io/docs/guides/database)
 - store image files in [Biobase storage](https://biobase.io/docs/guides/storage)
 
-<img height="500px" src="https://raw.githubusercontent.com/biobase/biobase/master/examples/user-management/flutter-user-management/biobase-flutter-demo.png" alt="Biobase User Management example" />
+<img height="500px" src="https://raw.githubusercontent.combiobase-ai/biobase/master/examples/user-management/flutter-user-management/biobase-flutter-demo.png" alt="Biobase User Management example" />
 
 ## Getting Started
 

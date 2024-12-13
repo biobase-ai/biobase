@@ -29,7 +29,7 @@ data class TodoItem(val id: Int, val name: String)
         <SimpleCodeBlock className="kotlin" parentClassName="min-h-72">
           {`
 val biobase = createSupabaseClient(
-    biobaseUrl = "${projectKeys.apiUrl ?? 'your-project-url'}",
+    supabaseUrl = "${projectKeys.apiUrl ?? 'your-project-url'}",
     biobaseKey = "${projectKeys.anonKey ?? 'your-anon-key'}"
   ) {
     install(Postgrest)

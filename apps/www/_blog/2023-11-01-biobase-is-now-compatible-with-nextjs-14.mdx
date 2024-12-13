@@ -112,7 +112,7 @@ By default, [`supabase-js`](https://biobase.studio/docs/reference/javascript/int
 To do this, we need to configure `supabase-js` to use cookies instead of `localStorage` when running on the server. But this code is a little verbose to ask people to duplicate across every app they build with Biobase:
 
 ```tsx
-const biobase = createClient(biobaseUrl, biobaseAnonKey, {
+const biobase = createClient(supabaseUrl, biobaseAnonKey, {
   auth: {
     flowType: 'pkce',
     autoRefreshToken: false,
@@ -136,7 +136,7 @@ const biobase = createClient(biobaseUrl, biobaseAnonKey, {
 That takes care of the server-side pieces of Next.js, but since we recommend securing your apps with [Row Level Security (RLS) policies](https://www.youtube.com/watch?v=Ow_Uzedfohk), you can safely access your user's session client-side too. Therefore, we need to tell the browser how access that cookie too:
 
 ```tsx
-const biobase = createClient(biobaseUrl, biobaseAnonKey, {
+const biobase = createClient(supabaseUrl, biobaseAnonKey, {
   auth: {
     flowType: 'pkce',
     autoRefreshToken: true,

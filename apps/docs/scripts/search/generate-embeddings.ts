@@ -21,7 +21,7 @@ async function generateEmbeddings() {
 
   const requiredEnvVars = [
     'NEXT_PUBLIC_SUPABASE_URL',
-    'BIOBASE_SERVICE_ROLE_KEY',
+    'SUPABASE_SERVICE_ROLE_KEY',
     'OPENAI_API_KEY',
     'NEXT_PUBLIC_MISC_USE_URL',
     'NEXT_PUBLIC_MISC_USE_ANON_KEY',
@@ -38,10 +38,10 @@ async function generateEmbeddings() {
     )
   }
 
-  const biobaseClient = createClient(
+  const supabaseClient = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
     // eslint-disable-next-line turbo/no-undeclared-env-vars
-    process.env.BIOBASE_SERVICE_ROLE_KEY,
+    process.env.SUPABASE_SERVICE_ROLE_KEY,
     {
       auth: {
         persistSession: false,
@@ -83,7 +83,7 @@ async function generateEmbeddings() {
       } = embeddingSource.process()
 
       // Check for existing page in DB and compare checksums
-      const { error: fetchPageError, data: existingPage } = await biobaseClient
+      const { error: fetchPageError, data: existingPage } = await supabaseClient
         .from('page')
         .select('id, path, checksum')
         .filter('path', 'eq', path)
@@ -98,7 +98,7 @@ async function generateEmbeddings() {
       if (!shouldRefresh && existingPage?.checksum === checksum) {
         // No content/embedding update required on this page
         // Update other meta info
-        const { error: updatePageError } = await biobaseClient
+        const { error: updatePageError } = await supabaseClient
           .from('page')
           .update({
             type,
@@ -125,7 +125,7 @@ async function generateEmbeddings() {
           console.log(`[${path}] Refresh flag set, removing old page sections and their embeddings`)
         }
 
-        const { error: deletePageSectionError } = await biobaseClient
+        const { error: deletePageSectionError } = await supabaseClient
           .from('page_section')
           .delete()
           .filter('page_id', 'eq', existingPage.id)
@@ -137,7 +137,7 @@ async function generateEmbeddings() {
 
       // Create/update page record. Intentionally clear checksum until we
       // have successfully generated all page sections.
-      const { error: upsertPageError, data: page } = await biobaseClient
+      const { error: upsertPageError, data: page } = await supabaseClient
         .from('page')
         .upsert(
           {
@@ -176,7 +176,7 @@ async function generateEmbeddings() {
 
           const [responseData] = embeddingResponse.data
 
-          const { error: insertPageSectionError } = await biobaseClient
+          const { error: insertPageSectionError } = await supabaseClient
             .from('page_section')
             .insert({
               page_id: page.id,
@@ -208,7 +208,7 @@ async function generateEmbeddings() {
       }
 
       // Set page checksum so that we know this page was stored successfully
-      const { error: updatePageError } = await biobaseClient
+      const { error: updatePageError } = await supabaseClient
         .from('page')
         .update({ checksum })
         .filter('id', 'eq', page.id)
@@ -227,7 +227,7 @@ async function generateEmbeddings() {
   console.log(`Removing old pages and their sections`)
 
   // Delete pages that have been removed (and their sections via cascade)
-  const { error: deletePageError } = await biobaseClient
+  const { error: deletePageError } = await supabaseClient
     .from('page')
     .delete()
     .filter('version', 'neq', refreshVersion)

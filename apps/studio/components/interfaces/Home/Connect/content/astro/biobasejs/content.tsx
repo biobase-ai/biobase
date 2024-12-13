@@ -31,10 +31,10 @@ BIOBASE_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
           {`
 import { createClient } from "@supabase/supabase-js";
 
-const biobaseUrl = import.meta.env.BIOBASE_URL;
+const supabaseUrl = import.meta.env.BIOBASE_URL;
 const biobaseKey = import.meta.env.BIOBASE_KEY;
 
-export const biobase = createClient(biobaseUrl, biobaseKey);
+export const biobase = createClient(supabaseUrl, biobaseKey);
         `}
         </SimpleCodeBlock>
       </ConnectTabContent>

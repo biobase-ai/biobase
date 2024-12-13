@@ -21,7 +21,7 @@
 - [x] ফাইল স্টোরেজ. [ডক্স](https://biobase.studio/docs/guides/storage)
 - [x] ড্যাশবোর্ড
 
-![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
+![Biobase Dashboard](https://raw.githubusercontent.combiobase-ai/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## ডকুমেন্টেশন
 
@@ -45,7 +45,7 @@
 
 আমরা বর্তমানে পাবলিক বিটাতে আছি। প্রধান আপডেটের বিষয়ে অবহিত হওয়ার জন্য এই রেপোর "রিলিজ" দেখুন।
 
-<kbd><img src="https://raw.githubusercontent.com/biobase/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="এই রিপু দেখুন"/></kbd>
+<kbd><img src="https://raw.githubusercontent.combiobase-ai/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="এই রিপু দেখুন"/></kbd>
 
 ---
 

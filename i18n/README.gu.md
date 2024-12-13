@@ -17,7 +17,7 @@
 - [x] સ્ટોરેજ
 - [x] ફંક્શન્સ
 
-![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
+![Biobase Dashboard](https://raw.githubusercontent.combiobase-ai/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## દસ્તાવેજીકરણ
 
@@ -39,7 +39,7 @@
 
 અમે હાલમાં જાહેર બીટામાં છીએ. અગત્યના સુધારાઓ વિશે સૂચિત થવા માટે આ રીપોના "રિલિઝિસ" જુઓ.
 
-<kbd><img src="https://raw.githubusercontent.com/biobase/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="આ રીપો જુઓ"/></kbd>
+<kbd><img src="https://raw.githubusercontent.combiobase-ai/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="આ રીપો જુઓ"/></kbd>
 
 ---
 

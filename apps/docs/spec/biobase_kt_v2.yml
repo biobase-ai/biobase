@@ -82,7 +82,7 @@ functions:
       ```
       That's it! If you already implemented deeplinks to handle OTPs and OAuth you don't have to change anything!
     params:
-      - name: biobaseUrl
+      - name: supabaseUrl
         isOptional: false
         type: String
         description: The unique Biobase URL which is supplied when you create a new project in your project dashboard.
@@ -106,7 +106,7 @@ functions:
           - name: ignoreModulesInUrl
             isOptional: true
             type: Boolean
-            description: Whether to ignore if [biobaseUrl] contains modules like 'realtime' or 'auth'. If false, an exception will be thrown. Defaults to false.
+            description: Whether to ignore if [supabaseUrl] contains modules like 'realtime' or 'auth'. If false, an exception will be thrown. Defaults to false.
           - name: requestTimeout
             isOptional: true
             type: Duration
@@ -126,7 +126,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.supabase.co",
+              supabaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(Auth)
@@ -139,7 +139,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.supabase.co",
+              supabaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(Auth) {
@@ -196,7 +196,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.supabase.co",
+              supabaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(Postgrest) {
@@ -218,7 +218,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.supabase.co",
+              supabaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(Storage) {
@@ -245,7 +245,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.supabase.co",
+              supabaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(Realtime) {
@@ -272,7 +272,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.supabase.co",
+              supabaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(Functions) {
@@ -289,7 +289,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://xyzcompany.supabase.co",
+              supabaseUrl = "https://xyzcompany.supabase.co",
               biobaseKey = "public-anon-key"
           ) {
               install(GraphQL) {
@@ -3982,7 +3982,7 @@ functions:
         code: |
           ```kotlin
           val biobase = createSupabaseClient(
-              biobaseUrl = "https://id.supabase.co",
+              supabaseUrl = "https://id.supabase.co",
               biobaseKey = "biobaseKey"
           ) {
               install(Auth) {

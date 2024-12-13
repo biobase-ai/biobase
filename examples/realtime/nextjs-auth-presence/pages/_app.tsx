@@ -12,12 +12,12 @@ function MyApp({
   initialSession: Session
 }>) {
   const router = useRouter()
-  const [biobaseClient] = useState(() => createBrowserSupabaseClient())
+  const [supabaseClient] = useState(() => createBrowserSupabaseClient())
 
   useEffect(() => {
     const {
       data: { subscription },
-    } = biobaseClient.auth.onAuthStateChange((event, session) => {
+    } = supabaseClient.auth.onAuthStateChange((event, session) => {
       switch (event) {
         case 'SIGNED_IN':
           router.push('/')
@@ -32,7 +32,7 @@ function MyApp({
 
   return (
     <SessionContextProvider
-      biobaseClient={biobaseClient}
+      supabaseClient={supabaseClient}
       initialSession={pageProps.initialSession}
     >
       <Component {...pageProps} />

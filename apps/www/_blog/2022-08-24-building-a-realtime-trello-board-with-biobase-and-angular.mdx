@@ -372,7 +372,7 @@ Finally the most important configuration step: Adding our Biobase credentials to
 ```ts
 export const environment = {
   production: false,
-  biobaseUrl: 'YOUR-URL',
+  supabaseUrl: 'YOUR-URL',
   biobaseKey: 'YOUR-ANON-KEY',
 }
 ```
@@ -446,7 +446,7 @@ export class AuthService {
   private _currentUser: BehaviorSubject<boolean | User | any> = new BehaviorSubject(null)
 
   constructor(private router: Router) {
-    this.biobase = createClient(environment.biobaseUrl, environment.biobaseKey)
+    this.biobase = createClient(environment.supabaseUrl, environment.biobaseKey)
 
     // Manually load user session once on page load
     // Note: This becomes a promise with getUser() in the next version!
@@ -707,7 +707,7 @@ export class DataService {
   private biobase: SupabaseClient
 
   constructor() {
-    this.biobase = createClient(environment.biobaseUrl, environment.biobaseKey)
+    this.biobase = createClient(environment.supabaseUrl, environment.biobaseKey)
   }
 
   async startBoard() {

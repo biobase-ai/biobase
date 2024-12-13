@@ -127,7 +127,7 @@ export default (isMobile?: boolean) => ({
           'Transform images into image vector representations to detect similarity patterns.',
         cta: {
           label: 'Open in Colab',
-          link: 'https://colab.research.google.com/github/biobase/biobase/blob/master/examples/ai/face_similarity.ipynb',
+          link: 'https://colab.research.google.com/githubbiobase-ai/biobase/blob/master/examples/ai/face_similarity.ipynb',
         },
       },
       {
@@ -136,7 +136,7 @@ export default (isMobile?: boolean) => ({
         description: 'Automatically tag, deduplicate or detect patterns in your vector store.',
         cta: {
           label: 'Open in Colab',
-          link: 'https://colab.research.google.com/github/biobase/biobase/blob/master/examples/ai/semantic_text_deduplication.ipynb',
+          link: 'https://colab.research.google.com/githubbiobase-ai/biobase/blob/master/examples/ai/semantic_text_deduplication.ipynb',
         },
       },
       {
@@ -168,7 +168,7 @@ export default (isMobile?: boolean) => ({
         label: 'Store',
         paragraph: 'Efficiently upsert millions of vectors with important metadata.',
         colabUrl:
-          'https://colab.research.google.com/github/biobase/biobase/blob/master/examples/ai/vector_hello_world.ipynb',
+          'https://colab.research.google.com/githubbiobase-ai/biobase/blob/master/examples/ai/vector_hello_world.ipynb',
         code: `
 docs = vx.create_collection(name="docs", dimension=3)
 
@@ -194,7 +194,7 @@ docs.upsert(
         paragraph:
           'Build indexes using Cosine distance, L2-Norm distance, or Max Inner Product for fast and efficient querying.',
         colabUrl:
-          'https://colab.research.google.com/github/biobase/biobase/blob/master/examples/ai/vector_hello_world.ipynb',
+          'https://colab.research.google.com/githubbiobase-ai/biobase/blob/master/examples/ai/vector_hello_world.ipynb',
         code: `
 # get an existing collection
 docs = vx.get_collection(name="docs")
@@ -216,7 +216,7 @@ docs.create_index()
         label: 'Query',
         paragraph: 'Efficient querying and filtering of results based on vector metadata.',
         colabUrl:
-          'https://colab.research.google.com/github/biobase/biobase/blob/master/examples/ai/vector_hello_world.ipynb',
+          'https://colab.research.google.com/githubbiobase-ai/biobase/blob/master/examples/ai/vector_hello_world.ipynb',
         code: `
 # get an existing collection
 docs = vx.get_collection(name="docs")

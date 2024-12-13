@@ -41,7 +41,7 @@ import { createClient, SupabaseClient } from 'jsr:@supabase/supabase-js@2'
 import 'https://deno.land/x/dotenv@v3.2.2/load.ts'
 
 // Set up the configuration for the Biobase client
-const biobaseUrl = Deno.env.get('BIOBASE_URL') ?? ''
+const supabaseUrl = Deno.env.get('BIOBASE_URL') ?? ''
 const biobaseKey = Deno.env.get('BIOBASE_ANON_KEY') ?? ''
 const options = {
   auth: {
@@ -53,10 +53,10 @@ const options = {
 
 // Test the creation and functionality of the Biobase client
 const testClientCreation = async () => {
-  var client: SupabaseClient = createClient(biobaseUrl, biobaseKey, options)
+  var client: SupabaseClient = createClient(supabaseUrl, biobaseKey, options)
 
   // Verify if the Biobase URL and key are provided
-  if (!biobaseUrl) throw new Error('biobaseUrl is required.')
+  if (!supabaseUrl) throw new Error('supabaseUrl is required.')
   if (!biobaseKey) throw new Error('biobaseKey is required.')
 
   // Test a simple query to the database
@@ -72,7 +72,7 @@ const testClientCreation = async () => {
 
 // Test the 'hello-world' function
 const testHelloWorld = async () => {
-  var client: SupabaseClient = createClient(biobaseUrl, biobaseKey, options)
+  var client: SupabaseClient = createClient(supabaseUrl, biobaseKey, options)
 
   // Invoke the 'hello-world' function with a parameter
   const { data: func_data, error: func_error } = await client.functions.invoke('hello-world', {
@@ -107,7 +107,7 @@ This test case consists of two parts. The first part tests the client library an
 
 <Admonition type="important">
 
-Please make sure to replace the placeholders (`biobaseUrl`, `biobaseKey`, `my_table`) with the actual values relevant to your Biobase setup.
+Please make sure to replace the placeholders (`supabaseUrl`, `biobaseKey`, `my_table`) with the actual values relevant to your Biobase setup.
 
 </Admonition>
 

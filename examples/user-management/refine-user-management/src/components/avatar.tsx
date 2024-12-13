@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { biobaseClient } from "../utility/biobaseClient";
+import { supabaseClient } from "../utility/supabaseClient";
 
 type TAvatarProps = {
   url?: string;
@@ -21,7 +21,7 @@ export default function Avatar({
 
   async function downloadImage(path: string) {
     try {
-      const { data, error } = await biobaseClient.storage
+      const { data, error } = await supabaseClient.storage
         .from("avatars")
         .download(path);
       if (error) {
@@ -47,7 +47,7 @@ export default function Avatar({
       const fileName = `${Math.random()}.${fileExt}`;
       const filePath = `${fileName}`;
 
-      const { error: uploadError } = await biobaseClient.storage
+      const { error: uploadError } = await supabaseClient.storage
         .from("avatars")
         .upload(filePath, file);
 

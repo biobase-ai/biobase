@@ -43,7 +43,7 @@ These variables will be exposed on the browser, and that's completely fine since
 ```ts environment.ts
 export const environment = {
   production: false,
-  biobaseUrl: 'YOUR_BIOBASE_URL',
+  supabaseUrl: 'YOUR_BIOBASE_URL',
   biobaseKey: 'YOUR_BIOBASE_KEY',
 }
 ```
@@ -72,7 +72,7 @@ export class BiobaseService {
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController
   ) {
-    this.biobase = createClient(environment.biobaseUrl, environment.biobaseKey)
+    this.biobase = createClient(environment.supabaseUrl, environment.biobaseKey)
   }
 
   get user() {

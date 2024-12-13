@@ -102,7 +102,7 @@ import 'package:biobase/biobase.dart';
 void main() {
   final biobase = SupabaseClient(
     Deno.env.get('BIOBASE_URL')!,
-    Deno.env.get('BIOBASE_SERVICE_ROLE_KEY')!, // Use service role key to bypass RLS
+    Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, // Use service role key to bypass RLS
     httpClient: EdgeHttpClient(),
   );
 

@@ -23,7 +23,7 @@ app.use(async (ctx) => {
     return
   }
 
-  const biobaseClient = createClient(
+  const supabaseClient = createClient(
     // Biobase API URL - env var exported by default.
     Deno.env.get('BIOBASE_URL')!,
     // Biobase API ANON KEY - env var exported by default.
@@ -34,7 +34,7 @@ app.use(async (ctx) => {
   const file = formData.files[0]
   const timestamp = +new Date()
   const uploadName = `${file.name}-${timestamp}`
-  const { data: upload, error: uploadError } = await biobaseClient.storage
+  const { data: upload, error: uploadError } = await supabaseClient.storage
     .from('images')
     .upload(uploadName, file.content!.buffer, {
       contentType: file.contentType,
@@ -49,7 +49,7 @@ app.use(async (ctx) => {
   }
 
   // insert record to messages table
-  const { error } = await biobaseClient.from('comments').insert({
+  const { error } = await supabaseClient.from('comments').insert({
     message: formData.fields!.message || '',
     image_path: upload.path,
   })

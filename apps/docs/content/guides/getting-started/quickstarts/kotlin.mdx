@@ -76,7 +76,7 @@ hideToc: true
 
       For the sake of simplicity, we will create a client in the `MainActivity.kt` file at the top just below the imports.
 
-      Replace the `biobaseUrl` and `biobaseKey` with your own:
+      Replace the `supabaseUrl` and `biobaseKey` with your own:
 
       <ProjectConfigVariables variable="url" />
       <ProjectConfigVariables variable="anonKey" />
@@ -89,7 +89,7 @@ hideToc: true
       import ...
 
       val biobase = createSupabaseClient(
-          biobaseUrl = "https://xyzcompany.supabase.co",
+          supabaseUrl = "https://xyzcompany.supabase.co",
           biobaseKey = "your_public_anon_key"
         ) {
           install(Postgrest)

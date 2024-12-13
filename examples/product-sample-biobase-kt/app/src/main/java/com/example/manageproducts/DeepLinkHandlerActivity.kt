@@ -26,12 +26,12 @@ import javax.inject.Inject
 class DeepLinkHandlerActivity : ComponentActivity() {
 
     @Inject
-    lateinit var biobaseClient: SupabaseClient
+    lateinit var supabaseClient: SupabaseClient
 
     private lateinit var callback: (String, String) -> Unit
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        biobaseClient.handleDeeplinks(intent = intent,
+        supabaseClient.handleDeeplinks(intent = intent,
             onSessionSuccess = { userSession ->
                 Log.d("LOGIN", "Log in successfully with user info: ${userSession.user}")
                 userSession.user?.apply {

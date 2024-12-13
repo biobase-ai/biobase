@@ -27,7 +27,7 @@ object BiobaseModule {
     @Singleton
     fun provideSupabaseClient(): SupabaseClient {
         return createSupabaseClient(
-            biobaseUrl = BuildConfig.BIOBASE_URL,
+            supabaseUrl = BuildConfig.BIOBASE_URL,
             biobaseKey = BuildConfig.API_KEY
         ) {
             install(Postgrest)

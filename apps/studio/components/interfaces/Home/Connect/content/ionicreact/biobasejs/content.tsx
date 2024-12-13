@@ -13,7 +13,7 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
     <ConnectTabs>
       <ConnectTabTriggers>
         <ConnectTabTrigger value=".env" />
-        <ConnectTabTrigger value="src/biobaseClient.tsx" />
+        <ConnectTabTrigger value="src/supabaseClient.tsx" />
         <ConnectTabTrigger value="src/App.tsx" />
       </ConnectTabTriggers>
 
@@ -26,15 +26,15 @@ REACT_APP_BIOBASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
         </SimpleCodeBlock>
       </ConnectTabContent>
 
-      <ConnectTabContent value="src/biobaseClient.tsx">
+      <ConnectTabContent value="src/supabaseClient.tsx">
         <SimpleCodeBlock className="ts" parentClassName="min-h-72">
           {`
 import { createClient } from '@supabase/supabase-js'
 
-const biobaseUrl = process.env.REACT_APP_BIOBASE_URL
+const supabaseUrl = process.env.REACT_APP_BIOBASE_URL
 const biobaseAnonKey = process.env.REACT_APP_BIOBASE_ANON_KEY
 
-export const biobase = createClient(biobaseUrl, biobaseAnonKey)
+export const biobase = createClient(supabaseUrl, biobaseAnonKey)
 `}
         </SimpleCodeBlock>
       </ConnectTabContent>
@@ -59,7 +59,7 @@ import '@ionic/react/css/core.css';
 /* Theme variables */
 import './theme/variables.css';
 
-import { biobase } from './biobaseClient';
+import { biobase } from './supabaseClient';
 
 setupIonicReact();
 

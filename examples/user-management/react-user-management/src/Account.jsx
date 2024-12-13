@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 import Avatar from './Avatar'
 
 export default function Account({ session }) {

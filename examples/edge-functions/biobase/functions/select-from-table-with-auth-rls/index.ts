@@ -15,7 +15,7 @@ Deno.serve(async (req: Request) => {
 
   try {
     // Create a Biobase client with the Auth context of the logged in user.
-    const biobaseClient = createClient(
+    const supabaseClient = createClient(
       // Biobase API URL - env var exported by default.
       Deno.env.get('BIOBASE_URL') ?? '',
       // Biobase API ANON KEY - env var exported by default.
@@ -35,10 +35,10 @@ Deno.serve(async (req: Request) => {
     // Now we can get the session or user object
     const {
       data: { user },
-    } = await biobaseClient.auth.getUser(token)
+    } = await supabaseClient.auth.getUser(token)
 
     // And we can run queries in the context of our authenticated user
-    const { data, error } = await biobaseClient.from('users').select('*')
+    const { data, error } = await supabaseClient.from('users').select('*')
     if (error) throw error
 
     return new Response(JSON.stringify({ user, data }), {

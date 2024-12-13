@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Auth, ThemeSupa } from '@supabase/auth-ui-react'
 import JSONInput from 'react-json-editor-ajrm'
 import locale from 'react-json-editor-ajrm/locale/en'
-import { biobase } from './utils/biobaseClient'
+import { biobase } from './utils/supabaseClient'
 import { functionsList } from './functionsList'
 
 const sampleObject = { name: 'world' }
@@ -89,7 +89,7 @@ function App() {
               </button>
             </div>
           ) : (
-            <Auth biobaseClient={biobase} appearance={{ theme: ThemeSupa }} />
+            <Auth supabaseClient={biobase} appearance={{ theme: ThemeSupa }} />
           )}
         </div>
       </div>

@@ -42,7 +42,7 @@ _Optionally_ if you are using custom configuration with `createClient` then foll
 >
 <TabPanel id="1.0x" label="Before">
 
-```ts src/biobaseClient.ts
+```ts src/supabaseClient.ts
 const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY, {
   schema: 'custom',
   persistSession: false,
@@ -52,7 +52,7 @@ const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY, {
 </TabPanel>
 <TabPanel id="2.0x" label="After">
 
-```ts src/biobaseClient.ts
+```ts src/supabaseClient.ts
 const biobase = createClient(BIOBASE_URL, BIOBASE_ANON_KEY, {
   db: {
     schema: 'custom',

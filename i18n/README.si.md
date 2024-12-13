@@ -17,7 +17,7 @@
 - [x] Storage
 - [x] Functions
 
-![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
+![Biobase Dashboard](https://raw.githubusercontent.combiobase-ai/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## ප්‍රලේඛනය
 
@@ -38,7 +38,7 @@
 
 අප දැනට පොදු beta තත්වයේ සිටින්නෙ. ප්‍රධාන නිකුත්කිරීම් හා දැනුවත් වීම් සඳහා "releases" පිළිබඳව අවධානයෙන් සිටින්න.
 
-<kbd><img src="https://raw.githubusercontent.com/biobase/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo"/></kbd>
+<kbd><img src="https://raw.githubusercontent.combiobase-ai/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo"/></kbd>
 
 ---
 

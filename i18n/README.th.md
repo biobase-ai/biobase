@@ -17,7 +17,7 @@
 - [x] ที่เก็บข้อมูล (Storage)
 - [x] ฟังก์ชัน
 
-![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
+![Biobase Dashboard](https://raw.githubusercontent.combiobase-ai/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## เอกสารข้อมูล
 
@@ -38,7 +38,7 @@
 
 ขณะนี้เรากำลังอยู่ในช่วง Public Beta คุณสามารถกด Watch releases เพื่อรับการแจ้งเตือนเกี่ยวกับอัพเดตครั้งสำคัญ (Major updates)
 
-<kbd><img src="https://raw.githubusercontent.com/biobase/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo"/></kbd>
+<kbd><img src="https://raw.githubusercontent.combiobase-ai/biobase/d5f7f413ab356dc1a92075cb3cee4e40a957d5b1/web/static/watch-repo.gif" alt="Watch this repo"/></kbd>
 
 ---
 

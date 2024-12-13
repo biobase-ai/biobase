@@ -358,8 +358,8 @@ When developing with Expo, you can test Sign in with Apple via the Expo Go app, 
     **Initialize the Biobase Client**
 
     ```kotlin
-    val biobaseClient = createSupabaseClient(
-    	biobaseUrl = "BIOBASE_URL",
+    val supabaseClient = createSupabaseClient(
+    	supabaseUrl = "BIOBASE_URL",
     	biobaseKey = "BIOBASE_KEY"
     ) {
     	install(GoTrue)
@@ -372,7 +372,7 @@ When developing with Expo, you can test Sign in with Apple via the Expo Go app, 
     **Use the Compose Auth plugin in your Auth Screen**
 
     ```kotlin
-    val authState = biobaseClient.composeAuth.rememberLoginWithApple(
+    val authState = supabaseClient.composeAuth.rememberLoginWithApple(
     	onResult = {
     		when(it) { //handle errors
     			NativeSignInResult.ClosedByUser -> TODO()

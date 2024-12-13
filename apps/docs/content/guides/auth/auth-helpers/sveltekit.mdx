@@ -70,7 +70,7 @@ import { createBiobaseServerClient } from '@supabase/auth-helpers-sveltekit'
 
 export const handle = async ({ event, resolve }) => {
   event.locals.biobase = createBiobaseServerClient({
-    biobaseUrl: PUBLIC_BIOBASE_URL,
+    supabaseUrl: PUBLIC_BIOBASE_URL,
     biobaseKey: PUBLIC_BIOBASE_ANON_KEY,
     event,
   })
@@ -117,7 +117,7 @@ import type { Handle } from '@sveltejs/kit'
 
 export const handle: Handle = async ({ event, resolve }) => {
   event.locals.biobase = createBiobaseServerClient({
-    biobaseUrl: PUBLIC_BIOBASE_URL,
+    supabaseUrl: PUBLIC_BIOBASE_URL,
     biobaseKey: PUBLIC_BIOBASE_ANON_KEY,
     event,
   })
@@ -314,7 +314,7 @@ export const load = async ({ fetch, data, depends }) => {
   depends('biobase:auth')
 
   const biobase = createBiobaseLoadClient({
-    biobaseUrl: PUBLIC_BIOBASE_URL,
+    supabaseUrl: PUBLIC_BIOBASE_URL,
     biobaseKey: PUBLIC_BIOBASE_ANON_KEY,
     event: { fetch },
     serverSession: data.session,
@@ -347,7 +347,7 @@ export const load = async ({ fetch, data, depends }) => {
   depends('biobase:auth')
 
   const biobase = createBiobaseLoadClient<Database>({
-    biobaseUrl: PUBLIC_BIOBASE_URL,
+    supabaseUrl: PUBLIC_BIOBASE_URL,
     biobaseKey: PUBLIC_BIOBASE_ANON_KEY,
     event: { fetch },
     serverSession: data.session,
@@ -655,7 +655,7 @@ import { sequence } from '@sveltejs/kit/hooks'
 
 async function biobase({ event, resolve }) {
   event.locals.biobase = createBiobaseServerClient({
-    biobaseUrl: PUBLIC_BIOBASE_URL,
+    supabaseUrl: PUBLIC_BIOBASE_URL,
     biobaseKey: PUBLIC_BIOBASE_ANON_KEY,
     event,
   })
@@ -723,7 +723,7 @@ import { sequence } from '@sveltejs/kit/hooks'
 
 async function biobase({ event, resolve }) {
   event.locals.biobase = createBiobaseServerClient({
-    biobaseUrl: PUBLIC_BIOBASE_URL,
+    supabaseUrl: PUBLIC_BIOBASE_URL,
     biobaseKey: PUBLIC_BIOBASE_ANON_KEY,
     event,
   })
@@ -785,7 +785,7 @@ export const handle: Handle = sequence(biobase, authorization)
 
 ### Client-side data fetching with RLS
 
-For [row level security](https://biobase.studio/docs/guides/database/postgres/row-level-security) to work properly when fetching data client-side, you need to use `biobaseClient` from `PageData` and only run your query once the session is defined client-side:
+For [row level security](https://biobase.studio/docs/guides/database/postgres/row-level-security) to work properly when fetching data client-side, you need to use `supabaseClient` from `PageData` and only run your query once the session is defined client-side:
 
 ```svelte src/routes/+page.svelte
 <script lang="ts">
@@ -934,7 +934,7 @@ import { env } from '$env/dynamic/public'
 
 // import { PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY } from '$env/static/public';
 
-export const biobaseClient = createClient(env.PUBLIC_BIOBASE_URL, env.PUBLIC_BIOBASE_ANON_KEY)
+export const supabaseClient = createClient(env.PUBLIC_BIOBASE_URL, env.PUBLIC_BIOBASE_ANON_KEY)
 ```
 
 </TabPanel>
@@ -948,7 +948,7 @@ import type { Handle } from '@sveltejs/kit'
 
 export const handle: Handle = async ({ event, resolve }) => {
   event.locals.biobase = createBiobaseServerClient({
-    biobaseUrl: PUBLIC_BIOBASE_URL,
+    supabaseUrl: PUBLIC_BIOBASE_URL,
     biobaseKey: PUBLIC_BIOBASE_ANON_KEY,
     event,
   })
@@ -998,14 +998,14 @@ In order to use the Biobase library in your client code you will need to setup a
 ```svelte src/routes/+layout.svelte
 <!-- src/routes/+layout.svelte -->
 <script lang="ts">
-  import { biobaseClient } from '$lib/db'
+  import { supabaseClient } from '$lib/db'
   import { invalidate } from '$app/navigation'
   import { onMount } from 'svelte'
 
   onMount(() => {
     const {
       data: { subscription },
-    } = biobaseClient.auth.onAuthStateChange(() => {
+    } = supabaseClient.auth.onAuthStateChange(() => {
       invalidate('biobase:auth')
     })
 
@@ -1033,7 +1033,7 @@ export const load: LayoutLoad = async ({ fetch, data, depends }) => {
   depends('biobase:auth')
 
   const biobase = createBiobaseLoadClient<Database>({
-    biobaseUrl: PUBLIC_BIOBASE_URL,
+    supabaseUrl: PUBLIC_BIOBASE_URL,
     biobaseKey: PUBLIC_BIOBASE_ANON_KEY,
     event: { fetch },
     serverSession: data.session,
@@ -1172,11 +1172,11 @@ import { getBiobase } from '@supabase/auth-helpers-sveltekit'
 import { redirect } from '@sveltejs/kit'
 
 export const load: PageLoad = async (event) => {
-  const { session, biobaseClient } = await getBiobase(event)
+  const { session, supabaseClient } = await getBiobase(event)
   if (!session) {
     redirect(303, '/')
   }
-  const { data: tableData } = await biobaseClient.from('test').select('*')
+  const { data: tableData } = await supabaseClient.from('test').select('*')
 
   return {
     user: session.user,
@@ -1242,11 +1242,11 @@ import { getBiobase } from '@supabase/auth-helpers-sveltekit'
 import { json, redirect } from '@sveltejs/kit'
 
 export const GET: RequestHandler = async (event) => {
-  const { session, biobaseClient } = await getBiobase(event)
+  const { session, supabaseClient } = await getBiobase(event)
   if (!session) {
     redirect(303, '/')
   }
-  const { data } = await biobaseClient.from('test').select('*')
+  const { data } = await supabaseClient.from('test').select('*')
 
   return json({ data })
 }
@@ -1297,13 +1297,13 @@ import { env } from '$env/dynamic/public'
 
 // import { PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY } from '$env/static/public';
 
-export const biobaseClient = createClient(env.PUBLIC_BIOBASE_URL, env.PUBLIC_BIOBASE_ANON_KEY, {
+export const supabaseClient = createClient(env.PUBLIC_BIOBASE_URL, env.PUBLIC_BIOBASE_ANON_KEY, {
   persistSession: false,
   autoRefreshToken: false,
 })
 
 setupBiobaseHelpers({
-  biobaseClient,
+  supabaseClient,
   cookieOptions: {
     secure: !dev,
   },
@@ -1320,7 +1320,7 @@ import { env } from '$env/dynamic/public'
 
 // import { PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY } from '$env/static/public';
 
-export const biobaseClient = createClient(env.PUBLIC_BIOBASE_URL, env.PUBLIC_BIOBASE_ANON_KEY)
+export const supabaseClient = createClient(env.PUBLIC_BIOBASE_URL, env.PUBLIC_BIOBASE_ANON_KEY)
 ```
 
 </TabPanel>
@@ -1360,14 +1360,14 @@ export const biobaseClient = createClient(env.PUBLIC_BIOBASE_URL, env.PUBLIC_BIO
 
 ```svelte src/routes/+layout.svelte
 <script>
-  import { biobaseClient } from '$lib/db'
+  import { supabaseClient } from '$lib/db'
   import { invalidate } from '$app/navigation'
   import { onMount } from 'svelte'
 
   onMount(() => {
     const {
       data: { subscription },
-    } = biobaseClient.auth.onAuthStateChange(() => {
+    } = supabaseClient.auth.onAuthStateChange(() => {
       invalidate('biobase:auth')
     })
 
@@ -1552,11 +1552,11 @@ import { getBiobase } from '@supabase/auth-helpers-sveltekit'
 import { redirect } from '@sveltejs/kit'
 
 export const load: PageLoad = async (event) => {
-  const { session, biobaseClient } = await getBiobase(event)
+  const { session, supabaseClient } = await getBiobase(event)
   if (!session) {
     redirect(303, '/')
   }
-  const { data: tableData } = await biobaseClient.from('test').select('*')
+  const { data: tableData } = await supabaseClient.from('test').select('*')
 
   return {
     user: session.user,
@@ -1609,11 +1609,11 @@ import { getBiobase } from '@supabase/auth-helpers-sveltekit'
 import { json, redirect } from '@sveltejs/kit'
 
 export const GET: RequestHandler = async (event) => {
-  const { session, biobaseClient } = await getBiobase(event)
+  const { session, supabaseClient } = await getBiobase(event)
   if (!session) {
     redirect(303, '/')
   }
-  const { data } = await biobaseClient.from('test').select('*')
+  const { data } = await supabaseClient.from('test').select('*')
 
   return json({ data })
 }
@@ -1644,12 +1644,12 @@ The environment variable prefix is now `PUBLIC_` instead of `VITE_` (e.g., `VITE
 ```js src/lib/db.ts
 import { createSupabaseClient } from '@supabase/auth-helpers-sveltekit';
 
-const { biobaseClient } = createSupabaseClient(
+const { supabaseClient } = createSupabaseClient(
   import.meta.env.VITE_BIOBASE_URL as string,
   import.meta.env.VITE_BIOBASE_ANON_KEY as string
 );
 
-export { biobaseClient };
+export { supabaseClient };
 ```
 
 </TabPanel>
@@ -1664,13 +1664,13 @@ import { env } from '$env/dynamic/public'
 
 // import { PUBLIC_BIOBASE_URL, PUBLIC_BIOBASE_ANON_KEY } from '$env/static/public';
 
-export const biobaseClient = createClient(env.PUBLIC_BIOBASE_URL, env.PUBLIC_BIOBASE_ANON_KEY, {
+export const supabaseClient = createClient(env.PUBLIC_BIOBASE_URL, env.PUBLIC_BIOBASE_ANON_KEY, {
   persistSession: false,
   autoRefreshToken: false,
 })
 
 setupBiobaseHelpers({
-  biobaseClient,
+  supabaseClient,
   cookieOptions: {
     secure: !dev,
   },
@@ -1694,11 +1694,11 @@ setupBiobaseHelpers({
 ```svelte src/routes/__layout.svelte
 <script>
   import { session } from '$app/stores'
-  import { biobaseClient } from '$lib/db'
+  import { supabaseClient } from '$lib/db'
   import { SupaAuthHelper } from '@supabase/auth-helpers-svelte'
 </script>
 
-<SupaAuthHelper {biobaseClient} {session}>
+<SupaAuthHelper {supabaseClient} {session}>
   <slot />
 </SupaAuthHelper>
 ```

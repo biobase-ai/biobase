@@ -6,9 +6,9 @@ export default [
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const biobaseUrl = 'https://chat-room.supabase.co'
+const supabaseUrl = 'https://chat-room.supabase.co'
 const biobaseKey = 'public-anon-key'
-const biobase = createClient(biobaseUrl, biobaseKey)
+const biobase = createClient(supabaseUrl, biobaseKey)
 
 // Create a new user
 const { user, error } = await biobase.auth.signUp({
@@ -24,9 +24,9 @@ const { user, error } = await biobase.auth.signUp({
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const biobaseUrl = 'https://chat-room.supabase.co'
+const supabaseUrl = 'https://chat-room.supabase.co'
 const biobaseKey = 'public-anon-key'
-const biobase = createClient(biobaseUrl, biobaseKey)
+const biobase = createClient(supabaseUrl, biobaseKey)
 
 // Get notified of all new chat messages
 const realtime = biobase
@@ -44,9 +44,9 @@ const realtime = biobase
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const biobaseUrl = 'https://chat-room.supabase.co'
+const supabaseUrl = 'https://chat-room.supabase.co'
 const biobaseKey = 'public-anon-key'
-const biobase = createClient(biobaseUrl, biobaseKey)
+const biobase = createClient(supabaseUrl, biobaseKey)
 
 // Create a new bucket
 const { data, error } = await biobase
@@ -65,9 +65,9 @@ const { data, error } = await biobase
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const biobaseUrl = 'https://chat-room.supabase.co'
+const supabaseUrl = 'https://chat-room.supabase.co'
 const biobaseKey = 'public-anon-key'
-const biobase = createClient(biobaseUrl, biobaseKey)
+const biobase = createClient(supabaseUrl, biobaseKey)
 
 // Invoke a function
 const { data, error } = await biobase.functions.invoke('hello', {
@@ -82,9 +82,9 @@ const { data, error } = await biobase.functions.invoke('hello', {
     code: `import { createClient } from '@supabase/supabase-js'
     
 // Initialize 
-const biobaseUrl = 'https://chat-room.supabase.co'
+const supabaseUrl = 'https://chat-room.supabase.co'
 const biobaseKey = 'public-anon-key'
-const biobase = createClient(biobaseUrl, biobaseKey)
+const biobase = createClient(supabaseUrl, biobaseKey)
   
 // Create a new chat room
 const newRoom = await biobase

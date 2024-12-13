@@ -100,7 +100,7 @@ export async function GET(request: Request) {
       user: { id },
     } = session
     // Generate signed upload url to use on client.
-    const biobaseAdmin = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.BIOBASE_SERVICE_ROLE_KEY)
+    const biobaseAdmin = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY)
 
     const { data, error } = await biobaseAdmin.storage
       .from('avatars')

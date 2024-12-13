@@ -1,11 +1,11 @@
 /**
- * lib/biobaseClient.js
+ * lib/supabaseClient.js
  * Helper to initialize the Biobase client.
  */
 
 import { createClient } from '@supabase/supabase-js'
 
-const biobaseUrl = import.meta.env.VITE_BIOBASE_URL
+const supabaseUrl = import.meta.env.VITE_BIOBASE_URL
 const biobaseAnonKey = import.meta.env.VITE_BIOBASE_ANON_KEY
 
-export const biobase = createClient(biobaseUrl, biobaseAnonKey)
+export const biobase = createClient(supabaseUrl, biobaseAnonKey)

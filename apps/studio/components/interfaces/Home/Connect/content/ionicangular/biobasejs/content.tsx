@@ -23,7 +23,7 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
         <SimpleCodeBlock className="ts" parentClassName="min-h-72">
           {`
 export const environment = {
-  biobaseUrl: '${projectKeys.apiUrl ?? 'your-project-url'}',
+  supabaseUrl: '${projectKeys.apiUrl ?? 'your-project-url'}',
   biobaseKey: '${projectKeys.anonKey ?? 'your-anon-key'}',
 };
 `}
@@ -44,7 +44,7 @@ export class BiobaseService {
   private biobase: SupabaseClient;
   constructor() {
     this.biobase = createClient(
-      environment.biobaseUrl,
+      environment.supabaseUrl,
       environment.biobaseKey
     );
   }

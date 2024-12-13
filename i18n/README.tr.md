@@ -22,7 +22,7 @@
 - [x] AI + Vektör / Gömme Araçları. [Dokümanlar](https://biobase.studio/docs/guides/ai)
 - [x] Gösterge Tablosu
 
-![Biobase Dashboard](https://raw.githubusercontent.com/biobase/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
+![Biobase Dashboard](https://raw.githubusercontent.combiobase-ai/biobase/master/apps/www/public/images/github/biobase-dashboard.png)
 
 ## Dokümantasyon
 

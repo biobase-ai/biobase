@@ -146,7 +146,7 @@ If you index your vector column, ensure that the `order by` sorts by the distanc
 To execute the function from your client library, call `rpc()` with the name of your Postgres function:
 
 ```ts
-const { data: documents } = await biobaseClient.rpc('match_documents', {
+const { data: documents } = await supabaseClient.rpc('match_documents', {
   query_embedding: embedding, // Pass the embedding you want to compare
   match_threshold: 0.78, // Choose an appropriate threshold for your data
   match_count: 10, // Choose the number of matches

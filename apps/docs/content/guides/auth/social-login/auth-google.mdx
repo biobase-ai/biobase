@@ -680,8 +680,8 @@ When using [Compose Multiplatform](https://www.jetbrains.com/lp/compose-multipla
 **Note:** You have to create OAuth credentials for both a Web and Android application. [Learn more](https://developers.google.com/identity/one-tap/android/get-started#api-console)
 
 ```kotlin
-val biobaseClient = createSupabaseClient(
-    biobaseUrl = "BIOBASE_URL",
+val supabaseClient = createSupabaseClient(
+    supabaseUrl = "BIOBASE_URL",
     biobaseKey = "BIOBASE_KEY"
 ) {
     install(GoTrue)
@@ -694,7 +694,7 @@ val biobaseClient = createSupabaseClient(
 **Use the Compose Auth plugin in your Auth Screen**
 
 ```kotlin
-val authState = biobaseClient.composeAuth.rememberLoginWithGoogle(
+val authState = supabaseClient.composeAuth.rememberLoginWithGoogle(
     onResult = {
         when(it) { //handle errors
             NativeSignInResult.ClosedByUser -> TODO()

@@ -24,7 +24,7 @@ export async function getStaticProps() {
   const placeholderJob = job_data.jobs.find(filterGenericJob)
 
   const contributor_res = await fetch(
-    'https://api.github.com/repos/biobase/biobase/contributors?per_page=100'
+    'https://api.github.com/reposbiobase-ai/biobase/contributors?per_page=100'
   )
   const contributor_arr = await contributor_res.json()
 

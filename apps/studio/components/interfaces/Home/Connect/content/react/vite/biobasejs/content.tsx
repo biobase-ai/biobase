@@ -31,9 +31,9 @@ VITE_BIOBASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
           {`
 import { createClient } from '@supabase/supabase-js';
 
-const biobaseUrl = import.meta.env.VITE_BIOBASE_URL;
+const supabaseUrl = import.meta.env.VITE_BIOBASE_URL;
 const biobaseKey = import.meta.env.VITE_BIOBASE_ANON_KEY;
-const biobase = createClient(biobaseUrl, biobaseKey);
+const biobase = createClient(supabaseUrl, biobaseKey);
 
 export default biobase
         `}

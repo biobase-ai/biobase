@@ -28,7 +28,7 @@ npm install @supabase/supabase-js @supabase/auth-ui-react @supabase/auth-ui-shar
 
 ### Import the Auth component
 
-Pass `biobaseClient` from `@supabase/supabase-js` as a prop to the component.
+Pass `supabaseClient` from `@supabase/supabase-js` as a prop to the component.
 
 ```js /src/index.js
 import { createClient } from '@supabase/supabase-js'
@@ -36,7 +36,7 @@ import { Auth } from '@supabase/auth-ui-react'
 
 const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API KEY>')
 
-const App = () => <Auth biobaseClient={biobase} />
+const App = () => <Auth supabaseClient={biobase} />
 ```
 
 This renders the Auth component without any styling.
@@ -57,7 +57,7 @@ const biobase = createClient(
 
 const App = () => (
   <Auth
-    biobaseClient={biobase}
+    supabaseClient={biobase}
     {/* Apply predefined theme */}
     appearance={{ theme: ThemeSupa }}
   />
@@ -77,7 +77,7 @@ const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API K
 
 const App = () => (
   <Auth
-    biobaseClient={biobase}
+    supabaseClient={biobase}
     appearance={{ theme: ThemeSupa }}
     providers={['google', 'facebook', 'twitter']}
   />
@@ -90,7 +90,7 @@ Options are available via `queryParams`:
 
 ```jsx
 <Auth
-  biobaseClient={biobase}
+  supabaseClient={biobase}
   providers={['google']}
   queryParams={{
     access_type: 'offline',
@@ -107,7 +107,7 @@ Provider Scopes can be requested through `providerScope`;
 
 ```jsx
 <Auth
-  biobaseClient={biobase}
+  supabaseClient={biobase}
   providers={['google']}
   queryParams={{
     access_type: 'offline',
@@ -159,7 +159,7 @@ const biobase = createClient(
 
 const App = () => (
   <Auth
-    biobaseClient={biobase}
+    supabaseClient={biobase}
     {/* Apply predefined theme */}
     appearance={{ theme: ThemeSupa }}
   />
@@ -188,7 +188,7 @@ const biobase = createClient(
 
 const App = () => (
   <Auth
-    biobaseClient={biobase}
+    supabaseClient={biobase}
     appearance={{ theme: ThemeSupa }}
     {/* Set theme to dark */}
     theme="dark"
@@ -211,7 +211,7 @@ const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API K
 
 const App = () => (
   <Auth
-    biobaseClient={biobase}
+    supabaseClient={biobase}
     appearance={{
       theme: ThemeSupa,
       variables: {
@@ -270,7 +270,7 @@ const customTheme = {
 
 const App = () => (
   <Auth
-    biobaseClient={biobase}
+    supabaseClient={biobase}
     theme="default" // can also be "dark" or "evenDarker"
     appearance={{ theme: customTheme }}
   />
@@ -292,7 +292,7 @@ const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API K
 
 const App = () => (
   <Auth
-    biobaseClient={biobase}
+    supabaseClient={biobase}
     appearance={{
       // If you want to extend the default styles instead of overriding it, set this to true
       extend: false,
@@ -320,7 +320,7 @@ const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API K
 
 const App = () => (
   <Auth
-    biobaseClient={biobase}
+    supabaseClient={biobase}
     appearance={{
       style: {
         button: { background: 'red', color: 'white' },
@@ -344,7 +344,7 @@ const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API K
 
 const App = () => (
   <Auth
-    biobaseClient={biobase}
+    supabaseClient={biobase}
     localization={{
       variables: {
         sign_in: {
@@ -468,7 +468,7 @@ import { Auth } from '@supabase/auth-ui-react'
 
 const biobase = createClient('<INSERT PROJECT URL>', '<INSERT PROJECT ANON API KEY>')
 
-const App = () => <Auth biobaseClient={biobase} showLinks={false} />
+const App = () => <Auth supabaseClient={biobase} showLinks={false} />
 ```
 
 Setting `showLinks` to `false` will hide the following links:
@@ -484,7 +484,7 @@ Add `sign_in` or `sign_up` views with the `view` prop:
 
 ```
 <Auth
-  biobaseClient={biobase}
+  supabaseClient={biobase}
   view="sign_up"
 />
 ```

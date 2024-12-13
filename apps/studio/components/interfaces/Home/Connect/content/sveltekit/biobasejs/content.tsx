@@ -13,7 +13,7 @@ const ContentFile = ({ projectKeys }: ContentFileProps) => {
     <ConnectTabs>
       <ConnectTabTriggers>
         <ConnectTabTrigger value=".env.local" />
-        <ConnectTabTrigger value="src/lib/biobaseClient.js" />
+        <ConnectTabTrigger value="src/lib/supabaseClient.js" />
         <ConnectTabTrigger value="src/routes/+page.server.js" />
         <ConnectTabTrigger value="src/routes/+page.svelte" />
       </ConnectTabTriggers>
@@ -27,15 +27,15 @@ BIOBASE_ANON_KEY=${projectKeys.anonKey ?? 'your-anon-key'}
         </SimpleCodeBlock>
       </ConnectTabContent>
 
-      <ConnectTabContent value="src/lib/biobaseClient.js">
+      <ConnectTabContent value="src/lib/supabaseClient.js">
         <SimpleCodeBlock className="js" parentClassName="min-h-72">
           {`
 import { createClient } from "@supabase/supabase-js";
 
-const biobaseUrl = process.env.BIOBASE_URL;
+const supabaseUrl = process.env.BIOBASE_URL;
 const biobaseKey = process.env.BIOBASE_ANON_KEY;
 
-export const biobase = createClient(biobaseUrl, biobaseKey);
+export const biobase = createClient(supabaseUrl, biobaseKey);
         `}
         </SimpleCodeBlock>
       </ConnectTabContent>
@@ -43,7 +43,7 @@ export const biobase = createClient(biobaseUrl, biobaseKey);
       <ConnectTabContent value="src/routes/+page.server.js">
         <SimpleCodeBlock className="js" parentClassName="min-h-72">
           {`
-import { biobase } from "$lib/biobaseClient";
+import { biobase } from "$lib/supabaseClient";
 
 export async function load() {
   const { data } = await biobase.from("countries").select();

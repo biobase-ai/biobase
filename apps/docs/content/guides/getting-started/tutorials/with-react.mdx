@@ -46,21 +46,21 @@ VITE_BIOBASE_ANON_KEY=YOUR_BIOBASE_ANON_KEY
 Now that we have the API credentials in place, let's create a helper file to initialize the Biobase client. These variables will be exposed
 on the browser, and that's completely fine since we have [Row Level Security](/docs/guides/auth#row-level-security) enabled on our Database.
 
-Create and edit `src/biobaseClient.js`:
+Create and edit `src/supabaseClient.js`:
 
-```js src/biobaseClient.js
+```js src/supabaseClient.js
 import { createClient } from '@supabase/supabase-js'
 
-const biobaseUrl = import.meta.env.VITE_BIOBASE_URL
+const supabaseUrl = import.meta.env.VITE_BIOBASE_URL
 const biobaseAnonKey = import.meta.env.VITE_BIOBASE_ANON_KEY
 
-export const biobase = createClient(biobaseUrl, biobaseAnonKey)
+export const biobase = createClient(supabaseUrl, biobaseAnonKey)
 ```
 
 ### App styling (optional)
 
 An optional step is to update the CSS file `src/index.css` to make the app look nice.
-You can find the full contents of this file [here](https://raw.githubusercontent.com/biobase/biobase/master/examples/user-management/react-user-management/src/index.css).
+You can find the full contents of this file [here](https://raw.githubusercontent.combiobase-ai/biobase/master/examples/user-management/react-user-management/src/index.css).
 
 ### Set up a login component
 
@@ -70,7 +70,7 @@ Create and edit `src/Auth.jsx`:
 
 ```jsx src/Auth.jsx
 import { useState } from 'react'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 
 export default function Auth() {
   const [loading, setLoading] = useState(false)
@@ -126,7 +126,7 @@ Let's create a new component for that called `src/Account.jsx`.
 
 ```jsx src/Account.jsx
 import { useState, useEffect } from 'react'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 
 export default function Account({ session }) {
   const [loading, setLoading] = useState(true)
@@ -239,7 +239,7 @@ Now that we have all the components in place, let's update `src/App.jsx`:
 ```jsx src/App.jsx
 import './App.css'
 import { useState, useEffect } from 'react'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 import Auth from './Auth'
 import Account from './Account'
 
@@ -288,7 +288,7 @@ Create and edit `src/Avatar.jsx`:
 
 ```jsx src/Avatar.jsx
 import { useEffect, useState } from 'react'
-import { biobase } from './biobaseClient'
+import { biobase } from './supabaseClient'
 
 export default function Avatar({ url, size, onUpload }) {
   const [avatarUrl, setAvatarUrl] = useState(null)
