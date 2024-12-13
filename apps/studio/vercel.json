@@ -6,7 +6,7 @@
   "outputDirectory": ".next",
   "functions": {
     "api/**/*": {
-      "runtime": "nodejs20.x",
+      "runtime": "@vercel/node@3.0.0",
       "memory": 1024,
       "maxDuration": 10
     }
@@ -30,6 +30,24 @@
           "value": "1; mode=block"
         }
       ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    },
+    {
+      "source": "/www/:path*",
+      "destination": "https://biobase.com/:path*"
+    },
+    {
+      "source": "/docs/:path*",
+      "destination": "https://docs.biobase.com/:path*"
+    },
+    {
+      "source": "/design/:path*",
+      "destination": "https://design.biobase.com/:path*"
     }
   ]
 }

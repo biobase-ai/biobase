@@ -6,7 +6,7 @@
   "outputDirectory": ".next",
   "functions": {
     "api/**/*": {
-      "runtime": "nodejs20.x",
+      "runtime": "@vercel/node@3.0.0",
       "memory": 1024,
       "maxDuration": 10
     }
@@ -36,6 +36,18 @@
     {
       "source": "/api/:path*",
       "destination": "/api/:path*"
+    },
+    {
+      "source": "/docs/:path*",
+      "destination": "https://docs.biobase.com/:path*"
+    },
+    {
+      "source": "/studio/:path*",
+      "destination": "https://studio.biobase.com/:path*"
+    },
+    {
+      "source": "/design/:path*",
+      "destination": "https://design.biobase.com/:path*"
     }
   ]
 }
