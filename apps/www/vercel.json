@@ -1,7 +1,7 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "buildCommand": "cd ../.. && npm install && npx turbo run build --filter=www...",
+  "buildCommand": "cd ../.. && npm install && npx turbo run build --filter=www",
   "installCommand": "cd ../.. && npm install",
   "outputDirectory": ".next",
   "functions": {
@@ -54,6 +54,13 @@
     "biobase.studio",
     "www.biobase.studio"
   ],
+  "build": {
+    "env": {
+      "NEXT_TELEMETRY_DISABLED": "1",
+      "NEXT_PUBLIC_SITE_URL": "https://biobase.studio",
+      "NODE_ENV": "production"
+    }
+  },
   "redirects": [
     {
       "source": "/",
