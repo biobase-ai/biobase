@@ -47,7 +47,7 @@ When deploying a Function, we serialize its module graph into a single file form
 
 We used the eszip module loader in the local and self-hosted environments too, so we only need to implement one module-loading strategy for all environments. As an additional benefit for local development, this approach avoids potential conflicts with npm modules installed in the user's system since the Edge Function's npm modules are self-contained within the eszip.
 
-[Refactoring the module loader](https://github.com/biobase/edge-runtime/pull/223) fixes a few other bugs, such [edge functions erroring out](https://github.com/biobase/cli/issues/1584#issuecomment-1848799355) when an `deno.lock` file is already present in the project.
+[Refactoring the module loader](https://github.com/biobase-ai/edge-runtime/pull/223) fixes a few other bugs, such [edge functions erroring out](https://github.com/biobase-ai/cli/issues/1584#issuecomment-1848799355) when an `deno.lock` file is already present in the project.
 
 ## A few other things you've asked for…
 

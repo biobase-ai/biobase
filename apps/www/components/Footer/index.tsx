@@ -92,7 +92,7 @@ const Footer = (props: Props) => {
               </a>
 
               <a
-                href="https://github.com/biobase"
+                href="https://github.com/biobase-ai"
                 className="text-foreground-lighter hover:text-foreground transition"
               >
                 <span className="sr-only">GitHub</span>

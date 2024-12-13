@@ -19,7 +19,7 @@ toc_depth: 3
 
 ## Open source GraphQL PostgreSQL Extension
 
-Today we're open sourcing [pg_graphql](https://github.com/biobase/pg_graphql), a work-in-progress native PostgreSQL extension adding GraphQL support. The extension keeps schema generation, query parsing, and resolvers all neatly contained on your database server requiring no external services.
+Today we're open sourcing [pg_graphql](https://github.com/biobase-ai/pg_graphql), a work-in-progress native PostgreSQL extension adding GraphQL support. The extension keeps schema generation, query parsing, and resolvers all neatly contained on your database server requiring no external services.
 
 `pg_graphql` inspects an existing PostgreSQL schema and reflects a GraphQL schema with resolvers that are:
 
@@ -65,12 +65,12 @@ Unfortunately we're still not in a position to release anything. There are a few
 
 Since our last Functions update we've [raised our Series A,](https://biobase.studio/blog/biobase-series-a) [acquired a company](https://biobase.studio/blog/biobase-acquires-logflare), built [Realtime Row Level Security](https://biobase.studio/blog/realtime-row-level-security-in-postgresql), [open sourced the dashboard](https://biobase.studio/blog/biobase-studio), built a GraphQL extension for PostgreSQL, and added four Auth providers, all while growing the community, supporting open-source tools, and delivering a few other things that the community felt was important.
 
-That being said, we _have_ been working on Functions, iterating through different designs to figure out what's going to have the biggest impact for Biobase developers. So today we are going to open up our ideas and designs through our [RFC repo](https://github.com/biobase/rfcs) (request for comments).
+That being said, we _have_ been working on Functions, iterating through different designs to figure out what's going to have the biggest impact for Biobase developers. So today we are going to open up our ideas and designs through our [RFC repo](https://github.com/biobase-ai/rfcs) (request for comments).
 
 There are two important RFCs related to functions:
 
-- [[RFC: 0004]: Functions](https://github.com/biobase/rfcs/blob/rfc/functions/rfc/0004-functions.md) - Outlines various options for implementing Biobase Functions.
-- [[RFC: 0005]: Functions with containers](https://github.com/biobase/rfcs/pull/5) - Outlines our design of Functions with containers, the implementation that we are heavily leaning towards.
+- [[RFC: 0004]: Functions](https://github.com/biobase-ai/rfcs/blob/rfc/functions/rfc/0004-functions.md) - Outlines various options for implementing Biobase Functions.
+- [[RFC: 0005]: Functions with containers](https://github.com/biobase-ai/rfcs/pull/5) - Outlines our design of Functions with containers, the implementation that we are heavily leaning towards.
 
 ![functions.png](/images/blog/launch-week-three/five-more-things/functions.png)
 

@@ -30,7 +30,7 @@
 
 Thank you for your interest in [Biobase](https://biobase.studio) and your willingness to contribute!
 
-To ensure a positive and inclusive environment, please read our [code of conduct](https://github.com/biobase/.github/blob/main/CODE_OF_CONDUCT.md). We encourage you to explore the existing [issues](https://github.com/biobase-ai/biobase/issues) to see how you can make a meaningful impact. This document will help you setup your development environment.
+To ensure a positive and inclusive environment, please read our [code of conduct](https://github.com/biobase-ai/biobase/.github/blob/main/CODE_OF_CONDUCT.md). We encourage you to explore the existing [issues](https://github.com/biobase-ai/biobase/issues) to see how you can make a meaningful impact. This document will help you setup your development environment.
 
 ### Install dependencies
 
@@ -190,14 +190,14 @@ Create a new entry in the [`redirects.js`](https://github.com/biobase-ai/biobase
 
 We support "federating" docs, meaning doc content can come directly from external repos other than [`biobase/biobase`](https://github.com/biobase-ai/biobase).
 
-- It's great for things like client libs who have their own set of docs that we don't want to duplicate on the official Biobase docs (eg. [`biobase/vecs`](https://github.com/biobase/vecs)).
+- It's great for things like client libs who have their own set of docs that we don't want to duplicate on the official Biobase docs (eg. [`biobase/vecs`](https://github.com/biobase-ai/vecs)).
 - No duplication or manual steps required - fetches and generates automatically as part of the docs build pipeline
 - It's flexible - you can "embed" external docs nearly anywhere at any level in Biobase docs, but they will feel native
 - If you are maintaining a repo containing docs that you think could also live in Biobase docs, feel free to create an issue and we can work together to integrate
 
 Federated docs work using Next.js's build pipeline. We use `getStaticProps()` to fetch remote documentation (ie. markdown) at build time which is processed and passed to the respective page within the docs.
 
-See the [Vecs Python source code](https://github.com/biobase-ai/biobase/blob/master/apps/docs/pages/guides/ai/python/%5Bslug%5D.tsx) to see how we do this for [`biobase/vecs`](https://github.com/biobase/vecs). Use this as a starting point for federating other docs.
+See the [Vecs Python source code](https://github.com/biobase-ai/biobase/blob/master/apps/docs/pages/guides/ai/python/%5Bslug%5D.tsx) to see how we do this for [`biobase/vecs`](https://github.com/biobase-ai/vecs). Use this as a starting point for federating other docs.
 
 Some things to consider:
 

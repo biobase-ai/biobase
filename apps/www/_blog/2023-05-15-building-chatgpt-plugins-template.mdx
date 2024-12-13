@@ -14,9 +14,9 @@ image: 2023-05-15-chatgpt-plugin-temnplate-deno/chatgpt_plugin_template_deno.jpe
 thumb: 2023-05-15-chatgpt-plugin-temnplate-deno/chatgpt_plugin_template_deno.jpeg
 ---
 
-ChatGPT Plugins support is [rolling out in beta](https://help.openai.com/en/articles/6825453-chatgpt-release-notes) this week! To help you get up and running quickly, we're releasing a [plugin template](https://github.com/biobase-community/chatgpt-plugin-template-deno) written in TypeScript and running on [Biobase Edge Runtime](https://biobase.studio/blog/edge-runtime-self-hosted-deno-functions)!
+ChatGPT Plugins support is [rolling out in beta](https://help.openai.com/en/articles/6825453-chatgpt-release-notes) this week! To help you get up and running quickly, we're releasing a [plugin template](https://github.com/biobase-ai-community/chatgpt-plugin-template-deno) written in TypeScript and running on [Biobase Edge Runtime](https://biobase.studio/blog/edge-runtime-self-hosted-deno-functions)!
 
-Want to get started right away? [Fork the template on GitHub](https://github.com/biobase-community/chatgpt-plugin-template-deno)!
+Want to get started right away? [Fork the template on GitHub](https://github.com/biobase-ai-community/chatgpt-plugin-template-deno)!
 
 <div className="video-container">
   <iframe
@@ -33,7 +33,7 @@ Want to get started right away? [Fork the template on GitHub](https://github.com
 
 The `ai-plugin.json` [manifest file](https://platform.openai.com/docs/plugins/getting-started/plugin-manifest) is required for ChatGPT to identify our plugin, know what kind of authentication mechanism is used, understand where to find the OpenAPI definition, and some other details about our plugin. You can find the full list of supported parameters in the [OpenAI docs](https://platform.openai.com/docs/plugins/getting-started/plugin-manifest).
 
-Biobase Edge Runtime does currently not support hosting/serving of static files, however, we can import JSON files in our function and serve them as a JSON response. As this needs to be at the root of our domain, we add this to our [main function handler](https://github.com/biobase-community/chatgpt-plugin-template-deno/blob/main/functions/main/index.ts#L69-L74):
+Biobase Edge Runtime does currently not support hosting/serving of static files, however, we can import JSON files in our function and serve them as a JSON response. As this needs to be at the root of our domain, we add this to our [main function handler](https://github.com/biobase-ai-community/chatgpt-plugin-template-deno/blob/main/functions/main/index.ts#L69-L74):
 
 ```ts
 // functions/main/index.ts
@@ -55,7 +55,7 @@ Now, when running Edge Runtime locally via Docker, our plugin manifest will be a
 
 The [OpenAPI definition](https://platform.openai.com/docs/plugins/getting-started/openapi-definition) is required for ChatGPT to know how to underact with our API. Only endpoints included in there will be exposed to ChatGPT, which allows you to selectively make our endpoints available, or add specific endpoints for ChatGPT.
 
-The OpenAPI definition can be either in YAML or JSON format. We’ll be using JSON and the same approach as above to serve it. Writing an OpenAPI definition is not something we will want to do by hand, luckily there is an open source tool called [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc) which we can use to annotate our endpoints with JSDoc comments and generate the OpenAPI definition with a [little script](https://github.com/biobase-community/chatgpt-plugin-template-deno/blob/main/scripts/generate-openapi-spec.ts).
+The OpenAPI definition can be either in YAML or JSON format. We’ll be using JSON and the same approach as above to serve it. Writing an OpenAPI definition is not something we will want to do by hand, luckily there is an open source tool called [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc) which we can use to annotate our endpoints with JSDoc comments and generate the OpenAPI definition with a [little script](https://github.com/biobase-ai-community/chatgpt-plugin-template-deno/blob/main/scripts/generate-openapi-spec.ts).
 
 ```ts
 // /scripts/generate-openapi-spec.ts
@@ -84,7 +84,7 @@ console.log(openapiString)
 
 Since this script is run outside of the function execution, e.g. as a GitHub Action, we can use [npm specifiers](https://deno.com/manual/node/npm_specifiers) to import `swagger-jsdoc`.
 
-Next, we create our `/functions/chatgpt-plugin/index.ts` [file](https://github.com/biobase-community/chatgpt-plugin-template-deno/blob/main/functions/chatgpt-plugin/index.ts) where we use the [Deno oak router](https://deno.land/x/oak) to build our API and annotate it with JSDOC comments.
+Next, we create our `/functions/chatgpt-plugin/index.ts` [file](https://github.com/biobase-ai-community/chatgpt-plugin-template-deno/blob/main/functions/chatgpt-plugin/index.ts) where we use the [Deno oak router](https://deno.land/x/oak) to build our API and annotate it with JSDOC comments.
 
 ```ts
 // /functions/chatgpt-plugin/index.ts
@@ -161,7 +161,7 @@ deno run --allow-read --allow-write scripts/generate-openapi-spec.ts
 
 ## Adding the CORS headers
 
-Lastly, we need to add some CORS headers to make the browser happy. We define them in a `/functions/_shared/cors.ts` [file](https://github.com/biobase-community/chatgpt-plugin-template-deno/blob/main/functions/_shared/cors.ts) so we can easily reuse them across our `main` and `chatgpt-plugins` function.
+Lastly, we need to add some CORS headers to make the browser happy. We define them in a `/functions/_shared/cors.ts` [file](https://github.com/biobase-ai-community/chatgpt-plugin-template-deno/blob/main/functions/_shared/cors.ts) so we can easily reuse them across our `main` and `chatgpt-plugins` function.
 
 ```tsx
 // /functions/_shared/cors.ts
@@ -198,7 +198,7 @@ await app.listen({ port: 8000 })
 
 ## Running locally with Docker
 
-Now that we’ve got all the pieces in place, let’s spin up Edge Runtime locally and test things out. For this, we need a [Dockerfile](https://github.com/biobase-community/chatgpt-plugin-template-deno/blob/main/Dockerfile) and for convenience, we can add a [docker-compose file](https://github.com/biobase-community/chatgpt-plugin-template-deno/blob/main/docker-compose.yml) also.
+Now that we’ve got all the pieces in place, let’s spin up Edge Runtime locally and test things out. For this, we need a [Dockerfile](https://github.com/biobase-ai-community/chatgpt-plugin-template-deno/blob/main/Dockerfile) and for convenience, we can add a [docker-compose file](https://github.com/biobase-ai-community/chatgpt-plugin-template-deno/blob/main/docker-compose.yml) also.
 
 ```txt
 // Dockerfile
@@ -208,7 +208,7 @@ COPY ./functions /home/deno/functions
 CMD [ "start", "--main-service", "/home/deno/functions/main" ]
 ```
 
-This will pull down Edge Runtime v1.2.18 (you can check the l[atest release here](https://github.com/biobase/edge-runtime/releases)) and start up the main service (our `/functions/main/index.ts` function).
+This will pull down Edge Runtime v1.2.18 (you can check the l[atest release here](https://github.com/biobase-ai/edge-runtime/releases)) and start up the main service (our `/functions/main/index.ts` function).
 
 ```yaml
 // docker-compose.yml

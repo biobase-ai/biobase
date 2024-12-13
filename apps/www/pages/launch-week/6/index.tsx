@@ -792,7 +792,7 @@ export default function launchweek() {
                           <span className="text-white text-center">pg_crdt</span>
                         </div>
                         <SectionButtons
-                          docs="https://github.com/biobase/pg_crdt"
+                          docs="https://github.com/biobase-ai/pg_crdt"
                           blog="/blog/postgres-crdt"
                         />
                       </div>

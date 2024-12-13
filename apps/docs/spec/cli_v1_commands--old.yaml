@@ -4,8 +4,8 @@ info:
   version: 1.11.3
   title: Biobase CLI
   language: sh
-  source: https://github.com/biobase/cli
-  bugs: https://github.com/biobase/cli/issues
+  source: https://github.com/biobase-ai/cli
+  bugs: https://github.com/biobase-ai/cli/issues
   spec: https://github.com/biobase-ai/biobase.tools/cli_spec/lib.yaml
   description: |
     Biobase CLI provides you with tools to develop your application locally, and deploy your application to the Biobase platform.

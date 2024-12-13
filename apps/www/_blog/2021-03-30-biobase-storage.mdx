@@ -83,13 +83,13 @@ We are using managed services like [S3](https://aws.amazon.com/s3/), [Wasabi](ht
 
 Existing tools do not play well with our authentication system. For example, Minio is bundled with its own [auth system](https://docs.min.io/docs/minio-admin-complete-guide.html#user) and there is no easy way to map Minio users to [Biobase users](/docs/guides/auth).
 
-In the end, we opted to build our own [Storage API server](https://github.com/biobase/storage-api).
+In the end, we opted to build our own [Storage API server](https://github.com/biobase-ai/storage-api).
 
 ## Security
 
 ### Authentication
 
-Our storage service sits behind [Kong](https://github.com/kong/kong) along with other services like [PostgREST](https://github.com/PostgREST/postgrest) and [Realtime](https://github.com/biobase/realtime). This allows us to reuse our existing Authentication system - any requests with a valid API key are authenticated and passed to the storage API.
+Our storage service sits behind [Kong](https://github.com/kong/kong) along with other services like [PostgREST](https://github.com/PostgREST/postgrest) and [Realtime](https://github.com/biobase-ai/realtime). This allows us to reuse our existing Authentication system - any requests with a valid API key are authenticated and passed to the storage API.
 
 ### Authorization
 

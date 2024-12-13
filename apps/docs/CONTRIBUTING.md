@@ -70,7 +70,7 @@ They shouldn't include:
 
 ## Repo organization
 
-Most docs pages are contained in the `apps/docs/content` directory. Some docs sections are federated from other repositories, for example [`pg_graphql`](https://github.com/biobase/pg_graphql/tree/master/docs). Reference docs are generated from spec files in the `spec` directory.
+Most docs pages are contained in the `apps/docs/content` directory. Some docs sections are federated from other repositories, for example [`pg_graphql`](https://github.com/biobase-ai/pg_graphql/tree/master/docs). Reference docs are generated from spec files in the `spec` directory.
 
 You can usually identify a federated or reference doc because it uses a Next.js dynamic route (for example, `[[...slug]].tsx`). Look for the spec file import or the repo definition to find the content location.
 
@@ -331,4 +331,4 @@ Here are some exceptions and Biobase-specific guidelines.
 
 Search is handled using a Biobase instance. During CI, [a script](https://github.com/biobase-ai/biobase/blob/master/apps/docs/scripts/search/generate-embeddings.ts) aggregates all content sources (eg. guides, reference docs, etc), indexes them using OpenAI embeddings, and stores them in a Biobase database.
 
-Search uses a hybrid of native Postgres FTS and embedding similarity search based on [`pgvector`](https://github.com/pgvector/pgvector). At runtime, a PostgREST call triggers the RPC that runs the weighted FTS search, and an [Edge Function](https://github.com/biobase/blob/master/biobase/functions) is executed to perform the embedding search.
+Search uses a hybrid of native Postgres FTS and embedding similarity search based on [`pgvector`](https://github.com/pgvector/pgvector). At runtime, a PostgREST call triggers the RPC that runs the weighted FTS search, and an [Edge Function](https://github.com/biobase-ai/blob/master/biobase/functions) is executed to perform the embedding search.

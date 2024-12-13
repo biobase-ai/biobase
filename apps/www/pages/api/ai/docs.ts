@@ -33,8 +33,8 @@ export const config = {
 }
 
 const openAiKey = process.env.OPENAI_API_KEY
-const biobaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
-const biobaseServiceKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
+const biobaseUrl = process.env.NEXT_PUBLIC_BIOBASE_URL as string
+const biobaseServiceKey = process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY as string
 
 export default async function handler(req: NextRequest) {
   if (!openAiKey) {
@@ -52,8 +52,7 @@ export default async function handler(req: NextRequest) {
   if (!biobaseUrl) {
     return new Response(
       JSON.stringify({
-        error:
-          'No NEXT_PUBLIC_SUPABASE_URL set. Create this environment variable to use AI features.',
+        error: 'No NEXT_PUBLIC_BIOBASE_URL set. Create this environment variable to use AI features.',
       }),
       {
         status: 500,
@@ -65,8 +64,7 @@ export default async function handler(req: NextRequest) {
   if (!biobaseServiceKey) {
     return new Response(
       JSON.stringify({
-        error:
-          'No NEXT_PUBLIC_SUPABASE_ANON_KEY set. Create this environment variable to use AI features.',
+        error: 'No NEXT_PUBLIC_BIOBASE_ANON_KEY set. Create this environment variable to use AI features.',
       }),
       {
         status: 500,

@@ -42,7 +42,7 @@ const LinterPageFooter = ({
         <div className="prose text-xs">
           <p>
             <span>These suggestions use </span>
-            <a href="https://github.com/biobase/splinter" target="" rel="">
+            <a href="https://github.com/biobase-ai/splinter" target="" rel="">
               splinter (Biobase Postgres LINTER)
             </a>
             .

@@ -14,7 +14,7 @@ This example showcases and end-to-end OAuth2 connection flow with [PKCE](https:/
 1. Create authorization URL with PKCE codeVerifier.
 1. Redirect user to Biobase to authorize your application to connect to their Biobase account.
 1. User gets redirected to the callback route, where we exchange the code in the URL for `access_token` and `refresh_token`.
-1. We use the `access_token` to retrieve a list of the user's projects using the [`biobase-management-js` library](https://github.com/biobase-community/biobase-management-js).
+1. We use the `access_token` to retrieve a list of the user's projects using the [`biobase-management-js` library](https://github.com/biobase-ai-community/biobase-management-js).
 
 ## Run locally
 

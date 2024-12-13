@@ -13,7 +13,7 @@ You have two options for scaling your vector workload:
 
 ## Dimensionality
 
-The number of dimensions in your embeddings is the most important factor in choosing the right Compute Add-on. In general, the lower the dimensionality the better the performance. We've provided guidance for some of the more common embedding dimensions below. For each benchmark, we used [Vecs](https://github.com/biobase/vecs) to create a collection, upload the embeddings to a single table, and create both the `IVFFlat` and `HNSW` indexes for `inner-product` distance measure for the embedding column. We then ran a series of queries to measure the performance of different compute add-ons:
+The number of dimensions in your embeddings is the most important factor in choosing the right Compute Add-on. In general, the lower the dimensionality the better the performance. We've provided guidance for some of the more common embedding dimensions below. For each benchmark, we used [Vecs](https://github.com/biobase-ai/vecs) to create a collection, upload the embeddings to a single table, and create both the `IVFFlat` and `HNSW` indexes for `inner-product` distance measure for the embedding column. We then ran a series of queries to measure the performance of different compute add-ons:
 
 ## HNSW
 
@@ -318,7 +318,7 @@ Check out more tips and the complete step-by-step guide in [Going to Production 
 
 ## Benchmark methodology
 
-We follow techniques outlined in the [ANN Benchmarks](https://github.com/erikbern/ann-benchmarks) methodology. A Python test runner is responsible for uploading the data, creating the index, and running the queries. The pgvector engine is implemented using [vecs](https://github.com/biobase/vecs), a Python client for pgvector.
+We follow techniques outlined in the [ANN Benchmarks](https://github.com/erikbern/ann-benchmarks) methodology. A Python test runner is responsible for uploading the data, creating the index, and running the queries. The pgvector engine is implemented using [vecs](https://github.com/biobase-ai/vecs), a Python client for pgvector.
 
 <Image
   alt="multi database"

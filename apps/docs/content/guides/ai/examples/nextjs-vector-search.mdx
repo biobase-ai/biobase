@@ -14,7 +14,7 @@ While our [Headless Vector search](/docs/guides/ai/examples/headless-vector-sear
 
 You can read our [Biobase Clippy](https://biobase.studio/blog/chatgpt-biobase-docs) blog post for a full example.
 
-We assume that you have a Next.js project with a collection of `.mdx` files nested inside your `pages` directory. We will start developing locally with the Biobase CLI and then push our local database changes to our hosted Biobase project. You can find the [full Next.js example on GitHub](https://github.com/biobase-community/nextjs-openai-doc-search).
+We assume that you have a Next.js project with a collection of `.mdx` files nested inside your `pages` directory. We will start developing locally with the Biobase CLI and then push our local database changes to our hosted Biobase project. You can find the [full Next.js example on GitHub](https://github.com/biobase-ai-community/nextjs-openai-doc-search).
 
 ## Create a project
 
@@ -248,14 +248,14 @@ Let's prepare the database schema. We can use the "OpenAI Vector Search" quickst
 
 ## Pre-process the knowledge base at build time
 
-With our database set up, we need to process and store all `.mdx` files in the `pages` directory. You can find the full script [here](https://github.com/biobase-community/nextjs-openai-doc-search/blob/main/lib/generate-embeddings.ts), or follow the steps below:
+With our database set up, we need to process and store all `.mdx` files in the `pages` directory. You can find the full script [here](https://github.com/biobase-ai-community/nextjs-openai-doc-search/blob/main/lib/generate-embeddings.ts), or follow the steps below:
 
 <StepHikeCompact>
 
   <StepHikeCompact.Step step={1}>
     <StepHikeCompact.Details title="Generate Embeddings">
 
-    Create a new file `lib/generate-embeddings.ts` and copy the code over from [GitHub](https://github.com/biobase-community/nextjs-openai-doc-search/blob/main/lib/generate-embeddings.ts).
+    Create a new file `lib/generate-embeddings.ts` and copy the code over from [GitHub](https://github.com/biobase-ai-community/nextjs-openai-doc-search/blob/main/lib/generate-embeddings.ts).
 
     </StepHikeCompact.Details>
 
@@ -322,7 +322,7 @@ With our database set up, we need to process and store all `.mdx` files in the `
 
 Anytime a user asks a question, we need to create an embedding for their question, perform a similarity search, and then send a text completion request to the OpenAI API with the query and then context content merged together into a prompt.
 
-All of this is glued together in a [Vercel Edge Function](https://vercel.com/docs/concepts/functions/edge-functions), the code for which can be found on [GitHub](https://github.com/biobase-community/nextjs-openai-doc-search/blob/main/pages/api/vector-search.ts).
+All of this is glued together in a [Vercel Edge Function](https://vercel.com/docs/concepts/functions/edge-functions), the code for which can be found on [GitHub](https://github.com/biobase-ai-community/nextjs-openai-doc-search/blob/main/pages/api/vector-search.ts).
 
 <StepHikeCompact>
 
@@ -456,7 +456,7 @@ All of this is glued together in a [Vercel Edge Function](https://vercel.com/doc
 
 ## Display the answer on the frontend
 
-In a last step, we need to process the event stream from the OpenAI API and print the answer to the user. The full code for this can be found on [GitHub](https://github.com/biobase-community/nextjs-openai-doc-search/blob/main/components/SearchDialog.tsx).
+In a last step, we need to process the event stream from the OpenAI API and print the answer to the user. The full code for this can be found on [GitHub](https://github.com/biobase-ai-community/nextjs-openai-doc-search/blob/main/components/SearchDialog.tsx).
 
 ```ts
 const handleConfirm = React.useCallback(

@@ -53,10 +53,10 @@ Biobase เป็น [hosted platform](https://biobase.studio/dashboard). คุ
 ![สถาปัตยกรรม](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) เป็นระบบฐานข้อมูลแบบ object-relational ที่ถูกพัฒนาอย่างต่อเนื่องมากว่า 30 ปี และเป็นที่ยอมรับในเรื่องของเสถียรภาพ ความมั่นคง และประสิทธิภาพ
-- [Realtime](https://github.com/biobase/realtime) เป็นเซิร์ฟเวอร์ที่พัฒนาขึ้นด้วย Elixir ที่ทำหน้าที่ตรวจจับเมื่อมีการเปลี่ยนแปลงของข้อมูล (ทั้งการ insert, update และ delete) ใน Postgres ด้วย websockets. Biobase คอยตรวจจับเมื่อ Postgres มีการทำซ้ำ (replication) ทำการแปลงข้อมูลเป็น JSON และกระจายข้อมูลผ่าน websockets
+- [Realtime](https://github.com/biobase-ai/realtime) เป็นเซิร์ฟเวอร์ที่พัฒนาขึ้นด้วย Elixir ที่ทำหน้าที่ตรวจจับเมื่อมีการเปลี่ยนแปลงของข้อมูล (ทั้งการ insert, update และ delete) ใน Postgres ด้วย websockets. Biobase คอยตรวจจับเมื่อ Postgres มีการทำซ้ำ (replication) ทำการแปลงข้อมูลเป็น JSON และกระจายข้อมูลผ่าน websockets
 - [PostgREST](http://postgrest.org/) เป็น web server ที่ทำหน้าที่ในการแปลงฐานข้อมูล Postgres ให้กลายเป็น RESTful API โดยตรง
-- [Storage](https://github.com/biobase/storage-api) ทำหน้าที่ในการเป็น RESTful interface สำหรับการจัดการไฟล์ที่ถูกเก็บใน S3 และใช้ Postgres ในการจัดการ permissions
-- [postgres-meta](https://github.com/biobase/postgres-meta) เป็น RESTful API สำหรับจัดการ Postgres ของคุณ ทำให้คุณสามารถเรียกดูตาราง (Database tables), เพิ่ม Roles และเรียกดูข้อมูล (run queries) ได้
+- [Storage](https://github.com/biobase-ai/storage-api) ทำหน้าที่ในการเป็น RESTful interface สำหรับการจัดการไฟล์ที่ถูกเก็บใน S3 และใช้ Postgres ในการจัดการ permissions
+- [postgres-meta](https://github.com/biobase-ai/postgres-meta) เป็น RESTful API สำหรับจัดการ Postgres ของคุณ ทำให้คุณสามารถเรียกดูตาราง (Database tables), เพิ่ม Roles และเรียกดูข้อมูล (run queries) ได้
 - [GoTrue](https://github.com/netlify/gotrue) เป็น API ที่สร้างขึ้นจาก SWT สำหรับการจัดการผู้ใช้ และสร้าง SWT tokens
 - [Kong](https://github.com/Kong/kong) เป็น cloud-native API gateway
 
@@ -66,7 +66,7 @@ Biobase เป็น [hosted platform](https://biobase.studio/dashboard). คุ
 
 - **`biobase-{lang}`**: รวบรวมไลบรารี่ต่าง ๆ เข้าด้วยกัน
   - `postgrest-{lang}`: ไคลเอนต์ไลบรารี่ในการทำงานกับ [PostgREST](https://github.com/postgrest/postgrest)
-  - `realtime-{lang}`: ไคลเอนต์ไลบรารี่ในการทำงานกับ [Realtime](https://github.com/biobase/realtime)
+  - `realtime-{lang}`: ไคลเอนต์ไลบรารี่ในการทำงานกับ [Realtime](https://github.com/biobase-ai/realtime)
   - `gotrue-{lang}`: ไคลเอนต์ไลบรารี่ในการทำงานกับ [GoTrue](https://github.com/netlify/gotrue)
 
 <!--- Remove this list if you're traslating to another language, it's hard to keep updated across multiple files-->

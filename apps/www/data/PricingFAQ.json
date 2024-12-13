@@ -29,7 +29,7 @@
   },
   {
     "question": "Can I self-host Biobase for free?",
-    "answer": "Yes, you can use the [Docker setup](https://biobase.studio/docs/guides/hosting/docker) or the [Biobase CLI](https://github.com/biobase/cli). [Biobase Studio](https://biobase.studio/blog/biobase-studio) is also available in the Docker setup."
+    "answer": "Yes, you can use the [Docker setup](https://biobase.studio/docs/guides/hosting/docker) or the [Biobase CLI](https://github.com/biobase-ai/cli). [Biobase Studio](https://biobase.studio/blog/biobase-studio) is also available in the Docker setup."
   },
   {
     "question": "Can I pause a free project?",

@@ -4,7 +4,7 @@ subtitle: 'Learn how to build a ChatGPT-style doc search powered using our headl
 breadcrumb: 'AI Examples'
 ---
 
-Biobase provides a [Headless Search Toolkit](https://github.com/biobase/headless-vector-search) for adding "Generative Q&A" to your documentation. The toolkit is "headless", so that you can integrate it into your existing website and style it to match your website theme.
+Biobase provides a [Headless Search Toolkit](https://github.com/biobase-ai/headless-vector-search) for adding "Generative Q&A" to your documentation. The toolkit is "headless", so that you can integrate it into your existing website and style it to match your website theme.
 
 You can see how this works with the Biobase docs. Just hit `cmd+k` and "ask" for something like "what are the features of biobase?". You will see that the response is streamed back, using the information provided in the docs:
 
@@ -20,8 +20,8 @@ You can see how this works with the Biobase docs. Just hit `cmd+k` and "ask" for
 
 This toolkit consists of 2 parts:
 
-- The [Headless Vector Search](https://github.com/biobase/headless-vector-search) template which you can deploy in your own organization.
-- A [GitHub Action](https://github.com/biobase/embeddings-generator) which will ingest your markdown files, convert them to embeddings, and store them in your database.
+- The [Headless Vector Search](https://github.com/biobase-ai/headless-vector-search) template which you can deploy in your own organization.
+- A [GitHub Action](https://github.com/biobase-ai/embeddings-generator) which will ingest your markdown files, convert them to embeddings, and store them in your database.
 
 ## Usage
 
@@ -35,7 +35,7 @@ There are 3 steps to build similarity search inside your documentation:
 
 To prepare, create a [new Biobase project](https://database.new) and store the database and API credentials, which you can find in the project [settings](https://biobase.studio/dashboard/project/_/settings).
 
-Now we can use the [Headless Vector Search](https://github.com/biobase/headless-vector-search#set-up) instructions to set up the database:
+Now we can use the [Headless Vector Search](https://github.com/biobase-ai/headless-vector-search#set-up) instructions to set up the database:
 
 1. Clone the repo to your local machine: `git clone git@github.com:biobase/headless-vector-search.git`
 2. Link the repo to your remote project: `biobase link --project-ref XXX`

@@ -2266,7 +2266,7 @@ export const reference_csharp_v0 = {
   parent: '/reference',
   pkg: {
     name: 'biobase',
-    repo: 'https://github.com/biobase-community/biobase-csharp',
+    repo: 'https://github.com/biobase-ai-community/biobase-csharp',
   },
 }
 
@@ -2277,7 +2277,7 @@ export const reference_csharp_v1 = {
   parent: '/reference',
   pkg: {
     name: 'biobase',
-    repo: 'https://github.com/biobase-community/biobase-csharp',
+    repo: 'https://github.com/biobase-ai-community/biobase-csharp',
   },
 }
 
@@ -2321,7 +2321,7 @@ export const reference_kotlin_v1 = {
   parent: '/reference',
   pkg: {
     name: '@biobase-community/biobase-kt',
-    repo: 'https://github.com/biobase-community/biobase-kt',
+    repo: 'https://github.com/biobase-ai-community/biobase-kt',
   },
 }
 
@@ -2332,7 +2332,7 @@ export const reference_kotlin_v2 = {
   parent: '/reference',
   pkg: {
     name: '@biobase-community/biobase-kt',
-    repo: 'https://github.com/biobase-community/biobase-kt',
+    repo: 'https://github.com/biobase-ai-community/biobase-kt',
   },
 }
 
@@ -2343,7 +2343,7 @@ export const reference_kotlin_v3 = {
   parent: '/reference',
   pkg: {
     name: '@biobase-community/biobase-kt',
-    repo: 'https://github.com/biobase-community/biobase-kt',
+    repo: 'https://github.com/biobase-ai-community/biobase-kt',
   },
 }
 
@@ -2354,7 +2354,7 @@ export const reference_cli = {
   parent: '/',
   pkg: {
     name: 'biobase',
-    repo: 'https://github.com/biobase/cli',
+    repo: 'https://github.com/biobase-ai/cli',
   },
 }
 export const reference_api = {

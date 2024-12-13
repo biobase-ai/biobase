@@ -1887,7 +1887,7 @@ export const WRAPPERS: WrapperMeta[] = [
           encrypted: false,
           secureEntry: false,
           defaultValue:
-            'https://github.com/biobase/wrappers/releases/download/wasm_paddle_fdw_v0.1.1/paddle_fdw.wasm',
+            'https://github.com/biobase-ai/wrappers/releases/download/wasm_paddle_fdw_v0.1.1/paddle_fdw.wasm',
           hidden: true,
         },
         {
@@ -1987,7 +1987,7 @@ export const WRAPPERS: WrapperMeta[] = [
           encrypted: false,
           secureEntry: false,
           defaultValue:
-            'https://github.com/biobase/wrappers/releases/download/wasm_snowflake_fdw_v0.1.1/snowflake_fdw.wasm',
+            'https://github.com/biobase-ai/wrappers/releases/download/wasm_snowflake_fdw_v0.1.1/snowflake_fdw.wasm',
           hidden: true,
         },
         {

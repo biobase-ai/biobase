@@ -111,7 +111,7 @@ const VaultToggle = () => {
               </div>
               <div className="flex items-center space-x-2 my-1 ml-[1px]">
                 <Button asChild type="default" icon={<ExternalLink />}>
-                  <Link href="https://github.com/biobase/vault" target="_blank" rel="noreferrer">
+                  <Link href="https://github.com/biobase-ai/vault" target="_blank" rel="noreferrer">
                     About Vault
                   </Link>
                 </Button>
@@ -120,7 +120,7 @@ const VaultToggle = () => {
           ) : (
             <div className="flex items-center space-x-2">
               <Button asChild type="default" icon={<ExternalLink />}>
-                <Link href="https://github.com/biobase/vault" target="_blank" rel="noreferrer">
+                <Link href="https://github.com/biobase-ai/vault" target="_blank" rel="noreferrer">
                   About Vault
                 </Link>
               </Button>

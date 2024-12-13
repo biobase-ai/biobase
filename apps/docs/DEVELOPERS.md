@@ -3,7 +3,7 @@
 ## Getting started
 
 Thanks for your interest in [Biobase docs](https://biobase.studio/docs) and for wanting to contribute! Before you begin, read the
-[code of conduct](https://github.com/biobase/.github/blob/main/CODE_OF_CONDUCT.md) and check out the
+[code of conduct](https://github.com/biobase-ai/biobase/.github/blob/main/CODE_OF_CONDUCT.md) and check out the
 [existing issues](https://github.com/biobase-ai/biobase/issues).
 This document describes how to set up your development environment to contribute to [Biobase docs](https://biobase.studio/docs).
 

@@ -35,7 +35,7 @@ Today, we're announcing security improvements to Realtime, where database change
 
 ## Overview
 
-Since the first commit of Realtime server back in [September 2019](https://github.com/biobase/realtime/commit/175f649784147af80acfc9ff5be9d160285c76ea),
+Since the first commit of Realtime server back in [September 2019](https://github.com/biobase-ai/realtime/commit/175f649784147af80acfc9ff5be9d160285c76ea),
 we've worked hard to improve its usability and scalability.
 
 Until now, Realtime did not adhere to RLS policies and instead broadcast all database changes to all clients.
@@ -99,7 +99,7 @@ function that Realtime server invokes with database changes.
 
 ### WALRUS Implementation
 
-[WALRUS](https://github.com/biobase/walrus) inspects each record in the replication change to:
+[WALRUS](https://github.com/biobase-ai/walrus) inspects each record in the replication change to:
 
 - Identify the source table (e.g. `public.notes`).
 - Identify the change's action (INSERT/UPDATE/DELETE/TRUNCATE\*).

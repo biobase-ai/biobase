@@ -28,7 +28,7 @@ functions:
 
       ### OAuth and OTP link verification
 
-      [biobase-kt](https://github.com/biobase-community/biobase-kt) provides several platform implementations for OAuth and OTP link verification. 
+      [biobase-kt](https://github.com/biobase-ai-community/biobase-kt) provides several platform implementations for OAuth and OTP link verification. 
 
       **On Desktop platforms (JVM, MacOS\*, Linux)**, it uses a HTTP Callback Server to receive the session data from a successful OAuth login. The success page can be customized via `AuthConfig#httpCallbackConfig` \
       \* If no deeplinks are being used.
@@ -39,7 +39,7 @@ functions:
       **On JS**, it uses the website origin as the callback url. Session importing gets handled automatically. \
       **Windows, tvOS, watchOS & Linux** currently have no default implementation. Feel free to create a PR. 
 
-      You always make your own implementation and use `auth.parseSessionFromFragment(fragment)` or `auth.parseSessionFromUrl(url)` to let [biobase-kt](https://github.com/biobase-community/biobase-kt) handle the parsing after receiving a callback.
+      You always make your own implementation and use `auth.parseSessionFromFragment(fragment)` or `auth.parseSessionFromUrl(url)` to let [biobase-kt](https://github.com/biobase-ai-community/biobase-kt) handle the parsing after receiving a callback.
       Then you can simply use `auth.importSession(session)`.
 
       ### Configure deeplink callbacks for Authentication
@@ -573,7 +573,7 @@ functions:
       Perform an UPSERT on the table or view. Depending on the column(s) passed to `onConflict`, `.upsert()` allows you to perform the equivalent of `.insert()` if a row with the corresponding `onConflict` columns doesn't exist, or if it does exist, perform an alternative action depending on `ignoreDuplicates`.
       - Primary keys should be included in the data payload in order for an update to work correctly.
       - Primary keys must be natural, not surrogate. There are however, [workarounds](https://github.com/PostgREST/postgrest/issues/1118) for surrogate primary keys.
-      - If you need to insert new data and update existing data at the same time, use [Postgres triggers](https://github.com/biobase/postgrest-js/issues/173#issuecomment-825124550).
+      - If you need to insert new data and update existing data at the same time, use [Postgres triggers](https://github.com/biobase-ai/postgrest-js/issues/173#issuecomment-825124550).
       - When calling `insert` or `update`, you have to provide a [serializable value](/docs/reference/kotlin/installing#serialization) in the function parameter.
       - By default, `upsert` will not return the inserted data. If you want to return the inserted data, you can use the `select()` method inside the request.
     params:
@@ -3178,7 +3178,7 @@ functions:
           - See [redirect URLs and wildcards](/docs/guides/auth/overview#redirect-urls-and-wildcards) to add additional redirect URLs to your project.
           - getOAuthUrl() provides the URL which needs to be opened in a browser.
           - The redirectTo URL needs to be setup correctly in your project under Authentication -> URL Configuration -> Redirect URLs.
-          - To see how you can use a custom in-app browser on Android, check our [demo](https://github.com/biobase-community/biobase-kt/tree/development/demos/android-login) on GitHub.
+          - To see how you can use a custom in-app browser on Android, check our [demo](https://github.com/biobase-ai-community/biobase-kt/tree/development/demos/android-login) on GitHub.
         code: |
           ```kotlin
           val url = biobase.auth.getOAuthUrl(Github, redirectUrl = "https://example.com")

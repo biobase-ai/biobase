@@ -25,7 +25,7 @@ export const CLIENT_LIBRARIES = [
     officialSupport: false,
     releaseState: undefined,
     docsUrl: 'https://biobase.studio/docs/reference/csharp/installing',
-    gitUrl: 'https://github.com/biobase-community/biobase-csharp',
+    gitUrl: 'https://github.com/biobase-ai-community/biobase-csharp',
     altIconName: 'c-sharp',
   },
   {
@@ -40,7 +40,7 @@ export const CLIENT_LIBRARIES = [
     officialSupport: false,
     releaseState: undefined,
     docsUrl: 'https://biobase.studio/docs/reference/kotlin/installing',
-    gitUrl: 'https://github.com/biobase-community/biobase-kt',
+    gitUrl: 'https://github.com/biobase-ai-community/biobase-kt',
   },
 ]
 
@@ -105,7 +105,7 @@ export const EXAMPLE_PROJECTS = [
     framework: 'Flutter',
     title: 'Flutter chat app',
     description: 'A Flutter chat app built with biobase-flutter',
-    url: 'https://github.com/biobase-community/flutter-chat',
+    url: 'https://github.com/biobase-ai-community/flutter-chat',
     type: 'mobile',
   },
   {

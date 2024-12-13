@@ -53,10 +53,10 @@
 ![आर्किटेक्चर](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) एक वस्तु-रिलेशनल डाटाबेस प्रणाली हो जसले ३० बर्ष भन्दा बढी सक्रिय विकासको साथ विश्वसनीयता, सुविधा मजबूती र प्रदर्शनको बलियो प्रतिष्ठा कमाएको छ।
-- [Realtime](https://github.com/biobase/realtime) एक Elixer सर्भर हो जसले तपाइँलाई वेबसकेटहरू प्रयोग गरेर PostgreSQL इन्सर्टहरू, अपडेटहरु, र डिलीटहरु सुन्न अनुमति दिन्छ। सुपाबेसले पोष्टग्रेसको भित्र निर्मित प्रतिकृति कार्यक्षमता सुन्दछ, प्रतिकृति बाइट स्ट्रिमलाई JSON मा रूपान्तरण गर्दछ, र त्यसपछि JSON लाई वेबसकेटमा प्रसारण गर्दछ।।
+- [Realtime](https://github.com/biobase-ai/realtime) एक Elixer सर्भर हो जसले तपाइँलाई वेबसकेटहरू प्रयोग गरेर PostgreSQL इन्सर्टहरू, अपडेटहरु, र डिलीटहरु सुन्न अनुमति दिन्छ। सुपाबेसले पोष्टग्रेसको भित्र निर्मित प्रतिकृति कार्यक्षमता सुन्दछ, प्रतिकृति बाइट स्ट्रिमलाई JSON मा रूपान्तरण गर्दछ, र त्यसपछि JSON लाई वेबसकेटमा प्रसारण गर्दछ।।
 - [PostgREST](http://postgrest.org/) एक वेब सर्वर हो जसले तपाईको PostgreSQL डाटाबेसलाई सीधा एक RESTful एपीआई मा बदल्छ।
-- [Storage](https://github.com/biobase/storage-api) ले अनुमतिहरू प्रबन्ध गर्न पोष्टग्रेस प्रयोग गरेर S3 मा भण्डारित फाइलहरू प्रबन्ध गर्नका लागि RESTful ईन्टरफेस प्रदान गर्दछ।
-- [postgres-meta](https://github.com/biobase/postgres-meta) तपाईंको Postgres प्रबन्धको लागि RESTful एपीआई हो जसले तपाईंलाई टेबुलहरू प्राप्त गर्न, भूमिकाहरू थप्न र प्रश्नहरू चलाउन र अधिकको लागि अनुमति दिन्छ।
+- [Storage](https://github.com/biobase-ai/storage-api) ले अनुमतिहरू प्रबन्ध गर्न पोष्टग्रेस प्रयोग गरेर S3 मा भण्डारित फाइलहरू प्रबन्ध गर्नका लागि RESTful ईन्टरफेस प्रदान गर्दछ।
+- [postgres-meta](https://github.com/biobase-ai/postgres-meta) तपाईंको Postgres प्रबन्धको लागि RESTful एपीआई हो जसले तपाईंलाई टेबुलहरू प्राप्त गर्न, भूमिकाहरू थप्न र प्रश्नहरू चलाउन र अधिकको लागि अनुमति दिन्छ।
 - [GoTrue](https://github.com/netlify/gotrue) प्रयोगकर्ताहरू प्रबन्ध गर्न र JWT टोकनहरू जारी गर्नका लागि एक JWT आधारित एपीआई हो।
 - [Kong](https://github.com/Kong/kong) एक क्लाउड नेटिभ एपीआई गेटवे हो।
 
@@ -66,15 +66,15 @@
 
 - **`biobase-{lang}`**: लाइब्रेरी संयोजन र संवर्धन थप गर्दछ।
   - `postgrest-{lang}`: ग्राहक पुस्तकालय [PostgREST](https://github.com/postgrest/postgrest) को साथ काम गर्न
-  - `realtime-{lang}`: ग्राहक पुस्तकालय [Realtime](https://github.com/biobase/realtime) को साथ काम गर्न
+  - `realtime-{lang}`: ग्राहक पुस्तकालय [Realtime](https://github.com/biobase-ai/realtime) को साथ काम गर्न
   - `gotrue-{lang}`: ग्राहक पुस्तकालय [GoTrue](https://github.com/netlify/gotrue) को साथ काम गर्न
 
 | Repo                  | आधिकारिक                                         | समुदाय                                                                                                                                                                                                                     |
 | --------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **`biobase-{lang}`** | [`JS`](https://github.com/biobase-ai/biobase-js)  | [`C#`](https://github.com/biobase-ai/biobase-csharp) \| [`Flutter`](https://github.com/biobase-ai/biobase-flutter) \| [`Python`](https://github.com/biobase-ai/biobase-py) \| `Rust`                                          |
-| `postgrest-{lang}`    | [`JS`](https://github.com/biobase/postgrest-js) | [`C#`](https://github.com/biobase/postgrest-csharp) \| [`Dart`](https://github.com/biobase/postgrest-dart) \| [`Python`](https://github.com/biobase/postgrest-py) \| [`Rust`](https://github.com/biobase/postgrest-rs) |
-| `realtime-{lang}`     | [`JS`](https://github.com/biobase/realtime-js)  | [`C#`](https://github.com/biobase/realtime-csharp) \| [`Dart`](https://github.com/biobase/realtime-dart) \| [`Python`](https://github.com/biobase/realtime-py) \| `Rust`                                                |
-| `gotrue-{lang}`       | [`JS`](https://github.com/biobase/gotrue-js)    | [`C#`](https://github.com/biobase/gotrue-csharp) \| [`Dart`](https://github.com/biobase/gotrue-dart) \| [`Python`](https://github.com/biobase/gotrue-py) \| `Rust`                                                      |
+| `postgrest-{lang}`    | [`JS`](https://github.com/biobase-ai/postgrest-js) | [`C#`](https://github.com/biobase-ai/postgrest-csharp) \| [`Dart`](https://github.com/biobase-ai/postgrest-dart) \| [`Python`](https://github.com/biobase-ai/postgrest-py) \| [`Rust`](https://github.com/biobase-ai/postgrest-rs) |
+| `realtime-{lang}`     | [`JS`](https://github.com/biobase-ai/realtime-js)  | [`C#`](https://github.com/biobase-ai/realtime-csharp) \| [`Dart`](https://github.com/biobase-ai/realtime-dart) \| [`Python`](https://github.com/biobase-ai/realtime-py) \| `Rust`                                                |
+| `gotrue-{lang}`       | [`JS`](https://github.com/biobase-ai/gotrue-js)    | [`C#`](https://github.com/biobase-ai/gotrue-csharp) \| [`Dart`](https://github.com/biobase-ai/gotrue-dart) \| [`Python`](https://github.com/biobase-ai/gotrue-py) \| `Rust`                                                      |
 
 <!--- Remove this list if you're traslating to another language, it's hard to keep updated across multiple files-->
 <!--- Keep only the link to the list of translation files-->

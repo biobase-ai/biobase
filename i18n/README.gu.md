@@ -54,10 +54,10 @@
 ![સ્થાપત્ય](https://github.com/biobase-ai/biobase/blob/master/apps/docs/public/img/biobase-architecture.svg)
 
 - [PostgreSQL](https://www.postgresql.org/) એક ઓબ્જેક્ટ-રિલેશનલ ડેટાબેઝ સિસ્ટમ છે જેમાં 30 વર્ષથી વધુ સક્રિય વિકાસ છે જેણે તેને વિશ્વસનીયતા, લક્ષણ મજબુતાઇ અને પ્રદર્શન માટે મજબૂત પ્રતિષ્ઠા પ્રાપ્ત કરી છે
-- [Realtime](https://github.com/biobase/realtime) એલિક્સિર સર્વર છે જે તમને વેબસોકેટનો ઉપયોગ કરીને PostgreSQL દાખલ, અપડેટ્સ અને ડીલીટ માટે પરવાનગી આપે છે. સુપાબેઝ Postgresની બિલ્ટ-ઇન પ્રતિકૃતિ વિધેયને સાંભળે છે, પ્રતિકૃતિ બાઇટ પ્રવાહને JSON માં ફેરવે છે, પછી વેબસોકેટ્સ પર JSON પ્રસારિત કરે છે.
+- [Realtime](https://github.com/biobase-ai/realtime) એલિક્સિર સર્વર છે જે તમને વેબસોકેટનો ઉપયોગ કરીને PostgreSQL દાખલ, અપડેટ્સ અને ડીલીટ માટે પરવાનગી આપે છે. સુપાબેઝ Postgresની બિલ્ટ-ઇન પ્રતિકૃતિ વિધેયને સાંભળે છે, પ્રતિકૃતિ બાઇટ પ્રવાહને JSON માં ફેરવે છે, પછી વેબસોકેટ્સ પર JSON પ્રસારિત કરે છે.
 - [PostgREST](http://postgrest.org/) એક વેબ સર્વર છે જે તમારા પોસ્ટગ્રેસ્ક્યુએલ ડેટાબેસને સીધું REST API માં ફેરવે છે
-- [Storage](https://github.com/biobase/storage-api) પરવાનગીઓને સંચાલિત કરવા પોસ્ટગ્રાસનો ઉપયોગ કરીને એસ 3 માં સ્ટોર કરેલી ફાઇલોને સંચાલિત કરવા માટે REST ઇન્ટરફેસ પ્રદાન કરે છે.
-- [postgres-meta](https://github.com/biobase/postgres-meta) તમારા Postgresને સંચાલિત કરવા, કોષ્ટકો જોવા, ભૂમિકાઓ ઉમેરવા અને ક્વેરીઝ ચલાવવા વગેરે માટેની એક REST API છે.
+- [Storage](https://github.com/biobase-ai/storage-api) પરવાનગીઓને સંચાલિત કરવા પોસ્ટગ્રાસનો ઉપયોગ કરીને એસ 3 માં સ્ટોર કરેલી ફાઇલોને સંચાલિત કરવા માટે REST ઇન્ટરફેસ પ્રદાન કરે છે.
+- [postgres-meta](https://github.com/biobase-ai/postgres-meta) તમારા Postgresને સંચાલિત કરવા, કોષ્ટકો જોવા, ભૂમિકાઓ ઉમેરવા અને ક્વેરીઝ ચલાવવા વગેરે માટેની એક REST API છે.
 - [GoTrue](https://github.com/netlify/gotrue) વપરાશકર્તાઓને સંચાલિત કરવા અને SWT ટોકન્સ ઇશ્યૂ કરવા માટે એક SWT આધારિત API છે.
 - [Kong](https://github.com/Kong/kong) કલાઉડ માટે API ગેટવે છે.
 
@@ -67,15 +67,15 @@
 
 - **`biobase-{lang}`**: લાઇબ્રેરીઝને જોડે છે અને સમૃધ્ધિ ઉમેરે છે.
   - `postgrest-{lang}`: [PostgREST](https://github.com/postgrest/postgrest) સાથે કામ કરવા માટે ક્લાયન્ટ લાઇબ્રેરી.
-  - `realtime-{lang}`: [Realtime](https://github.com/biobase/realtime) સાથે કામ કરવા માટે ક્લાયન્ટ લાઇબ્રેરી.
+  - `realtime-{lang}`: [Realtime](https://github.com/biobase-ai/realtime) સાથે કામ કરવા માટે ક્લાયન્ટ લાઇબ્રેરી.
   - `gotrue-{lang}`: [GoTrue](https://github.com/netlify/gotrue) સાથે કામ કરવા માટે ક્લાયન્ટ લાઇબ્રેરી.
 
 | રીપો                  | ઓફિશ્યિલ                                         | સમુદાય                                                                                                                                                                                                                                                                                                                               |
 | --------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **`biobase-{lang}`** | [`JS`](https://github.com/biobase-ai/biobase-js)  | [`C#`](https://github.com/biobase-ai/biobase-csharp) \| [`Flutter`](https://github.com/biobase-ai/biobase-flutter) \| [`Python`](https://github.com/biobase-ai/biobase-py) \| `Rust` \| [`Ruby`](https://github.com/biobase-ai/biobase-rb) \| `Go`                                                                                       |
-| `postgrest-{lang}`    | [`JS`](https://github.com/biobase/postgrest-js) | [`C#`](https://github.com/biobase/postgrest-csharp) \| [`Dart`](https://github.com/biobase/postgrest-dart) \| [`Python`](https://github.com/biobase/postgrest-py) \| [`Rust`](https://github.com/biobase/postgrest-rs) \| [`Ruby`](https://github.com/biobase/postgrest-rb) \| [`Go`](https://github.com/biobase/postgrest-go) |
-| `realtime-{lang}`     | [`JS`](https://github.com/biobase/realtime-js)  | [`C#`](https://github.com/biobase/realtime-csharp) \| [`Dart`](https://github.com/biobase/realtime-dart) \| [`Python`](https://github.com/biobase/realtime-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                        |
-| `gotrue-{lang}`       | [`JS`](https://github.com/biobase/gotrue-js)    | [`C#`](https://github.com/biobase/gotrue-csharp) \| [`Dart`](https://github.com/biobase/gotrue-dart) \| [`Python`](https://github.com/biobase/gotrue-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                              |
+| `postgrest-{lang}`    | [`JS`](https://github.com/biobase-ai/postgrest-js) | [`C#`](https://github.com/biobase-ai/postgrest-csharp) \| [`Dart`](https://github.com/biobase-ai/postgrest-dart) \| [`Python`](https://github.com/biobase-ai/postgrest-py) \| [`Rust`](https://github.com/biobase-ai/postgrest-rs) \| [`Ruby`](https://github.com/biobase-ai/postgrest-rb) \| [`Go`](https://github.com/biobase-ai/postgrest-go) |
+| `realtime-{lang}`     | [`JS`](https://github.com/biobase-ai/realtime-js)  | [`C#`](https://github.com/biobase-ai/realtime-csharp) \| [`Dart`](https://github.com/biobase-ai/realtime-dart) \| [`Python`](https://github.com/biobase-ai/realtime-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                        |
+| `gotrue-{lang}`       | [`JS`](https://github.com/biobase-ai/gotrue-js)    | [`C#`](https://github.com/biobase-ai/gotrue-csharp) \| [`Dart`](https://github.com/biobase-ai/gotrue-dart) \| [`Python`](https://github.com/biobase-ai/gotrue-py) \| `Rust` \| `Ruby` \| `Go`                                                                                                                                              |
 
 <!--- Remove this list if you're traslating to another language, it's hard to keep updated across multiple files-->
 <!--- Keep only the link to the list of translation files-->

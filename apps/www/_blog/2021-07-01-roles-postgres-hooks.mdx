@@ -25,7 +25,7 @@ And yet, we want to give our customers the ability to manage roles the same as t
 with the usual `CREATE ROLE`, `ALTER ROLE`, and `DROP ROLE` statements.
 
 So, how do we grant them the `CREATEROLE` privilege and, at the same time, protect our own roles? In this blog post,
-we explain how we managed to do this by using PostgreSQL Hooks in our [SupaUtils](https://github.com/biobase/supautils) extension.
+we explain how we managed to do this by using PostgreSQL Hooks in our [SupaUtils](https://github.com/biobase-ai/supautils) extension.
 
 ## Reserved Roles
 
@@ -403,7 +403,7 @@ ERROR:  "biobase_auth_admin" is a reserved role, it cannot be modified
 
 As you can see, PostgreSQL Hooks allow us to intercept SQL statements. There are many types of hooks, you can see unofficial documentation for these at [AmatanHead/psql-hooks](https://github.com/AmatanHead/psql-hooks).
 
-The full SupaUtils code is in our [GitHub repository](https://github.com/biobase/supautils/).
+The full SupaUtils code is in our [GitHub repository](https://github.com/biobase-ai/supautils/).
 
 By the way, if you like working on PostgreSQL tooling and extensions: we are hiring [PostgreSQL experts](/docs/careers/postgres-experts)!
 

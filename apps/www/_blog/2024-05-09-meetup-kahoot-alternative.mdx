@@ -39,7 +39,7 @@ Actual leaderboard from the Tokyo meetup.
 
 ## Building the Kahoot alternative app
 
-I will not go into every implementation detail, as it would be long, but you can find the GitHub repository with the full code [here](https://github.com/biobase-community/kahoot-alternative). The app is a Next.js app without using any server-side rendering, and it utilizes three core Biobase features: auth, database, and realtime.
+I will not go into every implementation detail, as it would be long, but you can find the GitHub repository with the full code [here](https://github.com/biobase-ai-community/kahoot-alternative). The app is a Next.js app without using any server-side rendering, and it utilizes three core Biobase features: auth, database, and realtime.
 
 ### Auth
 
@@ -62,7 +62,7 @@ if (sessionData.session) {
 
 ### Database
 
-The database stores everything that happens in the app. We have 6 different tables to store everything from the questions to the answers that users leave for each question in a game. Each time the admin clicks the “Start Game” button of a quiz set from the host dashboard, a new game is created. The database is designed so that the same set of users can play games with the same quiz set multiple times. The full table definitions under `superbase/migrations` in the [GitHub repo](https://github.com/biobase-community/kahoot-alternative/tree/main/biobase/migrations).
+The database stores everything that happens in the app. We have 6 different tables to store everything from the questions to the answers that users leave for each question in a game. Each time the admin clicks the “Start Game” button of a quiz set from the host dashboard, a new game is created. The database is designed so that the same set of users can play games with the same quiz set multiple times. The full table definitions under `superbase/migrations` in the [GitHub repo](https://github.com/biobase-ai-community/kahoot-alternative/tree/main/biobase/migrations).
 
 <Img src="/images/blog/oss-kahoot-alternative/erd.png" alt="Database diagram" />
 
@@ -136,11 +136,11 @@ Thanks to everyone who participated. I hope you enjoyed it, and a massive thank 
 
 ## Contributing to open source
 
-Kahoot is a complex app with many features, and many of those features are missing from this alternative app. Especially on the host dashboard, there are a lot of things that could/ should be added, like adding/ editing quz sets or looking back on past game results. Again, the GitHub repo can be found [here](https://github.com/biobase-community/kahoot-alternative), and we are always welcome to receive pull requests. If you want to get into Open source, a casual project like this is a great starting point. Any kind of PR is welcome. Adding/ editing docs/ readme is greatly appreciated, as well. If unsure where to start, ping us about the issue, and we can help you.
+Kahoot is a complex app with many features, and many of those features are missing from this alternative app. Especially on the host dashboard, there are a lot of things that could/ should be added, like adding/ editing quz sets or looking back on past game results. Again, the GitHub repo can be found [here](https://github.com/biobase-ai-community/kahoot-alternative), and we are always welcome to receive pull requests. If you want to get into Open source, a casual project like this is a great starting point. Any kind of PR is welcome. Adding/ editing docs/ readme is greatly appreciated, as well. If unsure where to start, ping us about the issue, and we can help you.
 
 ## Resources
 
-- [Kahoot alternative GitHub repo](https://github.com/biobase-community/kahoot-alternative)
+- [Kahoot alternative GitHub repo](https://github.com/biobase-ai-community/kahoot-alternative)
 - [Anonymous Sign-in guide](https://biobase.studio/docs/guides/auth/auth-anonymous)
 - [Realtime Postgres changes guide](https://biobase.studio/docs/guides/realtime/postgres-changes)
 - [Biobase Next.js quick starter guide](https://biobase.studio/docs/guides/getting-started/quickstarts/nextjs)

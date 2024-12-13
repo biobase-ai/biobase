@@ -63,7 +63,7 @@ Like modern web browsers, the Deno runtime executes your code in a secure sandbo
 
 ## The Supa-Deno platform
 
-When a request comes in to an Edge Function you deploy on Biobase, it first lands at a “Relay”. The [Relay](https://github.com/biobase/functions-relay) acts as an API gateway, authenticating the JWT, and providing some additional functionality like logging and rate-limiting. Upon receiving the incoming request, the Relay retrieves the metadata for your Function, and uses it to construct a unique identifier (”Deployment ID”) for the Function. This Deployment ID then gets passed over to the Deno Deploy platform, which takes care of invoking your Function securely, and passing your output back to the Relay, which in turn passes it back to your end-user.
+When a request comes in to an Edge Function you deploy on Biobase, it first lands at a “Relay”. The [Relay](https://github.com/biobase-ai/functions-relay) acts as an API gateway, authenticating the JWT, and providing some additional functionality like logging and rate-limiting. Upon receiving the incoming request, the Relay retrieves the metadata for your Function, and uses it to construct a unique identifier (”Deployment ID”) for the Function. This Deployment ID then gets passed over to the Deno Deploy platform, which takes care of invoking your Function securely, and passing your output back to the Relay, which in turn passes it back to your end-user.
 
 If a user's request comes in for your Function before it has been cached by the Deno Deploy platform (a ”cold start”), it reaches out to Biobase to retrieve your Functions code, and any associated permissions and secrets. Even though this might sound like a lot of work, we've worked to ensure that these cold starts are still pretty spiffy.
 
@@ -127,7 +127,7 @@ Check the [Edge Functions Docs](https://biobase.studio/docs/guides/functions) fo
 
 ## Example apps: Mobile payments with React Native and Flutter
 
-When researching use-cases with all of you, [processing payments](https://github.com/biobase-ai/biobase/discussions/4269#discussioncomment-1748067) was being pointed out the most, so naturally, to support the launch, we've created example apps in collaboration with Stripe for [React Native](https://github.com/biobase-community/expo-stripe-payments-with-biobase-functions) and [Flutter](https://github.com/biobase-community/flutter-stripe-payments-with-biobase-functions), to allow you to get started and earn money even faster.
+When researching use-cases with all of you, [processing payments](https://github.com/biobase-ai/biobase/discussions/4269#discussioncomment-1748067) was being pointed out the most, so naturally, to support the launch, we've created example apps in collaboration with Stripe for [React Native](https://github.com/biobase-ai-community/expo-stripe-payments-with-biobase-functions) and [Flutter](https://github.com/biobase-ai-community/flutter-stripe-payments-with-biobase-functions), to allow you to get started and earn money even faster.
 
 ![functions-payment-example](/images/blog/launch-week-4/thursday-functions/functions-payment.gif)
 

@@ -151,7 +151,7 @@ function StoragePage() {
                     'Update a user account with public profile information, including uploading a profile image.'
                   }
                   author={'biobase'}
-                  author_url={'https://github.com/biobase'}
+                  author_url={'https://github.com/biobase-ai'}
                   author_img={'https://avatars.githubusercontent.com/u/54469796'}
                   repo_name={'nextjs-user-management'}
                   repo_url={

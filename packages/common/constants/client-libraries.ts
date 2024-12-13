@@ -10,23 +10,23 @@ export const CLIENT_LIBRARIES = [
       },
       {
         name: 'postgrest-js',
-        url: 'https://github.com/biobase/postgrest-js',
+        url: 'https://github.com/biobase-ai/postgrest-js',
       },
       {
         name: 'gotrue-js',
-        url: 'https://github.com/biobase/gotrue-js',
+        url: 'https://github.com/biobase-ai/gotrue-js',
       },
       {
         name: 'realtime-js',
-        url: 'https://github.com/biobase/realtime-js',
+        url: 'https://github.com/biobase-ai/realtime-js',
       },
       {
         name: 'storage-js',
-        url: 'https://github.com/biobase/storage-js',
+        url: 'https://github.com/biobase-ai/storage-js',
       },
       {
         name: 'functions-js',
-        url: 'https://github.com/biobase/functions-js',
+        url: 'https://github.com/biobase-ai/functions-js',
       },
     ],
   },
@@ -37,27 +37,27 @@ export const CLIENT_LIBRARIES = [
     libraries: [
       {
         name: 'biobase-csharp',
-        url: 'https://github.com/biobase-community/biobase-csharp',
+        url: 'https://github.com/biobase-ai-community/biobase-csharp',
       },
       {
         name: 'postgrest-csharp',
-        url: 'https://github.com/biobase-community/postgrest-csharp',
+        url: 'https://github.com/biobase-ai-community/postgrest-csharp',
       },
       {
         name: 'gotrue-csharp',
-        url: 'https://github.com/biobase-community/gotrue-csharp',
+        url: 'https://github.com/biobase-ai-community/gotrue-csharp',
       },
       {
         name: 'realtime-csharp',
-        url: 'https://github.com/biobase-community/realtime-csharp',
+        url: 'https://github.com/biobase-ai-community/realtime-csharp',
       },
       {
         name: 'storage-csharp',
-        url: 'https://github.com/biobase-community/storage-csharp',
+        url: 'https://github.com/biobase-ai-community/storage-csharp',
       },
       {
         name: 'functions-csharp',
-        url: 'https://github.com/biobase-community/functions-csharp',
+        url: 'https://github.com/biobase-ai-community/functions-csharp',
       },
     ],
   },
@@ -68,31 +68,31 @@ export const CLIENT_LIBRARIES = [
     libraries: [
       {
         name: 'biobase-flutter',
-        url: 'https://github.com/biobase-community/biobase-flutter',
+        url: 'https://github.com/biobase-ai-community/biobase-flutter',
       },
       {
         name: 'biobase-dart',
-        url: 'https://github.com/biobase-community/biobase-dart',
+        url: 'https://github.com/biobase-ai-community/biobase-dart',
       },
       {
         name: 'postgrest-dart',
-        url: 'https://github.com/biobase-community/postgrest-dart',
+        url: 'https://github.com/biobase-ai-community/postgrest-dart',
       },
       {
         name: 'gotrue-dart',
-        url: 'https://github.com/biobase-community/gotrue-dart',
+        url: 'https://github.com/biobase-ai-community/gotrue-dart',
       },
       {
         name: 'realtime-dart',
-        url: 'https://github.com/biobase-community/realtime-dart',
+        url: 'https://github.com/biobase-ai-community/realtime-dart',
       },
       {
         name: 'storage-dart',
-        url: 'https://github.com/biobase-community/storage-dart',
+        url: 'https://github.com/biobase-ai-community/storage-dart',
       },
       {
         name: 'functions-dart',
-        url: 'https://github.com/biobase-community/functions-dart',
+        url: 'https://github.com/biobase-ai-community/functions-dart',
       },
     ],
   },
@@ -103,15 +103,15 @@ export const CLIENT_LIBRARIES = [
     libraries: [
       {
         name: 'postgrest-go',
-        url: 'https://github.com/biobase-community/postgrest-go',
+        url: 'https://github.com/biobase-ai-community/postgrest-go',
       },
       {
         name: 'storage-go',
-        url: 'https://github.com/biobase-community/storage-go',
+        url: 'https://github.com/biobase-ai-community/storage-go',
       },
       {
         name: 'functions-go',
-        url: 'https://github.com/biobase-community/functions-go',
+        url: 'https://github.com/biobase-ai-community/functions-go',
       },
     ],
   },
@@ -122,7 +122,7 @@ export const CLIENT_LIBRARIES = [
     libraries: [
       {
         name: 'gotrue-java',
-        url: 'https://github.com/biobase-community/gotrue-java',
+        url: 'https://github.com/biobase-ai-community/gotrue-java',
       },
     ],
   },
@@ -133,23 +133,23 @@ export const CLIENT_LIBRARIES = [
     libraries: [
       {
         name: 'postgrest-kt',
-        url: 'https://github.com/biobase-community/biobase-kt/tree/master/Postgrest',
+        url: 'https://github.com/biobase-ai-community/biobase-kt/tree/master/Postgrest',
       },
       {
         name: 'auth-kt',
-        url: 'https://github.com/biobase-community/biobase-kt/tree/master/Auth',
+        url: 'https://github.com/biobase-ai-community/biobase-kt/tree/master/Auth',
       },
       {
         name: 'storage-kt',
-        url: 'https://github.com/biobase-community/biobase-kt/tree/master/Storage',
+        url: 'https://github.com/biobase-ai-community/biobase-kt/tree/master/Storage',
       },
       {
         name: 'realtime-kt',
-        url: 'https://github.com/biobase-community/biobase-kt/tree/master/Realtime',
+        url: 'https://github.com/biobase-ai-community/biobase-kt/tree/master/Realtime',
       },
       {
         name: 'functions-kt',
-        url: 'https://github.com/biobase-community/biobase-kt/tree/master/Functions',
+        url: 'https://github.com/biobase-ai-community/biobase-kt/tree/master/Functions',
       },
     ],
   },
@@ -164,23 +164,23 @@ export const CLIENT_LIBRARIES = [
       },
       {
         name: 'postgrest-py',
-        url: 'https://github.com/biobase/postgrest-py',
+        url: 'https://github.com/biobase-ai/postgrest-py',
       },
       {
         name: 'gotrue-py',
-        url: 'https://github.com/biobase/gotrue-py',
+        url: 'https://github.com/biobase-ai/gotrue-py',
       },
       {
         name: 'realtime-py',
-        url: 'https://github.com/biobase/realtime-py',
+        url: 'https://github.com/biobase-ai/realtime-py',
       },
       {
         name: 'storage-py',
-        url: 'https://github.com/biobase/storage-py',
+        url: 'https://github.com/biobase-ai/storage-py',
       },
       {
         name: 'functions-py',
-        url: 'https://github.com/biobase/functions-py',
+        url: 'https://github.com/biobase-ai/functions-py',
       },
     ],
   },
@@ -191,11 +191,11 @@ export const CLIENT_LIBRARIES = [
     libraries: [
       {
         name: 'biobase-ruby',
-        url: 'https://github.com/biobase-community/biobase-rb',
+        url: 'https://github.com/biobase-ai-community/biobase-rb',
       },
       {
         name: 'postgrest-ruby',
-        url: 'https://github.com/biobase-community/postgrest-rb',
+        url: 'https://github.com/biobase-ai-community/postgrest-rb',
       },
     ],
   },
@@ -206,7 +206,7 @@ export const CLIENT_LIBRARIES = [
     libraries: [
       {
         name: 'postgrest-rs',
-        url: 'https://github.com/biobase-community/postgrest-rs',
+        url: 'https://github.com/biobase-ai-community/postgrest-rs',
       },
     ],
   },
@@ -221,19 +221,19 @@ export const CLIENT_LIBRARIES = [
       },
       {
         name: 'postgrest-swift',
-        url: 'https://github.com/biobase-community/postgrest-swift',
+        url: 'https://github.com/biobase-ai-community/postgrest-swift',
       },
       {
         name: 'gotrue-swift',
-        url: 'https://github.com/biobase-community/gotrue-swift',
+        url: 'https://github.com/biobase-ai-community/gotrue-swift',
       },
       {
         name: 'realtime-swift',
-        url: 'https://github.com/biobase-community/realtime-swift',
+        url: 'https://github.com/biobase-ai-community/realtime-swift',
       },
       {
         name: 'storage-swift',
-        url: 'https://github.com/biobase-community/storage-swift',
+        url: 'https://github.com/biobase-ai-community/storage-swift',
       },
     ],
   },
@@ -244,27 +244,27 @@ export const CLIENT_LIBRARIES = [
     libraries: [
       {
         name: 'biobase-gdscript',
-        url: 'https://github.com/biobase-community/godot-engine.biobase',
+        url: 'https://github.com/biobase-ai-community/godot-engine.biobase',
       },
       {
         name: 'postgrest-gdscript',
-        url: 'https://github.com/biobase-community/postgrest-gdscript',
+        url: 'https://github.com/biobase-ai-community/postgrest-gdscript',
       },
       {
         name: 'gotrue-gdscript',
-        url: 'https://github.com/biobase-community/gotrue-gdscript',
+        url: 'https://github.com/biobase-ai-community/gotrue-gdscript',
       },
       {
         name: 'realtime-gdscript',
-        url: 'https://github.com/biobase-community/realtime-gdscript',
+        url: 'https://github.com/biobase-ai-community/realtime-gdscript',
       },
       {
         name: 'storage-gdscript',
-        url: 'https://github.com/biobase-community/storage-gdscript',
+        url: 'https://github.com/biobase-ai-community/storage-gdscript',
       },
       {
         name: 'functions-gdscript',
-        url: 'https://github.com/biobase-community/functions-gdscript',
+        url: 'https://github.com/biobase-ai-community/functions-gdscript',
       },
     ],
   },

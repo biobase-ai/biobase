@@ -9,8 +9,8 @@ info:
   id: 'cli' # {string} A unique ID for this tool.
   version: '1.93.0' # {string} The current version number of the tool.
   title: 'CLI' # {string} A readable name.
-  source: 'https://github.com/biobase/cli' # {string} Where developers can find the source code.
-  bugs: 'https://github.com/biobase/cli/issues' # {string} Where developers can file bugs.
+  source: 'https://github.com/biobase-ai/cli' # {string} Where developers can find the source code.
+  bugs: 'https://github.com/biobase-ai/cli/issues' # {string} Where developers can file bugs.
   spec: 'https://github.com/biobase-ai/biobase/spec/cli_v1_config.yaml' # {string} Where developers can find this spec (to link directly in the docs).
   description: |
     A `biobase/config.toml` file is generated after running `biobase init`.

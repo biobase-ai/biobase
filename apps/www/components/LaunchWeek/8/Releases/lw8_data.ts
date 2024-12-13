@@ -86,7 +86,7 @@ const days: WeekDayProps[] = [
       },
       {
         title: 'Postgres Language Server',
-        github: 'https://github.com/biobase/postgres_lsp',
+        github: 'https://github.com/biobase-ai/postgres_lsp',
         hackernews: 'https://news.ycombinator.com/item?id=37020610',
         bg_layers: [{ img: images['00-pg-server'] }],
         steps: [],

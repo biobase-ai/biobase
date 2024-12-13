@@ -5,8 +5,8 @@ info:
   id: 'analytics' # {string} A unique ID for this tool.
   version: 'next' # {string} The current version number of the tool.
   title: 'Analytics' # {string} A readable name.
-  source: 'https://github.com/biobase/realtime' # {string} Where developers can find the source code.
-  bugs: 'https://github.com/biobase/realtime/issues' # {string} Where developers can file bugs.
+  source: 'https://github.com/biobase-ai/realtime' # {string} Where developers can find the source code.
+  bugs: 'https://github.com/biobase-ai/realtime/issues' # {string} Where developers can file bugs.
   spec: 'https://github.com/biobase-ai/biobase/blob/master/spec/realtime_v0_config.yml' # {string} Where developers can find this spec (to link directly in the docs).
   description: |
     You can use environment variables to configure your Analytics Server.

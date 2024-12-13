@@ -40,7 +40,7 @@ const Examples: Example[] = [
     description:
       'A Next.js App Router template configured with cookie-based auth using Biobase, TypeScript and Tailwind CSS.',
     author: 'Biobase',
-    author_url: 'https://github.com/biobase',
+    author_url: 'https://github.com/biobase-ai',
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'vercel/next.js/examples/with-biobase',
     repo_url: 'https://github.com/vercel/next.js/tree/canary/examples/with-biobase',
@@ -56,10 +56,10 @@ const Examples: Example[] = [
     description:
       'An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Biobase.',
     author: 'Biobase',
-    author_url: 'https://github.com/biobase',
+    author_url: 'https://github.com/biobase-ai',
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'biobase-community/vercel-ai-chatbot',
-    repo_url: 'https://github.com/biobase-community/vercel-ai-chatbot',
+    repo_url: 'https://github.com/biobase-ai-community/vercel-ai-chatbot',
     vercel_deploy_url:
       'https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbiobase-community%2Fvercel-ai-chatbot&env=OPENAI_API_KEY&envDescription=You%20must%20first%20activate%20a%20Billing%20Account%20here%3A%20https%3A%2F%2Fplatform.openai.com%2Faccount%2Fbilling%2Foverview&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys&project-name=vercel-ai-chatbot-with-biobase&repository-name=vercel-ai-chatbot-with-biobase&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6&external-id=https%3A%2F%2Fgithub.com%2Fbiobase-community%2Fvercel-ai-chatbot%2Ftree%2Fmain',
     demo_url: '',
@@ -72,7 +72,7 @@ const Examples: Example[] = [
     description:
       'Starter template and example use-cases for LangChain projects in Next.js, including chat, agents, and retrieval.',
     author: 'Biobase',
-    author_url: 'https://github.com/biobase',
+    author_url: 'https://github.com/biobase-ai',
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'langchain-ai/langchain-nextjs-template',
     repo_url: 'https://github.com/langchain-ai/langchain-nextjs-template',
@@ -88,7 +88,7 @@ const Examples: Example[] = [
     description:
       'Get started with Biobase and Flutter by building a user management app with auth, file storage, and database.',
     author: 'Biobase Community',
-    author_url: 'https://github.com/biobase-community',
+    author_url: 'https://github.com/biobase-ai-community',
     author_img: 'https://avatars.githubusercontent.com/u/87650496',
     repo_name: 'biobase/examples/user-management/flutter-user-management',
     repo_url:
@@ -104,10 +104,10 @@ const Examples: Example[] = [
     description:
       'An extended version of create-t3-turbo implementing authentication on both the web and mobile applications.',
     author: 'Biobase Community',
-    author_url: 'https://github.com/biobase-community',
+    author_url: 'https://github.com/biobase-ai-community',
     author_img: 'https://avatars.githubusercontent.com/u/87650496',
     repo_name: 'biobase-community/create-t3-turbo',
-    repo_url: 'https://github.com/biobase-community/create-t3-turbo',
+    repo_url: 'https://github.com/biobase-ai-community/create-t3-turbo',
     vercel_deploy_url: '',
     demo_url: 'https://create-t3-turbo.vercel.app/',
   },
@@ -132,7 +132,7 @@ const Examples: Example[] = [
     title: 'Next.js Realtime chat app',
     description: 'Next.js Slack clone app using Biobase realtime subscriptions',
     author: 'biobase',
-    author_url: 'https://github.com/biobase',
+    author_url: 'https://github.com/biobase-ai',
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'nextjs-slack-clone',
     repo_url:
@@ -205,7 +205,7 @@ const Examples: Example[] = [
     title: 'Svelte todo list app',
     description: 'Sveltejs todo with TailwindCSS and Snowpack',
     author: 'biobase',
-    author_url: 'https://github.com/biobase',
+    author_url: 'https://github.com/biobase-ai',
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'sveltejs-todo-list',
     repo_url:
@@ -220,11 +220,11 @@ const Examples: Example[] = [
     title: 'Vue.js todo list app',
     description: 'Vue.js todo app using TypeScript',
     author: 'biobase',
-    author_url: 'https://github.com/biobase',
+    author_url: 'https://github.com/biobase-ai',
     author_img: 'https://avatars.githubusercontent.com/u/54469796',
     repo_name: 'vue3-ts-todo-list',
     repo_url:
-      'https://github.com/biobase/examples/tree/main/biobase-js-v1/todo-list/vue3-ts-todo-list',
+      'https://github.com/biobase-ai/examples/tree/main/biobase-js-v1/todo-list/vue3-ts-todo-list',
     vercel_deploy_url: '',
     demo_url: '',
   },
@@ -239,7 +239,7 @@ const Examples: Example[] = [
     author_img: 'https://avatars.githubusercontent.com/u/32737308',
     repo_name: 'angular-todo-list',
     repo_url:
-      'https://github.com/biobase/examples/tree/main/biobase-js-v1/todo-list/angular-todo-list',
+      'https://github.com/biobase-ai/examples/tree/main/biobase-js-v1/todo-list/angular-todo-list',
     vercel_deploy_url: '',
     demo_url: '',
   },

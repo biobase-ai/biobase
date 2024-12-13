@@ -1,5 +1,5 @@
 // https://biobase.studio/docs/guides/platform/performance#optimizing-the-number-of-connections
-// https://github.com/biobase/infrastructure/blob/develop/worker/src/lib/constants.ts#L544-L596
+// https://github.com/biobase-ai/infrastructure/blob/develop/worker/src/lib/constants.ts#L544-L596
 
 export const POOLING_OPTIMIZATIONS = {
   ci_nano: {

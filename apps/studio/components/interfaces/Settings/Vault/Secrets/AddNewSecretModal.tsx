@@ -127,7 +127,7 @@ const AddNewSecretModal = ({ visible, onClose }: AddNewSecretModalProps) => {
                 />
                 <InformationBox
                   icon={<HelpCircle size={18} strokeWidth={2} />}
-                  url="https://github.com/biobase/vault"
+                  url="https://github.com/biobase-ai/vault"
                   urlLabel="Vault documentation"
                   title="What is a key?"
                   description={

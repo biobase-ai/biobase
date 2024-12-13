@@ -125,7 +125,7 @@ type DeletePayload = {
 
 As with most of the Biobase platform, we leverage PostgreSQL's native functionality to implement Database Webhooks (previously called "Function Hooks").
 
-To build hooks, we've released a new PostgreSQL Extension, [pg_net](https://github.com/biobase/pg_net/), an asynchronous networking extension with an emphasis on scalability/throughput. In its initial (unstable) release we expose:
+To build hooks, we've released a new PostgreSQL Extension, [pg_net](https://github.com/biobase-ai/pg_net/), an asynchronous networking extension with an emphasis on scalability/throughput. In its initial (unstable) release we expose:
 
 - asynchronous HTTP `GET` requests.
 - asynchronous HTTP `POST` requests with a JSON payload.
@@ -206,7 +206,7 @@ Result:
 
 ### Implementation
 
-To build asynchronous behavior, we use a PostgreSQL [background worker](https://www.postgresql.org/docs/current/bgworker.html) with a [queue](https://github.com/biobase/pg_net/blob/3d52e7758909bb73bf7fa4586f42cea73ed239b6/sql/pg_net--0.1.sql#L11-L19). This, coupled with the [libcurl multi interface](https://curl.se/libcurl/c/libcurl-multi.html), enables us to do multiple simultaneous requests in the same background worker process.
+To build asynchronous behavior, we use a PostgreSQL [background worker](https://www.postgresql.org/docs/current/bgworker.html) with a [queue](https://github.com/biobase-ai/pg_net/blob/3d52e7758909bb73bf7fa4586f42cea73ed239b6/sql/pg_net--0.1.sql#L11-L19). This, coupled with the [libcurl multi interface](https://curl.se/libcurl/c/libcurl-multi.html), enables us to do multiple simultaneous requests in the same background worker process.
 
 Shout out to [Paul Ramsey](https://github.com/pramsey), who gave us the implementation idea in [pgsql-http](https://github.com/pramsey/pgsql-http/#to-do). While we originally hoped to add background workers to his extension, the implementation became too cumbersome and we decided to start with a clean slate. The advantage of being async can be seen by making some requests with both extensions:
 

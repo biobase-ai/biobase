@@ -33,7 +33,7 @@ jobs:
           key: 6435a4cd1eeea7c2bbd343731de7e8a5127cb2d1
       - name: install linter
         if: steps.cache-cargo.outputs.cache-hit != 'true'
-        run: cargo install --locked --git https://github.com/biobase-ai-community/supa-mdx-lint --rev 6435a4cd1eeea7c2bbd343731de7e8a5127cb2d1
+        run: cargo install --locked --git https://github.com/biobase-ai-ai-community/supa-mdx-lint --rev 6435a4cd1eeea7c2bbd343731de7e8a5127cb2d1
       - name: install reviewdog
         uses: reviewdog/action-setup@3f401fe1d58fe77e10d665ab713057375e39b887 # v1.3.0
         with:

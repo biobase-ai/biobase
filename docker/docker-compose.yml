@@ -61,7 +61,7 @@ services:
     environment:
       KONG_DATABASE: "off"
       KONG_DECLARATIVE_CONFIG: /home/kong/kong.yml
-      # https://github.com/biobase/cli/issues/14
+      # https://github.com/biobase-ai/cli/issues/14
       KONG_DNS_ORDER: LAST,A,CNAME
       KONG_PLUGINS: request-transformer,cors,key-auth,acl,basic-auth
       KONG_NGINX_PROXY_PROXY_BUFFER_SIZE: 160k
@@ -257,7 +257,7 @@ services:
       STORAGE_BACKEND: file
       FILE_STORAGE_BACKEND_PATH: /var/lib/storage
       TENANT_ID: stub
-      # TODO: https://github.com/biobase/storage-api/issues/55
+      # TODO: https://github.com/biobase-ai/storage-api/issues/55
       REGION: stub
       GLOBAL_S3_BUCKET: stub
       ENABLE_IMAGE_TRANSFORMATION: "true"
@@ -312,7 +312,7 @@ services:
       BIOBASE_ANON_KEY: ${ANON_KEY}
       BIOBASE_SERVICE_ROLE_KEY: ${SERVICE_ROLE_KEY}
       BIOBASE_DB_URL: postgresql://postgres:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
-      # TODO: Allow configuring VERIFY_JWT per function. This PR might help: https://github.com/biobase/cli/pull/786
+      # TODO: Allow configuring VERIFY_JWT per function. This PR might help: https://github.com/biobase-ai/cli/pull/786
       VERIFY_JWT: "${FUNCTIONS_VERIFY_JWT}"
     volumes:
       - ./volumes/functions:/home/deno/functions:Z

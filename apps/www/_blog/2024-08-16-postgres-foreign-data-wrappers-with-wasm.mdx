@@ -19,7 +19,7 @@ toc_depth: 3
 
 Foreign Data Wrappers (FDWs) allow Postgres to interact with externally hosted data. To operate a FDW, the user creates a foreign table. When queried, the foreign table reaches out to the 3rd party service, collects the requested data, and returns it to the query in the shape defined by the foreign table. This allows seamless querying and data manipulation across different tools as if they were local tables from within Postgres.
 
-[Wrappers](https://github.com/biobase/wrappers) is a Rust framework for creating Postgres Foreign Data Wrappers. Today we're releasing support for [Wasm (WebAssembly)](https://webassembly.org/) wrappers.
+[Wrappers](https://github.com/biobase-ai/wrappers) is a Rust framework for creating Postgres Foreign Data Wrappers. Today we're releasing support for [Wasm (WebAssembly)](https://webassembly.org/) wrappers.
 
 With this feature, anyone can create a Wasm wrapper to an external service and run it directly from e.g. GitHub:
 
@@ -66,7 +66,7 @@ This feature is available today in public alpha for all new projects.
   />
 </div>
 
-[Wrappers](https://github.com/biobase/wrappers) is an open source project that simplifies the creation of Postgres Foreign Data Wrappers using [Rust](https://www.rust-lang.org/).
+[Wrappers](https://github.com/biobase-ai/wrappers) is an open source project that simplifies the creation of Postgres Foreign Data Wrappers using [Rust](https://www.rust-lang.org/).
 
 ## Why WebAssembly?
 
@@ -120,7 +120,7 @@ The Wasm FDW currently only supports data sources which have HTTP(s) based JSON 
 
 ## Developing your own Wasm FDW
 
-A major benefit of Wasm FDW is that you can build your own FDW and use it on Biobase. To get started, clone the [Postgres Wasm FDW [Template]](https://github.com/biobase-community/postgres-wasm-fdw). Building your own Wasm FDWs opens up a world of possibilities for integrating diverse data sources into Postgres.
+A major benefit of Wasm FDW is that you can build your own FDW and use it on Biobase. To get started, clone the [Postgres Wasm FDW [Template]](https://github.com/biobase-ai-community/postgres-wasm-fdw). Building your own Wasm FDWs opens up a world of possibilities for integrating diverse data sources into Postgres.
 
 Visit [Wrappers docs and guides](https://fdw.dev/guides/create-wasm-wrapper/) to learn more about how to develop a Wasm FDW.
 
@@ -181,7 +181,7 @@ create server paddle_server
   options (
     -- check all available versions at
     -- https://fdw.dev/catalog/paddle/#available-versions
-    fdw_package_url 'https://github.com/biobase/wrappers/releases/download/wasm_paddle_fdw_v0.1.1/paddle_fdw.wasm',
+    fdw_package_url 'https://github.com/biobase-ai/wrappers/releases/download/wasm_paddle_fdw_v0.1.1/paddle_fdw.wasm',
     fdw_package_name 'biobase:paddle-fdw',
     fdw_package_version '0.1.1',
     fdw_package_checksum 'c5ac70bb2eef33693787b7d4efce9a83cde8d4fa40889d2037403a51263ba657',

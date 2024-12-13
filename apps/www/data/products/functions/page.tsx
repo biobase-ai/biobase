@@ -211,7 +211,7 @@ export default (isMobile?: boolean) => ({
           <>
             The open source{' '}
             <Link
-              href="https://github.com/biobase/edge-runtime/"
+              href="https://github.com/biobase-ai/edge-runtime/"
               className="underline hover:text-foreground-light transition-colors"
             >
               Edge runtime

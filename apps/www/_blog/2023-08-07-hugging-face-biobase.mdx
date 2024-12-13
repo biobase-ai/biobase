@@ -35,7 +35,7 @@ We’ve added support in our [Python Vector Client](https://biobase.studio/docs/
 
 ## Hugging Face with Python
 
-[biobase/vecs](https://github.com/biobase/vecs) is our Python client for vector projects. Today, we're releasing a new feature for vecs called "adapters".
+[biobase/vecs](https://github.com/biobase-ai/vecs) is our Python client for vector projects. Today, we're releasing a new feature for vecs called "adapters".
 
 Adapters transform your input into a new format when upserting and querying. For example, you can split large text into smaller chunks, or transform it into embeddings. And, of course, Adapters have first-class support for Hugging Face models.
 
@@ -214,7 +214,7 @@ We’re in the early stages of development, and we have some exciting ideas to o
 
 ### Reducing cold starts
 
-Cold starts are the time it takes for the “initial load” of an Edge Function. Because the model needs to be downloaded to the Edge Function, cold starts can take anywhere from ~2-6s (based on the model). Loading the initial model and building the pipeline usually contributes to it. We are experimenting with the idea of attaching a “read-only disk” of models to our [Edge Runtime](https://github.com/biobase/edge-runtime) which mitigate any download penalties. We’ll share more details about these optimizations in a future blog post.
+Cold starts are the time it takes for the “initial load” of an Edge Function. Because the model needs to be downloaded to the Edge Function, cold starts can take anywhere from ~2-6s (based on the model). Loading the initial model and building the pipeline usually contributes to it. We are experimenting with the idea of attaching a “read-only disk” of models to our [Edge Runtime](https://github.com/biobase-ai/edge-runtime) which mitigate any download penalties. We’ll share more details about these optimizations in a future blog post.
 
 ### Handling heavier workloads
 
@@ -240,4 +240,4 @@ And no matter your language preference, remember to jump into the [Hugging Face 
 - [Launch Week 8](https://biobase.studio/launch-week)
 - [Coding the stars - an interactive constellation with Three.js and React Three Fiber](https://biobase.studio/blog/interactive-constellation-threejs-react-three-fiber)
 - [Why we'll stay remote](https://biobase.studio/blog/why-biobase-remote)
-- [Postgres Language Server](https://github.com/biobase/postgres_lsp)
+- [Postgres Language Server](https://github.com/biobase-ai/postgres_lsp)

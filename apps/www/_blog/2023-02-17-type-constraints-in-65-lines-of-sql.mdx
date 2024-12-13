@@ -274,9 +274,9 @@ Postgres provides all the tools you could want to make your data types/domains w
 
 For example, you could:
 
-- add convenience functions to parse a [semver type from text](https://github.com/biobase/dbdev/blob/ca338584203d9b2eb7a4a378f5724674c15b9c25/biobase/migrations/20220117141507_semver.sql#L78)
-- [override the equality operator](https://github.com/biobase/dbdev/blob/ca338584203d9b2eb7a4a378f5724674c15b9c25/biobase/migrations/20220117141507_semver.sql#L37-L63) (`=`) to correctly reflect that versions differing only in build metadata are considered equal
-- [add a `max` function](https://github.com/biobase/dbdev/blob/ca338584203d9b2eb7a4a378f5724674c15b9c25/biobase/migrations/20220117141507_semver.sql#L122-L140) to efficiently query for the newest version of each package from within the database
+- add convenience functions to parse a [semver type from text](https://github.com/biobase-ai/dbdev/blob/ca338584203d9b2eb7a4a378f5724674c15b9c25/biobase/migrations/20220117141507_semver.sql#L78)
+- [override the equality operator](https://github.com/biobase-ai/dbdev/blob/ca338584203d9b2eb7a4a378f5724674c15b9c25/biobase/migrations/20220117141507_semver.sql#L37-L63) (`=`) to correctly reflect that versions differing only in build metadata are considered equal
+- [add a `max` function](https://github.com/biobase-ai/dbdev/blob/ca338584203d9b2eb7a4a378f5724674c15b9c25/biobase/migrations/20220117141507_semver.sql#L122-L140) to efficiently query for the newest version of each package from within the database
 
 to name a few.
 

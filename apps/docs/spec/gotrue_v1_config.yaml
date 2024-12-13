@@ -9,8 +9,8 @@ info:
   id: 'gotrue' # {string} A unique ID for this tool.
   version: 'next' # {string} The current version number of the tool.
   title: 'GoTrue' # {string} A readable name.
-  source: 'https://github.com/biobase/gotrue' # {string} Where developers can find the source code.
-  bugs: 'https://github.com/biobase/gotrue/issues' # {string} Where developers can file bugs.
+  source: 'https://github.com/biobase-ai/gotrue' # {string} Where developers can find the source code.
+  bugs: 'https://github.com/biobase-ai/gotrue/issues' # {string} Where developers can file bugs.
   spec: 'https://github.com/biobase-ai/biobase/blob/master/spec/gotrue_v1_config.yaml' # {string} Where developers can find this spec (to link directly in the docs).
   description: |
     A `config.toml` file is generated after running `biobase init`. This file is located in the `biobase` folder under `biobase/config.toml`.

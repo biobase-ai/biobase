@@ -461,11 +461,11 @@ The cookie-related methods like `setAuthCookie` and `getUserByCookie` have been 
 For Next.js you can use the [Auth Helpers](https://biobase.studio/docs/guides/auth/auth-helpers/nextjs) to help you manage cookies.
 If you can't use the Auth Helpers, you can use [server-side rendering](https://biobase.studio/docs/guides/auth/server-side-rendering).
 
-Some the [PR](https://github.com/biobase/gotrue-js/pull/340) for additional background information.
+Some the [PR](https://github.com/biobase-ai/gotrue-js/pull/340) for additional background information.
 
 ### Data methods
 
-`.insert()` / `.upsert()` / `.update()` / `.delete()` don't return rows by default: [PR](https://github.com/biobase/postgrest-js/pull/276).
+`.insert()` / `.upsert()` / `.update()` / `.delete()` don't return rows by default: [PR](https://github.com/biobase-ai/postgrest-js/pull/276).
 
 Previously, these methods return inserted/updated/deleted rows by default (which caused [some confusion](https://github.com/biobase-ai/biobase/discussions/1548)), and you can opt to not return it by specifying `returning: 'minimal'`. Now the default behavior is to not return rows. To return inserted/updated/deleted rows, add a `.select()` call at the end.
 

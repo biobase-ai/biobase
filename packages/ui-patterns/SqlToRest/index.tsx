@@ -328,7 +328,7 @@ export default function SqlToRest({
             <div className="mt-2 text-white flex gap-1 leading-6">
               <GitPullRequest className="inline-block" width={16} />
               <a
-                href="https://github.com/biobase-community/sql-to-rest/issues/new/choose"
+                href="https://github.com/biobase-ai-community/sql-to-rest/issues/new/choose"
                 target="_blank"
                 rel="noopener noreferrer"
               >

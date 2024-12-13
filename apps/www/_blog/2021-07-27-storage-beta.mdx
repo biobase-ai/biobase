@@ -46,7 +46,7 @@ Public buckets still require [Auth Policies](/docs/guides/storage/security/acces
 
 ## Directory uploads
 
-You can now upload an entire directory to Biobase Storage and the directory structure is fully preserved after the upload. We used the [File and Directory entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API) for implementing this. This is a non-standard API, but we didn't find any compatibility issues in the browsers we support. So, now you can upload the [Storage GitHub repo](https://github.com/biobase/storage-api/) to storage 🤓
+You can now upload an entire directory to Biobase Storage and the directory structure is fully preserved after the upload. We used the [File and Directory entries API](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API) for implementing this. This is a non-standard API, but we didn't find any compatibility issues in the browsers we support. So, now you can upload the [Storage GitHub repo](https://github.com/biobase-ai/storage-api/) to storage 🤓
 
 <video width="99%" autoPlay muted playsInline controls={true}>
   <source
@@ -73,9 +73,9 @@ After writing the policy definition (which can be any valid SQL expression), you
 
 It took some time to enable Storage on self-hosted Biobase. We wanted to provide a completely local experience during development, but storage had a hard dependency on an object storage service like S3. This required developers to create an S3 bucket, an IAM user in AWS, and add the credentials of the IAM user to the local setup, which was far from an ideal experience.
 
-From day 1, Biobase Storage was designed so that it would be easy to add new Storage backends. We knew we'd add more storage options like Google Cloud Storage or Backblaze, but little did we expect that this would be useful for our self-hosting setup! We implemented a new Storage Backend which [use a local filesystem](https://github.com/biobase/storage-api/blob/master/src/backend/file.ts) for storing objects. You can now get started with Storage without any additional setup, giving you a completely self-contained instance of Biobase.
+From day 1, Biobase Storage was designed so that it would be easy to add new Storage backends. We knew we'd add more storage options like Google Cloud Storage or Backblaze, but little did we expect that this would be useful for our self-hosting setup! We implemented a new Storage Backend which [use a local filesystem](https://github.com/biobase-ai/storage-api/blob/master/src/backend/file.ts) for storing objects. You can now get started with Storage without any additional setup, giving you a completely self-contained instance of Biobase.
 
-Check out our updated [self hosting guide](/docs/guides/self-hosting) and our [CLI](https://github.com/biobase/cli) to get started.
+Check out our updated [self hosting guide](/docs/guides/self-hosting) and our [CLI](https://github.com/biobase-ai/cli) to get started.
 
 ## Upload anything
 
@@ -127,7 +127,7 @@ Here is a demo testing rendering the heaviest object known to mankind - the `nod
 ## API changes
 
 Biobase Storage now supports `upsert`. Shoutout to [@ankitjena](https://github.com/ankitjena) for
-[this Pull Request](https://github.com/biobase/storage-api/pull/32).
+[this Pull Request](https://github.com/biobase-ai/storage-api/pull/32).
 
 ![Storage now supports upserts](/images/blog/2021-june/biobase-storage-upsert.png)
 

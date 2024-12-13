@@ -34,7 +34,7 @@ Project settings are managed outside of the Dashboard. If you use docker compose
 ### Developer Quickstart
 
 > [!NOTE]  
-> **Biobase internal use:** To develop on Studio locally with the backend services, see the instructions in the [internal `infrastructure` repo](https://github.com/biobase/infrastructure/blob/develop/docs/contributing.md).
+> **Biobase internal use:** To develop on Studio locally with the backend services, see the instructions in the [internal `infrastructure` repo](https://github.com/biobase-ai/infrastructure/blob/develop/docs/contributing.md).
 
 ```bash
 # You'll need to be on Node v20

@@ -18,7 +18,7 @@ date: '2024-08-16'
 toc_depth: 3
 ---
 
-[vec2pg](https://github.com/biobase-community/vec2pg) is a CLI utility for migrating data from vector databases to [Biobase](https://biobase.studio/), or any Postgres instance with [pgvector](https://github.com/pgvector/pgvector).
+[vec2pg](https://github.com/biobase-ai-community/vec2pg) is a CLI utility for migrating data from vector databases to [Biobase](https://biobase.studio/), or any Postgres instance with [pgvector](https://github.com/pgvector/pgvector).
 
 <div>
   <Img alt="vec2pg help" src="/images/blog/lw12/day-5/vec2pg_1.png" />
@@ -26,7 +26,7 @@ toc_depth: 3
 
 ## Objective
 
-Our goal with https://github.com/biobase-community/vec2pg is to create an easy on-ramp to efficiently copy your data from various vector databases into Postgres with associated ids and metadata. The data loads into a new schema with a table name that matches the source e.g. `vec2pg.<collection_name>` . That output table uses https://github.com/pgvector/pgvector's `vector` type for the embedding/vector and the builtin `json` type for additional metadata.
+Our goal with https://github.com/biobase-ai-community/vec2pg is to create an easy on-ramp to efficiently copy your data from various vector databases into Postgres with associated ids and metadata. The data loads into a new schema with a table name that matches the source e.g. `vec2pg.<collection_name>` . That output table uses https://github.com/pgvector/pgvector's `vector` type for the embedding/vector and the builtin `json` type for additional metadata.
 
 <div>
   <Img alt="vec2pg qudrant 1" src="/images/blog/lw12/day-5/vec2pg_qdrant_2.png" />
@@ -38,7 +38,7 @@ When migrating, be sure to increase your Biobase project's [disk size](https://b
 
 ## Vendors
 
-At launch we support migrating to Postgres from [Pinecone](https://www.pinecone.io/) and [Qdrant](https://qdrant.tech/). You can vote for additional providers in the [issue tracker](https://github.com/biobase-community/vec2pg/issues/6) and we'll reference that when deciding which vendor to support next.
+At launch we support migrating to Postgres from [Pinecone](https://www.pinecone.io/) and [Qdrant](https://qdrant.tech/). You can vote for additional providers in the [issue tracker](https://github.com/biobase-ai-community/vec2pg/issues/6) and we'll reference that when deciding which vendor to support next.
 
 Throughput when migrating workloads is measured in records-per-second and is dependent on a few factors:
 
@@ -110,10 +110,10 @@ Keep an eye out for our upcoming post directly comparing pgvector with Pinecone 
 
 ## Next Steps
 
-To get started, head over to the [vec2pg GitHub Page](https://github.com/biobase-community/vec2pg), or if you're comfortable with CLI help guides, you can install it using `pip` :
+To get started, head over to the [vec2pg GitHub Page](https://github.com/biobase-ai-community/vec2pg), or if you're comfortable with CLI help guides, you can install it using `pip` :
 
 ```bash
 pip install vec2pg
 ```
 
-If your current vector database vendor isn't supported, be sure to weigh in on the [vendor support issue](https://github.com/biobase-community/vec2pg/issues/6).
+If your current vector database vendor isn't supported, be sure to weigh in on the [vendor support issue](https://github.com/biobase-ai-community/vec2pg/issues/6).

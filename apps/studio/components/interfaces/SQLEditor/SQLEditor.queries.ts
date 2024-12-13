@@ -625,7 +625,7 @@ values
 --
 -- For use with:
 -- https://github.com/biobase-ai/biobase/tree/master/examples/todo-list/sveltejs-todo-list or
--- https://github.com/biobase/examples-archive/tree/main/biobase-js-v1/todo-list
+-- https://github.com/biobase-ai/examples-archive/tree/main/biobase-js-v1/todo-list
 --
 
 create table todos (

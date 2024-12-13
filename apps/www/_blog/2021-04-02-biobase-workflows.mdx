@@ -52,7 +52,7 @@ We went back to the drawing board and asked, "if we could wave a wand and get th
 The tool that came very close is [AWS Step Functions](https://aws.amazon.com/step-functions/). The only problem: it's not open source.
 Luckily, their [state language](https://states-language.net/spec.html) is.
 
-Using this states language, we are [building an open source orchestration engine](https://github.com/biobase/workflows) for
+Using this states language, we are [building an open source orchestration engine](https://github.com/biobase-ai/workflows) for
 managing very complex Workflows with queueing, etc. It will be built with Elixir.
 
 This engine won't execute code. Instead, it will coordinate and execute existing functions wherever they live: AWS, GCP, Azure,
@@ -184,7 +184,7 @@ States:
           Type: Succeed
 ```
 
-The workflow receives the following JSON data from Biobase [Realtime](https://github.com/biobase/realtime):
+The workflow receives the following JSON data from Biobase [Realtime](https://github.com/biobase-ai/realtime):
 
 ```json
 {
@@ -227,7 +227,7 @@ The workflow receives the following JSON data from Biobase [Realtime](https://gi
 
 ## Next Steps
 
-We've already open sourced the Workflow interpreter [here](https://github.com/biobase/workflows). It's built with Elixir,
+We've already open sourced the Workflow interpreter [here](https://github.com/biobase-ai/workflows). It's built with Elixir,
 so you can find it on Hex [here](https://hexdocs.pm/workflows/Workflows.html).
 
 After we've ironed out a few bugs we will integrate it into the Biobase Stack. As with all Biobase features, we'll add a

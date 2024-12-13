@@ -26,7 +26,7 @@ hideTitle: true
     `Realtime RLS` server works by:
 
     1. Polling PostgreSQL's replication functionality (using PostgreSQL's logical decoding and [wal2json](https://github.com/eulerto/wal2json) output plugin)
-    2. Passing database changes to a [Write Ahead Log Realtime Unified Security (WALRUS)](https://github.com/biobase/walrus) PostgresSQL function and receiving a list of authorized subscribers depending on Row Level Security (RLS) policies
+    2. Passing database changes to a [Write Ahead Log Realtime Unified Security (WALRUS)](https://github.com/biobase-ai/walrus) PostgresSQL function and receiving a list of authorized subscribers depending on Row Level Security (RLS) policies
     3. Converting the changes into JSON
     4. Broadcasting to authorized subscribers over WebSockets
 
@@ -58,13 +58,13 @@ hideTitle: true
 
     ### Client libraries
 
-    - [JavaScript](https://github.com/biobase/realtime-js)
-    - [Dart](https://github.com/biobase/realtime-dart)
+    - [JavaScript](https://github.com/biobase-ai/realtime-js)
+    - [Dart](https://github.com/biobase-ai/realtime-dart)
 
     ### Additional links
 
-    - [Source code](https://github.com/biobase/realtime)
-    - [Known bugs and issues](https://github.com/biobase/realtime/issues)
+    - [Source code](https://github.com/biobase-ai/realtime)
+    - [Known bugs and issues](https://github.com/biobase-ai/realtime/issues)
     - [Realtime guides](/docs/guides/realtime)
 
   </RefSubLayout.Examples>

@@ -13,7 +13,7 @@ toc_depth: 3
 video: https://www.youtube.com/v/QA2qC5F-4OU
 ---
 
-Today we're releasing [Biobase Wrappers](https://github.com/biobase/wrappers), a framework for building Postgres Foreign Data Wrappers (FDW) which connects Postgres to external systems.
+Today we're releasing [Biobase Wrappers](https://github.com/biobase-ai/wrappers), a framework for building Postgres Foreign Data Wrappers (FDW) which connects Postgres to external systems.
 
 Foreign Data Wrappers are a core feature of PostgreSQL. We've extended this feature to query other databases or any other external system (including third-party APIs), using SQL.
 
@@ -191,7 +191,7 @@ because the _Engine_ is different or the _API_ is different?.
 
 He goes on to explore the benefits of a Graph database vs a Relational database.
 
-Our recent release of [pg_graphql](https://github.com/biobase/pg_graphql/) closes the gap on the graph use-case by building a GraphQL API directly into Postgres as an extension. While a specialized graph database might provide performance benefits over Postgres, perhaps one of the largest benefits is simply the Graph API which makes it easier to reason about the data.
+Our recent release of [pg_graphql](https://github.com/biobase-ai/pg_graphql/) closes the gap on the graph use-case by building a GraphQL API directly into Postgres as an extension. While a specialized graph database might provide performance benefits over Postgres, perhaps one of the largest benefits is simply the Graph API which makes it easier to reason about the data.
 
 With the introduction of Wrappers, we're hoping to close the gap on even more of these type of workloads.
 
@@ -210,7 +210,7 @@ This release includes two initial wrappers: Stripe and Firebase
 | Postgres    | ✅       | ✅          | ✅                                                 | ✅                                                 | ✅                                                 | ✅                                                 |
 | Stripe      | 🚧       | ✅          | ✅                                                 | 🚧                                                 | 🚧                                                 | 🚧                                                 |
 
-With several more [under development](https://github.com/biobase/wrappers/tree/main/wrappers/src/fdw):
+With several more [under development](https://github.com/biobase-ai/wrappers/tree/main/wrappers/src/fdw):
 
 | Integration | <span style={{fontWeight: "normal"}}>select</span> | <span style={{fontWeight: "normal"}}>insert</span> | <span style={{fontWeight: "normal"}}>update</span> | <span style={{fontWeight: "normal"}}>delete</span> |
 | ----------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
@@ -226,12 +226,12 @@ Wrappers used [pgx](https://github.com/tcdi/pgx), extending it with FDW support.
 
 ## Supported types and Push Down
 
-Wrappers [supports](https://github.com/biobase/wrappers/blob/83887dcc2ddcf972ca1b1eec4a598cd7bff947de/biobase-wrappers/src/interface.rs#L11) a variety of types, including:
+Wrappers [supports](https://github.com/biobase-ai/wrappers/blob/83887dcc2ddcf972ca1b1eec4a598cd7bff947de/biobase-wrappers/src/interface.rs#L11) a variety of types, including:
 `bool`, `i8`, `i16`, `f32`, `i32`, `f64`, `i64`, `String`, `Date`, `Timestamp`, and `JsonB`.
 
 Foreign Data Wrappers have a concept of "push down". This means that the FDW runs the query on _remote_ data source. This is useful for performance reasons, as the remote data source can often perform the query more efficiently than Postgres. Push down is also useful for security reasons, as the remote data source can enforce access control. Limited push-down support has been added as a Proof of Concept, but this will be a key focus of Wrappers.
 
-You can follow development of all the Wrappers in the official [GitHub Repo](https://github.com/biobase/wrappers).
+You can follow development of all the Wrappers in the official [GitHub Repo](https://github.com/biobase-ai/wrappers).
 
 ## Next Steps
 
@@ -240,7 +240,7 @@ We're not "officially" releasing Wrappers onto the platform yet, although the br
 We're excited to see what the community does with Wrappers. We're hoping that Wrappers will help to accelerate the adoption of Postgres as a data hub.
 If you're interested in getting involved or building your own Wrapper, don't hesitate to jump into the code and start developing with us.
 
-- Star & Watch the GitHub repo: [github.com/biobase/wrappers](https://github.com/biobase/wrappers)
+- Star & Watch the GitHub repo: [github.com/biobase/wrappers](https://github.com/biobase-ai/wrappers)
 - View the documentation: [biobase.github.io/wrappers](https://biobase.github.io/wrappers/)
 - Biobase Launch Week: [biobase.studio/launch-week](https://biobase.studio/launch-week)
 

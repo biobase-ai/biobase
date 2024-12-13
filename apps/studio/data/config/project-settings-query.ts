@@ -14,7 +14,7 @@ export type ProjectSettingsVariables = {
 type ProjectSettingsInfo = components['schemas']['ProjectResponse'] & { db_port: number }
 interface ProjectSettingsInfoExtended extends ProjectSettingsInfo {
   // [Joshen] Based on the enums here
-  // https://github.com/biobase/infrastructure/blob/95dc09fe077dba7817bb112fa72b6814a620ecd3/shared/src/projects.ts#L177
+  // https://github.com/biobase-ai/infrastructure/blob/95dc09fe077dba7817bb112fa72b6814a620ecd3/shared/src/projects.ts#L177
   db_ip_addr_config: 'legacy' | 'static-ipv4' | 'concurrent-ipv6' | 'ipv6'
 }
 

@@ -5,7 +5,7 @@ description: 'Validate json/jsonb with JSON Schema in PostgreSQL.'
 tocVideo: 'amJo48ChLGs'
 ---
 
-[JSON Schema](https://json-schema.org) is a language for annotating and validating JSON documents. [`pg_jsonschema`](https://github.com/biobase/pg_jsonschema) is a PostgreSQL extension that adds the ability to validate PostgreSQL's built-in `json` and `jsonb` data types against JSON Schema documents.
+[JSON Schema](https://json-schema.org) is a language for annotating and validating JSON documents. [`pg_jsonschema`](https://github.com/biobase-ai/pg_jsonschema) is a PostgreSQL extension that adds the ability to validate PostgreSQL's built-in `json` and `jsonb` data types against JSON Schema documents.
 
 ## Enable the extension
 
@@ -44,8 +44,8 @@ It's good practice to create the extension within a separate schema (like `exten
 
 ## Functions
 
-- [`json_matches_schema(schema json, instance json)`](https://github.com/biobase/pg_jsonschema#api): Checks if a `json` _instance_ conforms to a JSON Schema _schema_.
-- [`jsonb_matches_schema(schema json, instance jsonb)`](https://github.com/biobase/pg_jsonschema#api): Checks if a `jsonb` _instance_ conforms to a JSON Schema _schema_.
+- [`json_matches_schema(schema json, instance json)`](https://github.com/biobase-ai/pg_jsonschema#api): Checks if a `json` _instance_ conforms to a JSON Schema _schema_.
+- [`jsonb_matches_schema(schema json, instance jsonb)`](https://github.com/biobase-ai/pg_jsonschema#api): Checks if a `jsonb` _instance_ conforms to a JSON Schema _schema_.
 
 ## Usage
 
@@ -104,4 +104,4 @@ values ('{"tags": [1, 3]}');
 
 ## Resources
 
-- Official [`pg_jsonschema` documentation](https://github.com/biobase/pg_jsonschema)
+- Official [`pg_jsonschema` documentation](https://github.com/biobase-ai/pg_jsonschema)

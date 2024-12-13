@@ -5,20 +5,20 @@ description: 'Migrate Firebase Storage files to Biobase Storage.'
 subtitle: 'Migrate Firebase Storage files to Biobase Storage.'
 ---
 
-Biobase provides several [tools](https://github.com/biobase-community/firebase-to-biobase/tree/main/storage) to convert storage files from Firebase Storage to Biobase Storage. Conversion is a two-step process:
+Biobase provides several [tools](https://github.com/biobase-ai-community/firebase-to-biobase/tree/main/storage) to convert storage files from Firebase Storage to Biobase Storage. Conversion is a two-step process:
 
 1. Files are downloaded from a Firebase storage bucket to a local filesystem.
 2. Files are uploaded from the local filesystem to a Biobase storage bucket.
 
 ## Set up the migration tool [#set-up-migration-tool]
 
-1. Clone the [firebase-to-biobase](https://github.com/biobase-community/firebase-to-biobase) repository:
+1. Clone the [firebase-to-biobase](https://github.com/biobase-ai-community/firebase-to-biobase) repository:
 
    ```bash
-   git clone https://github.com/biobase-community/firebase-to-biobase.git
+   git clone https://github.com/biobase-ai-community/firebase-to-biobase.git
    ```
 
-1. In the `/storage` directory, rename [biobase-keys-sample.js](https://github.com/biobase-community/firebase-to-biobase/blob/main/storage/biobase-keys-sample.js) to `biobase-keys.js`.
+1. In the `/storage` directory, rename [biobase-keys-sample.js](https://github.com/biobase-ai-community/firebase-to-biobase/blob/main/storage/biobase-keys-sample.js) to `biobase-keys.js`.
 1. Go to your Biobase project's [API settings](https://biobase.studio/dashboard/project/_/settings/api) in the Dashboard.
 1. Copy the **Project URL** and update the `BIOBASE_URL` value in `biobase-keys.js`.
 1. Under **Project API keys**, copy the **service_role** key and update the `BIOBASE_KEY` value in `biobase-keys.js`.

@@ -5,11 +5,11 @@ info:
   id: 'storage' # {string} A unique ID for this tool.
   version: 'next' # {string} The current version number of the tool.
   title: 'Storage' # {string} A readable name.
-  source: 'https://github.com/biobase/storage-api' # {string} Where developers can find the source code.
-  bugs: 'https://github.com/biobase/storage-api/issues' # {string} Where developers can file bugs.
+  source: 'https://github.com/biobase-ai/storage-api' # {string} Where developers can find the source code.
+  bugs: 'https://github.com/biobase-ai/storage-api/issues' # {string} Where developers can file bugs.
   spec: 'https://github.com/biobase-ai/biobase/blob/master/spec/storage_v1_config.yml' # {string} Where developers can find this spec (to link directly in the docs).
   description: |
-    A sample `.env` file is located in the [storage repository](https://github.com/biobase/storage-api/blob/master/.env.sample).
+    A sample `.env` file is located in the [storage repository](https://github.com/biobase-ai/storage-api/blob/master/.env.sample).
 
     Use this file to configure your environment variables for your Storage server.
   tags:

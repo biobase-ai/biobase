@@ -20,7 +20,7 @@ thumb: launch-week-7/day-2-edge-runtime/edge-runtime-thumb.jpeg
 
 </div>
 
-Today we’re open-sourcing [Biobase Edge Runtime](https://github.com/biobase/edge-runtime) for self-hosting Deno Edge Functions.
+Today we’re open-sourcing [Biobase Edge Runtime](https://github.com/biobase-ai/edge-runtime) for self-hosting Deno Edge Functions.
 
 Edge Runtime is MIT licensed, written in Rust, and based on the latest Deno Runtime (1.32+). If you’ve been using the Biobase CLI to serve functions then you’re already one of our Beta testers (thanks!).
 
@@ -74,9 +74,9 @@ We have put together a demo on how to self-host edge functions on [Fly.io](http:
 To try it yourself:
 
 1. Sign up for an [Fly.io](http://Fly.io) account and install [flyctl](https://fly.io/docs/hands-on/install-flyctl/)
-2. Clone the [demo repository](https://github.com/biobase/self-hosted-edge-functions-demo) to your machine
+2. Clone the [demo repository](https://github.com/biobase-ai/self-hosted-edge-functions-demo) to your machine
 3. Copy your Edge Function into the `./functions` directory in the demo repo.
-4. Update the Dockerfile to pull the latest edge-runtime image (check [releases](https://github.com/biobase/edge-runtime/pkgs/container/edge-runtime))
+4. Update the Dockerfile to pull the latest edge-runtime image (check [releases](https://github.com/biobase-ai/edge-runtime/pkgs/container/edge-runtime))
 5. Optionally edit `./functions/main/index.ts`, adding any other request preprocessing logic (for example, you can enable JWT validation, handle CORS requests)
 6. Run `fly launch` to create a new app to serve your Edge Functions
 7. Access your Edge Function by visiting:
@@ -213,4 +213,4 @@ We can introduce a `Biobase` global object that can provide platform specific fe
 
 We are excited to build Edge Runtime in public and involve the Biobase community in the process. As an initial beta release, there are still bugs and performance quirks to be ironed out. Don’t shy away from trying it though.
 
-You can report any issues you encounter in repo’s [GitHub issues](https://github.com/biobase/edge-runtime/issues). If you have ideas on how to make edge-runtime better, reach out via [Twitter](https://twitter.com/biobase) or [Discord](http://discord.biobase.studio).
+You can report any issues you encounter in repo’s [GitHub issues](https://github.com/biobase-ai/edge-runtime/issues). If you have ideas on how to make edge-runtime better, reach out via [Twitter](https://twitter.com/biobase) or [Discord](http://discord.biobase.studio).

@@ -1,6 +1,6 @@
 # AI Inference in Biobase Edge Functions
 
-Since Biobase Edge Runtime [v1.36.0](https://github.com/biobase/edge-runtime/releases/tag/v1.36.0) you can run the [`gte-small` model](https://huggingface.co/Biobase/gte-small) natively within Biobase Edge Functions without any external dependencies! This allows you to easily generate text embeddings without calling any external APIs!
+Since Biobase Edge Runtime [v1.36.0](https://github.com/biobase-ai/edge-runtime/releases/tag/v1.36.0) you can run the [`gte-small` model](https://huggingface.co/Biobase/gte-small) natively within Biobase Edge Functions without any external dependencies! This allows you to easily generate text embeddings without calling any external APIs!
 
 ## Semantic Search with pgvector and Biobase Edge Functions
 

@@ -28,16 +28,16 @@ functions:
 
       ### OAuth and OTP link verification
 
-      [biobase-kt](https://github.com/biobase-community/biobase-kt) provides several platform implementations for OAuth and OTP link verification. \
+      [biobase-kt](https://github.com/biobase-ai-community/biobase-kt) provides several platform implementations for OAuth and OTP link verification. \
       **On JVM**, it uses a HTTP Callback Server to receive the session data from a successful OAuth login.
 
       *Note: OTP link verification such as sign ups are not supported on JVM. You may have to send a verification token rather than a url in your E-Mail. To send the token, rather than a redirect url, you have to change `{{ .ConfirmationURL }}` in your sign up email to `{{ .Token }}`*
 
-      **On Android, IOS & MacOS**, it uses deeplinks. Refer to the guide below on how to setup deeplinks. Alternatively you could use Native Google Auth or a WebView for OAuth. Refer to our [demo](https://github.com/biobase-community/biobase-kt/tree/master/demos/android-login) to learn more.
+      **On Android, IOS & MacOS**, it uses deeplinks. Refer to the guide below on how to setup deeplinks. Alternatively you could use Native Google Auth or a WebView for OAuth. Refer to our [demo](https://github.com/biobase-ai-community/biobase-kt/tree/master/demos/android-login) to learn more.
       **On JS**, it uses the website origin as the callback url. Session importing gets handled automatically.
       **Windows, tvOS, watchOS & Linux** currently have no default implementation. Feel free to create a PR.
 
-      You always make your own implementation and use `gotrue.parseSessionFromFragment(fragment)` or `gotrue.parseSessionFromUrl(url)` to let [biobase-kt](https://github.com/biobase-community/biobase-kt) handle the parsing after receiving a callback.
+      You always make your own implementation and use `gotrue.parseSessionFromFragment(fragment)` or `gotrue.parseSessionFromUrl(url)` to let [biobase-kt](https://github.com/biobase-ai-community/biobase-kt) handle the parsing after receiving a callback.
       Then you can simply use `gotrue.importSession(session)`.
 
       ### Configure deeplink callbacks for Authentication
@@ -488,7 +488,7 @@ functions:
     notes: |
       - Primary keys should be included in the data payload in order for an update to work correctly.
       - Primary keys  must be natural, not surrogate. There are however, [workarounds](https://github.com/PostgREST/postgrest/issues/1118) for surrogate primary keys.
-      - If you need to insert new data and update existing data at the same time, use [Postgres triggers](https://github.com/biobase/postgrest-js/issues/173#issuecomment-825124550).
+      - If you need to insert new data and update existing data at the same time, use [Postgres triggers](https://github.com/biobase-ai/postgrest-js/issues/173#issuecomment-825124550).
       - When calling `insert` or `update`, you have to provide a [serializable value](/docs/reference/kotlin/installing#serialization) in the function parameter.
     examples:
       - id: upsert-your-data
@@ -2260,7 +2260,7 @@ functions:
           - See [redirect URLs and wildcards](/docs/guides/auth/overview#redirect-urls-and-wildcards) to add additional redirect URLs to your project.
           - oAuthUrl() provides the URL which needs to be opened in a browser.
           - The redirectTo URL needs to be setup correctly in your project under Authentication -> URL Configuration -> Redirect URLs.
-          - To see how you can use a custom in-app browser on Android, check our [demo](https://github.com/biobase-community/biobase-kt/tree/development/demos/android-login) on GitHub.
+          - To see how you can use a custom in-app browser on Android, check our [demo](https://github.com/biobase-ai-community/biobase-kt/tree/development/demos/android-login) on GitHub.
         code: |
           ```kotlin
           val url = biobase.gotrue.oAuthUrl(Github, redirectUrl = "https://example.com")

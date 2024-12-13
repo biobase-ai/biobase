@@ -16,7 +16,9 @@ const GitHubButton = () => {
   useEffect(() => {
     async function fetchOctoData() {
       const { Octokit } = await import('@octokit/core')
-      const octokit = new Octokit()
+      const octokit = new Octokit({
+        auth: process.env.NEXT_PUBLIC_GITHUB_TOKEN
+      })
       const res = await octokit.request('GET /repos/{org}/{repo}', {
         org: 'biobase-ai',
         repo: 'biobase',

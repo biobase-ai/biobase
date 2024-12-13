@@ -74,9 +74,11 @@ const Repos = ({ tabs }: Props) => {
   useEffect(() => {
     async function fetchOctoData() {
       const { Octokit } = await import('@octokit/core')
-      const octokit = new Octokit()
+      const octokit = new Octokit({
+        auth: process.env.NEXT_PUBLIC_GITHUB_TOKEN
+      })
       const res = await octokit.request('GET /orgs/{org}/repos', {
-        org: 'biobase',
+        org: 'biobase-ai',
         type: 'public',
         per_page: 200,
         page: 1,
@@ -115,7 +117,7 @@ const Repos = ({ tabs }: Props) => {
           How to contribute
         </Link>
         <Link
-          href="https://github.com/biobase/.github/blob/main/CODE_OF_CONDUCT.md"
+          href="https://github.com/biobase-ai/biobase/.github/blob/main/CODE_OF_CONDUCT.md"
           className="text-foreground-lighter hover:underline flex gap-1 items-center"
           target="_blank"
         >

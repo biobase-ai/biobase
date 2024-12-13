@@ -9,7 +9,7 @@ Before running the tests, make sure you've done the following:
 
 - Run `npm install` in the root folder of this repo
 - `docker` or `orbstack` is currently running
-- `biobase` CLI is already [installed](https://github.com/biobase/cli?tab=readme-ov-file#install-the-cli)
+- `biobase` CLI is already [installed](https://github.com/biobase-ai/cli?tab=readme-ov-file#install-the-cli)
 - no other biobase local environment is running (infrastructure environment is ok)
 
 You can run the tests by running `npm run test` in this folder.

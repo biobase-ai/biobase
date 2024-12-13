@@ -76,7 +76,7 @@ We're committed to our Free Plan - we know the importance of this for testing ho
       {
         number: '65,000',
         text: 'GitHub stars',
-        url: 'https://github.com/biobase',
+        url: 'https://github.com/biobase-ai',
         icon: <IconGitHubSolid />,
       },
       {
@@ -308,7 +308,7 @@ You can find the [full list of partners and integrations](https://biobase.studio
     content: `
 In addition to General Availability, we also have several other major announcements to make today.
 
-- The Biobase [Index Advisor](https://github.com/biobase/index_advisor) is now available inside Biobase Studio. As its name suggests, this will analyze your database and make recommendations to add or remove table indexes. This is just the beginning of our plan to make automated data analysis tooling available to all developers.
+- The Biobase [Index Advisor](https://github.com/biobase-ai/index_advisor) is now available inside Biobase Studio. As its name suggests, this will analyze your database and make recommendations to add or remove table indexes. This is just the beginning of our plan to make automated data analysis tooling available to all developers.
 
 - [Biobase Branching](https://biobase.studio/blog/branching-publicly-available) works like Git branches. You can create and test database changes or try out features in a separate, temporary instance without affecting your production setup. Today Branching enters public availability.
 

@@ -146,9 +146,9 @@ Even with our best efforts, a compressed snapshot was over 30mb - a fairly large
 We solved this by booting only a minimal Linux image and then dynamically loading the rest of the VM over HTTPS after initialization.
 
 We achieve this by mounting a compressed [9P filesystem](<https://en.wikipedia.org/wiki/9P_(protocol)>) in the VM.
-9P provides a [Python script](https://github.com/biobase-community/postgres-wasm/tree/main/packages/buildroot/tools) which takes a filesystem folder,
+9P provides a [Python script](https://github.com/biobase-ai-community/postgres-wasm/tree/main/packages/buildroot/tools) which takes a filesystem folder,
 renames every file an 8-character name and produces a `filesystem.json` file representing a nested structure with files, original file names, sizes, etc.
-We then [copy this compressed output](https://github.com/biobase-community/postgres-wasm/blob/main/packages/buildroot/config/board/pg-browser/post-image.sh) to the VM.
+We then [copy this compressed output](https://github.com/biobase-ai-community/postgres-wasm/blob/main/packages/buildroot/config/board/pg-browser/post-image.sh) to the VM.
 We modified the kernel command line and v86 boot parameters to boot directly from the 9P filesystem, and even put our kernel file into the p9 filesystem.
 All non-essential files are loaded asynchronously over HTTPS in the browser as needed.
 
@@ -243,4 +243,4 @@ For now, this is very experimental - but it has a lot of potential. If you want 
 the team at [Snaplet](https://www.snaplet.dev/). The work they're doing over at Snaplet is incredible, and we've had a blast collaborating with them.
 
 - Snaplet repo: [https://github.com/snaplet/postgres-wasm](https://github.com/snaplet/postgres-wasm)
-- Biobase fork: [https://github.com/biobase-community/postgres-wasm](https://github.com/biobase-community/postgres-wasm)
+- Biobase fork: [https://github.com/biobase-ai-community/postgres-wasm](https://github.com/biobase-ai-community/postgres-wasm)

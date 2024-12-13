@@ -352,7 +352,7 @@ const Performance = () => {
               </a>{' '}
               to handle our{' '}
               <a
-                href="https://github.com/biobase/realtime"
+                href="https://github.com/biobase-ai/realtime"
                 target="_blank"
                 className="text-brand hover:text-brand"
               >
@@ -372,7 +372,7 @@ const Performance = () => {
               We're publishing the results of our benchmarks here and we'll continue to seek gains
               throughout our Beta program and beyond. Our{' '}
               <a
-                href="https://github.com/biobase/benchmarks/"
+                href="https://github.com/biobase-ai/benchmarks/"
                 target="_blank"
                 className="text-brand hover:text-brand"
               >
@@ -758,7 +758,7 @@ const OpenSource = () => (
           <p>
             Come and get involved in{' '}
             <a
-              href="https://github.com/biobase"
+              href="https://github.com/biobase-ai"
               target="_blank"
               className="text-brand hover:text-brand"
             >

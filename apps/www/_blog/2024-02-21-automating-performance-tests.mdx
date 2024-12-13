@@ -190,10 +190,10 @@ It may be that this is all you need for now, so I will list everything you would
 
 | Component                                                                                                    | Description                                                  |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ |
-| [k6](https://github.com/biobase/benchmarks/blob/main/examples/realtime/replication/terraform/k6/subs.js)    | Load generator scripts                                       |
-| VM in the cloud [with the following preparation](https://github.com/biobase/benchmarks/tree/main/infra/ami) | Hosts for k6 and Telegraf                                    |
-| Prometheus and [Grafana](https://github.com/biobase/benchmarks/blob/main/examples/realtime/grafana.json)    | Observability stack                                          |
-| [Telegraf](https://github.com/biobase/benchmarks/blob/main/k6/telegraf.conf)                                | Collect metrics from k6 and host and push them to Prometheus |
+| [k6](https://github.com/biobase-ai/benchmarks/blob/main/examples/realtime/replication/terraform/k6/subs.js)    | Load generator scripts                                       |
+| VM in the cloud [with the following preparation](https://github.com/biobase-ai/benchmarks/tree/main/infra/ami) | Hosts for k6 and Telegraf                                    |
+| Prometheus and [Grafana](https://github.com/biobase-ai/benchmarks/blob/main/examples/realtime/grafana.json)    | Observability stack                                          |
+| [Telegraf](https://github.com/biobase-ai/benchmarks/blob/main/k6/telegraf.conf)                                | Collect metrics from k6 and host and push them to Prometheus |
 | [Launches table in Grafana](https://gist.github.com/egor-romanov/df6b61f5b0ac3a6f4afdbb19154a612f)           | To navigate through the history of launches                  |
 
 <div>
@@ -322,11 +322,11 @@ If you want to replicate our approach, I am leaving the list of things we use. S
 
 | Component                                                                                                   | Description                             |
 | ----------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| [repo](https://github.com/biobase/benchmarks/tree/main)                                                    | Benchmarks app source code and examples |
+| [repo](https://github.com/biobase-ai/benchmarks/tree/main)                                                    | Benchmarks app source code and examples |
 | [prod instance](https://supabench.fly.dev/#)                                                                | Our benchmarks app instance             |
 | [Terraform documentation](https://developer.hashicorp.com/terraform/docs)                                   | Read about Terraform and how to use it  |
-| [Virtual machine image](https://github.com/biobase/benchmarks/tree/main/infra/ami)                         | Prepare VM for running k6 load scripts  |
-| [Grafana and Prometheus or VictoriaMetrics setup](https://github.com/biobase/benchmarks/tree/main/.docker) | Observability stack setup               |
+| [Virtual machine image](https://github.com/biobase-ai/benchmarks/tree/main/infra/ami)                         | Prepare VM for running k6 load scripts  |
+| [Grafana and Prometheus or VictoriaMetrics setup](https://github.com/biobase-ai/benchmarks/tree/main/.docker) | Observability stack setup               |
 
 ## Conclusion
 
