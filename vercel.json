@@ -1,9 +1,8 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "buildCommand": "npm run build",
-  "ignoreCommand": "git diff HEAD^ HEAD --quiet ./",
-  "outputDirectory": ".next",
+  "buildCommand": false,
+  "installCommand": false,
   "functions": {
     "api/**/*": {
       "runtime": "nodejs20.x"
@@ -13,22 +12,22 @@
     {
       "name": "biobase-www",
       "path": "apps/www",
-      "outputDirectory": ".next"
+      "buildConfig": "./build.json"
     },
     {
       "name": "biobase-docs",
       "path": "apps/docs",
-      "outputDirectory": ".next"
+      "buildConfig": "./build.json"
     },
     {
       "name": "biobase-studio",
       "path": "apps/studio",
-      "outputDirectory": ".next"
+      "buildConfig": "./build.json"
     },
     {
       "name": "biobase-design-system",
       "path": "apps/design-system",
-      "outputDirectory": ".next"
+      "buildConfig": "./build.json"
     }
   ]
 }

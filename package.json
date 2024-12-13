@@ -55,7 +55,7 @@
   },
   "engines": {
     "npm": "^10.0.0",
-    "node": "^20.0.0"
+    "node": "20.x"
   },
   "keywords": [
     "postgres",
@@ -70,5 +70,9 @@
     "ai": "4.0.16",
     "rehype-pretty-code": "0.14.0",
     "vercel": "^32.3.0"
+  },
+  "volta": {
+    "node": "20.11.1",
+    "npm": "10.2.4"
   }
 }
