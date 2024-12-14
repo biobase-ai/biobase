@@ -69,6 +69,7 @@
   ],
   "packageManager": "npm@10.7.0",
   "dependencies": {
+    "@supabase/supabase-js": "^2.47.6",
     "ai": "^4.0.16",
     "graphql-ws": "^5.16.0",
     "rehype-pretty-code": "0.14.0",

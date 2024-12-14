@@ -25,6 +25,12 @@ const withMDX = nextMdx({
           theme: codeHikeTheme,
           lineNumbers: true,
           showCopyButton: true,
+          languages: {
+            txt: 'text',
+            proguard: 'text',
+            plaintext: 'text',
+            swifton: 'swift',
+          },
         },
       ],
       remarkGfm,
@@ -47,8 +53,6 @@ const nextConfig = {
     // @ts-ignore
     remotePatterns,
   },
-  // TODO: @next/mdx ^13.0.2 only supports experimental mdxRs flag. next ^13.0.2 will stop warning about this being unsupported.
-  // mdxRs: true,
   modularizeImports: {
     lodash: {
       transform: 'lodash/{{member}}',
@@ -60,7 +64,15 @@ const nextConfig = {
       '/api/crawlers': ['./features/docs/generated/**/*', './docs/ref/**/*'],
     },
   },
-  webpack: (config, options) => {
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      }
+    }
     /**
      * The SQL to REST API translator relies on libpg-query, which packages a
      * native Node.js module that wraps the Postgres query parser.

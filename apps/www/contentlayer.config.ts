@@ -21,6 +21,7 @@ export const BlogPost = defineDocumentType(() => ({
     toc_depth: { type: 'number', required: false },
     video: { type: 'string', required: false },
     youtubeHero: { type: 'string', required: false },
+    published_at: { type: 'string', required: false },
   },
   computedFields: {
     url: {

@@ -1,4 +1,10 @@
 const config = require('config/tailwind.config')
+const path = require('path')
+
+// Get absolute paths to packages
+const packagesDir = path.resolve(__dirname, '../../packages')
+const uiDir = path.join(packagesDir, 'ui')
+const uiPatternsDir = path.join(packagesDir, 'ui-patterns')
 
 module.exports = config({
   content: [
@@ -9,8 +15,8 @@ module.exports = config({
     './features/**/*.{ts,tsx,mdx}',
     './layouts/**/*.tsx',
     './pages/**/*.{tsx,mdx}',
-    './../../packages/ui/src/**/*.{tsx,ts,js}',
-    './../../packages/ui-patterns/**/*.{tsx,ts,js}',
+    path.join(uiDir, 'src/**/!(*.test|*.spec|*.d).{tsx,ts,js}'),
+    path.join(uiPatternsDir, 'src/**/!(*.test|*.spec|*.d).{tsx,ts,js}'),
   ],
   plugins: [
     function ({ addUtilities, addVariant }) {

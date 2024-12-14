@@ -16,7 +16,7 @@ import { removeTitle } from '~/lib/mdx/plugins/remarkRemoveTitle'
 import remarkPyMdownTabs from '~/lib/mdx/plugins/remarkTabs'
 
 // We fetch these docs at build time from an external repo
-const org = 'biobase'
+const org = 'supabase'
 const repo = 'splinter'
 const branch = 'main'
 const docsDir = 'docs'
@@ -31,7 +31,7 @@ const generateMetadata = genGuideMeta(() => ({
   meta,
 }))
 
-const editLink = newEditLink('biobase/splinter/tree/main/docs')
+const editLink = newEditLink('supabase/splinter/tree/main/docs')
 
 const markdownIntro = `
 You can use the Database Performance and Security Advisors to check your database for issues such as missing indexes and improperly set-up RLS policies.

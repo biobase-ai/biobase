@@ -45,10 +45,10 @@ export default function GAWeekIndex() {
 
   useEffect(() => {
     if (typeof window !== 'undefined' && biobase) {
-      biobase.auth.getSession().then(({ data: { session } }) => setSession(session))
+      biobase.auth.getSession().then(({ data: { session } }: { data: { session: Session | null } }) => setSession(session))
       const {
         data: { subscription },
-      } = biobase.auth.onAuthStateChange((_event, session) => {
+      } = biobase.auth.onAuthStateChange((_event: 'SIGNED_IN' | 'SIGNED_OUT' | 'USER_UPDATED' | 'USER_DELETED' | 'TOKEN_REFRESHED', session: Session | null) => {
         setSession(session)
       })
 

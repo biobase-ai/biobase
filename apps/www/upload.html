@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supabase Storage Manager</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <style>
+        body { font-family: system-ui; max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        .header { margin-bottom: 2rem; }
+        .buckets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .bucket-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            background: white;
+        }
+        .bucket-card h3 {
+            margin-top: 0;
+            color: #2d3748;
+        }
+        .bucket-card p {
+            color: #4a5568;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+        .upload-container {
+            border: 2px dashed #e2e8f0;
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background-color: #edf2f7;
+            border-radius: 3px;
+            margin-top: 10px;
+            overflow: hidden;
+            display: none;
+        }
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #4299e1;
+            transition: width 0.3s ease;
+        }
+        .file-list {
+            margin-top: 1rem;
+        }
+        .file-item {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: #f7fafc;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        .file-status {
+            padding: 0.2em 0.6em;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+        .status-pending { background: #fefcbf; color: #744210; }
+        .status-uploading { background: #bee3f8; color: #2b6cb0; }
+        .status-success { background: #c6f6d5; color: #2f855a; }
+        .status-error { background: #fed7d7; color: #9b2c2c; }
+        .bucket-select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+        }
+        .mime-types {
+            font-size: 0.8rem;
+            color: #718096;
+            margin: 0.5rem 0;
+        }
+        .upload-summary {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+            display: none;
+        }
+        .btn {
+            background: #4299e1;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .btn:hover {
+            background: #3182ce;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Supabase Storage Manager</h1>
+    </div>
+
+    <div class="buckets-grid">
+        <div class="bucket-card">
+            <h3>biobase-brand-assets</h3>
+            <p>品牌相关资产，如 logo、图标等</p>
+            <div class="mime-types">支持的文件类型: .svg, .png, .jpg, .jpeg, .zip</div>
+            <button class="btn" onclick="selectBucket('biobase-brand-assets', ['.svg','.png','.jpg','.jpeg','.zip'])">上传文件</button>
+        </div>
+        <div class="bucket-card">
+            <h3>videos</h3>
+            <p>营销和演示视频内容</p>
+            <div class="mime-types">支持的文件类型: .mp4, .webm</div>
+            <button class="btn" onclick="selectBucket('videos', ['.mp4','.webm'])">上传文件</button>
+        </div>
+        <div class="bucket-card">
+            <h3>images</h3>
+            <p>图片和静态资源，包括 Launch Week 资源</p>
+            <div class="mime-types">支持的文件类型: .png, .jpg, .jpeg, .gif, .svg</div>
+            <button class="btn" onclick="selectBucket('images', ['.png','.jpg','.jpeg','.gif','.svg'])">上传文件</button>
+        </div>
+        <div class="bucket-card">
+            <h3>audio</h3>
+            <p>音频文件存储</p>
+            <div class="mime-types">支持的文件类型: .mp3, .m4a, .wav</div>
+            <button class="btn" onclick="selectBucket('audio', ['.mp3','.m4a','.wav'])">上传文件</button>
+        </div>
+        <div class="bucket-card">
+            <h3>fonts</h3>
+            <p>网站使用的自定义字体文件</p>
+            <div class="mime-types">支持的文件类型: .otf, .ttf, .woff, .woff2</div>
+            <button class="btn" onclick="selectBucket('fonts', ['.otf','.ttf','.woff','.woff2'])">上传文件</button>
+        </div>
+    </div>
+
+    <div class="upload-container" style="display: none;" id="uploadContainer">
+        <h2 id="uploadTitle">上传文件到存储桶</h2>
+        <input type="file" id="fileInput" multiple style="display: none">
+        <div class="file-list" id="fileList"></div>
+        <div class="progress-bar" id="progressBar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div class="status" id="status"></div>
+        <div class="upload-summary" id="uploadSummary"></div>
+    </div>
+
+    <script>
+        const SUPABASE_URL = 'https://wwzkoeobldwlepkiekcy.supabase.co'
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind3emtvZW9ibGR3bGVwa2lla2N5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQwNzM1MjgsImV4cCI6MjA0OTY0OTUyOH0.uQpjcC3XV6c77QPjTBxL2LvcpIjWfUZMxefBssktlwE'
+        
+        const { createClient } = supabase
+        const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+        
+        const fileInput = document.getElementById('fileInput')
+        const status = document.getElementById('status')
+        const progressBar = document.getElementById('progressBar')
+        const progress = document.getElementById('progress')
+        const fileList = document.getElementById('fileList')
+        const uploadSummary = document.getElementById('uploadSummary')
+        const uploadContainer = document.getElementById('uploadContainer')
+        const uploadTitle = document.getElementById('uploadTitle')
+
+        let currentBucket = ''
+        let allowedExtensions = []
+
+        // 检查并创建存储桶
+        async function initBuckets() {
+            const buckets = [
+                {
+                    name: 'biobase-brand-assets',
+                    public: true,
+                    allowedMimeTypes: ['image/svg+xml', 'image/png', 'image/jpeg', 'application/zip']
+                },
+                {
+                    name: 'videos',
+                    public: true,
+                    allowedMimeTypes: ['video/mp4', 'video/webm']
+                },
+                {
+                    name: 'images',
+                    public: true,
+                    allowedMimeTypes: ['image/png', 'image/jpeg', 'image/gif', 'image/svg+xml']
+                },
+                {
+                    name: 'audio',
+                    public: true,
+                    allowedMimeTypes: ['audio/mpeg', 'audio/mp4', 'audio/wav']
+                },
+                {
+                    name: 'fonts',
+                    public: true,
+                    allowedMimeTypes: ['font/otf', 'font/ttf', 'font/woff', 'font/woff2', 'application/x-font-ttf', 'application/x-font-otf']
+                }
+            ]
+
+            for (const bucket of buckets) {
+                try {
+                    const { data: existingBuckets } = await supabaseClient.storage.listBuckets()
+                    const exists = existingBuckets?.find(b => b.name === bucket.name)
+                    
+                    if (!exists) {
+                        const { data, error } = await supabaseClient.storage.createBucket(bucket.name, {
+                            public: bucket.public,
+                            allowedMimeTypes: bucket.allowedMimeTypes
+                        })
+                        if (error) throw error
+                        console.log(`Created bucket: ${bucket.name}`)
+                    }
+                } catch (error) {
+                    console.error(`Error creating bucket ${bucket.name}:`, error)
+                }
+            }
+        }
+
+        function selectBucket(bucketName, extensions) {
+            currentBucket = bucketName
+            allowedExtensions = extensions
+            uploadTitle.textContent = `上传文件到 ${bucketName}`
+            uploadContainer.style.display = 'block'
+            fileInput.accept = extensions.join(',')
+            fileInput.click()
+        }
+
+        function updateProgress(percent) {
+            progressBar.style.display = 'block'
+            progress.style.width = `${percent}%`
+        }
+
+        function updateFileStatus(fileItem, status, message) {
+            const statusEl = fileItem.querySelector('.file-status')
+            statusEl.textContent = message
+            statusEl.className = `file-status status-${status}`
+        }
+
+        async function uploadFile(file, fileItem, path) {
+            updateFileStatus(fileItem, 'uploading', 'Uploading...')
+            
+            try {
+                const { data, error } = await supabaseClient.storage
+                    .from(currentBucket)
+                    .upload(path, file, {
+                        cacheControl: '3600',
+                        upsert: true,
+                        onUploadProgress: (progress) => {
+                            const percent = Math.round((progress.loaded / progress.total) * 100)
+                            updateProgress(percent)
+                            updateFileStatus(fileItem, 'uploading', `Uploading: ${percent}%`)
+                        }
+                    })
+
+                if (error) throw error
+                
+                const { data: { publicUrl } } = supabaseClient.storage
+                    .from(currentBucket)
+                    .getPublicUrl(path)
+
+                updateFileStatus(fileItem, 'success', 'Upload complete')
+                return { success: true, publicUrl }
+            } catch (error) {
+                console.error('Error uploading:', error)
+                updateFileStatus(fileItem, 'error', `Error: ${error.message}`)
+                return { success: false, error }
+            }
+        }
+
+        // 初始化存储桶
+        initBuckets()
+
+        fileInput.addEventListener('change', async (event) => {
+            const files = event.target.files
+            if (!files.length) return
+
+            fileList.innerHTML = ''
+            uploadSummary.style.display = 'none'
+            const uploadResults = []
+            
+            for (const file of files) {
+                const extension = `.${file.name.split('.').pop().toLowerCase()}`
+                if (!allowedExtensions.includes(extension)) {
+                    alert(`文件 ${file.name} 类型不支持。支持的类型: ${allowedExtensions.join(', ')}`)
+                    continue
+                }
+
+                const fileItem = document.createElement('div')
+                fileItem.className = 'file-item'
+                fileItem.innerHTML = `
+                    <span>${file.name} (${(file.size / 1024).toFixed(2)} KB)</span>
+                    <span class="file-status status-pending">Pending</span>
+                `
+                fileList.appendChild(fileItem)
+                
+                progressBar.style.display = 'block'
+                progress.style.width = '0%'
+                
+                // 根据文件类型确定存储路径
+                let path = file.name
+                if (currentBucket === 'images') {
+                    if (file.name.includes('launch-week')) {
+                        path = `launch-week/${file.name}`
+                    } else if (file.name.includes('integration')) {
+                        path = `integrations/${file.name}`
+                    } else if (file.name.includes('expert')) {
+                        path = `experts/${file.name}`
+                    }
+                }
+                
+                const result = await uploadFile(file, fileItem, path)
+                uploadResults.push({
+                    fileName: file.name,
+                    size: file.size,
+                    path: path,
+                    ...result
+                })
+            }
+
+            // Show upload summary
+            const successCount = uploadResults.filter(r => r.success).length
+            const failCount = uploadResults.length - successCount
+            
+            uploadSummary.style.display = 'block'
+            uploadSummary.innerHTML = `
+                <h3>上传摘要</h3>
+                <p>总文件数: ${uploadResults.length}</p>
+                <p>成功上传: ${successCount}</p>
+                ${failCount > 0 ? `<p>上传失败: ${failCount}</p>` : ''}
+                ${successCount > 0 ? '<h4>已上传文件:</h4>' : ''}
+                ${uploadResults
+                    .filter(r => r.success)
+                    .map(r => `
+                        <div>
+                            <p>📁 ${r.fileName}</p>
+                            <small>大小: ${(r.size / 1024).toFixed(2)} KB</small><br>
+                            <small>路径: ${r.path}</small><br>
+                            <small>URL: <a href="${r.publicUrl}" target="_blank">${r.publicUrl}</a></small>
+                        </div>
+                    `).join('')}
+            `
+        })
+    </script>
+</body>
+</html>

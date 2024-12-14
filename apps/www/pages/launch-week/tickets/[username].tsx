@@ -152,7 +152,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const biobaseAdmin = createClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.LIVE_SUPABASE_COM_SERVICE_ROLE_KEY!
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
   )
 
   const SITE_URL = process.env.VERCEL_URL

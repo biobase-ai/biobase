@@ -1,5 +1,5 @@
 import { OpenAIStream } from 'ai'
-import type OpenAI from 'openai'
+import OpenAI from 'openai'
 import { ContextLengthError } from '../errors'
 import { codeBlock, oneLine, stripIndent } from 'common-tags'
 import type { Message } from '../types'
@@ -13,7 +13,7 @@ type DatabasePoliciesData = components['schemas']['PostgresPolicy']
  * @returns A `ReadableStream` containing the response text and SQL.
  */
 export async function chatRlsPolicy(
-  openaiClient: typeof OpenAI,
+  openaiClient: OpenAI,
   messages: Message[],
   entityDefinitions?: string[],
   existingPolicies?: DatabasePoliciesData[],
@@ -311,7 +311,7 @@ export async function chatRlsPolicy(
 
   try {
     const response = await openaiClient.chat.completions.create({
-      model: 'gpt-4o-2024-05-13',
+      model: 'gpt-4-0613',
       messages: initMessages,
       max_tokens: 1024,
       temperature: 0,
