@@ -1,7 +1,4 @@
-import { SupabaseClient } from '@supabase/supabase-js'
-import { ApplicationError, UserError, clippy } from 'ai-commands/edge'
 import { NextRequest, NextResponse } from 'next/server'
-import OpenAI from 'openai'
 
 export const runtime = 'edge'
 /* To avoid OpenAI errors, restrict to the Vercel Edge Function regions that
@@ -41,6 +38,12 @@ export async function POST(req: NextRequest) {
       { status: 500 }
     )
   }
+
+  const [{ default: OpenAI }, { default: SupabaseClient }, { ApplicationError, UserError, clippy }] = await Promise.all([
+    import('openai'),
+    import('@supabase/supabase-js'),
+    import('ai-commands/edge')
+  ])
 
   const openai = new OpenAI({ apiKey: openAiKey })
   const supabaseClient = new SupabaseClient(supabaseUrl, supabaseServiceKey)
