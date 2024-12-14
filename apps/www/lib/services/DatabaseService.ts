@@ -173,7 +173,35 @@ class DatabaseServiceImpl implements DatabaseServiceType {
   }
 
   async checkHealth() {
-    return await this.client.rpc('check_database_health')
+    try {
+      // Try to create the health check table if it doesn't exist
+      await this.executeRawQuery(`
+        CREATE TABLE IF NOT EXISTS public._health_check (
+          id SERIAL PRIMARY KEY,
+          last_check TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+          status TEXT DEFAULT 'healthy'
+        );
+        
+        INSERT INTO public._health_check (status) 
+        VALUES ('healthy')
+        ON CONFLICT DO NOTHING;
+      `);
+      
+      // Simple query to check database connectivity
+      const result = await this.executeRawQuery('SELECT CURRENT_TIMESTAMP as time');
+      
+      return {
+        status: 'healthy',
+        timestamp: result?.rows?.[0]?.time || new Date().toISOString()
+      };
+    } catch (error: any) {
+      console.error('Database health check failed:', error);
+      return {
+        status: 'unhealthy',
+        error: error?.message || 'Unknown error',
+        timestamp: new Date().toISOString()
+      };
+    }
   }
 }
 

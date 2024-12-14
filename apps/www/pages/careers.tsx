@@ -25,7 +25,7 @@ export async function getStaticProps() {
 
     // Attempt to fetch jobs if possible
     try {
-      const job_res = await fetch('https://api.ashbyhq.com/posting-api/job-board/biobase')
+      const job_res = await fetch('https://api.ashbyhq.com/posting-api/job-board/supabase')
       const job_data = await job_res.json()
 
       jobs = groupJobsByTeam(job_data.jobs.filter((job: JobItemProps) => !filterGenericJob(job)))

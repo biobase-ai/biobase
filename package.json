@@ -1,5 +1,5 @@
 {
-  "name": "biobase",
+  "name": "biobase-studio",
   "description": "Biobase Studio: AI-Driven Solution for Biopharmaceutical R&D.",
   "version": "0.0.0",
   "author": "Biobase, Inc.",
@@ -40,7 +40,7 @@
     "test:playwright": "npm --prefix playwright-tests run test",
     "perf:kong": "ab -t 5 -c 20 -T application/json http://localhost:8000/",
     "perf:meta": "ab -t 5 -c 20 -T application/json http://localhost:5555/tables",
-    "generate:types": "biobase gen types typescript --local > ./biobase/functions/common/database-types.ts",
+    "generate:types": "supabase gen types typescript --local > ./supabase/functions/common/database-types.ts",
     "api:codegen": "cd packages/api-types && npm run codegen",
     "db:migrate": "ts-node apps/www/scripts/manage-db.ts migrate",
     "db:migrate-file": "ts-node apps/www/scripts/manage-db.ts migrate",

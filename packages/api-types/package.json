@@ -2,10 +2,11 @@
   "name": "api-types",
   "version": "0.0.0",
   "description": "Types shared between Biobase apps and packages",
+  "private": true,
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
-    "codegen": "openapi-typescript http://localhost:8080/api-json -o types/api.d.ts --alphabetize && prettier --write types/api.d.ts"
+    "codegen": "openapi-typescript http://localhost:3000/api/api-json -o types/api.d.ts --alphabetize && prettier --write types/api.d.ts"
   },
   "author": "",
   "license": "MIT",

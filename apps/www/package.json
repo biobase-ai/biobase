@@ -83,6 +83,7 @@
     "remark-gfm": "^3.0.1",
     "remark-html": "^16.0.1",
     "shared-data": "*",
+    "swagger-ui-react": "^5.18.2",
     "swiper": "^11.0.7",
     "three": "^0.136.0",
     "ts-node": "^10.9.1",
