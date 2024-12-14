@@ -4,7 +4,7 @@
 
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 
-import { handler } from './handler.tsx'
+import { handler } from './handler.js'
 
 console.log(`Function "lw12-ticket-og" up and running`)
 

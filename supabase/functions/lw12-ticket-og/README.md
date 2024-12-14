@@ -1,6 +1,6 @@
-# Open Graph (OG) Image Generation with Biobase Storage CDN Caching
+# Open Graph (OG) Image Generation with supabase Storage CDN Caching
 
-Generate Open Graph images with Deno and Biobase Edge Functions and cache the generated image with Biobase Storage CDN.
+Generate Open Graph images with Deno and supabase Edge Functions and cache the generated image with supabase Storage CDN.
 
 - Docs: https://deno.land/x/og_edge@0.0.2
 - Examples: https://vercel.com/docs/concepts/functions/edge-functions/og-image-examples
@@ -9,8 +9,8 @@ Generate Open Graph images with Deno and Biobase Edge Functions and cache the ge
 ## Run locally
 
 ```bash
-biobase start
-biobase functions serve lw12-ticket-og --no-verify-jwt --env-file ./biobase/.env.local
+supabase start
+supabase functions serve lw12-ticket-og --no-verify-jwt --env-file ./supabase/.env.local
 ```
 
 Navigate to http://localhost:54321/functions/v1/lw12-ticket-og?username=thorwebdev
@@ -18,5 +18,5 @@ Navigate to http://localhost:54321/functions/v1/lw12-ticket-og?username=thorwebd
 ## Deploy
 
 ```bash
-biobase functions deploy lw12-ticket-og --no-verify-jwt
+supabase functions deploy lw12-ticket-og --no-verify-jwt
 ```

@@ -12,7 +12,15 @@
     "typecheck": "npm run content:build && tsc --noEmit",
     "content:build": "contentlayer2 build",
     "prettier": "prettier --write \"./{pages,components,lib,stores,styles,tests}/**/*.{ts,tsx,md,js,jsx,json}\"",
-    "postbuild": "node ./internals/generate-sitemap.mjs"
+    "postbuild": "node ./internals/generate-sitemap.mjs",
+    "sync-jobs": "ts-node scripts/sync-jobs.ts",
+    "jobs:sync": "ts-node scripts/jobs-manager.ts sync",
+    "jobs:list": "ts-node scripts/jobs-manager.ts list",
+    "jobs:list-open": "ts-node scripts/jobs-manager.ts list-open",
+    "db:migrate": "ts-node scripts/manage-db.ts migrate",
+    "db:migrate-file": "ts-node scripts/manage-db.ts migrate",
+    "db:seed": "ts-node scripts/manage-db.ts seed",
+    "db:health": "ts-node scripts/manage-db.ts health"
   },
   "dependencies": {
     "@code-hike/mdx": "^0.9.0",
@@ -43,6 +51,7 @@
     "contentlayer2": "0.4.6",
     "dat.gui": "^0.7.9",
     "dayjs": "^1.11.12",
+    "dotenv": "^16.3.1",
     "eslint-config-biobase": "*",
     "framer-motion": "^11.0.3",
     "globby": "^13.2.2",
@@ -56,6 +65,7 @@
     "next-mdx-remote": "^4.4.1",
     "next-seo": "^6.5.0",
     "next-themes": "^0.3.0",
+    "node-fetch": "^2.6.1",
     "openai": "^4.20.1",
     "parse-numeric-range": "^1.3.0",
     "react": "^18.2.0",
@@ -75,6 +85,7 @@
     "shared-data": "*",
     "swiper": "^11.0.7",
     "three": "^0.136.0",
+    "ts-node": "^10.9.1",
     "typed.js": "^2.0.16",
     "typescript": "~5.5.0",
     "ui": "*",
@@ -84,6 +95,10 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
     "@types/animejs": "^3.1.12",
     "@types/classnames": "^2.3.1",
     "@types/common-tags": "^1.8.4",
@@ -99,6 +114,7 @@
     "@types/three": "^0.136.0",
     "api-types": "*",
     "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.2.1",
     "config": "*",
     "postcss": "^8.4.31",
     "tsconfig": "*"

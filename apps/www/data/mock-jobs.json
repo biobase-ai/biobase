@@ -1,0 +1,14 @@
+{
+  "jobs": [
+    {
+      "id": "placeholder",
+      "title": "Open Application",
+      "departmentName": "Engineering",
+      "locationName": "Remote",
+      "isRemote": true,
+      "shortDescription": "We're always looking for talented individuals to join our team.",
+      "description": "# About the role\n\nWe're always looking for talented individuals to join our team. If you don't see a role that matches your skills, feel free to submit an open application.\n\n# About you\n\n- Passionate about open source\n- Strong problem-solving skills\n- Excellent communication skills\n- Self-motivated and proactive\n\n# What we offer\n\n- Remote-first culture\n- Competitive compensation\n- Flexible working hours\n- Learning and development opportunities",
+      "team": "Engineering"
+    }
+  ]
+}

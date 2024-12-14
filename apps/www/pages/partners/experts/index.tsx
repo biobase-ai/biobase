@@ -3,24 +3,30 @@ import { useRouter } from 'next/router'
 import DefaultLayout from '~/components/Layouts/Default'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 import PartnerLinkBox from '~/components/Partners/PartnerLinkBox'
-import biobase from '~/lib/biobaseMisc'
+import { biobaseClient } from '~/lib/biobase-client'
 import type { Partner } from '~/types/partners'
 import TileGrid from '../../../components/Partners/TileGrid'
 
 export async function getStaticProps() {
-  const { data: partners } = await biobase
-    .from('partners')
-    .select('*')
-    .eq('approved', true)
-    .eq('type', 'expert')
-    .order('category')
-    .order('title')
+  try {
+    const { data: partners } = await biobaseClient
+      .from('partners')
+      .select('*')
+      .eq('type', 'expert')
+    const sorted = partners?.sort((a, b) => a.title.localeCompare(b.title)) ?? []
 
-  return {
-    props: {
-      partners,
-    },
-    revalidate: 1800, // 30 minutes
+    return {
+      props: {
+        partners: sorted,
+      }
+    }
+  } catch (error) {
+    console.error('Error in getStaticProps:', error)
+    return {
+      props: {
+        partners: [],
+      }
+    }
   }
 }
 

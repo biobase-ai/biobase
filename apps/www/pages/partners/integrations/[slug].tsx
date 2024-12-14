@@ -21,7 +21,7 @@ import { ExpandableVideo } from 'ui-patterns/ExpandableVideo'
 import ImageModal from '~/components/ImageModal'
 import DefaultLayout from '~/components/Layouts/Default'
 import SectionContainer from '~/components/Layouts/SectionContainer'
-import biobase from '~/lib/biobaseMisc'
+import { biobaseClient } from '~/lib/biobase-client'
 import type { Partner } from '~/types/partners'
 import Error404 from '../../404'
 
@@ -109,7 +109,7 @@ function Partner({
                 width={56}
                 height={56}
                 className="bg-surface-200 flex-shrink-f0 h-14 w-14 rounded-full"
-                src={partner.logo}
+                src={partner.logo_url}
                 alt={partner.title}
               />
               <h1 className="h1" style={{ marginBottom: 0 }}>
@@ -259,12 +259,12 @@ const PartnerDetails = ({ partner }: { partner: Partner }) => {
           <div className="flex items-center justify-between py-2">
             <span className="text-foreground-lighter">Website</span>
             <a
-              href={partner.website}
+              href={partner.website_url}
               target="_blank"
               rel="noreferrer"
               className="text-brand hover:underline transition-colors"
             >
-              {new URL(partner.website).host}
+              {new URL(partner.website_url).host}
             </a>
           </div>
 
@@ -294,63 +294,58 @@ const PartnerDetails = ({ partner }: { partner: Partner }) => {
 }
 
 // This function gets called at build time
-export const getStaticPaths: GetStaticPaths = async () => {
-  const { data: slugs } = await biobase
-    .from('partners')
-    .select('slug')
-    .eq('approved', true)
-    .eq('type', 'technology')
+export async function getStaticPaths() {
+  try {
+    const { data: partners } = await biobaseClient
+      .from('partners')
+      .select('slug')
+      .eq('type', 'integration')
+      .eq('approved', true)
 
-  const paths: {
-    params: { slug: string }
-    locale?: string | undefined
-  }[] =
-    slugs?.map(({ slug }) => ({
-      params: {
-        slug,
-      },
+    const paths = partners?.map(({ slug }) => ({
+      params: { slug },
     })) ?? []
 
-  return {
-    paths,
-    fallback: 'blocking',
+    return {
+      paths,
+      fallback: false,
+    }
+  } catch (error) {
+    console.error('Error in getStaticPaths:', error)
+    return {
+      paths: [],
+      fallback: false,
+    }
   }
 }
 
 // This also gets called at build time
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  let { data: partner } = await biobase
-    .from('partners')
-    .select('*')
-    .eq('approved', true)
-    .eq('slug', params!.slug as string)
-    .single()
+export async function getStaticProps({ params }: { params: { slug: string } }) {
+  try {
+    const { data: partners } = await biobaseClient
+      .from('partners')
+      .select('*')
+      .eq('type', 'integration')
+      .eq('approved', true)
+      .eq('slug', params.slug)
+      .single()
 
-  if (!partner) {
+    if (!partners) {
+      return {
+        notFound: true,
+      }
+    }
+
+    return {
+      props: {
+        partner: partners,
+      }
+    }
+  } catch (error) {
+    console.error('Error in getStaticProps:', error)
     return {
       notFound: true,
     }
-  }
-
-  const codeHikeOptions: CodeHikeConfig = {
-    theme: codeHikeTheme,
-    lineNumbers: true,
-    showCopyButton: true,
-    skipLanguages: [],
-    autoImport: false,
-  }
-
-  // Parse markdown
-  const overview = await serialize(partner.overview, {
-    mdxOptions: {
-      useDynamicImport: true,
-      remarkPlugins: [remarkGfm, [remarkCodeHike, codeHikeOptions]],
-    },
-  })
-
-  return {
-    props: { partner, overview },
-    revalidate: 1800, // 30 minutes
   }
 }
 

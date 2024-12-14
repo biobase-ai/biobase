@@ -176,9 +176,9 @@
   <pubDate>Sun, 11 Aug 2024 16:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/supabase-js-on-jsr</guid>
+  <guid>https://biobase.studio/blog/biobase-js-on-jsr</guid>
   <title>Announcing Biobase on JSR</title>
-  <link>https://biobase.studio/blog/supabase-js-on-jsr</link>
+  <link>https://biobase.studio/blog/biobase-js-on-jsr</link>
   <description>Biobase is now available on the open source JavaScript Registry (JSR).</description>
   <pubDate>Mon, 15 Jul 2024 16:00:00 GMT</pubDate>
 </item>
@@ -1226,9 +1226,9 @@
   <pubDate>Thu, 20 Oct 2022 16:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/supabase-js-v2-released</guid>
+  <guid>https://biobase.studio/blog/biobase-js-v2-released</guid>
   <title>supabase-js v2 Released</title>
-  <link>https://biobase.studio/blog/supabase-js-v2-released</link>
+  <link>https://biobase.studio/blog/biobase-js-v2-released</link>
   <description>We&apos;ve released supabase-js v2. Updated examples, quickstarts, and an improved experience.</description>
   <pubDate>Wed, 19 Oct 2022 16:00:00 GMT</pubDate>
 </item>
@@ -1331,9 +1331,9 @@
   <pubDate>Tue, 16 Aug 2022 16:00:00 GMT</pubDate>
 </item>
 <item>
-  <guid>https://biobase.studio/blog/supabase-js-v2</guid>
+  <guid>https://biobase.studio/blog/biobase-js-v2</guid>
   <title>supabase-js v2</title>
-  <link>https://biobase.studio/blog/supabase-js-v2</link>
+  <link>https://biobase.studio/blog/biobase-js-v2</link>
   <description>A look at supabase-js v2, which brings type support and focuses on quality-of-life improvements for developers.</description>
   <pubDate>Mon, 15 Aug 2022 16:00:00 GMT</pubDate>
 </item>

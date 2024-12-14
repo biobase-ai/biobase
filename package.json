@@ -41,7 +41,11 @@
     "perf:kong": "ab -t 5 -c 20 -T application/json http://localhost:8000/",
     "perf:meta": "ab -t 5 -c 20 -T application/json http://localhost:5555/tables",
     "generate:types": "biobase gen types typescript --local > ./biobase/functions/common/database-types.ts",
-    "api:codegen": "cd packages/api-types && npm run codegen"
+    "api:codegen": "cd packages/api-types && npm run codegen",
+    "db:migrate": "ts-node apps/www/scripts/manage-db.ts migrate",
+    "db:migrate-file": "ts-node apps/www/scripts/manage-db.ts migrate",
+    "db:seed": "ts-node apps/www/scripts/manage-db.ts seed",
+    "db:health": "ts-node apps/www/scripts/manage-db.ts health"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
@@ -71,8 +75,10 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.47.6",
     "ai": "^4.0.16",
+    "dotenv": "^16.3.1",
     "graphql-ws": "^5.16.0",
     "rehype-pretty-code": "0.14.0",
+    "ts-node": "^10.9.1",
     "vercel": "^32.3.0"
   },
   "volta": {

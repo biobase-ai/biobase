@@ -17,68 +17,85 @@ import { groupJobsByTeam, filterGenericJob, JobItemProps, PLACEHOLDER_JOB_ID } f
 import career from '~/data/career.json'
 
 export async function getStaticProps() {
-  const job_res = await fetch('https://api.ashbyhq.com/posting-api/job-board/biobase')
-  const job_data = await job_res.json()
+  try {
+    // Use a default fallback data for static export
+    let jobs: Record<string, JobItemProps[]> = {}
+    let placeholderJob: JobItemProps | null = null
+    let contributors: { login: string; avatar_url: string; html_url: string }[] = []
 
-  const jobs = groupJobsByTeam(job_data.jobs.filter((job: JobItemProps) => !filterGenericJob(job)))
-  const placeholderJob = job_data.jobs.find(filterGenericJob)
+    // Attempt to fetch jobs if possible
+    try {
+      const job_res = await fetch('https://api.ashbyhq.com/posting-api/job-board/biobase')
+      const job_data = await job_res.json()
 
-  const contributor_res = await fetch(
-    'https://api.github.com/reposbiobase-ai/biobase/contributors?per_page=100'
-  )
-  const contributor_arr = await contributor_res.json()
-
-  const contributor_data = await contributor_arr.map(
-    (contributor: { login: string; avatar_url: string; html_url: string }) => {
-      return {
-        login: contributor.login,
-        avatar_url: contributor.avatar_url,
-        html_url: contributor.html_url,
-      }
+      jobs = groupJobsByTeam(job_data.jobs.filter((job: JobItemProps) => !filterGenericJob(job)))
+      placeholderJob = job_data.jobs.find(filterGenericJob)
+    } catch (jobError) {
+      console.error('Failed to fetch jobs:', jobError)
+      // Use fallback job data if available
+      jobs = {}
+      placeholderJob = null
     }
-  )
 
-  const contributors = await contributor_data.filter((contributor: any) =>
-    career.contributors.includes(contributor.login)
-  )
+    // Attempt to fetch contributors if possible
+    try {
+      const contributor_res = await fetch(
+        'https://api.github.com/repos/biobase-ai/biobase/contributors?per_page=100'
+      )
+      const contributor_arr = await contributor_res.json()
 
-  contributors.push(
-    {
+      contributors = contributor_arr.map(
+        (contributor: { login: string; avatar_url: string; html_url: string }) => {
+          return {
+            login: contributor.login,
+            avatar_url: contributor.avatar_url,
+            html_url: contributor.html_url,
+          }
+        }
+      ).filter((contributor: any) => career.contributors.includes(contributor.login))
+    } catch (contributorError) {
+      console.error('Failed to fetch GitHub contributors:', contributorError)
+      // Fallback to a default list of contributors
+      contributors = [
+        {
+          login: 'XquisiteDreamer',
+          avatar_url: 'https://pbs.twimg.com/profile_images/1475874191249399808/H6TPHpq7_400x400.png',
+          html_url: 'https://twitter.com/XquisiteDreamer',
+        }
+      ]
+    }
+
+    // Add the additional contributor
+    contributors.push({
       login: 'XquisiteDreamer',
       avatar_url: 'https://pbs.twimg.com/profile_images/1475874191249399808/H6TPHpq7_400x400.png',
       html_url: 'https://twitter.com/XquisiteDreamer',
-    },
-    {
-      login: 'marijanapav',
-      avatar_url: 'https://avatars.githubusercontent.com/u/46031252?v=4',
-      html_url: 'https://github.com/marijanapav',
-    },
-    {
-      login: 'lyqht',
-      avatar_url: 'https://pbs.twimg.com/profile_images/1665778877837504514/4SWgLpjA_400x400.png',
-      html_url: 'https://twitter.com/estee_tey',
-    },
-    {
-      login: 'ghostdevv',
-      avatar_url: 'https://avatars.githubusercontent.com/u/47755378?v=4',
-      html_url: 'https://github.com/ghostdevv',
-    }
-  )
+    })
 
-  if (!job_data && !contributors) {
     return {
       props: {
-        notFound: true,
-      },
+        jobs,
+        placeholderJob,
+        contributors
+      }
     }
-  }
-
-  return {
-    props: {
-      jobs,
-      placeholderJob: placeholderJob ?? null,
-      contributors: contributors,
-    },
+  } catch (error) {
+    console.error('Unexpected error in getStaticProps:', error)
+    
+    // Return fallback state
+    return {
+      props: {
+        jobs: {},
+        placeholderJob: null,
+        contributors: [
+          {
+            login: 'XquisiteDreamer',
+            avatar_url: 'https://pbs.twimg.com/profile_images/1475874191249399808/H6TPHpq7_400x400.png',
+            html_url: 'https://twitter.com/XquisiteDreamer',
+          }
+        ]
+      }
+    }
   }
 }
 

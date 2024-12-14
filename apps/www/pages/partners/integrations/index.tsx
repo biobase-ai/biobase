@@ -11,22 +11,15 @@ import PartnerLinkBox from '~/components/Partners/PartnerLinkBox'
 import biobase from '~/lib/biobaseMisc'
 import type { Partner } from '~/types/partners'
 import TileGrid from '../../../components/Partners/TileGrid'
+import integrationData from '@/data/integrations.json'
 
 export async function getStaticProps() {
-  const { data: partners } = await biobase
-    .from('partners')
-    .select('*')
-    .eq('approved', true)
-    .eq('type', 'technology')
-    .order('category')
-    .order('title')
-
+  const integrations = integrationData.integrations
+  
   return {
     props: {
-      partners,
+      partners: integrations.filter((integration: Partner) => integration.approved),
     },
-    // TODO: consider using Next.js' On-demand Revalidation with Biobase Database Webhooks instead
-    revalidate: 1800, // 30 minutes
   }
 }
 
@@ -85,7 +78,7 @@ function IntegrationPartnersPage(props: Props) {
 
       setIsSearching(false)
     })
-  }, [debouncedSearchTerm, router])
+  }, [debouncedSearchTerm, router, initialPartners])
 
   return (
     <>
@@ -98,7 +91,7 @@ function IntegrationPartnersPage(props: Props) {
           url: `https://biobase.studio/partners/integrations`,
           images: [
             {
-              url: `https://biobase.studio${router.basePath}/images/og/integrations.png`, // TODO
+              url: `https://biobase.studio${router.basePath}/images/og/integrations.png`,
             },
           ],
         }}
@@ -109,13 +102,9 @@ function IntegrationPartnersPage(props: Props) {
             <h1 className="h1">{meta_title}</h1>
             <p className="text-foreground-lighter text-xl">{meta_description}</p>
           </div>
-          {/* Title */}
           <div className="grid space-y-12 md:gap-8 lg:grid-cols-12 lg:gap-16 lg:space-y-0 xl:gap-16">
             <div className="lg:col-span-4 xl:col-span-3">
-              {/* Horizontal link menu */}
               <div className="space-y-6">
-                {/* Search Bar */}
-
                 <Input
                   size="small"
                   icon={<Search />}
@@ -198,7 +187,6 @@ function IntegrationPartnersPage(props: Props) {
               </div>
             </div>
             <div className="lg:col-span-8 xl:col-span-9">
-              {/* Partner Tiles */}
               <div className="grid space-y-10">
                 {partners?.length ? (
                   <TileGrid partners={partners} />
@@ -208,8 +196,8 @@ function IntegrationPartnersPage(props: Props) {
               </div>
             </div>
           </div>
+          <BecomeAPartner />
         </SectionContainer>
-        <BecomeAPartner />
       </DefaultLayout>
     </>
   )

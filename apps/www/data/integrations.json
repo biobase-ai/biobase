@@ -1,0 +1,16 @@
+{
+  "integrations": [
+    {
+      "title": "GitHub",
+      "description": "Version control and collaboration platform",
+      "category": "Development",
+      "approved": true
+    },
+    {
+      "title": "Slack",
+      "description": "Team communication and collaboration tool",
+      "category": "Communication",
+      "approved": true
+    }
+  ]
+}

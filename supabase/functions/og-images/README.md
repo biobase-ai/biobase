@@ -1,6 +1,6 @@
 # Open Graph (OG) Image Generator
 
-Generate OG Images for the sites at biobase.
+Generate OG Images for the sites at supabase.
 
 ## How to use
 
@@ -26,16 +26,16 @@ This link will generate an image for the docs site with the title "Example Title
 
 ## Run locally
 
-First we need to start up biobase using the [biobase cli](https://biobase.studio/docs/reference/cli/introduction)
+First we need to start up supabase using the [supabase cli](https://supabase.studio/docs/reference/cli/introduction)
 
 ```bash
-biobase start
+supabase start
 ```
 
 Then run the function
 
 ```bash
-biobase functions serve og-images
+supabase functions serve og-images
 ```
 
 Now we can visit [localhost:54321/functions/v1/og-images/?site=docs&title=Title&description=Description&type=Auth](http://localhost:54321/functions/v1/og-images/?site=docs&title=Title&description=Description&type=Auth) to see your changes localy.
@@ -45,5 +45,5 @@ Now we can visit [localhost:54321/functions/v1/og-images/?site=docs&title=Title&
 To deploy this function, you currently need to depoy it locally. To do this follow the steps below.
 
 ```bash
-biobase functions deploy og-images --no-verify-jwt
+supabase functions deploy og-images --no-verify-jwt
 ```
