@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://biobase.studio/api-docs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://biobase.studio/aup</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -205,25 +211,19 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
     <loc>https://biobase.studio/launch-week/6</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/8</loc>
+    <loc>https://biobase.studio/launch-week/7</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/7</loc>
+    <loc>https://biobase.studio/launch-week/8</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -907,7 +907,7 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/supabase-js-v2</loc>
+    <loc>https://biobase.studio/blog/biobase-js-v2</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -997,7 +997,7 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/supabase-js-v2-released</loc>
+    <loc>https://biobase.studio/blog/biobase-js-v2-released</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1899,7 +1899,7 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/supabase-js-on-jsr</loc>
+    <loc>https://biobase.studio/blog/biobase-js-on-jsr</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

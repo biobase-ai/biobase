@@ -29,7 +29,7 @@ export async function getStaticProps() {
       const job_data = await job_res.json()
 
       jobs = groupJobsByTeam(job_data.jobs.filter((job: JobItemProps) => !filterGenericJob(job)))
-      placeholderJob = job_data.jobs.find(filterGenericJob)
+      placeholderJob = job_data.jobs.find(filterGenericJob) ?? null
     } catch (jobError) {
       console.error('Failed to fetch jobs:', jobError)
       // Use fallback job data if available
@@ -101,7 +101,7 @@ export async function getStaticProps() {
 
 interface CareersPageProps {
   jobs: Record<string, JobItemProps[]>
-  placeholderJob: JobItemProps
+  placeholderJob: JobItemProps | null
   contributors: { login: string; avatar_url: string; html_url: string }[]
 }
 
