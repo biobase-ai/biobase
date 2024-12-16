@@ -58,8 +58,8 @@ export async function clippy(
   const { error: matchError, data: pageSections } = await supabaseClient
     .rpc('match_page_sections_v2', {
       embedding,
-      match_threshold: 0.78,
-      min_content_length: 50,
+      match_threshold: 0.85,
+      min_content_length: 100,
     })
     .neq('rag_ignore', true)
     .select('content,page!inner(path),rag_ignore')
@@ -78,7 +78,7 @@ export async function clippy(
     const encoded = tokenizer.encode(content)
     tokenCount += encoded.length
 
-    if (tokenCount >= 1500) {
+    if (tokenCount >= 750) {
       break
     }
 
@@ -147,7 +147,7 @@ export async function clippy(
     },
   ]
 
-  const model = 'gpt-4o-mini-2024-07-18'
+  const model = 'gpt-3.5-turbo'
   const maxCompletionTokenCount = 1024
 
   const completionMessages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = capMessages(

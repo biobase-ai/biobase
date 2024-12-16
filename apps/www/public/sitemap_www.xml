@@ -211,13 +211,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/6</loc>
+    <loc>https://biobase.studio/launch-week/7</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/7</loc>
+    <loc>https://biobase.studio/launch-week/x</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -229,7 +229,7 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/x</loc>
+    <loc>https://biobase.studio/launch-week/6</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

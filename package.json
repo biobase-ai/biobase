@@ -48,6 +48,11 @@
     "db:health": "ts-node apps/www/scripts/manage-db.ts health"
   },
   "devDependencies": {
+    "@types/classnames": "^2.3.4",
+    "@types/lodash": "^4.17.13",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
     "eslint": "^8.57.0",
     "prettier": "^4.0.0-alpha.8",
     "prettier-plugin-sql-cst": "^0.11.0",
@@ -77,6 +82,8 @@
     "ai": "^4.0.16",
     "dotenv": "^16.3.1",
     "graphql-ws": "^5.16.0",
+    "ramda": "^0.30.1",
+    "ramda-adjunct": "^5.1.0",
     "rehype-pretty-code": "0.14.0",
     "ts-node": "^10.9.1",
     "vercel": "^32.3.0"
