@@ -49,6 +49,25 @@ const Doc = defineDocumentType(() => ({
       type: 'json',
       required: false,
     },
+    toc: {
+      type: 'boolean',
+      required: false,
+      default: true,
+    },
+    featured: {
+      type: 'boolean',
+      required: false,
+      default: false,
+    },
+    links: {
+      type: 'json',
+      required: false,
+    },
+    fragment: {
+      type: 'boolean',
+      required: false,
+      default: false,
+    },
   },
   computedFields,
 }))

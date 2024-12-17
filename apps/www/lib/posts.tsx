@@ -2,7 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { generateReadingTime } from './helpers'
-import { BlogPost } from '../.contentlayer/generated'
 
 type Directories = '_blog' | '_case-studies' | '_customers' | '_alternatives' | '_events'
 
@@ -13,6 +12,7 @@ export const FILENAME_SUBSTRING = 11
 type GetSortedPostsParams = {
   directory: Directories
   limit?: number
+  offset?: number
   tags?: string[]
   runner?: unknown
   currentPostSlug?: string
@@ -21,7 +21,8 @@ type GetSortedPostsParams = {
 
 export const getSortedPosts = ({
   directory,
-  limit,
+  limit = 0,
+  offset = 0,
   tags,
   categories,
   currentPostSlug,
@@ -92,7 +93,10 @@ export const getSortedPosts = ({
     })
   }
 
-  if (limit) sortedPosts = sortedPosts.slice(0, limit)
+  // Apply offset and limit
+  if (limit > 0) {
+    sortedPosts = sortedPosts.slice(offset, offset + limit)
+  }
 
   return sortedPosts
 }
@@ -156,15 +160,20 @@ export const getPostdata = async (slug: string, directory: string) => {
 
 export const getAllCategories = (directory: Directories) => {
   const posts = getSortedPosts({ directory })
-  let categories: any = []
+  const categories: Set<string> = new Set()
 
-  posts.map((post: any) => {
-    post.categories?.map((tag: string) => {
-      if (!categories.includes(tag)) return categories.push(tag)
-    })
+  posts.forEach((post: any) => {
+    if (post.categories && Array.isArray(post.categories)) {
+      post.categories.forEach((tag: string) => {
+        if (typeof tag === 'string' && tag.trim()) {
+          categories.add(tag.trim().toLowerCase())
+        }
+      })
+    }
   })
 
-  return categories
+  // Convert Set back to sorted array
+  return Array.from(categories).sort((a, b) => a.localeCompare(b))
 }
 
 export const getAllTags = (directory: Directories) => {

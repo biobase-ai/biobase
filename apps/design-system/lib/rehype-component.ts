@@ -30,79 +30,14 @@ function inspectComponentProps<T>(component: React.ComponentType<T>): void {
 export function rehypeComponent() {
   return async (tree: UnistTree) => {
     visit(tree, (node: UnistNode) => {
-      // src prop overrides both name and fileName.
-      const { value: srcPath, name: componentName } =
-        (getNodeAttributeByName(node, 'src') as {
-          name: string
-          value?: string
-          type?: string
-        }) || {}
-
-      // console.log(srcPath, componentName)
-
-      // inspectComponentProps(Column)
-
-      // console.log('NEW NODE: ', node.name)
-
-      // if (node.name === 'ComponentProps') {
-      //   // Parse a file for docgen info
-      //   const options = {
-      //     // savePropValueAsString: true,
-      //   }
-
-      //   // const parser = reactDocgenTypescript.parse('./sample-component.tsx', options)
-
-      //   // console.log('PARSER', parser)
-
-      //   const code = `
-      //   /** My first component */
-      //   export default ({ name, title }: {
-      //     /** My first component */
-      //     name: string,
-      //     /** My first component */
-      //     title: string
-      //   }) => <div>{{name}}</div>;
-      //   `
-      //   // console.log('node', node)
-
-      //   const documentation = parse(code)[0]
-
-      //   // console.log('documentation', documentation)
-
-      //   // Add attributes to object
-
-      //   node.attributes?.push({
-      //     type: 'mdxJsxAttribute',
-      //     name: 'docs',
-      //     value: JSON.stringify(documentation),
-      //   })
-
-      //   // console.log('node after', node)
-
-      //   // Add random text as children
-      //   // node.children?.push({
-      //   //   type: 'text',
-      //   //   value: 'I am random text', // Generate a random UUID as text content
-      //   // })
-
-      //   // node.data = {
-      //   //   ...node.data,
-      //   //   name: 'documentation',
-      //   //   type: 'mdxJsxAttribute',
-      //   //   value: documentation,
-      //   // }
-      // }
-
+      // Safely handle ComponentSource
       if (node.name === 'ComponentSource') {
-        // console.log('DO NOT USE THIS COMPONENT')
-        // This component should not be in use!
-        // console.log('node', node)
-
         const name = getNodeAttributeByName(node, 'name')?.value as string
         const fileName = getNodeAttributeByName(node, 'fileName')?.value as string | undefined
+        const srcPath = getNodeAttributeByName(node, 'src')?.value as string | undefined
 
         if (!name && !srcPath) {
-          return null
+          return
         }
 
         try {
@@ -112,28 +47,22 @@ export function rehypeComponent() {
             if (srcPath) {
               src = srcPath
             } else {
-              const component = Index[style.name][name]
-              // console.log('got to ELSE STATEMENT')
-              // console.log('filename', fileName)
-              // console.log('name', name)
+              const component = Index[style.name]?.[name]
+              if (!component) {
+                console.warn(`Component ${name} not found in style ${style.name}`)
+                continue
+              }
 
               src = fileName
                 ? component.files.find((file: string) => {
                     return file.endsWith(`${fileName}.tsx`) || file.endsWith(`${fileName}.ts`)
                   }) || component.files[0]
                 : component.files[0]
-              // console.log('got to END of ELSE STATEMENT')
             }
 
             // Read the source file.
             const filePath = path.join(process.cwd(), src)
             let source = fs.readFileSync(filePath, 'utf8')
-
-            // Replace imports.
-            // TODO: Use @swc/core and a visitor to replace this.
-            // For now a simple regex should do.
-            // source = source.replaceAll(`@/registry/${style.name}/`, '@/components/') // COMMENT THEE OUT
-            // source = source.replaceAll('export default', 'export')
 
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
@@ -168,32 +97,31 @@ export function rehypeComponent() {
             )
           }
         } catch (error) {
-          console.error(error)
+          console.error('Error processing ComponentSource:', error)
         }
       }
 
+      // Safely handle ComponentPreview
       if (node.name === 'ComponentPreview') {
         const name = getNodeAttributeByName(node, 'name')?.value as string
 
         if (!name) {
-          return null
+          return
         }
 
         try {
           for (const style of styles) {
-            const component = Index[style.name][name]
-            // console.log('GOT HERE')
+            const component = Index[style.name]?.[name]
+            if (!component) {
+              console.warn(`Component ${name} not found in style ${style.name}`)
+              continue
+            }
+
             const src = component.files[0]
 
             // Read the source file.
             const filePath = path.join(process.cwd(), src)
             let source = fs.readFileSync(filePath, 'utf8')
-
-            // Replace imports.
-            // TODO: Use @swc/core and a visitor to replace this.
-            // For now a simple regex should do.
-            source = source.replaceAll(`@/registry/${style.name}/`, '@/components/')
-            source = source.replaceAll('export default', 'export')
 
             // Add code as children so that rehype can take over at build time.
             node.children?.push(
@@ -201,7 +129,15 @@ export function rehypeComponent() {
                 tagName: 'pre',
                 properties: {
                   __src__: src,
+                  __style__: style.name,
                 },
+                attributes: [
+                  {
+                    name: 'styleName',
+                    type: 'mdxJsxAttribute',
+                    value: style.name,
+                  },
+                ],
                 children: [
                   u('element', {
                     tagName: 'code',
@@ -220,7 +156,7 @@ export function rehypeComponent() {
             )
           }
         } catch (error) {
-          console.error(error)
+          console.error('Error processing ComponentPreview:', error)
         }
       }
 
@@ -387,7 +323,7 @@ export function rehypeComponent() {
 }
 
 function getNodeAttributeByName(node: UnistNode, name: string) {
-  return node.attributes?.find((attribute) => attribute.name === name)
+  return node.attributes?.find((attr: any) => attr.name === name)
 }
 
 function getComponentSourceFileContent(node: UnistNode) {

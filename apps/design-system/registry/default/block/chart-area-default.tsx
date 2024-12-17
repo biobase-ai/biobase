@@ -1,77 +1,107 @@
 'use client'
 
-import { TrendingUp } from 'lucide-react'
-import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts'
+import * as React from 'react'
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
-import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/shadcn/card'
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts'
 
-export const description = 'A simple area chart'
-
-const chartData = [
-  { month: 'January', desktop: 186 },
-  { month: 'February', desktop: 305 },
-  { month: 'March', desktop: 237 },
-  { month: 'April', desktop: 73 },
-  { month: 'May', desktop: 209 },
-  { month: 'June', desktop: 214 },
+const data = [
+  {
+    name: 'Jan',
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: 'Feb',
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: 'Mar',
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: 'Apr',
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: 'May',
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
+  {
+    name: 'Jun',
+    total: Math.floor(Math.random() * 5000) + 1000,
+  },
 ]
 
-const chartConfig = {
-  desktop: {
-    label: 'Desktop',
-    color: 'hsl(var(--chart-1))',
-  },
-} satisfies ChartConfig
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="rounded-lg border bg-background p-2 shadow-sm">
+        <div className="grid grid-cols-2 gap-2">
+          <div className="flex flex-col">
+            <span className="text-[0.70rem] uppercase text-muted-foreground">{label}</span>
+            <span className="font-bold text-muted-foreground">{payload[0].value}</span>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return null
+}
 
 export default function Component() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Area Chart</CardTitle>
-        <CardDescription>Showing total visitors for the last 6 months</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <ChartContainer config={chartConfig}>
-          <AreaChart
-            accessibilityLayer
-            data={chartData}
-            margin={{
-              left: 12,
-              right: 12,
-            }}
-          >
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="month"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              tickFormatter={(value) => value.slice(0, 3)}
-            />
-            <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="line" />} />
-            <Area
-              dataKey="desktop"
-              type="natural"
-              fill="var(--color-desktop)"
-              fillOpacity={0.4}
-              stroke="var(--color-desktop)"
-            />
-          </AreaChart>
-        </ChartContainer>
-      </CardContent>
-      <CardFooter>
-        <div className="flex w-full items-start gap-2 text-sm">
-          <div className="grid gap-2">
-            <div className="flex items-center gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-            </div>
-            <div className="flex items-center gap-2 leading-none text-muted-foreground">
-              January - June 2024
-            </div>
+    <div className="w-full">
+      <Card>
+        <CardHeader>
+          <CardTitle>Area Chart</CardTitle>
+          <CardDescription>Showing total visitors for the last 6 months</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="h-[200px] w-full">
+            <ResponsiveContainer width="100%" height={200}>
+              <AreaChart
+                data={data}
+                margin={{
+                  top: 10,
+                  right: 30,
+                  left: 0,
+                  bottom: 0,
+                }}
+              >
+                <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+                <XAxis
+                  dataKey="name"
+                  tickLine={false}
+                  axisLine={false}
+                  className="text-sm text-muted-foreground"
+                />
+                <YAxis
+                  tickLine={false}
+                  axisLine={false}
+                  className="text-sm text-muted-foreground"
+                />
+                <Tooltip content={<CustomTooltip />} />
+                <Area type="monotone" dataKey="total" className="fill-primary/10 stroke-primary" />
+              </AreaChart>
+            </ResponsiveContainer>
           </div>
-        </div>
-      </CardFooter>
-    </Card>
+        </CardContent>
+      </Card>
+    </div>
   )
 }

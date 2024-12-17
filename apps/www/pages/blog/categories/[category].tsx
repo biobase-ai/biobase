@@ -7,38 +7,92 @@ import DefaultLayout from '~/components/Layouts/Default'
 import BlogGridItem from '~/components/Blog/BlogGridItem'
 import type PostTypes from '~/types/post'
 
-export async function getStaticProps({ params }: any) {
-  const POSTS_PER_PAGE = 12
-  const posts = getSortedPosts({ 
-    directory: '_blog', 
-    limit: POSTS_PER_PAGE,  
-    categories: [params.category] 
-  })
-
-  // Get total count for pagination
-  const allPosts = getSortedPosts({ 
-    directory: '_blog', 
-    limit: 0,
-    categories: [params.category] 
-  })
-  const totalPosts = allPosts.length
-
-  return {
-    props: {
-      category: params.category,
-      blogs: posts,
-      totalPosts,
-      currentPage: 1,
-      postsPerPage: POSTS_PER_PAGE,
-    },
-  }
-}
-
 export async function getStaticPaths() {
   const categories = getAllCategories('_blog')
   return {
-    paths: categories.map((category: any) => ({ params: { category: category } })),
-    fallback: false,
+    paths: categories.map((category: string) => ({ 
+      params: { category: category } 
+    })),
+    fallback: 'blocking'
+  }
+}
+
+export async function getStaticProps(context: { params?: any; query?: any }) {
+  try {
+    // Destructure with default empty objects
+    const { params = {}, query = {} } = context
+
+    console.log('Full context:', context)
+
+    // Validate category parameter
+    const category = params.category
+    if (!category) {
+      console.error('No category parameter provided')
+      return {
+        notFound: true
+      }
+    }
+
+    const POSTS_PER_PAGE = 12
+    const currentPage = Number(query.page) || 1
+    const offset = (currentPage - 1) * POSTS_PER_PAGE
+
+    console.log('Params:', params)
+    console.log('Query:', query)
+
+    // Normalize category for case-insensitive matching
+    const normalizedCategory = category.toLowerCase()
+
+    // Ensure the category exists
+    const allCategories = getAllCategories('_blog')
+    console.log('All Categories:', allCategories)
+
+    const matchingCategory = allCategories.find(
+      (cat: string) => cat.toLowerCase() === normalizedCategory
+    )
+
+    console.log('Matching Category:', matchingCategory)
+
+    if (!matchingCategory) {
+      console.log(`No matching category found for: ${normalizedCategory}`)
+      return {
+        notFound: true
+      }
+    }
+
+    const posts = getSortedPosts({ 
+      directory: '_blog', 
+      limit: POSTS_PER_PAGE,
+      offset,
+      categories: [matchingCategory] 
+    })
+
+    console.log('Posts:', posts)
+
+    // Get total count for pagination
+    const allPosts = getSortedPosts({ 
+      directory: '_blog', 
+      categories: [matchingCategory] 
+    })
+    const totalPosts = allPosts.length
+
+    console.log('Total Posts:', totalPosts)
+
+    return {
+      props: {
+        category: matchingCategory,
+        blogs: posts,
+        totalPosts,
+        currentPage,
+        postsPerPage: POSTS_PER_PAGE,
+      },
+      revalidate: 3600
+    }
+  } catch (error) {
+    console.error('Error in getStaticProps:', error)
+    return {
+      notFound: true
+    }
   }
 }
 
@@ -54,6 +108,17 @@ function CategoriesIndex(props: Props) {
   const { blogs, category, totalPosts, currentPage, postsPerPage } = props
   const capitalizedCategory = startCase(category.replaceAll('-', ' '))
   const totalPages = Math.ceil(totalPosts / postsPerPage)
+
+  // Add a safety check in case no blogs are found
+  if (!blogs || blogs.length === 0) {
+    return (
+      <DefaultLayout>
+        <div className="container mx-auto px-8 py-16 sm:px-16 xl:px-20">
+          <h1>No posts found in the {capitalizedCategory} category</h1>
+        </div>
+      </DefaultLayout>
+    )
+  }
 
   return (
     <>
