@@ -44,15 +44,10 @@ export const getSortedPosts = ({
 
       //Extracts contents of the MDX file
       const fileContents = fs.readFileSync(fullPath, 'utf8')
-      const { data, content } = matter(fileContents) as unknown as {
-        data: { [key: string]: any; tags?: string[] }
-        content: string
-      }
+      const { data } = matter(fileContents)
 
       const options: Intl.DateTimeFormatOptions = { month: 'long', day: 'numeric', year: 'numeric' }
       const formattedDate = new Date(data.date).toLocaleDateString('en-IN', options)
-
-      const readingTime = generateReadingTime(content)
 
       const url = `/${directory.replace('_', '')}/${slug}`
       const contentPath = `/${directory.replace('_', '')}/${slug}`
@@ -60,7 +55,6 @@ export const getSortedPosts = ({
       const frontmatter = {
         ...data,
         formattedDate,
-        readingTime,
         url: url,
         path: contentPath,
       }
@@ -93,12 +87,19 @@ export const getSortedPosts = ({
     })
   }
 
+  // Limit total posts to 50 to reduce payload
+  const MAX_POSTS = 50
+  sortedPosts = sortedPosts.slice(0, MAX_POSTS)
+
   // Apply offset and limit
   if (limit > 0) {
     sortedPosts = sortedPosts.slice(offset, offset + limit)
   }
 
-  return sortedPosts
+  return sortedPosts.map((post) => ({
+    ...post,
+    content: null, // Remove content to reduce payload
+  }))
 }
 
 // Get Slugs
