@@ -22,46 +22,45 @@ type GetSortedPostsParams = {
 
 export function getSortedPosts({
   directory,
-  limit = 5, // 减少到5篇
+  limit = 5,
   offset = 0,
   categories
 }: GetSortedPostsParams) {
   const postsDirectory = path.join(process.cwd(), 'content', directory)
+  
+  // 1. 先只获取文件列表
   const fileNames = fs.readdirSync(postsDirectory)
     .filter(fileName => fileName.endsWith('.mdx') || fileName.endsWith('.md'))
-    .sort((a, b) => {
-      const aStats = fs.statSync(path.join(postsDirectory, a))
-      const bStats = fs.statSync(path.join(postsDirectory, b))
-      return bStats.mtime.getTime() - aStats.mtime.getTime()
-    })
-    .slice(0, 10) // 减少文件扫描数量
+  
+  // 2. 获取文件状态（不读取内容）
+  const fileStats = fileNames.map(fileName => ({
+    name: fileName,
+    stats: fs.statSync(path.join(postsDirectory, fileName))
+  }))
+  
+  // 3. 排序并限制数量
+  const selectedFiles = fileStats
+    .sort((a, b) => b.stats.mtime.getTime() - a.stats.mtime.getTime())
+    .slice(0, limit + offset)
+    .map(file => file.name)
+  
+  // 4. 只处理选中的文件
+  const posts = selectedFiles.map(fileName => {
+    const slug = fileName.replace(/\.mdx?$/, '')
+    const fullPath = path.join(postsDirectory, fileName)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const { data } = matter(fileContents)
 
-  const allPostsData = fileNames
-    .map(fileName => {
-      const slug = fileName.replace(/\.mdx?$/, '')
-      const fullPath = path.join(postsDirectory, fileName)
-      const fileContents = fs.readFileSync(fullPath, 'utf8')
-      const { data } = matter(fileContents)
+    return {
+      slug,
+      title: data.title,
+      category: data.category,
+      url: `/${directory.replace('_', '')}/${slug}`
+    }
+  })
 
-      // 极简化返回字段
-      return {
-        slug,
-        title: data.title,
-        date: data.date,
-        category: data.category,
-        description: data.description?.slice(0, 80), // 减少描述长度到80字符
-        url: `/${directory.replace('_', '')}/${slug}`,
-      }
-    })
-    .filter(post => {
-      if (categories?.length > 0) {
-        return categories.includes(post.category)
-      }
-      return true
-    })
-    .slice(offset, offset + limit)
+  return posts
 
-  return allPostsData
 }
 // Get Slugs
 export const getAllPostSlugs = (directory: Directories) => {

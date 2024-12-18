@@ -7,15 +7,13 @@ import DefaultLayout from '~/components/Layouts/Default'
 import BlogGridItem from '~/components/Blog/BlogGridItem'
 import type PostTypes from '~/types/post'
 
-export const getStaticPaths = async () => {
+export async function getStaticPaths() {
   const categories = getAllCategories('_blog')
-  const paths = categories.map((category: string) => ({
-    params: { category }
-  }))
-
   return {
-    paths,
-    fallback: false
+    paths: categories.map((category: string) => ({ 
+      params: { category: category } 
+    })),
+    fallback: 'blocking'
   }
 }
 
