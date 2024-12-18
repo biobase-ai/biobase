@@ -131,20 +131,23 @@ const GuidesTableOfContents = ({
         </div>
       )}
       <Feedback key={pathname} />
-      <span className="block font-mono text-xs uppercase text-foreground px-5 mb-6">
-        On this page
-      </span>
-      <ul className="toc-menu list-none pl-5 text-[0.8rem] grid gap-2">
-        {displayedList.map((item, i) => (
-          <li key={`${item.level}-${i}`} className={item.level === 3 ? 'ml-4' : ''}>
-            <a
-              href={`#${formatSlug(item.link)}`}
-              className="text-foreground-lighter hover:text-brand-link transition-colors"
-              dangerouslySetInnerHTML={{ __html: formatTOCHeader(removeAnchor(item.text)) }}
-            />
-          </li>
-        ))}
-      </ul>
+      <nav aria-label="Table of contents">
+        <span className="block font-mono text-xs uppercase text-foreground px-5 mb-6">
+          On this page
+        </span>
+        <ul className="toc-menu list-none pl-5 text-[0.8rem] grid gap-2" role="list">
+          {displayedList.map((item, i) => (
+            <li key={`${item.level}-${i}`} className={item.level === 3 ? 'ml-4' : ''}>
+              <a
+                href={`#${formatSlug(item.link)}`}
+                className="text-foreground-lighter hover:text-brand-link transition-colors"
+                dangerouslySetInnerHTML={{ __html: formatTOCHeader(removeAnchor(item.text)) }}
+                aria-label={`Jump to section: ${removeAnchor(item.text)}`}
+              />
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   )
 }

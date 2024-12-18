@@ -93,6 +93,7 @@ const AssistantChatForm = React.forwardRef<HTMLFormElement, FormProps>(
           <button
             ref={submitRef}
             type="submit"
+            aria-label="Send message"
             className={cn(
               'transition-all',
               'flex items-center justify-center w-7 h-7 border border-control rounded-full mr-0.5 p-1.5 background-alternative',

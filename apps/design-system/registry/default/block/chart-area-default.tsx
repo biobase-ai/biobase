@@ -82,6 +82,8 @@ export default function Component() {
                   left: 0,
                   bottom: 0,
                 }}
+                aria-label="Monthly visitors area chart"
+                role="img"
               >
                 <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
                 <XAxis
@@ -89,14 +91,21 @@ export default function Component() {
                   tickLine={false}
                   axisLine={false}
                   className="text-sm text-muted-foreground"
+                  aria-label="Months"
                 />
                 <YAxis
                   tickLine={false}
                   axisLine={false}
                   className="text-sm text-muted-foreground"
+                  aria-label="Number of visitors"
                 />
                 <Tooltip content={<CustomTooltip />} />
-                <Area type="monotone" dataKey="total" className="fill-primary/10 stroke-primary" />
+                <Area
+                  type="monotone"
+                  dataKey="total"
+                  className="fill-primary/10 stroke-primary"
+                  aria-label="Total visitors"
+                />
               </AreaChart>
             </ResponsiveContainer>
           </div>

@@ -2,13 +2,14 @@
 import * as dotenv from 'dotenv'
 dotenv.config({ path: '.env.local' })
 
-import { defineDocumentType, makeSource } from 'contentlayer2/source-files'
+import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import type { DocumentTypes } from 'contentlayer/generated'
 import { FILENAME_SUBSTRING } from './lib/posts'
 
 // Create a mock client for when credentials are missing
 const createMockClient = () => ({
   from: () => ({
-    select: () => ({
+    select: () => Promise.resolve({
       data: [],
       error: null
     })
@@ -17,15 +18,15 @@ const createMockClient = () => ({
 
 // Initialize Supabase client with environment variables
 const initSupabaseClient = () => {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-  if (!supabaseUrl || !supabaseAnonKey) {
-    console.warn('Supabase credentials not found in contentlayer config, using mock client')
-    return createMockClient()
-  }
-
   try {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+    if (!supabaseUrl || !supabaseAnonKey) {
+      console.warn('Supabase credentials not found in contentlayer config, using mock client')
+      return createMockClient()
+    }
+
     const { createClient } = require('@supabase/supabase-js')
     return createClient(supabaseUrl, supabaseAnonKey)
   } catch (error) {
@@ -71,7 +72,17 @@ export const BlogPost = defineDocumentType(() => ({
   },
 }))
 
-export default makeSource({
+const contentLayerConfig = makeSource({
   contentDirPath: '_blog',
-  documentTypes: [BlogPost]
+  documentTypes: [BlogPost],
+  onSuccess: async () => {
+    console.log('Contentlayer build successful')
+    process.exit(0)
+  },
+  onError: async (error) => {
+    console.error('Contentlayer build failed:', error)
+    process.exit(1)
+  }
 })
+
+export default contentLayerConfig

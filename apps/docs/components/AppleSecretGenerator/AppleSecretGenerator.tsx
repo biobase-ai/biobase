@@ -130,12 +130,22 @@ const AppleSecretGenerator = () => {
         onChange={(e) => setKeyID(e.target.value.trim())}
       />
       <div>
+        <label htmlFor="apple-key-file" className="block text-sm font-medium text-foreground mb-2">
+          Private Key File
+          <span className="text-foreground-lighter ml-1">(required)</span>
+        </label>
         <input
+          id="apple-key-file"
           type="file"
+          accept=".p8"
+          aria-describedby="file-description"
           onChange={(e) => {
             setFile({ file: e.target.files[0] })
           }}
         />
+        <p id="file-description" className="mt-1 text-sm text-foreground-lighter">
+          Upload your private key file (AuthKey_XXXXXXXXXX.p8) from Apple Developer Center
+        </p>
       </div>
       <div style={{ height: '1rem' }} />
 

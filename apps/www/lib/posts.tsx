@@ -105,7 +105,7 @@ export async function getTotalPostCount(directory: Directories, category?: strin
 }
 
 // Helper function to get all categories
-export async function getAllCategories(directory: Directories) {
+export async function getAllCategories(directory: Directories): Promise<string[]> {
   try {
     const { data, error } = await supabase
       .from('posts')

@@ -1,9 +1,16 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getSortedPosts, getAllCategories, getTotalPostCount } from '~/lib/posts'
-import { BlogPost } from '~/components/Blog/BlogGridItem'
+import type PostTypes from '~/types/post'
+
+// Only include necessary fields in the BlogPost type
+type MinimalBlogPost = {
+  slug: string // Make slug required for our use case
+  title: string
+  description: string
+}
 
 interface Props {
-  posts: BlogPost[]
+  posts: MinimalBlogPost[]
   category: string
   totalPosts: number
 }
@@ -36,15 +43,24 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
         page: 1,
         limit: 10,
       }),
-      getTotalPostCount('_blog', category),
+      getTotalPostCount('_blog', category)
     ])
+
+    // Only include necessary fields to reduce data size
+    const minimalPosts = posts.map(({ slug, title, description }) => ({
+      slug,
+      title,
+      description,
+    }))
 
     return {
       props: {
-        posts,
+        posts: minimalPosts,
         category,
         totalPosts,
       },
+      // Add revalidation to reduce build time and function size
+      revalidate: 3600, // Revalidate every hour
     }
   } catch (error) {
     console.error('Error fetching blog category data:', error)
