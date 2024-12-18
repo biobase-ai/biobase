@@ -1,14 +1,67 @@
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
-import { generateReadingTime } from './helpers'
-import PostTypes from '~/types/post'
+import { createClient } from '@supabase/supabase-js'
 
-type Directories = '_blog' | '_case-studies' | '_customers' | '_alternatives' | '_events'
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
 
-// substring amount for file names
-// based on YYYY-MM-DD format
-export const FILENAME_SUBSTRING = 11
+// Constants
+export const FILENAME_SUBSTRING = 11 // based on YYYY-MM-DD format
+
+// Storage bucket constants
+const STORAGE_BUCKETS = {
+  IMAGES: 'images',
+  VIDEOS: 'videos',
+  BRAND_ASSETS: 'biobase-brand-assets',
+  FONTS: 'fonts'
+} as const
+
+// Cache URLs to avoid repeated Supabase calls
+const urlCache = new Map<string, string>()
+
+// Helper function to get public URL for assets with caching
+function getStorageUrl(bucket: string, path: string): string {
+  if (!path) return ''
+  
+  const cacheKey = `${bucket}:${path}`
+  if (urlCache.has(cacheKey)) {
+    return urlCache.get(cacheKey)!
+  }
+
+  const { data } = supabase.storage.from(bucket).getPublicUrl(path)
+  const url = data.publicUrl
+  urlCache.set(cacheKey, url)
+  return url
+}
+
+// Helper to process content and replace local paths with Supabase URLs
+function processContent(content: string): string {
+  if (!content) return ''
+  
+  // Replace image paths
+  content = content.replace(
+    /!\[([^\]]*)\]\(([^)]+)\)/g,
+    (match, alt, path) => {
+      if (path.startsWith('http')) return match
+      const publicUrl = getStorageUrl(STORAGE_BUCKETS.IMAGES, path)
+      return `![${alt}](${publicUrl})`
+    }
+  )
+
+  // Replace video paths
+  content = content.replace(
+    /<video[^>]*src=["']([^"']+)["'][^>]*>/g,
+    (match, path) => {
+      if (path.startsWith('http')) return match
+      const publicUrl = getStorageUrl(STORAGE_BUCKETS.VIDEOS, path)
+      return match.replace(path, publicUrl)
+    }
+  )
+
+  return content
+}
+
+export type Directories = '_blog' | '_case-studies' | '_customers' | '_alternatives' | '_events'
 
 type GetSortedPostsParams = {
   directory: Directories
@@ -20,134 +73,172 @@ type GetSortedPostsParams = {
   categories?: any
 }
 
-export function getSortedPosts({
+// Optimize post data selection based on usage
+const POST_LIST_FIELDS = 'slug, title, description, created_at, category, image'
+const POST_DETAIL_FIELDS = 'content, title, description, created_at, category, image, tags'
+
+export async function getSortedPosts({
   directory,
-  limit = 5,
+  limit = 9,
   offset = 0,
   categories
 }: GetSortedPostsParams) {
-  const postsDirectory = path.join(process.cwd(), 'content', directory)
-  
-  // 1. 先只获取文件列表
-  const fileNames = fs.readdirSync(postsDirectory)
-    .filter(fileName => fileName.endsWith('.mdx') || fileName.endsWith('.md'))
-  
-  // 2. 获取文件状态（不读取内容）
-  const fileStats = fileNames.map(fileName => ({
-    name: fileName,
-    stats: fs.statSync(path.join(postsDirectory, fileName))
-  }))
-  
-  // 3. 排序并限制数量
-  const selectedFiles = fileStats
-    .sort((a, b) => b.stats.mtime.getTime() - a.stats.mtime.getTime())
-    .slice(0, limit + offset)
-    .map(file => file.name)
-  
-  // 4. 只处理选中的文件
-  const posts = selectedFiles.map(fileName => {
-    const slug = fileName.replace(/\.mdx?$/, '')
-    const fullPath = path.join(postsDirectory, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
-    const { data } = matter(fileContents)
+  let query = supabase
+    .from('posts')
+    .select(POST_LIST_FIELDS)
+    .eq('type', directory.replace('_', ''))
+    .order('created_at', { ascending: false })
+    .range(offset, offset + limit - 1)
 
-    return {
-      slug,
-      title: data.title,
-      category: data.category,
-      url: `/${directory.replace('_', '')}/${slug}`
-    }
-  })
-
-  return posts
-
-}
-// Get Slugs
-export const getAllPostSlugs = (directory: Directories) => {
-  //Finding directory named "blog" from the current working directory of Node.
-  const postDirectory = path.join(process.cwd(), directory)
-
-  const fileNames = fs.readdirSync(postDirectory)
-
-  const files = fileNames.map((filename) => {
-    const dates =
-      directory === '_blog'
-        ? getDatesFromFileName(filename)
-        : {
-            year: '2021',
-            month: '04',
-            day: '02',
-          }
-
-    return {
-      params: {
-        ...dates,
-        slug: filename
-          .replace('.mdx', '')
-          .substring(directory === '_blog' || directory === '_events' ? FILENAME_SUBSTRING : 0),
-      },
-    }
-  })
-
-  return files
-}
-
-export const getPostdata = async (slug: string, directory: string) => {
-  /**
-   * All files are mdx files
-   */
-  const fileType = 'mdx'
-  slug = slug + '.' + fileType
-
-  /**
-   * Return full directory
-   */
-  const postDirectory = path.join(process.cwd(), directory)
-  const folderfiles = fs.readdirSync(postDirectory)
-
-  /**
-   * Check if the file exists in the directory
-   * This should return 1 result
-   *
-   * this is so slugs like 'blog-post.mdx' will work
-   * even if the mdx file is date namednamed like '2022-01-01-blog-post.mdx'
-   */
-  const found = folderfiles.filter((x) => x.includes(slug))[0]
-
-  const fullPath = path.join(postDirectory, found)
-  const postContent = fs.readFileSync(fullPath, 'utf8')
-  return postContent
-}
-
-export const getStaticPaths = async () => {
-  return {
-    paths: [], // 不预生成任何路径
-    fallback: 'blocking' // 使用服务器端渲染
+  if (categories && categories.length > 0) {
+    query = query.in('category', categories)
   }
+
+  const { data: posts, error } = await query
+
+  if (error) {
+    console.error('Error fetching posts:', error)
+    return []
+  }
+
+  return posts.map(post => ({
+    slug: post.slug,
+    title: post.title,
+    description: post.description,
+    date: post.created_at,
+    category: post.category,
+    image: post.image ? getStorageUrl(STORAGE_BUCKETS.IMAGES, post.image) : null,
+    url: `/${directory.replace('_', '')}/${post.slug}`
+  }))
 }
 
-export const getAllTags = (directory: Directories) => {
-  const posts = getSortedPosts({ directory })
-  let tags: any = []
-
-  posts.map((post: any) => {
-    post.tags?.map((tag: string) => {
-      if (!tags.includes(tag)) return tags.push(tag)
-    })
-  })
-
-  return tags
-}
-
-const getDatesFromFileName = (filename: string) => {
-  // extract YYYY, MM, DD from post name
+// Helper function to extract date from filename
+export function getDatesFromFileName(filename: string) {
   const year = filename.substring(0, 4)
   const month = filename.substring(5, 7)
   const day = filename.substring(8, 10)
+  return { year, month, day }
+}
+
+export async function getPostData(slug: string, directory: string) {
+  const { data: post, error } = await supabase
+    .from('posts')
+    .select(POST_DETAIL_FIELDS)
+    .eq('slug', slug)
+    .eq('type', directory.replace('_', ''))
+    .single()
+
+  if (error) {
+    console.error('Error fetching post:', error)
+    return null
+  }
 
   return {
-    year,
-    month,
-    day,
+    ...post,
+    image: post.image ? getStorageUrl(STORAGE_BUCKETS.IMAGES, post.image) : null,
+    content: processContent(post.content)
   }
+}
+
+// Cache management
+const CACHE_TTL = 5 * 60 * 1000 // 5 minutes
+
+interface CacheEntry<T> {
+  data: T
+  timestamp: number
+}
+
+class Cache<T> {
+  private store = new Map<string, CacheEntry<T>>()
+  
+  get(key: string): T | null {
+    const entry = this.store.get(key)
+    if (!entry) return null
+    
+    const now = Date.now()
+    if (now - entry.timestamp > CACHE_TTL) {
+      this.store.delete(key)
+      return null
+    }
+    
+    return entry.data
+  }
+  
+  set(key: string, data: T) {
+    this.store.set(key, { data, timestamp: Date.now() })
+  }
+}
+
+const categoriesCache = new Cache<string[]>()
+const countCache = new Cache<number>()
+const tagsCache = new Cache<string[]>()
+
+export async function getAllCategories(directory: Directories) {
+  const cached = categoriesCache.get(directory)
+  if (cached) return cached
+
+  const { data: categories, error } = await supabase
+    .from('posts')
+    .select('category')
+    .eq('type', directory.replace('_', ''))
+    .not('category', 'is', null)
+    .select('category')
+
+  if (error) {
+    console.error('Error fetching categories:', error)
+    return []
+  }
+
+  const result = categories.map((c: { category: string }) => c.category)
+  categoriesCache.set(directory, result)
+  return result
+}
+
+export async function getTotalPostCount(directory: Directories, category?: string) {
+  const cacheKey = `${directory}:${category || 'all'}`
+  const cached = countCache.get(cacheKey)
+  if (cached !== null) return cached
+
+  let query = supabase
+    .from('posts')
+    .select('id', { count: 'exact', head: true })
+    .eq('type', directory.replace('_', ''))
+
+  if (category) {
+    query = query.eq('category', category)
+  }
+
+  const { count, error } = await query
+
+  if (error) {
+    console.error('Error getting post count:', error)
+    return 0
+  }
+
+  const result = count || 0
+  countCache.set(cacheKey, result)
+  return result
+}
+
+export async function getAllTags(directory: Directories) {
+  const cached = tagsCache.get(directory)
+  if (cached) return cached
+
+  const { data: tags, error } = await supabase
+    .from('posts')
+    .select('tags')
+    .eq('type', directory.replace('_', ''))
+    .not('tags', 'is', null)
+
+  if (error) {
+    console.error('Error fetching tags:', error)
+    return []
+  }
+
+  const allTags = tags
+    .flatMap(post => post.tags || [])
+    .filter((tag, index, self) => self.indexOf(tag) === index)
+
+  tagsCache.set(directory, allTags)
+  return allTags
 }

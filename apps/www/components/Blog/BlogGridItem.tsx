@@ -1,66 +1,37 @@
-import authors from 'lib/authors.json'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
-import type Author from '~/types/author'
 import type PostTypes from '~/types/post'
-import dayjs from 'dayjs'
 
 interface Props {
   post: PostTypes
+  showImage?: boolean
 }
 
-const BlogGridItem = ({ post }: Props) => {
-  const authorArray: string[] | undefined = post.author ? post.author.split(',') : []
-  const author = []
-
-  if (authorArray) {
-    for (let i = 0; i < authorArray.length; i++) {
-      author.push(
-        authors.find((authors: Author) => {
-          return authors.author_id === authorArray[i]
-        })
-      )
-    }
-  }
+const BlogGridItem = ({ post, showImage = true }: Props) => {
+  const { title, description, url, image } = post
 
   return (
-    <Link
-      href={post.path}
-      className="group inline-block min-w-full p-2 sm:p-4 h-full border border-transparent transition-all hover:bg-surface-200 dark:hover:bg-surface-75 rounded-xl"
-    >
-      <div className="flex flex-col space-y-2">
-        <div className="flex flex-col space-y-1">
-          <div className="border-default relative mb-3 w-full aspect-[2/1] lg:aspect-[5/3] overflow-hidden rounded-lg border shadow-sm">
+    <Link href={url} className="group">
+      <div className="flex flex-col gap-3">
+        {showImage && image && (
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg">
             <Image
+              src={image}
+              alt={title}
               fill
-              sizes="100%"
-              quality={100}
-              src={
-                !post.thumb
-                  ? `/images/blog/blog-placeholder.png`
-                  : post.type === 'casestudy'
-                    ? post.thumb
-                    : `/images/blog/${post.thumb}`
-              }
-              className="scale-100 object-cover overflow-hidden"
-              alt={`${post.title} thumbnail`}
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={false}
             />
           </div>
-
-          {post.date && (
-            <div className="text-foreground-lighter flex items-center space-x-1.5 text-sm">
-              <p>{dayjs(post.date).format('D MMM YYYY')}</p>
-              {post.readingTime && (
-                <>
-                  <p>•</p>
-                  <p>{post.readingTime}</p>
-                </>
-              )}
-            </div>
+        )}
+        <div className="flex flex-col gap-2">
+          <h3 className="text-xl font-medium text-foreground group-hover:text-foreground-light">
+            {title}
+          </h3>
+          {description && (
+            <p className="line-clamp-2 text-foreground-light">{description}</p>
           )}
-          <h3 className="text-foreground max-w-sm text-xl">{post.title}</h3>
-          <p className="text-foreground-light max-w-sm text-base !mb-0">{post.description}</p>
         </div>
       </div>
     </Link>

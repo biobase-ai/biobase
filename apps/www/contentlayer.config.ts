@@ -31,7 +31,14 @@ export const BlogPost = defineDocumentType(() => ({
         return `/blog/${slug}`
       },
     },
+    slug: {
+      type: 'string',
+      resolve: (post) => post._raw.flattenedPath.replace('.mdx', '').substring(FILENAME_SUBSTRING)
+    }
   },
 }))
 
-export default makeSource({ contentDirPath: '_blog', documentTypes: [BlogPost] })
+export default makeSource({
+  contentDirPath: '_blog',
+  documentTypes: [BlogPost]
+})
