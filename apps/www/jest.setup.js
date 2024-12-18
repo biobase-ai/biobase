@@ -1,7 +1,3 @@
-// Mock environment variables
-process.env.NEXT_PUBLIC_SUPABASE_URL = 'https://your-project.supabase.co'
-process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'your-anon-key'
-
 // Add custom matchers
 expect.extend({
   toBeWithinRange(received, floor, ceiling) {

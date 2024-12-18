@@ -20,9 +20,17 @@ import HamburgerButton from './HamburgerMenu'
 import MobileMenu from './MobileMenu'
 import MenuItem from './MenuItem'
 import RightClickBrandLogo from './RightClickBrandLogo'
-import { allBlogPosts } from 'contentlayer/generated'
 import { getMenu } from '~/data/nav'
 import { sortDates } from '~/lib/helpers'
+
+// Import contentlayer files conditionally
+let allBlogPosts: any[] = []
+try {
+  const { allBlogPosts: posts } = require('contentlayer/generated')
+  allBlogPosts = posts || []
+} catch (error) {
+  console.warn('Contentlayer files not found, using empty blog posts array')
+}
 
 interface Props {
   hideNavbar: boolean
@@ -35,7 +43,7 @@ const Nav = (props: Props) => {
   const [open, setOpen] = useState(false)
   const isLoggedIn = useIsLoggedIn()
   const isUserLoading = useIsUserLoading()
-  const latestBlogPosts = allBlogPosts.sort(sortDates).slice(0, 2)
+  const latestBlogPosts = Array.isArray(allBlogPosts) ? allBlogPosts.sort(sortDates).slice(0, 2) : []
   const menu = getMenu(latestBlogPosts)
 
   const isHomePage = router.pathname === '/'

@@ -1,5 +1,38 @@
+// Load environment variables first
+import * as dotenv from 'dotenv'
+dotenv.config({ path: '.env.local' })
+
 import { defineDocumentType, makeSource } from 'contentlayer2/source-files'
 import { FILENAME_SUBSTRING } from './lib/posts'
+
+// Create a mock client for when credentials are missing
+const createMockClient = () => ({
+  from: () => ({
+    select: () => ({
+      data: [],
+      error: null
+    })
+  })
+})
+
+// Initialize Supabase client with environment variables
+const initSupabaseClient = () => {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.warn('Supabase credentials not found in contentlayer config, using mock client')
+    return createMockClient()
+  }
+
+  try {
+    const { createClient } = require('@supabase/supabase-js')
+    return createClient(supabaseUrl, supabaseAnonKey)
+  } catch (error) {
+    console.error('Failed to initialize Supabase client:', error)
+    return createMockClient()
+  }
+}
 
 export const BlogPost = defineDocumentType(() => ({
   name: 'BlogPost',

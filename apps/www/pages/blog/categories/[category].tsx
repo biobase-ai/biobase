@@ -1,122 +1,72 @@
-import { NextSeo } from 'next-seo'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { getSortedPosts, getAllCategories, getTotalPostCount } from '~/lib/posts'
-import Link from 'next/link'
-import { startCase } from 'lodash'
-import { useRouter } from 'next/router'
+import { BlogPost } from '~/components/Blog/BlogGridItem'
 
-import DefaultLayout from '~/components/Layouts/Default'
-import BlogGridItem from '~/components/Blog/BlogGridItem'
-import type { Directories } from '~/lib/posts'
+interface Props {
+  posts: BlogPost[]
+  category: string
+  totalPosts: number
+}
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const categories = await getAllCategories('_blog')
+  const paths = categories.map((category) => ({
+    params: { category },
+  }))
+
   return {
-    paths: categories.slice(0, 5).map((category: string) => ({ 
-      params: { category } 
-    })),
-    fallback: 'blocking'
+    paths,
+    fallback: false,
   }
 }
 
-export async function getStaticProps(context: { params?: any; query?: any }) {
-  try {
-    const { params = {}, query = {} } = context
-    const category = params.category
-    const page = Number(query.page) || 1
-    const postsPerPage = 9
-    
-    if (!category) return { notFound: true }
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+  const category = params?.category as string
+  if (!category) {
+    return {
+      notFound: true,
+    }
+  }
 
-    const [posts, totalCount] = await Promise.all([
-      getSortedPosts({ 
+  try {
+    const [posts, totalPosts] = await Promise.all([
+      getSortedPosts({
         directory: '_blog',
-        limit: postsPerPage,
-        offset: (page - 1) * postsPerPage,
-        categories: [category]
+        category,
+        page: 1,
+        limit: 10,
       }),
-      getTotalPostCount('_blog', category)
+      getTotalPostCount('_blog', category),
     ])
-    
-    if (!posts.length) return { notFound: true }
 
     return {
       props: {
+        posts,
         category,
-        blogs: posts,
-        currentPage: page,
-        totalPages: Math.ceil(totalCount / postsPerPage)
+        totalPosts,
       },
-      revalidate: 60 * 60 // Revalidate every hour
     }
   } catch (error) {
-    console.error('Error in getStaticProps:', error)
-    return { notFound: true }
+    console.error('Error fetching blog category data:', error)
+    return {
+      notFound: true,
+    }
   }
 }
 
-interface Props {
-  category: string
-  blogs: any[]
-  currentPage: number
-  totalPages: number
-}
-
-export default function BlogCategory({ category, blogs, currentPage, totalPages }: Props) {
-  const router = useRouter()
-  const formattedCategory = startCase(category)
-
-  const handlePageChange = (page: number) => {
-    router.push({
-      pathname: router.pathname,
-      query: { ...router.query, page }
-    })
-  }
-
+export default function BlogCategory({ posts, category, totalPosts }: Props) {
   return (
-    <DefaultLayout>
-      <NextSeo
-        title={`${formattedCategory} Blog Posts | Biobase`}
-        description={`Read our latest blog posts about ${formattedCategory.toLowerCase()}`}
-        openGraph={{
-          title: `${formattedCategory} Blog Posts | Biobase`,
-          description: `Read our latest blog posts about ${formattedCategory.toLowerCase()}`,
-          url: `https://biobase.com/blog/categories/${category}`,
-        }}
-      />
-
-      <div className="container mx-auto px-8 py-16 sm:px-16 xl:px-20">
-        <div className="flex items-center space-x-4">
-          <Link href="/blog" className="text-scale-900 hover:text-scale-1200">
-            ← Back to all posts
-          </Link>
-          <span className="text-scale-900">|</span>
-          <h1 className="text-scale-1200 text-2xl">{formattedCategory}</h1>
-        </div>
-
-        <div className="grid gap-10 py-16 lg:grid-cols-3">
-          {blogs.map((blog: any) => (
-            <BlogGridItem key={blog.slug} post={blog} />
-          ))}
-        </div>
-
-        {totalPages > 1 && (
-          <div className="flex justify-center space-x-4 py-8">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                onClick={() => handlePageChange(page)}
-                className={`px-4 py-2 ${
-                  currentPage === page
-                    ? 'bg-scale-1200 text-white'
-                    : 'bg-scale-100 text-scale-1200 hover:bg-scale-200'
-                } rounded`}
-              >
-                {page}
-              </button>
-            ))}
+    <div className="container mx-auto px-8 py-16">
+      <h1 className="text-4xl font-bold mb-8">Blog Posts in {category}</h1>
+      <p className="text-lg mb-8">Total posts: {totalPosts}</p>
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <div key={post.slug} className="bg-card rounded-lg p-6 shadow-sm">
+            <h2 className="text-xl font-semibold mb-4">{post.title}</h2>
+            <p className="text-muted-foreground">{post.description}</p>
           </div>
-        )}
+        ))}
       </div>
-    </DefaultLayout>
+    </div>
   )
 }

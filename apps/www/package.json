@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next --port 3000",
-    "build": "next build",
+    "build": "contentlayer2 build && next build",
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
