@@ -1,11 +1,19 @@
 {
   "name": "ai-commands",
-  "version": "0.0.0",
-  "main": "./index.ts",
-  "types": "./index.ts",
-  "license": "MIT",
-  "sideEffects": false,
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
   "scripts": {
+    "build": "babel src --out-dir dist --extensions .ts,.tsx --source-maps inline",
+    "prepublishOnly": "npm run build",
     "typecheck": "tsc --noEmit",
     "test": "jest"
   },
@@ -20,8 +28,10 @@
     "openai": "^4.26.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.9",
     "@babel/core": "^7.23.6",
     "@babel/preset-env": "^7.23.6",
+    "@babel/preset-typescript": "^7.23.3",
     "@jest/globals": "^29.7.0",
     "@types/common-tags": "^1.8.4",
     "api-types": "*",

@@ -9,8 +9,14 @@
     "node_modules"
   ],
   "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./",
+    "declarationDir": "./dist",
     "types": [
       "./test/extensions.d.ts"
-    ]
+    ],
+    "strict": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false
   }
 }

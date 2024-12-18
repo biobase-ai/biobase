@@ -12,6 +12,7 @@
     "playwright-tests",
     "packages/*"
   ],
+  "packageManager": "npm@10.2.3",
   "scripts": {
     "build": "turbo run build",
     "build:studio": "turbo run build --filter=studio",
@@ -45,7 +46,8 @@
     "db:migrate": "ts-node apps/www/scripts/manage-db.ts migrate",
     "db:migrate-file": "ts-node apps/www/scripts/manage-db.ts migrate",
     "db:seed": "ts-node apps/www/scripts/manage-db.ts seed",
-    "db:health": "ts-node apps/www/scripts/manage-db.ts health"
+    "db:health": "ts-node apps/www/scripts/manage-db.ts health",
+    "publish:ai-commands": "cd packages/ai-commands && npm publish"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.25.9",
@@ -80,7 +82,6 @@
     "database",
     "auth"
   ],
-  "packageManager": "npm@10.7.0",
   "dependencies": {
     "@supabase/supabase-js": "^2.47.6",
     "ai": "^4.0.16",

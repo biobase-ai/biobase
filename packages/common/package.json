@@ -26,7 +26,7 @@
   "peerDependencies": {
     "@supabase/supabase-js": "*",
     "@supabase/auth-js": "^2.63.0",
-    "next": "*",
+    "next": "^14.0.0",
     "react": "*",
     "react-dom": "*"
   }
