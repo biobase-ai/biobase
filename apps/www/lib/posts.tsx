@@ -120,22 +120,11 @@ export const getPostdata = async (slug: string, directory: string) => {
   return postContent
 }
 
-export const getAllCategories = (directory: Directories) => {
-  const posts = getSortedPosts({ directory })
-  const categories: Set<string> = new Set()
-
-  posts.forEach((post: any) => {
-    if (post.categories && Array.isArray(post.categories)) {
-      post.categories.forEach((tag: string) => {
-        if (typeof tag === 'string' && tag.trim()) {
-          categories.add(tag.trim().toLowerCase())
-        }
-      })
-    }
-  })
-
-  // Convert Set back to sorted array
-  return Array.from(categories).sort((a, b) => a.localeCompare(b))
+export const getStaticPaths = async () => {
+  return {
+    paths: [], // 不预生成任何路径
+    fallback: 'blocking' // 使用服务器端渲染
+  }
 }
 
 export const getAllTags = (directory: Directories) => {

@@ -193,13 +193,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week</loc>
+    <loc>https://biobase.studio/legal/dpa</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/legal/dpa</loc>
+    <loc>https://biobase.studio/launch-week</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
