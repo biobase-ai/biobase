@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { generateReadingTime } from './helpers'
+import PostTypes from '~/types/post'
 
 type Directories = '_blog' | '_case-studies' | '_customers' | '_alternatives' | '_events'
 
@@ -19,87 +20,51 @@ type GetSortedPostsParams = {
   categories?: any
 }
 
-export const getSortedPosts = ({
+export function getSortedPosts({
   directory,
-  limit = 0,
+  limit = 10,  // 默认限制为 10 篇
   offset = 0,
-  tags,
-  categories,
-  currentPostSlug,
-}: GetSortedPostsParams) => {
-  //Finding directory named "blog" from the current working directory of Node.
-  const postDirectory = path.join(process.cwd(), directory)
+  categories
+}: {
+  directory: string
+  limit?: number
+  offset?: number
+  categories?: string[]
+}) {
+  const postsDirectory = path.join(process.cwd(), 'content', directory)
+  const fileNames = fs.readdirSync(postsDirectory)
 
-  //Reads all the files in the post directory
-  const fileNames = fs.readdirSync(postDirectory)
-
-  const allPosts = fileNames
-    .map((filename) => {
-      const slug =
-        directory === '_blog' || directory === '_events'
-          ? filename.replace('.mdx', '').substring(FILENAME_SUBSTRING)
-          : filename.replace('.mdx', '')
-
-      const fullPath = path.join(postDirectory, filename)
-
-      //Extracts contents of the MDX file
+  const allPostsData = fileNames
+    .filter(fileName => fileName.endsWith('.mdx') || fileName.endsWith('.md'))
+    .map(fileName => {
+      const id = fileName.replace(/\.mdx?$/, '')
+      const fullPath = path.join(postsDirectory, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
       const { data } = matter(fileContents)
 
-      const options: Intl.DateTimeFormatOptions = { month: 'long', day: 'numeric', year: 'numeric' }
-      const formattedDate = new Date(data.date).toLocaleDateString('en-IN', options)
-
-      const url = `/${directory.replace('_', '')}/${slug}`
-      const contentPath = `/${directory.replace('_', '')}/${slug}`
-
-      const frontmatter = {
-        ...data,
-        formattedDate,
-        url: url,
-        path: contentPath,
-      }
-
       return {
-        slug,
-        ...frontmatter,
+        id,
+        ...(data as PostTypes)
       }
     })
-    // avoid reading content if it's the same post as the one the user is already reading
-    .filter((post) => post.slug !== currentPostSlug)
-
-  let sortedPosts = [...allPosts]
-
-  sortedPosts = sortedPosts.sort(
-    (a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  )
-
-  if (categories) {
-    sortedPosts = sortedPosts.filter((post: any) => {
-      const found = categories?.some((tag: any) => post.categories?.includes(tag))
-      return found
+    .filter(post => {
+      // 如果指定了分类，则只保留匹配的博客
+      if (categories && categories.length > 0) {
+        return categories.includes(post.category)
+      }
+      return true
     })
-  }
-
-  if (tags) {
-    sortedPosts = sortedPosts.filter((post: any) => {
-      const found = tags.some((tag: any) => post.tags?.includes(tag))
-      return found
+    .sort((a, b) => {
+      if (a.date < b.date) {
+        return 1
+      } else {
+        return -1
+      }
     })
-  }
+    // 在这里应用 limit 和 offset
+    .slice(offset, offset + limit)
 
-  // Limit total posts to 50 to reduce payload
-  const MAX_POSTS = 50
-  sortedPosts = sortedPosts.slice(0, MAX_POSTS)
-
-  // Apply offset and limit
-  if (limit > 0) {
-    sortedPosts = sortedPosts.slice(offset, offset + limit)
-  }
-
-  return sortedPosts.map((post) => ({
-    ...post,
-    content: null, // Remove content to reduce payload
-  }))
+  return allPostsData
 }
 
 // Get Slugs

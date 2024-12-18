@@ -29,7 +29,8 @@
           "scrollbar-width"
         ]
       }
-    ]
+    ],
+    "disown-opener": "off"
   },
   "browserslist": [
     "defaults",

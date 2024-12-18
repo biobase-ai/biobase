@@ -22,12 +22,9 @@ export async function getStaticProps(context: { params?: any; query?: any }) {
     // Destructure with default empty objects
     const { params = {}, query = {} } = context
 
-    console.log('Full context:', context)
-
     // Validate category parameter
     const category = params.category
     if (!category) {
-      console.error('No category parameter provided')
       return {
         notFound: true
       }
@@ -37,24 +34,17 @@ export async function getStaticProps(context: { params?: any; query?: any }) {
     const currentPage = Number(query.page) || 1
     const offset = (currentPage - 1) * POSTS_PER_PAGE
 
-    console.log('Params:', params)
-    console.log('Query:', query)
-
     // Normalize category for case-insensitive matching
     const normalizedCategory = category.toLowerCase()
 
     // Ensure the category exists
     const allCategories = getAllCategories('_blog')
-    console.log('All Categories:', allCategories)
 
     const matchingCategory = allCategories.find(
       (cat: string) => cat.toLowerCase() === normalizedCategory
     )
 
-    console.log('Matching Category:', matchingCategory)
-
     if (!matchingCategory) {
-      console.log(`No matching category found for: ${normalizedCategory}`)
       return {
         notFound: true
       }
@@ -67,16 +57,12 @@ export async function getStaticProps(context: { params?: any; query?: any }) {
       categories: [matchingCategory] 
     })
 
-    console.log('Posts:', posts)
-
     // Get total count for pagination
     const allPosts = getSortedPosts({ 
       directory: '_blog', 
       categories: [matchingCategory] 
     })
     const totalPosts = allPosts.length
-
-    console.log('Total Posts:', totalPosts)
 
     return {
       props: {
