@@ -17,68 +17,29 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps(context: { params?: any; query?: any }) {
+export async function getStaticProps(context: { params?: any }) {
   try {
-    // Destructure with default empty objects
-    const { params = {}, query = {} } = context
-
-    // Validate category parameter
+    const { params = {} } = context
     const category = params.category
-    if (!category) {
-      return {
-        notFound: true
-      }
-    }
-
-    const POSTS_PER_PAGE = 12
-    const currentPage = Number(query.page) || 1
-    const offset = (currentPage - 1) * POSTS_PER_PAGE
-
-    // Normalize category for case-insensitive matching
-    const normalizedCategory = category.toLowerCase()
-
-    // Ensure the category exists
-    const allCategories = getAllCategories('_blog')
-
-    const matchingCategory = allCategories.find(
-      (cat: string) => cat.toLowerCase() === normalizedCategory
-    )
-
-    if (!matchingCategory) {
-      return {
-        notFound: true
-      }
-    }
+    if (!category) return { notFound: true }
 
     const posts = getSortedPosts({ 
       directory: '_blog', 
-      limit: POSTS_PER_PAGE,
-      offset,
-      categories: [matchingCategory] 
+      limit: 5, // 减少到5篇
+      categories: [category] 
     })
 
-    // Get total count for pagination
-    const allPosts = getSortedPosts({ 
-      directory: '_blog', 
-      categories: [matchingCategory] 
-    })
-    const totalPosts = allPosts.length
+    if (!posts.length) return { notFound: true }
 
     return {
       props: {
-        category: matchingCategory,
+        category,
         blogs: posts,
-        totalPosts,
-        currentPage,
-        postsPerPage: POSTS_PER_PAGE,
       },
       revalidate: 3600
     }
   } catch (error) {
-    console.error('Error in getStaticProps:', error)
-    return {
-      notFound: true
-    }
+    return { notFound: true }
   }
 }
 

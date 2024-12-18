@@ -22,51 +22,47 @@ type GetSortedPostsParams = {
 
 export function getSortedPosts({
   directory,
-  limit = 10,  // 默认限制为 10 篇
+  limit = 5, // 减少到5篇
   offset = 0,
   categories
-}: {
-  directory: string
-  limit?: number
-  offset?: number
-  categories?: string[]
-}) {
+}: GetSortedPostsParams) {
   const postsDirectory = path.join(process.cwd(), 'content', directory)
   const fileNames = fs.readdirSync(postsDirectory)
+    .filter(fileName => fileName.endsWith('.mdx') || fileName.endsWith('.md'))
+    .sort((a, b) => {
+      const aStats = fs.statSync(path.join(postsDirectory, a))
+      const bStats = fs.statSync(path.join(postsDirectory, b))
+      return bStats.mtime.getTime() - aStats.mtime.getTime()
+    })
+    .slice(0, 10) // 减少文件扫描数量
 
   const allPostsData = fileNames
-    .filter(fileName => fileName.endsWith('.mdx') || fileName.endsWith('.md'))
     .map(fileName => {
-      const id = fileName.replace(/\.mdx?$/, '')
+      const slug = fileName.replace(/\.mdx?$/, '')
       const fullPath = path.join(postsDirectory, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
       const { data } = matter(fileContents)
 
+      // 极简化返回字段
       return {
-        id,
-        ...(data as PostTypes)
+        slug,
+        title: data.title,
+        date: data.date,
+        category: data.category,
+        description: data.description?.slice(0, 80), // 减少描述长度到80字符
+        url: `/${directory.replace('_', '')}/${slug}`,
       }
     })
     .filter(post => {
-      // 如果指定了分类，则只保留匹配的博客
-      if (categories && categories.length > 0) {
+      if (categories?.length > 0) {
         return categories.includes(post.category)
       }
       return true
     })
-    .sort((a, b) => {
-      if (a.date < b.date) {
-        return 1
-      } else {
-        return -1
-      }
-    })
-    // 在这里应用 limit 和 offset
     .slice(offset, offset + limit)
 
   return allPostsData
 }
-
 // Get Slugs
 export const getAllPostSlugs = (directory: Directories) => {
   //Finding directory named "blog" from the current working directory of Node.
