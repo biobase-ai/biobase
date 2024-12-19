@@ -1,10 +1,20 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import biobase from '~/lib/biobaseMisc'
 import Error404 from '../404'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
-function PartnerPage() {
-  // Should be redirected to ./experts/:slug or ./integrations/:slug
-  return <Error404 />
+function PartnerPage({ partner, redirectTo }: { partner: Partner, redirectTo: string }) {
+  const router = useRouter()
+
+  useEffect(() => {
+    if (redirectTo) {
+      router.replace(redirectTo)
+    }
+  }, [redirectTo, router])
+
+  // Show a loading state or return null while redirecting
+  return null
 }
 
 // This function gets called at build time
@@ -42,20 +52,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
 
-  let redirectUrl: string
-  switch (partner.type) {
-    case 'technology':
-      redirectUrl = `/partners/integrations/${partner.slug}`
-      break
-    case 'expert':
-      redirectUrl = `/partners/experts/${partner.slug}`
-      break
-  }
-
+  // Instead of redirecting during build time, we'll return the partner data
+  // and handle the redirect on the client side
   return {
-    redirect: {
-      permanent: false,
-      destination: redirectUrl,
+    props: {
+      partner,
+      redirectTo: partner.type === 'technology' 
+        ? `/partners/integrations/${partner.slug}`
+        : `/partners/experts/${partner.slug}`,
     },
   }
 }
