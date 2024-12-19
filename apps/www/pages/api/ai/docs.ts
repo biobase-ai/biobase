@@ -1,5 +1,5 @@
 import { SupabaseClient } from '@supabase/supabase-js'
-import { ApplicationError, UserError, clippy } from 'ai-commands'
+import { ApplicationError, UserError } from 'ai-commands'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import OpenAI from 'openai'
 
@@ -68,15 +68,27 @@ async function handlePost(req: NextApiRequest, res: NextApiResponse) {
   const supabaseClient = new SupabaseClient(supabaseUrl, supabaseServiceKey)
 
   try {
-    const response = await clippy(openai, supabaseClient, messages)
+    // Create a stream for the chat completion
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-4',
+      messages,
+      stream: true,
+    })
 
     // Set appropriate headers for SSE
     res.setHeader('Content-Type', 'text/event-stream')
     res.setHeader('Cache-Control', 'no-cache')
     res.setHeader('Connection', 'keep-alive')
 
-    // Pipe the response stream
-    response.body?.pipe(res)
+    // Stream the response
+    for await (const chunk of completion) {
+      const content = chunk.choices[0]?.delta?.content || ''
+      if (content) {
+        res.write(`data: ${JSON.stringify({ content })}\n\n`)
+      }
+    }
+
+    res.end()
   } catch (error: unknown) {
     console.error(error)
     if (error instanceof UserError) {

@@ -19,46 +19,38 @@ const initSupabaseClient = () => {
 }
 
 // Create a mock client for fallback
-const createMockClient = () => ({
-  from: () => ({
-    select: () => ({
-      eq: () => ({
-        order: () => ({
-          range: () => ({
-            in: () => ({
-              data: [],
-              error: null
-            })
-          })
-        })
-      }),
-      not: () => ({
-        select: () => ({
-          data: [],
-          error: null
-        })
-      }),
-      single: () => ({
-        data: null,
-        error: null
-      })
-    }),
-    count: () => ({
-      eq: () => ({
-        data: null,
-        count: 0,
-        error: null
-      })
-    })
-  }),
-  storage: {
-    from: () => ({
-      getPublicUrl: () => ({
-        data: { publicUrl: '' }
-      })
-    })
+const createMockClient = () => {
+  const mockResponse = {
+    data: [],
+    count: 0,
+    error: null
   }
-})
+
+  const mockQuery = {
+    eq: () => mockQuery,
+    order: () => mockQuery,
+    range: () => mockQuery,
+    not: () => mockQuery,
+    single: () => mockResponse,
+    data: [],
+    count: 0,
+    error: null
+  }
+
+  return {
+    from: () => ({
+      select: (columns: string, options?: { count?: string; head?: boolean }) => mockQuery,
+      count: () => mockQuery
+    }),
+    storage: {
+      from: () => ({
+        getPublicUrl: () => ({
+          data: { publicUrl: '' }
+        })
+      })
+    }
+  }
+}
 
 // Initialize the client
 const supabase = initSupabaseClient()
