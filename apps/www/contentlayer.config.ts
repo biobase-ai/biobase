@@ -77,11 +77,9 @@ const contentLayerConfig = makeSource({
   documentTypes: [BlogPost],
   onSuccess: async () => {
     console.log('Contentlayer build successful')
-    process.exit(0)
   },
   onError: async (error) => {
     console.error('Contentlayer build failed:', error)
-    process.exit(1)
   }
 })
 
