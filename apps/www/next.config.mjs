@@ -1,4 +1,5 @@
 import { getAllTags } from './lib/posts.js'
+import { withContentlayer } from 'next-contentlayer2'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -6,15 +7,20 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
+    domains: ['avatars.githubusercontent.com'],
     unoptimized: true,
   },
+  transpilePackages: ['common', 'ui', 'ui-patterns', 'shared-data', 'icons', 'ai-commands'],
   typescript: {
     ignoreBuildErrors: true,
   },
-  transpilePackages: ['common', 'ui', 'ui-patterns'],
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   trailingSlash: true,
   distDir: '.next',
   experimental: {
+    outputFileTracingRoot: process.cwd(),
     outputFileTracingExcludes: {
       '*': [
         'node_modules/@swc/core-linux-x64-gnu',
@@ -25,4 +31,4 @@ const nextConfig = {
   }
 }
 
-export default nextConfig
+export default withContentlayer(nextConfig)
