@@ -1,5 +1,4 @@
 import path from 'path'
-import { getHighlighter, loadTheme } from '@shikijs/compat'
 import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer2/source-files'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode from 'rehype-pretty-code'
@@ -25,7 +24,7 @@ const computedFields = {
 
 const Doc = defineDocumentType(() => ({
   name: 'Doc',
-  filePathPattern: `docs/**/*.mdx`,
+  filePathPattern: `**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: {
@@ -35,6 +34,7 @@ const Doc = defineDocumentType(() => ({
     description: {
       type: 'string',
       required: true,
+      default: 'No description provided'
     },
     published: {
       type: 'boolean',
@@ -48,6 +48,7 @@ const Doc = defineDocumentType(() => ({
     source: {
       type: 'json',
       required: false,
+      default: {},
     },
     toc: {
       type: 'boolean',
@@ -62,6 +63,7 @@ const Doc = defineDocumentType(() => ({
     links: {
       type: 'json',
       required: false,
+      default: {},
     },
     fragment: {
       type: 'boolean',
@@ -72,16 +74,29 @@ const Doc = defineDocumentType(() => ({
   computedFields,
 }))
 
-const theme = {
-  dark: 'github-dark',
-  light: 'github-light',
+function onVisitLine(node) {
+  if (node.children.length === 0) {
+    node.children = [{ type: 'text', value: ' ' }]
+  }
+}
+
+function onVisitHighlightedLine(node) {
+  node.properties.className = ['line--highlighted']
+}
+
+function onVisitHighlightedWord(node) {
+  node.properties.className = ['word--highlighted']
 }
 
 export default makeSource({
-  contentDirPath: './content',
+  contentDirPath: '.',
   documentTypes: [Doc],
   mdx: {
-    remarkPlugins: [remarkGfm, codeImport, remarkFrontmatter],
+    remarkPlugins: [
+      remarkGfm,
+      [remarkFrontmatter, { type: 'yaml', marker: '-' }],
+      codeImport,
+    ],
     rehypePlugins: [
       rehypeSlug,
       rehypeComponent,
@@ -90,10 +105,24 @@ export default makeSource({
         {
           behavior: 'append',
           test: ['h2', 'h3', 'h4'],
-          properties: { className: ['subheading-anchor'] },
+          properties: { 
+            className: ['subheading-anchor'],
+            ariaLabel: 'Link to section',
+          },
         },
       ],
-      [rehypePrettyCode, { theme }],
+      [
+        rehypePrettyCode,
+        {
+          theme: {
+            light: 'github-light',
+            dark: 'github-dark',
+          },
+          onVisitLine,
+          onVisitHighlightedLine,
+          onVisitHighlightedWord,
+        },
+      ],
     ],
   },
 })

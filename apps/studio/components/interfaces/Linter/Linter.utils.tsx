@@ -1,4 +1,4 @@
-import { Box, Clock, Eye, Lock, Ruler, Table2, TextSearch, Unlock, User } from 'lucide-react'
+import { Box, Clock, Eye, Lock, Ruler, Search, Table2, Unlock, User } from 'lucide-react'
 import Link from 'next/link'
 
 import { LINTER_LEVELS, LintInfo } from 'components/interfaces/Linter/Linter.constants'
@@ -170,8 +170,8 @@ export const lintInfoMap: LintInfo[] = [
   },
   {
     name: 'foreign_table_in_api',
-    title: 'Foreign Table in API',
-    icon: <Table2 className="text-foreground-muted" size={15} strokeWidth={1.5} />,
+    title: 'Foreign table in API schema',
+    icon: <Box className="text-foreground-muted" size={15} strokeWidth={1} />,
     link: () =>
       `https://biobase.studio/docs/guides/database/database-linter?lint=0017_foreign_table_in_api`,
     linkText: 'View docs',
@@ -181,7 +181,7 @@ export const lintInfoMap: LintInfo[] = [
   {
     name: 'unsupported_reg_types',
     title: 'Unsupported reg types',
-    icon: <Table2 className="text-foreground-muted" size={15} strokeWidth={1.5} />,
+    icon: <Box className="text-foreground-muted" size={15} strokeWidth={1} />,
     link: () =>
       `https://biobase.studio/docs/guides/database/database-advisors?lint=0018_unsupported_reg_types&queryGroups=lint`,
     linkText: 'View docs',
@@ -251,7 +251,7 @@ export const NoIssuesFound = ({ level }: { level: string }) => {
   const noun = level === LINTER_LEVELS.ERROR ? 'errors' : 'warnings'
   return (
     <div className="absolute top-28 px-6 flex flex-col items-center justify-center w-full gap-y-2">
-      <TextSearch className="text-foreground-muted" strokeWidth={1} />
+      <Search className="text-foreground-muted" strokeWidth={1} />
       <div className="text-center">
         <p className="text-foreground">No {noun} detected</p>
         <p className="text-foreground-light">

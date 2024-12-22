@@ -132,7 +132,9 @@
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
+    "@aws-crypto/ie11-detection": "^3.0.0",
     "@aws-sdk/client-secrets-manager": "^3.410.0",
+    "@aws-sdk/util-utf8-browser": "^3.259.0",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",

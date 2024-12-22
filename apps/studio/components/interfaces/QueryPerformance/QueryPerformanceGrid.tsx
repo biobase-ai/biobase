@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUp, TextSearch, X } from 'lucide-react'
+import { ArrowDown, ArrowUp, Search, X } from 'lucide-react'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 import DataGrid, { Column, DataGridHandle, Row } from 'react-data-grid'
@@ -174,7 +174,7 @@ export const QueryPerformanceGrid = ({ queryPerformanceQuery }: QueryPerformance
               </div>
             ) : (
               <div className="absolute top-20 px-6 flex flex-col items-center justify-center w-full gap-y-2">
-                <TextSearch className="text-foreground-muted" strokeWidth={1} />
+                <Search className="text-foreground-muted" strokeWidth={1} />
                 <div className="text-center">
                   <p className="text-foreground">No queries detected</p>
                   <p className="text-foreground-light">

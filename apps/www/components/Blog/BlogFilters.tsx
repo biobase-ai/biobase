@@ -200,14 +200,13 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
             <Button
               key={category}
               type={
-                category === 'all' && !searchTerm && !activeCategory
-                  ? 'default'
-                  : (category === 'all' && !searchTerm && !activeCategory) ||
-                    category === activeCategory
+                (category === 'all' && !searchTerm && !activeCategory) ||
+                category === activeCategory
                   ? 'primary'
                   : 'outline'
               }
               onClick={() => handleSetCategory(category)}
+              className="py-1 px-3"
             >
               {category === 'all' ? 'All Posts' : startCase(category.replaceAll('-', ' '))}
             </Button>
@@ -221,26 +220,34 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
             exit={{ opacity: 0, transition: { duration: 0.05 } }}
             className="flex flex-1 items-center gap-3"
           >
-            <Input
-              autoFocus={!isMobile}
-              placeholder="Search blog posts"
-              onChange={handleSearchChange}
-              value={searchTerm}
-              icon={<Search className="text-foreground-lighter" />}
-              actions={
-                searchTerm && (
-                  <Button
-                    type="text"
+            <div className="relative flex-1">
+              <Input
+                autoFocus={!isMobile}
+                placeholder="Search blog posts"
+                onChange={handleSearchChange}
+                value={searchTerm}
+                className="w-full"
+              />
+              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                <Search className="h-4 w-4 text-foreground-lighter" />
+              </div>
+              {searchTerm && (
+                <div className="absolute inset-y-0 right-3 flex items-center">
+                  <button
                     onClick={() => handleSearchByText('')}
-                    className="px-1 mr-1"
+                    className="hover:text-foreground-light focus:outline-none"
                   >
-                    <X />
-                  </Button>
-                )
-              }
-            />
+                    <X className="h-4 w-4" />
+                  </button>
+                </div>
+              )}
+            </div>
             {isMobile && (
-              <Button type="outline" onClick={() => setShowSearchInput(false)}>
+              <Button
+                type="outline"
+                onClick={() => setShowSearchInput(false)}
+                className="whitespace-nowrap"
+              >
                 Cancel
               </Button>
             )}
@@ -255,16 +262,16 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
             <Button
               type="outline"
               onClick={() => setShowSearchInput(true)}
-              className="lg:hidden"
+              className="lg:hidden p-2"
             >
-              <Search />
+              <Search className="h-4 w-4" />
             </Button>
             <Button
               type="outline"
               onClick={handleViewSelection}
-              className={cn('hidden lg:flex', is2XL ? 'px-3' : 'px-2')}
+              className={cn('hidden lg:flex', is2XL ? 'p-3' : 'p-2')}
             >
-              {isList ? <Grid /> : <AlignJustify />}
+              {isList ? <Grid className="h-4 w-4" /> : <AlignJustify className="h-4 w-4" />}
             </Button>
           </motion.div>
         )}

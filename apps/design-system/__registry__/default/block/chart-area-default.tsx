@@ -10,14 +10,7 @@ import {
   CardTitle,
 } from '@/components/ui/shadcn/card'
 import type { ResponsiveContainer as ResponsiveContainerType } from 'recharts'
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-} from 'recharts'
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import { ResponsiveWrapper } from './utils/chart-components'
 
 const data = [
