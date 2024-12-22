@@ -1,5 +1,5 @@
 import { getAllTags } from './lib/posts.js'
-import { withContentlayer } from 'next-contentlayer2'
+import { withContentlayer } from 'next-contentlayer'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -21,11 +21,17 @@ const nextConfig = {
   distDir: '.next',
   experimental: {
     outputFileTracingRoot: process.cwd(),
+    outputFileTracingIncludes: {
+      '**/*.{js,json,jsx,ts,tsx}': ['**/*'],
+    },
     outputFileTracingExcludes: {
       '*': [
         'node_modules/@swc/core-linux-x64-gnu',
         'node_modules/@swc/core-linux-x64-musl',
         'node_modules/@esbuild/linux-x64',
+        '.next/cache/**/*',
+        '.next/server/chunks/**/*',
+        '.next/static/**/*',
       ],
     }
   }

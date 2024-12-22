@@ -1,7 +1,7 @@
 import matter from 'gray-matter'
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react'
 
-import { MDXRemote } from 'next-mdx-remote'
+import { MDXProvider } from '@mdx-js/react'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,12 +9,9 @@ import { Button } from 'ui'
 import CTABanner from '~/components/CTABanner'
 import DefaultLayout from '~/components/Layouts/Default'
 import { SITE_ORIGIN } from '~/lib/constants'
-import mdxComponents from '~/lib/mdx/mdxComponents'
 import { mdxSerialize } from '~/lib/mdx/mdxSerialize'
+import mdxComponents from '~/lib/mdx/mdxComponents'
 import { getAllPostSlugs, getPostdata, getSortedPosts } from '~/lib/posts'
-
-// table of contents extractor
-const toc = require('markdown-toc')
 
 export async function getStaticPaths() {
   const paths = getAllPostSlugs('_customers')
@@ -24,17 +21,17 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }: any) {
-  const filePath = `${params.slug}`
-  const postContent = await getPostdata(filePath, '_customers')
-  const { data, content } = matter(postContent)
-  const mdxSource: any = await mdxSerialize(content)
-
+export const getStaticProps = async ({ params }: any) => {
+  const { slug } = params as { slug: string }
+  const { content, data } = matter.read(`${process.cwd()}/_customers/${slug}.mdx`)
+  
+  const mdxSource = await mdxSerialize(content)
+  
   const relatedPosts = getSortedPosts({
     directory: '_customers',
     limit: 5,
-    tags: mdxSource.scope.tags,
-    currentPostSlug: filePath,
+    tags: data.tags,
+    currentPostSlug: slug,
   })
 
   const allPosts = getSortedPosts({ directory: '_customers' })
@@ -42,7 +39,7 @@ export async function getStaticProps({ params }: any) {
     .map(function (e) {
       return e.slug
     })
-    .indexOf(filePath)
+    .indexOf(slug)
   const nextPost = allPosts[currentIndex + 1]
   const prevPost = allPosts[currentIndex - 1]
   const payload = {
@@ -50,14 +47,13 @@ export async function getStaticProps({ params }: any) {
       prevPost: currentIndex === 0 ? null : prevPost ? prevPost : null,
       nextPost: currentIndex === allPosts.length ? null : nextPost ? nextPost : null,
       relatedPosts,
-      blog: {
+      customer: {
         slug: `${params.slug}`,
-        content: mdxSource,
         source: content,
         ...data,
-        toc: toc(content, { maxdepth: data.toc_depth ? data.toc_depth : 2 }),
-      },
-    },
+        compiledSource: mdxSource
+      }
+    }
   }
   return payload
 }
@@ -66,7 +62,7 @@ function CaseStudyPage(props: any) {
   const {
     about,
     company_url,
-    content,
+    compiledSource,
     date,
     description,
     logo,
@@ -76,7 +72,7 @@ function CaseStudyPage(props: any) {
     name,
     slug,
     title,
-  } = props.blog
+  } = props.customer
 
   const ogImageUrl = encodeURI(
     `${process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:54321' : 'https://obuldanrptloktxcffvn.supabase.co'}/functions/v1/og-images?site=customers&customer=${slug}&title=${meta_title ?? title}`
@@ -213,7 +209,11 @@ function CaseStudyPage(props: any) {
                       </div>
                     </div>
                     <div className="xm:col-span-7 col-span-12 lg:col-span-8 xl:col-span-8 ">
-                      <MDXRemote {...content} components={mdxComponents()} />
+                      <div className="prose prose-docs max-w-none py-16">
+                        <MDXProvider components={mdxComponents}>
+                          <div dangerouslySetInnerHTML={{ __html: compiledSource }} />
+                        </MDXProvider>
+                      </div>
                     </div>
                   </div>
                 </article>

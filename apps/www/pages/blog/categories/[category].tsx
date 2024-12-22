@@ -1,17 +1,18 @@
 import { NextSeo } from 'next-seo'
-import { getSortedPosts, getAllCategories } from '~/lib/posts'
 import Link from 'next/link'
 import { startCase } from 'lodash'
 
 import DefaultLayout from '~/components/Layouts/Default'
 import BlogGridItem from '~/components/Blog/BlogGridItem'
-import type PostTypes from '~/types/post'
+import { fetchBlogPosts, type BlogPostPreview } from '~/lib/blog-service'
 
 export async function getStaticPaths() {
-  const categories = getAllCategories('_blog')
+  const { posts } = await fetchBlogPosts(1, 1000)
+  const categories = Array.from(new Set(posts.flatMap(post => post.tags || [])))
+  
   return {
-    paths: categories.map((category: string) => ({ 
-      params: { category: category } 
+    paths: categories.map((category) => ({ 
+      params: { category } 
     })),
     fallback: 'blocking'
   }
@@ -23,20 +24,16 @@ export async function getStaticProps(context: { params?: any }) {
     const category = params.category
     if (!category) return { notFound: true }
 
-    const posts = getSortedPosts({ 
-      directory: '_blog', 
-      limit: 5, // 减少到5篇
-      categories: [category] 
-    })
+    const { posts } = await fetchBlogPosts(1, 1000)
+    const filteredPosts = posts.filter(post => post.tags?.includes(category))
 
-    if (!posts.length) return { notFound: true }
+    if (!filteredPosts.length) return { notFound: true }
 
     return {
       props: {
         category,
-        blogs: posts,
+        blogs: filteredPosts,
       },
-      revalidate: 3600
     }
   } catch (error) {
     return { notFound: true }
@@ -45,74 +42,40 @@ export async function getStaticProps(context: { params?: any }) {
 
 interface Props {
   category: string
-  blogs: PostTypes[]
-  totalPosts: number
-  currentPage: number
-  postsPerPage: number
+  blogs: BlogPostPreview[]
 }
 
-function CategoriesIndex(props: Props) {
-  const { blogs, category, totalPosts, currentPage, postsPerPage } = props
-  const capitalizedCategory = startCase(category.replaceAll('-', ' '))
-  const totalPages = Math.ceil(totalPosts / postsPerPage)
-
-  // Add a safety check in case no blogs are found
-  if (!blogs || blogs.length === 0) {
-    return (
-      <DefaultLayout>
-        <div className="container mx-auto px-8 py-16 sm:px-16 xl:px-20">
-          <h1>No posts found in the {capitalizedCategory} category</h1>
-        </div>
-      </DefaultLayout>
-    )
-  }
-
+function CategoriesIndex({ category, blogs }: Props) {
+  const title = `${startCase(category)} Blog Posts | Biobase`
+  const description = `Blog posts about ${category} from the Biobase team`
+  
   return (
     <>
       <NextSeo
-        title={`Blog | ${capitalizedCategory}`}
-        description={`Latest ${capitalizedCategory} news from the Biobase team.`}
+        title={title}
+        description={description}
+        openGraph={{
+          title,
+          description,
+          url: `https://biobase.studio/blog/categories/${category}`,
+        }}
       />
+
       <DefaultLayout>
-        <div className="container mx-auto px-8 py-16 sm:px-16 xl:px-20">
-          <div className="text-foreground-lighter flex space-x-1">
-            <h1 className="cursor-pointer">
-              <Link href="/blog">Blog</Link>
-              <span className="px-2">/</span>
-              <span>{`${capitalizedCategory}`}</span>
-            </h1>
+        <div className="mx-auto max-w-7xl px-8 py-16 sm:px-16 xl:px-20">
+          <div className="flex items-center space-x-2 mb-16">
+            <Link href="/blog" className="text-scale-1100 hover:text-scale-1200">
+              Blog
+            </Link>
+            <span className="text-scale-900">/</span>
+            <span className="text-scale-1200 capitalize">{category}</span>
           </div>
-          <ol className="grid grid-cols-12 gap-8 py-16 lg:gap-16">
-            {blogs.map((blog: PostTypes, idx: number) => (
-              <div
-                className="col-span-12 mb-16 md:col-span-12 lg:col-span-6 xl:col-span-4"
-                key={idx}
-              >
-                <BlogGridItem post={blog} />
-              </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {blogs.map((post) => (
+              <BlogGridItem key={post.slug} post={post} />
             ))}
-          </ol>
-          {totalPages > 1 && (
-            <div className="flex justify-center space-x-4 py-8">
-              <Link
-                href={`/blog/categories/${category}?page=${currentPage - 1}`}
-                className={`${
-                  currentPage === 1 ? 'pointer-events-none opacity-50' : ''
-                }`}
-              >
-                Previous
-              </Link>
-              <span>{`Page ${currentPage} of ${totalPages}`}</span>
-              <Link
-                href={`/blog/categories/${category}?page=${currentPage + 1}`}
-                className={`${
-                  currentPage === totalPages ? 'pointer-events-none opacity-50' : ''
-                }`}
-              >
-                Next
-              </Link>
-            </div>
-          )}
+          </div>
         </div>
       </DefaultLayout>
     </>

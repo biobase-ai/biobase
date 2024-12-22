@@ -1,7 +1,7 @@
 import { SupabaseClient } from '@supabase/supabase-js'
 import { ApplicationError, UserError, clippy } from 'ai-commands/edge'
 import { NextRequest } from 'next/server'
-import OpenAI from 'openai'
+import { Configuration, OpenAIApi } from 'openai-edge'
 
 export const config = {
   runtime: 'edge',
@@ -35,6 +35,11 @@ export const config = {
 const openAiKey = process.env.OPENAI_API_KEY
 const supabaseUrl = process.env.NEXT_PUBLIC_BIOBASE_URL as string
 const supabaseServiceKey = process.env.NEXT_PUBLIC_BIOBASE_ANON_KEY as string
+
+const configuration = new Configuration({
+  apiKey: openAiKey,
+})
+const openai = new OpenAIApi(configuration)
 
 export default async function handler(req: NextRequest) {
   if (!openAiKey) {
@@ -73,25 +78,34 @@ export default async function handler(req: NextRequest) {
     )
   }
 
-  const { method } = req
-
-  switch (method) {
-    case 'POST':
-      return handlePost(req)
-    default:
-      return new Response(
-        JSON.stringify({ data: null, error: { message: `Method ${method} Not Allowed` } }),
-        {
+  try {
+    switch (req.method) {
+      case 'POST':
+        return await handlePost(req)
+      default:
+        return new Response(JSON.stringify({ error: 'Method not allowed' }), {
           status: 405,
-          headers: { 'Content-Type': 'application/json', Allow: 'POST' },
-        }
-      )
+          headers: { 'Content-Type': 'application/json' },
+        })
+    }
+  } catch (error) {
+    if (error instanceof UserError) {
+      return new Response(JSON.stringify({ error: error.message }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' },
+      })
+    } else if (error instanceof ApplicationError) {
+      return new Response(JSON.stringify({ error: error.message }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      })
+    } else {
+      throw error
+    }
   }
 }
 
 async function handlePost(request: NextRequest) {
-  const openai = new OpenAI({ apiKey: openAiKey })
-
   const body = await (request.json() as Promise<{
     messages: { content: string; role: 'user' | 'assistant' }[]
   }>)
@@ -105,13 +119,15 @@ async function handlePost(request: NextRequest) {
   const supabaseClient = new SupabaseClient(supabaseUrl, supabaseServiceKey)
 
   try {
-    const response = await clippy(openai, supabaseClient, messages)
+    const completion = await openai.createChatCompletion({
+      model: 'gpt-3.5-turbo',
+      messages,
+      temperature: 0,
+    })
 
-    // Proxy the streamed SSE response from OpenAI
-    return new Response(response.body, {
-      headers: {
-        'Content-Type': 'text/event-stream',
-      },
+    const data = await completion.json()
+    return new Response(JSON.stringify({ data }), {
+      headers: { 'Content-Type': 'application/json' },
     })
   } catch (error: unknown) {
     console.error(error)

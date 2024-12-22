@@ -6,7 +6,8 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { useKey } from 'react-use'
 import type { BlogView } from '~/pages/blog'
-import type PostTypes from '~/types/post'
+import type { BlogPostPreview } from '~/lib/blog-service'
+import type { ComponentProps } from 'react'
 
 import { AlignJustify, ChevronDown, Grid, Search, X } from 'lucide-react'
 import {
@@ -20,10 +21,10 @@ import {
 } from 'ui'
 
 interface Props {
-  allPosts: PostTypes[]
-  setPosts: (posts: any) => void
+  blogs: BlogPostPreview[]
+  setBlogs: (blogs: BlogPostPreview[]) => void
   view: BlogView
-  setView: (view: any) => void
+  setView: (view: BlogView) => void
 }
 
 /**
@@ -34,7 +35,7 @@ interface Props {
  * ✅ search via category and reset q param if present
  */
 
-function BlogFilters({ allPosts, setPosts, view, setView }: Props) {
+export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
   const { BLOG_VIEW } = LOCAL_STORAGE_KEYS
   const isList = view === 'list'
   const [category, setCategory] = useState<string>('all')
@@ -83,15 +84,15 @@ function BlogFilters({ allPosts, setPosts, view, setView }: Props) {
   const handlePosts = () => {
     // construct an array of blog posts
     // not inluding the first blog post
-    const shiftedBlogs = [...allPosts]
+    const shiftedBlogs = [...blogs]
     shiftedBlogs.shift()
 
     handleReplaceRouter()
 
-    setPosts(
+    setBlogs(
       category === 'all'
         ? shiftedBlogs
-        : allPosts.filter((post: any) => {
+        : blogs.filter((post: any) => {
             const found = post.categories?.includes(category)
             return found
           })
@@ -119,7 +120,7 @@ function BlogFilters({ allPosts, setPosts, view, setView }: Props) {
     router.replace(`/blog?q=${text}`, undefined, { shallow: true, scroll: false })
     if (text.length < 1) router.replace('/blog', undefined, { shallow: true, scroll: false })
 
-    const matches = allPosts.filter((post: any) => {
+    const matches = blogs.filter((post: any) => {
       const found =
         post.tags?.join(' ').replaceAll('-', ' ').includes(text.toLowerCase()) ||
         post.title?.toLowerCase().includes(text.toLowerCase()) ||
@@ -127,7 +128,7 @@ function BlogFilters({ allPosts, setPosts, view, setView }: Props) {
       return found
     })
 
-    setPosts(matches)
+    setBlogs(matches)
   }
 
   const handleSetCategory = (category: string) => {
@@ -142,18 +143,15 @@ function BlogFilters({ allPosts, setPosts, view, setView }: Props) {
         })
   }
 
-  const handleSearchChange = (event: any) => {
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     activeCategory && setCategory('all')
     handleSearchByText(event.target.value)
   }
 
   const handleViewSelection = () => {
-    setView((prevView: 'list' | 'grid') => {
-      const newValue = prevView === 'list' ? 'grid' : 'list'
-      localStorage.setItem(BLOG_VIEW, newValue)
-
-      return newValue
-    })
+    const newValue = view === 'list' ? 'grid' : 'list'
+    setView(newValue)
+    localStorage.setItem(BLOG_VIEW, newValue)
   }
 
   return (

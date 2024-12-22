@@ -1,75 +1,61 @@
-import authors from 'lib/authors.json'
-import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
-import type Author from '~/types/author'
-import type PostTypes from '~/types/post'
-import dayjs from 'dayjs'
-import { Badge } from 'ui'
+import Image from 'next/image'
+import { format } from 'date-fns'
+import type { BlogPostPreview } from '~/lib/blog-service'
 
 interface Props {
-  post: PostTypes
+  post: BlogPostPreview
 }
 
 const BlogListItem = ({ post }: Props) => {
-  const authorArray: string[] | undefined = post.author ? post.author.split(',') : []
-  const author = []
-
-  if (authorArray) {
-    for (let i = 0; i < authorArray.length; i++) {
-      author.push(
-        authors.find((authors: Author) => {
-          return authors.author_id === authorArray[i]
-        })
-      )
-    }
-  }
-
-  const sanitizeCategory = (category: string) => category.replaceAll('-', ' ')
+  const { title, description, slug, publishedAt, author, image, tags } = post
 
   return (
-    <Link
-      href={post.path}
-      className="group flex flex-col lg:grid lg:grid-cols-10 xl:grid-cols-12 w-full py-2 sm:py-4 h-full border-b"
-    >
-      <div className="flex w-full lg:col-span-8 xl:col-span-8">
-        <h3 className="text-foreground text-lg group-hover:underline">{post.title}</h3>
-      </div>
-      <div className="lg:col-span-2 xl:col-span-4 flex justify-start items-center lg:grid grid-cols-2 xl:grid-cols-3 gap-2 text-sm">
-        <div className="hidden lg:flex items-center -space-x-2">
-          {author.map((author: any, i: number) => {
-            return (
-              <div className="relative ring-background w-6 h-6 rounded-full ring-2" key={i}>
-                {author.author_image_url && (
-                  <Image
-                    src={author.author_image_url}
-                    className="rounded-full object-cover border border-default w-full h-full"
-                    alt={`${author.author} avatar`}
-                    fill
-                  />
-                )}
+    <Link href={`/blog/${slug}`}>
+      <article className="group cursor-pointer">
+        <div className="grid gap-4 md:grid-cols-3">
+          {image && (
+            <div className="relative aspect-[16/9] md:col-span-1">
+              <Image
+                src={image}
+                alt={`${title} thumbnail`}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
+            </div>
+          )}
+          <div className={image ? 'md:col-span-2' : 'md:col-span-3'}>
+            <h3 className="text-xl font-semibold group-hover:text-primary-600">{title}</h3>
+            <div className="mt-2 text-scale-1000">
+              <time dateTime={publishedAt}>
+                {format(new Date(publishedAt), 'MMM d, yyyy')}
+              </time>
+              {author && (
+                <>
+                  <span className="mx-2">·</span>
+                  <span>{author}</span>
+                </>
+              )}
+            </div>
+            {description && (
+              <p className="mt-2 text-scale-1100 line-clamp-2">{description}</p>
+            )}
+            {tags && tags.length > 0 && (
+              <div className="mt-4 flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center rounded-full bg-scale-100 px-3 py-0.5 text-sm font-medium text-scale-1100"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
-            )
-          })}
-        </div>
-        {post.categories && (
-          <div className="hidden xl:flex text-foreground-lighter group-hover:text-foreground-light">
-            {post.categories.map(
-              (category, i) =>
-                i === 0 && (
-                  <Badge key={category} className="group-hover:border-foreground-muted capitalize">
-                    {sanitizeCategory(category)}
-                  </Badge>
-                )
             )}
           </div>
-        )}
-        {post.date && (
-          <p className="text-foreground-lighter group-hover:text-foreground-light flex-1 lg:text-right w-full">
-            {dayjs(post.date).format('D MMM YYYY')}
-          </p>
-        )}
-      </div>
+        </div>
+      </article>
     </Link>
   )
 }

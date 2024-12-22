@@ -9,15 +9,9 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/shadcn/card'
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from 'recharts'
+import type { ResponsiveContainer as ResponsiveContainerType } from 'recharts'
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
+import { ResponsiveWrapper } from './utils/chart-components'
 
 const data = [
   {
@@ -73,7 +67,7 @@ export default function Component() {
         </CardHeader>
         <CardContent>
           <div className="h-[200px] w-full">
-            <ResponsiveContainer width="100%" height={200}>
+            <ResponsiveWrapper width="100%" height={200}>
               <AreaChart
                 data={data}
                 margin={{
@@ -98,7 +92,7 @@ export default function Component() {
                 <Tooltip content={<CustomTooltip />} />
                 <Area type="monotone" dataKey="total" className="fill-primary/10 stroke-primary" />
               </AreaChart>
-            </ResponsiveContainer>
+            </ResponsiveWrapper>
           </div>
         </CardContent>
       </Card>

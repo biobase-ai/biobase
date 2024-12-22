@@ -1,31 +1,52 @@
-import fs from 'fs'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
-import { generateRss } from '~/lib/rss'
-import { getSortedPosts } from '~/lib/posts'
+import { fetchBlogPosts } from '~/lib/blog-service'
+import type { BlogPostPreview, PaginatedBlogPosts } from '~/lib/blog-service'
 
-import type PostTypes from '~/types/post'
 import DefaultLayout from '~/components/Layouts/Default'
 import BlogGridItem from '~/components/Blog/BlogGridItem'
 import BlogListItem from '~/components/Blog/BlogListItem'
 import BlogFilters from '~/components/Blog/BlogFilters'
-import FeaturedThumb from '~/components/Blog/FeaturedThumb'
 import { cn } from 'ui'
 import { LOCAL_STORAGE_KEYS, isBrowser } from 'common'
 
 export type BlogView = 'list' | 'grid'
 
-function Blog(props: any) {
+interface BlogProps {
+  blogData: PaginatedBlogPosts
+}
+
+function Blog({ blogData }: BlogProps) {
   const { BLOG_VIEW } = LOCAL_STORAGE_KEYS
   const localView = isBrowser ? (localStorage?.getItem(BLOG_VIEW) as BlogView) : undefined
-  const [blogs, setBlogs] = useState(props.blogs)
+  const [blogs, setBlogs] = useState(blogData.posts)
   const [view, setView] = useState<BlogView>(localView ?? 'list')
+  const [page, setPage] = useState(blogData.page)
+  const [hasMore, setHasMore] = useState(blogData.hasMore)
+  const [isLoading, setIsLoading] = useState(false)
   const isList = view === 'list'
   const router = useRouter()
 
-  const meta_title = 'Biobase Blog: Open Source Firebase alternative Blog'
-  const meta_description = 'Get all your Biobase News on the Biobase blog.'
+  const meta_title = 'Biobase Blog: Latest Updates and News'
+  const meta_description = 'Stay up to date with the latest news, updates, and insights from the Biobase team.'
+
+  const loadMore = async () => {
+    if (isLoading || !hasMore) return
+    
+    setIsLoading(true)
+    try {
+      const nextPage = page + 1
+      const data = await fetchBlogPosts(nextPage)
+      setBlogs([...blogs, ...data.posts])
+      setPage(nextPage)
+      setHasMore(data.hasMore)
+    } catch (error) {
+      console.error('Error loading more posts:', error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   return (
     <>
@@ -35,64 +56,46 @@ function Blog(props: any) {
         openGraph={{
           title: meta_title,
           description: meta_description,
-          url: `https://biobase.studio/${router.pathname}`,
-          images: [
-            {
-              url: `https://biobase.studio/images/og/biobase-og.png`,
-            },
-          ],
+          url: `https://biobase.studio/blog`,
         }}
-        additionalLinkTags={[
-          {
-            rel: 'alternate',
-            type: 'application/rss+xml',
-            href: `https://biobase.studio/rss.xml`,
-          },
-        ]}
       />
-      <DefaultLayout>
-        <h1 className="sr-only">Biobase blog</h1>
-        <div className="md:container mx-auto py-4 lg:py-10 px-4 sm:px-12 xl:px-16">
-          {props.blogs.slice(0, 1).map((blog: any, i: number) => (
-            <FeaturedThumb key={i} {...blog} />
-          ))}
-        </div>
 
-        <div className="border-default border-t">
-          <div className="md:container mx-auto mt-6 lg:mt-8 px-6 sm:px-16 xl:px-20">
+      <DefaultLayout>
+        <div className="mx-auto max-w-7xl px-8 py-16 sm:px-16 xl:px-20">
+          <div className="mb-16">
+            <h1 className="text-4xl font-bold mb-8">Biobase Blog</h1>
             <BlogFilters
-              allPosts={props.blogs}
-              setPosts={setBlogs}
-              view={view as BlogView}
+              blogs={blogs}
+              setBlogs={setBlogs}
+              view={view}
               setView={setView}
             />
-
-            <ol
-              className={cn(
-                'grid -mx-2 sm:-mx-4 py-6 lg:py-6 lg:pb-20',
-                isList ? 'grid-cols-1' : 'grid-cols-12 lg:gap-4'
-              )}
-            >
-              {blogs?.length ? (
-                blogs?.map((blog: PostTypes, idx: number) =>
-                  isList ? (
-                    <div className="col-span-12 px-2 sm:px-4 [&_a]:last:border-none" key={idx}>
-                      <BlogListItem post={blog} />
-                    </div>
-                  ) : (
-                    <div
-                      className="col-span-12 mb-4 md:col-span-12 lg:col-span-6 xl:col-span-4 h-full"
-                      key={idx}
-                    >
-                      <BlogGridItem post={blog} />
-                    </div>
-                  )
-                )
-              ) : (
-                <p className="text-sm text-light col-span-full">No results</p>
-              )}
-            </ol>
           </div>
+
+          <div className={cn(
+            'grid gap-8',
+            isList ? 'grid-cols-1' : 'md:grid-cols-2 lg:grid-cols-3'
+          )}>
+            {blogs.map((post) => (
+              isList ? (
+                <BlogListItem key={post.slug} post={post} />
+              ) : (
+                <BlogGridItem key={post.slug} post={post} />
+              )
+            ))}
+          </div>
+
+          {hasMore && (
+            <div className="mt-16 text-center">
+              <button
+                onClick={loadMore}
+                disabled={isLoading}
+                className="px-6 py-2 text-sm font-medium text-scale-1200 bg-scale-100 hover:bg-scale-200 rounded-md transition-colors"
+              >
+                {isLoading ? 'Loading...' : 'Load More'}
+              </button>
+            </div>
+          )}
         </div>
       </DefaultLayout>
     </>
@@ -100,29 +103,11 @@ function Blog(props: any) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPosts({ directory: '_blog', runner: '** BLOG PAGE **' })
-  const rss = generateRss(allPostsData)
-
-  // create a rss feed in public directory
-  // rss feed is added via <Head> component in render return
-  fs.writeFileSync('./public/rss.xml', rss)
-
-  // generate a series of rss feeds for each author (for PlanetPG)
-  const planetPgPosts = allPostsData.filter((post: any) => post.tags?.includes('planetpg'))
-  const planetPgAuthors = planetPgPosts.map((post: any) => post.author.split(','))
-  const uniquePlanetPgAuthors = new Set([].concat(...planetPgAuthors))
-
-  uniquePlanetPgAuthors.forEach((author) => {
-    const authorPosts = planetPgPosts.filter((post: any) => post.author.includes(author))
-    if (authorPosts.length > 0) {
-      const authorRss = generateRss(authorPosts, author)
-      fs.writeFileSync(`./public/planetpg-${author}-rss.xml`, authorRss)
-    }
-  })
-
+  const blogData = await fetchBlogPosts(1)
+  
   return {
     props: {
-      blogs: allPostsData,
+      blogData,
     },
   }
 }

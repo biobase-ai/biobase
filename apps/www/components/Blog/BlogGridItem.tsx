@@ -1,68 +1,57 @@
-import authors from 'lib/authors.json'
-import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
-import type Author from '~/types/author'
-import type PostTypes from '~/types/post'
-import dayjs from 'dayjs'
+import Image from 'next/image'
+import { format } from 'date-fns'
+import type { BlogPostPreview } from '~/lib/blog-service'
 
 interface Props {
-  post: PostTypes
+  post: BlogPostPreview
 }
 
 const BlogGridItem = ({ post }: Props) => {
-  const authorArray: string[] | undefined = post.author ? post.author.split(',') : []
-  const author = []
-
-  if (authorArray) {
-    for (let i = 0; i < authorArray.length; i++) {
-      author.push(
-        authors.find((authors: Author) => {
-          return authors.author_id === authorArray[i]
-        })
-      )
-    }
-  }
+  const { title, description, slug, publishedAt, author, image, tags } = post
 
   return (
-    <Link
-      href={post.path}
-      className="group inline-block min-w-full p-2 sm:p-4 h-full border border-transparent transition-all hover:bg-surface-200 dark:hover:bg-surface-75 rounded-xl"
-    >
-      <div className="flex flex-col space-y-2">
-        <div className="flex flex-col space-y-1">
-          <div className="border-default relative mb-3 w-full aspect-[2/1] lg:aspect-[5/3] overflow-hidden rounded-lg border shadow-sm">
+    <Link href={`/blog/${slug}`}>
+      <article className="group cursor-pointer">
+        {image && (
+          <div className="relative aspect-[16/9] mb-4">
             <Image
-              fill
-              sizes="100%"
-              quality={100}
-              src={
-                !post.thumb
-                  ? `/images/blog/blog-placeholder.png`
-                  : post.type === 'casestudy'
-                    ? post.thumb
-                    : `/images/blog/${post.thumb}`
-              }
-              className="scale-100 object-cover overflow-hidden"
-              alt={`${post.title} thumbnail`}
+              src={image}
+              alt={`${title} thumbnail`}
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg"
             />
           </div>
-
-          {post.date && (
-            <div className="text-foreground-lighter flex items-center space-x-1.5 text-sm">
-              <p>{dayjs(post.date).format('D MMM YYYY')}</p>
-              {post.readingTime && (
-                <>
-                  <p>•</p>
-                  <p>{post.readingTime}</p>
-                </>
-              )}
-            </div>
+        )}
+        <h3 className="text-xl font-semibold group-hover:text-primary-600">{title}</h3>
+        <div className="mt-2 text-scale-1000">
+          <time dateTime={publishedAt}>
+            {format(new Date(publishedAt), 'MMM d, yyyy')}
+          </time>
+          {author && (
+            <>
+              <span className="mx-2">·</span>
+              <span>{author}</span>
+            </>
           )}
-          <h3 className="text-foreground max-w-sm text-xl">{post.title}</h3>
-          <p className="text-foreground-light max-w-sm text-base !mb-0">{post.description}</p>
         </div>
-      </div>
+        {description && (
+          <p className="mt-2 text-scale-1100 line-clamp-2">{description}</p>
+        )}
+        {tags && tags.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-flex items-center rounded-full bg-scale-100 px-3 py-0.5 text-sm font-medium text-scale-1100"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </article>
     </Link>
   )
 }

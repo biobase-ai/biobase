@@ -20,7 +20,7 @@ import HamburgerButton from './HamburgerMenu'
 import MobileMenu from './MobileMenu'
 import MenuItem from './MenuItem'
 import RightClickBrandLogo from './RightClickBrandLogo'
-import { allBlogPosts } from 'contentlayer/generated'
+import { allPosts } from 'contentlayer/generated'
 import { getMenu } from '~/data/nav'
 import { sortDates } from '~/lib/helpers'
 
@@ -35,7 +35,7 @@ const Nav = (props: Props) => {
   const [open, setOpen] = useState(false)
   const isLoggedIn = useIsLoggedIn()
   const isUserLoading = useIsUserLoading()
-  const latestBlogPosts = allBlogPosts.sort(sortDates).slice(0, 2)
+  const latestBlogPosts = allPosts.sort(sortDates).slice(0, 2)
   const menu = getMenu(latestBlogPosts)
 
   const isHomePage = router.pathname === '/'

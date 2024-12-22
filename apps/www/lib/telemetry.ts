@@ -48,6 +48,13 @@ const sendEvent = (event: TelemetryEvent, gaProps: TelemetryProps, router: NextR
   })
 }
 
+export const useTelemetryProps = () => {
+  return {
+    screenResolution: typeof window !== 'undefined' ? `${window.screen.width}x${window.screen.height}` : undefined,
+    language: typeof window !== 'undefined' ? window.navigator.language : 'en-US',
+  }
+}
+
 export default {
   sendEvent,
 }

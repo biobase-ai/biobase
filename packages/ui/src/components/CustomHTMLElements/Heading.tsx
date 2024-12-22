@@ -2,6 +2,7 @@
 
 import { forwardRef, useCallback, type HTMLAttributes } from 'react'
 import { useInView } from 'react-intersection-observer'
+import Link from 'next/link'
 import {
   getAnchor,
   removeAnchor,
@@ -55,13 +56,13 @@ const Heading = forwardRef(
       <HeadingTag id={anchor} ref={combinedRef} className="group scroll-mt-24" {...props}>
         {removeAnchor(children)}
         {anchor && (
-          <a
+          <Link
             href={link}
             aria-hidden="true"
             className="ml-2 opacity-0 group-hover:opacity-100 transition"
           >
             <span aria-hidden="true">#</span>
-          </a>
+          </Link>
         )}
       </HeadingTag>
     )

@@ -11,7 +11,7 @@ import Link from 'next/link'
 import CTABanner from '~/components/CTABanner'
 import DefaultLayout from '~/components/Layouts/Default'
 import { deletedDiscussions } from '~/lib/changelog.utils'
-import mdxComponents from '~/lib/mdx/mdxComponents'
+import mdxComponents from '~/lib/mdx/mdxComponents.tsx'
 import { mdxSerialize } from '~/lib/mdx/mdxSerialize'
 
 export type Discussion = {
@@ -93,7 +93,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res, query }) => 
   )
 
   // uses the graphql api
-  async function fetchDiscussions(owner: string, repo: string, categoryId: string, cursor: string) {
+  async function fetchDiscussions(owner: string, repo: string, categoryId: string, _cursor: string) {
     const { Octokit } = await import('@octokit/core')
     const ExtendedOctokit = Octokit.plugin(paginateGraphql)
     type ExtendedOctokit = InstanceType<typeof ExtendedOctokit>
