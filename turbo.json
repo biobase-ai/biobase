@@ -1,10 +1,10 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "ui": "stream",
-  "tasks": {
+  "globalDependencies": ["**/.env.*local"],
+  "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "www#build": {
       "dependsOn": ["^build"],
@@ -49,44 +49,23 @@
     "studio#build": {
       "dependsOn": ["^build"],
       "env": [
-        "ANALYZE",
-        "AUTH_JWT_SECRET",
-        "DEFAULT_ORGANIZATION_NAME",
-        "DEFAULT_PROJECT_NAME",
-        "DOCS_GITHUB_APP_ID",
-        "DOCS_GITHUB_APP_INSTALLATION_ID",
-        "DOCS_GITHUB_APP_PRIVATE_KEY",
-        "LOGFLARE_API_KEY",
-        "LOGFLARE_URL",
         "NEXT_PUBLIC_*",
-        "OPENAI_API_KEY",
-        "PLATFORM_PG_META_URL",
-        "READ_ONLY_API_KEY",
-        "READ_ONLY_URL",
-        "STUDIO_PG_META_URL",
-        "BIOBASE_ANON_KEY",
-        "BIOBASE_PUBLIC_URL",
-        "BIOBASE_SERVICE_KEY",
-        "BIOBASE_URL",
-        "VERCEL_GIT_COMMIT_SHA",
-        "VERCEL_ENV",
-        "VERCEL_URL"
+        "SUPABASE_SERVICE_ROLE_KEY",
+        "SUPABASE_URL",
+        "BIOBASE_SECRET_KEY",
+        "OPENAI_API_KEY"
       ],
-      "passThroughEnv": ["SENTRY_ORG", "SENTRY_PROJECT", "SENTRY_AUTH_TOKEN"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {
       "outputs": []
     },
     "dev": {
-      "cache": false
+      "cache": false,
+      "persistent": true
     },
-    "test": {
+    "clean": {
       "cache": false
-    },
-    "typecheck": {
-      "dependsOn": ["^typecheck"],
-      "outputs": ["**/node_modules/.cache/tsbuildinfo.json"]
     }
   }
 }

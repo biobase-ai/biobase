@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react'
 import { useKey } from 'react-use'
 import type { BlogView } from '~/pages/blog'
 import type { BlogPostPreview } from '~/lib/blog-service'
-import type { ComponentProps } from 'react'
 
 import { AlignJustify, ChevronDown, Grid, Search, X } from 'lucide-react'
 import {
@@ -165,21 +164,25 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
             className="flex lg:hidden"
           >
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
+              <DropdownMenuTrigger className="w-full">
                 <Button
                   type="outline"
-                  iconRight={<ChevronDown />}
                   className="w-full min-w-[200px] flex justify-between items-center py-2"
                 >
                   {!activeCategory ? 'All Posts' : startCase(activeCategory?.replaceAll('-', ' '))}
+                  <ChevronDown className="ml-2 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent side="bottom" align="start">
+              <DropdownMenuContent
+                align="start"
+                className="w-[200px] p-0"
+              >
                 {allCategories.map((category: string) => (
                   <DropdownMenuItem
                     key={`item-${category}`}
                     onClick={() => handleSetCategory(category)}
                     className={cn(
+                      'cursor-pointer py-2 px-3',
                       (category === 'all' && !activeCategory) || category === activeCategory
                         ? 'text-brand-600'
                         : ''
@@ -199,69 +202,70 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
               type={
                 category === 'all' && !searchTerm && !activeCategory
                   ? 'default'
-                  : category === activeCategory
-                    ? 'default'
-                    : 'outline'
+                  : (category === 'all' && !searchTerm && !activeCategory) ||
+                    category === activeCategory
+                  ? 'primary'
+                  : 'outline'
               }
               onClick={() => handleSetCategory(category)}
-              size={is2XL ? 'tiny' : 'small'}
-              className="rounded-full"
             >
-              {category === 'all' ? 'All' : startCase(category.replaceAll('-', ' '))}
+              {category === 'all' ? 'All Posts' : startCase(category.replaceAll('-', ' '))}
             </Button>
           ))}
         </div>
 
-        {!showSearchInput && (
-          <motion.div
-            className="flex-1 flex justify-end"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.05 } }}
-          >
-            <Button
-              className="px-2"
-              size="large"
-              type="default"
-              onClick={() => setShowSearchInput(true)}
-            >
-              <Search size="14" />
-            </Button>
-          </motion.div>
-        )}
-
-        {showSearchInput && (
+        {showSearchInput ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.05 } }}
-            className="w-full h-auto flex justify-end gap-2 items-stretch lg:max-w-[240px] xl:max-w-[280px]"
+            className="flex flex-1 items-center gap-3"
           >
             <Input
-              icon={<Search size="14" />}
-              size="small"
-              layout="vertical"
-              autoComplete="off"
-              type="search"
-              placeholder="Search blog"
-              value={searchTerm}
+              autoFocus={!isMobile}
+              placeholder="Search blog posts"
               onChange={handleSearchChange}
-              className="w-full"
+              value={searchTerm}
+              icon={<Search className="text-foreground-lighter" />}
               actions={
-                isMobile && (
+                searchTerm && (
                   <Button
-                    type="link"
-                    onClick={() => {
-                      setSearchTerm('')
-                      setShowSearchInput(false)
-                    }}
-                    className="text-foreground-light hover:text-foreground hover:bg-selection"
+                    type="text"
+                    onClick={() => handleSearchByText('')}
+                    className="px-1 mr-1"
                   >
-                    <X size="14" />
+                    <X />
                   </Button>
                 )
               }
             />
+            {isMobile && (
+              <Button type="outline" onClick={() => setShowSearchInput(false)}>
+                Cancel
+              </Button>
+            )}
+          </motion.div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 0.05 } }}
+            className="flex items-center gap-2"
+          >
+            <Button
+              type="outline"
+              onClick={() => setShowSearchInput(true)}
+              className="lg:hidden"
+            >
+              <Search />
+            </Button>
+            <Button
+              type="outline"
+              onClick={handleViewSelection}
+              className={cn('hidden lg:flex', is2XL ? 'px-3' : 'px-2')}
+            >
+              {isList ? <Grid /> : <AlignJustify />}
+            </Button>
           </motion.div>
         )}
       </AnimatePresence>
