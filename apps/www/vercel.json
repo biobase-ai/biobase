@@ -1,9 +1,0 @@
-{
-  "framework": "nextjs",
-  "buildCommand": null,
-  "outputDirectory": ".next",
-  "env": {
-    "NEXT_TELEMETRY_DISABLED": "1",
-    "NEXT_PUBLIC_VERCEL_ENV": "production"
-  }
-}
