@@ -55,13 +55,12 @@ const ImageModal = ({
   }
 
   const contentClasses = 'relative data-open:animate-overlay-show data-closed:animate-overlay-hide'
-
   return (
-    <Dialog.Root open={open} onOpenChange={handleOpenChange}>
-      <Dialog.Portal>
-        <Dialog.Overlay className={__styles.overlay} />
-        <Dialog.Overlay className={__styles.scroll_overlay}>
-          <Dialog.Content className={[contentClasses, __styles.size[size], className].join(' ')}>
+    <Dialog.Root asChild open={open} onOpenChange={handleOpenChange}>
+      <Dialog.Portal asChild>
+        <Dialog.Overlay asChild className={__styles.overlay} />
+        <Dialog.Overlay asChild className={__styles.scroll_overlay}>
+          <Dialog.Content asChild className={[contentClasses, __styles.size[size], className].join(' ')}>
             {children}
           </Dialog.Content>
         </Dialog.Overlay>
