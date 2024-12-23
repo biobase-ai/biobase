@@ -7,7 +7,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { useKey } from 'react-use'
 import type { BlogView } from '~/pages/blog'
 import type { BlogPostPreview } from '~/lib/blog-service'
-import * as Icons from 'lucide-react'
+import { ChevronDown, Grid, Search, X, AlignJustify } from 'lucide-react'
 import {
   Button,
   DropdownMenu,
@@ -150,47 +150,45 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
 
   return (
     <div className="flex flex-row items-center justify-between gap-2">
-      <AnimatePresence mode="wait">
-        {!showSearchInput && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.05 } }}
-            className="flex lg:hidden"
-          >
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Button
-                  type="outline"
-                  className="w-full min-w-[200px] flex justify-between items-center py-2"
-                >
-                  {!activeCategory ? 'All Posts' : startCase(activeCategory?.replaceAll('-', ' '))}
-                  <Icons.ChevronDown size={16} className="ml-2" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="start"
-                className="w-[200px] p-0"
+      {!showSearchInput && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.05 } }}
+          className="flex lg:hidden"
+        >
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                type="outline"
+                className="w-full min-w-[200px] flex justify-between items-center py-2"
               >
-                {allCategories.map((category: string) => (
-                  <DropdownMenuItem
-                    key={`item-${category}`}
-                    onClick={() => handleSetCategory(category)}
-                    className={cn(
-                      'cursor-pointer py-2 px-3',
-                      (category === 'all' && !activeCategory) || category === activeCategory
-                        ? 'text-brand-600'
-                        : ''
-                    )}
-                  >
-                    {category === 'all' ? 'All Posts' : startCase(category.replaceAll('-', ' '))}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                {!activeCategory ? 'All Posts' : startCase(activeCategory?.replaceAll('-', ' '))}
+                <ChevronDown className="ml-2 h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="start"
+              className="w-[200px] p-0"
+            >
+              {allCategories.map((category: string) => (
+                <DropdownMenuItem
+                  key={`item-${category}`}
+                  onClick={() => handleSetCategory(category)}
+                  className={cn(
+                    'cursor-pointer py-2 px-3',
+                    (category === 'all' && !activeCategory) || category === activeCategory
+                      ? 'text-brand-600'
+                      : ''
+                  )}
+                >
+                  {category === 'all' ? 'All Posts' : startCase(category.replaceAll('-', ' '))}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </motion.div>
+      )}
 
       <div className="hidden lg:flex flex-wrap items-center flex-grow gap-2">
         {allCategories.map((category: string) => (
@@ -221,14 +219,14 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
               className="w-[200px] md:w-[300px] pl-8"
             />
             <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none text-scale-900">
-              <Icons.Search size={15} strokeWidth={1.5} />
+              <Search className="h-4 w-4" />
             </div>
             {searchTerm && (
               <div
                 className="absolute inset-y-0 right-0 pr-2 flex items-center cursor-pointer hover:text-scale-1200"
                 onClick={() => handleSearchByText('')}
               >
-                <Icons.X size={15} strokeWidth={1.5} />
+                <X className="h-4 w-4" />
               </div>
             )}
           </div>
@@ -238,7 +236,7 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
             className="p-2"
             onClick={() => setShowSearchInput(true)}
           >
-            <Icons.Search size={15} strokeWidth={1.5} />
+            <Search className="h-4 w-4" />
           </Button>
         )}
         <Button
@@ -246,7 +244,7 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
           className="p-2"
           onClick={handleViewSelection}
         >
-          {isList ? <Icons.Grid size={15} /> : <Icons.AlignJustify size={15} />}
+          {isList ? <Grid className="h-4 w-4" /> : <AlignJustify className="h-4 w-4" />}
         </Button>
       </div>
     </div>
