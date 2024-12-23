@@ -160,7 +160,7 @@
     "node": "20.x"
   },
   "resolutions": {
-    "next-seo": "5.15.0",
+    "next-seo": "^5.15.0",
     "framer-motion": "10.16.16"
   },
   "license": "MIT"

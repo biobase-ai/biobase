@@ -4,7 +4,7 @@ import '../styles/index.css'
 
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { AuthProvider, IS_PROD, ThemeProvider, useTelemetryProps, useThemeSandbox } from 'common'
-import { DefaultSeo } from 'next-seo'
+import { DefaultSeo } from 'next-seo/lib/next-seo'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
