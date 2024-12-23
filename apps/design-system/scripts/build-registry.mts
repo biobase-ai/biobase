@@ -16,6 +16,38 @@ import { themes } from '../registry/themes'
 const REGISTRY_PATH = path.join(process.cwd(), 'public/registry')
 
 // ----------------------------------------------------------------------------
+// Build component index files
+// ----------------------------------------------------------------------------
+async function buildComponentIndexes() {
+  const blockDir = path.join(process.cwd(), 'registry/default/block')
+  const exampleDir = path.join(process.cwd(), 'registry/default/example')
+
+  // Get all component files
+  const blockFiles = await fs.readdir(blockDir)
+  const exampleFiles = await fs.readdir(exampleDir)
+
+  // Generate block index
+  let blockIndex = '// This file is auto-generated\n// DO NOT EDIT DIRECTLY\n\n'
+  blockFiles.forEach(file => {
+    if (file.endsWith('.tsx') && file !== 'index.tsx') {
+      const name = path.basename(file, '.tsx')
+      blockIndex += `export * from './${name}'\n`
+    }
+  })
+  await fs.writeFile(path.join(blockDir, 'index.ts'), blockIndex)
+
+  // Generate example index
+  let exampleIndex = '// This file is auto-generated\n// DO NOT EDIT DIRECTLY\n\n'
+  exampleFiles.forEach(file => {
+    if (file.endsWith('.tsx') && file !== 'index.tsx') {
+      const name = path.basename(file, '.tsx')
+      exampleIndex += `export * from './${name}'\n`
+    }
+  })
+  await fs.writeFile(path.join(exampleDir, 'index.ts'), exampleIndex)
+}
+
+// ----------------------------------------------------------------------------
 // Build __registry__/index.tsx.
 // ----------------------------------------------------------------------------
 async function buildRegistry(registry: Registry) {
@@ -609,6 +641,9 @@ async function buildThemes() {
 
 try {
   console.log('🚀 Building registry...')
+  
+  // Build component indexes first
+  await buildComponentIndexes()
 
   const result = registrySchema.safeParse(registry)
 

@@ -194,15 +194,6 @@
 
   <url>
     <loc>https://biobase.studio/launch-week</loc>
-<<<<<<< Updated upstream
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/legal/dpa</loc>
-=======
->>>>>>> Stashed changes
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -232,21 +223,6 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/launch-week/7</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-<<<<<<< Updated upstream
-    <loc>https://biobase.studio/launch-week/8</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-=======
->>>>>>> Stashed changes
     <loc>https://biobase.studio/launch-week/x</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -254,6 +230,12 @@
 
   <url>
     <loc>https://biobase.studio/partners/experts</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://biobase.studio/launch-week/8</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -1,3 +1,4 @@
 import { getComponents } from './utils'
 
-export const blocks = getComponents('default/block')
+// Create a map of all block components
+export const blocks = getComponents('block')

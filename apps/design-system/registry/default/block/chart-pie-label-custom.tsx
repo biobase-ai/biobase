@@ -68,9 +68,9 @@ export default function Component() {
                     dominantBaseline={props.dominantBaseline}
                     fill="hsla(var(--foreground))"
                   >
-                    {`${
-                      chartConfig[payload.browser as keyof typeof chartConfig]?.label
-                    } (${payload.visitors})`}
+                    {`${chartConfig[payload.browser as keyof typeof chartConfig]?.label} (${
+                      payload.visitors
+                    })`}
                   </text>
                 )
               }}
