@@ -29,6 +29,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // This also gets called at build time
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // Special handling for build-time or sample partner
+  if (params?.slug === 'sample-partner') {
+    return {
+      notFound: true,
+    }
+  }
+
   let { data: partner } = await biobase
     .from('partners')
     .select('*')
@@ -36,15 +43,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     .eq('slug', params!.slug as string)
     .single()
 
-  // During build time, return notFound for sample-partner
-  if (params?.slug === 'sample-partner' || !partner) {
+  // If no partner found, return not found
+  if (!partner) {
     return {
       notFound: true,
     }
   }
 
-  // For actual partners, return the redirect
-  let redirectUrl: string
+  // Determine redirect based on partner type
+  let redirectUrl: string | null = null
   switch (partner.type) {
     case 'technology':
       redirectUrl = `/partners/integrations/${partner.slug}`
@@ -58,11 +65,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       }
   }
 
+  // Return redirect if a valid URL was generated
+  if (redirectUrl) {
+    return {
+      redirect: {
+        destination: redirectUrl,
+        permanent: false,
+      },
+    }
+  }
+
+  // Fallback to not found if no redirect could be determined
   return {
-    redirect: {
-      destination: redirectUrl,
-      permanent: false,
-    },
+    notFound: true,
   }
 }
 
