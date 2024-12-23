@@ -23,7 +23,7 @@
     "db:seed": "ts-node scripts/manage-db.ts seed",
     "db:health": "ts-node scripts/manage-db.ts health",
     "upload:blog-json": "node scripts/upload-blog-json.js",
-    "vercel-build": "npm run build:prod"
+    "vercel-build": "npm run build"
   },
   "dependencies": {
     "@code-hike/mdx": "^0.9.0",

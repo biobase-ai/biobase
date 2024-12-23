@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "framework": "nextjs",
+  "buildCommand": "npm run build:www",
+  "outputDirectory": "apps/www/.next",
+  "installCommand": "npm install --legacy-peer-deps",
+  "ignoreCommand": "git diff HEAD^ HEAD --quiet ./apps/www/",
+  "env": {
+    "NEXT_TELEMETRY_DISABLED": "1",
+    "NEXT_PUBLIC_VERCEL_ENV": "production",
+    "TURBO_REMOTE_ONLY": "true",
+    "NPM_FLAGS": "--legacy-peer-deps"
+  }
+}

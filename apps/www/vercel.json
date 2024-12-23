@@ -1,17 +1,8 @@
 {
-  "buildCommand": "cd ../.. && npm install && npm run build:www",
-  "outputDirectory": ".next",
   "framework": "nextjs",
-  "installCommand": "cd ../.. && npm install",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next",
-      "config": {
-        "nodeVersion": "20.x"
-      }
-    }
-  ],
+  "buildCommand": null,
+  "installCommand": null,
+  "outputDirectory": ".next",
   "env": {
     "NEXT_TELEMETRY_DISABLED": "1",
     "NEXT_PUBLIC_VERCEL_ENV": "production"

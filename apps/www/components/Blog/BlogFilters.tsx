@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { startCase } from 'lodash'
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useKey } from 'react-use'
 import type { BlogView } from '~/pages/blog'
 import type { BlogPostPreview } from '~/lib/blog-service'
@@ -26,14 +26,6 @@ interface Props {
   setView: (view: BlogView) => void
 }
 
-/**
- * ✅ search via text input
- * ✅ update searchTerm when deleting text input
- * ✅ search via q param
- * ✅ search via category if no q param
- * ✅ search via category and reset q param if present
- */
-
 export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
   const { BLOG_VIEW } = LOCAL_STORAGE_KEYS
   const isList = view === 'list'
@@ -48,9 +40,6 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
   const isMobile = useBreakpoint(1023)
   const is2XL = useBreakpoint(1535)
 
-  // Use hard-coded categories here as they:
-  // - serve as a reference
-  // - are easier to reorder
   const allCategories = [
     'all',
     'product',
@@ -61,28 +50,14 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
     'launch-week',
   ]
 
-  useEffect(() => {
-    if (!q) {
-      handlePosts()
-    }
-  }, [category])
-
-  useEffect(() => {
-    if (q) {
-      handleSearchByText(q)
-    }
-  }, [q])
-
-  const handleReplaceRouter = () => {
+  const handleReplaceRouter = useCallback(() => {
     if (!searchTerm && category !== 'all') {
       router.query.category = category
       router.replace(router, undefined, { shallow: true, scroll: false })
     }
-  }
+  }, [searchTerm, category, router])
 
-  const handlePosts = () => {
-    // construct an array of blog posts
-    // not inluding the first blog post
+  const handlePosts = useCallback(() => {
     const shiftedBlogs = [...blogs]
     shiftedBlogs.shift()
 
@@ -91,12 +66,43 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
     setBlogs(
       category === 'all'
         ? shiftedBlogs
-        : blogs.filter((post: any) => {
+        : blogs.filter((post) => {
             const found = post.categories?.includes(category)
             return found
           })
     )
-  }
+  }, [blogs, category, handleReplaceRouter, setBlogs])
+
+  const handleSearchByText = useCallback((text: string) => {
+    setSearchTerm(text)
+    if (searchParams?.has('q')) {
+      router.replace('/blog', undefined, { shallow: true, scroll: false })
+    }
+    router.replace(`/blog?q=${text}`, undefined, { shallow: true, scroll: false })
+    if (text.length < 1) router.replace('/blog', undefined, { shallow: true, scroll: false })
+
+    const matches = blogs.filter((post) => {
+      const found =
+        post.tags?.join(' ').replaceAll('-', ' ').includes(text.toLowerCase()) ||
+        post.title?.toLowerCase().includes(text.toLowerCase()) ||
+        post.author?.includes(text.toLowerCase())
+      return found
+    })
+
+    setBlogs(matches)
+  }, [blogs, router, searchParams, setBlogs])
+
+  useEffect(() => {
+    if (!q) {
+      handlePosts()
+    }
+  }, [category, q, handlePosts])
+
+  useEffect(() => {
+    if (q) {
+      handleSearchByText(q)
+    }
+  }, [q, handleSearchByText])
 
   useKey('Escape', () => handleSearchByText(''))
 
@@ -113,26 +119,11 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
     }
   }, [activeCategory, router.isReady, q])
 
-  const handleSearchByText = (text: string) => {
-    setSearchTerm(text)
-    searchParams?.has('q') && router.replace('/blog', undefined, { shallow: true, scroll: false })
-    router.replace(`/blog?q=${text}`, undefined, { shallow: true, scroll: false })
-    if (text.length < 1) router.replace('/blog', undefined, { shallow: true, scroll: false })
-
-    const matches = blogs.filter((post: any) => {
-      const found =
-        post.tags?.join(' ').replaceAll('-', ' ').includes(text.toLowerCase()) ||
-        post.title?.toLowerCase().includes(text.toLowerCase()) ||
-        post.author?.includes(text.toLowerCase())
-      return found
-    })
-
-    setBlogs(matches)
-  }
-
   const handleSetCategory = (category: string) => {
-    searchTerm && handlePosts()
-    searchTerm && setSearchTerm('')
+    if (searchTerm) {
+      handlePosts()
+      setSearchTerm('')
+    }
     setCategory(category)
     category === 'all'
       ? router.replace('/blog', undefined, { shallow: true, scroll: false })
@@ -143,7 +134,7 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
   }
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    activeCategory && setCategory('all')
+    if (activeCategory) setCategory('all')
     handleSearchByText(event.target.value)
   }
 
@@ -164,13 +155,13 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
             className="flex lg:hidden"
           >
             <DropdownMenu>
-              <DropdownMenuTrigger className="w-full">
+              <DropdownMenuTrigger asChild>
                 <Button
                   type="outline"
                   className="w-full min-w-[200px] flex justify-between items-center py-2"
                 >
                   {!activeCategory ? 'All Posts' : startCase(activeCategory?.replaceAll('-', ' '))}
-                  <ChevronDown className="ml-2 h-4 w-4" />
+                  <ChevronDown size={16} className="ml-2" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent
@@ -199,91 +190,69 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
           {allCategories.map((category: string) => (
             <Button
               key={category}
-              type={
-                (category === 'all' && !searchTerm && !activeCategory) ||
-                category === activeCategory
-                  ? 'primary'
-                  : 'outline'
-              }
+              type="outline"
+              className={cn(
+                'py-2',
+                (category === 'all' && !activeCategory) || category === activeCategory
+                  ? 'bg-brand-600 hover:bg-brand-600 text-white'
+                  : ''
+              )}
               onClick={() => handleSetCategory(category)}
-              className="py-1 px-3"
             >
               {category === 'all' ? 'All Posts' : startCase(category.replaceAll('-', ' '))}
             </Button>
           ))}
         </div>
-
-        {showSearchInput ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.05 } }}
-            className="flex flex-1 items-center gap-3"
-          >
-            <div className="relative flex-1">
-              <Input
-                autoFocus={!isMobile}
-                placeholder="Search blog posts"
-                onChange={handleSearchChange}
-                value={searchTerm}
-                className="w-full"
-              />
-              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-                <Search className="h-4 w-4 text-foreground-lighter" />
-              </div>
-              {searchTerm && (
-                <div className="absolute inset-y-0 right-3 flex items-center">
-                  <button
-                    onClick={() => handleSearchByText('')}
-                    className="hover:text-foreground-light focus:outline-none"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
-                </div>
-              )}
-            </div>
-            {isMobile && (
-              <Button
-                type="outline"
-                onClick={() => setShowSearchInput(false)}
-                className="whitespace-nowrap"
-              >
-                Cancel
-              </Button>
-            )}
-          </motion.div>
-        ) : (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.05 } }}
-            className="flex items-center gap-2"
-          >
-            <Button
-              type="outline"
-              onClick={() => setShowSearchInput(true)}
-              className="lg:hidden p-2"
-            >
-              <Search className="h-4 w-4" />
-            </Button>
-            <Button
-              type="outline"
-              onClick={handleViewSelection}
-              className={cn('hidden lg:flex', is2XL ? 'p-3' : 'p-2')}
-            >
-              {isList ? <Grid className="h-4 w-4" /> : <AlignJustify className="h-4 w-4" />}
-            </Button>
-          </motion.div>
-        )}
       </AnimatePresence>
-      <Button
-        type="default"
-        title={isList ? 'Grid View' : 'List View'}
-        onClick={handleViewSelection}
-        className="h-full p-1.5"
-      >
-        {isList ? <Grid /> : <AlignJustify />}
-      </Button>
+
+      <div className="flex items-center gap-2">
+        {!showSearchInput && (
+          <Button
+            type="outline"
+            className="lg:hidden"
+            onClick={() => setShowSearchInput(true)}
+          >
+            <Search size={16} />
+          </Button>
+        )}
+
+        {showSearchInput && (
+          <div className="relative flex w-full items-center lg:w-60">
+            <Input
+              autoFocus={isMobile}
+              type="search"
+              placeholder="Search blog posts..."
+              className="w-full"
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
+            {isMobile && (
+              <div className="absolute right-10">
+                <X size={16} onClick={() => setShowSearchInput(false)} className="cursor-pointer" />
+              </div>
+            )}
+            <div className="absolute right-3">
+              <Search size={16} className="text-foreground-light" />
+            </div>
+          </div>
+        )}
+
+        <Button
+          type="outline"
+          className="hidden lg:flex"
+          onClick={handleViewSelection}
+        >
+          {isList ? <Grid size={16} /> : <AlignJustify size={16} />}
+        </Button>
+
+        <Button
+          type="outline"
+          className="lg:hidden"
+          onClick={handleViewSelection}
+        >
+          {isList ? <Grid size={16} /> : <AlignJustify size={16} />}
+        </Button>
+      </div>
     </div>
   )
 }
