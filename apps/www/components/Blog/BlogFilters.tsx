@@ -7,8 +7,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { useKey } from 'react-use'
 import type { BlogView } from '~/pages/blog'
 import type { BlogPostPreview } from '~/lib/blog-service'
-
-import { AlignJustify, ChevronDown, Grid, Search, X } from 'lucide-react'
+import * as Icons from 'lucide-react'
 import {
   Button,
   DropdownMenu,
@@ -24,6 +23,11 @@ interface Props {
   setBlogs: (blogs: BlogPostPreview[]) => void
   view: BlogView
   setView: (view: BlogView) => void
+}
+
+// Extend BlogPostPreview type to include categories
+interface ExtendedBlogPostPreview extends BlogPostPreview {
+  categories?: string[]
 }
 
 export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
@@ -58,7 +62,7 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
   }, [searchTerm, category, router])
 
   const handlePosts = useCallback(() => {
-    const shiftedBlogs = [...blogs]
+    const shiftedBlogs = [...blogs] as ExtendedBlogPostPreview[]
     shiftedBlogs.shift()
 
     handleReplaceRouter()
@@ -66,7 +70,7 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
     setBlogs(
       category === 'all'
         ? shiftedBlogs
-        : blogs.filter((post) => {
+        : (blogs as ExtendedBlogPostPreview[]).filter((post) => {
             const found = post.categories?.includes(category)
             return found
           })
@@ -155,13 +159,13 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
             className="flex lg:hidden"
           >
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
+              <DropdownMenuTrigger>
                 <Button
                   type="outline"
                   className="w-full min-w-[200px] flex justify-between items-center py-2"
                 >
                   {!activeCategory ? 'All Posts' : startCase(activeCategory?.replaceAll('-', ' '))}
-                  <ChevronDown size={16} className="ml-2" />
+                  <Icons.ChevronDown size={16} className="ml-2" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent
@@ -186,71 +190,63 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
             </DropdownMenu>
           </motion.div>
         )}
-        <div className="hidden lg:flex flex-wrap items-center flex-grow gap-2">
-          {allCategories.map((category: string) => (
-            <Button
-              key={category}
-              type="outline"
-              className={cn(
-                'py-2',
-                (category === 'all' && !activeCategory) || category === activeCategory
-                  ? 'bg-brand-600 hover:bg-brand-600 text-white'
-                  : ''
-              )}
-              onClick={() => handleSetCategory(category)}
-            >
-              {category === 'all' ? 'All Posts' : startCase(category.replaceAll('-', ' '))}
-            </Button>
-          ))}
-        </div>
       </AnimatePresence>
 
-      <div className="flex items-center gap-2">
-        {!showSearchInput && (
+      <div className="hidden lg:flex flex-wrap items-center flex-grow gap-2">
+        {allCategories.map((category: string) => (
           <Button
+            key={category}
             type="outline"
-            className="lg:hidden"
-            onClick={() => setShowSearchInput(true)}
+            className={cn(
+              'py-2',
+              (category === 'all' && !activeCategory) || category === activeCategory
+                ? 'bg-brand-600 hover:bg-brand-600 text-white'
+                : ''
+            )}
+            onClick={() => handleSetCategory(category)}
           >
-            <Search size={16} />
+            {category === 'all' ? 'All Posts' : startCase(category.replaceAll('-', ' '))}
           </Button>
-        )}
+        ))}
+      </div>
 
-        {showSearchInput && (
-          <div className="relative flex w-full items-center lg:w-60">
+      <div className="flex items-center gap-2">
+        {showSearchInput ? (
+          <div className="relative">
             <Input
-              autoFocus={isMobile}
-              type="search"
-              placeholder="Search blog posts..."
-              className="w-full"
+              type="text"
+              placeholder="Search articles..."
               value={searchTerm}
               onChange={handleSearchChange}
+              className="w-[200px] md:w-[300px] pl-8"
             />
-            {isMobile && (
-              <div className="absolute right-10">
-                <X size={16} onClick={() => setShowSearchInput(false)} className="cursor-pointer" />
+            <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none text-scale-900">
+              <Icons.Search size={15} strokeWidth={1.5} />
+            </div>
+            {searchTerm && (
+              <div
+                className="absolute inset-y-0 right-0 pr-2 flex items-center cursor-pointer hover:text-scale-1200"
+                onClick={() => handleSearchByText('')}
+              >
+                <Icons.X size={15} strokeWidth={1.5} />
               </div>
             )}
-            <div className="absolute right-3">
-              <Search size={16} className="text-foreground-light" />
-            </div>
           </div>
+        ) : (
+          <Button
+            type="outline"
+            className="p-2"
+            onClick={() => setShowSearchInput(true)}
+          >
+            <Icons.Search size={15} strokeWidth={1.5} />
+          </Button>
         )}
-
         <Button
           type="outline"
-          className="hidden lg:flex"
+          className="p-2"
           onClick={handleViewSelection}
         >
-          {isList ? <Grid size={16} /> : <AlignJustify size={16} />}
-        </Button>
-
-        <Button
-          type="outline"
-          className="lg:hidden"
-          onClick={handleViewSelection}
-        >
-          {isList ? <Grid size={16} /> : <AlignJustify size={16} />}
+          {isList ? <Icons.Grid size={15} /> : <Icons.AlignJustify size={15} />}
         </Button>
       </div>
     </div>
