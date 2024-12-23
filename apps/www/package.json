@@ -110,7 +110,8 @@
     "ui-patterns": "*",
     "use-debounce": "^7.0.1",
     "vanilla-tilt": "1.7.0",
-    "yup": "^1.4.0"
+    "yup": "^1.4.0",
+    "recharts": "^2.10.3"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -148,7 +149,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "20.x"
   },
   "license": "MIT"
 }
