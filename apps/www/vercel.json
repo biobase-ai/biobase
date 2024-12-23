@@ -12,7 +12,5 @@
   "env": {
     "NEXT_TELEMETRY_DISABLED": "1",
     "NEXT_PUBLIC_VERCEL_ENV": "production"
-  },
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./",
-  "workspaceRoot": "../.."
+  }
 }
