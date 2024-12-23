@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:prod": "next build",
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
@@ -81,7 +80,7 @@
     "react-countdown": "^2.3.5",
     "react-day-picker": "^8.10.0",
     "react-dom": "^18.2.0",
-    "react-markdown": "^8.0.3",
+    "react-markdown": "^9.0.1",
     "react-syntax-highlighter": "^15.5.0",
     "react-tooltip": "^4.2.17",
     "react-transition-group": "^4.4.1",

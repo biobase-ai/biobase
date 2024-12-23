@@ -10,7 +10,7 @@ const nextConfig = {
     domains: ['avatars.githubusercontent.com'],
     unoptimized: true,
   },
-  transpilePackages: ['common', 'ui', 'ui-patterns', 'shared-data', 'icons', 'ai-commands'],
+  transpilePackages: ['common', 'ui', 'ui-patterns', 'shared-data', 'icons', 'ai-commands', 'react-markdown'],
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -33,7 +33,9 @@ const nextConfig = {
         '.next/server/chunks/**/*',
         '.next/static/**/*',
       ],
-    }
+    },
+    esmExternals: true,
+    serverComponentsExternalPackages: ['next-seo']
   }
 }
 
