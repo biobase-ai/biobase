@@ -20,7 +20,6 @@ import { WwwCommandMenu } from '~/components/CommandMenu'
 import { API_URL, APP_NAME, DEFAULT_META_DESCRIPTION, IS_PREVIEW } from '~/lib/constants'
 import { post } from '~/lib/fetchWrapper'
 import supabase from '~/lib/biobase'
-import useDarkLaunchWeeks from '../hooks/useDarkLaunchWeeks'
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -56,15 +55,27 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [router.events, blockEvents])
 
+  const site_title = `${APP_NAME} | The Open Source Firebase Alternative`
+
   return (
     <>
       <Head>
-        <title>{APP_NAME}</title>
+        <title>{site_title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={DEFAULT_META_DESCRIPTION} />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content={site_title} />
+        <meta property="og:description" content={DEFAULT_META_DESCRIPTION} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://biobase.studio/" />
+        <meta property="og:site_name" content="Biobase" />
+        <meta property="og:image" content="https://biobase.studio/images/og/biobase-og.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@biobase" />
+        <meta name="twitter:creator" content="@biobase" />
         <MetaFaviconsPagesRouter 
-          route={DEFAULT_FAVICON_ROUTE} 
-          themeColor={DEFAULT_FAVICON_THEME_COLOR} 
-        />
+          route={DEFAULT_FAVICON_ROUTE}
+          themeColor={DEFAULT_FAVICON_THEME_COLOR} applicationName={''}        />
       </Head>
       <ThemeProvider>
         <AuthProvider>

@@ -74,7 +74,6 @@
     "next": "^14.0.4",
     "next-contentlayer": "^0.3.4",
     "next-mdx-remote": "^5.0.0",
-    "next-seo": "5.15.0",
     "next-themes": "^0.2.1",
     "node-fetch": "^2.6.1",
     "openai": "^4.20.1",
@@ -161,7 +160,6 @@
     "node": "20.x"
   },
   "resolutions": {
-    "next-seo": "^5.15.0",
     "framer-motion": "10.16.16"
   },
   "license": "MIT"
