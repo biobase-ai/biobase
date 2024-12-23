@@ -62,7 +62,7 @@
     "dayjs": "^1.11.12",
     "dotenv": "^16.4.7",
     "eslint-config-biobase": "*",
-    "framer-motion": "^10.18.0",
+    "framer-motion": "^10.16.16",
     "glob": "^11.0.0",
     "globby": "^13.2.2",
     "gray-matter": "^4.0.3",
@@ -161,7 +161,7 @@
   },
   "resolutions": {
     "next-seo": "5.15.0",
-    "framer-motion": "10.18.0"
+    "framer-motion": "10.16.16"
   },
   "license": "MIT"
 }
