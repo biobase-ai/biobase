@@ -1,16 +1,10 @@
 'use client'
 
-import { Table, ColumnDef } from '@tanstack/react-table'
+import { Table } from '@tanstack/react-table'
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react'
+import * as Select from '@radix-ui/react-select'
 
-import { Button } from 'ui'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from 'ui'
+import { Button } from '@ui/components/shadcn/ui/button'
 
 interface DataTablePaginationProps<TData> {
   table: Table<TData>
@@ -28,23 +22,25 @@ export function DataTablePagination<TData>({
       <div className="flex items-center space-x-6 lg:space-x-8">
         <div className="flex items-center space-x-2">
           <p className="text-sm font-medium">Rows per page</p>
-          <Select
+          <Select.Root
             value={`${table.getState().pagination.pageSize}`}
             onValueChange={(value) => {
               table.setPageSize(Number(value))
             }}
           >
-            <SelectTrigger className="h-8 w-[70px]">
-              <SelectValue placeholder={table.getState().pagination.pageSize} />
-            </SelectTrigger>
-            <SelectContent side="top">
-              {[10, 20, 30, 40, 50].map((pageSize) => (
-                <SelectItem key={pageSize} value={`${pageSize}`}>
-                  {pageSize}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+            <Select.Trigger className="h-8 w-[70px]">
+              <Select.Value placeholder={table.getState().pagination.pageSize} />
+            </Select.Trigger>
+            <Select.Portal>
+              <Select.Content side="top">
+                {[10, 20, 30, 40, 50].map((pageSize) => (
+                  <Select.Item key={pageSize} value={`${pageSize}`}>
+                    {pageSize}
+                  </Select.Item>
+                ))}
+              </Select.Content>
+            </Select.Portal>
+          </Select.Root>
         </div>
         <div className="flex w-[100px] items-center justify-center text-sm font-medium">
           Page {table.getState().pagination.pageIndex + 1} of{' '}

@@ -12,8 +12,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from 'ui'
-
-export const description = 'An area chart with icons'
+import { ComponentType } from 'react'
 
 const chartData = [
   { month: 'January', desktop: 186, mobile: 80 },
@@ -28,14 +27,16 @@ const chartConfig = {
   desktop: {
     label: 'Desktop',
     color: 'hsl(var(--chart-1))',
-    icon: TrendingDown,
+    icon: TrendingDown as ComponentType<{}>,
   },
   mobile: {
     label: 'Mobile',
     color: 'hsl(var(--chart-2))',
-    icon: TrendingUp,
+    icon: TrendingUp as ComponentType<{}>,
   },
 } satisfies ChartConfig
+
+const description = 'An area chart with icons'
 
 export default function Component() {
   return (
@@ -98,3 +99,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

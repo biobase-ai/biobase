@@ -1,12 +1,11 @@
 'use client'
 
+import { useState } from 'react'
 import { TrendingUp } from 'lucide-react'
 import { Bar, BarChart, CartesianGrid, Rectangle, XAxis } from 'recharts'
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
-
-export const description = 'A bar chart with an active bar'
 
 const chartData = [
   { browser: 'chrome', visitors: 187, fill: 'var(--color-chrome)' },
@@ -42,7 +41,11 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+const description = 'A bar chart with an active bar'
+
 export default function Component() {
+  const [activeIndex, setActiveIndex] = useState(2)
+
   return (
     <Card>
       <CardHeader>
@@ -65,15 +68,15 @@ export default function Component() {
               dataKey="visitors"
               strokeWidth={2}
               radius={8}
-              activeIndex={2}
-              activeBar={({ ...props }) => {
+              shape={({ ...props }) => {
+                const isActive = props.index === activeIndex
                 return (
                   <Rectangle
                     {...props}
-                    fillOpacity={0.8}
-                    stroke={props.payload.fill}
-                    strokeDasharray={4}
-                    strokeDashoffset={4}
+                    fillOpacity={isActive ? 0.8 : 1}
+                    stroke={isActive ? props.payload.fill : undefined}
+                    strokeDasharray={isActive ? 4 : undefined}
+                    strokeDashoffset={isActive ? 4 : undefined}
                   />
                 )
               }}
@@ -92,3 +95,5 @@ export default function Component() {
     </Card>
   )
 }
+
+Component.description = description

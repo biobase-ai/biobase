@@ -6,8 +6,6 @@ import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis } from 'recharts'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
 
-export const description = 'A bar chart with a custom label'
-
 const chartData = [
   { month: 'January', desktop: 186, mobile: 80 },
   { month: 'February', desktop: 305, mobile: 200 },
@@ -30,6 +28,8 @@ const chartConfig = {
     color: 'hsl(var(--background))',
   },
 } satisfies ChartConfig
+
+const description = 'A bar chart with a custom label'
 
 export default function Component() {
   return (
@@ -90,3 +90,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

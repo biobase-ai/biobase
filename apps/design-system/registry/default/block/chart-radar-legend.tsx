@@ -13,8 +13,6 @@ import {
   ChartTooltipContent,
 } from 'ui'
 
-export const description = 'A radar chart with a legend'
-
 const chartData = [
   { month: 'January', desktop: 186, mobile: 80 },
   { month: 'February', desktop: 305, mobile: 200 },
@@ -34,6 +32,8 @@ const chartConfig = {
     color: 'hsl(var(--chart-2))',
   },
 } satisfies ChartConfig
+
+const description = 'A radar chart with a legend'
 
 export default function Component() {
   return (
@@ -71,3 +71,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

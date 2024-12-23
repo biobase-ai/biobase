@@ -2,8 +2,6 @@
 
 import * as React from 'react'
 import { Label, Pie, PieChart, Sector } from 'recharts'
-import { PieSectorDataItem } from 'recharts/types/polar/Pie'
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartStyle, ChartTooltip, ChartTooltipContent } from 'ui'
 import {
@@ -13,8 +11,6 @@ import {
   SelectTrigger_Shadcn_,
   SelectValue_Shadcn_,
 } from 'ui'
-
-export const description = 'An interactive pie chart'
 
 const desktopData = [
   { month: 'january', desktop: 186, fill: 'var(--color-january)' },
@@ -56,6 +52,32 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+const description = 'An interactive pie chart'
+
+interface SectorProps {
+  cx: number
+  cy: number
+  innerRadius: number
+  outerRadius: number
+  startAngle: number
+  endAngle: number
+  fill: string
+  payload: {
+    month: string
+    desktop: number
+  }
+  percent: number
+  value: number
+  midAngle: number
+}
+
+const activeIndex = React.useMemo(
+  () => desktopData.findIndex((item) => item.month === desktopData[0].month),
+  []
+)
+
+const months = React.useMemo(() => desktopData.map((item) => item.month), [])
+
 export default function Component() {
   const id = 'pie-interactive'
   const [activeMonth, setActiveMonth] = React.useState(desktopData[0].month)
@@ -64,7 +86,79 @@ export default function Component() {
     () => desktopData.findIndex((item) => item.month === activeMonth),
     [activeMonth]
   )
-  const months = React.useMemo(() => desktopData.map((item) => item.month), [])
+
+  const renderActiveShape = (props: SectorProps) => {
+    const {
+      cx,
+      cy,
+      midAngle,
+      innerRadius,
+      outerRadius,
+      startAngle,
+      endAngle,
+      fill,
+      payload,
+      percent,
+      value,
+    } = props
+
+    const RADIAN = Math.PI / 180
+    const sin = Math.sin(-RADIAN * midAngle)
+    const cos = Math.cos(-RADIAN * midAngle)
+    const mx = cx + (outerRadius + 30) * cos
+    const my = cy + (outerRadius + 30) * sin
+    const ex = mx + (cos >= 0 ? 1 : -1) * 22
+    const ey = my
+    const textAnchor = cos >= 0 ? 'start' : 'end'
+
+    return (
+      <g>
+        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
+          {payload.month}
+        </text>
+        <Sector
+          cx={cx}
+          cy={cy}
+          innerRadius={innerRadius}
+          outerRadius={outerRadius}
+          startAngle={startAngle}
+          endAngle={endAngle}
+          fill={fill}
+        />
+        <Sector
+          cx={cx}
+          cy={cy}
+          startAngle={startAngle}
+          endAngle={endAngle}
+          innerRadius={outerRadius + 6}
+          outerRadius={outerRadius + 10}
+          fill={fill}
+        />
+        <path
+          d={`M${cx},${cy}L${mx},${my}L${ex},${ey}`}
+          stroke={fill}
+          fill="none"
+          strokeWidth={2}
+        />
+        <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
+        <text
+          x={ex + (cos >= 0 ? 1 : -1) * 12}
+          y={ey}
+          textAnchor={textAnchor}
+          fill="var(--muted-foreground)"
+        >{`${payload.desktop}`}</text>
+        <text
+          x={ex + (cos >= 0 ? 1 : -1) * 12}
+          y={ey}
+          dy={18}
+          textAnchor={textAnchor}
+          fill="var(--muted-foreground)"
+        >
+          {`(${(percent * 100).toFixed(2)}%)`}
+        </text>
+      </g>
+    )
+  }
 
   return (
     <Card data-chart={id} className="flex flex-col">
@@ -121,16 +215,7 @@ export default function Component() {
               innerRadius={60}
               strokeWidth={5}
               activeIndex={activeIndex}
-              activeShape={({ outerRadius = 0, ...props }: PieSectorDataItem) => (
-                <g>
-                  <Sector {...props} outerRadius={outerRadius + 10} />
-                  <Sector
-                    {...props}
-                    outerRadius={outerRadius + 25}
-                    innerRadius={outerRadius + 12}
-                  />
-                </g>
-              )}
+              activeShape={renderActiveShape}
             >
               <Label
                 content={({ viewBox }) => {
@@ -168,3 +253,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

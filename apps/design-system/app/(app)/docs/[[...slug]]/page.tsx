@@ -12,7 +12,8 @@ import { ChevronRight } from 'lucide-react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Balancer from 'react-wrap-balancer'
-import { ScrollArea, Separator } from 'ui'
+import { ScrollArea } from 'ui'
+import { Separator } from '@radix-ui/react-separator'
 
 interface DocPageProps {
   params: {
@@ -96,7 +97,7 @@ export default async function DocPage({ params }: DocPageProps) {
             </p>
           )}
         </div>
-        <Separator className="mb-6" />
+        <div className="h-[1px] w-full bg-border-muted mb-6" />
         <SourcePanel doc={doc} />
         <div className="pb-12">
           <Mdx code={doc.body.code} />

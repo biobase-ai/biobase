@@ -6,8 +6,6 @@ import { CartesianGrid, Line, LineChart, XAxis } from 'recharts'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
 
-export const description = 'A line chart'
-
 const chartData = [
   { month: 'January', desktop: 186 },
   { month: 'February', desktop: 305 },
@@ -23,6 +21,8 @@ const chartConfig = {
     color: 'hsl(var(--chart-1))',
   },
 } satisfies ChartConfig
+
+const description = 'A line chart'
 
 export default function Component() {
   return (
@@ -71,3 +71,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

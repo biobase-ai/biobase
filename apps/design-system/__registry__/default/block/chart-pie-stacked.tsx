@@ -7,8 +7,6 @@ import { Label, Pie, PieChart } from 'recharts'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
 
-export const description = 'A pie chart with stacked sections'
-
 const desktopData = [
   { month: 'january', desktop: 186, fill: 'var(--color-january)' },
   { month: 'february', desktop: 305, fill: 'var(--color-february)' },
@@ -57,6 +55,8 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+const description = 'A pie chart with stacked sections'
+
 export default function Component() {
   return (
     <Card className="flex flex-col">
@@ -95,3 +95,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

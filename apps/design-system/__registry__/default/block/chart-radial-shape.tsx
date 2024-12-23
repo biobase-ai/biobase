@@ -6,8 +6,6 @@ import { Label, PolarGrid, PolarRadiusAxis, RadialBar, RadialBarChart } from 're
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer } from 'ui'
 
-export const description = 'A radial chart with a custom shape'
-
 const chartData = [{ browser: 'safari', visitors: 1260, fill: 'var(--color-safari)' }]
 
 const chartConfig = {
@@ -19,6 +17,8 @@ const chartConfig = {
     color: 'hsl(var(--chart-2))',
   },
 } satisfies ChartConfig
+
+const description = 'A radial chart with a custom shape'
 
 export default function Component() {
   return (
@@ -83,3 +83,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

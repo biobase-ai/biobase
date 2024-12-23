@@ -6,8 +6,6 @@ import { Pie, PieChart } from 'recharts'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
 
-export const description = 'A pie chart with no separator'
-
 const chartData = [
   { browser: 'chrome', visitors: 275, fill: 'var(--color-chrome)' },
   { browser: 'safari', visitors: 200, fill: 'var(--color-safari)' },
@@ -42,6 +40,8 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+const description = 'A pie chart with no separator'
+
 export default function Component() {
   return (
     <Card className="flex flex-col">
@@ -68,3 +68,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

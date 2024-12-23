@@ -6,8 +6,6 @@ import { Bar, BarChart, XAxis, YAxis } from 'recharts'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
 
-export const description = 'A mixed bar chart'
-
 const chartData = [
   { browser: 'chrome', visitors: 275, fill: 'var(--color-chrome)' },
   { browser: 'safari', visitors: 200, fill: 'var(--color-safari)' },
@@ -41,6 +39,8 @@ const chartConfig = {
     color: 'hsl(var(--chart-5))',
   },
 } satisfies ChartConfig
+
+const description = 'A mixed bar chart'
 
 export default function Component() {
   return (
@@ -84,3 +84,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

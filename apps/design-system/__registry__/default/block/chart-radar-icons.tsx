@@ -1,75 +1,73 @@
 'use client'
 
-import { ArrowDownFromLine, ArrowUpFromLine, TrendingUp } from 'lucide-react'
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts'
+import * as React from 'react'
+import { ArrowDownFromLine, ArrowRightFromLine, ArrowUpFromLine } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart } from 'recharts'
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartLegend,
-  ChartLegendContent,
-  ChartTooltip,
-  ChartTooltipContent,
-} from 'ui'
-
-export const description = 'A radar chart with icons'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from 'ui'
+import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
 
 const chartData = [
-  { month: 'January', desktop: 186, mobile: 80 },
-  { month: 'February', desktop: 305, mobile: 200 },
-  { month: 'March', desktop: 237, mobile: 120 },
-  { month: 'April', desktop: 73, mobile: 190 },
-  { month: 'May', desktop: 209, mobile: 130 },
-  { month: 'June', desktop: 214, mobile: 140 },
+  { subject: 'Desktop', A: 120, B: 110, fullMark: 150 },
+  { subject: 'Mobile', A: 98, B: 130, fullMark: 150 },
+  { subject: 'Tablet', A: 86, B: 130, fullMark: 150 },
+  { subject: 'Laptop', A: 99, B: 100, fullMark: 150 },
+  { subject: 'Other', A: 85, B: 90, fullMark: 150 },
 ]
 
-const chartConfig = {
+const IconWrapper = (Icon: LucideIcon): React.ComponentType => {
+  return function IconComponent() {
+    return <Icon />
+  }
+}
+
+const chartConfig: ChartConfig = {
   desktop: {
     label: 'Desktop',
     color: 'hsl(var(--chart-1))',
-    icon: ArrowDownFromLine,
+    icon: IconWrapper(ArrowDownFromLine),
   },
   mobile: {
     label: 'Mobile',
     color: 'hsl(var(--chart-2))',
-    icon: ArrowUpFromLine,
+    icon: IconWrapper(ArrowRightFromLine),
   },
-} satisfies ChartConfig
+  tablet: {
+    label: 'Tablet',
+    color: 'hsl(var(--chart-3))',
+    icon: IconWrapper(ArrowUpFromLine),
+  },
+}
+
+const description = 'A radar chart with icons'
 
 export default function Component() {
   return (
     <Card>
-      <CardHeader className="items-center pb-4">
+      <CardHeader>
         <CardTitle>Radar Chart - Icons</CardTitle>
-        <CardDescription>Showing total visitors for the last 6 months</CardDescription>
+        <CardDescription>A radar chart with icons</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig} className="mx-auto aspect-square max-h-[250px]">
-          <RadarChart
-            data={chartData}
-            margin={{
-              top: -40,
-              bottom: -10,
-            }}
-          >
-            <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="line" />} />
-            <PolarAngleAxis dataKey="month" />
+        <ChartContainer config={chartConfig}>
+          <RadarChart data={chartData}>
+            <ChartTooltip content={<ChartTooltipContent />} />
             <PolarGrid />
-            <Radar dataKey="desktop" fill="var(--color-desktop)" fillOpacity={0.6} />
-            <Radar dataKey="mobile" fill="var(--color-mobile)" />
-            <ChartLegend className="mt-8" content={<ChartLegendContent />} />
+            <PolarAngleAxis dataKey="subject" />
+            <PolarRadiusAxis />
+            <Radar
+              name="Series A"
+              dataKey="A"
+              stroke="var(--primary)"
+              fill="var(--primary)"
+              fillOpacity={0.5}
+            />
           </RadarChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col gap-2 pt-4 text-sm">
-        <div className="flex items-center gap-2 font-medium leading-none">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-        </div>
-        <div className="flex items-center gap-2 leading-none text-muted-foreground">
-          January - June 2024
-        </div>
-      </CardFooter>
     </Card>
   )
 }
+
+Component.description = description

@@ -20,8 +20,6 @@ import {
   SelectValue_Shadcn_,
 } from 'ui'
 
-export const description = 'An interactive area chart'
-
 const chartData = [
   { date: '2024-04-01', desktop: 222, mobile: 150 },
   { date: '2024-04-02', desktop: 97, mobile: 180 },
@@ -130,6 +128,8 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+const description = 'An interactive area chart'
+
 export default function Component() {
   const [timeRange, setTimeRange] = React.useState('90d')
 
@@ -236,3 +236,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

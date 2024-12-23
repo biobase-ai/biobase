@@ -6,8 +6,6 @@ import { Bar, BarChart, CartesianGrid, Cell, LabelList } from 'recharts'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
 
-export const description = 'A bar chart with negative values'
-
 const chartData = [
   { month: 'January', visitors: 186 },
   { month: 'February', visitors: 205 },
@@ -22,6 +20,8 @@ const chartConfig = {
     label: 'Visitors',
   },
 } satisfies ChartConfig
+
+const description = 'A bar chart with negative values'
 
 export default function Component() {
   return (
@@ -61,3 +61,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

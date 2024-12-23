@@ -6,8 +6,6 @@ import { Label, PolarRadiusAxis, RadialBar, RadialBarChart } from 'recharts'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
 
-export const description = 'A radial chart with stacked sections'
-
 const chartData = [{ month: 'january', desktop: 1260, mobile: 570 }]
 
 const chartConfig = {
@@ -20,6 +18,8 @@ const chartConfig = {
     color: 'hsl(var(--chart-2))',
   },
 } satisfies ChartConfig
+
+const description = 'A radial chart with stacked sections'
 
 export default function Component() {
   const totalVisitors = chartData[0].desktop + chartData[0].mobile
@@ -88,3 +88,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

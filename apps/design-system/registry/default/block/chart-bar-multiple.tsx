@@ -6,8 +6,6 @@ import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
 
-export const description = 'A multiple bar chart'
-
 const chartData = [
   { month: 'January', desktop: 186, mobile: 80 },
   { month: 'February', desktop: 305, mobile: 200 },
@@ -27,6 +25,8 @@ const chartConfig = {
     color: 'hsl(var(--chart-2))',
   },
 } satisfies ChartConfig
+
+const description = 'A multiple bar chart'
 
 export default function Component() {
   return (
@@ -63,3 +63,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

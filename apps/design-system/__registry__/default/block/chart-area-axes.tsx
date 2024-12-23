@@ -5,8 +5,6 @@ import { Area, AreaChart, CartesianGrid, Tooltip, XAxis, YAxis } from 'recharts'
 
 import { ChartConfig } from 'ui'
 
-export const description = 'An area chart with axes'
-
 const chartData = [
   { month: 'January', desktop: 186, mobile: 80 },
   { month: 'February', desktop: 305, mobile: 200 },
@@ -50,6 +48,8 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   }
   return null
 }
+
+const description = 'An area chart with axes'
 
 export default function Component() {
   return (
@@ -124,3 +124,5 @@ export default function Component() {
     </div>
   )
 }
+
+Component.description = description

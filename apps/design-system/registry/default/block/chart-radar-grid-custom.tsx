@@ -6,8 +6,6 @@ import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
 
-export const description = 'A radar chart with a custom grid'
-
 const chartData = [
   { month: 'January', desktop: 186 },
   { month: 'February', desktop: 305 },
@@ -23,6 +21,8 @@ const chartConfig = {
     color: 'hsl(var(--chart-1))',
   },
 } satisfies ChartConfig
+
+const description = 'A radar chart with a custom grid'
 
 export default function Component() {
   return (
@@ -52,3 +52,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

@@ -6,8 +6,6 @@ import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
 
-export const description = 'A stacked area chart with expand stacking'
-
 const chartData = [
   { month: 'January', desktop: 186, mobile: 80, other: 45 },
   { month: 'February', desktop: 305, mobile: 200, other: 100 },
@@ -31,6 +29,8 @@ const chartConfig = {
     color: 'hsl(var(--chart-3))',
   },
 } satisfies ChartConfig
+
+const description = 'A stacked area chart with expand stacking'
 
 export default function Component() {
   return (
@@ -102,3 +102,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description

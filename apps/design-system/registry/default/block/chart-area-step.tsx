@@ -5,8 +5,7 @@ import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts'
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 'ui'
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from 'ui'
-
-export const description = 'A step area chart'
+import { ComponentType } from 'react'
 
 const chartData = [
   { month: 'January', desktop: 186 },
@@ -21,9 +20,11 @@ const chartConfig = {
   desktop: {
     label: 'Desktop',
     color: 'hsl(var(--chart-1))',
-    icon: Activity,
+    icon: Activity as ComponentType<{}>,
   },
 } satisfies ChartConfig
+
+const description = 'A step area chart'
 
 export default function Component() {
   return (
@@ -76,3 +77,4 @@ export default function Component() {
     </Card>
   )
 }
+Component.description = description
