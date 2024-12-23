@@ -4,8 +4,7 @@ import '../styles/index.css'
 
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
 import { AuthProvider, IS_PROD, ThemeProvider, useTelemetryProps, useThemeSandbox } from 'common'
-import { DefaultSeo } from 'next-seo/lib/next-seo'
-import { AppProps } from 'next/app'
+import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
@@ -51,90 +50,33 @@ export default function App({ Component, pageProps }: AppProps) {
       handlePageTelemetry(url)
     }
 
-    // Listen for page changes after a navigation or when the query changes
     router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
-  }, [router.events, consentValue])
-
-  useEffect(() => {
-    if (blockEvents) return
-    /**
-     * Send page telemetry on first page load
-     */
-    if (router.isReady) {
-      handlePageTelemetry(router.asPath)
-    }
-  }, [router.isReady, consentValue])
-
-  const site_title = `${APP_NAME} | The Open Source Firebase Alternative`
-  const { basePath } = useRouter()
-
-  const isDarkLaunchWeek = useDarkLaunchWeeks()
-  const forceDarkMode = isDarkLaunchWeek
-
-  let applicationName = 'Biobase'
-  let faviconRoute = DEFAULT_FAVICON_ROUTE
-  let themeColor = DEFAULT_FAVICON_THEME_COLOR
-
-  if (router.asPath && router.asPath.includes('/launch-week/x')) {
-    applicationName = 'Biobase LWX'
-    faviconRoute = 'images/launchweek/lwx/favicon'
-    themeColor = 'FFFFFF'
-  }
+  }, [router.events, blockEvents])
 
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{APP_NAME}</title>
+        <meta name="description" content={DEFAULT_META_DESCRIPTION} />
+        <MetaFaviconsPagesRouter 
+          route={DEFAULT_FAVICON_ROUTE} 
+          themeColor={DEFAULT_FAVICON_THEME_COLOR} 
+        />
       </Head>
-      <MetaFaviconsPagesRouter
-        applicationName={applicationName}
-        route={faviconRoute}
-        themeColor={themeColor}
-        includeManifest
-        includeMsApplicationConfig
-        includeRssXmlFeed
-      />
-      <DefaultSeo
-        title={site_title}
-        description={DEFAULT_META_DESCRIPTION}
-        openGraph={{
-          type: 'website',
-          url: 'https://biobase.studio/',
-          site_name: 'Biobase',
-          images: [
-            {
-              url: `https://biobase.studio${basePath}/images/og/biobase-og.png`,
-              width: 800,
-              height: 600,
-              alt: 'Biobase Og Image',
-            },
-          ],
-        }}
-        twitter={{
-          handle: '@biobase',
-          site: '@biobase',
-          cardType: 'summary_large_image',
-        }}
-      />
-      <SessionContextProvider supabaseClient={supabase}>
+      <ThemeProvider>
         <AuthProvider>
-          <ThemeProvider
-            themes={themes.map((theme) => theme.value)}
-            enableSystem
-            disableTransitionOnChange
-            forcedTheme={forceDarkMode ? 'dark' : undefined}
-          >
+          <SessionContextProvider supabaseClient={supabase}>
             <CommandProvider>
-              <SonnerToaster position="top-right" />
-              <Component {...pageProps} />
               <WwwCommandMenu />
+              <Component {...pageProps} />
+              <SonnerToaster />
             </CommandProvider>
-          </ThemeProvider>
+          </SessionContextProvider>
         </AuthProvider>
-      </SessionContextProvider>
+      </ThemeProvider>
     </>
   )
 }
