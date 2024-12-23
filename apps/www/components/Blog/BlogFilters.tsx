@@ -7,7 +7,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { useKey } from 'react-use'
 import type { BlogView } from '~/pages/blog'
 import type { BlogPostPreview } from '~/lib/blog-service'
-import { ChevronDown, Grid, Search, X, AlignJustify } from 'lucide-react'
+import { ChevronDownIcon, GridIcon, SearchIcon, XIcon, AlignJustifyIcon } from 'lucide-react'
 import {
   Button,
   DropdownMenu,
@@ -164,7 +164,7 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
                 className="w-full min-w-[200px] flex justify-between items-center py-2"
               >
                 {!activeCategory ? 'All Posts' : startCase(activeCategory?.replaceAll('-', ' '))}
-                <ChevronDown className="ml-2 h-4 w-4" />
+                <ChevronDownIcon className="ml-2 h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
@@ -219,14 +219,14 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
               className="w-[200px] md:w-[300px] pl-8"
             />
             <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none text-scale-900">
-              <Search className="h-4 w-4" />
+              <SearchIcon className="h-4 w-4" />
             </div>
             {searchTerm && (
               <div
                 className="absolute inset-y-0 right-0 pr-2 flex items-center cursor-pointer hover:text-scale-1200"
                 onClick={() => handleSearchByText('')}
               >
-                <X className="h-4 w-4" />
+                <XIcon className="h-4 w-4" />
               </div>
             )}
           </div>
@@ -236,7 +236,7 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
             className="p-2"
             onClick={() => setShowSearchInput(true)}
           >
-            <Search className="h-4 w-4" />
+            <SearchIcon className="h-4 w-4" />
           </Button>
         )}
         <Button
@@ -244,7 +244,7 @@ export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
           className="p-2"
           onClick={handleViewSelection}
         >
-          {isList ? <Grid className="h-4 w-4" /> : <AlignJustify className="h-4 w-4" />}
+          {isList ? <GridIcon className="h-4 w-4" /> : <AlignJustifyIcon className="h-4 w-4" />}
         </Button>
       </div>
     </div>
