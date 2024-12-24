@@ -34,9 +34,21 @@ export interface PaginatedBlogPosts {
 
 async function ensureBlogBucket() {
   try {
-    // Check if bucket exists
-    const { data: buckets, error: listError } = await biobase.storage.listBuckets()
-    if (listError) throw listError
+    // First try to list the bucket contents directly
+    const { data: files, error: listError } = await biobase.storage
+      .from('blog-json')
+      .list()
+
+    if (!listError && files) {
+      return true
+    }
+
+    // If that fails, check if bucket exists
+    const { data: buckets, error: bucketsError } = await biobase.storage.listBuckets()
+    if (bucketsError) {
+      console.warn('Error listing buckets:', bucketsError)
+      return false
+    }
 
     const bucketExists = buckets?.some(b => b.name === 'blog-json')
     if (!bucketExists) {
@@ -44,7 +56,9 @@ async function ensureBlogBucket() {
       return false
     }
 
-    return true
+    // Bucket exists but we might not have access
+    console.warn('Blog storage bucket exists but might not be accessible')
+    return false
   } catch (error) {
     console.error('Error checking blog bucket:', error)
     return false
