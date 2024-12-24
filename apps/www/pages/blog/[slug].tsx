@@ -1,183 +1,135 @@
-import type { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { MDXProvider } from '@mdx-js/react'
+import { useEffect, useState } from 'react'
+import { GetStaticProps, GetStaticPaths } from 'next'
 import { NextSeo } from 'next-seo'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import dayjs from 'dayjs'
-import dynamic from 'next/dynamic'
-import { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { fetchBlogPostBySlug, fetchBlogIndex, type BlogPost } from '~/lib/blog-service'
+import DefaultLayout from '~/components/Layouts/Default'
 
-import authors from 'lib/authors.json'
-import { generateReadingTime } from '~/lib/helpers'
-import { mdxSerialize } from '~/lib/mdx/mdxSerialize'
-import { mdxComponents } from '~/lib/mdx/mdxComponents'
-import { fetchBlogPostBySlug, fetchBlogPosts, type BlogPost } from '~/lib/blog-service'
-
-const ShareArticleActions = dynamic(() => import('~/components/Blog/ShareArticleActions'))
-const BlogPostHeader = dynamic(() => import('~/components/Blog/BlogPostHeader'))
-const BlogPostFooter = dynamic(() => import('~/components/Blog/BlogPostFooter'))
-const CTABanner = dynamic(() => import('~/components/CTABanner'))
-const DefaultLayout = dynamic(() => import('~/components/Layouts/Default'))
-
-export const getStaticPaths = async () => {
-  // Get all posts without pagination to generate all paths
-  const { posts } = await fetchBlogPosts(1, 1000)
-  const paths = posts.map((post) => ({
-    params: { slug: post.slug },
-  }))
-
-  return {
-    paths,
-    fallback: false,
+interface BlogPostProps {
+  post: {
+    title: string
+    description?: string
+    author?: string
+    publishedAt: string
+    image?: string
+    slug: string
+    tags?: string[]
   }
+  content?: string | null
 }
 
-export const getStaticProps: GetStaticProps<{ blog: BlogPost; relatedPosts: BlogPost[] }> = async ({
-  params,
-}) => {
-  const { slug } = params as { slug: string }
-  const blogPost = await fetchBlogPostBySlug(slug)
-  
-  if (!blogPost) {
-    return {
-      notFound: true,
+export default function BlogPost({ post, content }: BlogPostProps) {
+  const [isLoading, setIsLoading] = useState(!content)
+  const [postContent, setPostContent] = useState<string | null>(content || null)
+
+  useEffect(() => {
+    async function loadContent() {
+      if (!content) {
+        try {
+          const fullPost = await fetchBlogPostBySlug(post.slug)
+          if (fullPost && fullPost.content) {
+            setPostContent(fullPost.content)
+          }
+        } catch (error) {
+          console.error('Error loading blog post content:', error)
+        } finally {
+          setIsLoading(false)
+        }
+      }
     }
-  }
-
-  // Get related posts
-  const { posts: allPosts } = await fetchBlogPosts(1, 1000)
-  const relatedPosts = allPosts
-    .filter(post => 
-      post.slug !== slug && 
-      (post.tags?.some(tag => blogPost.tags?.includes(tag)) || 
-      post.author === blogPost.author)
-    )
-    .slice(0, 3)
-    .map(post => ({
-      ...post,
-      content: '', // Don't send full content for related posts
-    })) as BlogPost[]
-
-  const mdxSource = await mdxSerialize(blogPost.content)
-
-  return {
-    props: {
-      blog: {
-        ...blogPost,
-        mdxSource,
-      },
-      relatedPosts,
-    },
-  }
-}
-
-function BlogPost({ blog, relatedPosts }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const router = useRouter()
-  const { title, description, publishedAt, author, image, content, tags } = blog
-
-  const meta_title = `${title} | Biobase Blog`
-  const meta_description = description || ''
+    loadContent()
+  }, [post.slug, content])
 
   return (
     <>
       <NextSeo
-        title={meta_title}
-        description={meta_description}
+        title={post.title}
+        description={post.description}
         openGraph={{
-          title: meta_title,
-          description: meta_description,
-          url: `https://biobase.studio${router.asPath}`,
-          images: image ? [{ url: image }] : undefined,
+          title: post.title,
+          description: post.description,
+          url: `https://biobase.studio/blog/${post.slug}`,
+          images: post.image ? [{ url: post.image }] : undefined,
         }}
       />
 
       <DefaultLayout>
         <div className="mx-auto max-w-4xl px-8 py-16 sm:px-16 xl:px-20">
-          <article className="prose dark:prose-dark max-w-none">
-            <header className="mb-16">
-              <h1 className="mb-8 text-4xl font-bold">{title}</h1>
-              <div className="flex items-center space-x-4 text-scale-1100">
-                <time dateTime={publishedAt}>
-                  {dayjs(publishedAt).format('MMM D, YYYY')}
+          <article>
+            <header className="mb-8">
+              <h1 className="text-4xl font-bold">{post.title}</h1>
+              {post.description && (
+                <p className="mt-4 text-xl text-scale-1100">{post.description}</p>
+              )}
+              <div className="mt-4 text-scale-1000">
+                {post.author && <span>{post.author} · </span>}
+                <time dateTime={post.publishedAt}>
+                  {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
                 </time>
-                {author && (
-                  <>
-                    <span>·</span>
-                    <span>{author}</span>
-                  </>
-                )}
-                {tags && tags.length > 0 && (
-                  <>
-                    <span>·</span>
-                    <div className="flex flex-wrap gap-2">
-                      {tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="inline-flex items-center rounded-full bg-scale-100 px-3 py-0.5 text-sm font-medium text-scale-1100"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </>
-                )}
               </div>
             </header>
 
-            {image && (
-              <div className="relative mb-16 aspect-[16/9]">
-                <Image
-                  src={image}
-                  alt={`${title} cover image`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
-                />
+            {isLoading ? (
+              <div className="animate-pulse space-y-4">
+                <div className="h-4 bg-scale-100 rounded w-3/4"></div>
+                <div className="h-4 bg-scale-100 rounded"></div>
+                <div className="h-4 bg-scale-100 rounded w-5/6"></div>
+              </div>
+            ) : (
+              <div className="prose prose-lg max-w-none">
+                {postContent}
               </div>
             )}
-
-            <MDXProvider components={mdxComponents}>
-              <div className="mdx-content" dangerouslySetInnerHTML={{ __html: content }} />
-            </MDXProvider>
           </article>
-
-          {relatedPosts.length > 0 && (
-            <div className="mt-16 border-t pt-16">
-              <h2 className="mb-8 text-2xl font-bold">Related Posts</h2>
-              <div className="grid gap-8 md:grid-cols-3">
-                {relatedPosts.map((post) => (
-                  <Link key={post.slug} href={`/blog/${post.slug}`}>
-                    <article className="group cursor-pointer">
-                      {post.image && (
-                        <div className="relative mb-4 aspect-[16/9]">
-                          <Image
-                            src={post.image}
-                            alt={`${post.title} thumbnail`}
-                            layout="fill"
-                            objectFit="cover"
-                            className="rounded-lg"
-                          />
-                        </div>
-                      )}
-                      <h3 className="text-xl font-semibold group-hover:text-primary-600">
-                        {post.title}
-                      </h3>
-                      {post.description && (
-                        <p className="mt-2 text-scale-1100 line-clamp-2">
-                          {post.description}
-                        </p>
-                      )}
-                    </article>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </DefaultLayout>
     </>
   )
 }
 
-export default BlogPost
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { posts } = await fetchBlogIndex()
+  
+  const paths = posts.map((post: any) => ({
+    params: { slug: post.slug },
+  }))
+
+  return {
+    paths,
+    fallback: 'blocking',
+  }
+}
+
+export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) => {
+  const slug = params?.slug as string
+  const post = await fetchBlogPostBySlug(slug)
+
+  if (!post) {
+    return {
+      notFound: true,
+    }
+  }
+
+  // Only include essential data in the initial props
+  const essentialPostData = {
+    title: post.title,
+    description: post.description,
+    author: post.author,
+    publishedAt: post.publishedAt,
+    image: post.image,
+    slug: post.slug,
+    tags: post.tags,
+  }
+
+  return {
+    props: {
+      post: essentialPostData,
+      // Content will be loaded client-side for large posts
+      content: post.content && post.content.length > 50000 ? null : post.content,
+    },
+    revalidate: 60,
+  }
+}

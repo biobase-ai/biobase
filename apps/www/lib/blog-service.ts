@@ -1,5 +1,33 @@
-import biobase from './biobaseMisc'
+import { createClient } from '@supabase/supabase-js'
+import biobaseMisc from './biobaseMisc'
 import { allPosts } from 'contentlayer/generated'
+
+const BLOG_BUCKET = 'blog-json'
+const MAX_RETRIES = 3
+const RETRY_DELAY = 1000 // 1 second
+
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://wwzkoeobldwlepkiekcy.supabase.co'
+
+async function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function fetchWithRetry(url: string, options: RequestInit = {}, retries = MAX_RETRIES): Promise<Response> {
+  try {
+    const response = await fetch(url, options)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    return response
+  } catch (error) {
+    if (retries > 0) {
+      console.log(`Retrying fetch (${retries} attempts left)...`)
+      await sleep(RETRY_DELAY)
+      return fetchWithRetry(url, options, retries - 1)
+    }
+    throw error
+  }
+}
 
 export interface BlogPost {
   title: string
@@ -40,7 +68,7 @@ async function ensureBlogBucket() {
 
   try {
     // First try to list the bucket contents directly
-    const { data: files, error: listError } = await biobase.storage
+    const { data: files, error: listError } = await biobaseMisc.storage
       .from('blog-json')
       .list()
 
@@ -49,7 +77,7 @@ async function ensureBlogBucket() {
     }
 
     // If that fails, check if bucket exists
-    const { data: buckets, error: bucketsError } = await biobase.storage.listBuckets()
+    const { data: buckets, error: bucketsError } = await biobaseMisc.storage.listBuckets()
     if (bucketsError) {
       console.warn('Error listing buckets:', bucketsError)
       return false
@@ -71,26 +99,21 @@ async function ensureBlogBucket() {
 }
 
 async function getPublicStorageUrl(filename: string) {
-  const { data } = await biobase.storage.from('blog-json').getPublicUrl(filename)
+  const { data } = await biobaseMisc.storage.from('blog-json').getPublicUrl(filename)
   return data.publicUrl
 }
 
-async function fetchBlogPostJson(filename: string) {
+export async function fetchBlogPostJson(filename: string) {
   try {
-    const { data, error } = await biobase.storage
-      .from('blog-json')
-      .download(filename)
-
-    if (error) throw error
-
-    const text = await data.text()
-    const jsonData = JSON.parse(text)
+    const url = `${SUPABASE_URL}/storage/v1/object/public/${BLOG_BUCKET}/${filename}`
+    const response = await fetchWithRetry(url)
+    const data = await response.json()
     return {
-      ...jsonData,
-      slug: jsonData.url?.replace('/blog/', '') || jsonData._raw?.flattenedPath || filename.replace('.mdx.json', ''),
-      date: jsonData.date || jsonData.publishedAt,
+      ...data,
+      slug: data.url?.replace('/blog/', '') || data._raw?.flattenedPath || filename.replace('.mdx.json', ''),
+      date: data.date || data.publishedAt,
       body: {
-        raw: jsonData.body?.raw || jsonData.content || ''
+        raw: data.body?.raw || data.content || ''
       }
     }
   } catch (error) {
@@ -99,19 +122,15 @@ async function fetchBlogPostJson(filename: string) {
   }
 }
 
-async function fetchBlogIndex() {
+export async function fetchBlogIndex() {
   try {
-    const { data, error } = await biobase.storage
-      .from('blog-json')
-      .download('_index.json')
-
-    if (error) throw error
-
-    const text = await data.text()
-    return JSON.parse(text)
+    const url = `${SUPABASE_URL}/storage/v1/object/public/${BLOG_BUCKET}/index.json`
+    const response = await fetchWithRetry(url)
+    const data = await response.json()
+    return data
   } catch (error) {
     console.error('Error fetching blog index:', error)
-    return { blogPosts: [] }
+    return { posts: [] }
   }
 }
 
@@ -128,7 +147,7 @@ function getImageUrl(post: any): string | undefined {
 
   // Get the public URL from Supabase storage
   try {
-    const { data: { publicUrl } } = biobase.storage
+    const { data: { publicUrl } } = biobaseMisc.storage
       .from('images')
       .getPublicUrl(`blog/${imagePath}`)
     return publicUrl
