@@ -15,9 +15,10 @@ export type BlogView = 'list' | 'grid'
 
 interface BlogProps {
   blogData: PaginatedBlogPosts
+  category?: string
 }
 
-function Blog({ blogData }: BlogProps) {
+function Blog({ blogData, category }: BlogProps) {
   const { BLOG_VIEW } = LOCAL_STORAGE_KEYS
   const localView = isBrowser ? (localStorage?.getItem(BLOG_VIEW) as BlogView) : undefined
   const [blogs, setBlogs] = useState(blogData.posts)
@@ -26,8 +27,6 @@ function Blog({ blogData }: BlogProps) {
   const [hasMore, setHasMore] = useState(blogData.hasMore)
   const [isLoading, setIsLoading] = useState(false)
   const isList = view === 'list'
-  const router = useRouter()
-  const { category } = router.query
 
   const meta_title = 'Biobase Blog: Latest Updates and News'
   const meta_description = 'Stay up to date with the latest news, updates, and insights from the Biobase team.'
@@ -38,7 +37,7 @@ function Blog({ blogData }: BlogProps) {
     setIsLoading(true)
     try {
       const nextPage = page + 1
-      const data = await fetchBlogPosts(nextPage, 10, category as string)
+      const data = await fetchBlogPosts(nextPage, 10, category)
       setBlogs([...blogs, ...data.posts])
       setPage(nextPage)
       setHasMore(data.hasMore)
@@ -70,6 +69,7 @@ function Blog({ blogData }: BlogProps) {
               setBlogs={setBlogs}
               view={view}
               setView={setView}
+              currentCategory={category}
             />
           </div>
 
@@ -103,14 +103,15 @@ function Blog({ blogData }: BlogProps) {
   )
 }
 
-export async function getStaticProps({ params }: any) {
-  const blogData = await fetchBlogPosts(1, 10, params?.category)
+export async function getServerSideProps({ query }: any) {
+  const { category } = query
+  const blogData = await fetchBlogPosts(1, 10, category)
   
   return {
     props: {
       blogData,
+      category: category || null,
     },
-    revalidate: 60 // Revalidate every minute
   }
 }
 

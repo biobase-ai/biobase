@@ -23,6 +23,7 @@ interface Props {
   setBlogs: (blogs: BlogPostPreview[]) => void
   view: BlogView
   setView: (view: BlogView) => void
+  currentCategory?: string
 }
 
 // Extend BlogPostPreview type to include categories
@@ -30,17 +31,17 @@ interface ExtendedBlogPostPreview extends BlogPostPreview {
   categories?: string[]
 }
 
-export const BlogFilters = ({ blogs, setBlogs, view, setView }: Props) => {
+export const BlogFilters = ({ blogs, setBlogs, view, setView, currentCategory }: Props) => {
   const { BLOG_VIEW } = LOCAL_STORAGE_KEYS
   const isList = view === 'list'
-  const [category, setCategory] = useState<string>('all')
+  const [category, setCategory] = useState<string>(currentCategory || 'all')
   const [searchTerm, setSearchTerm] = useState<string>('')
   const [showSearchInput, setShowSearchInput] = useState<boolean>(false)
 
   const router = useRouter()
   const searchParams = useSearchParams()
   const q = searchParams?.get('q')
-  const activeCategory = searchParams?.get('category')
+  const activeCategory = searchParams?.get('category') || currentCategory
   const isMobile = useBreakpoint(1023)
   const is2XL = useBreakpoint(1535)
 
