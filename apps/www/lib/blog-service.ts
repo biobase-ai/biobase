@@ -51,36 +51,41 @@ async function ensureBlogBucket() {
   }
 }
 
-async function fetchBlogIndex() {
-  try {
-    const { data, error } = await biobase.storage
-      .from('blog-json')
-      .download('_index.json')
-
-    if (error) throw error
-
-    const text = await data.text()
-    return JSON.parse(text)
-  } catch (error) {
-    console.error('Error fetching blog index:', error)
-    // Return empty index if storage fails
-    return { blogPosts: [] }
-  }
+async function getPublicStorageUrl(filename: string) {
+  const { data } = await biobase.storage.from('blog-json').getPublicUrl(filename)
+  return data.publicUrl
 }
 
 async function fetchBlogPostJson(filename: string) {
   try {
-    const { data, error } = await biobase.storage
-      .from('blog-json')
-      .download(filename)
-
-    if (error) throw error
-
-    const text = await data.text()
-    return JSON.parse(text)
+    const publicUrl = await getPublicStorageUrl(filename)
+    const response = await fetch(publicUrl)
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
+    const data = await response.json()
+    return {
+      ...data,
+      slug: data.url?.replace('/blog/', '') || data._raw?.flattenedPath || filename.replace('.mdx.json', ''),
+      date: data.date || data.publishedAt,
+      body: {
+        raw: data.body?.raw || data.content || ''
+      }
+    }
   } catch (error) {
     console.error(`Error fetching blog post ${filename}:`, error)
     return null
+  }
+}
+
+async function fetchBlogIndex() {
+  try {
+    const publicUrl = await getPublicStorageUrl('_index.json')
+    const response = await fetch(publicUrl)
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.error('Error fetching blog index:', error)
+    return { blogPosts: [] }
   }
 }
 
@@ -155,7 +160,10 @@ export async function fetchBlogPostBySlug(slug: string): Promise<BlogPost | null
       const { blogPosts } = await fetchBlogIndex()
       for (const filename of blogPosts) {
         const fetchedPost = await fetchBlogPostJson(filename)
-        if (fetchedPost?.slug === slug) {
+        const postSlug = fetchedPost?.url?.replace('/blog/', '') || 
+                        fetchedPost?._raw?.flattenedPath || 
+                        filename.replace('.mdx.json', '')
+        if (postSlug === slug) {
           post = fetchedPost
           break
         }
@@ -175,12 +183,12 @@ export async function fetchBlogPostBySlug(slug: string): Promise<BlogPost | null
   return {
     title: post.title,
     description: post.description || '',
-    slug: post.slug,
-    publishedAt: post.published_at || post.date,
+    slug: post.url?.replace('/blog/', '') || post._raw?.flattenedPath || post.slug,
+    publishedAt: post.date || post.publishedAt,
     author: post.author || 'Biobase Team',
     image: post.image,
     tags: post.tags,
     categories: post.categories,
-    content: post.body.raw
+    content: post.body?.raw || post.content || ''
   }
 }
