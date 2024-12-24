@@ -75,7 +75,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:creator" content="@biobase" />
         <MetaFaviconsPagesRouter 
           route={DEFAULT_FAVICON_ROUTE}
-          themeColor={DEFAULT_FAVICON_THEME_COLOR} applicationName={''}        />
+          themeColor={DEFAULT_FAVICON_THEME_COLOR} 
+          applicationName={''}
+          basePath={router.basePath}
+        />
       </Head>
       <ThemeProvider>
         <AuthProvider>

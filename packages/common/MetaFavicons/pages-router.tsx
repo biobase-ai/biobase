@@ -1,7 +1,6 @@
 'use client'
 
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 
 export const DEFAULT_FAVICON_THEME_COLOR = '1E1E1E'
 export const DEFAULT_FAVICON_ROUTE = '/favicon'
@@ -13,6 +12,7 @@ const MetaFaviconsPagesRouter = ({
   includeRssXmlFeed = false,
   includeManifest = false,
   includeMsApplicationConfig = false,
+  basePath = '',
 }: {
   applicationName: string
   // alternative route to use for the favicons
@@ -25,9 +25,9 @@ const MetaFaviconsPagesRouter = ({
   includeManifest?: boolean
   // include browserconfig.xml
   includeMsApplicationConfig?: boolean
+  // base path for the application
+  basePath?: string
 }) => {
-  const { basePath } = useRouter()
-
   return (
     <Head>
       {/* prettier-ignore */}
