@@ -1,4 +1,5 @@
 import biobase from './biobaseMisc'
+import { allPosts } from 'contentlayer/generated'
 
 export interface BlogPost {
   title: string
@@ -31,26 +32,56 @@ export interface PaginatedBlogPosts {
   hasMore: boolean
 }
 
+async function ensureBlogBucket() {
+  try {
+    // Check if bucket exists
+    const { data: buckets, error: listError } = await biobase.storage.listBuckets()
+    if (listError) throw listError
+
+    const bucketExists = buckets?.some(b => b.name === 'blog-json')
+    if (!bucketExists) {
+      console.warn('Blog storage bucket not found, falling back to local content')
+      return false
+    }
+
+    return true
+  } catch (error) {
+    console.error('Error checking blog bucket:', error)
+    return false
+  }
+}
+
 async function fetchBlogIndex() {
-  const { data, error } = await biobase.storage
-    .from('blog-json')
-    .download('_index.json')
+  try {
+    const { data, error } = await biobase.storage
+      .from('blog-json')
+      .download('_index.json')
 
-  if (error) throw error
+    if (error) throw error
 
-  const text = await data.text()
-  return JSON.parse(text)
+    const text = await data.text()
+    return JSON.parse(text)
+  } catch (error) {
+    console.error('Error fetching blog index:', error)
+    // Return empty index if storage fails
+    return { blogPosts: [] }
+  }
 }
 
 async function fetchBlogPostJson(filename: string) {
-  const { data, error } = await biobase.storage
-    .from('blog-json')
-    .download(filename)
+  try {
+    const { data, error } = await biobase.storage
+      .from('blog-json')
+      .download(filename)
 
-  if (error) throw error
+    if (error) throw error
 
-  const text = await data.text()
-  return JSON.parse(text)
+    const text = await data.text()
+    return JSON.parse(text)
+  } catch (error) {
+    console.error(`Error fetching blog post ${filename}:`, error)
+    return null
+  }
 }
 
 export async function fetchBlogPosts(
@@ -58,13 +89,27 @@ export async function fetchBlogPosts(
   pageSize = 10,
   category?: string
 ): Promise<PaginatedBlogPosts> {
-  const { blogPosts } = await fetchBlogIndex()
-  const start = (page - 1) * pageSize
-  
-  // Fetch all posts in parallel
-  const posts = await Promise.all(
-    blogPosts.map((filename: string) => fetchBlogPostJson(filename))
-  )
+  const hasBucket = await ensureBlogBucket()
+  let posts = []
+
+  if (hasBucket) {
+    // Try to fetch from storage
+    try {
+      const { blogPosts } = await fetchBlogIndex()
+      const fetchedPosts = await Promise.all(
+        blogPosts.map((filename: string) => fetchBlogPostJson(filename))
+      )
+      posts = fetchedPosts.filter(post => post !== null)
+    } catch (error) {
+      console.error('Error fetching posts from storage:', error)
+      posts = []
+    }
+  }
+
+  // Fall back to contentlayer if storage fails or is empty
+  if (posts.length === 0) {
+    posts = allPosts
+  }
 
   // Sort by date
   const sortedPosts = posts.sort((a, b) => {
@@ -78,6 +123,7 @@ export async function fetchBlogPosts(
     ? sortedPosts.filter(post => post.categories?.includes(category))
     : sortedPosts
 
+  const start = (page - 1) * pageSize
   // Paginate
   const paginatedPosts = filteredPosts.slice(start, start + pageSize).map(post => ({
     title: post.title,
@@ -100,25 +146,41 @@ export async function fetchBlogPosts(
 }
 
 export async function fetchBlogPostBySlug(slug: string): Promise<BlogPost | null> {
-  const { blogPosts } = await fetchBlogIndex()
-  
-  // Find the post file by slug
-  for (const filename of blogPosts) {
-    const post = await fetchBlogPostJson(filename)
-    if (post.slug === slug) {
-      return {
-        title: post.title,
-        description: post.description || '',
-        slug: post.slug,
-        publishedAt: post.published_at || post.date,
-        author: post.author || 'Biobase Team',
-        image: post.image,
-        tags: post.tags,
-        categories: post.categories,
-        content: post.body.raw
+  const hasBucket = await ensureBlogBucket()
+  let post = null
+
+  if (hasBucket) {
+    // Try to fetch from storage
+    try {
+      const { blogPosts } = await fetchBlogIndex()
+      for (const filename of blogPosts) {
+        const fetchedPost = await fetchBlogPostJson(filename)
+        if (fetchedPost?.slug === slug) {
+          post = fetchedPost
+          break
+        }
       }
+    } catch (error) {
+      console.error('Error fetching post from storage:', error)
     }
   }
 
-  return null
+  // Fall back to contentlayer if storage fails
+  if (!post) {
+    post = allPosts.find(p => p.slug === slug)
+  }
+
+  if (!post) return null
+
+  return {
+    title: post.title,
+    description: post.description || '',
+    slug: post.slug,
+    publishedAt: post.published_at || post.date,
+    author: post.author || 'Biobase Team',
+    image: post.image,
+    tags: post.tags,
+    categories: post.categories,
+    content: post.body.raw
+  }
 }
