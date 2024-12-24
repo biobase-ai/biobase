@@ -27,6 +27,7 @@ function Blog({ blogData }: BlogProps) {
   const [isLoading, setIsLoading] = useState(false)
   const isList = view === 'list'
   const router = useRouter()
+  const { category } = router.query
 
   const meta_title = 'Biobase Blog: Latest Updates and News'
   const meta_description = 'Stay up to date with the latest news, updates, and insights from the Biobase team.'
@@ -37,7 +38,7 @@ function Blog({ blogData }: BlogProps) {
     setIsLoading(true)
     try {
       const nextPage = page + 1
-      const data = await fetchBlogPosts(nextPage)
+      const data = await fetchBlogPosts(nextPage, 10, category as string)
       setBlogs([...blogs, ...data.posts])
       setPage(nextPage)
       setHasMore(data.hasMore)
@@ -102,13 +103,14 @@ function Blog({ blogData }: BlogProps) {
   )
 }
 
-export async function getStaticProps() {
-  const blogData = await fetchBlogPosts(1)
+export async function getStaticProps({ params }: any) {
+  const blogData = await fetchBlogPosts(1, 10, params?.category)
   
   return {
     props: {
       blogData,
     },
+    revalidate: 60 // Revalidate every minute
   }
 }
 
