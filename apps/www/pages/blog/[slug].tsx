@@ -1,8 +1,20 @@
 import { useEffect, useState } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { NextSeo } from 'next-seo'
+import dynamic from 'next/dynamic'
 import { fetchBlogPostBySlug, fetchBlogIndex, type BlogPost } from '~/lib/blog-service'
 import DefaultLayout from '~/components/Layouts/Default'
+
+// Dynamically import components that are not needed for initial render
+const BlogContent = dynamic(() => import('~/components/Blog/BlogContent'), {
+  loading: () => (
+    <div className="animate-pulse space-y-4">
+      <div className="h-4 bg-scale-100 rounded w-3/4"></div>
+      <div className="h-4 bg-scale-100 rounded"></div>
+      <div className="h-4 bg-scale-100 rounded w-5/6"></div>
+    </div>
+  ),
+})
 
 interface BlogPostProps {
   post: {
@@ -79,9 +91,7 @@ export default function BlogPost({ post, content }: BlogPostProps) {
                 <div className="h-4 bg-scale-100 rounded w-5/6"></div>
               </div>
             ) : (
-              <div className="prose prose-lg max-w-none">
-                {postContent}
-              </div>
+              <BlogContent content={postContent} />
             )}
           </article>
         </div>
@@ -124,11 +134,14 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({ params }) 
     tags: post.tags,
   }
 
+  // For large posts, don't include content in initial props
+  const contentLength = post.content?.length || 0
+  const shouldDeferContent = contentLength > 30000 // ~30KB threshold
+
   return {
     props: {
       post: essentialPostData,
-      // Content will be loaded client-side for large posts
-      content: post.content && post.content.length > 50000 ? null : post.content,
+      content: shouldDeferContent ? null : post.content,
     },
     revalidate: 60,
   }

@@ -5,16 +5,55 @@ import { allPosts } from 'contentlayer/generated'
 const BLOG_BUCKET = 'blog-json'
 const MAX_RETRIES = 3
 const RETRY_DELAY = 1000 // 1 second
+const FETCH_TIMEOUT = 5000 // 5 seconds
+const CACHE_DURATION = 60 * 60 * 1000 // 1 hour
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://wwzkoeobldwlepkiekcy.supabase.co'
+
+// Simple in-memory cache
+const cache = new Map<string, { data: any; timestamp: number }>()
 
 async function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
+function getCachedData(key: string) {
+  const cached = cache.get(key)
+  if (!cached) return null
+  
+  const now = Date.now()
+  if (now - cached.timestamp > CACHE_DURATION) {
+    cache.delete(key)
+    return null
+  }
+  
+  return cached.data
+}
+
+function setCachedData(key: string, data: any) {
+  cache.set(key, { data, timestamp: Date.now() })
+}
+
+async function fetchWithTimeout(url: string, options: RequestInit = {}): Promise<Response> {
+  const controller = new AbortController()
+  const id = setTimeout(() => controller.abort(), FETCH_TIMEOUT)
+
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal
+    })
+    clearTimeout(id)
+    return response
+  } catch (error) {
+    clearTimeout(id)
+    throw error
+  }
+}
+
 async function fetchWithRetry(url: string, options: RequestInit = {}, retries = MAX_RETRIES): Promise<Response> {
   try {
-    const response = await fetch(url, options)
+    const response = await fetchWithTimeout(url, options)
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
@@ -104,11 +143,15 @@ async function getPublicStorageUrl(filename: string) {
 }
 
 export async function fetchBlogPostJson(filename: string) {
+  const cacheKey = `post:${filename}`
+  const cached = getCachedData(cacheKey)
+  if (cached) return cached
+
   try {
     const url = `${SUPABASE_URL}/storage/v1/object/public/${BLOG_BUCKET}/${filename}`
     const response = await fetchWithRetry(url)
     const data = await response.json()
-    return {
+    const processedData = {
       ...data,
       slug: data.url?.replace('/blog/', '') || data._raw?.flattenedPath || filename.replace('.mdx.json', ''),
       date: data.date || data.publishedAt,
@@ -116,21 +159,39 @@ export async function fetchBlogPostJson(filename: string) {
         raw: data.body?.raw || data.content || ''
       }
     }
+    setCachedData(cacheKey, processedData)
+    return processedData
   } catch (error) {
     console.error(`Error fetching blog post ${filename}:`, error)
+    // Fall back to contentlayer data if available
+    const fallbackPost = allPosts.find(p => p.slug === filename.replace('.mdx.json', ''))
+    if (fallbackPost) {
+      return {
+        ...fallbackPost,
+        body: {
+          raw: fallbackPost.content || ''
+        }
+      }
+    }
     return null
   }
 }
 
 export async function fetchBlogIndex() {
+  const cacheKey = 'blogIndex'
+  const cached = getCachedData(cacheKey)
+  if (cached) return cached
+
   try {
     const url = `${SUPABASE_URL}/storage/v1/object/public/${BLOG_BUCKET}/index.json`
     const response = await fetchWithRetry(url)
     const data = await response.json()
+    setCachedData(cacheKey, data)
     return data
   } catch (error) {
     console.error('Error fetching blog index:', error)
-    return { posts: [] }
+    // Fall back to contentlayer data
+    return { posts: allPosts.map(post => post.slug + '.mdx.json') }
   }
 }
 
