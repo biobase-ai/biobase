@@ -33,6 +33,11 @@ export interface PaginatedBlogPosts {
 }
 
 async function ensureBlogBucket() {
+  if (!process.env.SUPABASE_SERVICE_ROLE_KEY && !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    console.warn('No Supabase credentials found, falling back to local content')
+    return false
+  }
+
   try {
     // First try to list the bucket contents directly
     const { data: files, error: listError } = await biobase.storage
@@ -72,16 +77,20 @@ async function getPublicStorageUrl(filename: string) {
 
 async function fetchBlogPostJson(filename: string) {
   try {
-    const publicUrl = await getPublicStorageUrl(filename)
-    const response = await fetch(publicUrl)
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
-    const data = await response.json()
+    const { data, error } = await biobase.storage
+      .from('blog-json')
+      .download(filename)
+
+    if (error) throw error
+
+    const text = await data.text()
+    const jsonData = JSON.parse(text)
     return {
-      ...data,
-      slug: data.url?.replace('/blog/', '') || data._raw?.flattenedPath || filename.replace('.mdx.json', ''),
-      date: data.date || data.publishedAt,
+      ...jsonData,
+      slug: jsonData.url?.replace('/blog/', '') || jsonData._raw?.flattenedPath || filename.replace('.mdx.json', ''),
+      date: jsonData.date || jsonData.publishedAt,
       body: {
-        raw: data.body?.raw || data.content || ''
+        raw: jsonData.body?.raw || jsonData.content || ''
       }
     }
   } catch (error) {
@@ -92,11 +101,14 @@ async function fetchBlogPostJson(filename: string) {
 
 async function fetchBlogIndex() {
   try {
-    const publicUrl = await getPublicStorageUrl('_index.json')
-    const response = await fetch(publicUrl)
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
-    const data = await response.json()
-    return data
+    const { data, error } = await biobase.storage
+      .from('blog-json')
+      .download('_index.json')
+
+    if (error) throw error
+
+    const text = await data.text()
+    return JSON.parse(text)
   } catch (error) {
     console.error('Error fetching blog index:', error)
     return { blogPosts: [] }
