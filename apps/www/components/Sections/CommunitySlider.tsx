@@ -107,7 +107,13 @@ const CommunitySlider = () => {
     <div className="bg-surface-100 hover:border-strong border-overlay rounded-2xl border p-6 drop-shadow-sm flex flex-col gap-4">
       <div className="flex items-center gap-2">
         <div className="h-10 w-10 overflow-hidden rounded-full border border-control">
-          <Image src={card.avatar!} layout="responsive" width="64" height="64" alt={card.author} />
+          <Image
+            src={card.avatar!}
+            width={64}
+            height={64}
+            className="w-full h-full object-cover"
+            alt={card.author}
+          />
         </div>
         <div>
           <p className="text-foreground font-medium">{card.author}</p>
@@ -122,9 +128,8 @@ const CommunitySlider = () => {
           <Image
             src={card.image!}
             alt={`Biobase + ${card.customer}`}
-            layout="fill"
-            objectFit="contain"
-            objectPosition="left"
+            fill
+            className="object-contain object-left"
           />
         </div>
       </div>
@@ -142,8 +147,9 @@ const CommunitySlider = () => {
         <Image
           src="/images/product/vector/community/vector-community.svg"
           alt="vector graphic"
-          layout="fill"
-          objectFit={isSm ? 'cover' : 'contain'}
+          fill
+          className="object-contain"
+          style={{ objectFit: isSm ? 'cover' : 'contain' }}
         />
       </div>
       <SectionContainer className="!py-0">

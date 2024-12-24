@@ -19,9 +19,8 @@ const BlogListItem = ({ post }: Props) => {
               <Image
                 src={image}
                 alt={`${title} thumbnail`}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
+                fill
+                className="rounded-lg object-cover"
               />
             </div>
           )}
