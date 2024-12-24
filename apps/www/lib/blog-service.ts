@@ -33,7 +33,7 @@ export interface PaginatedBlogPosts {
 }
 
 async function ensureBlogBucket() {
-  if (!process.env.SUPABASE_SERVICE_ROLE_KEY && !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+  if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
     console.warn('No Supabase credentials found, falling back to local content')
     return false
   }
@@ -115,6 +115,29 @@ async function fetchBlogIndex() {
   }
 }
 
+function getImageUrl(post: any): string | undefined {
+  if (!post.image) return undefined
+
+  // If image is a full URL, return it as is
+  if (post.image.startsWith('http')) return post.image
+
+  // If image starts with /blog/, remove it
+  const imagePath = post.image.startsWith('/blog/') 
+    ? post.image.slice(6) 
+    : post.image
+
+  // Get the public URL from Supabase storage
+  try {
+    const { data: { publicUrl } } = biobase.storage
+      .from('images')
+      .getPublicUrl(`blog/${imagePath}`)
+    return publicUrl
+  } catch (error) {
+    console.error('Error getting image URL:', error)
+    return undefined
+  }
+}
+
 export async function fetchBlogPosts(
   page = 1, 
   pageSize = 10,
@@ -162,7 +185,7 @@ export async function fetchBlogPosts(
     slug: post.slug,
     publishedAt: post.published_at || post.date,
     author: post.author || 'Biobase Team',
-    image: post.image,
+    image: getImageUrl(post),
     tags: post.tags,
     categories: post.categories
   }))
@@ -212,7 +235,7 @@ export async function fetchBlogPostBySlug(slug: string): Promise<BlogPost | null
     slug: post.url?.replace('/blog/', '') || post._raw?.flattenedPath || post.slug,
     publishedAt: post.date || post.publishedAt,
     author: post.author || 'Biobase Team',
-    image: post.image,
+    image: getImageUrl(post),
     tags: post.tags,
     categories: post.categories,
     content: post.body?.raw || post.content || ''

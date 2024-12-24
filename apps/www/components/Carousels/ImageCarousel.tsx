@@ -115,9 +115,9 @@ function ImageCarousel(props: ImageCarouselProps) {
                       <Image
                         src={`${basePath}${content.img_url}`}
                         alt={content.title}
-                        layout="responsive"
-                        width="1460"
-                        height="960"
+                        width={1460}
+                        height={960}
+                        style={{ width: '100%', height: 'auto' }}
                       />
                     )}
                     {isInView && content.youtube_id && (
