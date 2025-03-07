@@ -1,5 +1,7 @@
 'use client'
 
+import { DialogProps } from '@radix-ui/react-dialog'
+import { Command as CommandPrimitive } from 'cmdk'
 import { CircleIcon, LaptopIcon, MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/navigation'
@@ -7,17 +9,17 @@ import * as React from 'react'
 
 import { docsConfig } from '@/config/docs'
 import { cn } from '@/lib/utils'
+import { Button } from 'ui'
 import {
-  Button,
+  Command,
   CommandDialog,
-  CommandEmpty_Shadcn_,
-  CommandGroup_Shadcn_,
-  CommandInput_Shadcn_,
-  CommandItem_Shadcn_,
-  CommandList_Shadcn_,
-  CommandSeparator_Shadcn_,
-  DialogProps,
-} from 'ui'
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+} from '@ui/components/shadcn/ui/command'
 
 export function CommandMenu({ ...props }: DialogProps) {
   const router = useRouter()
@@ -69,63 +71,49 @@ export function CommandMenu({ ...props }: DialogProps) {
         </kbd>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput_Shadcn_ placeholder="Type a command or search..." />
-        <CommandList_Shadcn_>
-          <CommandEmpty_Shadcn_>No results found.</CommandEmpty_Shadcn_>
-          {/* <CommandGroup_Shadcn_ heading="Links">
-            {docsConfig.mainNav
-              .filter((navitem) => !navitem.external)
-              .map((navItem) => (
-                <CommandItem_Shadcn_
-                  key={navItem.href}
-                  value={navItem.title}
-                  onSelect={() => {
-                    runCommand(() => router.push(navItem.href as string))
-                  }}
-                >
-                  <FileIcon className="mr-2 h-4 w-4" strokeWidth={1} />
-                  {navItem.title}
-                </CommandItem_Shadcn_>
-              ))}
-          </CommandGroup_Shadcn_> */}
-          {docsConfig.sidebarNav.map((group) => (
-            <CommandGroup_Shadcn_ key={group.title} heading={group.title}>
-              {group.items.map((navItem) => (
-                <CommandItem_Shadcn_
-                  key={navItem.href}
-                  value={navItem.title}
-                  onSelect={() => {
-                    runCommand(() => router.push(navItem.href as string))
-                  }}
-                >
-                  <div className="mr-2 flex h-4 w-4 items-center justify-center">
-                    <CircleIcon className="h-3 w-3" strokeWidth={1} />
-                  </div>
-                  {navItem.title}
-                </CommandItem_Shadcn_>
-              ))}
-            </CommandGroup_Shadcn_>
-          ))}
-          <CommandSeparator_Shadcn_ />
-          <CommandGroup_Shadcn_ heading="Theme">
-            <CommandItem_Shadcn_ onSelect={() => runCommand(() => setTheme('light'))}>
-              <SunIcon className="mr-2 h-4 w-4" strokeWidth={1} />
-              Light
-            </CommandItem_Shadcn_>
-            <CommandItem_Shadcn_ onSelect={() => runCommand(() => setTheme('dark'))}>
-              <MoonIcon className="mr-2 h-4 w-4" strokeWidth={1} />
-              Dark
-            </CommandItem_Shadcn_>
-            <CommandItem_Shadcn_ onSelect={() => runCommand(() => setTheme('classic-dark'))}>
-              <MoonIcon className="mr-2 h-4 w-4" strokeWidth={1} />
-              Classic dark
-            </CommandItem_Shadcn_>
-            <CommandItem_Shadcn_ onSelect={() => runCommand(() => setTheme('system'))}>
-              <LaptopIcon className="mr-2 h-4 w-4" strokeWidth={1} />
-              System
-            </CommandItem_Shadcn_>
-          </CommandGroup_Shadcn_>
-        </CommandList_Shadcn_>
+        <CommandPrimitive className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-foreground-muted [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
+          <CommandPrimitive.Input placeholder="Type a command or search..." />
+          <CommandPrimitive.List>
+            <CommandPrimitive.Empty>No results found.</CommandPrimitive.Empty>
+            {docsConfig.sidebarNav.map((group) => (
+              <CommandPrimitive.Group key={group.title} heading={group.title}>
+                {group.items.map((navItem) => (
+                  <CommandPrimitive.Item
+                    key={navItem.href}
+                    value={navItem.title}
+                    onSelect={() => {
+                      runCommand(() => router.push(navItem.href as string))
+                    }}
+                  >
+                    <div className="mr-2 flex h-4 w-4 items-center justify-center">
+                      <CircleIcon className="h-3 w-3" strokeWidth={1} />
+                    </div>
+                    {navItem.title}
+                  </CommandPrimitive.Item>
+                ))}
+              </CommandPrimitive.Group>
+            ))}
+            <CommandPrimitive.Separator />
+            <CommandPrimitive.Group heading="Theme">
+              <CommandPrimitive.Item onSelect={() => runCommand(() => setTheme('light'))}>
+                <SunIcon className="mr-2 h-4 w-4" strokeWidth={1} />
+                Light
+              </CommandPrimitive.Item>
+              <CommandPrimitive.Item onSelect={() => runCommand(() => setTheme('dark'))}>
+                <MoonIcon className="mr-2 h-4 w-4" strokeWidth={1} />
+                Dark
+              </CommandPrimitive.Item>
+              <CommandPrimitive.Item onSelect={() => runCommand(() => setTheme('classic-dark'))}>
+                <MoonIcon className="mr-2 h-4 w-4" strokeWidth={1} />
+                Classic dark
+              </CommandPrimitive.Item>
+              <CommandPrimitive.Item onSelect={() => runCommand(() => setTheme('system'))}>
+                <LaptopIcon className="mr-2 h-4 w-4" strokeWidth={1} />
+                System
+              </CommandPrimitive.Item>
+            </CommandPrimitive.Group>
+          </CommandPrimitive.List>
+        </CommandPrimitive>
       </CommandDialog>
     </>
   )

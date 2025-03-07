@@ -51,7 +51,7 @@ const AnnouncementBadge = ({
     >
       {badge && (
         <Badge variant="brand" size="large" className="py-1 announcement-badge">
-          {badge}
+          {badge as ReactNode}
         </Badge>
       )}
       <span className="text-foreground announcement-text">{announcement}</span>

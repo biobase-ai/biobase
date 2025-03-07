@@ -3,6 +3,8 @@
 import * as React from 'react'
 import { Index } from '../registry/default'
 import dynamic from 'next/dynamic'
+import * as TabsPrimitive from '@radix-ui/react-tabs'
+import type { RegistryEntry } from '../registry/schema'
 
 import {
   Button,
@@ -12,9 +14,7 @@ import {
   cn,
 } from 'ui'
 import { useConfig } from '@/hooks/use-config'
-import {
-  CopyWithClassNames,
-} from '@/components/copy-button'
+import { CopyWithClassNames } from '@/components/copy-button'
 import {
   Tabs_Shadcn_ as Tabs,
   TabsContent_Shadcn_ as TabsContent,
@@ -35,6 +35,17 @@ interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   wide?: boolean
 }
 
+interface ComponentEntry extends Omit<RegistryEntry, 'component'> {
+  component: () => Promise<any>
+  code?: string
+}
+
+interface IndexType {
+  default: Record<string, ComponentEntry>
+}
+
+const registry = Index as unknown as IndexType
+
 export function ComponentPreview({
   name,
   children,
@@ -53,7 +64,8 @@ export function ComponentPreview({
   const [isCollapsed, setIsCollapsed] = React.useState(false)
 
   const Preview = React.useMemo(() => {
-    if (!Index[config.style]?.[name]) {
+    const component = registry.default[name]?.component
+    if (!component) {
       return (
         <p className="text-sm text-muted-foreground">
           Component{' '}
@@ -69,16 +81,17 @@ export function ComponentPreview({
       )
     }
 
-    const Component = dynamic(() => Promise.resolve(Index[config.style][name].component), {
+    const Component = dynamic(component, {
       ssr: false,
+      loading: () => null,
     })
 
     return <Component />
-  }, [name, config.style])
+  }, [name])
 
   const codeString = React.useMemo(() => {
-    return Index[config.style]?.[name]?.code || null
-  }, [name, config.style])
+    return registry.default[name]?.code || null
+  }, [name])
 
   return (
     <div
@@ -91,7 +104,7 @@ export function ComponentPreview({
       >
         <div className="flex items-center justify-between">
           <CollapsibleTrigger_Shadcn_ asChild>
-            <Button variant="ghost" className="h-8 p-2">
+            <Button className="h-8 p-2">
               <ChevronRight
                 className={cn(
                   'h-4 w-4 transition-transform',
@@ -103,14 +116,12 @@ export function ComponentPreview({
           <div className="flex items-center space-x-2">
             {extractedClassNames ? (
               <CopyWithClassNames
-                value={codeString}
+                value={codeString || ''}
                 classNames={extractedClassNames}
               />
             ) : null}
             {codeString ? (
               <Button
-                variant="ghost"
-                size="icon"
                 className="h-8 w-8"
                 onClick={() => setIsExpanded(!isExpanded)}
               >
@@ -147,16 +158,16 @@ export function ComponentPreview({
             {peekCode ? (
               <div className="border-t">{codeString}</div>
             ) : (
-              <Tabs defaultValue="code" className="relative mt-6 w-full">
-                <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
-                  <TabsTrigger
+              <TabsPrimitive.Root defaultValue="code" className="relative mt-6 w-full">
+                <TabsPrimitive.List className="w-full justify-start rounded-none border-b bg-transparent p-0">
+                  <TabsPrimitive.Trigger
                     value="code"
                     className="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
                   >
                     Code
-                  </TabsTrigger>
-                </TabsList>
-                <TabsContent value="code" className="rounded-none">
+                  </TabsPrimitive.Trigger>
+                </TabsPrimitive.List>
+                <TabsPrimitive.Content value="code" className="rounded-none">
                   <div className="flex flex-col space-y-4">
                     <div className="w-full min-w-0">
                       <pre className="mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-muted p-4">
@@ -166,8 +177,8 @@ export function ComponentPreview({
                       </pre>
                     </div>
                   </div>
-                </TabsContent>
-              </Tabs>
+                </TabsPrimitive.Content>
+              </TabsPrimitive.Root>
             )}
           </CollapsibleContent_Shadcn_>
         </Collapsible_Shadcn_>

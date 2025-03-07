@@ -94,7 +94,7 @@ export * from './src/components/shadcn/ui/card'
 
 export {
   Command as Command_Shadcn_,
-  CommandDialog as CommandDialog,
+  CommandDialog,
   CommandInput as CommandInput_Shadcn_,
   CommandList as CommandList_Shadcn_,
   CommandEmpty as CommandEmpty_Shadcn_,

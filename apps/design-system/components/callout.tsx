@@ -1,9 +1,10 @@
 import { Alert, AlertDescription, AlertTitle } from '@ui/components/shadcn/ui/alert'
+import { ReactNode } from 'react'
 
 interface CalloutProps {
   icon?: string
   title?: string
-  children?: React.ReactNode
+  children?: ReactNode
 }
 
 export function Callout({ title, children, icon, ...props }: CalloutProps) {

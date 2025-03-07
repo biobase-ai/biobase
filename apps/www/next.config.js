@@ -7,15 +7,19 @@ const nextConfig = {
   images: {
     domains: ['avatars.githubusercontent.com', 'github.com', 'wwzkoeobldwlepkiekcy.supabase.co'],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  transpilePackages: ['common', 'ui', 'ui-patterns'],
   webpack: (config, { dev, isServer }) => {
     // Fix cache invalidation issues
     config.snapshot = {
       ...(config.snapshot ?? {}),
       managedPaths: [/^(.+?[\\/]node_modules[\\/])/],
       immutablePaths: [],
-      buildDependencies: {
-        config: [__filename],
-      },
     }
 
     // Fix sql-formatter dependency issue

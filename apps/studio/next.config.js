@@ -487,6 +487,19 @@ const nextConfig = {
     'libpg-query',
   ],
   webpack(config) {
+    // Fix for `fs` module not found in the browser
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      tls: false,
+      child_process: false,
+      perf_hooks: false,
+      'pg-native': false,
+      'utf-8-validate': false,
+      bufferutil: false,
+    }
+    
     config.module?.rules
       .find((rule) => rule.oneOf)
       .oneOf.forEach((rule) => {

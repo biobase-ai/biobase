@@ -175,13 +175,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/contact/sales</loc>
+    <loc>https://biobase.studio/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://biobase.studio/blog/</loc>
+    <loc>https://biobase.studio/contact/sales</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -211,6 +211,12 @@
   </url>
 
   <url>
+    <loc>https://biobase.studio/launch-week/6</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://biobase.studio/launch-week/7</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -229,19 +235,13 @@
   </url>
 
   <url>
-    <loc>https://biobase.studio/partners/experts</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://biobase.studio/launch-week/6</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
     <loc>https://biobase.studio/partners/integrations</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://biobase.studio/partners/experts</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

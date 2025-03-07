@@ -19,7 +19,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@ui/*": ["./../../packages/ui/src/*"], // handle ui package paths
+      "@ui/*": ["./../../packages/ui/src/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "plugins": [

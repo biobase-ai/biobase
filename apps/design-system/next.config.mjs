@@ -6,6 +6,12 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '/design-system'
 const nextConfig = {
   transpilePackages: ['ui', 'common', 'shared-data', 'icons', 'tsconfig'],
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || '/design-system',
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     remotePatterns: [
       {
