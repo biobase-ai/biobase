@@ -17,17 +17,41 @@ import EventCallout from '../components/EventCallout'
 import { useBreakpoint } from 'common'
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPosts({ directory: '_customers' })
-  const rss = generateRss(allPostsData)
+  try {
+    const allPostsData = getSortedPosts({ directory: '_customers' })
+    
+    // Filter out any posts that don't have required fields
+    const validPosts = allPostsData.filter(post => 
+      post && post.title && (post.date || (post as any).publishedAt)
+    )
+    
+    // Add fallback date if missing
+    const processedPosts = validPosts.map(post => ({
+      ...post,
+      date: post.date || (post as any).publishedAt || new Date().toISOString(),
+    }))
+    
+    // Only generate RSS if we have valid posts
+    if (processedPosts.length > 0) {
+      const rss = generateRss(processedPosts)
+      // create a rss feed in public directory
+      // rss feed is added via <Head> component in render return
+      fs.writeFileSync('./public/customers-rss.xml', rss)
+    }
 
-  // create a rss feed in public directory
-  // rss feed is added via <Head> component in render return
-  fs.writeFileSync('./public/customers-rss.xml', rss)
-
-  return {
-    props: {
-      blogs: allPostsData,
-    },
+    return {
+      props: {
+        blogs: processedPosts || [],
+      },
+    }
+  } catch (error) {
+    console.error('Error in getStaticProps for customers page:', error)
+    // Return empty blogs array to prevent build failures
+    return {
+      props: {
+        blogs: [],
+      },
+    }
   }
 }
 
@@ -49,7 +73,7 @@ function CustomerStoriesPage(props: any) {
       title: blog.title,
       link: blog.url,
     }
-  })
+  }) || []
 
   return (
     <>

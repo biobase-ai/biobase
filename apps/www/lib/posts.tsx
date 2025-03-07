@@ -26,43 +26,73 @@ export function getSortedPosts({
   offset = 0,
   categories
 }: GetSortedPostsParams) {
-  const postsDirectory = path.join(process.cwd(), 'content', directory)
-  const fileNames = fs.readdirSync(postsDirectory)
-    .filter(fileName => fileName.endsWith('.mdx') || fileName.endsWith('.md'))
-    .sort((a, b) => {
-      const aStats = fs.statSync(path.join(postsDirectory, a))
-      const bStats = fs.statSync(path.join(postsDirectory, b))
-      return bStats.mtime.getTime() - aStats.mtime.getTime()
-    })
-    .slice(0, 10) // 减少文件扫描数量
+  try {
+    const postsDirectory = path.join(process.cwd(), 'content', directory)
+    
+    // Check if directory exists
+    if (!fs.existsSync(postsDirectory)) {
+      console.warn(`Directory ${postsDirectory} does not exist`)
+      return []
+    }
+    
+    const fileNames = fs.readdirSync(postsDirectory)
+      .filter(fileName => fileName.endsWith('.mdx') || fileName.endsWith('.md'))
+      .sort((a, b) => {
+        try {
+          const aStats = fs.statSync(path.join(postsDirectory, a))
+          const bStats = fs.statSync(path.join(postsDirectory, b))
+          return bStats.mtime.getTime() - aStats.mtime.getTime()
+        } catch (error) {
+          console.error(`Error sorting files ${a} and ${b}:`, error)
+          return 0
+        }
+      })
+      .slice(0, 10) // 减少文件扫描数量
 
-  const allPostsData = fileNames
-    .map(fileName => {
-      const slug = fileName.replace(/\.mdx?$/, '')
-      const fullPath = path.join(postsDirectory, fileName)
-      const fileContents = fs.readFileSync(fullPath, 'utf8')
-      const { data } = matter(fileContents)
+    const allPostsData = fileNames
+      .map(fileName => {
+        try {
+          const slug = fileName.replace(/\.mdx?$/, '')
+          const fullPath = path.join(postsDirectory, fileName)
+          
+          if (!fs.existsSync(fullPath)) {
+            console.warn(`File ${fullPath} does not exist`)
+            return null
+          }
+          
+          const fileContents = fs.readFileSync(fullPath, 'utf8')
+          const { data } = matter(fileContents)
 
-      // 极简化返回字段
-      return {
-        slug,
-        title: data.title,
-        date: data.date,
-        category: data.category,
-        description: data.description?.slice(0, 80), // 减少描述长度到80字符
-        url: `/${directory.replace('_', '')}/${slug}`,
-      }
-    })
-    .filter(post => {
-      if (categories?.length > 0) {
-        return categories.includes(post.category)
-      }
-      return true
-    })
-    .slice(offset, offset + limit)
+          // 极简化返回字段
+          return {
+            slug,
+            title: data.title,
+            date: data.date,
+            category: data.category,
+            description: data.description?.slice(0, 80), // 减少描述长度到80字符
+            url: `/${directory.replace('_', '')}/${slug}`,
+          }
+        } catch (error) {
+          console.error(`Error processing file ${fileName}:`, error)
+          return null
+        }
+      })
+      .filter(Boolean) // Remove null entries
+      .filter(post => {
+        if (categories?.length > 0 && post && post.category) {
+          return categories.includes(post.category)
+        }
+        return true
+      })
+      .slice(offset, offset + limit)
 
-  return allPostsData
+    return allPostsData
+  } catch (error) {
+    console.error(`Error processing directory ${directory}:`, error)
+    return []
+  }
 }
+
 // Get Slugs
 export const getAllPostSlugs = (directory: Directories) => {
   //Finding directory named "blog" from the current working directory of Node.
