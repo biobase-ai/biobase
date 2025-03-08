@@ -68,6 +68,7 @@
     "globby": "^13.2.2",
     "gray-matter": "^4.0.3",
     "icons": "*",
+    "immutable": "^4.3.5",
     "lodash": "^4.0.0",
     "lucide-react": "^0.309.0",
     "markdown-toc": "^1.2.0",
