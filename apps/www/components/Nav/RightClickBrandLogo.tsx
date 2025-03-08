@@ -3,14 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useClickAway, useKey } from 'react-use'
-import { CheckIcon, ClipboardIcon } from '@heroicons/react/outline'
+import { CheckIcon, ClipboardIcon } from '@heroicons/react'
 import { cn, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from 'ui'
 
-import * as biobaseLogoWordmarkDark from 'common/assets/images/biobase-logo-wordmark--dark.png'
-import * as biobaseLogoWordmarkLight from 'common/assets/images/biobase-logo-wordmark--light.png'
+// Import our new BioBase logo component
+import BioBaseLogo from '../BioBaseLogo'
 
 /**
- * Right click on the Biobase logo in the website navbar
+ * Right click on the BioBase logo in the website navbar
  * for quick access to brand assets.
  */
 const RightClickBrandLogo = () => {
@@ -32,7 +32,7 @@ const RightClickBrandLogo = () => {
   useKey('Escape', () => setOpen(false))
 
   /**
-   * Open dropdown by right clicking on the Biobase logo
+   * Open dropdown by right clicking on the BioBase logo
    */
   const handleRightClick = (e: MouseEvent) => {
     e.preventDefault()
@@ -52,10 +52,7 @@ const RightClickBrandLogo = () => {
       }
     }
 
-    document?.addEventListener('keydown', onKeyDown)
-    return () => {
-      document?.removeEventListener('keydown', onKeyDown)
-    }
+    return onKeyDown
   }
 
   /**
@@ -75,36 +72,21 @@ const RightClickBrandLogo = () => {
       <DropdownMenuTrigger asChild>
         <Link
           href="/"
+          ref={ref}
+          className="group relative flex cursor-pointer items-center justify-center"
           onContextMenu={handleRightClick}
-          onFocus={handleKeyboardOpen}
-          onKeyDown={(e) => e.key === 'Enter' && router.push('/')}
-          className="block w-auto h-6 focus-visible:ring-2 focus-visible:outline-none focus-visible:ring-foreground-lighter focus-visible:ring-offset-4 focus-visible:ring-offset-background-alternative focus-visible:rounded-sm"
+          onKeyDown={handleKeyboardOpen()}
+          aria-label="BioBase Home"
         >
-          <Image
-            src={biobaseLogoWordmarkLight}
-            width={124}
-            height={24}
-            alt="Biobase Logo"
-            className="dark:hidden"
-            priority
-          />
-          <Image
-            src={biobaseLogoWordmarkDark}
-            width={124}
-            height={24}
-            alt="Biobase Logo"
-            className="hidden dark:block"
-            priority
-          />
+          {/* Replace with our new BioBase logo component */}
+          <BioBaseLogo type="full" size="md" />
         </Link>
       </DropdownMenuTrigger>
-      <DropdownMenuContent
-        autoFocus
-        ref={ref}
-        align="start"
-        side="bottom"
-        className="mt-2 p-0 w-52"
-      >
+      <DropdownMenuContent side="bottom" align="start" className="space-y-[2px] dark:border-gray-600">
+        <div className="border-b border-foreground-muted/10 pb-1 text-xs text-foreground-lighter dark:border-gray-600 dark:text-gray-300">
+          <span className="font-bold">BioBase</span> brand assets
+        </div>
+        
         {menuItems.map((section, sectionIdx) => (
           <Fragment key={`cxtMenu-section-${sectionIdx}`}>
             {sectionIdx !== 0 && <DropdownSeparator />}

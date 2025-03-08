@@ -45,6 +45,20 @@ const Nav = (props: Props) => {
   const hasStickySubnav = isLaunchWeekXPage || isGAWeekSection || isLaunchWeekPage
   const showLaunchWeekNavMode = (isLaunchWeekPage || isGAWeekSection) && !open
 
+  // Update the logo style to match the biological data theme
+  const logoClasses = cn(
+    'transition-opacity',
+    isLaunchWeekXPage && !open && `opacity-0 translate-y-4 invisible hidden`
+  )
+
+  // Add custom styles for biological data theme branding
+  const navClasses = cn(
+    'sticky top-0 w-full h-16 md:h-[58px] lg:h-[63px] transition-all ease-out z-40',
+    showLaunchWeekNavMode && !open && hasStickySubnav && 'bg-transparent shadow-none',
+    isHomePage && 'dark:bg-transparent border-transparent shadow-none',
+    'bg-background-alternative-200 dark:bg-background'
+  )
+
   React.useEffect(() => {
     if (open) {
       // Prevent scrolling on mount
@@ -83,10 +97,7 @@ const Nav = (props: Props) => {
           )}
         />
         <nav
-          className={cn(
-            `relative z-40 border-default border-b backdrop-blur-sm transition-opacity`,
-            showLaunchWeekNavMode && 'border-muted border-b bg-alternative/50'
-          )}
+          className={navClasses}
         >
           <div className="relative flex justify-between h-16 mx-auto lg:container lg:px-16 xl:px-20">
             <div className="flex items-center px-6 lg:px-0 flex-1 sm:items-stretch justify-between">
