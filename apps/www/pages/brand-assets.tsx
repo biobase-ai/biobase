@@ -12,6 +12,13 @@ import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import SectionContainer from '~/components/Layouts/SectionContainer'
 
+// Add getStaticProps to handle errors during build
+export async function getStaticProps() {
+  return {
+    props: {}, // will be passed to the page component as props
+  }
+}
+
 const Index = () => {
   // base path for images
   const router = useRouter()
