@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/www/package.json",
+      "use": "@vercel/next",
+      "config": {
+        "installCommand": "npm install immutable ramda",
+        "buildCommand": "next build"
+      }
+    }
+  ]
+} 
